@@ -219,6 +219,16 @@
     
     <div class="flex flex-col items-start gap-8 w-full mb-6">
       {% if collection.metafields.custom.banner_superior %}<img class="w-full hidden lg:block" src="{{ collection.metafields.custom.banner_superior | file_url }}"> {% endif %}
+        <ul class="subcollections-list">
+    {% for subcollection in collection.metafields.custom.subcolecciones.value %}
+      <li>
+        <a href="{{ subcollection.url }}" class="subcollection-link">
+          {{ subcollection.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 w-full my-6">
   <!-- Card 1 -->
   <div class="flex items-center bg-white shadow border border-[#D9D9C8] rounded-[8px]  w-full h-[68px] lg:h-[68px] lg:h-[88px] overflow-hidden">
