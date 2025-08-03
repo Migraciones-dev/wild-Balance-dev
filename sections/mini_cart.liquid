@@ -282,20 +282,6 @@
             <div data-cart-items class="t4s-mini_cart__items t4s_ratioadapt !bg-[#F4F0E2]">
               {%- if ccount > 0 -%}
                 {%- for item in cart.items -%}
-                  {% if item.properties['Suscripción'] %}
-                    sub
-                  {% else %}
-                    {%- render 'cart-item',
-                      item: item,
-                      gift_pr_id: gift_pr_id,
-                      min_qty: min_qty,
-                      compare_tt_price: compare_tt_price,
-                      cart_change_url: cart_change_url,
-                      edit_item: edit_item,
-                      atc_ajax_enable: atc_ajax_enable,
-                      cart_ajax_enable: cart_ajax_enable
-                    -%}
-                  {% endif %}
                 {%- endfor -%}
               {%- else -%}
                 <div class="t4s-mini_cart__emty">
