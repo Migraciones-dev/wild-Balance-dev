@@ -73,10 +73,35 @@
                   <div class="flex flex-row gap-12">
                     <div class="w-1/5 flex flex-col">
                       {% if bk_stts.menu != blank and linklists[bk_stts.menu].links != blank %}
-                        <ul class="mega-menu-links">
+                        <ul class="mega-menu-links grid grid-cols-{{ linklists[bk_stts.menu].links.size }} gap-4">
                           {% for link in linklists[bk_stts.menu].links %}
-                            <li>
-                              <a href="{{ link.url }}">{{ link.title }}</a>
+                            {%- comment -%} Al principio del loop, determinamos el objeto y su imagen {%- endcomment -%}
+                            {% assign image_src = blank %}
+                            {% if link.type == 'collection' %}
+                              {% assign obj = collections[link.handle] %}
+                            {% elsif link.type == 'page' %}
+                              {% assign obj = pages[link.handle] %}
+                            {% endif %}
+
+                            {% if obj and obj.metafields.custom.imagen_para_el_mega_menu != blank %}
+                              {% assign image_src = obj.metafields.custom.imagen_para_el_mega_menu
+                                | img_url: '300x300'
+                              %}
+                            {% endif %}
+
+                            <li class="mega-menu-item text-center">
+                              <a href="{{ link.url }}" class="block">
+                                {% if image_src %}
+                                  <img
+                                    src="{{ image_src }}"
+                                    alt="{{ link.title }}"
+                                    class="mx-auto mb-2 w-[134px] h-[117px] object-cover rounded-[8px] border border-[#D9D9C8] shadow-sm"
+                                  >
+                                {% endif %}
+                                <span class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-[15px] leading-[21.6px]">
+                                  {{ link.title }}
+                                </span>
+                              </a>
                             </li>
                           {% endfor %}
                         </ul>
