@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
+  var header = document.getElementById('shopify-section-header-inline');
+  if (header) {
+    document.documentElement.style.setProperty('--header-height', header.offsetHeight + 'px');
+  }
+
   var drawer = document.getElementById('mobile-menu-drawer');
   if (!drawer) return;
   var triggers = document.querySelectorAll('[data-mobile-menu-trigger]');

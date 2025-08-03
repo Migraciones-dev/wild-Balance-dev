@@ -91,6 +91,7 @@
             </div>
             {%- when 'nav' -%}
                   <div class="t4s-toolbart-{{ block_type }} t4s-toolbar-item">
+                      <a href="{{ routes.root_url }}" class="t4s-push-menu-btn" data-mobile-menu-trigger>
                       <a href="{{ routes.root_url }}" data-menu-drawer data-drawer-options='{ "id": "#mobile-menu-drawer" }' class="t4s-push-menu-btn" data-mobile-menu-trigger>
                           <span class="t4s-toolbar-icon">
                           <svg class="icon-hamburger" xmlns="http://www.w3.org/2000/svg" width="30" height="16" viewBox="0 0 30 16" fill="currentColor"><rect width="25" height="2"></rect><rect y="7" width="25" height="2"></rect><rect y="14" width="25" height="2"></rect></svg>
