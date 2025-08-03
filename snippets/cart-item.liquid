@@ -78,6 +78,7 @@
           {%- else -%}
             {{ item.original_price | money }}
           {%- endif -%}
+          - {{ option.value }}
         </div>
         {%- if item.line_level_discount_allocations != blank -%}
           <ul class="t4s-cart_discount_price">
