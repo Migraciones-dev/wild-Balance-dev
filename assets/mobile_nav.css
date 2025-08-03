@@ -16,6 +16,34 @@
    display: block;
 }
 
+#mobile-menu-drawer{
+    position: fixed;
+    top: var(--header-height,0);
+    left: 0;
+    width: 100%;
+    height: calc(100vh - var(--header-height,0));
+    background: #fff;
+    transform: translateY(-100%);
+    transition: transform .3s ease;
+    z-index: 1000;
+}
+
+#mobile-menu-drawer.is-open{
+    transform: translateY(0);
+}
+
+.t4s-push-menu-btn .icon-close{
+    display:none;
+}
+
+.t4s-push-menu-btn.is-open .icon-hamburger{
+    display:none;
+}
+
+.t4s-push-menu-btn.is-open .icon-close{
+    display:inline;
+}
+
 /* CUSTOM CSS */
 #t4s-menu-drawer{
     overflow-y: auto;
