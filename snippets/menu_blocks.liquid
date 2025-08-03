@@ -92,11 +92,13 @@
                         >
                           <!-- Imagen -->
                           <div class="flex-shrink-0 w-[134px] h-full">
-                            <img
-                              src="{{ obj.metafields.custom.imagen_para_el_mega_menu | file_url }}"
-                              alt="{{ link.title }}"
-                              class="w-full h-full object-cover p-2 rounded-[8px] "
-                            >
+                            {% if obj.metafields.custom.imagen_para_el_mega_menu %}
+                              <img
+                                src="{{ obj.metafields.custom.imagen_para_el_mega_menu | file_url }}"
+                                alt="{{ link.title }}"
+                                class="w-full h-full object-cover p-2 rounded-[8px] "
+                              >
+                            {% endif %}
                           </div>
                           <!-- Texto -->
                           <div class="flex-1 pl-4 [font-family:'Barlow',Helvetica]  text-[#004623] px-6">
