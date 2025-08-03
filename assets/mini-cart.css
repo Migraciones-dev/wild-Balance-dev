@@ -395,7 +395,7 @@ html:not(.t4s-cart-count-0) .t4s-when-cart-emty {
     background-color: var(--t4s-light-color);
 }
 .t4s-mini_cart__item{
-    border-bottom: solid 1px var(--border-color);
+    /*border-bottom: solid 1px var(--border-color);*/
     padding-bottom: 15px;
     padding-top: 15px;
 }
