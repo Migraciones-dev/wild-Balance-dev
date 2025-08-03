@@ -306,6 +306,7 @@
           },
           "drop_aQhEJ7": {
             "type": "drop",
+            "disabled": true,
             "settings": {
               "title": "PLAN SUSCRIPCIÓN",
               "url": "https://wildbalance.es/apps/subscriptions/bb/pAyyR402",
