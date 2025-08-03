@@ -1,1 +1,709 @@
-{"sections":{"heading":{"type":"heading-template","disabled":true,"settings":{"parallax":false,"color":"#000000","overlay":0,"padding_top":50,"padding_bottom":50,"mg_b":50,"padding_top_tb":50,"padding_bottom_tb":50,"mg_btb":50,"padding_top_mb":50,"padding_bottom_mb":50,"mg_bmb":50,"box_border":"top_bottom","bg_pos":"center center","bg_repeat":"no-repeat","bg_size":"cover"}},"main":{"type":"main-page","disabled":true,"settings":{"layout":"t4s-container-wrap","cl_bg":"","cl_bg_gradient":"","mg":"60px,,60px,","pd":"","mg_tb":",,50px,","pd_tb":"","mg_mb":",,30px,","pd_mb":""}},"custom_section_rQA6Pz":{"type":"custom-section","blocks":{"bl_col_XbUgiM":{"type":"bl_col","settings":{"col_dk":"6","col_dk_w":"33.33333","col_tb":"6","col_dk_w_tb":"33.33333","col_mb":"12","align_vertical":false,"content_align":"start","content_align_tablet":"start","content_align_mobile":"start","padding_inner":"40px,40px,40px,40px,","padding_inner_tb":"20px,20px,20px,20px,","padding_inner_mb":"20px,20px,20px,20px,","round_inner":"10px,10px,10px,10px","round_tb_inner":"10px,10px,10px,10px","round_mb_inner":"10px,10px,10px,10px","bg_cl":"#faf5e7","time_animation":1,"animation_delay":40}},"custom_text_LLfP4V":{"type":"custom_text","settings":{"text":"La tragedia actual en la alimentación de nuestras mascotas","remove_br_tag":false,"tag":"h2","fontf":"2","text_cl":"#00774f","text_fs":30,"text_lh":0,"text_fw":900,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":10,"text_fs_tb":30,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":30,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}},"custom_text_qhGwyt":{"type":"custom_text","settings":{"text":"Quizás te sorprenderá saber que a pesar de los numerosos avances en el sector alimentario y en el campo veterinario la mayoría de nuestras queridas mascotas sufren los siguientes devastadores problemas.","remove_br_tag":false,"tag":"p","fontf":"1","text_cl":"#00774f","text_fs":16,"text_lh":20,"text_fw":400,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":10,"text_fs_tb":16,"text_lh_tb":20,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":16,"text_lh_mb":20,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}},"custom_text_fiRJqG":{"type":"custom_text","settings":{"text":"Una alimentación natural adecuada a su especie aumenta su esperanza de vida en un 25%. ¿Sabes lo que eso significa? Que los tendrás a tu lado muchos años más.","remove_br_tag":false,"tag":"p","fontf":"1","text_cl":"#00774f","text_fs":14,"text_lh":20,"text_fw":400,"text_ls":0,"font_italic":true,"text_shadow":false,"mgb":10,"text_fs_tb":14,"text_lh_tb":20,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":14,"text_lh_mb":20,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}}},"block_order":["bl_col_XbUgiM","custom_text_LLfP4V","custom_text_qhGwyt","custom_text_fiRJqG"],"settings":{"space_h_item":"0","space_v_item":"0","space_h_item_tb":"0","space_v_item_tb":"0","space_h_item_mb":"0","space_v_item_mb":"0","layout":"t4s-container-wrap","cl_bg":"","cl_bg_gradient":"","image_bg":"shopify:\/\/shop_images\/WB-cms-filosofia1.jpg","mg":",,0px,","pd":"150px,50px,150px,50px,","mg_tb":",,0px,","pd_tb":"20px,20px,20px,20px,","mg_mb":",,0px,","pd_mb":"40px,10px,400px,10px,"}},"shipping_gphFP8":{"type":"shipping","blocks":{"shipping_dq4Wxq":{"type":"shipping","settings":{"icon_themes":"box1","image_icon":"shopify:\/\/shop_images\/cancer.png","icon":"las la-truck","title":"Cáncer","text":"<p>Más de 1 de cada 4 perros sufrirá cáncer en algún momento de su vida, algunos en etapas tempranas de su vida. En los gatos es aún peor con 1 de cada 3 destinados a padecer esta horrible enfermedad.<\/p>"}},"shipping_gWfKc8":{"type":"shipping","settings":{"icon_themes":"box2","image_icon":"shopify:\/\/shop_images\/peso.png","icon":"las la-redo-alt","title":"Obesidad","text":"<p>En la actualidad más de la mitad de nuestros perros y gatos padecen de sobrepeso y obesidad.<\/p>"}},"shipping_JgAgL9":{"type":"shipping","settings":{"icon_themes":"shield1","image_icon":"shopify:\/\/shop_images\/dental.png","icon":"las la-shield-alt","title":"Salud dental","text":"<p>La gran mayoría de nuestras mascotas padecen de una pobre salud dental, sufriendo graves problemas de sarros y encías.<\/p>"}},"shipping_Y46yNF":{"type":"shipping","settings":{"icon_themes":"customer-service","image_icon":"shopify:\/\/shop_images\/esperanza.png","icon":"las la-phone","title":"Esperanza de vida","text":"<p>Todos estos problemas están provocando una disminución en la esperanza de vida de nuestros pequeños y que podamos disfrutar menos de su compañía.<\/p>"}}},"block_order":["shipping_dq4Wxq","shipping_gWfKc8","shipping_JgAgL9","shipping_Y46yNF"],"settings":{"design_heading":"1","block_custom_class":"","heading_center":true,"top_heading":"El problema actual de la alimentación de mascotas","top_subheading":"<p>ESTO ES LO QUE PASA AHORA MISMO<\/p>","tophead_mb":30,"tophead_mb_tb":30,"tophead_mb_mb":25,"content_align":"text-center","align_vertical":false,"align_horizontal":true,"divided":false,"src_icon":"get_image","icon_size":"medium","icon_effect":"none","col_dk":"4","col_tb":"2","col_mb":"2","icon_cl":"#00774f","hd_cl":"#00774f","content_cl":"#00774f","bg_wrap_cl":"#ffffff","hd_fs":16,"hd_fw":800,"txt_fs":16,"space_h_item":"20","space_v_item":"10","space_h_item_tb":"15","space_v_item_tb":"15","space_h_item_mb":"10","space_v_item_mb":"10","padding_inner":"20px,20px,20px,20px","padding_inner_tb":"20px,20px,20px,20px","padding_inner_mb":"20px,10px,20px,10px","carousel_mobile":false,"dots_cl":"dark","dots_round":true,"layout":"t4s-cus-width","custom_width":1150,"cl_bg":"#cae6c8","cl_bg_gradient":"","mg":",,50px,","pd":"50px,,80px,","mg_tb":",,50px,","pd_tb":"40px,,40px,","mg_mb":",,30px,","pd_mb":"40px,,40px,"}},"feature_columns_xhN9WG":{"type":"feature-columns","blocks":{"text_block_djjmt3":{"type":"text_block","settings":{"enable_image":false,"title":"¿Por qué comer Wild Balance?","text":"<p><\/p><p>Con Wild Balance puedes mejorar la salud de tu mascota con una alimentación basada en productos frescos, naturales y de temporada, exactamente en las proporciones dictadas por la naturaleza y que se conoce como dieta BARF.<\/p>","button_label":"","button_link":"","open_link":"_blank","btn_icon":false,"button_style":"default","btn_size":"default","btn_cl":"dark","button_effect":"fade"}},"text_block_WnDcfB":{"type":"text_block","settings":{"enable_image":true,"image":"shopify:\/\/shop_images\/WB-cms-filosofia2.jpg","title":"","text":"<h3>Calidad<\/h3><p>Sólo se puede hacer el mejor producto si se utilizan los mejores ingredientes. Trabajamos con productores locales para conseguir ingredientes de alta calidad y ‘Km0’.<\/p>","button_label":"","button_link":"","open_link":"_blank","btn_icon":false,"button_style":"default","btn_size":"default","btn_cl":"dark","button_effect":"fade"}},"text_block_H8TtgX":{"type":"text_block","settings":{"enable_image":true,"image":"shopify:\/\/shop_images\/WB-cms-filosofia3.jpg","title":"","text":"<h3>Comodidad<\/h3><p>Gracias a nuestro revolucionario método puedes darle alimentación natural BARF a tu peludo de la forma más cómoda.<\/p>","button_label":"","button_link":"","open_link":"_blank","btn_icon":false,"button_style":"default","btn_size":"default","btn_cl":"dark","button_effect":"fade"}},"text_block_D6y78X":{"type":"text_block","settings":{"enable_image":true,"image":"shopify:\/\/shop_images\/logistica.jpg","title":"","text":"<h3>Seguridad<\/h3><p>Nos tomamos muy en serio la seguridad alimentaria, por lo que todos nuestros productos pasan innumerables controles de calidad y análisis periódicos de laboratorio.<\/p>","button_label":"","button_link":"","open_link":"_blank","btn_icon":false,"button_style":"default","btn_size":"default","btn_cl":"dark","button_effect":"fade"}}},"block_order":["text_block_djjmt3","text_block_WnDcfB","text_block_H8TtgX","text_block_D6y78X"],"settings":{"design_heading":"1","heading_center":true,"top_heading":"","top_subheading":"","tophead_mb":30,"tophead_mb_tb":30,"tophead_mb_mb":25,"text_align":"start","pos_text":"alt","fs_title":22,"fs_text":14,"fs_title_mb":22,"fs_text_mb":12,"image_ratio":"ratio16_9","image_size":"cover","image_position":"8","img_effect":"none","b_effect":"none","layout_des":"1","space_h_item":"30","space_v_item":"30","space_h_item_tb":"20","space_v_item_tb":"20","space_h_item_mb":"10","space_v_item_mb":"10","col_dk":"2","col_tb":"2","col_mb":"1","loop":true,"au_time":0,"au_hover":true,"nav_btn":false,"btn_pos":"in","btn_distance":15,"btn_vi":"hover","btn_owl":"default","btn_shape":"none","btn_cl":"dark","btn_size":"small","btn_hidden_mobile":true,"nav_dot":false,"dot_owl":"default","dots_cl":"dark","dots_round":true,"dots_space":10,"dots_hidden_mobile":false,"layout":"t4s-container-wrap","cl_bg":"","cl_bg_gradient":"","mg":"50px,,50px,","pd":"","mg_tb":",,50px,","pd_tb":"","mg_mb":",,30px,","pd_mb":""}},"shipping_ryi4aj":{"type":"shipping","blocks":{"shipping_pQKD6U":{"type":"shipping","settings":{"icon_themes":"box1","image_icon":"shopify:\/\/shop_images\/ICONOS-WB-06.svg","icon":"las la-truck","title":"","text":"<p>Mejora la salud de tu mascota<\/p>"}},"shipping_4t3YGx":{"type":"shipping","settings":{"icon_themes":"box1","image_icon":"shopify:\/\/shop_images\/ICONOS-WB-05.svg","icon":"las la-truck","title":"","text":"<p>Combate la obesidad<\/p>"}},"shipping_mwpqV6":{"type":"shipping","settings":{"icon_themes":"box1","image_icon":"shopify:\/\/shop_images\/ICONOS-WB-07.svg","icon":"las la-truck","title":"","text":"<p>Mejora el bienestar general<\/p>"}},"shipping_XUwhBw":{"type":"shipping","settings":{"icon_themes":"box1","image_icon":"shopify:\/\/shop_images\/ICONOS-WB-10.svg","icon":"las la-truck","title":"","text":"<p>Aumenta la energía y vitalidad<\/p>"}},"shipping_mdCqTp":{"type":"shipping","settings":{"icon_themes":"box1","image_icon":"shopify:\/\/shop_images\/ICONOS-WB-04.svg","icon":"las la-truck","title":"","text":"<p>Ayuda a mantener el peso ideal<\/p>"}},"shipping_QEYQe3":{"type":"shipping","settings":{"icon_themes":"box1","image_icon":"shopify:\/\/shop_images\/ICONOS-WB-03.svg","icon":"las la-truck","title":"","text":"<p>Piel más sana y pelo más brillante<\/p>"}},"shipping_aeh3x6":{"type":"shipping","settings":{"icon_themes":"box1","image_icon":"shopify:\/\/shop_images\/ICONOS-WB-08.svg","icon":"las la-truck","title":"","text":"<p>Reducción del olor<\/p>"}},"shipping_fLGMw6":{"type":"shipping","settings":{"icon_themes":"box1","image_icon":"shopify:\/\/shop_images\/ICONOS-WB-02.svg","icon":"las la-truck","title":"","text":"<p>Mejor salud dental y disminución de sarro<\/p>"}},"shipping_9rnrGk":{"type":"shipping","settings":{"icon_themes":"box1","image_icon":"shopify:\/\/shop_images\/ICONOS-WB-09.svg","icon":"las la-truck","title":"","text":"<p>Mejora la digestión<\/p>"}},"shipping_eV4BzU":{"type":"shipping","settings":{"icon_themes":"box1","image_icon":"shopify:\/\/shop_images\/ICONOS-WB_01.svg","icon":"las la-truck","title":"","text":"<p>Mejora el nivel de hidratación<\/p>"}}},"block_order":["shipping_pQKD6U","shipping_4t3YGx","shipping_mwpqV6","shipping_XUwhBw","shipping_mdCqTp","shipping_QEYQe3","shipping_aeh3x6","shipping_fLGMw6","shipping_9rnrGk","shipping_eV4BzU"],"settings":{"design_heading":"1","block_custom_class":"","heading_center":true,"top_heading":"Beneficios","top_subheading":"<p>Con Wild Balance puedes mejorar la salud de tu mascota con una alimentación basada en productos frescos, naturales y de temporada, exactamente en las proporciones dictadas por la naturaleza y que se conoce como dieta BARF.<\/p>","tophead_mb":30,"tophead_mb_tb":30,"tophead_mb_mb":25,"content_align":"text-center","align_vertical":false,"align_horizontal":true,"divided":false,"src_icon":"get_image","icon_size":"medium","icon_effect":"none","col_dk":"5","col_tb":"3","col_mb":"2","icon_cl":"#00774f","hd_cl":"#00774f","content_cl":"#00774f","bg_wrap_cl":"#ffffff","hd_fs":16,"hd_fw":800,"txt_fs":16,"space_h_item":"20","space_v_item":"10","space_h_item_tb":"15","space_v_item_tb":"15","space_h_item_mb":"10","space_v_item_mb":"10","padding_inner":"20px,20px,20px,20px","padding_inner_tb":"20px,20px,20px,20px","padding_inner_mb":"20px,10px,20px,10px","carousel_mobile":true,"dots_cl":"primary","dots_round":true,"layout":"t4s-cus-width","custom_width":1150,"cl_bg":"#cae6c8","cl_bg_gradient":"","mg":",,0px,","pd":"50px,,80px,","mg_tb":",,0px,","pd_tb":"40px,,40px,","mg_mb":",,0px,","pd_mb":"40px,,40px,"}},"custom_section_mtPQHk":{"type":"custom-section","blocks":{"bl_col_FPnzww":{"type":"bl_col","settings":{"col_dk":"6","col_dk_w":"33.33333","col_tb":"6","col_dk_w_tb":"33.33333","col_mb":"12","align_vertical":false,"content_align":"start","content_align_tablet":"start","content_align_mobile":"start","padding_inner":"40px,40px,40px,40px,","padding_inner_tb":"20px,20px,20px,20px,","padding_inner_mb":"20px,20px,20px,20px,","round_inner":"10px,10px,10px,10px","round_tb_inner":"10px,10px,10px,10px","round_mb_inner":"10px,10px,10px,10px","bg_cl":"#faf5e7","time_animation":1,"animation_delay":40}},"custom_text_zpWBmj":{"type":"custom_text","settings":{"text":"¿De dónde vienen nuestros ingredientes?","remove_br_tag":false,"tag":"h2","fontf":"2","text_cl":"#00774f","text_fs":30,"text_lh":0,"text_fw":900,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":20,"text_fs_tb":30,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":20,"hidden_mobile":false,"text_fs_mb":30,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":20,"animation":"none"}},"custom_button_9riPG9":{"type":"custom_button","settings":{"button_text":"Ver el origen de nuestros ingredientes","button_link":"shopify:\/\/pages\/ingredientes","target_link":"_self","fontf":"1","button_icon_w":0,"button_style":"default","border_w":1,"button_effect":"default","pri_cl":"#ffcd00","second_cl":"#00774f","pri_cl_hover":"#00774f","second_cl_hover":"#ffffff","fsbutton":16,"fwbutton":500,"button_ls":0,"button_mh":41,"button_bdr":40,"button_pd_lr":30,"mgb":0,"button_icon_w_tb":0,"fsbutton_tb":16,"button_mh_tb":40,"button_pd_lr_tb":15,"button_ls_tb":0,"mgb_tb":0,"hidden_mobile":false,"button_icon_w_mb":0,"fsbutton_mb":16,"button_mh_mb":50,"button_pd_lr_mb":15,"button_ls_mb":0,"mgb_mb":0,"animation":"none"}}},"block_order":["bl_col_FPnzww","custom_text_zpWBmj","custom_button_9riPG9"],"settings":{"space_h_item":"0","space_v_item":"0","space_h_item_tb":"0","space_v_item_tb":"0","space_h_item_mb":"0","space_v_item_mb":"0","layout":"t4s-container-wrap","cl_bg":"","cl_bg_gradient":"","image_bg":"shopify:\/\/shop_images\/posterhistoria.jpg","mg":",,0px,","pd":"50px,50px,50px,50px,","mg_tb":",,0px,","pd_tb":"20px,20px,20px,20px,","mg_mb":",,0px,","pd_mb":"20px,10px,100px,10px,"}}},"order":["heading","main","custom_section_rQA6Pz","shipping_gphFP8","feature_columns_xhN9WG","shipping_ryi4aj","custom_section_mtPQHk"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "heading": {
+      "type": "heading-template",
+      "disabled": true,
+      "settings": {
+        "parallax": false,
+        "color": "#000000",
+        "overlay": 0,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "mg_b": 50,
+        "padding_top_tb": 50,
+        "padding_bottom_tb": 50,
+        "mg_btb": 50,
+        "padding_top_mb": 50,
+        "padding_bottom_mb": 50,
+        "mg_bmb": 50,
+        "box_border": "top_bottom",
+        "bg_pos": "center center",
+        "bg_repeat": "no-repeat",
+        "bg_size": "cover"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": "60px,,60px,",
+        "pd": "",
+        "mg_tb": ",,50px,",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": ""
+      }
+    },
+    "custom_section_rQA6Pz": {
+      "type": "custom-section",
+      "blocks": {
+        "bl_col_XbUgiM": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "6",
+            "col_dk_w": "33.33333",
+            "col_tb": "6",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": false,
+            "content_align": "start",
+            "content_align_tablet": "start",
+            "content_align_mobile": "start",
+            "padding_inner": "40px,40px,40px,40px,",
+            "padding_inner_tb": "20px,20px,20px,20px,",
+            "padding_inner_mb": "20px,20px,20px,20px,",
+            "round_inner": "10px,10px,10px,10px",
+            "round_tb_inner": "10px,10px,10px,10px",
+            "round_mb_inner": "10px,10px,10px,10px",
+            "bg_cl": "#faf5e7",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_LLfP4V": {
+          "type": "custom_text",
+          "settings": {
+            "text": "La tragedia actual en la alimentación de nuestras mascotas",
+            "remove_br_tag": false,
+            "tag": "h2",
+            "fontf": "2",
+            "text_cl": "#004623",
+            "text_fs": 30,
+            "text_lh": 0,
+            "text_fw": 900,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 10,
+            "text_fs_tb": 30,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 30,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_qhGwyt": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Quizás te sorprenderá saber que a pesar de los numerosos avances en el sector alimentario y en el campo veterinario la mayoría de nuestras queridas mascotas sufren los siguientes devastadores problemas.",
+            "remove_br_tag": false,
+            "tag": "p",
+            "fontf": "1",
+            "text_cl": "#004623",
+            "text_fs": 16,
+            "text_lh": 20,
+            "text_fw": 400,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 10,
+            "text_fs_tb": 16,
+            "text_lh_tb": 20,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 16,
+            "text_lh_mb": 20,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_fiRJqG": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Una alimentación natural adecuada a su especie aumenta su esperanza de vida en un 25%. ¿Sabes lo que eso significa? Que los tendrás a tu lado muchos años más.",
+            "remove_br_tag": false,
+            "tag": "p",
+            "fontf": "1",
+            "text_cl": "#004623",
+            "text_fs": 14,
+            "text_lh": 20,
+            "text_fw": 400,
+            "text_ls": 0,
+            "font_italic": true,
+            "text_shadow": false,
+            "mgb": 10,
+            "text_fs_tb": 14,
+            "text_lh_tb": 20,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 14,
+            "text_lh_mb": 20,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        }
+      },
+      "block_order": [
+        "bl_col_XbUgiM",
+        "custom_text_LLfP4V",
+        "custom_text_qhGwyt",
+        "custom_text_fiRJqG"
+      ],
+      "settings": {
+        "space_h_item": "0",
+        "space_v_item": "0",
+        "space_h_item_tb": "0",
+        "space_v_item_tb": "0",
+        "space_h_item_mb": "0",
+        "space_v_item_mb": "0",
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "image_bg": "shopify://shop_images/WB-cms-filosofia1.jpg",
+        "mg": ",,0px,",
+        "pd": "150px,50px,150px,50px,",
+        "mg_tb": ",,0px,",
+        "pd_tb": "20px,20px,20px,20px,",
+        "mg_mb": ",,0px,",
+        "pd_mb": "40px,10px,400px,10px,"
+      }
+    },
+    "shipping_gphFP8": {
+      "type": "shipping",
+      "blocks": {
+        "shipping_dq4Wxq": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "box1",
+            "image_icon": "shopify://shop_images/cancer.png",
+            "icon": "las la-truck",
+            "title": "Cáncer",
+            "text": "<p>Más de 1 de cada 4 perros sufrirá cáncer en algún momento de su vida, algunos en etapas tempranas de su vida. En los gatos es aún peor con 1 de cada 3 destinados a padecer esta horrible enfermedad.</p>"
+          }
+        },
+        "shipping_gWfKc8": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "box2",
+            "image_icon": "shopify://shop_images/peso.png",
+            "icon": "las la-redo-alt",
+            "title": "Obesidad",
+            "text": "<p>En la actualidad más de la mitad de nuestros perros y gatos padecen de sobrepeso y obesidad.</p>"
+          }
+        },
+        "shipping_JgAgL9": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "shield1",
+            "image_icon": "shopify://shop_images/dental.png",
+            "icon": "las la-shield-alt",
+            "title": "Salud dental",
+            "text": "<p>La gran mayoría de nuestras mascotas padecen de una pobre salud dental, sufriendo graves problemas de sarros y encías.</p>"
+          }
+        },
+        "shipping_Y46yNF": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "customer-service",
+            "image_icon": "shopify://shop_images/esperanza.png",
+            "icon": "las la-phone",
+            "title": "Esperanza de vida",
+            "text": "<p>Todos estos problemas están provocando una disminución en la esperanza de vida de nuestros pequeños y que podamos disfrutar menos de su compañía.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "shipping_dq4Wxq",
+        "shipping_gWfKc8",
+        "shipping_JgAgL9",
+        "shipping_Y46yNF"
+      ],
+      "settings": {
+        "design_heading": "1",
+        "block_custom_class": "",
+        "heading_center": true,
+        "top_heading": "El problema actual de la alimentación de mascotas",
+        "top_subheading": "<p>ESTO ES LO QUE PASA AHORA MISMO</p>",
+        "tophead_mb": 30,
+        "tophead_mb_tb": 30,
+        "tophead_mb_mb": 25,
+        "content_align": "text-center",
+        "align_vertical": false,
+        "align_horizontal": true,
+        "divided": false,
+        "src_icon": "get_image",
+        "icon_size": "medium",
+        "icon_effect": "none",
+        "col_dk": "4",
+        "col_tb": "2",
+        "col_mb": "2",
+        "icon_cl": "#004623",
+        "hd_cl": "#004623",
+        "content_cl": "#004623",
+        "bg_wrap_cl": "#ffffff",
+        "hd_fs": 16,
+        "hd_fw": 800,
+        "txt_fs": 16,
+        "space_h_item": "20",
+        "space_v_item": "10",
+        "space_h_item_tb": "15",
+        "space_v_item_tb": "15",
+        "space_h_item_mb": "10",
+        "space_v_item_mb": "10",
+        "padding_inner": "20px,20px,20px,20px",
+        "padding_inner_tb": "20px,20px,20px,20px",
+        "padding_inner_mb": "20px,10px,20px,10px",
+        "carousel_mobile": false,
+        "dots_cl": "dark",
+        "dots_round": true,
+        "layout": "t4s-cus-width",
+        "custom_width": 1150,
+        "cl_bg": "#cae6c8",
+        "cl_bg_gradient": "",
+        "mg": ",,50px,",
+        "pd": "50px,,80px,",
+        "mg_tb": ",,50px,",
+        "pd_tb": "40px,,40px,",
+        "mg_mb": ",,30px,",
+        "pd_mb": "40px,,40px,"
+      }
+    },
+    "feature_columns_xhN9WG": {
+      "type": "feature-columns",
+      "blocks": {
+        "text_block_djjmt3": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": false,
+            "title": "¿Por qué comer Wild Balance?",
+            "text": "<p></p><p>Con Wild Balance puedes mejorar la salud de tu mascota con una alimentación basada en productos frescos, naturales y de temporada, exactamente en las proporciones dictadas por la naturaleza y que se conoce como dieta BARF.</p>",
+            "button_label": "",
+            "button_link": "",
+            "open_link": "_blank",
+            "btn_icon": false,
+            "button_style": "default",
+            "btn_size": "default",
+            "btn_cl": "dark",
+            "button_effect": "fade"
+          }
+        },
+        "text_block_WnDcfB": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/WB-cms-filosofia2.jpg",
+            "title": "",
+            "text": "<h3>Calidad</h3><p>Sólo se puede hacer el mejor producto si se utilizan los mejores ingredientes. Trabajamos con productores locales para conseguir ingredientes de alta calidad y ‘Km0’.</p>",
+            "button_label": "",
+            "button_link": "",
+            "open_link": "_blank",
+            "btn_icon": false,
+            "button_style": "default",
+            "btn_size": "default",
+            "btn_cl": "dark",
+            "button_effect": "fade"
+          }
+        },
+        "text_block_H8TtgX": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/WB-cms-filosofia3.jpg",
+            "title": "",
+            "text": "<h3>Comodidad</h3><p>Gracias a nuestro revolucionario método puedes darle alimentación natural BARF a tu peludo de la forma más cómoda.</p>",
+            "button_label": "",
+            "button_link": "",
+            "open_link": "_blank",
+            "btn_icon": false,
+            "button_style": "default",
+            "btn_size": "default",
+            "btn_cl": "dark",
+            "button_effect": "fade"
+          }
+        },
+        "text_block_D6y78X": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/logistica.jpg",
+            "title": "",
+            "text": "<h3>Seguridad</h3><p>Nos tomamos muy en serio la seguridad alimentaria, por lo que todos nuestros productos pasan innumerables controles de calidad y análisis periódicos de laboratorio.</p>",
+            "button_label": "",
+            "button_link": "",
+            "open_link": "_blank",
+            "btn_icon": false,
+            "button_style": "default",
+            "btn_size": "default",
+            "btn_cl": "dark",
+            "button_effect": "fade"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_djjmt3",
+        "text_block_WnDcfB",
+        "text_block_H8TtgX",
+        "text_block_D6y78X"
+      ],
+      "settings": {
+        "design_heading": "1",
+        "heading_center": true,
+        "top_heading": "",
+        "top_subheading": "",
+        "tophead_mb": 30,
+        "tophead_mb_tb": 30,
+        "tophead_mb_mb": 25,
+        "text_align": "start",
+        "pos_text": "alt",
+        "fs_title": 22,
+        "fs_text": 14,
+        "fs_title_mb": 22,
+        "fs_text_mb": 12,
+        "image_ratio": "ratio16_9",
+        "image_size": "cover",
+        "image_position": "8",
+        "img_effect": "none",
+        "b_effect": "none",
+        "layout_des": "1",
+        "space_h_item": "30",
+        "space_v_item": "30",
+        "space_h_item_tb": "20",
+        "space_v_item_tb": "20",
+        "space_h_item_mb": "10",
+        "space_v_item_mb": "10",
+        "col_dk": "2",
+        "col_tb": "2",
+        "col_mb": "1",
+        "loop": true,
+        "au_time": 0,
+        "au_hover": true,
+        "nav_btn": false,
+        "btn_pos": "in",
+        "btn_distance": 15,
+        "btn_vi": "hover",
+        "btn_owl": "default",
+        "btn_shape": "none",
+        "btn_cl": "dark",
+        "btn_size": "small",
+        "btn_hidden_mobile": true,
+        "nav_dot": false,
+        "dot_owl": "default",
+        "dots_cl": "dark",
+        "dots_round": true,
+        "dots_space": 10,
+        "dots_hidden_mobile": false,
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": "50px,,50px,",
+        "pd": "",
+        "mg_tb": ",,50px,",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": ""
+      }
+    },
+    "shipping_ryi4aj": {
+      "type": "shipping",
+      "blocks": {
+        "shipping_pQKD6U": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "box1",
+            "image_icon": "shopify://shop_images/ICONOS-WB-06.svg",
+            "icon": "las la-truck",
+            "title": "",
+            "text": "<p>Mejora la salud de tu mascota</p>"
+          }
+        },
+        "shipping_4t3YGx": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "box1",
+            "image_icon": "shopify://shop_images/ICONOS-WB-05.svg",
+            "icon": "las la-truck",
+            "title": "",
+            "text": "<p>Combate la obesidad</p>"
+          }
+        },
+        "shipping_mwpqV6": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "box1",
+            "image_icon": "shopify://shop_images/ICONOS-WB-07.svg",
+            "icon": "las la-truck",
+            "title": "",
+            "text": "<p>Mejora el bienestar general</p>"
+          }
+        },
+        "shipping_XUwhBw": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "box1",
+            "image_icon": "shopify://shop_images/ICONOS-WB-10.svg",
+            "icon": "las la-truck",
+            "title": "",
+            "text": "<p>Aumenta la energía y vitalidad</p>"
+          }
+        },
+        "shipping_mdCqTp": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "box1",
+            "image_icon": "shopify://shop_images/ICONOS-WB-04.svg",
+            "icon": "las la-truck",
+            "title": "",
+            "text": "<p>Ayuda a mantener el peso ideal</p>"
+          }
+        },
+        "shipping_QEYQe3": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "box1",
+            "image_icon": "shopify://shop_images/ICONOS-WB-03.svg",
+            "icon": "las la-truck",
+            "title": "",
+            "text": "<p>Piel más sana y pelo más brillante</p>"
+          }
+        },
+        "shipping_aeh3x6": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "box1",
+            "image_icon": "shopify://shop_images/ICONOS-WB-08.svg",
+            "icon": "las la-truck",
+            "title": "",
+            "text": "<p>Reducción del olor</p>"
+          }
+        },
+        "shipping_fLGMw6": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "box1",
+            "image_icon": "shopify://shop_images/ICONOS-WB-02.svg",
+            "icon": "las la-truck",
+            "title": "",
+            "text": "<p>Mejor salud dental y disminución de sarro</p>"
+          }
+        },
+        "shipping_9rnrGk": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "box1",
+            "image_icon": "shopify://shop_images/ICONOS-WB-09.svg",
+            "icon": "las la-truck",
+            "title": "",
+            "text": "<p>Mejora la digestión</p>"
+          }
+        },
+        "shipping_eV4BzU": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "box1",
+            "image_icon": "shopify://shop_images/ICONOS-WB_01.svg",
+            "icon": "las la-truck",
+            "title": "",
+            "text": "<p>Mejora el nivel de hidratación</p>"
+          }
+        }
+      },
+      "block_order": [
+        "shipping_pQKD6U",
+        "shipping_4t3YGx",
+        "shipping_mwpqV6",
+        "shipping_XUwhBw",
+        "shipping_mdCqTp",
+        "shipping_QEYQe3",
+        "shipping_aeh3x6",
+        "shipping_fLGMw6",
+        "shipping_9rnrGk",
+        "shipping_eV4BzU"
+      ],
+      "settings": {
+        "design_heading": "1",
+        "block_custom_class": "",
+        "heading_center": true,
+        "top_heading": "Beneficios",
+        "top_subheading": "<p>Con Wild Balance puedes mejorar la salud de tu mascota con una alimentación basada en productos frescos, naturales y de temporada, exactamente en las proporciones dictadas por la naturaleza y que se conoce como dieta BARF.</p>",
+        "tophead_mb": 30,
+        "tophead_mb_tb": 30,
+        "tophead_mb_mb": 25,
+        "content_align": "text-center",
+        "align_vertical": false,
+        "align_horizontal": true,
+        "divided": false,
+        "src_icon": "get_image",
+        "icon_size": "medium",
+        "icon_effect": "none",
+        "col_dk": "5",
+        "col_tb": "3",
+        "col_mb": "2",
+        "icon_cl": "#004623",
+        "hd_cl": "#004623",
+        "content_cl": "#004623",
+        "bg_wrap_cl": "#ffffff",
+        "hd_fs": 16,
+        "hd_fw": 800,
+        "txt_fs": 16,
+        "space_h_item": "20",
+        "space_v_item": "10",
+        "space_h_item_tb": "15",
+        "space_v_item_tb": "15",
+        "space_h_item_mb": "10",
+        "space_v_item_mb": "10",
+        "padding_inner": "20px,20px,20px,20px",
+        "padding_inner_tb": "20px,20px,20px,20px",
+        "padding_inner_mb": "20px,10px,20px,10px",
+        "carousel_mobile": true,
+        "dots_cl": "primary",
+        "dots_round": true,
+        "layout": "t4s-cus-width",
+        "custom_width": 1150,
+        "cl_bg": "#cae6c8",
+        "cl_bg_gradient": "",
+        "mg": ",,0px,",
+        "pd": "50px,,80px,",
+        "mg_tb": ",,0px,",
+        "pd_tb": "40px,,40px,",
+        "mg_mb": ",,0px,",
+        "pd_mb": "40px,,40px,"
+      }
+    },
+    "custom_section_mtPQHk": {
+      "type": "custom-section",
+      "blocks": {
+        "bl_col_FPnzww": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "6",
+            "col_dk_w": "33.33333",
+            "col_tb": "6",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": false,
+            "content_align": "start",
+            "content_align_tablet": "start",
+            "content_align_mobile": "start",
+            "padding_inner": "40px,40px,40px,40px,",
+            "padding_inner_tb": "20px,20px,20px,20px,",
+            "padding_inner_mb": "20px,20px,20px,20px,",
+            "round_inner": "10px,10px,10px,10px",
+            "round_tb_inner": "10px,10px,10px,10px",
+            "round_mb_inner": "10px,10px,10px,10px",
+            "bg_cl": "#faf5e7",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_zpWBmj": {
+          "type": "custom_text",
+          "settings": {
+            "text": "¿De dónde vienen nuestros ingredientes?",
+            "remove_br_tag": false,
+            "tag": "h2",
+            "fontf": "2",
+            "text_cl": "#004623",
+            "text_fs": 30,
+            "text_lh": 0,
+            "text_fw": 900,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 20,
+            "text_fs_tb": 30,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 20,
+            "hidden_mobile": false,
+            "text_fs_mb": 30,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 20,
+            "animation": "none"
+          }
+        },
+        "custom_button_9riPG9": {
+          "type": "custom_button",
+          "settings": {
+            "button_text": "Ver el origen de nuestros ingredientes",
+            "button_link": "shopify://pages/ingredientes",
+            "target_link": "_self",
+            "fontf": "1",
+            "button_icon_w": 0,
+            "button_style": "default",
+            "border_w": 1,
+            "button_effect": "default",
+            "pri_cl": "#ffcd00",
+            "second_cl": "#004623",
+            "pri_cl_hover": "#004623",
+            "second_cl_hover": "#ffffff",
+            "fsbutton": 16,
+            "fwbutton": 500,
+            "button_ls": 0,
+            "button_mh": 41,
+            "button_bdr": 40,
+            "button_pd_lr": 30,
+            "mgb": 0,
+            "button_icon_w_tb": 0,
+            "fsbutton_tb": 16,
+            "button_mh_tb": 40,
+            "button_pd_lr_tb": 15,
+            "button_ls_tb": 0,
+            "mgb_tb": 0,
+            "hidden_mobile": false,
+            "button_icon_w_mb": 0,
+            "fsbutton_mb": 16,
+            "button_mh_mb": 50,
+            "button_pd_lr_mb": 15,
+            "button_ls_mb": 0,
+            "mgb_mb": 0,
+            "animation": "none"
+          }
+        }
+      },
+      "block_order": [
+        "bl_col_FPnzww",
+        "custom_text_zpWBmj",
+        "custom_button_9riPG9"
+      ],
+      "settings": {
+        "space_h_item": "0",
+        "space_v_item": "0",
+        "space_h_item_tb": "0",
+        "space_v_item_tb": "0",
+        "space_h_item_mb": "0",
+        "space_v_item_mb": "0",
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "image_bg": "shopify://shop_images/posterhistoria.jpg",
+        "mg": ",,0px,",
+        "pd": "50px,50px,50px,50px,",
+        "mg_tb": ",,0px,",
+        "pd_tb": "20px,20px,20px,20px,",
+        "mg_mb": ",,0px,",
+        "pd_mb": "20px,10px,100px,10px,"
+      }
+    }
+  },
+  "order": [
+    "heading",
+    "main",
+    "custom_section_rQA6Pz",
+    "shipping_gphFP8",
+    "feature_columns_xhN9WG",
+    "shipping_ryi4aj",
+    "custom_section_mtPQHk"
+  ]
+}

@@ -1,1 +1,205 @@
-{"sections":{"heading":{"type":"heading-template","blocks":{"b49343f1-a16f-4a0c-834a-46b77fe777da":{"type":"1","settings":{"heading":"","fontf":"inherit","text_cl":"#000000","text_fs":40,"text_lh":56,"text_fw":300,"text_ls":0,"font_italic":false,"font_uppercase":false,"text_shadow":false,"mgb":0,"text_fs_tb":35,"text_lh_tb":46,"text_ls_tb":0,"mgb_tb":0,"hidden_mobile":false,"text_fs_mb":35,"text_lh_mb":46,"text_ls_mb":0,"mgb_mb":0}}},"block_order":["b49343f1-a16f-4a0c-834a-46b77fe777da"],"disabled":true,"settings":{"parallax":false,"color":"#000000","overlay":0,"padding_top":50,"padding_bottom":50,"mg_b":50,"padding_top_tb":50,"padding_bottom_tb":50,"mg_btb":50,"padding_top_mb":50,"padding_bottom_mb":50,"mg_bmb":50,"box_border":"top_bottom","bg_pos":"center center","bg_repeat":"no-repeat","bg_size":"cover"}},"custom_section_B4pa7W":{"type":"custom-section","blocks":{"bl_col_64ViqG":{"type":"bl_col","settings":{"col_dk":"5","col_dk_w":"33.33333","col_tb":"6","col_dk_w_tb":"33.33333","col_mb":"12","align_vertical":false,"content_align":"start","content_align_tablet":"start","content_align_mobile":"start","padding_inner":"40px,40px,40px,40px","padding_inner_tb":"40px,40px,40px,40px","padding_inner_mb":"40px,40px,40px,40px","round_inner":"10px,10px,10px,10px","round_tb_inner":"10px,10px,10px,10px","round_mb_inner":"10px,10px,10px,10px","bg_cl":"#faf5e7","time_animation":1,"animation_delay":40}},"custom_text_j7YyY6":{"type":"custom_text","settings":{"text":"Wild Pet's Club","remove_br_tag":false,"tag":"h2","fontf":"2","text_cl":"#00774f","text_fs":30,"text_lh":0,"text_fw":900,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":10,"text_fs_tb":30,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":30,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}},"custom_text_7aDWjn":{"type":"custom_text","settings":{"text":"¡FORMA PARTE DE NUESTRA MAFIA Y NO ESTARÁS SOLO!","remove_br_tag":false,"tag":"p","fontf":"1","text_cl":"#00774f","text_fs":16,"text_lh":20,"text_fw":400,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":20,"text_fs_tb":16,"text_lh_tb":20,"text_ls_tb":0,"mgb_tb":20,"hidden_mobile":false,"text_fs_mb":16,"text_lh_mb":20,"text_ls_mb":0,"mgb_mb":20,"animation":"none"}},"html_K97iKK":{"type":"html","settings":{"html_content":"<div class=\"cms-bloque-iconos\">\n    <div class=\"cms-bloque-iconos-item\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0713\/9898\/1933\/files\/ICONOS-WB-07.svg?v=1689156429\" alt=\"\">\n    <\/div>\n    <div class=\"cms-bloque-iconos-content\">\n        <p>Descuentos y novedades exclusivas cada mes.<\/p>\n    <\/div>\n<\/div>\n<div class=\"cms-bloque-iconos\">\n    <div class=\"cms-bloque-iconos-item\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0713\/9898\/1933\/files\/hocicos-exigentes-1.svg?v=1689327855\" alt=\"\">\n    <\/div>\n    <div class=\"cms-bloque-iconos-content\">\n        <p>Contenidos especiales solo para miembros del Club.<\/p>\n    <\/div>\n<\/div>\n<div class=\"cms-bloque-iconos\">\n    <div class=\"cms-bloque-iconos-item\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0713\/9898\/1933\/files\/cachorros-adultos-y-abuelitos.svg?v=1689327855\" alt=\"\">\n    <\/div>\n    <div class=\"cms-bloque-iconos-content\">\n        <p>Mucho más solo para los más rebeldes.<\/p>\n    <\/div>\n<\/div>","hidden_mobile":false}}},"block_order":["bl_col_64ViqG","custom_text_j7YyY6","custom_text_7aDWjn","html_K97iKK"],"settings":{"block_custom_class":"","space_h_item":"0","space_v_item":"0","space_h_item_tb":"0","space_v_item_tb":"0","space_h_item_mb":"0","space_v_item_mb":"0","layout":"t4s-container-fluid","cl_bg":"","cl_bg_gradient":"","image_bg":"shopify:\/\/shop_images\/WB-mi-cuenta1.jpg","mg":",,0px,","pd":"50px,50px,50px,50px,","mg_tb":",,10px,","pd_tb":"20px,20px,20px,20px,","mg_mb":",,10px,","pd_mb":"20px,20px,20px,20px,"}},"main_customers_register_WDwaA7":{"type":"main-customers-register","settings":{"btn_width":"full","button_style":"default","btns_size":"default","btns_cl":"custom1","button_effect":"default"}},"main":{"type":"main-customers-login","settings":{"btn_width":"full","button_style":"default","btns_size":"default","btns_cl":"custom1","button_effect":"default"}}},"order":["heading","custom_section_B4pa7W","main_customers_register_WDwaA7","main"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "heading": {
+      "type": "heading-template",
+      "blocks": {
+        "b49343f1-a16f-4a0c-834a-46b77fe777da": {
+          "type": "1",
+          "settings": {
+            "heading": "",
+            "fontf": "inherit",
+            "text_cl": "#000000",
+            "text_fs": 40,
+            "text_lh": 56,
+            "text_fw": 300,
+            "text_ls": 0,
+            "font_italic": false,
+            "font_uppercase": false,
+            "text_shadow": false,
+            "mgb": 0,
+            "text_fs_tb": 35,
+            "text_lh_tb": 46,
+            "text_ls_tb": 0,
+            "mgb_tb": 0,
+            "hidden_mobile": false,
+            "text_fs_mb": 35,
+            "text_lh_mb": 46,
+            "text_ls_mb": 0,
+            "mgb_mb": 0
+          }
+        }
+      },
+      "block_order": [
+        "b49343f1-a16f-4a0c-834a-46b77fe777da"
+      ],
+      "disabled": true,
+      "settings": {
+        "parallax": false,
+        "color": "#000000",
+        "overlay": 0,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "mg_b": 50,
+        "padding_top_tb": 50,
+        "padding_bottom_tb": 50,
+        "mg_btb": 50,
+        "padding_top_mb": 50,
+        "padding_bottom_mb": 50,
+        "mg_bmb": 50,
+        "box_border": "top_bottom",
+        "bg_pos": "center center",
+        "bg_repeat": "no-repeat",
+        "bg_size": "cover"
+      }
+    },
+    "custom_section_B4pa7W": {
+      "type": "custom-section",
+      "blocks": {
+        "bl_col_64ViqG": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "5",
+            "col_dk_w": "33.33333",
+            "col_tb": "6",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": false,
+            "content_align": "start",
+            "content_align_tablet": "start",
+            "content_align_mobile": "start",
+            "padding_inner": "40px,40px,40px,40px",
+            "padding_inner_tb": "40px,40px,40px,40px",
+            "padding_inner_mb": "40px,40px,40px,40px",
+            "round_inner": "10px,10px,10px,10px",
+            "round_tb_inner": "10px,10px,10px,10px",
+            "round_mb_inner": "10px,10px,10px,10px",
+            "bg_cl": "#faf5e7",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_j7YyY6": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Wild Pet's Club",
+            "remove_br_tag": false,
+            "tag": "h2",
+            "fontf": "2",
+            "text_cl": "#004623",
+            "text_fs": 30,
+            "text_lh": 0,
+            "text_fw": 900,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 10,
+            "text_fs_tb": 30,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 30,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_7aDWjn": {
+          "type": "custom_text",
+          "settings": {
+            "text": "¡FORMA PARTE DE NUESTRA MAFIA Y NO ESTARÁS SOLO!",
+            "remove_br_tag": false,
+            "tag": "p",
+            "fontf": "1",
+            "text_cl": "#004623",
+            "text_fs": 16,
+            "text_lh": 20,
+            "text_fw": 400,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 20,
+            "text_fs_tb": 16,
+            "text_lh_tb": 20,
+            "text_ls_tb": 0,
+            "mgb_tb": 20,
+            "hidden_mobile": false,
+            "text_fs_mb": 16,
+            "text_lh_mb": 20,
+            "text_ls_mb": 0,
+            "mgb_mb": 20,
+            "animation": "none"
+          }
+        },
+        "html_K97iKK": {
+          "type": "html",
+          "settings": {
+            "html_content": "<div class=\"cms-bloque-iconos\">\n    <div class=\"cms-bloque-iconos-item\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0713/9898/1933/files/ICONOS-WB-07.svg?v=1689156429\" alt=\"\">\n    </div>\n    <div class=\"cms-bloque-iconos-content\">\n        <p>Descuentos y novedades exclusivas cada mes.</p>\n    </div>\n</div>\n<div class=\"cms-bloque-iconos\">\n    <div class=\"cms-bloque-iconos-item\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0713/9898/1933/files/hocicos-exigentes-1.svg?v=1689327855\" alt=\"\">\n    </div>\n    <div class=\"cms-bloque-iconos-content\">\n        <p>Contenidos especiales solo para miembros del Club.</p>\n    </div>\n</div>\n<div class=\"cms-bloque-iconos\">\n    <div class=\"cms-bloque-iconos-item\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0713/9898/1933/files/cachorros-adultos-y-abuelitos.svg?v=1689327855\" alt=\"\">\n    </div>\n    <div class=\"cms-bloque-iconos-content\">\n        <p>Mucho más solo para los más rebeldes.</p>\n    </div>\n</div>",
+            "hidden_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "bl_col_64ViqG",
+        "custom_text_j7YyY6",
+        "custom_text_7aDWjn",
+        "html_K97iKK"
+      ],
+      "settings": {
+        "block_custom_class": "",
+        "space_h_item": "0",
+        "space_v_item": "0",
+        "space_h_item_tb": "0",
+        "space_v_item_tb": "0",
+        "space_h_item_mb": "0",
+        "space_v_item_mb": "0",
+        "layout": "t4s-container-fluid",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "image_bg": "shopify://shop_images/WB-mi-cuenta1.jpg",
+        "mg": ",,0px,",
+        "pd": "50px,50px,50px,50px,",
+        "mg_tb": ",,10px,",
+        "pd_tb": "20px,20px,20px,20px,",
+        "mg_mb": ",,10px,",
+        "pd_mb": "20px,20px,20px,20px,"
+      }
+    },
+    "main_customers_register_WDwaA7": {
+      "type": "main-customers-register",
+      "settings": {
+        "btn_width": "full",
+        "button_style": "default",
+        "btns_size": "default",
+        "btns_cl": "custom1",
+        "button_effect": "default"
+      }
+    },
+    "main": {
+      "type": "main-customers-login",
+      "settings": {
+        "btn_width": "full",
+        "button_style": "default",
+        "btns_size": "default",
+        "btns_cl": "custom1",
+        "button_effect": "default"
+      }
+    }
+  },
+  "order": [
+    "heading",
+    "custom_section_B4pa7W",
+    "main_customers_register_WDwaA7",
+    "main"
+  ]
+}

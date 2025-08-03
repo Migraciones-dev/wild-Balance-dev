@@ -16,7 +16,7 @@
           "type": "title",
           "settings": {
             "fontf": "inherit",
-            "text_cl": "#00774f",
+            "text_cl": "#004623",
             "text_fs": 36,
             "text_lh": 40,
             "text_fw": 300,
@@ -236,7 +236,7 @@
         "tab_item_EKVHji"
       ],
       "custom_css": [
-        "h3 {font-weight: 900; color: #00774f;}"
+        "h3 {font-weight: 900; color: #004623;}"
       ],
       "settings": {
         "design_heading": "1",
@@ -258,9 +258,9 @@
         "item_fw": 500,
         "item_ls": 0,
         "item_rounded": true,
-        "pri_cl": "#00774f",
-        "secon_cl": "#00774f",
-        "pri_active_cl": "#00774f",
+        "pri_cl": "#004623",
+        "secon_cl": "#004623",
+        "pri_active_cl": "#004623",
         "secon_active_cl": "#ffffff",
         "space_between": 10,
         "space_between_tb": 10,
@@ -313,7 +313,7 @@
     "custom_liquid_BxJV3i": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<style>\nh3.t4s-section-title{\n    font-weight: 800;\n    color: #00774f;\n}\n.t4s-accor-title{\n    padding: 0% 3% !important;\nfont-weight:700 !important;\n}\n\n.t4s-tab-content{\n    padding: 3% 3% 2% 3% !important;\n}\n\n.t4s-tab-wrapper{\n    margin-bottom: 10px;\n    border-bottom:initial !important;\n}\n.t4s-type-accordion .t4s-tab-wrapper.t4s-active .t4s-accor-title{\n    border-bottom:initial !important;\n}\n\np, li{\ncolor:#222;\nfont-size:16px;\n}\n\ndiv.containerCustomAnchor{\n    width: 100%;\n    display: flex;\n    flex-flow: row nowrap;\n    justify-content: center;\n}\n\na.customAnchor{\n    width: auto;\n    padding-bottom: 0 !important;\n    padding: 10px 25px !important;\n    border-radius: 50px;\n    cursor: pointer;\n    background-color: #FFCD00;\n    color: #00774F;\n    font-size: 18px;\n    font-weight: 700;\n    text-decoration: none;\n    border-bottom: 0px !important;\ndisplay: flex;\n    justify-content: center;\n    align-items: center;\n}\n\na.customAnchor:after {\n    content: url(https://cdn.shopify.com/s/files/1/0713/9898/1933/files/right-arrow_1_692f14cf-b429-4fcc-83dd-0a3cad9fec70.png?v=1738329633);\n    line-height: 11px;\n    margin-left: 12px;\n}\n\n@media (max-width:500px){\na.customAnchor{\n    padding: 10px 25px !important;\n    font-size: 14px;\n}\n}\n</style>"
+        "custom_liquid": "<style>\nh3.t4s-section-title{\n    font-weight: 800;\n    color: #004623;\n}\n.t4s-accor-title{\n    padding: 0% 3% !important;\nfont-weight:700 !important;\n}\n\n.t4s-tab-content{\n    padding: 3% 3% 2% 3% !important;\n}\n\n.t4s-tab-wrapper{\n    margin-bottom: 10px;\n    border-bottom:initial !important;\n}\n.t4s-type-accordion .t4s-tab-wrapper.t4s-active .t4s-accor-title{\n    border-bottom:initial !important;\n}\n\np, li{\ncolor:#222;\nfont-size:16px;\n}\n\ndiv.containerCustomAnchor{\n    width: 100%;\n    display: flex;\n    flex-flow: row nowrap;\n    justify-content: center;\n}\n\na.customAnchor{\n    width: auto;\n    padding-bottom: 0 !important;\n    padding: 10px 25px !important;\n    border-radius: 50px;\n    cursor: pointer;\n    background-color: #FFCD00;\n    color: #004623;\n    font-size: 18px;\n    font-weight: 700;\n    text-decoration: none;\n    border-bottom: 0px !important;\ndisplay: flex;\n    justify-content: center;\n    align-items: center;\n}\n\na.customAnchor:after {\n    content: url(https://cdn.shopify.com/s/files/1/0713/9898/1933/files/right-arrow_1_692f14cf-b429-4fcc-83dd-0a3cad9fec70.png?v=1738329633);\n    line-height: 11px;\n    margin-left: 12px;\n}\n\n@media (max-width:500px){\na.customAnchor{\n    padding: 10px 25px !important;\n    font-size: 14px;\n}\n}\n</style>"
       }
     }
   },

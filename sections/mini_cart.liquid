@@ -970,19 +970,3 @@
   }
 }
 {% endschema %}
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const cartTrigger = document.querySelector('.t4s-site-nav__cart');
-    const miniCart = document.getElementById('t4s-mini_cart');
-
-    if (!cartTrigger || !miniCart) return;
-
-    cartTrigger.addEventListener('click', function (event) {
-      // Evitamos la navegación al enlace /cart
-      event.preventDefault();
-      // Ocultamos el mini-carrito
-      miniCart.setAttribute('aria-hidden', 'true');
-    });
-  });
-</script>

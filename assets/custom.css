@@ -42,7 +42,7 @@ html:has(body.template-customers-account) #loyaltylion-beacon-frame{
 .cart-attribute__field label{
   font-family: 'Barlow';
     font-weight: 900;
-    color: #00774f;
+    color: #004623;
   font-size: 16px;
 }
 /* Selector fecha */
@@ -65,7 +65,7 @@ html:has(body.template-customers-account) #loyaltylion-beacon-frame{
 }
 .t4s-btn-color-dark {
     --btn-color: var(--t4s-light-color);
-    --btn-background: #00774f;
+    --btn-background: #004623;
 }
 .t4s-btn-base {
     font-size: 16px;
@@ -122,7 +122,7 @@ body.template-product .t4s-related-recent__tabs .t4s-pr-single_tab-item{
     white-space: normal;
 }
 .t4s-sticky-atc__price {
-    color: #00774f;
+    color: #004623;
 }
 /* btn menu pdp */
 body.template-product .containerCtaPdp{
@@ -163,7 +163,7 @@ body.template-product .creaSuMenuPdp{
 }
 body.template-product .creaSuMenuPdp:hover{
       background-color: #e0b400;
-    color: #00774f !important;
+    color: #004623 !important;
 }
 /* Inicio CSS del bloque de logos que contiene el tab "Ingredientes" en la PDP */
 body.template-product .extraProducto .aporteImg img{width:27px;}
@@ -276,7 +276,7 @@ body.template-product .t4s-swatch__item .color-circle {
     font-size: 25px;
     margin: 0px 5px;
     line-height: 15px;
-    color: #00774f;
+    color: #004623;
   height: 80%;
   border-radius: 50px;
 }
@@ -287,7 +287,7 @@ body.template-product .t4s-swatch__item .color-circle {
     top: 5px;
 }
 .t4s-product-form__buttons button.t4s-quantity-selector.is--minus:after, .t4s-product-form__buttons button.t4s-quantity-selector.is--plus:before, .t4s-product-form__buttons button.t4s-quantity-selector.is--plus:after{
-   background-color: #00774f;
+   background-color: #004623;
 }
 /*--- FIN PDP basica ---*/
 /*--- PDP Iniciacion ---*/
@@ -325,7 +325,7 @@ span._fx-badge.last-units{
 
 .as-bundle-html-wrapper .as-product-discount-badge{
   margin:1rem;
-  color: #00774f;
+  color: #004623;
 }
 /* 1.CSS Labels General PDC */
 .containerLabelsPDC span._fx-badge{
@@ -338,7 +338,7 @@ html:not(body.template-page.black-friday) .customLabelsContainer ._fx-badge.blac
 }
 html:has(body.template-page.black-friday) .customLabelsContainer ._fx-badge.blackFriday{
     background-color: #ffce00;
-    color: #00774f;
+    color: #004623;
 }
 
 /* CSS labels theme (Arrasando) PDC */
@@ -352,7 +352,7 @@ span.t4s-badge-item.t4s-badge-soldout {
     width: 100%;
     border-radius: 0px;
     background-color: #CAE6C8;
-    color: #00774f;
+    color: #004623;
     font-weight: 500;
     font-size: 14px;
 }
@@ -383,7 +383,7 @@ transform: none;
     top: 5px;
 }
  .t4s-product a.t4s-pr-wishlist, .css_for_wis_app_true .t4s-product .t4s-pr-wishlist {
-    color: #00774f;
+    color: #004623;
   
 }
 
@@ -396,7 +396,7 @@ transform: none;
 }
  .t4s-product .t4s-pr-addtocart {
     color: #fff;
-    background-color: #00774f;
+    background-color: #004623;
 }
 .t4_has_atc_true .t4s-pr-style1 .t4s-product-inner .t4s-pr-group-variable {
     display: none;
@@ -458,7 +458,7 @@ button.t4s-btn-filter:after{
     border-bottom: none;
 }
 button.t4s-drawer__close {
-  color: #00774f;
+  color: #004623;
   }
 .t4s-iconsvg-close {
     width: 20px;
@@ -468,8 +468,8 @@ button.t4s-drawer__close {
 /* pagination */
  .t4s-pagination__list .pagination__item--current {
     color: var(--t4s-light-color);
-    background-color: #00774f;
-    border-color: #00774f;
+    background-color: #004623;
+    border-color: #004623;
 }
  .t4s-pagination__item {
     font-size: 16px;
@@ -485,7 +485,7 @@ button.t4s-drawer__close {
     font-family: 'Barlow';
 }
 .t4s-product-quick-shop .t4s-widget__pr .t4s-widget__pr-price {
-    color: #00774f;
+    color: #004623;
     font-size: 16px;
 }
 .t4s-product-quick-shop .t4s-widget__pr .t4s-widget_img_pr {
@@ -511,7 +511,7 @@ button.t4s-drawer__close {
     font-size: 20px;
     text-transform: none;
     font-family: 'Barlow';
-    color: #00774f;
+    color: #004623;
 }
 form#t4s-tab-minicart {
     background-color: #ffffff;
@@ -659,7 +659,7 @@ form#t4s-tab-minicart {
 /* --- HOME --- */
 body.template-index h3.t4s-section-title.t4s-title {
     font-weight: 900;
-    color: #00774f;
+    color: #004623;
 }
 
 body.template-index .t4s-counter h3.t4s-section-title.t4s-title {
@@ -680,7 +680,7 @@ body.template-index .t4s-counter h3.t4s-counter-number{
 
 body.template-index .t4s-section-des.t4s-subtitle {
     font-size: 16px;
-    color: #00774f;
+    color: #004623;
     font-family: 'DM Sans';
     margin-top: 10px;
 }
@@ -719,7 +719,7 @@ body.template-index .greetingsAlmudena button {
     background-color: #FFCD00;
     width: 100%;
     border-radius: 50px;
-    color: #00774F;
+    color: #004623;
     height: 40px;
 }
 body.template-index .almudenaPresentation p{margin-bottom: 0px;}
@@ -772,12 +772,12 @@ body.template-page h3 {
 }
 body.template-page .t4s-top-heading h3.t4s-section-title{
    font-size: 30px;
-   color: #00774f;
+   color: #004623;
 }
 body.template-page .t4s-top-heading .t4s-section-des p{
    font-size: 16px;
   font-family: 'DM Sans';
-   color: #00774f;
+   color: #004623;
 }
 /* bloque iconos custom */
  .cms-bloque-iconos {
@@ -902,7 +902,7 @@ body.template-customers-account .t4s-table-res strong{
 body.template-customers-account .t4s-account-nav a {
     font-size: 16px;
   font-weight: 500;
-    border: 1px solid #00774F;
+    border: 1px solid #004623;
     display: flex;
     align-items: center;
     border-radius: 50px;
@@ -915,12 +915,12 @@ body.template-customers-account  .t4s-account-nav ul {
 body.template-customers-account .t4s-account-nav .is--active a, body.template-customers-account .t4s-account-nav a:hover {
     background-color: #CAE6C8;
   border-color: #CAE6C8; 
-    color: #00774f;
+    color: #004623;
 }
 body.template-customers-addresses  .t4s-account-nav a {
     font-size: 16px;
   font-weight: 500;
-    border: 1px solid #00774F;
+    border: 1px solid #004623;
     display: flex;
     align-items: center;
     border-radius: 50px;
@@ -933,7 +933,7 @@ body.template-customers-addresses   .t4s-account-nav ul {
 body.template-customers-addresses  .t4s-account-nav .is--active a, body.template-customers-addresses  .t4s-account-nav a:hover {
     background-color: #CAE6C8;
   border-color: #CAE6C8; 
-    color: #00774f;
+    color: #004623;
 }
   body.template-customers-addresses li[data-address]{
     margin: 10px;
@@ -943,16 +943,16 @@ body.template-customers-addresses  .t4s-account-nav .is--active a, body.template
     text-align: left;
   }
  body.template-customers-addresses .t4s_btn_black{
-   background-color: #00774f;
+   background-color: #004623;
    margin-right: 5px;
  }
   body.template-customers-addresses .t4s_btn_white{
-    color: #00774f;
+    color: #004623;
  }
   body.template-customers-addresses .t4s-customer .t4s_btn_black:hover,   body.template-customers-addresses .t4s-customer .t4s_btn_white:hover {
     background-color: #fff;
-    color: #00774f;
-    border: 1px solid #00774f ;
+    color: #004623;
+    border: 1px solid #004623 ;
 }
 body.template-customers-addresses button{
    border-radius: 50px;
@@ -994,7 +994,7 @@ body.template-search .t4s_empty_page .t4s_empty_des {
     text-align: left;
 }
 #t4s-search-hidden .t4s-widget__pr .t4s-widget__pr-price, .t4s-skeleton_txt2 {
-    color: #00774f;
+    color: #004623;
     font-size: 16px;
     font-family: 'DM Sans';
     font-weight: 400;
@@ -1103,7 +1103,7 @@ body.template-article aside.t4s-sidebar .t4s-sidebar-inner .t4s-sidebar-custom-l
     right: 50px;
   }
   #shopify-section-template--20865588658477__f6964876-3b3d-49f0-bb67-6b15b1b28d29 .t4s-section-inner .t4s-bl-item{
-    background-color:#00774F;
+    background-color:#004623;
     color:#FFF;
     font-weight: 700;
     border-radius: 30px;
@@ -1130,13 +1130,13 @@ body.template-article aside.t4s-sidebar .t4s-sidebar-inner .t4s-sidebar-custom-l
   #shopify-section-template--23234518024493__main .stockist-query-entry .stockist-search-field{
     border-radius: 30px;
     height: 50px;
-    border: 2px solid #00774f;
+    border: 2px solid #004623;
     width: 100%;
     padding: 6px 20px 2px !important;
     background-color:#FFF;
   }
   #stockist-widget .stockist-query-entry .stockist-search-field::placeholder{
-    color:#00774f;
+    color:#004623;
     font-size:1.5em;
     font-weight: bold;
   }
@@ -1188,7 +1188,7 @@ body.template-article aside.t4s-sidebar .t4s-sidebar-inner .t4s-sidebar-custom-l
 /* CALENDARIO CARRITO */
 
 #storePickupApp .checkoutMethod{
-    background-color:#00774F !important;
+    background-color:#004623 !important;
     flex-direction: row !important;
     border-radius: 20px !important;
     gap: 11px;
@@ -1199,9 +1199,9 @@ body.template-article aside.t4s-sidebar .t4s-sidebar-inner .t4s-sidebar-custom-l
     padding:5px 15px;
 }
 #storePickupApp .checkoutMethod:hover{
-  color: #00774F;
+  color: #004623;
   background-color: #FAF5E7 !important;
-  border: 2px solid #00774F !important;
+  border: 2px solid #004623 !important;
 }
 
 #storePickupApp .checkoutMethod .checkoutMethodImage{
@@ -1218,7 +1218,7 @@ section.suscriptionCoupon {
 
 section.suscriptionCoupon p{
       font-weight: 600;
-  color: #00774F;
+  color: #004623;
 
 }
 
@@ -1239,7 +1239,7 @@ section.suscriptionCoupon button {
   margin: 0 auto;
   border-radius: 50px;
     background: transparent;
-    color: #00774F;
+    color: #004623;
     text-decoration: underline;
     margin-top: -10px;
   font-size:16px;
@@ -1257,7 +1257,7 @@ div.appstle-wrapper div.false:nth-child(1) > div.false > div{
 }
 
 div.appstle-wrapper .as-cart-btn-wrapper .as-cart-btn{
-    background-color:#00774F;
+    background-color:#004623;
     position: fixed;
     z-index: 90;
     border-radius: 62px;
@@ -1292,7 +1292,7 @@ div.appstle-wrapper div.false:nth-child(1) > div.false > div
 div.as-checkout-btn-wrapper button.as-checkout-btn{
     text-transform: math-auto;
     background: transparent;
-    color: #00774f;
+    color: #004623;
     font-size: 20px;
     box-shadow: none;
     padding:0px !important;
@@ -1327,7 +1327,7 @@ div.box-wrap .top-section div.limit-progress{
 
 div.appstle-wrapper div.false:nth-child(1) > div.false > div 
 div.box-wrap .as-progress-bar div.as-progress{
-    background-color: #00774f !important;
+    background-color: #004623 !important;
 }
 
 div.appstle-wrapper div.appstle_bundle .as-products div.as-group .as-w-full,
@@ -1349,7 +1349,7 @@ div.appstle-wrapper div.appstle_bundle .as-products div.as-group
 div.as-w-full a.appstle-slider-prev,
 div.appstle-wrapper div.appstle_bundle .as-products div.as-group 
 div.as-w-full a.appstle-slider-next{
-    color: #00774f !important;
+    color: #004623 !important;
     font-size: 14px;
     font-weight: 100;
     margin-top: -50px;
@@ -1365,9 +1365,9 @@ div.as-w-full a.appstle-slider-next:hover{
 div.appstle-wrapper div.appstle_bundle .as-products div.as-group 
 button.as-mt-auto{
     background: transparent !important;
-    color: #00774f;
+    color: #004623;
     margin: 0px;
-    border: 1.5px solid #00774f;
+    border: 1.5px solid #004623;
 }
 div.appstle-wrapper div.as-bundle-html-wrapper div.FvzG8fQt div.box-wrap .as-products div.as-group 
 button.as-mt-auto{
@@ -1376,7 +1376,7 @@ button.as-mt-auto{
 
 div.appstle-wrapper div.appstle_bundle .as-products div.as-group 
 button:nth-child(1).as-w-full{
-    background-color: #00774f;
+    background-color: #004623;
     color: #FFF !important;
 }
 
@@ -1406,7 +1406,7 @@ div.appstle-wrapper div.appstle_bundle .limit-progress .as-progress-wrapper{
 }
 
 div.appstle-wrapper div.appstle_bundle .limit-progress div.as-progress{
-  background-color:#00774F;
+  background-color:#004623;
 }
 
 div.appstle-wrapper div.appstle_bundle .as-products div.as-group 
@@ -1454,7 +1454,7 @@ div:nth-child(3) p.as-flex{
 
 div.appstle-wrapper div.appstle_bundle .as-products div.as-group 
 div:nth-child(3) button.as-inline-flex{
-    background-color: #00774f !important;
+    background-color: #004623 !important;
   color:#FFF !important;
 }
 
@@ -1469,7 +1469,7 @@ div:nth-child(3) .as-items-center:focus-visible{
 
 div.as-bg-white button.as-w-full{
     border-radius: 50px;
-    background-color: #00774f;
+    background-color: #004623;
     color: #FFF;
   margin:0px !important;
 }
@@ -1477,31 +1477,31 @@ div.as-bg-white button.as-w-full:focus{
     --tw-ring-opacity: initial !important; 
 }
 div.as-bg-white button.as-w-full:hover{
-    background-color: #00774f;
+    background-color: #004623;
 }
 
 
 /* CSS Mini-cart Appstle App*/
 
 .as-bundle-cart-dailog div.as-progress{
-  background-color: #00774f !important;
+  background-color: #004623 !important;
 }
 
 .as-bundle-cart-dailog button.as-atc-btn{
-    background-color: #00774f !important;
+    background-color: #004623 !important;
 }
 
 .as-bundle-cart-dailog button.as-continue-shopping-btn{
-    color: #00774f !important;
+    color: #004623 !important;
 }
 
 .as-bundle-cart-dailog button.as-plan-select-btn:focus{
-    border-color:#00774f !important;
+    border-color:#004623 !important;
 }
 
 .as-bundle-cart-dailog div.as-bg-white button.as-plan-select-btn{
     border-radius: 50px;
-    background-color: #00774f;
+    background-color: #004623;
     color: #222;
 }
 .as-bundle-cart-dailog div.as-bg-white button.as-plan-select-btn:focus{
@@ -1513,7 +1513,7 @@ div.as-bg-white button.as-w-full:hover{
 }
 .appstle-wrapper :is(.as-bg-indigo-600){
   background-color: #FFCD00 !important;
-  color:#00774f !important;
+  color:#004623 !important;
 }
 
 .as-bundle-cart-dailog .as-flex div.as-border-t{
@@ -1625,7 +1625,7 @@ body.template-collection .vatiant_arrasado{
 
 body.template-product .vatiant_arrasado p{
     margin: 0;
-    color: #00774f;
+    color: #004623;
     text-transform: capitalize;
     font-size: 16px;
 }
@@ -1659,7 +1659,7 @@ body.template-collection .t4s-section-inner .t4s-collection-header .t4s-btn-filt
 
  body.template-product .t4s-form__product 
   .t4s-product-form__buttons:has(.arrasado) button.t4s-product-form__submit{
-    color:#00774f;
+    color:#004623;
     background-color:#fff;
     width:100%;
 }
@@ -1684,7 +1684,7 @@ body.template-collection .t4s-section-inner .t4s-collection-header .t4s-btn-filt
    /* background-color: #ffcd00; 
     padding: 10px 31px; 
     border-radius: 20px; */
-    color: #00774f;
+    color: #004623;
     height: 40px;
     font-weight: 800;
     max-width: 200px;
@@ -1784,7 +1784,7 @@ body.template-product .customLabelsContainer{
 
 /*
 body.template-product .t4s-price__sale{
-  color:#00774f;
+  color:#004623;
 }
 
 
@@ -1792,7 +1792,7 @@ del {
   text-decoration:none;
 }
 ins{
-  color:#00774f !important;
+  color:#004623 !important;
 }
 */
 
@@ -1966,7 +1966,7 @@ body.template-collection.packs-de-iniciacion #MainContent section.shopify-sectio
 body.template-collection.packs-de-iniciacion #MainContent section:nth-of-type(3) .t4s-section-inner > .t4s-row:nth-child(1):before{
     content:'Packs de iniciación';
       width:100%;
-      color:#00774F;
+      color:#004623;
     font-family: Barlow;
   font-weight: 800;
   font-size: 30px;
@@ -2193,7 +2193,7 @@ body.template-product.pack-iniciacion-barf-para-perros #MainContent .accordionsB
 body.template-product.pack-iniciacion-barf-para-gatos #MainContent .accordionsBlock .t4s-w-100 a.cta.menu,
 body.template-product.pack-iniciacion-barf-para-perros #MainContent .accordionsBlock .t4s-w-100 div.ctaDoubts a.cta.conect,
 body.template-product.pack-iniciacion-barf-para-gatos #MainContent .accordionsBlock .t4s-w-100 div.ctaDoubts a.cta.conect{
-  color:#00774F;
+  color:#004623;
   background-color:#FFCD00;
   font-weight: 700;
   font-size: 16px;
@@ -2231,7 +2231,7 @@ body.template-search ._fx-badge.discount.pdp {display:none;}
     border-radius: 50px;
     padding: 10px 15px;
     background-color: #faf5e7;
-    color: #00774f !important;
+    color: #004623 !important;
   cursor:pointer;
 }
 

@@ -94,7 +94,7 @@
             "remove_br_tag": false,
             "tag": "h2",
             "fontf": "2",
-            "text_cl": "#00774f",
+            "text_cl": "#004623",
             "text_fs": 30,
             "text_lh": 0,
             "text_fw": 900,
@@ -121,7 +121,7 @@
             "remove_br_tag": false,
             "tag": "p",
             "fontf": "1",
-            "text_cl": "#00774f",
+            "text_cl": "#004623",
             "text_fs": 16,
             "text_lh": 20,
             "text_fw": 400,
@@ -168,8 +168,7 @@
     },
     "main": {
       "type": "main-customers-account",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [

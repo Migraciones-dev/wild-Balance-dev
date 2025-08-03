@@ -1,1 +1,361 @@
-{"sections":{"heading":{"type":"heading-template","blocks":{"b49343f1-a16f-4a0c-834a-46b77fe777da":{"type":"1","settings":{"heading":"","fontf":"2","text_cl":"#00774f","text_fs":50,"text_lh":56,"text_fw":900,"text_ls":0,"font_italic":false,"font_uppercase":false,"text_shadow":false,"mgb":0,"text_fs_tb":30,"text_lh_tb":46,"text_ls_tb":0,"mgb_tb":0,"hidden_mobile":false,"text_fs_mb":30,"text_lh_mb":46,"text_ls_mb":0,"mgb_mb":0}},"46ff9c32-9810-4c24-b2bd-9c6e38cc2ea8":{"type":"3","settings":{"breadcrumb_color":"#868686","breadcrumb_color_link":"#000000","brc_mgb":0}}},"block_order":["b49343f1-a16f-4a0c-834a-46b77fe777da","46ff9c32-9810-4c24-b2bd-9c6e38cc2ea8"],"disabled":true,"settings":{"parallax":false,"color":"#000000","overlay":0,"padding_top":50,"padding_bottom":50,"mg_b":50,"padding_top_tb":50,"padding_bottom_tb":50,"mg_btb":50,"padding_top_mb":50,"padding_bottom_mb":50,"mg_bmb":50,"box_border":"top_bottom","bg_pos":"center center","bg_repeat":"no-repeat","bg_size":"cover"}},"main":{"type":"main-page","disabled":true,"settings":{"layout":"t4s-container-wrap","cl_bg":"","cl_bg_gradient":"","mg":"60px,100px,60px,100px","pd":"","mg_tb":"20px,10px,30px,10px","pd_tb":"","mg_mb":"10px,10px,30px,10px","pd_mb":""}},"52f23c06-6ee4-46c2-bb3b-f1d4eefdf2cc":{"type":"custom-section","blocks":{"bl_col_AiQ3iF":{"type":"bl_col","settings":{"col_dk":"custom","col_dk_w":"0","col_tb":"custom","col_dk_w_tb":"0","col_mb":"12","align_vertical":true,"content_align":"center","content_align_tablet":"center","content_align_mobile":"center","padding_inner":",,,","padding_inner_tb":",,,","padding_inner_mb":",,,","round_inner":"","round_tb_inner":"","round_mb_inner":"","bg_cl":"#ffffff","time_animation":1,"animation_delay":40}},"image_t4YzEq":{"type":"image","settings":{"image_child":"shopify:\/\/shop_images\/LANDING-GENERICA-MOVIL_01.jpg","img_link":"","open_link":"_self","img_width":1200,"img_width_tb":1200,"img_width_mb":1200,"img_align":"center","img_align_tb":"center","img_align_mobile":"center","b_effect":"none","hidden_mobile":false,"mgb":0,"mgb_tb":0,"mgb_mb":0,"animation":"none"}},"bl_col_FzDyA6":{"type":"bl_col","settings":{"col_dk":"6","col_dk_w":"50","col_tb":"6","col_dk_w_tb":"50","col_mb":"12","align_vertical":false,"content_align":"center","content_align_tablet":"center","content_align_mobile":"center","padding_inner":",,,","padding_inner_tb":",,,","padding_inner_mb":",,,","round_inner":"","round_tb_inner":"","round_mb_inner":"","bg_cl":"#ffffff","time_animation":1,"animation_delay":40}},"image_WTtxNt":{"type":"image","settings":{"image_child":"shopify:\/\/shop_images\/LANDING_GENERICA-DESK_01.jpg","img_link":"","open_link":"_self","img_width":1200,"img_width_tb":1200,"img_width_mb":1200,"img_align":"center","img_align_tb":"center","img_align_mobile":"center","b_effect":"none","hidden_mobile":true,"mgb":0,"mgb_tb":0,"mgb_mb":0,"animation":"none"}},"86025558-8ae3-4d68-958e-e42baf528c47":{"type":"bl_col","settings":{"col_dk":"6","col_dk_w":"50","col_tb":"6","col_dk_w_tb":"100","col_mb":"12","align_vertical":true,"content_align":"center","content_align_tablet":"center","content_align_mobile":"center","padding_inner":"80px,60px,,40px","padding_inner_tb":"15px,20px,15px,20px","padding_inner_mb":"20px,40px,15px,40px","round_inner":"","round_tb_inner":"","round_mb_inner":"","bg_cl":"rgba(0,0,0,0)","time_animation":1,"animation_delay":40}},"html_bEYLdB":{"type":"html","disabled":true,"settings":{"html_content":"<div style=\"display: flex; justify-content: center;\"><div style=\"background-color: #F0807B; width: 250px; padding: 10px; ;border-radius: 50px;\"><p style=\"font-family: inherit; color: #fff; line-height: 0px; \">¡NUEVO LANZAMIENTO!<\/p><\/div><\/div>","hidden_mobile":false}},"custom_text_qUNiLL":{"type":"custom_text","settings":{"text":"-10% DE BIENVENIDA","remove_br_tag":false,"tag":"h4","fontf":"inherit","text_cl":"#faf5e7","text_fs":20,"text_lh":0,"text_fw":900,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":15,"text_fs_tb":16,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":true,"text_fs_mb":16,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":0,"animation":"none"}},"custom_text_eKAzAX":{"type":"custom_text","settings":{"text":"¿QUIERES FORMAR PARTE DE ALGO MUUUUY GRANDE?","remove_br_tag":false,"tag":"h2","fontf":"inherit","text_cl":"#faf5e7","text_fs":50,"text_lh":0,"text_fw":900,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":15,"text_fs_tb":40,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":35,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":15,"animation":"none"}},"custom_text_UfQCpB":{"type":"custom_text","settings":{"text":"El amor y el cuidado que tu mejor amigo se merece.","remove_br_tag":false,"tag":"p","fontf":"3","text_cl":"#faf5e7","text_fs":18,"text_lh":0,"text_fw":400,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":15,"text_fs_tb":16,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":14,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}},"custom_text_FtPQf8":{"type":"custom_text","settings":{"text":"Puedes ser el primero en enterarte de las novedades, consejos y descuentos exclusivos:","remove_br_tag":false,"tag":"p","fontf":"3","text_cl":"#faf5e7","text_fs":18,"text_lh":0,"text_fw":400,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":15,"text_fs_tb":16,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":14,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}},"html_DwaiyN":{"type":"html","settings":{"html_content":"<div class=\"klaviyo-form-WBTeQJ\"><\/div>","hidden_mobile":false}}},"block_order":["bl_col_AiQ3iF","image_t4YzEq","bl_col_FzDyA6","image_WTtxNt","86025558-8ae3-4d68-958e-e42baf528c47","html_bEYLdB","custom_text_qUNiLL","custom_text_eKAzAX","custom_text_UfQCpB","custom_text_FtPQf8","html_DwaiyN"],"settings":{"space_h_item":"0","space_v_item":"0","space_h_item_tb":"0","space_v_item_tb":"0","space_h_item_mb":"0","space_v_item_mb":"0","layout":"t4s-container-fluid","cl_bg":"#00774f","cl_bg_gradient":"","mg":",,,","pd":"","mg_tb":",,,","pd_tb":"","mg_mb":",,,","pd_mb":""}}},"order":["heading","main","52f23c06-6ee4-46c2-bb3b-f1d4eefdf2cc"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "heading": {
+      "type": "heading-template",
+      "blocks": {
+        "b49343f1-a16f-4a0c-834a-46b77fe777da": {
+          "type": "1",
+          "settings": {
+            "heading": "",
+            "fontf": "2",
+            "text_cl": "#004623",
+            "text_fs": 50,
+            "text_lh": 56,
+            "text_fw": 900,
+            "text_ls": 0,
+            "font_italic": false,
+            "font_uppercase": false,
+            "text_shadow": false,
+            "mgb": 0,
+            "text_fs_tb": 30,
+            "text_lh_tb": 46,
+            "text_ls_tb": 0,
+            "mgb_tb": 0,
+            "hidden_mobile": false,
+            "text_fs_mb": 30,
+            "text_lh_mb": 46,
+            "text_ls_mb": 0,
+            "mgb_mb": 0
+          }
+        },
+        "46ff9c32-9810-4c24-b2bd-9c6e38cc2ea8": {
+          "type": "3",
+          "settings": {
+            "breadcrumb_color": "#868686",
+            "breadcrumb_color_link": "#000000",
+            "brc_mgb": 0
+          }
+        }
+      },
+      "block_order": [
+        "b49343f1-a16f-4a0c-834a-46b77fe777da",
+        "46ff9c32-9810-4c24-b2bd-9c6e38cc2ea8"
+      ],
+      "disabled": true,
+      "settings": {
+        "parallax": false,
+        "color": "#000000",
+        "overlay": 0,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "mg_b": 50,
+        "padding_top_tb": 50,
+        "padding_bottom_tb": 50,
+        "mg_btb": 50,
+        "padding_top_mb": 50,
+        "padding_bottom_mb": 50,
+        "mg_bmb": 50,
+        "box_border": "top_bottom",
+        "bg_pos": "center center",
+        "bg_repeat": "no-repeat",
+        "bg_size": "cover"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": "60px,100px,60px,100px",
+        "pd": "",
+        "mg_tb": "20px,10px,30px,10px",
+        "pd_tb": "",
+        "mg_mb": "10px,10px,30px,10px",
+        "pd_mb": ""
+      }
+    },
+    "52f23c06-6ee4-46c2-bb3b-f1d4eefdf2cc": {
+      "type": "custom-section",
+      "blocks": {
+        "bl_col_AiQ3iF": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "custom",
+            "col_dk_w": "0",
+            "col_tb": "custom",
+            "col_dk_w_tb": "0",
+            "col_mb": "12",
+            "align_vertical": true,
+            "content_align": "center",
+            "content_align_tablet": "center",
+            "content_align_mobile": "center",
+            "padding_inner": ",,,",
+            "padding_inner_tb": ",,,",
+            "padding_inner_mb": ",,,",
+            "round_inner": "",
+            "round_tb_inner": "",
+            "round_mb_inner": "",
+            "bg_cl": "#ffffff",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "image_t4YzEq": {
+          "type": "image",
+          "settings": {
+            "image_child": "shopify://shop_images/LANDING-GENERICA-MOVIL_01.jpg",
+            "img_link": "",
+            "open_link": "_self",
+            "img_width": 1200,
+            "img_width_tb": 1200,
+            "img_width_mb": 1200,
+            "img_align": "center",
+            "img_align_tb": "center",
+            "img_align_mobile": "center",
+            "b_effect": "none",
+            "hidden_mobile": false,
+            "mgb": 0,
+            "mgb_tb": 0,
+            "mgb_mb": 0,
+            "animation": "none"
+          }
+        },
+        "bl_col_FzDyA6": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "6",
+            "col_dk_w": "50",
+            "col_tb": "6",
+            "col_dk_w_tb": "50",
+            "col_mb": "12",
+            "align_vertical": false,
+            "content_align": "center",
+            "content_align_tablet": "center",
+            "content_align_mobile": "center",
+            "padding_inner": ",,,",
+            "padding_inner_tb": ",,,",
+            "padding_inner_mb": ",,,",
+            "round_inner": "",
+            "round_tb_inner": "",
+            "round_mb_inner": "",
+            "bg_cl": "#ffffff",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "image_WTtxNt": {
+          "type": "image",
+          "settings": {
+            "image_child": "shopify://shop_images/LANDING_GENERICA-DESK_01.jpg",
+            "img_link": "",
+            "open_link": "_self",
+            "img_width": 1200,
+            "img_width_tb": 1200,
+            "img_width_mb": 1200,
+            "img_align": "center",
+            "img_align_tb": "center",
+            "img_align_mobile": "center",
+            "b_effect": "none",
+            "hidden_mobile": true,
+            "mgb": 0,
+            "mgb_tb": 0,
+            "mgb_mb": 0,
+            "animation": "none"
+          }
+        },
+        "86025558-8ae3-4d68-958e-e42baf528c47": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "6",
+            "col_dk_w": "50",
+            "col_tb": "6",
+            "col_dk_w_tb": "100",
+            "col_mb": "12",
+            "align_vertical": true,
+            "content_align": "center",
+            "content_align_tablet": "center",
+            "content_align_mobile": "center",
+            "padding_inner": "80px,60px,,40px",
+            "padding_inner_tb": "15px,20px,15px,20px",
+            "padding_inner_mb": "20px,40px,15px,40px",
+            "round_inner": "",
+            "round_tb_inner": "",
+            "round_mb_inner": "",
+            "bg_cl": "rgba(0,0,0,0)",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "html_bEYLdB": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "html_content": "<div style=\"display: flex; justify-content: center;\"><div style=\"background-color: #F0807B; width: 250px; padding: 10px; ;border-radius: 50px;\"><p style=\"font-family: inherit; color: #fff; line-height: 0px; \">¡NUEVO LANZAMIENTO!</p></div></div>",
+            "hidden_mobile": false
+          }
+        },
+        "custom_text_qUNiLL": {
+          "type": "custom_text",
+          "settings": {
+            "text": "-10% DE BIENVENIDA",
+            "remove_br_tag": false,
+            "tag": "h4",
+            "fontf": "inherit",
+            "text_cl": "#faf5e7",
+            "text_fs": 20,
+            "text_lh": 0,
+            "text_fw": 900,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 15,
+            "text_fs_tb": 16,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": true,
+            "text_fs_mb": 16,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 0,
+            "animation": "none"
+          }
+        },
+        "custom_text_eKAzAX": {
+          "type": "custom_text",
+          "settings": {
+            "text": "¿QUIERES FORMAR PARTE DE ALGO MUUUUY GRANDE?",
+            "remove_br_tag": false,
+            "tag": "h2",
+            "fontf": "inherit",
+            "text_cl": "#faf5e7",
+            "text_fs": 50,
+            "text_lh": 0,
+            "text_fw": 900,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 15,
+            "text_fs_tb": 40,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 35,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 15,
+            "animation": "none"
+          }
+        },
+        "custom_text_UfQCpB": {
+          "type": "custom_text",
+          "settings": {
+            "text": "El amor y el cuidado que tu mejor amigo se merece.",
+            "remove_br_tag": false,
+            "tag": "p",
+            "fontf": "3",
+            "text_cl": "#faf5e7",
+            "text_fs": 18,
+            "text_lh": 0,
+            "text_fw": 400,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 15,
+            "text_fs_tb": 16,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 14,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_FtPQf8": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Puedes ser el primero en enterarte de las novedades, consejos y descuentos exclusivos:",
+            "remove_br_tag": false,
+            "tag": "p",
+            "fontf": "3",
+            "text_cl": "#faf5e7",
+            "text_fs": 18,
+            "text_lh": 0,
+            "text_fw": 400,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 15,
+            "text_fs_tb": 16,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 14,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "html_DwaiyN": {
+          "type": "html",
+          "settings": {
+            "html_content": "<div class=\"klaviyo-form-WBTeQJ\"></div>",
+            "hidden_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "bl_col_AiQ3iF",
+        "image_t4YzEq",
+        "bl_col_FzDyA6",
+        "image_WTtxNt",
+        "86025558-8ae3-4d68-958e-e42baf528c47",
+        "html_bEYLdB",
+        "custom_text_qUNiLL",
+        "custom_text_eKAzAX",
+        "custom_text_UfQCpB",
+        "custom_text_FtPQf8",
+        "html_DwaiyN"
+      ],
+      "settings": {
+        "space_h_item": "0",
+        "space_v_item": "0",
+        "space_h_item_tb": "0",
+        "space_v_item_tb": "0",
+        "space_h_item_mb": "0",
+        "space_v_item_mb": "0",
+        "layout": "t4s-container-fluid",
+        "cl_bg": "#004623",
+        "cl_bg_gradient": "",
+        "mg": ",,,",
+        "pd": "",
+        "mg_tb": ",,,",
+        "pd_tb": "",
+        "mg_mb": ",,,",
+        "pd_mb": ""
+      }
+    }
+  },
+  "order": [
+    "heading",
+    "main",
+    "52f23c06-6ee4-46c2-bb3b-f1d4eefdf2cc"
+  ]
+}

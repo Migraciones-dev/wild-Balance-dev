@@ -271,21 +271,14 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
         });
       </script>
       {% comment %}--------------------- BOTÓN WHATSAPP ---------------------{% endcomment %}
-      <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          const cartTrigger = document.querySelector('.t4s-site-nav__cart');
-          const miniCart = document.getElementById('t4s-mini_cart');
-
-          if (!cartTrigger || !miniCart) return;
-
-          cartTrigger.addEventListener('click', function (event) {
-            // Evitamos la navegación al enlace /cart
-            event.preventDefault();
-            // Ocultamos el mini-carrito
-            miniCart.setAttribute('aria-hidden', 'true');
-          });
-        });
-      </script>
+      <style>
+                  .t4s-site-nav__cart .t4s-count-box {
+                    right: -6px!important;
+              top: -10px!important;
+              font-weight: bold!important;
+              font-size: 14px!important;
+        }
+      </style>
     </body>
   </html>
 

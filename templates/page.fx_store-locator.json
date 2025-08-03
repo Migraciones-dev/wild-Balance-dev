@@ -1,1 +1,149 @@
-{"sections":{"heading":{"type":"heading-template","disabled":true,"settings":{"parallax":false,"color":"#000000","overlay":0,"padding_top":50,"padding_bottom":50,"mg_b":50,"padding_top_tb":50,"padding_bottom_tb":50,"mg_btb":50,"padding_top_mb":50,"padding_bottom_mb":50,"mg_bmb":50,"box_border":"top_bottom","bg_pos":"center center","bg_repeat":"no-repeat","bg_size":"cover"}},"main":{"type":"main-page","custom_css":[".t4s-container{padding:0 !important;}"],"settings":{"layout":"t4s-container-wrap","cl_bg":"","cl_bg_gradient":"","mg":"60px,,60px,","pd":"","mg_tb":",,50px,","pd_tb":"","mg_mb":",,30px,","pd_mb":"0%,0%,0%,0%"}},"custom_section_KT9c8V":{"type":"custom-section","blocks":{"bl_col_7f6at3":{"type":"bl_col","settings":{"col_dk":"12","col_dk_w":"33.33333","col_tb":"12","col_dk_w_tb":"33.33333","col_mb":"12","align_vertical":false,"content_align":"center","content_align_tablet":"center","content_align_mobile":"center","padding_inner":"10px,,20px","padding_inner_tb":"15px,,15px,","padding_inner_mb":"15px,,15px,","round_inner":"","round_tb_inner":"","round_mb_inner":"","bg_cl":"#ffffff","time_animation":1,"animation_delay":40}},"custom_text_8Bbk4J":{"type":"custom_text","settings":{"text":"¿Echas de menos alguna tienda?","remove_br_tag":false,"tag":"h6","fontf":"2","text_cl":"#00774f","text_fs":20,"text_lh":0,"text_fw":900,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":0,"text_fs_tb":20,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":0,"hidden_mobile":false,"text_fs_mb":20,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":0,"animation":"none"}}},"block_order":["bl_col_7f6at3","custom_text_8Bbk4J"],"settings":{"space_h_item":"0","space_v_item":"0","space_h_item_tb":"0","space_v_item_tb":"0","space_h_item_mb":"0","space_v_item_mb":"0","layout":"t4s-container-wrap","cl_bg":"","cl_bg_gradient":"","mg":",,50px,","pd":"","mg_tb":",,50px,","pd_tb":"","mg_mb":",,30px,","pd_mb":""}},"17271696316332c338":{"type":"apps","blocks":{"powerful_form_builder_app_block_ibMC9P":{"type":"shopify:\/\/apps\/powerful-form-builder\/blocks\/app-block\/e4bcb1eb-35b2-42e6-bc37-bfe0e1542c9d","settings":{"shortcode":"<div class=\"globo-formbuilder\" data-id=\"MTAzNTM=\"><\/div>\n\n<style>\n.globo-formbuilder{\nmargin: -60px 0px 30px 0px;\ntext-align:center;\n}\n\n.globo-formbuilder .globo-form-app{\nwidth:90%;\nmax-width: initial;\n}\n\n.globo-formbuilder .flex-wrap{\njustify-content:space-evenly;\n}\n\n.globo-formbuilder .flex-wrap li{\n  width:45% !important;\n  display:flex;\n}\n\n.globo-form-control.layout-3-column{\nwidth: 24.33%;\n}\n.globo-form-control.layout-1-column{\nwidth: 24.33%;\n}\n\n.globo-formbuilder .flex-wrap .layout-1-column:first-child{\nwidth: 100%;\n}\n\n.globo-formbuilder .flex-wrap li:first-child{\n    justify-content: flex-end;\n}\n\n.globo-formbuilder input{\n    background-color: #FAF5E7;\n}\n.globo-formbuilder .classic_rounded-input{\n    background-color: #FAF5E7;\nbox-shadow:initial;\n}\n\n .globo-formbuilder a{\ncolor:#00774F;\ntext-decoration:underline;\n}\n\n.globo-formbuilder .stockist-map-result .stockist-result-custom-fields span{\ndisplay:none;\n}\n\n@media (max-width:580px){\n.globo-formbuilder{display:none;}\n\/*.globo-formbuilder .globo-form-app{\nwidth:initial;\npadding:0px 30px 20px 30px;\n}\n.globo-formbuilder .globo-form-control{width:100%;}*\/\n}\n<\/style>"}}},"block_order":["powerful_form_builder_app_block_ibMC9P"],"settings":{}}},"order":["heading","main","custom_section_KT9c8V","17271696316332c338"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "heading": {
+      "type": "heading-template",
+      "disabled": true,
+      "settings": {
+        "parallax": false,
+        "color": "#000000",
+        "overlay": 0,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "mg_b": 50,
+        "padding_top_tb": 50,
+        "padding_bottom_tb": 50,
+        "mg_btb": 50,
+        "padding_top_mb": 50,
+        "padding_bottom_mb": 50,
+        "mg_bmb": 50,
+        "box_border": "top_bottom",
+        "bg_pos": "center center",
+        "bg_repeat": "no-repeat",
+        "bg_size": "cover"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "custom_css": [
+        ".t4s-container{padding:0 !important;}"
+      ],
+      "settings": {
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": "60px,,60px,",
+        "pd": "",
+        "mg_tb": ",,50px,",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": "0%,0%,0%,0%"
+      }
+    },
+    "custom_section_KT9c8V": {
+      "type": "custom-section",
+      "blocks": {
+        "bl_col_7f6at3": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "12",
+            "col_dk_w": "33.33333",
+            "col_tb": "12",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": false,
+            "content_align": "center",
+            "content_align_tablet": "center",
+            "content_align_mobile": "center",
+            "padding_inner": "10px,,20px",
+            "padding_inner_tb": "15px,,15px,",
+            "padding_inner_mb": "15px,,15px,",
+            "round_inner": "",
+            "round_tb_inner": "",
+            "round_mb_inner": "",
+            "bg_cl": "#ffffff",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_8Bbk4J": {
+          "type": "custom_text",
+          "settings": {
+            "text": "¿Echas de menos alguna tienda?",
+            "remove_br_tag": false,
+            "tag": "h6",
+            "fontf": "2",
+            "text_cl": "#004623",
+            "text_fs": 20,
+            "text_lh": 0,
+            "text_fw": 900,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 0,
+            "text_fs_tb": 20,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 0,
+            "hidden_mobile": false,
+            "text_fs_mb": 20,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 0,
+            "animation": "none"
+          }
+        }
+      },
+      "block_order": [
+        "bl_col_7f6at3",
+        "custom_text_8Bbk4J"
+      ],
+      "settings": {
+        "space_h_item": "0",
+        "space_v_item": "0",
+        "space_h_item_tb": "0",
+        "space_v_item_tb": "0",
+        "space_h_item_mb": "0",
+        "space_v_item_mb": "0",
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,50px,",
+        "pd": "",
+        "mg_tb": ",,50px,",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": ""
+      }
+    },
+    "17271696316332c338": {
+      "type": "apps",
+      "blocks": {
+        "powerful_form_builder_app_block_ibMC9P": {
+          "type": "shopify://apps/powerful-form-builder/blocks/app-block/e4bcb1eb-35b2-42e6-bc37-bfe0e1542c9d",
+          "settings": {
+            "shortcode": "<div class=\"globo-formbuilder\" data-id=\"MTAzNTM=\"></div>\n\n<style>\n.globo-formbuilder{\nmargin: -60px 0px 30px 0px;\ntext-align:center;\n}\n\n.globo-formbuilder .globo-form-app{\nwidth:90%;\nmax-width: initial;\n}\n\n.globo-formbuilder .flex-wrap{\njustify-content:space-evenly;\n}\n\n.globo-formbuilder .flex-wrap li{\n  width:45% !important;\n  display:flex;\n}\n\n.globo-form-control.layout-3-column{\nwidth: 24.33%;\n}\n.globo-form-control.layout-1-column{\nwidth: 24.33%;\n}\n\n.globo-formbuilder .flex-wrap .layout-1-column:first-child{\nwidth: 100%;\n}\n\n.globo-formbuilder .flex-wrap li:first-child{\n    justify-content: flex-end;\n}\n\n.globo-formbuilder input{\n    background-color: #FAF5E7;\n}\n.globo-formbuilder .classic_rounded-input{\n    background-color: #FAF5E7;\nbox-shadow:initial;\n}\n\n .globo-formbuilder a{\ncolor:#004623;\ntext-decoration:underline;\n}\n\n.globo-formbuilder .stockist-map-result .stockist-result-custom-fields span{\ndisplay:none;\n}\n\n@media (max-width:580px){\n.globo-formbuilder{display:none;}\n/*.globo-formbuilder .globo-form-app{\nwidth:initial;\npadding:0px 30px 20px 30px;\n}\n.globo-formbuilder .globo-form-control{width:100%;}*/\n}\n</style>"
+          }
+        }
+      },
+      "block_order": [
+        "powerful_form_builder_app_block_ibMC9P"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "heading",
+    "main",
+    "custom_section_KT9c8V",
+    "17271696316332c338"
+  ]
+}

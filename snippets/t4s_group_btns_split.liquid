@@ -607,20 +607,22 @@
           </a>
         </div>
       {%- endif -%}
-      {%- if se_stts.show_wis -%}
-        <div class="t4s-site-nav__icon t4s-site-nav__heart t4s-d-none t4s-d-lg-inline-block">
-          <a data-link-wishlist class="t4s-pr" href="{{ routes.search_url }}/?view=wishlist">
-            {%- if se_stts.h_txt_lable -%}
-              {{ 'customer.menu.wishlist' | t }}
-            {%- else -%}
-              <svg class="t4s-icon t4s-icon--heart" aria-hidden="true" focusable="false" role="presentation">
-                <use href="#icon-h-heart"></use>
-              </svg>
-            {%- endif -%}
-            <span data-count-wishlist class="t4s-pa t4s-op-0 t4s-ts-op t4s-count-box">0</span>
-          </a>
-        </div>
-      {%- endif -%}
+      {% comment %}
+        {%- if se_stts.show_wis -%}
+          <div class="t4s-site-nav__icon t4s-site-nav__heart t4s-d-none t4s-d-lg-inline-block">
+            <a data-link-wishlist class="t4s-pr" href="{{ routes.search_url }}/?view=wishlist">
+              {%- if se_stts.h_txt_lable -%}
+                {{ 'customer.menu.wishlist' | t }}
+              {%- else -%}
+                <svg class="t4s-icon t4s-icon--heart" aria-hidden="true" focusable="false" role="presentation">
+                  <use href="#icon-h-heart"></use>
+                </svg>
+              {%- endif -%}
+              <span data-count-wishlist class="t4s-pa t4s-op-0 t4s-ts-op t4s-count-box">0</span>
+            </a>
+          </div>
+        {%- endif -%}
+      {% endcomment %}
 
       {%- if se_stts.cart_des != '0' -%}
         <div class="t4s-site-nav__icon t4s-site-nav__cart">
@@ -708,16 +710,18 @@
           </a>
         </div>
       {%- endif -%}
-      {%- if se_stts.show_wis -%}
-        <div class="t4s-site-nav__icon t4s-site-nav__heart t4s-d-none t4s-d-md-inline-block">
-          <a data-link-wishlist class="t4s-pr" href="{{ routes.search_url }}/?view=wishlist">
-            <svg class="t4s-icon t4s-icon--wishlist" aria-hidden="true" focusable="false" role="presentation">
-              <use href="#icon-h-heart"></use>
-            </svg>
-            <span data-count-wishlist class="t4s-pa t4s-op-0 t4s-ts-op t4s-count-box">0</span>
-          </a>
-        </div>
-      {%- endif -%}
+      {% comment %}
+        {%- if se_stts.show_wis -%}
+          <div class="t4s-site-nav__icon t4s-site-nav__heart t4s-d-none t4s-d-md-inline-block">
+            <a data-link-wishlist class="t4s-pr" href="{{ routes.search_url }}/?view=wishlist">
+              <svg class="t4s-icon t4s-icon--wishlist" aria-hidden="true" focusable="false" role="presentation">
+                <use href="#icon-h-heart"></use>
+              </svg>
+              <span data-count-wishlist class="t4s-pa t4s-op-0 t4s-ts-op t4s-count-box">0</span>
+            </a>
+          </div>
+        {%- endif -%}
+      {% endcomment %}
 
       {%- if se_stts.cart_des != '0' -%}
         <div class="t4s-site-nav__icon t4s-site-nav__cart">

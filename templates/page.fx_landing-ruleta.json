@@ -1,1 +1,669 @@
-{"sections":{"heading":{"type":"heading-template","blocks":{"b49343f1-a16f-4a0c-834a-46b77fe777da":{"type":"1","settings":{"heading":"Page Heading","fontf":"inherit","text_cl":"#000000","text_fs":40,"text_lh":56,"text_fw":300,"text_ls":0,"font_italic":false,"font_uppercase":false,"text_shadow":false,"mgb":0,"text_fs_tb":35,"text_lh_tb":46,"text_ls_tb":0,"mgb_tb":0,"hidden_mobile":false,"text_fs_mb":35,"text_lh_mb":46,"text_ls_mb":0,"mgb_mb":0}},"46ff9c32-9810-4c24-b2bd-9c6e38cc2ea8":{"type":"3","settings":{"breadcrumb_color":"#868686","breadcrumb_color_link":"#000000","brc_mgb":0}}},"block_order":["b49343f1-a16f-4a0c-834a-46b77fe777da","46ff9c32-9810-4c24-b2bd-9c6e38cc2ea8"],"disabled":true,"settings":{"parallax":false,"color":"#000000","overlay":0,"padding_top":50,"padding_bottom":50,"mg_b":50,"padding_top_tb":50,"padding_bottom_tb":50,"mg_btb":50,"padding_top_mb":50,"padding_bottom_mb":50,"mg_bmb":50,"box_border":"top_bottom","bg_pos":"center center","bg_repeat":"no-repeat","bg_size":"cover"}},"main":{"type":"main-page","disabled":true,"settings":{"layout":"t4s-container-wrap","cl_bg":"","cl_bg_gradient":"","mg":"60px,,60px,","pd":"","mg_tb":",,50px,","pd_tb":"","mg_mb":",,30px,","pd_mb":""}},"custom_section_JidcdP":{"type":"custom-section","blocks":{"bl_col_RGWMDC":{"type":"bl_col","settings":{"col_dk":"12","col_dk_w":"33.33333","col_tb":"12","col_dk_w_tb":"33.33333","col_mb":"12","align_vertical":true,"content_align":"center","content_align_tablet":"center","content_align_mobile":"center","padding_inner":"","padding_inner_tb":"","padding_inner_mb":"","round_inner":"","round_tb_inner":"","round_mb_inner":"","bg_cl":"rgba(0,0,0,0)","time_animation":1,"animation_delay":40}},"custom_text_PbhfhT":{"type":"custom_text","settings":{"text":"¡Tu peludo lo vale! <br>\u2028Y además tiene suerte...","remove_br_tag":false,"tag":"h2","fontf":"2","text_cl":"#ffffff","text_fs":50,"text_lh":50,"text_fw":800,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":0,"text_fs_tb":24,"text_lh_tb":30,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":24,"text_lh_mb":30,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}},"custom_text_znPT6a":{"type":"custom_text","settings":{"text":"PARTICIPA EN LA RULETA Y CONSIGUE PREMIOS INCREÍBLES","remove_br_tag":false,"tag":"h4","fontf":"1","text_cl":"#ffffff","text_fs":16,"text_lh":43,"text_fw":300,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":0,"text_fs_tb":16,"text_lh_tb":30,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":16,"text_lh_mb":30,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}}},"block_order":["bl_col_RGWMDC","custom_text_PbhfhT","custom_text_znPT6a"],"settings":{"space_h_item":"0","space_v_item":"30","space_h_item_tb":"0","space_v_item_tb":"30","space_h_item_mb":"0","space_v_item_mb":"20","layout":"t4s-container-fluid","cl_bg":"#00774f","cl_bg_gradient":"","mg":",,0px,","pd":"50px,150px,0px,150px","mg_tb":",,0px,","pd_tb":"50px,50px,0px,50px","mg_mb":",,0px,","pd_mb":"20px,20px,0px,20px"}},"shipping_GYfUL9":{"type":"shipping","blocks":{"shipping_JaY9VQ":{"type":"shipping","settings":{"icon_themes":"box2","image_icon":"shopify:\/\/shop_images\/Group_6_7101822d-c77a-4764-912b-0eee8107088d.png","icon":"las la-redo-alt","title":"","text":"<p>Ingresa tu correo electrónico para participar en la ruleta.<\/p>"}},"shipping_XFcqqV":{"type":"shipping","settings":{"icon_themes":"shield1","image_icon":"shopify:\/\/shop_images\/Group_7_14017aea-d927-4bd6-8be9-674f11030a39.png","icon":"las la-shield-alt","title":"","text":"<p>Haz clic en el botón para girar la ruleta y espera a que la suerte decida tu premio<\/p>"}},"shipping_inYRe9":{"type":"shipping","settings":{"icon_themes":"customer-service","image_icon":"shopify:\/\/shop_images\/Group_8_f28b5353-1c96-42bb-a79b-508c83b93860.png","icon":"las la-phone","title":"","text":"<p>Anota el código de descuento exclusivo<\/p>"}}},"block_order":["shipping_JaY9VQ","shipping_XFcqqV","shipping_inYRe9"],"disabled":true,"settings":{"design_heading":"1","block_custom_class":"","heading_center":true,"top_heading":"","top_subheading":"","tophead_mb":30,"tophead_mb_tb":30,"tophead_mb_mb":25,"content_align":"text-start","align_vertical":false,"align_horizontal":false,"divided":false,"src_icon":"get_image","icon_size":"medium","icon_effect":"none","col_dk":"3","col_tb":"3","col_mb":"1","icon_cl":"#00774f","hd_cl":"#ffffff","content_cl":"#ffffff","bg_wrap_cl":"","hd_fs":16,"hd_fw":500,"txt_fs":14,"space_h_item":"30","space_v_item":"15","space_h_item_tb":"15","space_v_item_tb":"15","space_h_item_mb":"10","space_v_item_mb":"10","padding_inner":"","padding_inner_tb":"","padding_inner_mb":"","carousel_mobile":false,"dots_cl":"dark","dots_round":true,"layout":"t4s-cus-width","custom_width":900,"cl_bg":"#00774f","cl_bg_gradient":"","mg":",,0px,","pd":"50px,,30px","mg_tb":",,0px,","pd_tb":"20px","mg_mb":",,0px,","pd_mb":"20px"}},"custom_section_cdbBjC":{"type":"custom-section","blocks":{"bl_col_4VwJhB":{"type":"bl_col","settings":{"col_dk":"6","col_dk_w":"33.33333","col_tb":"6","col_dk_w_tb":"33.33333","col_mb":"12","align_vertical":true,"content_align":"center","content_align_tablet":"center","content_align_mobile":"center","padding_inner":"30px,,0px","padding_inner_tb":"15px,,0px,","padding_inner_mb":"15px,,0px,","round_inner":"","round_tb_inner":"","round_mb_inner":"","bg_cl":"rgba(0,0,0,0)","time_animation":1,"animation_delay":40}},"image_U6rXLy":{"type":"image","settings":{"image_child":"shopify:\/\/shop_images\/perrochulo1.png","img_link":"","open_link":"_self","img_width":0,"img_width_tb":0,"img_width_mb":0,"img_align":"center","img_align_tb":"center","img_align_mobile":"center","b_effect":"none","hidden_mobile":false,"mgb":0,"mgb_tb":0,"mgb_mb":0,"animation":"none"}},"bl_col_TCb69J":{"type":"bl_col","settings":{"col_dk":"6","col_dk_w":"33.33333","col_tb":"6","col_dk_w_tb":"33.33333","col_mb":"12","align_vertical":true,"content_align":"center","content_align_tablet":"center","content_align_mobile":"center","padding_inner":"30px,,30px","padding_inner_tb":"15px,,15px,","padding_inner_mb":"15px,,15px,","round_inner":"","round_tb_inner":"","round_mb_inner":"","bg_cl":"rgba(0,0,0,0)","time_animation":1,"animation_delay":40}},"html_XJTpjC":{"type":"html","settings":{"html_content":"<div class=\"cms-bloque-iconos fx_ruleta\">\n    <div class=\"cms-bloque-iconos-item\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0713\/9898\/1933\/files\/Group_6_7101822d-c77a-4764-912b-0eee8107088d.png?v=1702570396\" alt=\"\">\n    <\/div>\n    <div class=\"cms-bloque-iconos-content\">\n        <p>Ingresa tu correo electrónico para participar en la ruleta.<\/p>\n    <\/div>\n<\/div>\n<div class=\"cms-bloque-iconos fx_ruleta\">\n    <div class=\"cms-bloque-iconos-item\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0713\/9898\/1933\/files\/Group_7_14017aea-d927-4bd6-8be9-674f11030a39.png?v=1702570396\" alt=\"\">\n    <\/div>\n    <div class=\"cms-bloque-iconos-content\">\n        <p>Haz clic en el botón para girar la ruleta y espera a que la suerte decida tu premio<\/p>\n    <\/div>\n<\/div>\n<div class=\"cms-bloque-iconos fx_ruleta\">\n    <div class=\"cms-bloque-iconos-item\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0713\/9898\/1933\/files\/Group_8_f28b5353-1c96-42bb-a79b-508c83b93860.png?v=1702570396\" alt=\"\">\n    <\/div>\n    <div class=\"cms-bloque-iconos-content\">\n        <p>Anota el código de descuento exclusivo<\/p>\n    <\/div>\n<\/div>\n<style>\n    .cms-bloque-iconos.fx_ruleta{\n        background-color: #00774f;\n        text-align: left;\n    }\n.cms-bloque-iconos.fx_ruleta p{\ncolor: #fff;\n}\n\n<\/style>","hidden_mobile":false}}},"block_order":["bl_col_4VwJhB","image_U6rXLy","bl_col_TCb69J","html_XJTpjC"],"settings":{"space_h_item":"30","space_v_item":"30","space_h_item_tb":"10","space_v_item_tb":"10","space_h_item_mb":"10","space_v_item_mb":"10","layout":"t4s-container-wrap","cl_bg":"#00774f","cl_bg_gradient":"","mg":",,0px,","pd":"0px,150px,0px,150px","mg_tb":",,0px,","pd_tb":"50px,50px,0px,50px","mg_mb":",,0px,","pd_mb":"20px,20px,0px,20px"}},"custom_section_GCxnbb":{"type":"custom-section","blocks":{"bl_col_HWypfT":{"type":"bl_col","settings":{"col_dk":"12","col_dk_w":"33.33333","col_tb":"12","col_dk_w_tb":"33.33333","col_mb":"12","align_vertical":true,"content_align":"start","content_align_tablet":"start","content_align_mobile":"start","padding_inner":"50px,50px,30px,50px","padding_inner_tb":"30px,30px,30px,30px","padding_inner_mb":"20px,20px,20px,20px","round_inner":"5px,5px,5px,5px","round_tb_inner":"5px,5px,5px,5px","round_mb_inner":"5px,5px,5px,5px","bg_cl":"#faf5e7","time_animation":1,"animation_delay":40}},"custom_text_LkTpnM":{"type":"custom_text","settings":{"text":"Si tu premio es un descuento o envío gratis:","remove_br_tag":false,"tag":"h4","fontf":"2","text_cl":"#00774f","text_fs":24,"text_lh":0,"text_fw":800,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":14,"text_fs_tb":18,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":18,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}},"custom_text_BdpFmQ":{"type":"custom_text","settings":{"text":"<ul>\n<li><p>Agrega los productos que deseas comprar a tu carrito.<\/p><\/li>\n<li><p> Ve al carrito de compra (pantalla de pago)\n <\/p><\/li>\n<li><p> En la sección de \"Código de descuento\", introduce el código que obtuviste en la ruleta.\n <\/p><\/li>\n<li><p> Si tu premio fue <b>envío gratis<\/b>, el costo de envío debería desaparecer. Si fue un descuento, se aplicará automáticamente al total de tu compra.\n <\/p><\/li>\n<\/ul>","remove_br_tag":false,"tag":"div","fontf":"1","text_cl":"#00774f","text_fs":16,"text_lh":0,"text_fw":400,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":0,"text_fs_tb":16,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":14,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}},"bl_col_ENHNqK":{"type":"bl_col","settings":{"col_dk":"12","col_dk_w":"33.33333","col_tb":"12","col_dk_w_tb":"33.33333","col_mb":"12","align_vertical":true,"content_align":"start","content_align_tablet":"start","content_align_mobile":"start","padding_inner":"50px,50px,30px,50px","padding_inner_tb":"30px,30px,30px,30px","padding_inner_mb":"20px,20px,20px,20px","round_inner":"5px,5px,5px,5px","round_tb_inner":"5px,5px,5px,5px","round_mb_inner":"5px,5px,5px,5px","bg_cl":"#faf5e7","time_animation":1,"animation_delay":40}},"custom_text_JzYhYH":{"type":"custom_text","settings":{"text":"Si tu premio es un regalo en tu siguiente pedido:","remove_br_tag":false,"tag":"h4","fontf":"2","text_cl":"#00774f","text_fs":24,"text_lh":0,"text_fw":800,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":14,"text_fs_tb":18,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":18,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}},"custom_text_Lgm6H7":{"type":"custom_text","settings":{"text":"<ul>\n<li><p>Agrega el producto premiado al carrito.<\/p><\/li>\n<li><p>Ve al carrito de compra (pantalla de pago)<\/p><\/li>\n<li><p>En la sección de \"Código de descuento\", introduce el código proporcionado para el producto.<\/p><\/li>\n<li><p>El producto será descontado del total de tu compra, y podrás completar la compra con tu producto gratis.\n<\/p><\/li>\n<\/ul>","remove_br_tag":false,"tag":"div","fontf":"1","text_cl":"#00774f","text_fs":16,"text_lh":0,"text_fw":400,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":5,"text_fs_tb":16,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":14,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}}},"block_order":["bl_col_HWypfT","custom_text_LkTpnM","custom_text_BdpFmQ","bl_col_ENHNqK","custom_text_JzYhYH","custom_text_Lgm6H7"],"custom_css":["ul {list-style: disc;}"],"settings":{"space_h_item":"0","space_v_item":"30","space_h_item_tb":"0","space_v_item_tb":"30","space_h_item_mb":"0","space_v_item_mb":"20","layout":"t4s-container-fluid","cl_bg":"#00774f","cl_bg_gradient":"","mg":",,0px,","pd":"0px,150px,0px,150px","mg_tb":",,0px,","pd_tb":"50px,50px,0px,50px","mg_mb":",,0px,","pd_mb":"20px,20px,0px,20px"}},"featured_collection_qaCzca":{"type":"featured-collection","custom_css":[".t4s-product-title {color: #fff;}",".t4s-product .t4s-product-price ins {color: #fff;}"],"settings":{"design_heading":"1","heading_center":true,"top_heading":"","top_subheading":"","head_bigger":false,"tophead_mb":30,"tophead_mb_tb":30,"tophead_mb_mb":25,"collection":"sorteo","product_des":"1","rating_pos":"1","list_color_pos":"1","list_size_pos":"1","show_vendor":false,"use_cdt":false,"image_ratio":"ratioadapt","image_size":"cover","image_position":"8","content_align":"default","limit":8,"col_dk":"3","col_tb":"3","col_mb":"2","space_h_item":"30","space_v_item":"30","space_h_item_tb":"30","space_v_item_tb":"30","space_h_item_mb":"10","space_v_item_mb":"10","layout_des":"1","border_pr":false,"loop":true,"au_time":0,"au_hover":true,"nav_btn":false,"btn_pos":"in","btn_distance":15,"btn_vi":"hover","btn_owl":"default","btn_shape":"none","btn_cl":"dark","btn_size":"small","btn_hidden_mobile":false,"nav_dot":false,"dot_owl":"default","dots_cl":"dark","dots_round":true,"dots_space":10,"dots_bottom_pos":20,"dots_hidden_mobile":false,"border_pr_img":false,"use_pagination":"none","enable_bar_lm":true,"text_view_all":"","btn_icon":false,"btn_rounded":false,"button_style":"default","btns_size":"default","btns_cl":"dark","button_effect":"default","btns_pos":"t4s-text-center","head_btn_label":"Shop All","head_btn_url":"","head_btn_icon":true,"head_btn_rounded":false,"head_button_style":"outline","head_btns_size":"default","head_btns_cl":"dark","head_button_effect":"default","hidden_btn_mb":false,"head_slide_btn":false,"layout":"t4s-container-fluid","cl_bg":"#00774f","cl_bg_gradient":"","mg":"","pd":"30px,150px,100px,150px","mg_tb":"","pd_tb":"50px,50px,40px,50px","mg_mb":"","pd_mb":"20px,20px,40px,20px"}}},"order":["heading","main","custom_section_JidcdP","shipping_GYfUL9","custom_section_cdbBjC","custom_section_GCxnbb","featured_collection_qaCzca"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "heading": {
+      "type": "heading-template",
+      "blocks": {
+        "b49343f1-a16f-4a0c-834a-46b77fe777da": {
+          "type": "1",
+          "settings": {
+            "heading": "Page Heading",
+            "fontf": "inherit",
+            "text_cl": "#000000",
+            "text_fs": 40,
+            "text_lh": 56,
+            "text_fw": 300,
+            "text_ls": 0,
+            "font_italic": false,
+            "font_uppercase": false,
+            "text_shadow": false,
+            "mgb": 0,
+            "text_fs_tb": 35,
+            "text_lh_tb": 46,
+            "text_ls_tb": 0,
+            "mgb_tb": 0,
+            "hidden_mobile": false,
+            "text_fs_mb": 35,
+            "text_lh_mb": 46,
+            "text_ls_mb": 0,
+            "mgb_mb": 0
+          }
+        },
+        "46ff9c32-9810-4c24-b2bd-9c6e38cc2ea8": {
+          "type": "3",
+          "settings": {
+            "breadcrumb_color": "#868686",
+            "breadcrumb_color_link": "#000000",
+            "brc_mgb": 0
+          }
+        }
+      },
+      "block_order": [
+        "b49343f1-a16f-4a0c-834a-46b77fe777da",
+        "46ff9c32-9810-4c24-b2bd-9c6e38cc2ea8"
+      ],
+      "disabled": true,
+      "settings": {
+        "parallax": false,
+        "color": "#000000",
+        "overlay": 0,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "mg_b": 50,
+        "padding_top_tb": 50,
+        "padding_bottom_tb": 50,
+        "mg_btb": 50,
+        "padding_top_mb": 50,
+        "padding_bottom_mb": 50,
+        "mg_bmb": 50,
+        "box_border": "top_bottom",
+        "bg_pos": "center center",
+        "bg_repeat": "no-repeat",
+        "bg_size": "cover"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": "60px,,60px,",
+        "pd": "",
+        "mg_tb": ",,50px,",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": ""
+      }
+    },
+    "custom_section_JidcdP": {
+      "type": "custom-section",
+      "blocks": {
+        "bl_col_RGWMDC": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "12",
+            "col_dk_w": "33.33333",
+            "col_tb": "12",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": true,
+            "content_align": "center",
+            "content_align_tablet": "center",
+            "content_align_mobile": "center",
+            "padding_inner": "",
+            "padding_inner_tb": "",
+            "padding_inner_mb": "",
+            "round_inner": "",
+            "round_tb_inner": "",
+            "round_mb_inner": "",
+            "bg_cl": "rgba(0,0,0,0)",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_PbhfhT": {
+          "type": "custom_text",
+          "settings": {
+            "text": "¡Tu peludo lo vale! <br> Y además tiene suerte...",
+            "remove_br_tag": false,
+            "tag": "h2",
+            "fontf": "2",
+            "text_cl": "#ffffff",
+            "text_fs": 50,
+            "text_lh": 50,
+            "text_fw": 800,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 0,
+            "text_fs_tb": 24,
+            "text_lh_tb": 30,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 24,
+            "text_lh_mb": 30,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_znPT6a": {
+          "type": "custom_text",
+          "settings": {
+            "text": "PARTICIPA EN LA RULETA Y CONSIGUE PREMIOS INCREÍBLES",
+            "remove_br_tag": false,
+            "tag": "h4",
+            "fontf": "1",
+            "text_cl": "#ffffff",
+            "text_fs": 16,
+            "text_lh": 43,
+            "text_fw": 300,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 0,
+            "text_fs_tb": 16,
+            "text_lh_tb": 30,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 16,
+            "text_lh_mb": 30,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        }
+      },
+      "block_order": [
+        "bl_col_RGWMDC",
+        "custom_text_PbhfhT",
+        "custom_text_znPT6a"
+      ],
+      "settings": {
+        "space_h_item": "0",
+        "space_v_item": "30",
+        "space_h_item_tb": "0",
+        "space_v_item_tb": "30",
+        "space_h_item_mb": "0",
+        "space_v_item_mb": "20",
+        "layout": "t4s-container-fluid",
+        "cl_bg": "#004623",
+        "cl_bg_gradient": "",
+        "mg": ",,0px,",
+        "pd": "50px,150px,0px,150px",
+        "mg_tb": ",,0px,",
+        "pd_tb": "50px,50px,0px,50px",
+        "mg_mb": ",,0px,",
+        "pd_mb": "20px,20px,0px,20px"
+      }
+    },
+    "shipping_GYfUL9": {
+      "type": "shipping",
+      "blocks": {
+        "shipping_JaY9VQ": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "box2",
+            "image_icon": "shopify://shop_images/Group_6_7101822d-c77a-4764-912b-0eee8107088d.png",
+            "icon": "las la-redo-alt",
+            "title": "",
+            "text": "<p>Ingresa tu correo electrónico para participar en la ruleta.</p>"
+          }
+        },
+        "shipping_XFcqqV": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "shield1",
+            "image_icon": "shopify://shop_images/Group_7_14017aea-d927-4bd6-8be9-674f11030a39.png",
+            "icon": "las la-shield-alt",
+            "title": "",
+            "text": "<p>Haz clic en el botón para girar la ruleta y espera a que la suerte decida tu premio</p>"
+          }
+        },
+        "shipping_inYRe9": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "customer-service",
+            "image_icon": "shopify://shop_images/Group_8_f28b5353-1c96-42bb-a79b-508c83b93860.png",
+            "icon": "las la-phone",
+            "title": "",
+            "text": "<p>Anota el código de descuento exclusivo</p>"
+          }
+        }
+      },
+      "block_order": [
+        "shipping_JaY9VQ",
+        "shipping_XFcqqV",
+        "shipping_inYRe9"
+      ],
+      "disabled": true,
+      "settings": {
+        "design_heading": "1",
+        "block_custom_class": "",
+        "heading_center": true,
+        "top_heading": "",
+        "top_subheading": "",
+        "tophead_mb": 30,
+        "tophead_mb_tb": 30,
+        "tophead_mb_mb": 25,
+        "content_align": "text-start",
+        "align_vertical": false,
+        "align_horizontal": false,
+        "divided": false,
+        "src_icon": "get_image",
+        "icon_size": "medium",
+        "icon_effect": "none",
+        "col_dk": "3",
+        "col_tb": "3",
+        "col_mb": "1",
+        "icon_cl": "#004623",
+        "hd_cl": "#ffffff",
+        "content_cl": "#ffffff",
+        "bg_wrap_cl": "",
+        "hd_fs": 16,
+        "hd_fw": 500,
+        "txt_fs": 14,
+        "space_h_item": "30",
+        "space_v_item": "15",
+        "space_h_item_tb": "15",
+        "space_v_item_tb": "15",
+        "space_h_item_mb": "10",
+        "space_v_item_mb": "10",
+        "padding_inner": "",
+        "padding_inner_tb": "",
+        "padding_inner_mb": "",
+        "carousel_mobile": false,
+        "dots_cl": "dark",
+        "dots_round": true,
+        "layout": "t4s-cus-width",
+        "custom_width": 900,
+        "cl_bg": "#004623",
+        "cl_bg_gradient": "",
+        "mg": ",,0px,",
+        "pd": "50px,,30px",
+        "mg_tb": ",,0px,",
+        "pd_tb": "20px",
+        "mg_mb": ",,0px,",
+        "pd_mb": "20px"
+      }
+    },
+    "custom_section_cdbBjC": {
+      "type": "custom-section",
+      "blocks": {
+        "bl_col_4VwJhB": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "6",
+            "col_dk_w": "33.33333",
+            "col_tb": "6",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": true,
+            "content_align": "center",
+            "content_align_tablet": "center",
+            "content_align_mobile": "center",
+            "padding_inner": "30px,,0px",
+            "padding_inner_tb": "15px,,0px,",
+            "padding_inner_mb": "15px,,0px,",
+            "round_inner": "",
+            "round_tb_inner": "",
+            "round_mb_inner": "",
+            "bg_cl": "rgba(0,0,0,0)",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "image_U6rXLy": {
+          "type": "image",
+          "settings": {
+            "image_child": "shopify://shop_images/perrochulo1.png",
+            "img_link": "",
+            "open_link": "_self",
+            "img_width": 0,
+            "img_width_tb": 0,
+            "img_width_mb": 0,
+            "img_align": "center",
+            "img_align_tb": "center",
+            "img_align_mobile": "center",
+            "b_effect": "none",
+            "hidden_mobile": false,
+            "mgb": 0,
+            "mgb_tb": 0,
+            "mgb_mb": 0,
+            "animation": "none"
+          }
+        },
+        "bl_col_TCb69J": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "6",
+            "col_dk_w": "33.33333",
+            "col_tb": "6",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": true,
+            "content_align": "center",
+            "content_align_tablet": "center",
+            "content_align_mobile": "center",
+            "padding_inner": "30px,,30px",
+            "padding_inner_tb": "15px,,15px,",
+            "padding_inner_mb": "15px,,15px,",
+            "round_inner": "",
+            "round_tb_inner": "",
+            "round_mb_inner": "",
+            "bg_cl": "rgba(0,0,0,0)",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "html_XJTpjC": {
+          "type": "html",
+          "settings": {
+            "html_content": "<div class=\"cms-bloque-iconos fx_ruleta\">\n    <div class=\"cms-bloque-iconos-item\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_6_7101822d-c77a-4764-912b-0eee8107088d.png?v=1702570396\" alt=\"\">\n    </div>\n    <div class=\"cms-bloque-iconos-content\">\n        <p>Ingresa tu correo electrónico para participar en la ruleta.</p>\n    </div>\n</div>\n<div class=\"cms-bloque-iconos fx_ruleta\">\n    <div class=\"cms-bloque-iconos-item\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_7_14017aea-d927-4bd6-8be9-674f11030a39.png?v=1702570396\" alt=\"\">\n    </div>\n    <div class=\"cms-bloque-iconos-content\">\n        <p>Haz clic en el botón para girar la ruleta y espera a que la suerte decida tu premio</p>\n    </div>\n</div>\n<div class=\"cms-bloque-iconos fx_ruleta\">\n    <div class=\"cms-bloque-iconos-item\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_8_f28b5353-1c96-42bb-a79b-508c83b93860.png?v=1702570396\" alt=\"\">\n    </div>\n    <div class=\"cms-bloque-iconos-content\">\n        <p>Anota el código de descuento exclusivo</p>\n    </div>\n</div>\n<style>\n    .cms-bloque-iconos.fx_ruleta{\n        background-color: #004623;\n        text-align: left;\n    }\n.cms-bloque-iconos.fx_ruleta p{\ncolor: #fff;\n}\n\n</style>",
+            "hidden_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "bl_col_4VwJhB",
+        "image_U6rXLy",
+        "bl_col_TCb69J",
+        "html_XJTpjC"
+      ],
+      "settings": {
+        "space_h_item": "30",
+        "space_v_item": "30",
+        "space_h_item_tb": "10",
+        "space_v_item_tb": "10",
+        "space_h_item_mb": "10",
+        "space_v_item_mb": "10",
+        "layout": "t4s-container-wrap",
+        "cl_bg": "#004623",
+        "cl_bg_gradient": "",
+        "mg": ",,0px,",
+        "pd": "0px,150px,0px,150px",
+        "mg_tb": ",,0px,",
+        "pd_tb": "50px,50px,0px,50px",
+        "mg_mb": ",,0px,",
+        "pd_mb": "20px,20px,0px,20px"
+      }
+    },
+    "custom_section_GCxnbb": {
+      "type": "custom-section",
+      "blocks": {
+        "bl_col_HWypfT": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "12",
+            "col_dk_w": "33.33333",
+            "col_tb": "12",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": true,
+            "content_align": "start",
+            "content_align_tablet": "start",
+            "content_align_mobile": "start",
+            "padding_inner": "50px,50px,30px,50px",
+            "padding_inner_tb": "30px,30px,30px,30px",
+            "padding_inner_mb": "20px,20px,20px,20px",
+            "round_inner": "5px,5px,5px,5px",
+            "round_tb_inner": "5px,5px,5px,5px",
+            "round_mb_inner": "5px,5px,5px,5px",
+            "bg_cl": "#faf5e7",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_LkTpnM": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Si tu premio es un descuento o envío gratis:",
+            "remove_br_tag": false,
+            "tag": "h4",
+            "fontf": "2",
+            "text_cl": "#004623",
+            "text_fs": 24,
+            "text_lh": 0,
+            "text_fw": 800,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 14,
+            "text_fs_tb": 18,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 18,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_BdpFmQ": {
+          "type": "custom_text",
+          "settings": {
+            "text": "<ul>\n<li><p>Agrega los productos que deseas comprar a tu carrito.</p></li>\n<li><p> Ve al carrito de compra (pantalla de pago)\n </p></li>\n<li><p> En la sección de \"Código de descuento\", introduce el código que obtuviste en la ruleta.\n </p></li>\n<li><p> Si tu premio fue <b>envío gratis</b>, el costo de envío debería desaparecer. Si fue un descuento, se aplicará automáticamente al total de tu compra.\n </p></li>\n</ul>",
+            "remove_br_tag": false,
+            "tag": "div",
+            "fontf": "1",
+            "text_cl": "#004623",
+            "text_fs": 16,
+            "text_lh": 0,
+            "text_fw": 400,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 0,
+            "text_fs_tb": 16,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 14,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "bl_col_ENHNqK": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "12",
+            "col_dk_w": "33.33333",
+            "col_tb": "12",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": true,
+            "content_align": "start",
+            "content_align_tablet": "start",
+            "content_align_mobile": "start",
+            "padding_inner": "50px,50px,30px,50px",
+            "padding_inner_tb": "30px,30px,30px,30px",
+            "padding_inner_mb": "20px,20px,20px,20px",
+            "round_inner": "5px,5px,5px,5px",
+            "round_tb_inner": "5px,5px,5px,5px",
+            "round_mb_inner": "5px,5px,5px,5px",
+            "bg_cl": "#faf5e7",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_JzYhYH": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Si tu premio es un regalo en tu siguiente pedido:",
+            "remove_br_tag": false,
+            "tag": "h4",
+            "fontf": "2",
+            "text_cl": "#004623",
+            "text_fs": 24,
+            "text_lh": 0,
+            "text_fw": 800,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 14,
+            "text_fs_tb": 18,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 18,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_Lgm6H7": {
+          "type": "custom_text",
+          "settings": {
+            "text": "<ul>\n<li><p>Agrega el producto premiado al carrito.</p></li>\n<li><p>Ve al carrito de compra (pantalla de pago)</p></li>\n<li><p>En la sección de \"Código de descuento\", introduce el código proporcionado para el producto.</p></li>\n<li><p>El producto será descontado del total de tu compra, y podrás completar la compra con tu producto gratis.\n</p></li>\n</ul>",
+            "remove_br_tag": false,
+            "tag": "div",
+            "fontf": "1",
+            "text_cl": "#004623",
+            "text_fs": 16,
+            "text_lh": 0,
+            "text_fw": 400,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 5,
+            "text_fs_tb": 16,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 14,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        }
+      },
+      "block_order": [
+        "bl_col_HWypfT",
+        "custom_text_LkTpnM",
+        "custom_text_BdpFmQ",
+        "bl_col_ENHNqK",
+        "custom_text_JzYhYH",
+        "custom_text_Lgm6H7"
+      ],
+      "custom_css": [
+        "ul {list-style: disc;}"
+      ],
+      "settings": {
+        "space_h_item": "0",
+        "space_v_item": "30",
+        "space_h_item_tb": "0",
+        "space_v_item_tb": "30",
+        "space_h_item_mb": "0",
+        "space_v_item_mb": "20",
+        "layout": "t4s-container-fluid",
+        "cl_bg": "#004623",
+        "cl_bg_gradient": "",
+        "mg": ",,0px,",
+        "pd": "0px,150px,0px,150px",
+        "mg_tb": ",,0px,",
+        "pd_tb": "50px,50px,0px,50px",
+        "mg_mb": ",,0px,",
+        "pd_mb": "20px,20px,0px,20px"
+      }
+    },
+    "featured_collection_qaCzca": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".t4s-product-title {color: #fff;}",
+        ".t4s-product .t4s-product-price ins {color: #fff;}"
+      ],
+      "settings": {
+        "design_heading": "1",
+        "heading_center": true,
+        "top_heading": "",
+        "top_subheading": "",
+        "head_bigger": false,
+        "tophead_mb": 30,
+        "tophead_mb_tb": 30,
+        "tophead_mb_mb": 25,
+        "collection": "sorteo",
+        "product_des": "1",
+        "rating_pos": "1",
+        "list_color_pos": "1",
+        "list_size_pos": "1",
+        "show_vendor": false,
+        "use_cdt": false,
+        "image_ratio": "ratioadapt",
+        "image_size": "cover",
+        "image_position": "8",
+        "content_align": "default",
+        "limit": 8,
+        "col_dk": "3",
+        "col_tb": "3",
+        "col_mb": "2",
+        "space_h_item": "30",
+        "space_v_item": "30",
+        "space_h_item_tb": "30",
+        "space_v_item_tb": "30",
+        "space_h_item_mb": "10",
+        "space_v_item_mb": "10",
+        "layout_des": "1",
+        "border_pr": false,
+        "loop": true,
+        "au_time": 0,
+        "au_hover": true,
+        "nav_btn": false,
+        "btn_pos": "in",
+        "btn_distance": 15,
+        "btn_vi": "hover",
+        "btn_owl": "default",
+        "btn_shape": "none",
+        "btn_cl": "dark",
+        "btn_size": "small",
+        "btn_hidden_mobile": false,
+        "nav_dot": false,
+        "dot_owl": "default",
+        "dots_cl": "dark",
+        "dots_round": true,
+        "dots_space": 10,
+        "dots_bottom_pos": 20,
+        "dots_hidden_mobile": false,
+        "border_pr_img": false,
+        "use_pagination": "none",
+        "enable_bar_lm": true,
+        "text_view_all": "",
+        "btn_icon": false,
+        "btn_rounded": false,
+        "button_style": "default",
+        "btns_size": "default",
+        "btns_cl": "dark",
+        "button_effect": "default",
+        "btns_pos": "t4s-text-center",
+        "head_btn_label": "Shop All",
+        "head_btn_url": "",
+        "head_btn_icon": true,
+        "head_btn_rounded": false,
+        "head_button_style": "outline",
+        "head_btns_size": "default",
+        "head_btns_cl": "dark",
+        "head_button_effect": "default",
+        "hidden_btn_mb": false,
+        "head_slide_btn": false,
+        "layout": "t4s-container-fluid",
+        "cl_bg": "#004623",
+        "cl_bg_gradient": "",
+        "mg": "",
+        "pd": "30px,150px,100px,150px",
+        "mg_tb": "",
+        "pd_tb": "50px,50px,40px,50px",
+        "mg_mb": "",
+        "pd_mb": "20px,20px,40px,20px"
+      }
+    }
+  },
+  "order": [
+    "heading",
+    "main",
+    "custom_section_JidcdP",
+    "shipping_GYfUL9",
+    "custom_section_cdbBjC",
+    "custom_section_GCxnbb",
+    "featured_collection_qaCzca"
+  ]
+}
