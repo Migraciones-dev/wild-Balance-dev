@@ -221,7 +221,6 @@
       {% if collection.metafields.custom.banner_superior %}<img class="w-full hidden lg:block" src="{{ collection.metafields.custom.banner_superior | file_url }}"> {% endif %}
        
       
-{% if collection.metafields.custom.subcolecciones.value %}
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 w-full my-6">
   {% for subcollection in collection.metafields.custom.subcolecciones.value %}
   <a href="{{ subcollection.url }}" class="flex items-center bg-white shadow border border-[#D9D9C8] rounded-[8px] w-full h-[68px] lg:h-[88px] overflow-hidden">
@@ -238,7 +237,6 @@
   </a>
 {% endfor %}
 </div>
-{% endif %}
 
 
 <div class="t4s-btn-filter-wrapper ml-auto">
