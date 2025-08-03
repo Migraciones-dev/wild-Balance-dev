@@ -72,15 +72,6 @@
                 >
                   <div class="flex flex-row gap-12">
                     <div class="w-1/5 flex flex-col">
-                      {% if bk_stts.menu != blank and linklists[bk_stts.menu].links != blank %}
-                        <ul class="mega-menu-links">
-                          {% for link in linklists[bk_stts.menu].links %}
-                            <li>
-                              <a href="{{ link.url }}">{{ link.title }}</a>
-                            </li>
-                          {% endfor %}
-                        </ul>
-                      {% endif %}
                       {% comment %}<img src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Background_1.jpg?v=1754217207">{% endcomment %}
                       <a href="#" class="font-extrabold [font-family:'Barlow',Helvetica]  text-[#004623] text-[25px]"
                         >VER TODOS</a
@@ -93,6 +84,23 @@
                     </div>
 
                     <div class="grid grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+                      {% for link in linklists[bk_stts.menu].links %}
+                        <div class="flex items-center bg-white shadow border border-[#D9D9C8] rounded-[8px]  w-full h-[117px] overflow-hidden">
+                          <!-- Imagen -->
+                          <div class="flex-shrink-0 w-[134px] h-full">
+                            <img
+                              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/eedfebc2db8d8dc29c90175ff176af6847b4051f_1.png?v=1753638976"
+                              alt="Menú"
+                              class="w-full h-full object-cover p-2 rounded-[8px] "
+                            >
+                          </div>
+                          <!-- Texto -->
+                          <div class="flex-1 pl-4 [font-family:'Barlow',Helvetica]  text-[#004623] px-6">
+                            <p class="font-bold text-[20px] leading-[25px] leading-[25px]">Comida cocinada</p>
+                            <p class="text-[14px]">Completa y Deliciosa</p>
+                          </div>
+                        </div>
+                      {% endfor %}
                       <!-- Card 1 -->
                       <div class="flex items-center bg-white shadow border border-[#D9D9C8] rounded-[8px]  w-full h-[117px] overflow-hidden">
                         <!-- Imagen -->
