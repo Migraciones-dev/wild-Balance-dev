@@ -401,7 +401,7 @@ t4option0_0 | alt text
                                     assign lh_pr = bk_stts.lh_pr | append: 'px'
                                 endif  
                             -%}
-                            <h1 class="t4s-product__title !text-[32px] !leading-[1.35] text-[#004623] [font-family:'Barlow',Helvetica] !font-[700]" >{{ product.title }}</h1>
+                            <h1 class=" !text-[32px] !leading-[1.35] text-[#004623] [font-family:'Barlow',Helvetica] !font-[700]" >{{ product.title }}</h1>
                         {%- when 'price' -%}
                             <div class="t4s-product__price" style="--price-size:{{ bk_stts.size_price_pr }}px;--price-del-size:{{ bk_stts.size_price_pr | times : 0.8 }}px;--price-weight:{{ bk_stts.fw_price_pr }};--primary-price-color:{{ bk_stts.primary_price_color }};--secondary-price-color:{{ bk_stts.secondary_price_color }};--price-sale-color:{{ bk_stts.price_sale }}">
                                 {%- render 'product-price-single', variant: current_variant, product: product, PR_no_pick: PR_no_pick, type_sale: bk_stts.type_sale, price_varies_style: bk_stts.price -%}
