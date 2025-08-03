@@ -25,12 +25,12 @@
 >
   <a
     href="{{ item_url }}"
-    class="t4s-mini_cart__img t4s-pr t4s-oh t4s_ratio t4s-bg-11 rounded-[8px] !bg-white"
-    style="background: url({{ image | image_url: width: 1 }});--aspect-ratioapt: {{ image.aspect_ratio | default: 1 }};background-color:white!important;"
+    class="t4s-mini_cart__img t4s-pr t4s-oh t4s_ratio t4s-bg-11 rounded-[8px]"
+    style="background: url({{ image | image_url: width: 1 }});--aspect-ratioapt: {{ image.aspect_ratio | default: 1 }};"
   >
     {%- if image != blank -%}
       <img
-        class="lazyloadt4s"
+        class="lazyloadt4s !bg-white"
         width="120"
         height="{{ 120 | divided_by: image.aspect_ratio | ceil }}"
         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
