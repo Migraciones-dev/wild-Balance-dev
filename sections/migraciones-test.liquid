@@ -309,11 +309,14 @@
       >
 
       <!-- Imagen 2: Después (overlay oculto al 0%) -->
-      <div id="ba-overlay" class="absolute top-0 left-0 w-0 overflow-hidden">
+      <div
+        id="ba-overlay"
+        class="absolute inset-0 w-0 h-full overflow-hidden"
+      >
         <img
           src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Pollo_con_sombra_v2.png?v=1754247202"
           alt="Después"
-          class="block w-full h-auto"
+          class="absolute top-0 left-0 h-full w-auto"
         >
       </div>
     </div>
@@ -330,8 +333,8 @@
         window.addEventListener('scroll', () => {
           const rect = container.getBoundingClientRect();
           const viewH = window.innerHeight;
-          // cuando rect.top == viewH --> progreso 0
-          // cuando rect.bottom == 0 --> progreso 1
+          // cuando el top de container entra en  viewport bottom → progreso 0
+          // cuando el bottom de container sale por top → progreso 1
           let progress = (viewH - rect.top) / (viewH + rect.height);
           progress = clamp(progress);
           overlay.style.width = progress * 100 + '%';
