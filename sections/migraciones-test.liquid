@@ -299,6 +299,55 @@
       </a>
     </div>
     <!-- Imagen central -->
+    <!-- before-after.html -->
+    <div id="before-after" class="relative h-screen overflow-hidden">
+      <!-- Imagen 1 (de fondo) -->
+      <img
+        src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_5_1.png?v=1752776533"
+        alt="Antes"
+        class="absolute inset-0 w-full h-full object-cover"
+      >
+
+      <!-- Contenedor de la imagen 2, con ancho dinámico -->
+      <div
+        id="overlay"
+        class="absolute inset-0 overflow-hidden w-0"
+      >
+        <img
+          src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_5_1.png?v=1752776533"
+          alt="Después"
+          class="absolute inset-0 w-full h-full object-cover"
+        >
+      </div>
+
+      <!-- Barra divisoria -->
+      <div
+        id="divider"
+        class="absolute top-0 bottom-0 left-0 w-1 bg-white opacity-75 mix-blend-screen"
+      ></div>
+    </div>
+
+    <script>
+      // Cuando la página haga scroll...
+      window.addEventListener('scroll', () => {
+        const container = document.getElementById('before-after');
+        const overlay = document.getElementById('overlay');
+        const divider = document.getElementById('divider');
+
+        const rect = container.getBoundingClientRect();
+        const vh = window.innerHeight;
+
+        // Calculamos cuánto del contenedor está dentro del viewport [0..1]
+        const start = Math.max(0, Math.min(1, (vh - rect.top) / (vh + rect.height)));
+        const progress = Math.max(0, Math.min(1, (vh * 1.2 - rect.top) / (rect.height + vh * 1.2)));
+
+        // Ajustamos ancho de overlay y posición de la barra
+        const pct = progress * 100;
+        overlay.style.width = pct + '%';
+        divider.style.left = pct + '%';
+      });
+    </script>
+
     <div class="text-center">
       <img
         src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_5_1.png?v=1752776533"
