@@ -335,7 +335,7 @@ t4option0_0 | alt text
                 </div>
     
                 {%- if media_layout != 'without_thumbnails' and isSliderCenter == false -%}
-                <div class="{{ class_thumb }}t4s-col-12 t4s-col-item t4s-col-thumb t4s-pr t4s-oh">
+                <div class="{{ class_thumb }}t4s-col-12 t4s-col-item t4s-col-thumb t4s-pr t4s-oh [@media(max-width:1024px)]:px-4">
                   <div data-thumb__scroller="{{ sid }}" class="t4s-carousel__nav-scroller is__position-{{ media_layout | remove: 'thumbnails_' }}">
                     <div class="t4s-row t4s-row-mt t4s-row-cols-4 t4s_{{ image_ratio }} t4s_position_{{ se_stts.image_position }} t4s_{{ se_stts.image_size }} {{ class_gx_lg }}t4s-g-5 t4s-carousel__nav carousel__nav--{{ sid }} carousel__nav-hover{{ se_stts.thumb_lr_hover }}">
                       {%- for media in product_media limit: 4 %}{% assign image = media.preview_image -%} 
