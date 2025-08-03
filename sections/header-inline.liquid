@@ -488,13 +488,13 @@
         <div class="t4s-col-md-4 t4s-col-3 t4s-d-lg-none t4s-col-item">{%- render 'push_menu' -%}</div>
         <div class="t4s-col-lg-{% if se_stts.align == 'center' %}{{ col_action_split }}{% else %}auto{% endif %} t4s-col-md-4 t4s-col-6 t4s-text-center t4s-text-lg-start t4s-col-item">{%- render 't4s_logo', tag: 'div', isTransparent: h_transparent -%}</div>
         <div class="t4s-col t4s-d-none t4s-d-lg-block t4s-col-item">{%- render 'menu_blocks', placement: 'bottom', admin_sp: admin_sp, se_blocks: se_blocks, se_stts: se_stts -%}</div>
-        <div class="t4s-col-lg-{% if se_stts.align == 'center' %}{{ col_action_split }}{% else %}auto{% endif %} t4s-col-md-4 t4s-col-3 t4s-text-end t4s-col-group_btns t4s-col-item t4s-lh-1 pr-0">{%- render 't4s_group_btns', se_stts: se_stts -%}</div>
+        <div class="t4s-col-lg-{% if se_stts.align == 'center' %}{{ col_action_split }}{% else %}auto{% endif %} t4s-col-md-4 t4s-col-3 t4s-text-end t4s-col-group_btns t4s-col-item t4s-lh-1 pr-0 flex">{%- render 't4s_group_btns', se_stts: se_stts -%}</div>
     
       {%- when 'logo_center' -%}
         <div class="t4s-col-md-4 t4s-col-3 t4s-d-lg-none t4s-col-item">{%- render 'push_menu' -%}</div>
         <div class="t4s-col-5 t4s-d-none t4s-d-lg-block t4s-col-item">{%- render 'menu_blocks', placement: 'bottom', admin_sp: admin_sp, se_blocks: se_blocks, se_stts: se_stts -%}</div>
         <div class="t4s-col-lg-2 t4s-col-md-4 t4s-col-6 t4s-text-center t4s-col-item">{%- render 't4s_logo', tag: 'div', isTransparent: h_transparent -%}</div>
-        <div class="t4s-col-lg-5 t4s-col-md-4 t4s-col-3 t4s-text-end t4s-col-group_btns t4s-col-item t4s-lh-1  pr-0">{%- render 't4s_group_btns', se_stts: se_stts -%}</div>
+        <div class="t4s-col-lg-5 t4s-col-md-4 t4s-col-3 t4s-text-end t4s-col-group_btns t4s-col-item t4s-lh-1  pr-0 flex">{%- render 't4s_group_btns', se_stts: se_stts -%}</div>
       
       {%- when 'menu_split' -%}
         <div class="t4s-col-md-4 t4s-col-3 t4s-d-lg-none t4s-col-item">{%- render 'push_menu' -%}</div>
@@ -502,12 +502,12 @@
         <div class="t4s-col t4s-d-none t4s-d-lg-block t4s-col-item">{%- render 'menu_splits', placement: 'bottom', admin_sp: admin_sp, se_blocks: se_blocks, se_stts: se_stts, isSplit1: true -%}</div>
         <div class="t4s-col-lg-auto t4s-col-md-4 t4s-col-6 t4s-text-center t4s-col-item">{%- render 't4s_logo', tag: 'div', isTransparent: h_transparent -%}</div>
         <div class="t4s-col t4s-d-none t4s-d-lg-block t4s-col-item">{%- render 'menu_splits', placement: 'bottom', admin_sp: admin_sp, se_blocks: se_blocks, se_stts: se_stts, isSplit1: false -%}</div>
-        <div class="t4s-col-lg-{{ col_action_split }} t4s-col-md-4 t4s-col-3 t4s-text-end t4s-col-group_btns t4s-col-item t4s-lh-1">{%- render 't4s_group_btns_split', se_stts: se_stts, isSplit1: false -%}</div>
+        <div class="t4s-col-lg-{{ col_action_split }} t4s-col-md-4 t4s-col-3 t4s-text-end t4s-col-group_btns t4s-col-item t4s-lh-1 flex">{%- render 't4s_group_btns_split', se_stts: se_stts, isSplit1: false -%}</div>
       {%- else -%}
         <div class="t4s-col-md-4 t4s-col-3 t4s-d-lg-none t4s-col-item">{%- render 'push_menu' -%}</div>
         <div class="t4s-col-lg-auto t4s-col-md-4 t4s-col-6 t4s-text-center t4s-text-lg-start t4s-col-item">{%- render 't4s_logo', tag: 'div', isTransparent: h_transparent -%}</div>
         <div class="t4s-col t4s-d-none t4s-d-lg-block t4s-col-item">{%- render 'menu_blocks', placement: 'bottom', admin_sp: admin_sp, se_blocks: se_blocks, se_stts: se_stts -%}</div>
-        <div class="t4s-col-lg-auto t4s-col-md-4 t4s-col-3 t4s-text-end t4s-col-group_btns t4s-col-item t4s-lh-1">{%- render 't4s_group_btns', se_stts: se_stts, isfrmSearch: 'true' -%}</div>
+        <div class="t4s-col-lg-auto t4s-col-md-4 t4s-col-3 t4s-text-end t4s-col-group_btns t4s-col-item t4s-lh-1 flex">{%- render 't4s_group_btns', se_stts: se_stts, isfrmSearch: 'true' -%}</div>
 
     {%- endcase -%}
      {% comment %} <div class="ctaCreaSuMenu">
