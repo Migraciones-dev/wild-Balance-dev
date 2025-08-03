@@ -116,9 +116,9 @@
   {%- when 'payments' -%}
     {%- assign arr = bk_stts.svg | remove: ' ' | split: ',' -%}
     <div
-      class="t4s-payment-footer-svg t4s-pr t4s-hidden-mobile-{{ bk_stts.hidden_mobile }}"
+      class="t4s-payment-footer-svg t4s-pr t4s-hidden-mobile-{{ bk_stts.hidden_mobile }} flex flex-row"
       id="b_{{ block.id }}"
-      style="--height: {{ bk_stts.height }}px;--mgb: {{ bk_stts.mgb }}px;--mgb-mb: {{ mgb.mgb_mb }}px; flex flex-row"
+      style="--height: {{ bk_stts.height }}px;--mgb: {{ bk_stts.mgb }}px;--mgb-mb: {{ mgb.mgb_mb }}px;"
     >
       {%- for img in arr -%}
         {%- if img contains 'cust4__' -%}
