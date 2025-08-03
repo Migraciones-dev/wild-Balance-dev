@@ -301,43 +301,41 @@
     <!-- Imagen central -->
     <!-- before-after.html -->
     <div id="ba-container" class="relative w-full overflow-hidden">
-      <!-- Imagen 1: Antes -->
+      <!-- Imagen “antes” -->
       <img
         src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Bol_pienso.png?v=1754247203"
         alt="Antes"
-        class="block w-full h-auto"
+        class="w-full h-auto block"
       >
 
-      <!-- Imagen 2: Después (overlay oculto al 0%) -->
-      <div
+      <!-- Imagen “después” superpuesta, clip-path al 100% derecha -->
+      <img
         id="ba-overlay"
-        class="absolute inset-0 w-0 h-full overflow-hidden"
+        src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Pollo_con_sombra_v2.png?v=1754247202"
+        alt="Después"
+        class="absolute top-0 left-0 w-full h-auto block"
+        style="clip-path: inset(0 100% 0 0);"
       >
-        <img
-          src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Pollo_con_sombra_v2.png?v=1754247202"
-          alt="Después"
-          class="absolute top-0 left-0 h-full w-auto"
-        >
-      </div>
     </div>
 
     <script>
       (function () {
-        const container = document.getElementById('ba-container');
-        const overlay = document.getElementById('ba-overlay');
+        const cont = document.getElementById('ba-container');
+        const ov = document.getElementById('ba-overlay');
 
-        function clamp(v, min = 0, max = 1) {
-          return v < min ? min : v > max ? max : v;
+        function clamp(v) {
+          return v < 0 ? 0 : v > 1 ? 1 : v;
         }
 
         window.addEventListener('scroll', () => {
-          const rect = container.getBoundingClientRect();
+          const rect = cont.getBoundingClientRect();
           const viewH = window.innerHeight;
-          // cuando el top de container entra en  viewport bottom → progreso 0
-          // cuando el bottom de container sale por top → progreso 1
+          // 0 cuando entra, 1 cuando sale
           let progress = (viewH - rect.top) / (viewH + rect.height);
           progress = clamp(progress);
-          overlay.style.width = progress * 100 + '%';
+          // Clip-path: recorta por la derecha el resto
+          const hidePct = 100 - progress * 100;
+          ov.style.clipPath = `inset(0 ${hidePct}% 0 0)`;
         });
       })();
     </script>
