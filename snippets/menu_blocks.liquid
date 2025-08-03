@@ -86,7 +86,10 @@
                     <div class="grid grid-cols-2 lg:grid-cols-3 gap-8 w-full">
                       {% for link in linklists[bk_stts.menu].links %}
                         {% assign subtitle = obj.metafields.custom.subtitulo_para_el_mega_menu %}
-                        <div class="flex items-center bg-white shadow border border-[#D9D9C8] rounded-[8px]  w-full h-[117px] overflow-hidden">
+                        <a
+                          href="{{ link.url }}"
+                          class="flex items-center bg-white shadow border border-[#D9D9C8] rounded-[8px]  w-full h-[117px] overflow-hidden"
+                        >
                           <!-- Imagen -->
                           <div class="flex-shrink-0 w-[134px] h-full">
                             <img
@@ -100,7 +103,7 @@
                             <p class="font-bold text-[20px] leading-[25px] leading-[25px]">{{ link.title }}</p>
                             <p class="text-[14px]">Subtitulo para el megamenu {{ subtitle }}</p>
                           </div>
-                        </div>
+                        </a>
                       {% endfor %}
                     </div>
                   </div>
