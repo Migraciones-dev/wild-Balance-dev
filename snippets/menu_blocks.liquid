@@ -107,16 +107,6 @@
                                 alt="{{ link.title }}"
                                 class="w-full h-full object-cover rounded-[8px]"
                               >
-                              <img
-                                src="{{ img | img_url: '300x300' }}"
-                                alt="{{ link.title }}"
-                                class="w-full h-full object-cover rounded-[8px]"
-                              >
-                              {{
-                                obj.metafields.custom.imagen_para_el_mega_menu
-                                | image_tag: alt: link.title, class: 'w-full h-full object-cover rounded-[8px]'
-                              }}
-                              {{ obj.metafields.custom.subtitulo_para_el_mega_menu }}
                             </p>
                           </div>
                         </a>
