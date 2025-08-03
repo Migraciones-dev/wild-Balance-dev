@@ -1,4 +1,4 @@
-      <img class="w-full lg:hidden" src="{{ collection.metafields.custom.banner_superior_mobile | file_url }}">
+    {% if collection.metafields.custom.banner_superior_mobile %}  <img class="w-full lg:hidden" src="{{ collection.metafields.custom.banner_superior_mobile | file_url }}"> {% endif %}
 
 
 <!-- sections/main-collection.liquid -->
