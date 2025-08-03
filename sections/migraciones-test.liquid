@@ -334,7 +334,7 @@
           let progress = (viewH - rect.top) / (viewH + rect.height);
           progress = clamp(progress);
           // Clip-path: recorta por la derecha el resto
-          const hidePct = 100 - progress * 200;
+          const hidePct = 100 - progress * 150;
           ov.style.clipPath = `inset(0 ${hidePct}% 0 0)`;
         });
       })();
