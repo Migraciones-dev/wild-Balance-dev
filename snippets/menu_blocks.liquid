@@ -72,6 +72,15 @@
                 >
                   <div class="flex flex-row gap-12">
                     <div class="w-1/5 flex flex-col">
+                      {% if bk_stts.menu != blank and linklists[bk_stts.menu].links != blank %}
+                        <ul class="mega-menu-links">
+                          {% for link in linklists[bk_stts.menu].links %}
+                            <li>
+                              <a href="{{ link.url }}">{{ link.title }}</a>
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
                       {% comment %}<img src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Background_1.jpg?v=1754217207">{% endcomment %}
                       <a href="#" class="font-extrabold [font-family:'Barlow',Helvetica]  text-[#004623] text-[25px]"
                         >VER TODOS</a
