@@ -285,7 +285,17 @@
                 {%- assign onetime_items = cart.items | where: 'selling_plan_allocation', null -%}
 
                 {%- if subscription_items.size > 0 -%}
-                  subs
+                  <div class="mb-4 w-full">
+                    <h3 class="font-['Barlow',Helvetica] font-bold text-[#004623] text-[14.6px] leading-[21.6px]">
+                      Subscripciones
+                    </h3>
+                    <div
+                      data-orientation="horizontal"
+                      role="none"
+                      class="shrink-0 bg-border h-[1px] w-full mt-1 border-[#d9d9c8]"
+                    ></div>
+                  </div>
+
                   <div class="cart-subscription">
                     {% for item in subscription_items %}
                       {% render 'cart-item',
@@ -303,7 +313,7 @@
                 {%- endif -%}
 
                 {%- if onetime_items.size > 0 -%}
-                  <div class="mb-4">
+                  <div class="mb-4 w-full">
                     <h3 class="font-['Barlow',Helvetica] font-bold text-[#004623] text-[14.6px] leading-[21.6px]">
                       Compras únicas
                     </h3>
@@ -312,7 +322,6 @@
                       role="none"
                       class="shrink-0 bg-border h-[1px] w-full mt-1 border-[#d9d9c8]"
                     ></div>
-                    <hr>
                   </div>
                   <div class="cart-onetime">
                     {% for item in onetime_items %}
