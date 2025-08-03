@@ -437,10 +437,10 @@
     transition: border-color .2s ease;
 }
 .t4s-collection-des-11 .t4s-collection-content:hover .t4s-coll-img {
-    border-color: var(--link-color-hover);
+    border-color: #006e37;
 }
 .t4s-collection-des-11 .t4s-collection-content:hover .t4s-collection-title {
-    color: var(--link-color-hover);
+    color: #006e37;
 }
 .t4s-list-collections.t4s-collection-des-11 .t4s-collection-item .t4s-collection-wrapper {
     text-align: left;

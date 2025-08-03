@@ -74,7 +74,7 @@
 }
 .t4s-type__drop .t4s-menu-item.has--children .t4s--menu-toggle:hover {
     box-shadow: 0 0 3px rgb(0 0 0 / 10%);
-    color: var(--link-color-hover);
+    color: #006e37;
 }
 .t4s-type__drop .t4s-menu-item.has--children svg {
     transform: rotate(90deg);

@@ -226,7 +226,7 @@ a.t4s-s-item {
     margin-bottom: 6px;
 }
 a.t4s-s-item:hover{
-    background: var(--link-color-hover);
+    background: #006e37;
     color: var(--t4s-light-color);
 }
 /*Widget banner countdown*/

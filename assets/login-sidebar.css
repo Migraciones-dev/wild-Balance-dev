@@ -230,7 +230,7 @@
         transform: rotate(180deg);
     }
     #t4s-login-sidebar a:hover {
-        color: var(--link-color-hover);
+        color: #006e37;
     }
     #t4s-login-sidebar .t4s_btn_submmit:hover {
         background-color: var(--accent-color);
