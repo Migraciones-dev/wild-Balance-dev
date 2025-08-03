@@ -300,7 +300,6 @@
     </div>
     <!-- Imagen central -->
     <!-- before-after.html -->
-    <!-- Inserta en tu plantilla (p.ej. theme.liquid) -->
     <div id="ba-container" class="relative w-full overflow-hidden">
       <!-- Imagen 1: Antes -->
       <img
@@ -329,13 +328,13 @@
         }
 
         window.addEventListener('scroll', () => {
-          const scrollY = window.scrollY + window.innerHeight;
-          const top = container.offsetTop;
-          const height = container.offsetHeight;
-          // calcula un ratio de 0 a 1 según cuánto ha entrado el contenedor
-          const ratio = clamp((scrollY - top) / height);
-          const pct = ratio * 100;
-          overlay.style.width = pct + '%';
+          const rect = container.getBoundingClientRect();
+          const viewH = window.innerHeight;
+          // cuando rect.top == viewH --> progreso 0
+          // cuando rect.bottom == 0 --> progreso 1
+          let progress = (viewH - rect.top) / (viewH + rect.height);
+          progress = clamp(progress);
+          overlay.style.width = progress * 100 + '%';
         });
       })();
     </script>
