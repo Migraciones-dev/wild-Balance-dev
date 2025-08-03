@@ -281,18 +281,43 @@
             {%- if se_style == '1' and se_pos == '1' %}{{- html_btn -}}{% endif -%}
             <div data-cart-items class="t4s-mini_cart__items t4s_ratioadapt !bg-[#F4F0E2]">
               {%- if ccount > 0 -%}
-                {%- for item in cart.items -%}
-                  {%- render 'cart-item',
-                    item: item,
-                    gift_pr_id: gift_pr_id,
-                    min_qty: min_qty,
-                    compare_tt_price: compare_tt_price,
-                    cart_change_url: cart_change_url,
-                    edit_item: edit_item,
-                    atc_ajax_enable: atc_ajax_enable,
-                    cart_ajax_enable: cart_ajax_enable
-                  -%}
-                {%- endfor -%}
+                {%- assign subscription_items = cart.items | reject: 'selling_plan_allocation', null -%}
+                {%- assign onetime_items = cart.items | where: 'selling_plan_allocation', null -%}
+
+                {%- if subscription_items.size > 0 -%}
+                  <div class="cart-subscription">
+                    {% for item in subscription_items %}
+                      {% render 'cart-item',
+                        item: item,
+                        gift_pr_id: gift_pr_id,
+                        min_qty: min_qty,
+                        compare_tt_price: compare_tt_price,
+                        cart_change_url: cart_change_url,
+                        edit_item: edit_item,
+                        atc_ajax_enable: atc_ajax_enable,
+                        cart_ajax_enable: cart_ajax_enable
+                      %}
+                    {% endfor %}
+                  </div>
+                {%- endif -%}
+
+                {%- if onetime_items.size > 0 -%}
+                  <div class="cart-onetime">
+                    {% for item in onetime_items %}
+                      {% render 'cart-item',
+                        item: item,
+                        gift_pr_id: gift_pr_id,
+                        min_qty: min_qty,
+                        compare_tt_price: compare_tt_price,
+                        cart_change_url: cart_change_url,
+                        edit_item: edit_item,
+                        atc_ajax_enable: atc_ajax_enable,
+                        cart_ajax_enable: cart_ajax_enable
+                      %}
+                    {% endfor %}
+                  </div>
+                {%- endif -%}
+
               {%- else -%}
                 <div class="t4s-mini_cart__emty">
                   <p>{{ 'cart.mini_cart.empty' | t }}</p>
