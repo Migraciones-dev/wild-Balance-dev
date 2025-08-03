@@ -304,42 +304,6 @@
               "padding_inner_bn": "30px,30px,30px,30px"
             }
           },
-          "drop_XpKjQG": {
-            "type": "drop",
-            "disabled": true,
-            "settings": {
-              "title": "PERROS",
-              "url": "shopify://collections/perros",
-              "open_link": "_self",
-              "menu": "perros",
-              "icon": "",
-              "cus_cl": false,
-              "cl": "#ec0101",
-              "lb": "",
-              "lb_cl": "",
-              "lazy_mn": true,
-              "pos_sub": "bottom-start",
-              "cus_wid": 260
-            }
-          },
-          "drop_ChcHdH": {
-            "type": "drop",
-            "disabled": true,
-            "settings": {
-              "title": "GATOS",
-              "url": "shopify://collections/gatos",
-              "open_link": "_self",
-              "menu": "gatos",
-              "icon": "",
-              "cus_cl": false,
-              "cl": "#ec0101",
-              "lb": "",
-              "lb_cl": "",
-              "lazy_mn": true,
-              "pos_sub": "bottom-start",
-              "cus_wid": 260
-            }
-          },
           "drop_aQhEJ7": {
             "type": "drop",
             "settings": {
@@ -373,60 +337,13 @@
               "pos_sub": "bottom",
               "cus_wid": 260
             }
-          },
-          "base_JrRcXp": {
-            "type": "base",
-            "disabled": true,
-            "settings": {
-              "title": "BLOG",
-              "url": "shopify://blogs/blog",
-              "open_link": "_self",
-              "icon": "",
-              "cus_cl": false,
-              "cl": "#ec0101",
-              "lb": "",
-              "lb_cl": ""
-            }
-          },
-          "base_a9k8nw": {
-            "type": "base",
-            "disabled": true,
-            "settings": {
-              "title": "Crea su menú",
-              "url": "shopify://pages/crea-su-menu",
-              "open_link": "_self",
-              "icon": "",
-              "cus_cl": false,
-              "cl": "#ec0101",
-              "lb": "",
-              "lb_cl": ""
-            }
-          },
-          "base_dR3bpV": {
-            "type": "base",
-            "disabled": true,
-            "settings": {
-              "title": "NAVIDAD🎄",
-              "url": "shopify://collections/navidad",
-              "open_link": "_self",
-              "icon": "",
-              "cus_cl": false,
-              "cl": "#ec0101",
-              "lb": "",
-              "lb_cl": ""
-            }
           }
         },
         "block_order": [
           "mega_dTwYKq",
           "mega_NQnT3c",
-          "drop_XpKjQG",
-          "drop_ChcHdH",
           "drop_aQhEJ7",
-          "drop_hTn3r4",
-          "base_JrRcXp",
-          "base_a9k8nw",
-          "base_dR3bpV"
+          "drop_hTn3r4"
         ],
         "settings": {
           "layout": "logo_left",
