@@ -196,7 +196,7 @@
 
       {%- if item_qty > 1 -%}
         <div class="t4s-cart_price-total">
-          <div class="t4s-cart_price bold text-[15px]">
+          <div class="t4s-cart_price font-bold text-[15px]">
             {%- assign item_compare_price = item_variant.compare_at_price
               | default: item.original_price
               | times: item_qty
