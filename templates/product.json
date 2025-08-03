@@ -43,6 +43,7 @@
         },
         "review_6J6LGh": {
           "type": "review",
+          "disabled": true,
           "settings": {
             "rating": true,
             "review_liquid": "ESPACIO PARA REVIEWS"
