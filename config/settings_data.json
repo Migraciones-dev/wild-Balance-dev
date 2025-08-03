@@ -1146,24 +1146,28 @@
         "blocks": {
           "363a442e-2da6-4d11-8264-daebc8ef1674": {
             "type": "home",
+            "disabled": true,
             "settings": {
               "title": "Inicio"
             }
           },
           "1f858a68-eafb-42bc-9705-e741dd538622": {
             "type": "search",
+            "disabled": true,
             "settings": {
               "title": "Buscar"
             }
           },
           "ea5e77c0-b7d2-4249-8427-6f2432b3bf99": {
             "type": "account",
+            "disabled": true,
             "settings": {
               "title": "Acceder"
             }
           },
           "link_BzMwr4": {
             "type": "link",
+            "disabled": true,
             "settings": {
               "title": "Tiendas",
               "image": "shopify://shop_images/stores.svg",
@@ -1172,6 +1176,7 @@
           },
           "link_EwH6pp": {
             "type": "link",
+            "disabled": true,
             "settings": {
               "title": "Contacto",
               "image": "shopify://shop_images/ic_baseline-whatsapp.svg",
@@ -1187,7 +1192,7 @@
           "link_EwH6pp"
         ],
         "settings": {
-          "enable_toolbar": true,
+          "enable_toolbar": false,
           "show_txt": true,
           "bg_color": "#cae6c8",
           "icon_color": "#004623",
