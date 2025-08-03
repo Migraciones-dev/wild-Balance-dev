@@ -41,6 +41,8 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
       Manager
       --
     >
+      <script src="https://cdn.tailwindcss.com"></script>
+
       <script>
         (function (w, d, s, l, i) {
           w[l] = w[l] || [];
@@ -127,52 +129,55 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
 
       {% comment %} --------------------- BOTÓN WHATSAPP --------------------- {% endcomment %}
 
-      <script>
-        function temporizador(callback) {
-          setTimeout(callback, 5000);
-        }
-
-        function showMessage() {
-          var messageDiv = document.getElementById('messageDiv');
-          messageDiv.style.display = 'flex';
-        }
-
-        function closeMessage() {
-          var messageDiv = document.getElementById('messageDiv');
-          messageDiv.style.display = 'none';
-          localStorage.setItem('whatsappPopupClose', 'true');
-        }
-
-        function goToWhatsApp() {
-          window.open(
-            'https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0&_kx=_V3Qt6MyBasq1R9MaiJGmqCJaXgPZI4XMm1kP-MvGoCJ2YvBXCDqhjZk3RLlmfVw.YsKiw5',
-            '_blank'
-          );
-        }
-
-        document.addEventListener('DOMContentLoaded', function () {
-          var cerro = localStorage.getItem('whatsappPopupClose');
-          if (cerro !== 'true') {
-            temporizador(showMessage);
+      {% comment %}
+        <script>
+          function temporizador(callback) {
+            setTimeout(callback, 5000);
           }
-        });
-      </script>
+
+          function showMessage() {
+            var messageDiv = document.getElementById('messageDiv');
+            messageDiv.style.display = 'flex';
+          }
+
+          function closeMessage() {
+            var messageDiv = document.getElementById('messageDiv');
+            messageDiv.style.display = 'none';
+            localStorage.setItem('whatsappPopupClose', 'true');
+          }
+
+          function goToWhatsApp() {
+            window.open(
+              'https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0&_kx=_V3Qt6MyBasq1R9MaiJGmqCJaXgPZI4XMm1kP-MvGoCJ2YvBXCDqhjZk3RLlmfVw.YsKiw5',
+              '_blank'
+            );
+          }
+
+          document.addEventListener('DOMContentLoaded', function () {
+            var cerro = localStorage.getItem('whatsappPopupClose');
+            if (cerro !== 'true') {
+              temporizador(showMessage);
+            }
+          });
+        </script>
+      {% endcomment %}
 
       {% comment %} --------------------- BOTÓN WHATSAPP --------------------- {% endcomment %}
-      <script>
-        window.tailwind = window.tailwind || {};
-        window.tailwind.config = {
-          theme: {
-            extend: {
-              fontSize: {
-                // Cambiamos sólo text-sm, el resto de tamaños siguen igual
-                sm: ['10.125rem', { lineHeight: '1.75rem' }], // ej. 18px + 28px
+      {% comment %}
+        <script>
+          window.tailwind = window.tailwind || {};
+          window.tailwind.config = {
+            theme: {
+              extend: {
+                fontSize: {
+                  // Cambiamos sólo text-sm, el resto de tamaños siguen igual
+                  sm: ['10.125rem', { lineHeight: '1.75rem' }], // ej. 18px + 28px
+                },
               },
             },
-          },
-        };
-      </script>
-      <script src="https://cdn.tailwindcss.com"></script>
+          };
+        </script>
+      {% endcomment %}
     </head>
 
     <body
