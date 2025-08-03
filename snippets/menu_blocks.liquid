@@ -93,7 +93,7 @@
                           <!-- Imagen -->
                           <div class="flex-shrink-0 w-[134px] h-full">
                             <img
-                              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/eedfebc2db8d8dc29c90175ff176af6847b4051f_1.png?v=1753638976"
+                              src="{{ obj.metafields.custom.imagen_para_el_mega_menu | file_url }}"
                               alt="Menú"
                               class="w-full h-full object-cover p-2 rounded-[8px] "
                             >
@@ -101,13 +101,7 @@
                           <!-- Texto -->
                           <div class="flex-1 pl-4 [font-family:'Barlow',Helvetica]  text-[#004623] px-6">
                             <p class="font-bold text-[20px] leading-[25px] leading-[25px]">{{ link.title }}</p>
-                            <p class="text-[14px]">
-                              <img
-                                src="{{ obj.metafields.custom.imagen_para_el_mega_menu | file_url }}"
-                                alt="{{ link.title }}"
-                                class="w-full h-full object-cover rounded-[8px]"
-                              >
-                            </p>
+                            <p class="text-[14px]"></p>
                           </div>
                         </a>
                       {% endfor %}
