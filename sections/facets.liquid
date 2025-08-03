@@ -249,9 +249,11 @@
                               <span class="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#004623] text-[14.6px] leading-[21.6px] capitalize">
                                 {{ value.label | escape }}
                               </span>
-                             {%comment %} <span class="[font-family:'Inter',Helvetica] font-medium text-[#7f7d7b] text-[12.8px] leading-[14px]"> {%endcomment %}
-                                ({{ value.count }})
-                              </span>
+                              {% comment %}
+                                <span class="[font-family:'Inter',Helvetica] font-medium text-[#7f7d7b] text-[12.8px] leading-[14px]">
+                                  ({{ value.count }})
+                                </span>
+                              {% endcomment %}
                             </div>
                             <a
                               href="{% if value.active %}{{ value.url_to_remove | escape }}{% else %}{{ value.url_to_add | escape }}{% endif %}"
