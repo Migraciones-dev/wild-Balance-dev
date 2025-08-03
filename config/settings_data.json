@@ -259,7 +259,7 @@
           "mega_dTwYKq": {
             "type": "mega",
             "settings": {
-              "title": "PERROS",
+              "title": "Comida para perros",
               "url": "shopify://collections",
               "open_link": "_self",
               "menu": "perros",
@@ -283,7 +283,7 @@
           "mega_NQnT3c": {
             "type": "mega",
             "settings": {
-              "title": "GATOS",
+              "title": "Comida para gatos",
               "url": "shopify://collections",
               "open_link": "_self",
               "menu": "gatos",
@@ -325,7 +325,7 @@
           "drop_hTn3r4": {
             "type": "drop",
             "settings": {
-              "title": "CONÓCENOS",
+              "title": "Conócenos",
               "url": "shopify://pages/landing-filosofia",
               "open_link": "_self",
               "menu": "sobre-nosotros",
@@ -338,13 +338,27 @@
               "pos_sub": "bottom",
               "cus_wid": 260
             }
+          },
+          "base_xHCd8G": {
+            "type": "base",
+            "settings": {
+              "title": "Tiendas",
+              "url": "shopify://pages/store-locator",
+              "open_link": "_self",
+              "icon": "",
+              "cus_cl": false,
+              "cl": "#ec0101",
+              "lb": "",
+              "lb_cl": ""
+            }
           }
         },
         "block_order": [
           "mega_dTwYKq",
           "mega_NQnT3c",
           "drop_aQhEJ7",
-          "drop_hTn3r4"
+          "drop_hTn3r4",
+          "base_xHCd8G"
         ],
         "settings": {
           "layout": "logo_left",
