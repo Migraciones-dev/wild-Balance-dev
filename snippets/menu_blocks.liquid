@@ -14,7 +14,7 @@
 -%}
 
 <nav class="t4s-navigation t4s-text-{{ se_stts.align }} t4s-nav__{{ se_stts.hover }} t4s-nav-arrow__{{ se_stts.arrow }}">
-  <ul data-menu-nav id="t4s-nav-ul" class="t4s-nav__ul t4s-d-inline-flex t4s-flex-wrap t4s-align-items-center">
+  <ul data-menu-nav id="t4s-nav-ul" class="t4s-nav__ul t4s-d-inline-flex t4s-flex-wrap t4s-align-items-center w-full">
     {%- for block in se_blocks offset: limit_offset -%}
       {%- liquid
         if block.type == 'parent'
