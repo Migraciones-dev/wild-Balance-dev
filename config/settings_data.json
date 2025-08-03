@@ -345,7 +345,7 @@
           "layout": "logo_left",
           "full_header": false,
           "height": 60,
-          "arrow": true,
+          "arrow": false,
           "align": "center",
           "hover": "hover_sideup",
           "enable_active": true,
