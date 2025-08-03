@@ -1,1 +1,1390 @@
-{"sections":{"breadcrumb":{"type":"brc-nav-product","disabled":true,"settings":{"breadcrumb_pr":true,"back_next_pr":true,"box_border":"top","cl_bg":"rgba(0,0,0,0)","cl_link":"#222222","margin_bt":5}},"custom_liquid_GFWPHA":{"type":"custom-liquid","settings":{"custom_liquid":"<div class=\"titulo-precio-pdp-mb\">\n    <div class=\"nombre-producto-mb\">{{ product.title }}<\/div>\n    <div class=\"bloque-precio-badges\">\n    <div class=\"precio-producto-mb\" >\n        {%- render 'product-price-single', variant: current_variant, product: product, PR_no_pick: PR_no_pick, type_sale: bk_stts.type_sale, price_varies_style: bk_stts.price -%}\n    <\/div>\n    <div class=\"containerLabelsPDP\">\n        {% render 'custom-badges' %}\n    <\/div>\n<\/div>\n<\/div>"}},"main":{"type":"main-product","blocks":{"3eaacecf-c956-46e5-84ef-40474509a065":{"type":"title","settings":{"txt_tr_pr":"none","fnt_df_pr":"2","size_pr":20,"fw_pr":900,"lh_pr":0,"ls_pr":0,"pr_title_color":"#004623"}},"18a8b200-4f94-4b72-b0eb-01abf185ecb3":{"type":"price","settings":{"price":"1","type_sale":"0","tax_ship":false,"size_price_pr":20,"fw_price_pr":400,"primary_price_color":"#004623","secondary_price_color":"#cae6c8","price_sale":"#ce4949"}},"custom_liquid_FdMfKx":{"type":"custom_liquid","settings":{"custom_liquid":"<div>\n<ul style=\"color:#222;\">\n<li>💩 Cacas más pequeñas y menos olorosas<\/li>\n<li>🦷 Dientes más limpios y sanos<\/li>\n<li>✨ Piel más sana y pelo más brillante<\/li>\n<li>⚖️ Recuperación del peso ideal<\/li>\n<li>💖 Mayor vitalidad y felicidad<\/li>\n<\/ul>\n\n<\/div>"}},"text_bcwFJJ":{"type":"text","disabled":true,"settings":{"text":"<p>💩 Cacas más pequeñas y menos olorosas<br\/>🦷 Dientes más limpios y sanos<\/p><p>✨ Piel más sana y pelo más brillante<\/p><p>⚖️ Recuperación del peso ideal<\/p><p>💖 Mayor vitalidad y felicidad<\/p>"}},"custom_liquid_PkGhkJ":{"type":"custom_liquid","disabled":true,"settings":{"custom_liquid":"<div class=\"containerLabelsPDP\">\n{% render 'custom-badges' %}\n<\/div>"}},"custom_liquid_HeetbV":{"type":"custom_liquid","settings":{"custom_liquid":"<section class=\"extraProducto\">\n\n      <div class=\"cajaIngrediente\">\n        <div class=\"aporteImg\">\n          <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0713\/9898\/1933\/files\/Vector_0b424257-16f0-4edd-952f-26a591847548.png?v=1742901677\" alt=\"\" style=\"width:27px;\"\/> \n        <\/div>\n\n        <div class=\"porcentajes\">\n          <p>\n             Para perros\n          <\/p>\n        <\/div>\n      <\/div>\n\n      <div class=\"cajaIngrediente\">\n        <div class=\"aporteImg\">\n          <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0713\/9898\/1933\/files\/Vector_1.png?v=1742901678\" alt=\"\" \/>\n        <\/div>\n\n        <div class=\"porcentajes\">\n          <p>\n             Burger 50gr\n          <\/p>\n        <\/div>\n      <\/div>\n\n      <div class=\"cajaIngrediente\">\n        <div class=\"aporteImg\">\n            <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0713\/9898\/1933\/files\/Vector_2.png?v=1742901677\" alt=\"\">\n        <\/div>\n\n        <div class=\"porcentajes\">\n          <p>\n             Bolsa reciclable\n          <\/p>\n        <\/div>\n      <\/div>\n\n      <div class=\"cajaIngrediente\">\n        <div class=\"aporteImg\">\n            <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0713\/9898\/1933\/files\/Vector_3.png?v=1742901677\" alt=\"\">\n        <\/div>\n\n        <div class=\"porcentajes\">\n          <p>\n             Producto congelado\n          <\/p>\n        <\/div>\n      <\/div>\n    <\/section>"}},"description_PqQjKj":{"type":"description","disabled":true,"settings":{"des":"1","text":"","length":31,"readm":false,"readm_txt":"Read more"}},"8f619784-04a8-4c20-b813-6902f9e3e922":{"type":"form","settings":{"selector_mode":"circle","color_mode":"variant_image is-sw-cl__round","enable_fit_ratio_img":false,"color_size":"large","show_qty":true,"enable_wishlist":false,"enable_compare":false,"btn_atc_full":true,"pr_btn_round":40,"wis_cp_btn_round":40,"ani":"none","time":6,"btn_txt":"3","btn_icon":false,"button_style":"default","button_color":"primary","button_effect":"default","wishlist_color":"#004623","wishlist_color_hover":"#5ccc84","wishlist_color_active":"#ffcd00","compare_color":"#004623","compare_color_hover":"#5ccc84","show_dynamic_checkout":false,"btn_txt2":"3","button_color_payment":"dark","product_list":[],"show_product_current":true,"show_text_price":true,"qty_val":"0","advance_label":"Choose style","advance_pr_list":[]}},"custom_liquid_ywgBhH":{"type":"custom_liquid","settings":{"custom_liquid":"<div class=\"containerCtaPdp t4s-product-tabs-wrapper\">\n<p>¿Quieres un plan personalizado?<\/p>\n\n<a class=\"creaSuMenuPdp\" href=\"https:\/\/wildbalance.es\/pages\/crea-su-menu\">Crea su menú<\/a>\n<\/div>"}},"tab_liquid_KiC6hD":{"type":"tab_liquid","settings":{"title":"Ingredientes","custom_liquid":"{{product.metafields.custom.ingredientes.value}}"}},"tab_liquid_Lqc4J4":{"type":"tab_liquid","settings":{"title":"Información Nutricional","custom_liquid":"{{product.metafields.custom.informacion_nutricional.value}}"}},"tab_liquid_D94HQY":{"type":"tab_liquid","settings":{"title":"Descripción","custom_liquid":"{{product.metafields.custom.descripcion_larga.value}}"}},"tab_html_aQRVmq":{"type":"tab_html","settings":{"title":"Envíos y devoluciones","content":"","page":"politica-de-devoluciones-y-envios-1"}}},"block_order":["3eaacecf-c956-46e5-84ef-40474509a065","18a8b200-4f94-4b72-b0eb-01abf185ecb3","custom_liquid_FdMfKx","text_bcwFJJ","custom_liquid_PkGhkJ","custom_liquid_HeetbV","description_PqQjKj","8f619784-04a8-4c20-b813-6902f9e3e922","custom_liquid_ywgBhH","tab_liquid_KiC6hD","tab_liquid_Lqc4J4","tab_liquid_D94HQY","tab_html_aQRVmq"],"settings":{"pr_layout":"full","enable_sticky_info":true,"enable_space_content":true,"media_layout":"thumbnails_left","media_size":"medium","thumb_lr_size":"small","thumb_lr_hover":"1","image_ratio":"ratioadapt","image_size":"cover","image_position":"8","main_click":"none","zoom_tp":"external","enable_zoom_icon":false,"enable_zoom_click_mb":false,"enable_video_looping":false,"enable_video_muting":true,"enable_video_autoplaying":true,"eff":"fade","nav_btn":false,"btn_vi":"always","btn_owl":"default","btn_shape":"none","btn_cl":"primary","btn_size":"medium","btn_hidden_mobile":false,"nav_dot":false,"dot_owl":"default","dots_cl":"dark","dots_round":true,"dots_space":10,"dots_hidden_mobile":false,"tabs_design":"accordion","tabs_accordion_mb":true,"enable_line_tabs":true,"tabs_position":"inner","enable_first_tab":false,"tabs_layout":"default","bg":"#f9f5e7","bg_mb":"#f9f5e7","product_list":[],"sticky_mode":"2","sticky_show":"1","sticky_layout_mb":"minimal","enable_select":true,"ani":"none","time":6}},"sidebar":{"type":"sidebar-product","disabled":true,"settings":{"enable_drawer":false,"space":50,"size":"medium","br_style":"none","brcolor":"#222222","sidebar_bdr":5,"sidebar_pd":10}},"custom_section_aYyEww":{"type":"custom-section","blocks":{"bl_col_LYyfr6":{"type":"bl_col","disabled":true,"settings":{"col_dk":"6","col_dk_w":"33.33333","col_tb":"12","col_dk_w_tb":"33.33333","col_mb":"12","align_vertical":false,"content_align":"start","content_align_tablet":"start","content_align_mobile":"start","padding_inner":"","padding_inner_tb":"","padding_inner_mb":"","round_inner":"10px,10px,10px,10px","round_tb_inner":"10px,10px,10px,10px","round_mb_inner":"10px,10px,10px,10px","bg_cl":"#faf5e7","time_animation":1,"animation_delay":40}},"image_8Tniai":{"type":"image","disabled":true,"settings":{"image_child":"shopify:\/\/shop_images\/WIB_PDP-PACK-INICIACIONp2.jpg","img_link":"","open_link":"_self","img_width":0,"img_width_tb":0,"img_width_mb":0,"img_align":"center","img_align_tb":"center","img_align_mobile":"center","b_effect":"none","hidden_mobile":false,"mgb":20,"mgb_tb":20,"mgb_mb":20,"animation":"none"}},"bl_col_yQ86aq":{"type":"bl_col","settings":{"col_dk":"6","col_dk_w":"33.33333","col_tb":"12","col_dk_w_tb":"33.33333","col_mb":"12","align_vertical":false,"content_align":"start","content_align_tablet":"start","content_align_mobile":"start","padding_inner":"40px,60px,40px,60px","padding_inner_tb":"40px,40px,40px,40px","padding_inner_mb":"40px,40px,40px,40px","round_inner":"10px,10px,10px,10px","round_tb_inner":"10px,10px,10px,10px","round_mb_inner":"10px,10px,10px,10px","bg_cl":"#faf5e7","time_animation":1,"animation_delay":40}},"custom_text_qRRtQF":{"type":"custom_text","settings":{"text":"¿Qué contiene el pack?","remove_br_tag":false,"tag":"h3","fontf":"2","text_cl":"#004623","text_fs":20,"text_lh":0,"text_fw":900,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":10,"text_fs_tb":30,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":30,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}},"custom_text_rxFER7":{"type":"custom_text","settings":{"text":"<ul>\n<li>Menú de Iniciación<\/li>\n<li>Menú Completo de Pollo\u2028<br>con Verduras Frescas<\/li>\n<li>Menú Completo de Pavo <br>\u2028con Verduras Frescas<\/li>\n<\/ul>","remove_br_tag":false,"tag":"div","fontf":"1","text_cl":"#004623","text_fs":16,"text_lh":20,"text_fw":800,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":10,"text_fs_tb":16,"text_lh_tb":20,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":16,"text_lh_mb":20,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}},"custom_text_wHwyLK":{"type":"custom_text","settings":{"text":"Y para que no te quedes con dudas...","remove_br_tag":false,"tag":"h3","fontf":"2","text_cl":"#004623","text_fs":20,"text_lh":0,"text_fw":900,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":10,"text_fs_tb":30,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":30,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}},"custom_text_qaxxac":{"type":"custom_text","settings":{"text":"<ul>\n<li><a href=\"https:\/\/api.whatsapp.com\/send\/?phone=34670319204&text&type=phone_number&app_absent=0&_kx=_V3Qt6MyBasq1R9MaiJGmqCJaXgPZI4XMm1kP-MvGoCJ2YvBXCDqhjZk3RLlmfVw.YsKiw5\">Asesoramiento gratuito<\/a><\/li>\n<li>Guía de transición a la Dieta BARF<\/li>\n<li>Guía de raciones diarias<\/li>\n\n<\/ul>","remove_br_tag":false,"tag":"div","fontf":"1","text_cl":"#004623","text_fs":16,"text_lh":20,"text_fw":800,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":10,"text_fs_tb":16,"text_lh_tb":20,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":16,"text_lh_mb":20,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}}},"block_order":["bl_col_LYyfr6","image_8Tniai","bl_col_yQ86aq","custom_text_qRRtQF","custom_text_rxFER7","custom_text_wHwyLK","custom_text_qaxxac"],"custom_css":[".t4s-section-inner {min-height: 600px;}"],"settings":{"block_custom_class":"packConteins desktop","space_h_item":"30","space_v_item":"30","space_h_item_tb":"10","space_v_item_tb":"10","space_h_item_mb":"10","space_v_item_mb":"10","layout":"t4s-container-fluid","cl_bg":"","cl_bg_gradient":"","image_bg":"shopify:\/\/shop_images\/WIB_PDP-PACK-INICIACIONp3-DESK_02.jpg","mg":"","pd":"100px,50px,100px,50px","mg_tb":"","pd_tb":"20px,20px,20px,20px","mg_mb":"","pd_mb":"20px,20px,20px,20px"}},"custom_section_7cJtTb":{"type":"custom-section","blocks":{"bl_col_3rrW8p":{"type":"bl_col","settings":{"col_dk":"12","col_dk_w":"33.33333","col_tb":"12","col_dk_w_tb":"33.33333","col_mb":"12","align_vertical":false,"content_align":"start","content_align_tablet":"start","content_align_mobile":"start","padding_inner":"","padding_inner_tb":"","padding_inner_mb":"","round_inner":"","round_tb_inner":"","round_mb_inner":"","bg_cl":"#faf5e7","time_animation":1,"animation_delay":40}},"image_9D8h9m":{"type":"image","settings":{"image_child":"shopify:\/\/shop_images\/WIB_PDP-PACK-INICIACIONp3-MOBILE_03.jpg","img_link":"","open_link":"_self","img_width":0,"img_width_tb":0,"img_width_mb":0,"img_align":"center","img_align_tb":"center","img_align_mobile":"center","b_effect":"none","hidden_mobile":false,"mgb":0,"mgb_tb":0,"mgb_mb":0,"animation":"none"}},"bl_col_VdWtGh":{"type":"bl_col","settings":{"col_dk":"6","col_dk_w":"33.33333","col_tb":"12","col_dk_w_tb":"33.33333","col_mb":"12","align_vertical":false,"content_align":"start","content_align_tablet":"start","content_align_mobile":"start","padding_inner":"40px,60px,40px,60px","padding_inner_tb":"40px,40px,40px,40px","padding_inner_mb":"40px,40px,40px,40px","round_inner":"20px, 20px, 20px, 20px","round_tb_inner":"20px, 20px, 20px, 20px","round_mb_inner":"20px, 20px, 20px, 20px","bg_cl":"#faf5e7","time_animation":1,"animation_delay":40}},"custom_text_x7KBAw":{"type":"custom_text","settings":{"text":"¿Qué contiene el pack?","remove_br_tag":false,"tag":"h3","fontf":"2","text_cl":"#004623","text_fs":20,"text_lh":0,"text_fw":900,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":10,"text_fs_tb":30,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":30,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}},"custom_text_MiPpxa":{"type":"custom_text","settings":{"text":"<ul>\n<li>Menú de Iniciación<\/li>\n<li>Menú Completo de Pollo\u2028<br>con Verduras Frescas<\/li>\n<li>Menú Completo de Pavo <br>\u2028con Verduras Frescas<\/li>\n<\/ul>","remove_br_tag":false,"tag":"div","fontf":"1","text_cl":"#004623","text_fs":16,"text_lh":20,"text_fw":800,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":10,"text_fs_tb":16,"text_lh_tb":20,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":16,"text_lh_mb":20,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}},"custom_text_Qrzepq":{"type":"custom_text","settings":{"text":"Y para que no te quedes con dudas...","remove_br_tag":false,"tag":"h3","fontf":"2","text_cl":"#004623","text_fs":20,"text_lh":0,"text_fw":900,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":10,"text_fs_tb":30,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":30,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}},"custom_text_4qBikG":{"type":"custom_text","settings":{"text":"<ul>\n<li>Guía de transición a la Dieta BARF<\/li>\n<li>Guía de raciones diarias<\/li>\n<\/ul>","remove_br_tag":false,"tag":"div","fontf":"1","text_cl":"#004623","text_fs":16,"text_lh":20,"text_fw":800,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":10,"text_fs_tb":16,"text_lh_tb":20,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":16,"text_lh_mb":20,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}}},"block_order":["bl_col_3rrW8p","image_9D8h9m","bl_col_VdWtGh","custom_text_x7KBAw","custom_text_MiPpxa","custom_text_Qrzepq","custom_text_4qBikG"],"settings":{"block_custom_class":"packConteins mobile","space_h_item":"30","space_v_item":"30","space_h_item_tb":"10","space_v_item_tb":"10","space_h_item_mb":"10","space_v_item_mb":"10","layout":"t4s-container-fluid","cl_bg":"#cae6c8","cl_bg_gradient":"","mg":"","pd":"","mg_tb":"","pd_tb":"","mg_mb":"","pd_mb":""}},"custom_section_ibfpfw":{"type":"custom-section","blocks":{"bl_col_kWk6jA":{"type":"bl_col","settings":{"col_dk":"12","col_dk_w":"33.33333","col_tb":"12","col_dk_w_tb":"33.33333","col_mb":"12","align_vertical":false,"content_align":"center","content_align_tablet":"center","content_align_mobile":"start","padding_inner":"20px, 0px, 0px, 0px","padding_inner_tb":"","padding_inner_mb":"30px, 0px, 0px, 0px","round_inner":"","round_tb_inner":"","round_mb_inner":"","bg_cl":"rgba(0,0,0,0)","time_animation":1,"animation_delay":40}},"custom_text_8BTgXm":{"type":"custom_text","settings":{"text":"¿Cómo hacer la transición al BARF con tu perro?","remove_br_tag":false,"tag":"h2","fontf":"inherit","text_cl":"#004623","text_fs":30,"text_lh":0,"text_fw":800,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":15,"text_fs_tb":30,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":30,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}},"bl_col_hPVEX6":{"type":"bl_col","settings":{"col_dk":"6","col_dk_w":"33.33333","col_tb":"6","col_dk_w_tb":"33.33333","col_mb":"12","align_vertical":false,"content_align":"start","content_align_tablet":"start","content_align_mobile":"start","padding_inner":"30px,,30px","padding_inner_tb":"15px,,15px,","padding_inner_mb":"15px,,15px,","round_inner":"","round_tb_inner":"","round_mb_inner":"","bg_cl":"rgba(0,0,0,0)","time_animation":1,"animation_delay":40}},"custom_text_VQPEde":{"type":"custom_text","settings":{"text":"Ayuno 24H","remove_br_tag":false,"tag":"h3","fontf":"inherit","text_cl":"#004623","text_fs":20,"text_lh":0,"text_fw":900,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":5,"text_fs_tb":16,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":16,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}},"custom_text_tRzWYf":{"type":"custom_text","settings":{"text":"Antes de empezar con BARF, es importante limpiar el organismo de tu perro de toxinas. No recomendado para cachorros, perros enfermos o ancianos.","remove_br_tag":false,"tag":"p","fontf":"inherit","text_cl":"#004623","text_fs":16,"text_lh":24,"text_fw":400,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":0,"text_fs_tb":16,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":16,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}},"bl_col_YVT6nY":{"type":"bl_col","settings":{"col_dk":"6","col_dk_w":"33.33333","col_tb":"6","col_dk_w_tb":"33.33333","col_mb":"12","align_vertical":false,"content_align":"start","content_align_tablet":"start","content_align_mobile":"start","padding_inner":"30px,,30px","padding_inner_tb":"15px,,15px,","padding_inner_mb":"15px,,15px,","round_inner":"","round_tb_inner":"","round_mb_inner":"","bg_cl":"rgba(0,0,0,0)","time_animation":1,"animation_delay":40}},"custom_text_aGxFBH":{"type":"custom_text","settings":{"text":"Menú de iniciación","remove_br_tag":false,"tag":"h3","fontf":"inherit","text_cl":"#004623","text_fs":20,"text_lh":0,"text_fw":900,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":5,"text_fs_tb":16,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":16,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}},"custom_text_WLtbHe":{"type":"custom_text","settings":{"text":"Para una mejor transición a BARF, inicia con nuestro Menú de Iniciación (80% pollo, 20% zanahoria y calabaza), ideal para facilitar la digestión en los primeros días.","remove_br_tag":false,"tag":"p","fontf":"inherit","text_cl":"#004623","text_fs":16,"text_lh":24,"text_fw":400,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":0,"text_fs_tb":16,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":16,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}},"bl_col_CP3jPh":{"type":"bl_col","settings":{"col_dk":"6","col_dk_w":"33.33333","col_tb":"6","col_dk_w_tb":"33.33333","col_mb":"12","align_vertical":false,"content_align":"start","content_align_tablet":"start","content_align_mobile":"start","padding_inner":"30px,,30px","padding_inner_tb":"15px,,15px,","padding_inner_mb":"15px,,15px,","round_inner":"","round_tb_inner":"","round_mb_inner":"","bg_cl":"rgba(0,0,0,0)","time_animation":1,"animation_delay":40}},"custom_text_xRLDJn":{"type":"custom_text","settings":{"text":"Menú de Pollo \u2028con Verduras Frescas","remove_br_tag":false,"tag":"h3","fontf":"inherit","text_cl":"#004623","text_fs":20,"text_lh":0,"text_fw":900,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":5,"text_fs_tb":16,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":16,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}},"custom_text_Qb7QF6":{"type":"custom_text","settings":{"text":"Tras adaptarse al menú de iniciación, tu perro puede pasar al menú completo de pollo (80% pollo, 20% frutas, verduras y suplementos) para una alimentación equilibrada.","remove_br_tag":false,"tag":"p","fontf":"inherit","text_cl":"#004623","text_fs":16,"text_lh":24,"text_fw":400,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":0,"text_fs_tb":16,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":16,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}},"bl_col_3zmwiD":{"type":"bl_col","settings":{"col_dk":"6","col_dk_w":"33.33333","col_tb":"6","col_dk_w_tb":"33.33333","col_mb":"12","align_vertical":false,"content_align":"start","content_align_tablet":"start","content_align_mobile":"start","padding_inner":"30px,,30px","padding_inner_tb":"15px,,15px,","padding_inner_mb":"15px,,15px,","round_inner":"","round_tb_inner":"","round_mb_inner":"","bg_cl":"rgba(0,0,0,0)","time_animation":1,"animation_delay":40}},"custom_text_NtmLiV":{"type":"custom_text","settings":{"text":"Nuevas proteínas","remove_br_tag":false,"tag":"h3","fontf":"inherit","text_cl":"#004623","text_fs":20,"text_lh":0,"text_fw":900,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":5,"text_fs_tb":16,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":16,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}},"custom_text_NHKqTN":{"type":"custom_text","settings":{"text":"Ahora ya puedes introducir nuevas proteínas. Mantén cada nueva proteína 3-4 días para verificar tolerancia. \nNuestros menús son 100% monoproteicos, ideales para perros con intolerancias.","remove_br_tag":false,"tag":"p","fontf":"inherit","text_cl":"#004623","text_fs":16,"text_lh":24,"text_fw":400,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":0,"text_fs_tb":16,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":16,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}}},"block_order":["bl_col_kWk6jA","custom_text_8BTgXm","bl_col_hPVEX6","custom_text_VQPEde","custom_text_tRzWYf","bl_col_YVT6nY","custom_text_aGxFBH","custom_text_WLtbHe","bl_col_CP3jPh","custom_text_xRLDJn","custom_text_Qb7QF6","bl_col_3zmwiD","custom_text_NtmLiV","custom_text_NHKqTN"],"settings":{"block_custom_class":"transitionBlock","space_h_item":"30","space_v_item":"20","space_h_item_tb":"30","space_v_item_tb":"10","space_h_item_mb":"10","space_v_item_mb":"10","layout":"t4s-container-fluid","cl_bg":"#cae6c8","cl_bg_gradient":"","mg":"","pd":"2%,8%,5%,8%","mg_tb":"","pd_tb":"","mg_mb":"-70px,0px,0px,0px","pd_mb":"0%,8%,5%,8%"}},"custom_section_RB9UKy":{"type":"custom-section","blocks":{"bl_col_VLQGYf":{"type":"bl_col","settings":{"col_dk":"6","col_dk_w":"33.33333","col_tb":"12","col_dk_w_tb":"33.33333","col_mb":"12","align_vertical":false,"content_align":"start","content_align_tablet":"start","content_align_mobile":"start","padding_inner":"","padding_inner_tb":"","padding_inner_mb":"","round_inner":"","round_tb_inner":"","round_mb_inner":"","bg_cl":"rgba(0,0,0,0)","time_animation":1,"animation_delay":40}},"bl_col_ycB8XL":{"type":"bl_col","settings":{"col_dk":"6","col_dk_w":"33.33333","col_tb":"12","col_dk_w_tb":"33.33333","col_mb":"12","align_vertical":false,"content_align":"start","content_align_tablet":"start","content_align_mobile":"start","padding_inner":"40px,40px,40px,40px","padding_inner_tb":"40px,40px,40px,40px","padding_inner_mb":"1%,0.5%,1%,0.5%","round_inner":"","round_tb_inner":"","round_mb_inner":"","bg_cl":"rgba(0,0,0,0)","time_animation":1,"animation_delay":40}},"accor_item_jcgaCW":{"type":"accor_item","settings":{"title_cl":"#004623","bg_title_cl":"#faf5e7","title_active_cl":"#004623","bg_title_active_cl":"#faf5e7","title1":"¿Qué puedes notar los primeros días?","content1":"<p>Sabemos lo importante que es tu peludo para ti, por eso nos gustaría explicarte los cambios que pueden aparecer los primeros días. Pero no te asustes, es completamente normal que tu mascota experimente alguno de ellos. Piensa que tiene que eliminar todos los ingredientes perjudiciales que hay en los piensos.<\/p><ul><li><strong>Beberá menos agua: <\/strong>Las hamburguesitas de Wild Balance son 100% naturales y se elaboran con ingredientes frescos sin ultraprocesar. Es decir, conservan toda su hidratación y por eso va a pasar a beber menos agua.<\/li><li><strong>Cacas blandas, duras o con mucosidad: <\/strong>Su organismo se está adaptando a la nueva alimentación y el ph de su estómago se está regulando. Piensa cómo afecta en los humanos cambiar de alimentación… Pues para ellos es lo mismo. Las cacas mejorarán día a día y, aunque pueda haber algún vómito, remitirán poco después. Puedes incluir en sus comidas nuestro mix Digestiones Firmes que le ayudará con el tránsito intestinal.<br\/><\/li><li><strong>Cambios en su pelaje: <\/strong>La mejora en el pelaje se ve a las pocas semanas, pero a veces (al principio) pueden sufrir picores, granitos, caspa, e incluso perder un poco de pelo. Piensa que tu mascota se está desintoxicando del pienso y se manifiesta de diferentes maneras. Te recomendamos aliviar estos síntomas añadiendo Pelaje Brutal o Aceite de Sardina a su ración diaria.<br\/><\/li><li><strong>Su peso se regulará: <\/strong>Los piensos contienen un montón de ingredientes no apropiados para ellos que provocan sobrepeso u obesidad. Con su nueva alimentación natural empezará a regularse hasta alcanzar el peso ideal, por eso es normal que los primeros días pierdan algo de peso.<\/li><li><strong>Cambios en la orina: <\/strong>Es otra manera de eliminar las toxinas que todavía se encuentran en su organismo. La orina será más abundante y puede que algo turbia, no te asustes.<br\/><\/li><\/ul>","title2":"¿Cómo va a mejorar su vida?","content2":"<p>Cuando pase el proceso de adaptación a la nueva alimentación, su vida va a cambiar a mejor. Estás dándole una alimentación natural que tiene beneficios muy visibles y, además, ¡en poco tiempo! En las próximas semanas notarás:<\/p><ul><li><strong>Cacas más pequeñas y menos olorosas: <\/strong>En Wild Balance no utilizamos aditivos ni cosas raras. Tu peludo aprovecha prácticamente el 100% de lo que come y su digestión será muy ligera, reduciéndose el tamaño de las heces y los gases.    <\/li><li><strong>Dientes más limpios y sanos: <\/strong>Los hidratos de carbono y azúcares presentes en los piensos son los culpables del sarro y mal aliento. La dieta BARF es rica en proteína y baja en hidratos de carbono, su salud dental va a mejorar notablemente.    <\/li><li><strong>Piel más sana y pelo más brillante: <\/strong>Alimentar a tu peludo con la comida que necesitan reforzará su sistema inmune y evitará que aparezcan alergias. Su pelo será más brillante, sano y abundante.<\/li><li><strong>Recuperación del peso ideal: <\/strong>Tu peludo tiene una buena condición corporal si al acariciarlo puedes notar sus costillas. Estamos acostumbrados a ver perros y gatos con sobrepeso u obesidad pero eso no es nada saludable. La solución: una alimentación 100% natural y real.<\/li><li><strong>Mayor vitalidad y felicidad: <\/strong>Con nuestras hamburguesitas le estarás dando una alimentación adaptada a su naturaleza de carnívoro. Eso hace que su organismo trabaje mejor y que tu peludo tenga más energía y esté más feliz.<\/li><\/ul>","mgb":0,"mgb_tb":0,"mgb_mb":0}},"custom_text_Qbmeyy":{"type":"custom_text","settings":{"text":"<h2>Te ayudamos a crear su menú perfecto<\/h2> <br>\n<p>Cada peludo es único, y su alimentación también debería serlo. Si tienes dudas, ¡estamos aquí para ayudarte!<\/p><p>\n<\/p><ul>\n<li>📏 Calculamos la ración ideal según su peso, edad y nivel de actividad.\n<\/li>\n<br>\n<li>🥩 Te asesoramos sobre los mejores ingredientes para su salud y bienestar.\n<\/li>\n<br>\n<li>💡 Resolvemos todas tus dudas para que la transición a BARF sea fácil y segura.\n<\/li>\n<\/ul>\n\n<a href=\"https:\/\/wildbalance.es\/pages\/calculadora-raciones\" class=\"cta menu\">Calcula su racion<img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0713\/9898\/1933\/files\/flecha-derecha-verde.png?v=1738329144\" alt=\"\"><\/a>","remove_br_tag":false,"tag":"div","fontf":"1","text_cl":"#004623","text_fs":16,"text_lh":0,"text_fw":400,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":10,"text_fs_tb":16,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":16,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}},"custom_text_QAwcEn":{"type":"custom_text","settings":{"text":"<div class=\"ctaDoubts\">\n<h2>Asesoramiento gratuito<\/h2>\n\n<a href=\"https:\/\/api.whatsapp.com\/send\/?phone=34670319204&text&type=phone_number&app_absent=0&_kx=_V3Qt6MyBasq1R9MaiJGmqCJaXgPZI4XMm1kP-MvGoCJ2YvBXCDqhjZk3RLlmfVw.YsKiw5\" class=\"cta conect\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0713\/9898\/1933\/files\/ic_baseline-whatsapp.svg?v=1724756690\" alt=\"\" style=\"width:25px; margin-right:-7px;\">Contactar<\/a>\n<\/div>","remove_br_tag":false,"tag":"div","fontf":"1","text_cl":"#ffffff","text_fs":16,"text_lh":0,"text_fw":400,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":15,"text_fs_tb":16,"text_lh_tb":0,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":16,"text_lh_mb":0,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}},"custom_text_aPzqQp":{"type":"custom_text","disabled":true,"settings":{"text":"Sabemos lo importante que es tu peludo para ti, por eso nos gustaría explicarte los cambios que pueden aparecer los primeros días. Pero no te asustes, es completamente normal que tu mascota experimente alguno de ellos. Piensa que tiene que eliminar todos los ingredientes perjudiciales que hay en los piensos.","remove_br_tag":false,"tag":"p","fontf":"1","text_cl":"#004623","text_fs":16,"text_lh":20,"text_fw":400,"text_ls":0,"font_italic":false,"text_shadow":false,"mgb":10,"text_fs_tb":16,"text_lh_tb":20,"text_ls_tb":0,"mgb_tb":10,"hidden_mobile":false,"text_fs_mb":16,"text_lh_mb":20,"text_ls_mb":0,"mgb_mb":10,"animation":"none"}},"html_i6fTfY":{"type":"html","disabled":true,"settings":{"html_content":"<ul>\n<li><p><b>Beberá menos agua:<\/b>\nLas hamburguesitas de Wild Balance son 100% naturales y se elaboran con ingredientes frescos sin ultraprocesar. Es decir, conservan toda su hidratación y por eso va a pasar a beber menos agua.<\/p><\/li>\n<li><p><b>Cacas blandas, duras o con mucosidad: \n<\/b>Su organismo se está adaptando a la nueva alimentación y el ph de su estómago se está regulando. Piensa cómo afecta en los humanos cambiar de alimentación… Pues para ellos es lo mismo. Las cacas mejorarán día a día y, aunque pueda haber algún vómito, remitirán poco después. Puedes incluir en sus comidas nuestro mix Digestiones Firmes que le ayudará con el tránsito intestinal.\n<\/p><\/li>\n<li><p><b>Cambios en su pelaje\n: <\/b>La mejora en el pelaje se ve a las pocas semanas, pero a veces (al principio) pueden sufrir picores, granitos, caspa, e incluso perder un poco de pelo. Piensa que tu mascota se está desintoxicando del pienso y se manifiesta de diferentes maneras. Te recomendamos aliviar estos síntomas añadiendo Pelaje Brutal o Aceite de Sardina a su ración diaria.\n<\/p><\/li>\n<li><p><b>Su peso se regulará\n: <\/b>Los piensos contienen un montón de ingredientes no apropiados para ellos que provocan sobrepeso u obesidad. Con su nueva alimentación natural empezará a regularse hasta alcanzar el peso ideal, por eso es normal que los primeros días pierdan algo de peso.<\/p><\/li>\n<li><p><b>Cambios en la orina\n: <\/b>Es otra manera de eliminar las toxinas que todavía se encuentran en su organismo. La orina será más abundante y puede que algo turbia, no te asustes.\n<\/p><\/li>\n<\/ul>\n<style>\np{line-height: 20px;}\n<\/style>","hidden_mobile":false}}},"block_order":["bl_col_VLQGYf","bl_col_ycB8XL","accor_item_jcgaCW","custom_text_Qbmeyy","custom_text_QAwcEn","custom_text_aPzqQp","html_i6fTfY"],"custom_css":[],"settings":{"block_custom_class":"accordionsBlock","space_h_item":"30","space_v_item":"30","space_h_item_tb":"10","space_v_item_tb":"10","space_h_item_mb":"10","space_v_item_mb":"10","layout":"t4s-container-wrap","cl_bg":"","cl_bg_gradient":"","image_bg":"shopify:\/\/shop_images\/WB-pdp-iniciacion-perro1.jpg","mg":",,0px,","pd":"100px,50px,100px,50px","mg_tb":",,0px,","pd_tb":"20px,20px,20px,20px","mg_mb":",,0px,","pd_mb":"20px,20px,20px,20px"}},"product-related-recent":{"type":"product-related-recent","blocks":{"942d0ec4-5182-4818-a3d6-d06cbf2680a1":{"type":"recommendations","settings":{"design_heading":"1","heading_center":true,"title":"También te recomendamos","description":"","tophead_mb":30,"tophead_mb_tb":30,"tophead_mb_mb":25,"product_des":"1","rating_pos":"1","list_color_pos":"1","list_size_pos":"1","show_vendor":false,"use_cdt":false,"limit":10,"display_type":"3","image_ratio":"ratioadapt","image_size":"cover","image_position":"8","content_align":"default","col_dk":"5","col_tb":"3","col_mb":"2","space_h_item":"20","space_v_item":"30","space_h_item_tb":"10","space_v_item_tb":"10","space_h_item_mb":"10","space_v_item_mb":"10","layout_des":"2","loop":true,"au_time":0,"au_hover":true,"nav_btn":false,"btn_pos":"in","btn_distance":15,"btn_vi":"hover","btn_owl":"default","btn_shape":"none","btn_cl":"dark","btn_size":"small","btn_hidden_mobile":true,"nav_dot":true,"dot_owl":"outline","dots_cl":"primary","dots_round":true,"dots_space":15,"dots_hidden_mobile":false,"mgb":35,"mgb_tb":50,"mgb_mb":15}},"67689988-9945-4e23-8a5b-10f1dd3e4b39":{"type":"recently","settings":{"design_heading":"1","heading_center":true,"title":"Vistos recientemente","description":"","tophead_mb":30,"tophead_mb_tb":30,"tophead_mb_mb":25,"product_des":"1","rating_pos":"1","list_color_pos":"1","list_size_pos":"1","show_vendor":false,"use_cdt":false,"limit":8,"sortby":"3","unavailable_prs":"show","image_ratio":"ratioadapt","image_size":"cover","image_position":"8","content_align":"default","col_dk":"5","col_tb":"3","col_mb":"2","space_h_item":"20","space_v_item":"20","space_h_item_tb":"10","space_v_item_tb":"10","space_h_item_mb":"10","space_v_item_mb":"10","layout_des":"2","loop":true,"au_time":0,"au_hover":true,"nav_btn":false,"btn_pos":"in","btn_distance":15,"btn_vi":"hover","btn_owl":"default","btn_shape":"none","btn_cl":"dark","btn_size":"small","btn_hidden_mobile":true,"nav_dot":true,"dot_owl":"outline","dots_cl":"primary","dots_round":true,"dots_space":15,"dots_hidden_mobile":false,"mgb":35,"mgb_tb":50,"mgb_mb":15}}},"block_order":["942d0ec4-5182-4818-a3d6-d06cbf2680a1","67689988-9945-4e23-8a5b-10f1dd3e4b39"],"disabled":true,"settings":{"enable_tab":true,"layout":"t4s-container-fluid","cl_bg":"","cl_bg_gradient":"","mg":",30px,50px,30px","pd":"","mg_tb":",10px,50px,10px","pd_tb":"","mg_mb":"20px,10px,50px,10px","pd_mb":""}}},"order":["breadcrumb","custom_liquid_GFWPHA","main","sidebar","custom_section_aYyEww","custom_section_7cJtTb","custom_section_ibfpfw","custom_section_RB9UKy","product-related-recent"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumb": {
+      "type": "brc-nav-product",
+      "disabled": true,
+      "settings": {
+        "breadcrumb_pr": true,
+        "back_next_pr": true,
+        "box_border": "top",
+        "cl_bg": "rgba(0,0,0,0)",
+        "cl_link": "#222222",
+        "margin_bt": 5
+      }
+    },
+    "custom_liquid_GFWPHA": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"titulo-precio-pdp-mb\">\n    <div class=\"nombre-producto-mb\">{{ product.title }}</div>\n    <div class=\"bloque-precio-badges\">\n    <div class=\"precio-producto-mb\" >\n        {%- render 'product-price-single', variant: current_variant, product: product, PR_no_pick: PR_no_pick, type_sale: bk_stts.type_sale, price_varies_style: bk_stts.price -%}\n    </div>\n    <div class=\"containerLabelsPDP\">\n        {% render 'custom-badges' %}\n    </div>\n</div>\n</div>"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "3eaacecf-c956-46e5-84ef-40474509a065": {
+          "type": "title",
+          "settings": {
+            "txt_tr_pr": "none",
+            "fnt_df_pr": "2",
+            "size_pr": 20,
+            "fw_pr": 900,
+            "lh_pr": 0,
+            "ls_pr": 0,
+            "pr_title_color": "#004623"
+          }
+        },
+        "18a8b200-4f94-4b72-b0eb-01abf185ecb3": {
+          "type": "price",
+          "settings": {
+            "price": "1",
+            "type_sale": "0",
+            "tax_ship": false,
+            "size_price_pr": 20,
+            "fw_price_pr": 400,
+            "primary_price_color": "#004623",
+            "secondary_price_color": "#cae6c8",
+            "price_sale": "#ce4949"
+          }
+        },
+        "custom_liquid_FdMfKx": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div>\n<ul style=\"color:#222;\">\n<li>💩 Cacas más pequeñas y menos olorosas</li>\n<li>🦷 Dientes más limpios y sanos</li>\n<li>✨ Piel más sana y pelo más brillante</li>\n<li>⚖️ Recuperación del peso ideal</li>\n<li>💖 Mayor vitalidad y felicidad</li>\n</ul>\n\n</div>"
+          }
+        },
+        "text_bcwFJJ": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>💩 Cacas más pequeñas y menos olorosas<br/>🦷 Dientes más limpios y sanos</p><p>✨ Piel más sana y pelo más brillante</p><p>⚖️ Recuperación del peso ideal</p><p>💖 Mayor vitalidad y felicidad</p>"
+          }
+        },
+        "custom_liquid_PkGhkJ": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<div class=\"containerLabelsPDP\">\n{% render 'custom-badges' %}\n</div>"
+          }
+        },
+        "custom_liquid_HeetbV": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<section class=\"extraProducto\">\n\n      <div class=\"cajaIngrediente\">\n        <div class=\"aporteImg\">\n          <img src=\"https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Vector_0b424257-16f0-4edd-952f-26a591847548.png?v=1742901677\" alt=\"\" style=\"width:27px;\"/> \n        </div>\n\n        <div class=\"porcentajes\">\n          <p>\n             Para perros\n          </p>\n        </div>\n      </div>\n\n      <div class=\"cajaIngrediente\">\n        <div class=\"aporteImg\">\n          <img src=\"https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Vector_1.png?v=1742901678\" alt=\"\" />\n        </div>\n\n        <div class=\"porcentajes\">\n          <p>\n             Burger 50gr\n          </p>\n        </div>\n      </div>\n\n      <div class=\"cajaIngrediente\">\n        <div class=\"aporteImg\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Vector_2.png?v=1742901677\" alt=\"\">\n        </div>\n\n        <div class=\"porcentajes\">\n          <p>\n             Bolsa reciclable\n          </p>\n        </div>\n      </div>\n\n      <div class=\"cajaIngrediente\">\n        <div class=\"aporteImg\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Vector_3.png?v=1742901677\" alt=\"\">\n        </div>\n\n        <div class=\"porcentajes\">\n          <p>\n             Producto congelado\n          </p>\n        </div>\n      </div>\n    </section>"
+          }
+        },
+        "description_PqQjKj": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "des": "1",
+            "text": "",
+            "length": 31,
+            "readm": false,
+            "readm_txt": "Read more"
+          }
+        },
+        "8f619784-04a8-4c20-b813-6902f9e3e922": {
+          "type": "form",
+          "settings": {
+            "selector_mode": "circle",
+            "color_mode": "variant_image is-sw-cl__round",
+            "enable_fit_ratio_img": false,
+            "color_size": "large",
+            "show_qty": true,
+            "enable_wishlist": false,
+            "enable_compare": false,
+            "btn_atc_full": true,
+            "pr_btn_round": 40,
+            "wis_cp_btn_round": 40,
+            "ani": "none",
+            "time": 6,
+            "btn_txt": "3",
+            "btn_icon": false,
+            "button_style": "default",
+            "button_color": "primary",
+            "button_effect": "default",
+            "wishlist_color": "#004623",
+            "wishlist_color_hover": "#5ccc84",
+            "wishlist_color_active": "#ffcd00",
+            "compare_color": "#004623",
+            "compare_color_hover": "#5ccc84",
+            "show_dynamic_checkout": false,
+            "btn_txt2": "3",
+            "button_color_payment": "dark",
+            "product_list": [],
+            "show_product_current": true,
+            "show_text_price": true,
+            "qty_val": "0",
+            "advance_label": "Choose style",
+            "advance_pr_list": []
+          }
+        },
+        "custom_liquid_ywgBhH": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"containerCtaPdp t4s-product-tabs-wrapper\">\n<p>¿Quieres un plan personalizado?</p>\n\n<a class=\"creaSuMenuPdp\" href=\"https://wildbalance.es/pages/crea-su-menu\">Crea su menú</a>\n</div>"
+          }
+        },
+        "tab_liquid_KiC6hD": {
+          "type": "tab_liquid",
+          "settings": {
+            "title": "Ingredientes",
+            "custom_liquid": "{{product.metafields.custom.ingredientes.value}}"
+          }
+        },
+        "tab_liquid_Lqc4J4": {
+          "type": "tab_liquid",
+          "settings": {
+            "title": "Información Nutricional",
+            "custom_liquid": "{{product.metafields.custom.informacion_nutricional.value}}"
+          }
+        },
+        "tab_liquid_D94HQY": {
+          "type": "tab_liquid",
+          "settings": {
+            "title": "Descripción",
+            "custom_liquid": "{{product.metafields.custom.descripcion_larga.value}}"
+          }
+        },
+        "tab_html_aQRVmq": {
+          "type": "tab_html",
+          "settings": {
+            "title": "Envíos y devoluciones",
+            "content": "",
+            "page": "politica-de-devoluciones-y-envios-1"
+          }
+        }
+      },
+      "block_order": [
+        "3eaacecf-c956-46e5-84ef-40474509a065",
+        "18a8b200-4f94-4b72-b0eb-01abf185ecb3",
+        "custom_liquid_FdMfKx",
+        "text_bcwFJJ",
+        "custom_liquid_PkGhkJ",
+        "custom_liquid_HeetbV",
+        "description_PqQjKj",
+        "8f619784-04a8-4c20-b813-6902f9e3e922",
+        "custom_liquid_ywgBhH",
+        "tab_liquid_KiC6hD",
+        "tab_liquid_Lqc4J4",
+        "tab_liquid_D94HQY",
+        "tab_html_aQRVmq"
+      ],
+      "settings": {
+        "pr_layout": "full",
+        "enable_sticky_info": true,
+        "enable_space_content": true,
+        "media_layout": "thumbnails_left",
+        "media_size": "medium",
+        "thumb_lr_size": "small",
+        "thumb_lr_hover": "1",
+        "image_ratio": "ratioadapt",
+        "image_size": "cover",
+        "image_position": "8",
+        "main_click": "none",
+        "zoom_tp": "external",
+        "enable_zoom_icon": false,
+        "enable_zoom_click_mb": false,
+        "enable_video_looping": false,
+        "enable_video_muting": true,
+        "enable_video_autoplaying": true,
+        "eff": "fade",
+        "nav_btn": false,
+        "btn_vi": "always",
+        "btn_owl": "default",
+        "btn_shape": "none",
+        "btn_cl": "primary",
+        "btn_size": "medium",
+        "btn_hidden_mobile": false,
+        "nav_dot": false,
+        "dot_owl": "default",
+        "dots_cl": "dark",
+        "dots_round": true,
+        "dots_space": 10,
+        "dots_hidden_mobile": false,
+        "tabs_design": "accordion",
+        "tabs_accordion_mb": true,
+        "enable_line_tabs": true,
+        "tabs_position": "inner",
+        "enable_first_tab": false,
+        "tabs_layout": "default",
+        "bg": "#f9f5e7",
+        "bg_mb": "#f9f5e7",
+        "product_list": [],
+        "sticky_mode": "2",
+        "sticky_show": "1",
+        "sticky_layout_mb": "minimal",
+        "enable_select": true,
+        "ani": "none",
+        "time": 6
+      }
+    },
+    "sidebar": {
+      "type": "sidebar-product",
+      "disabled": true,
+      "settings": {
+        "enable_drawer": false,
+        "space": 50,
+        "size": "medium",
+        "br_style": "none",
+        "brcolor": "#222222",
+        "sidebar_bdr": 5,
+        "sidebar_pd": 10
+      }
+    },
+    "custom_section_aYyEww": {
+      "type": "custom-section",
+      "blocks": {
+        "bl_col_LYyfr6": {
+          "type": "bl_col",
+          "disabled": true,
+          "settings": {
+            "col_dk": "6",
+            "col_dk_w": "33.33333",
+            "col_tb": "12",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": false,
+            "content_align": "start",
+            "content_align_tablet": "start",
+            "content_align_mobile": "start",
+            "padding_inner": "",
+            "padding_inner_tb": "",
+            "padding_inner_mb": "",
+            "round_inner": "10px,10px,10px,10px",
+            "round_tb_inner": "10px,10px,10px,10px",
+            "round_mb_inner": "10px,10px,10px,10px",
+            "bg_cl": "#faf5e7",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "image_8Tniai": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image_child": "shopify://shop_images/WIB_PDP-PACK-INICIACIONp2.jpg",
+            "img_link": "",
+            "open_link": "_self",
+            "img_width": 0,
+            "img_width_tb": 0,
+            "img_width_mb": 0,
+            "img_align": "center",
+            "img_align_tb": "center",
+            "img_align_mobile": "center",
+            "b_effect": "none",
+            "hidden_mobile": false,
+            "mgb": 20,
+            "mgb_tb": 20,
+            "mgb_mb": 20,
+            "animation": "none"
+          }
+        },
+        "bl_col_yQ86aq": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "6",
+            "col_dk_w": "33.33333",
+            "col_tb": "12",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": false,
+            "content_align": "start",
+            "content_align_tablet": "start",
+            "content_align_mobile": "start",
+            "padding_inner": "40px,60px,40px,60px",
+            "padding_inner_tb": "40px,40px,40px,40px",
+            "padding_inner_mb": "40px,40px,40px,40px",
+            "round_inner": "10px,10px,10px,10px",
+            "round_tb_inner": "10px,10px,10px,10px",
+            "round_mb_inner": "10px,10px,10px,10px",
+            "bg_cl": "#faf5e7",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_qRRtQF": {
+          "type": "custom_text",
+          "settings": {
+            "text": "¿Qué contiene el pack?",
+            "remove_br_tag": false,
+            "tag": "h3",
+            "fontf": "2",
+            "text_cl": "#004623",
+            "text_fs": 20,
+            "text_lh": 0,
+            "text_fw": 900,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 10,
+            "text_fs_tb": 30,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 30,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_rxFER7": {
+          "type": "custom_text",
+          "settings": {
+            "text": "<ul>\n<li>Menú de Iniciación</li>\n<li>Menú Completo de Pollo <br>con Verduras Frescas</li>\n<li>Menú Completo de Pavo <br> con Verduras Frescas</li>\n</ul>",
+            "remove_br_tag": false,
+            "tag": "div",
+            "fontf": "1",
+            "text_cl": "#004623",
+            "text_fs": 16,
+            "text_lh": 20,
+            "text_fw": 800,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 10,
+            "text_fs_tb": 16,
+            "text_lh_tb": 20,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 16,
+            "text_lh_mb": 20,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_wHwyLK": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Y para que no te quedes con dudas...",
+            "remove_br_tag": false,
+            "tag": "h3",
+            "fontf": "2",
+            "text_cl": "#004623",
+            "text_fs": 20,
+            "text_lh": 0,
+            "text_fw": 900,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 10,
+            "text_fs_tb": 30,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 30,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_qaxxac": {
+          "type": "custom_text",
+          "settings": {
+            "text": "<ul>\n<li><a href=\"https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0&_kx=_V3Qt6MyBasq1R9MaiJGmqCJaXgPZI4XMm1kP-MvGoCJ2YvBXCDqhjZk3RLlmfVw.YsKiw5\">Asesoramiento gratuito</a></li>\n<li>Guía de transición a la Dieta BARF</li>\n<li>Guía de raciones diarias</li>\n\n</ul>",
+            "remove_br_tag": false,
+            "tag": "div",
+            "fontf": "1",
+            "text_cl": "#004623",
+            "text_fs": 16,
+            "text_lh": 20,
+            "text_fw": 800,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 10,
+            "text_fs_tb": 16,
+            "text_lh_tb": 20,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 16,
+            "text_lh_mb": 20,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        }
+      },
+      "block_order": [
+        "bl_col_LYyfr6",
+        "image_8Tniai",
+        "bl_col_yQ86aq",
+        "custom_text_qRRtQF",
+        "custom_text_rxFER7",
+        "custom_text_wHwyLK",
+        "custom_text_qaxxac"
+      ],
+      "custom_css": [
+        ".t4s-section-inner {min-height: 600px;}"
+      ],
+      "settings": {
+        "block_custom_class": "packConteins desktop",
+        "space_h_item": "30",
+        "space_v_item": "30",
+        "space_h_item_tb": "10",
+        "space_v_item_tb": "10",
+        "space_h_item_mb": "10",
+        "space_v_item_mb": "10",
+        "layout": "t4s-container-fluid",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "image_bg": "shopify://shop_images/WIB_PDP-PACK-INICIACIONp3-DESK_02.jpg",
+        "mg": "",
+        "pd": "100px,50px,100px,50px",
+        "mg_tb": "",
+        "pd_tb": "20px,20px,20px,20px",
+        "mg_mb": "",
+        "pd_mb": "20px,20px,20px,20px"
+      }
+    },
+    "custom_section_7cJtTb": {
+      "type": "custom-section",
+      "blocks": {
+        "bl_col_3rrW8p": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "12",
+            "col_dk_w": "33.33333",
+            "col_tb": "12",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": false,
+            "content_align": "start",
+            "content_align_tablet": "start",
+            "content_align_mobile": "start",
+            "padding_inner": "",
+            "padding_inner_tb": "",
+            "padding_inner_mb": "",
+            "round_inner": "",
+            "round_tb_inner": "",
+            "round_mb_inner": "",
+            "bg_cl": "#faf5e7",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "image_9D8h9m": {
+          "type": "image",
+          "settings": {
+            "image_child": "shopify://shop_images/WIB_PDP-PACK-INICIACIONp3-MOBILE_03.jpg",
+            "img_link": "",
+            "open_link": "_self",
+            "img_width": 0,
+            "img_width_tb": 0,
+            "img_width_mb": 0,
+            "img_align": "center",
+            "img_align_tb": "center",
+            "img_align_mobile": "center",
+            "b_effect": "none",
+            "hidden_mobile": false,
+            "mgb": 0,
+            "mgb_tb": 0,
+            "mgb_mb": 0,
+            "animation": "none"
+          }
+        },
+        "bl_col_VdWtGh": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "6",
+            "col_dk_w": "33.33333",
+            "col_tb": "12",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": false,
+            "content_align": "start",
+            "content_align_tablet": "start",
+            "content_align_mobile": "start",
+            "padding_inner": "40px,60px,40px,60px",
+            "padding_inner_tb": "40px,40px,40px,40px",
+            "padding_inner_mb": "40px,40px,40px,40px",
+            "round_inner": "20px, 20px, 20px, 20px",
+            "round_tb_inner": "20px, 20px, 20px, 20px",
+            "round_mb_inner": "20px, 20px, 20px, 20px",
+            "bg_cl": "#faf5e7",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_x7KBAw": {
+          "type": "custom_text",
+          "settings": {
+            "text": "¿Qué contiene el pack?",
+            "remove_br_tag": false,
+            "tag": "h3",
+            "fontf": "2",
+            "text_cl": "#004623",
+            "text_fs": 20,
+            "text_lh": 0,
+            "text_fw": 900,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 10,
+            "text_fs_tb": 30,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 30,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_MiPpxa": {
+          "type": "custom_text",
+          "settings": {
+            "text": "<ul>\n<li>Menú de Iniciación</li>\n<li>Menú Completo de Pollo <br>con Verduras Frescas</li>\n<li>Menú Completo de Pavo <br> con Verduras Frescas</li>\n</ul>",
+            "remove_br_tag": false,
+            "tag": "div",
+            "fontf": "1",
+            "text_cl": "#004623",
+            "text_fs": 16,
+            "text_lh": 20,
+            "text_fw": 800,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 10,
+            "text_fs_tb": 16,
+            "text_lh_tb": 20,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 16,
+            "text_lh_mb": 20,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_Qrzepq": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Y para que no te quedes con dudas...",
+            "remove_br_tag": false,
+            "tag": "h3",
+            "fontf": "2",
+            "text_cl": "#004623",
+            "text_fs": 20,
+            "text_lh": 0,
+            "text_fw": 900,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 10,
+            "text_fs_tb": 30,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 30,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_4qBikG": {
+          "type": "custom_text",
+          "settings": {
+            "text": "<ul>\n<li>Guía de transición a la Dieta BARF</li>\n<li>Guía de raciones diarias</li>\n</ul>",
+            "remove_br_tag": false,
+            "tag": "div",
+            "fontf": "1",
+            "text_cl": "#004623",
+            "text_fs": 16,
+            "text_lh": 20,
+            "text_fw": 800,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 10,
+            "text_fs_tb": 16,
+            "text_lh_tb": 20,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 16,
+            "text_lh_mb": 20,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        }
+      },
+      "block_order": [
+        "bl_col_3rrW8p",
+        "image_9D8h9m",
+        "bl_col_VdWtGh",
+        "custom_text_x7KBAw",
+        "custom_text_MiPpxa",
+        "custom_text_Qrzepq",
+        "custom_text_4qBikG"
+      ],
+      "settings": {
+        "block_custom_class": "packConteins mobile",
+        "space_h_item": "30",
+        "space_v_item": "30",
+        "space_h_item_tb": "10",
+        "space_v_item_tb": "10",
+        "space_h_item_mb": "10",
+        "space_v_item_mb": "10",
+        "layout": "t4s-container-fluid",
+        "cl_bg": "#cae6c8",
+        "cl_bg_gradient": "",
+        "mg": "",
+        "pd": "",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": "",
+        "pd_mb": ""
+      }
+    },
+    "custom_section_ibfpfw": {
+      "type": "custom-section",
+      "blocks": {
+        "bl_col_kWk6jA": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "12",
+            "col_dk_w": "33.33333",
+            "col_tb": "12",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": false,
+            "content_align": "center",
+            "content_align_tablet": "center",
+            "content_align_mobile": "start",
+            "padding_inner": "20px, 0px, 0px, 0px",
+            "padding_inner_tb": "",
+            "padding_inner_mb": "30px, 0px, 0px, 0px",
+            "round_inner": "",
+            "round_tb_inner": "",
+            "round_mb_inner": "",
+            "bg_cl": "rgba(0,0,0,0)",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_8BTgXm": {
+          "type": "custom_text",
+          "settings": {
+            "text": "¿Cómo hacer la transición al BARF con tu perro?",
+            "remove_br_tag": false,
+            "tag": "h2",
+            "fontf": "inherit",
+            "text_cl": "#004623",
+            "text_fs": 30,
+            "text_lh": 0,
+            "text_fw": 800,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 15,
+            "text_fs_tb": 30,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 30,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "bl_col_hPVEX6": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "6",
+            "col_dk_w": "33.33333",
+            "col_tb": "6",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": false,
+            "content_align": "start",
+            "content_align_tablet": "start",
+            "content_align_mobile": "start",
+            "padding_inner": "30px,,30px",
+            "padding_inner_tb": "15px,,15px,",
+            "padding_inner_mb": "15px,,15px,",
+            "round_inner": "",
+            "round_tb_inner": "",
+            "round_mb_inner": "",
+            "bg_cl": "rgba(0,0,0,0)",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_VQPEde": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Ayuno 24H",
+            "remove_br_tag": false,
+            "tag": "h3",
+            "fontf": "inherit",
+            "text_cl": "#004623",
+            "text_fs": 20,
+            "text_lh": 0,
+            "text_fw": 900,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 5,
+            "text_fs_tb": 16,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 16,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_tRzWYf": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Antes de empezar con BARF, es importante limpiar el organismo de tu perro de toxinas. No recomendado para cachorros, perros enfermos o ancianos.",
+            "remove_br_tag": false,
+            "tag": "p",
+            "fontf": "inherit",
+            "text_cl": "#004623",
+            "text_fs": 16,
+            "text_lh": 24,
+            "text_fw": 400,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 0,
+            "text_fs_tb": 16,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 16,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "bl_col_YVT6nY": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "6",
+            "col_dk_w": "33.33333",
+            "col_tb": "6",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": false,
+            "content_align": "start",
+            "content_align_tablet": "start",
+            "content_align_mobile": "start",
+            "padding_inner": "30px,,30px",
+            "padding_inner_tb": "15px,,15px,",
+            "padding_inner_mb": "15px,,15px,",
+            "round_inner": "",
+            "round_tb_inner": "",
+            "round_mb_inner": "",
+            "bg_cl": "rgba(0,0,0,0)",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_aGxFBH": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Menú de iniciación",
+            "remove_br_tag": false,
+            "tag": "h3",
+            "fontf": "inherit",
+            "text_cl": "#004623",
+            "text_fs": 20,
+            "text_lh": 0,
+            "text_fw": 900,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 5,
+            "text_fs_tb": 16,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 16,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_WLtbHe": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Para una mejor transición a BARF, inicia con nuestro Menú de Iniciación (80% pollo, 20% zanahoria y calabaza), ideal para facilitar la digestión en los primeros días.",
+            "remove_br_tag": false,
+            "tag": "p",
+            "fontf": "inherit",
+            "text_cl": "#004623",
+            "text_fs": 16,
+            "text_lh": 24,
+            "text_fw": 400,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 0,
+            "text_fs_tb": 16,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 16,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "bl_col_CP3jPh": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "6",
+            "col_dk_w": "33.33333",
+            "col_tb": "6",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": false,
+            "content_align": "start",
+            "content_align_tablet": "start",
+            "content_align_mobile": "start",
+            "padding_inner": "30px,,30px",
+            "padding_inner_tb": "15px,,15px,",
+            "padding_inner_mb": "15px,,15px,",
+            "round_inner": "",
+            "round_tb_inner": "",
+            "round_mb_inner": "",
+            "bg_cl": "rgba(0,0,0,0)",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_xRLDJn": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Menú de Pollo  con Verduras Frescas",
+            "remove_br_tag": false,
+            "tag": "h3",
+            "fontf": "inherit",
+            "text_cl": "#004623",
+            "text_fs": 20,
+            "text_lh": 0,
+            "text_fw": 900,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 5,
+            "text_fs_tb": 16,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 16,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_Qb7QF6": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Tras adaptarse al menú de iniciación, tu perro puede pasar al menú completo de pollo (80% pollo, 20% frutas, verduras y suplementos) para una alimentación equilibrada.",
+            "remove_br_tag": false,
+            "tag": "p",
+            "fontf": "inherit",
+            "text_cl": "#004623",
+            "text_fs": 16,
+            "text_lh": 24,
+            "text_fw": 400,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 0,
+            "text_fs_tb": 16,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 16,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "bl_col_3zmwiD": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "6",
+            "col_dk_w": "33.33333",
+            "col_tb": "6",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": false,
+            "content_align": "start",
+            "content_align_tablet": "start",
+            "content_align_mobile": "start",
+            "padding_inner": "30px,,30px",
+            "padding_inner_tb": "15px,,15px,",
+            "padding_inner_mb": "15px,,15px,",
+            "round_inner": "",
+            "round_tb_inner": "",
+            "round_mb_inner": "",
+            "bg_cl": "rgba(0,0,0,0)",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_NtmLiV": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Nuevas proteínas",
+            "remove_br_tag": false,
+            "tag": "h3",
+            "fontf": "inherit",
+            "text_cl": "#004623",
+            "text_fs": 20,
+            "text_lh": 0,
+            "text_fw": 900,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 5,
+            "text_fs_tb": 16,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 16,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_NHKqTN": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Ahora ya puedes introducir nuevas proteínas. Mantén cada nueva proteína 3-4 días para verificar tolerancia. \nNuestros menús son 100% monoproteicos, ideales para perros con intolerancias.",
+            "remove_br_tag": false,
+            "tag": "p",
+            "fontf": "inherit",
+            "text_cl": "#004623",
+            "text_fs": 16,
+            "text_lh": 24,
+            "text_fw": 400,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 0,
+            "text_fs_tb": 16,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 16,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        }
+      },
+      "block_order": [
+        "bl_col_kWk6jA",
+        "custom_text_8BTgXm",
+        "bl_col_hPVEX6",
+        "custom_text_VQPEde",
+        "custom_text_tRzWYf",
+        "bl_col_YVT6nY",
+        "custom_text_aGxFBH",
+        "custom_text_WLtbHe",
+        "bl_col_CP3jPh",
+        "custom_text_xRLDJn",
+        "custom_text_Qb7QF6",
+        "bl_col_3zmwiD",
+        "custom_text_NtmLiV",
+        "custom_text_NHKqTN"
+      ],
+      "settings": {
+        "block_custom_class": "transitionBlock",
+        "space_h_item": "30",
+        "space_v_item": "20",
+        "space_h_item_tb": "30",
+        "space_v_item_tb": "10",
+        "space_h_item_mb": "10",
+        "space_v_item_mb": "10",
+        "layout": "t4s-container-fluid",
+        "cl_bg": "#cae6c8",
+        "cl_bg_gradient": "",
+        "mg": "",
+        "pd": "2%,8%,5%,8%",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": "-70px,0px,0px,0px",
+        "pd_mb": "0%,8%,5%,8%"
+      }
+    },
+    "custom_section_RB9UKy": {
+      "type": "custom-section",
+      "blocks": {
+        "bl_col_VLQGYf": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "6",
+            "col_dk_w": "33.33333",
+            "col_tb": "12",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": false,
+            "content_align": "start",
+            "content_align_tablet": "start",
+            "content_align_mobile": "start",
+            "padding_inner": "",
+            "padding_inner_tb": "",
+            "padding_inner_mb": "",
+            "round_inner": "",
+            "round_tb_inner": "",
+            "round_mb_inner": "",
+            "bg_cl": "rgba(0,0,0,0)",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "bl_col_ycB8XL": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "6",
+            "col_dk_w": "33.33333",
+            "col_tb": "12",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": false,
+            "content_align": "start",
+            "content_align_tablet": "start",
+            "content_align_mobile": "start",
+            "padding_inner": "40px,40px,40px,40px",
+            "padding_inner_tb": "40px,40px,40px,40px",
+            "padding_inner_mb": "1%,0.5%,1%,0.5%",
+            "round_inner": "",
+            "round_tb_inner": "",
+            "round_mb_inner": "",
+            "bg_cl": "rgba(0,0,0,0)",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "accor_item_jcgaCW": {
+          "type": "accor_item",
+          "settings": {
+            "title_cl": "#004623",
+            "bg_title_cl": "#faf5e7",
+            "title_active_cl": "#004623",
+            "bg_title_active_cl": "#faf5e7",
+            "title1": "¿Qué puedes notar los primeros días?",
+            "content1": "<p>Sabemos lo importante que es tu peludo para ti, por eso nos gustaría explicarte los cambios que pueden aparecer los primeros días. Pero no te asustes, es completamente normal que tu mascota experimente alguno de ellos. Piensa que tiene que eliminar todos los ingredientes perjudiciales que hay en los piensos.</p><ul><li><strong>Beberá menos agua: </strong>Las hamburguesitas de Wild Balance son 100% naturales y se elaboran con ingredientes frescos sin ultraprocesar. Es decir, conservan toda su hidratación y por eso va a pasar a beber menos agua.</li><li><strong>Cacas blandas, duras o con mucosidad: </strong>Su organismo se está adaptando a la nueva alimentación y el ph de su estómago se está regulando. Piensa cómo afecta en los humanos cambiar de alimentación… Pues para ellos es lo mismo. Las cacas mejorarán día a día y, aunque pueda haber algún vómito, remitirán poco después. Puedes incluir en sus comidas nuestro mix Digestiones Firmes que le ayudará con el tránsito intestinal.<br/></li><li><strong>Cambios en su pelaje: </strong>La mejora en el pelaje se ve a las pocas semanas, pero a veces (al principio) pueden sufrir picores, granitos, caspa, e incluso perder un poco de pelo. Piensa que tu mascota se está desintoxicando del pienso y se manifiesta de diferentes maneras. Te recomendamos aliviar estos síntomas añadiendo Pelaje Brutal o Aceite de Sardina a su ración diaria.<br/></li><li><strong>Su peso se regulará: </strong>Los piensos contienen un montón de ingredientes no apropiados para ellos que provocan sobrepeso u obesidad. Con su nueva alimentación natural empezará a regularse hasta alcanzar el peso ideal, por eso es normal que los primeros días pierdan algo de peso.</li><li><strong>Cambios en la orina: </strong>Es otra manera de eliminar las toxinas que todavía se encuentran en su organismo. La orina será más abundante y puede que algo turbia, no te asustes.<br/></li></ul>",
+            "title2": "¿Cómo va a mejorar su vida?",
+            "content2": "<p>Cuando pase el proceso de adaptación a la nueva alimentación, su vida va a cambiar a mejor. Estás dándole una alimentación natural que tiene beneficios muy visibles y, además, ¡en poco tiempo! En las próximas semanas notarás:</p><ul><li><strong>Cacas más pequeñas y menos olorosas: </strong>En Wild Balance no utilizamos aditivos ni cosas raras. Tu peludo aprovecha prácticamente el 100% de lo que come y su digestión será muy ligera, reduciéndose el tamaño de las heces y los gases.    </li><li><strong>Dientes más limpios y sanos: </strong>Los hidratos de carbono y azúcares presentes en los piensos son los culpables del sarro y mal aliento. La dieta BARF es rica en proteína y baja en hidratos de carbono, su salud dental va a mejorar notablemente.    </li><li><strong>Piel más sana y pelo más brillante: </strong>Alimentar a tu peludo con la comida que necesitan reforzará su sistema inmune y evitará que aparezcan alergias. Su pelo será más brillante, sano y abundante.</li><li><strong>Recuperación del peso ideal: </strong>Tu peludo tiene una buena condición corporal si al acariciarlo puedes notar sus costillas. Estamos acostumbrados a ver perros y gatos con sobrepeso u obesidad pero eso no es nada saludable. La solución: una alimentación 100% natural y real.</li><li><strong>Mayor vitalidad y felicidad: </strong>Con nuestras hamburguesitas le estarás dando una alimentación adaptada a su naturaleza de carnívoro. Eso hace que su organismo trabaje mejor y que tu peludo tenga más energía y esté más feliz.</li></ul>",
+            "mgb": 0,
+            "mgb_tb": 0,
+            "mgb_mb": 0
+          }
+        },
+        "custom_text_Qbmeyy": {
+          "type": "custom_text",
+          "settings": {
+            "text": "<h2>Te ayudamos a crear su menú perfecto</h2> <br>\n<p>Cada peludo es único, y su alimentación también debería serlo. Si tienes dudas, ¡estamos aquí para ayudarte!</p><p>\n</p><ul>\n<li>📏 Calculamos la ración ideal según su peso, edad y nivel de actividad.\n</li>\n<br>\n<li>🥩 Te asesoramos sobre los mejores ingredientes para su salud y bienestar.\n</li>\n<br>\n<li>💡 Resolvemos todas tus dudas para que la transición a BARF sea fácil y segura.\n</li>\n</ul>\n\n<a href=\"https://wildbalance.es/pages/calculadora-raciones\" class=\"cta menu\">Calcula su racion<img src=\"https://cdn.shopify.com/s/files/1/0713/9898/1933/files/flecha-derecha-verde.png?v=1738329144\" alt=\"\"></a>",
+            "remove_br_tag": false,
+            "tag": "div",
+            "fontf": "1",
+            "text_cl": "#004623",
+            "text_fs": 16,
+            "text_lh": 0,
+            "text_fw": 400,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 10,
+            "text_fs_tb": 16,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 16,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_QAwcEn": {
+          "type": "custom_text",
+          "settings": {
+            "text": "<div class=\"ctaDoubts\">\n<h2>Asesoramiento gratuito</h2>\n\n<a href=\"https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0&_kx=_V3Qt6MyBasq1R9MaiJGmqCJaXgPZI4XMm1kP-MvGoCJ2YvBXCDqhjZk3RLlmfVw.YsKiw5\" class=\"cta conect\"><img src=\"https://cdn.shopify.com/s/files/1/0713/9898/1933/files/ic_baseline-whatsapp.svg?v=1724756690\" alt=\"\" style=\"width:25px; margin-right:-7px;\">Contactar</a>\n</div>",
+            "remove_br_tag": false,
+            "tag": "div",
+            "fontf": "1",
+            "text_cl": "#ffffff",
+            "text_fs": 16,
+            "text_lh": 0,
+            "text_fw": 400,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 15,
+            "text_fs_tb": 16,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 16,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_aPzqQp": {
+          "type": "custom_text",
+          "disabled": true,
+          "settings": {
+            "text": "Sabemos lo importante que es tu peludo para ti, por eso nos gustaría explicarte los cambios que pueden aparecer los primeros días. Pero no te asustes, es completamente normal que tu mascota experimente alguno de ellos. Piensa que tiene que eliminar todos los ingredientes perjudiciales que hay en los piensos.",
+            "remove_br_tag": false,
+            "tag": "p",
+            "fontf": "1",
+            "text_cl": "#004623",
+            "text_fs": 16,
+            "text_lh": 20,
+            "text_fw": 400,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 10,
+            "text_fs_tb": 16,
+            "text_lh_tb": 20,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 16,
+            "text_lh_mb": 20,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "html_i6fTfY": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "html_content": "<ul>\n<li><p><b>Beberá menos agua:</b>\nLas hamburguesitas de Wild Balance son 100% naturales y se elaboran con ingredientes frescos sin ultraprocesar. Es decir, conservan toda su hidratación y por eso va a pasar a beber menos agua.</p></li>\n<li><p><b>Cacas blandas, duras o con mucosidad: \n</b>Su organismo se está adaptando a la nueva alimentación y el ph de su estómago se está regulando. Piensa cómo afecta en los humanos cambiar de alimentación… Pues para ellos es lo mismo. Las cacas mejorarán día a día y, aunque pueda haber algún vómito, remitirán poco después. Puedes incluir en sus comidas nuestro mix Digestiones Firmes que le ayudará con el tránsito intestinal.\n</p></li>\n<li><p><b>Cambios en su pelaje\n: </b>La mejora en el pelaje se ve a las pocas semanas, pero a veces (al principio) pueden sufrir picores, granitos, caspa, e incluso perder un poco de pelo. Piensa que tu mascota se está desintoxicando del pienso y se manifiesta de diferentes maneras. Te recomendamos aliviar estos síntomas añadiendo Pelaje Brutal o Aceite de Sardina a su ración diaria.\n</p></li>\n<li><p><b>Su peso se regulará\n: </b>Los piensos contienen un montón de ingredientes no apropiados para ellos que provocan sobrepeso u obesidad. Con su nueva alimentación natural empezará a regularse hasta alcanzar el peso ideal, por eso es normal que los primeros días pierdan algo de peso.</p></li>\n<li><p><b>Cambios en la orina\n: </b>Es otra manera de eliminar las toxinas que todavía se encuentran en su organismo. La orina será más abundante y puede que algo turbia, no te asustes.\n</p></li>\n</ul>\n<style>\np{line-height: 20px;}\n</style>",
+            "hidden_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "bl_col_VLQGYf",
+        "bl_col_ycB8XL",
+        "accor_item_jcgaCW",
+        "custom_text_Qbmeyy",
+        "custom_text_QAwcEn",
+        "custom_text_aPzqQp",
+        "html_i6fTfY"
+      ],
+      "custom_css": [],
+      "settings": {
+        "block_custom_class": "accordionsBlock",
+        "space_h_item": "30",
+        "space_v_item": "30",
+        "space_h_item_tb": "10",
+        "space_v_item_tb": "10",
+        "space_h_item_mb": "10",
+        "space_v_item_mb": "10",
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "image_bg": "shopify://shop_images/WB-pdp-iniciacion-perro1.jpg",
+        "mg": ",,0px,",
+        "pd": "100px,50px,100px,50px",
+        "mg_tb": ",,0px,",
+        "pd_tb": "20px,20px,20px,20px",
+        "mg_mb": ",,0px,",
+        "pd_mb": "20px,20px,20px,20px"
+      }
+    },
+    "product-related-recent": {
+      "type": "product-related-recent",
+      "blocks": {
+        "942d0ec4-5182-4818-a3d6-d06cbf2680a1": {
+          "type": "recommendations",
+          "settings": {
+            "design_heading": "1",
+            "heading_center": true,
+            "title": "También te recomendamos",
+            "description": "",
+            "tophead_mb": 30,
+            "tophead_mb_tb": 30,
+            "tophead_mb_mb": 25,
+            "product_des": "1",
+            "rating_pos": "1",
+            "list_color_pos": "1",
+            "list_size_pos": "1",
+            "show_vendor": false,
+            "use_cdt": false,
+            "limit": 10,
+            "display_type": "3",
+            "image_ratio": "ratioadapt",
+            "image_size": "cover",
+            "image_position": "8",
+            "content_align": "default",
+            "col_dk": "5",
+            "col_tb": "3",
+            "col_mb": "2",
+            "space_h_item": "20",
+            "space_v_item": "30",
+            "space_h_item_tb": "10",
+            "space_v_item_tb": "10",
+            "space_h_item_mb": "10",
+            "space_v_item_mb": "10",
+            "layout_des": "2",
+            "loop": true,
+            "au_time": 0,
+            "au_hover": true,
+            "nav_btn": false,
+            "btn_pos": "in",
+            "btn_distance": 15,
+            "btn_vi": "hover",
+            "btn_owl": "default",
+            "btn_shape": "none",
+            "btn_cl": "dark",
+            "btn_size": "small",
+            "btn_hidden_mobile": true,
+            "nav_dot": true,
+            "dot_owl": "outline",
+            "dots_cl": "primary",
+            "dots_round": true,
+            "dots_space": 15,
+            "dots_hidden_mobile": false,
+            "mgb": 35,
+            "mgb_tb": 50,
+            "mgb_mb": 15
+          }
+        },
+        "67689988-9945-4e23-8a5b-10f1dd3e4b39": {
+          "type": "recently",
+          "settings": {
+            "design_heading": "1",
+            "heading_center": true,
+            "title": "Vistos recientemente",
+            "description": "",
+            "tophead_mb": 30,
+            "tophead_mb_tb": 30,
+            "tophead_mb_mb": 25,
+            "product_des": "1",
+            "rating_pos": "1",
+            "list_color_pos": "1",
+            "list_size_pos": "1",
+            "show_vendor": false,
+            "use_cdt": false,
+            "limit": 8,
+            "sortby": "3",
+            "unavailable_prs": "show",
+            "image_ratio": "ratioadapt",
+            "image_size": "cover",
+            "image_position": "8",
+            "content_align": "default",
+            "col_dk": "5",
+            "col_tb": "3",
+            "col_mb": "2",
+            "space_h_item": "20",
+            "space_v_item": "20",
+            "space_h_item_tb": "10",
+            "space_v_item_tb": "10",
+            "space_h_item_mb": "10",
+            "space_v_item_mb": "10",
+            "layout_des": "2",
+            "loop": true,
+            "au_time": 0,
+            "au_hover": true,
+            "nav_btn": false,
+            "btn_pos": "in",
+            "btn_distance": 15,
+            "btn_vi": "hover",
+            "btn_owl": "default",
+            "btn_shape": "none",
+            "btn_cl": "dark",
+            "btn_size": "small",
+            "btn_hidden_mobile": true,
+            "nav_dot": true,
+            "dot_owl": "outline",
+            "dots_cl": "primary",
+            "dots_round": true,
+            "dots_space": 15,
+            "dots_hidden_mobile": false,
+            "mgb": 35,
+            "mgb_tb": 50,
+            "mgb_mb": 15
+          }
+        }
+      },
+      "block_order": [
+        "942d0ec4-5182-4818-a3d6-d06cbf2680a1",
+        "67689988-9945-4e23-8a5b-10f1dd3e4b39"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable_tab": true,
+        "layout": "t4s-container-fluid",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",30px,50px,30px",
+        "pd": "",
+        "mg_tb": ",10px,50px,10px",
+        "pd_tb": "",
+        "mg_mb": "20px,10px,50px,10px",
+        "pd_mb": ""
+      }
+    }
+  },
+  "order": [
+    "breadcrumb",
+    "custom_liquid_GFWPHA",
+    "main",
+    "sidebar",
+    "custom_section_aYyEww",
+    "custom_section_7cJtTb",
+    "custom_section_ibfpfw",
+    "custom_section_RB9UKy",
+    "product-related-recent"
+  ]
+}

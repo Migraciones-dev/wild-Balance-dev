@@ -1,1 +1,133 @@
-{"sections":{"heading":{"type":"heading-template","blocks":{"b49343f1-a16f-4a0c-834a-46b77fe777da":{"type":"1","settings":{"heading":"","fontf":"2","text_cl":"#004623","text_fs":50,"text_lh":56,"text_fw":900,"text_ls":0,"font_italic":false,"font_uppercase":false,"text_shadow":false,"mgb":0,"text_fs_tb":30,"text_lh_tb":46,"text_ls_tb":0,"mgb_tb":0,"hidden_mobile":false,"text_fs_mb":30,"text_lh_mb":46,"text_ls_mb":0,"mgb_mb":0}},"46ff9c32-9810-4c24-b2bd-9c6e38cc2ea8":{"type":"3","disabled":true,"settings":{"breadcrumb_color":"#868686","breadcrumb_color_link":"#000000","brc_mgb":0}}},"block_order":["b49343f1-a16f-4a0c-834a-46b77fe777da","46ff9c32-9810-4c24-b2bd-9c6e38cc2ea8"],"disabled":true,"settings":{"parallax":false,"color":"#000000","overlay":0,"padding_top":50,"padding_bottom":50,"mg_b":50,"padding_top_tb":50,"padding_bottom_tb":50,"mg_btb":50,"padding_top_mb":50,"padding_bottom_mb":0,"mg_bmb":27,"box_border":"none","bg_pos":"center center","bg_repeat":"no-repeat","bg_size":"cover"}},"2fa35883-7762-4b11-9a64-3e08390ea41e":{"type":"custom-liquid","settings":{"custom_liquid":"<div class=\"headerWizard\">\n<section class=\"logo\">\n<a href=\"https:\/\/wildbalance.es\/\">\n<img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0713\/9898\/1933\/files\/LOGO_1_1.png?v=1699453886\"\/>\n<\/a>\n<\/section>\n\n<section class=\"wizardBubbleDiscount\">\n<div>\n<p>25% DESCUENTO<\/p>\n<\/div>\n<\/section>\n<\/div>"}},"custom_liquid_ibzxRE":{"type":"custom-liquid","settings":{"custom_liquid":"{% render 'wizard-resultpage-js' %}"}},"17007363095c6db749":{"type":"apps","blocks":{"0ffae087-4c23-4da3-ad42-99aef600abfa":{"type":"shopify:\/\/apps\/revenuehunt-quizzes\/blocks\/inline-quiz\/672f3d48-fd3b-4227-8778-c6e58c4f8a98","settings":{"quiz_id":"GrHkMm","quiz_height":735,"quiz_autoscroll":false,"quiz_fixed_height":true}}},"block_order":["0ffae087-4c23-4da3-ad42-99aef600abfa"],"settings":{}},"main":{"type":"main-page","settings":{"layout":"t4s-container-wrap","cl_bg":"","cl_bg_gradient":"","mg":"60px,100px,60px,100px","pd":"","mg_tb":"20px,10px,30px,10px","pd_tb":"","mg_mb":"10px,10px,30px,10px","pd_mb":""}},"custom_liquid_HBy9ba":{"type":"custom-liquid","settings":{"custom_liquid":"<style>\ndiv.rh-fullwidth .rh-widget.rh-inline.rh-quiz-GrHkMm{\n  height: 100vh !important;\n}\n<\/style>"}}},"order":["heading","2fa35883-7762-4b11-9a64-3e08390ea41e","custom_liquid_ibzxRE","17007363095c6db749","main","custom_liquid_HBy9ba"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "heading": {
+      "type": "heading-template",
+      "blocks": {
+        "b49343f1-a16f-4a0c-834a-46b77fe777da": {
+          "type": "1",
+          "settings": {
+            "heading": "",
+            "fontf": "2",
+            "text_cl": "#004623",
+            "text_fs": 50,
+            "text_lh": 56,
+            "text_fw": 900,
+            "text_ls": 0,
+            "font_italic": false,
+            "font_uppercase": false,
+            "text_shadow": false,
+            "mgb": 0,
+            "text_fs_tb": 30,
+            "text_lh_tb": 46,
+            "text_ls_tb": 0,
+            "mgb_tb": 0,
+            "hidden_mobile": false,
+            "text_fs_mb": 30,
+            "text_lh_mb": 46,
+            "text_ls_mb": 0,
+            "mgb_mb": 0
+          }
+        },
+        "46ff9c32-9810-4c24-b2bd-9c6e38cc2ea8": {
+          "type": "3",
+          "disabled": true,
+          "settings": {
+            "breadcrumb_color": "#868686",
+            "breadcrumb_color_link": "#000000",
+            "brc_mgb": 0
+          }
+        }
+      },
+      "block_order": [
+        "b49343f1-a16f-4a0c-834a-46b77fe777da",
+        "46ff9c32-9810-4c24-b2bd-9c6e38cc2ea8"
+      ],
+      "disabled": true,
+      "settings": {
+        "parallax": false,
+        "color": "#000000",
+        "overlay": 0,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "mg_b": 50,
+        "padding_top_tb": 50,
+        "padding_bottom_tb": 50,
+        "mg_btb": 50,
+        "padding_top_mb": 50,
+        "padding_bottom_mb": 0,
+        "mg_bmb": 27,
+        "box_border": "none",
+        "bg_pos": "center center",
+        "bg_repeat": "no-repeat",
+        "bg_size": "cover"
+      }
+    },
+    "2fa35883-7762-4b11-9a64-3e08390ea41e": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"headerWizard\">\n<section class=\"logo\">\n<a href=\"https://wildbalance.es/\">\n<img src=\"https://cdn.shopify.com/s/files/1/0713/9898/1933/files/LOGO_1_1.png?v=1699453886\"/>\n</a>\n</section>\n\n<section class=\"wizardBubbleDiscount\">\n<div>\n<p>25% DESCUENTO</p>\n</div>\n</section>\n</div>"
+      }
+    },
+    "custom_liquid_ibzxRE": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'wizard-resultpage-js' %}"
+      }
+    },
+    "17007363095c6db749": {
+      "type": "apps",
+      "blocks": {
+        "0ffae087-4c23-4da3-ad42-99aef600abfa": {
+          "type": "shopify://apps/revenuehunt-quizzes/blocks/inline-quiz/672f3d48-fd3b-4227-8778-c6e58c4f8a98",
+          "settings": {
+            "quiz_id": "GrHkMm",
+            "quiz_height": 735,
+            "quiz_autoscroll": false,
+            "quiz_fixed_height": true
+          }
+        }
+      },
+      "block_order": [
+        "0ffae087-4c23-4da3-ad42-99aef600abfa"
+      ],
+      "settings": {}
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": "60px,100px,60px,100px",
+        "pd": "",
+        "mg_tb": "20px,10px,30px,10px",
+        "pd_tb": "",
+        "mg_mb": "10px,10px,30px,10px",
+        "pd_mb": ""
+      }
+    },
+    "custom_liquid_HBy9ba": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\ndiv.rh-fullwidth .rh-widget.rh-inline.rh-quiz-GrHkMm{\n  height: 100vh !important;\n}\n</style>"
+      }
+    }
+  },
+  "order": [
+    "heading",
+    "2fa35883-7762-4b11-9a64-3e08390ea41e",
+    "custom_liquid_ibzxRE",
+    "17007363095c6db749",
+    "main",
+    "custom_liquid_HBy9ba"
+  ]
+}
