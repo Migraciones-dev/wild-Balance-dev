@@ -159,14 +159,6 @@
 	{%- endif -%}
 {%- endcapture -%}
 <div class="t4s-site-nav__icons t4s-use__{{ se_stts.h_icon }} {% if se_stts.h_txt_lable %}t4s-use__label {% endif -%} is--hover{{ se_stts.hover_icon }} t4s-h-cart__design{{ se_stts.cart_des }} t4s-lh-1 t4s-d-inline-flex t4s-align-items-center">
-  <div class="t4s-site-nav__icon nav-tiendas-icon t4s-pr t4s-d-none t4s-d-md-inline-block">
-    <a class="t4s-pr " href="https://wildbalance.es/pages/store-locator"
-      ><img
-        src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/stores.svg?v=1724740721"
-        width="auto"
-        height="auto"
-    ></a>
-  </div>
   {%- if shop.customer_accounts_enabled and se_stts.account_des == '2' -%}
     <div class="t4s-site-nav__icon t4s-site-nav__account t4s-pr t4s-d-none t4s-d-md-inline-block">
       <a
