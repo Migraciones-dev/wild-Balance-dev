@@ -97,18 +97,7 @@
         {%- endif -%}
       </div>
       {%- assign qv_key = item_pr.id -%}
-      {%- unless item_pr.has_only_default_variant -%}
-        <dl>
-          {%- for option in item.options_with_values -%}
-            <div class="t4s-cart_meta_variant">
-              <dt>{{ option.name }}:</dt>
-              <dd>
-                <span>{{ option.value }}</span>
-              </dd>
-            </div>
-          {%- endfor -%}
-        </dl>
-      {%- endunless -%}
+
       {%- if item.selling_plan_allocation != blank %}
         <p class="t4s-cart_selling_plan">{{ item.selling_plan_allocation.selling_plan.name }}</p>
       {% endif -%}
