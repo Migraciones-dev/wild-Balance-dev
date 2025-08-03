@@ -1,0 +1,435 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "heading": {
+      "type": "heading-template",
+      "blocks": {
+        "b49343f1-a16f-4a0c-834a-46b77fe777da": {
+          "type": "1",
+          "settings": {
+            "heading": "Política de privacidad",
+            "fontf": "inherit",
+            "text_cl": "#00774f",
+            "text_fs": 30,
+            "text_lh": 56,
+            "text_fw": 800,
+            "text_ls": 0,
+            "font_italic": false,
+            "font_uppercase": false,
+            "text_shadow": false,
+            "mgb": 0,
+            "text_fs_tb": 25,
+            "text_lh_tb": 46,
+            "text_ls_tb": 0,
+            "mgb_tb": 0,
+            "hidden_mobile": false,
+            "text_fs_mb": 25,
+            "text_lh_mb": 46,
+            "text_ls_mb": 0,
+            "mgb_mb": 0
+          }
+        }
+      },
+      "block_order": [
+        "b49343f1-a16f-4a0c-834a-46b77fe777da"
+      ],
+      "settings": {
+        "parallax": false,
+        "color": "#000000",
+        "overlay": 0,
+        "padding_top": 60,
+        "padding_bottom": 20,
+        "mg_b": 0,
+        "padding_top_tb": 50,
+        "padding_bottom_tb": 0,
+        "mg_btb": 0,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 20,
+        "mg_bmb": 0,
+        "box_border": "none",
+        "bg_pos": "right center",
+        "bg_repeat": "no-repeat",
+        "bg_size": "cover"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": "60px,,60px,",
+        "pd": "",
+        "mg_tb": ",,50px,",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": ""
+      }
+    },
+    "custom_section_L9En4B": {
+      "type": "custom-section",
+      "blocks": {
+        "bl_col_K4YKVB": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "12",
+            "col_dk_w": "33.33333",
+            "col_tb": "12",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": true,
+            "content_align": "start",
+            "content_align_tablet": "start",
+            "content_align_mobile": "start",
+            "padding_inner": "30px,30px,30px,30px",
+            "padding_inner_tb": "30px,30px,30px,30px",
+            "padding_inner_mb": "20px,20px,20px,20px",
+            "round_inner": "",
+            "round_tb_inner": "",
+            "round_mb_inner": "",
+            "bg_cl": "#faf5e7",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_M68m7P": {
+          "type": "custom_text",
+          "settings": {
+            "text": "La presente política de privacidad es conforme al Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos (RGPD), a Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD), así como en lo que no resulte contrario a la normativa indicada, a la Ley Orgánica 15/1999, de Protección de Datos de Carácter Personal (LOPD) y su normativa de desarrollo, y/o aquellas que las pudieran sustituir o actualizar en el futuro. \n<br><br>\nNuestra organización está comprometida con la privacidad de sus datos personales. Los datos personales facilitados son necesarios para prestar nuestros servicios y son tratados de manera lícita, leal y transparente, garantizando una seguridad adecuada de los mismos, incluida la protección contra el tratamiento no autorizado o ilícito y contra su pérdida, destrucción o daño accidental mediante la aplicación de medidas técnicas y organizativas. \n<br>\nA través del presente documento queremos ofrecerle de forma transparente y leal toda la información necesaria relativa al tratamiento de sus datos personales que realiza esta organización.\n<br><br>\nEl acceso al Website y/o a los Contenidos incluidos en el mismo no implica ningún tipo de garantía respecto a la idoneidad del Website y/o de los Contenidos incluidos en el mismo para ﬁnes particulares o especíﬁcos de los Usuarios.  \n<br><br>\nWILD BALANCE podrá establecer limitaciones y/o condiciones adicionales para el uso y/o acceso al Website y/o a los Contenidos, las cuales deberán ser observadas por los Usuarios en todo caso.\n<br><br>\n<b>1. Responsable del tratamiento identidad: WILD CAPITAL PARTNERS SL</b>\n<br><br>\nC.I.F. / N.I.F.: B98995020 <br>\nDomicilio: AVDA. ARAGON, 15, 46010 VALENCIA (VALENCIA) \n<br>\nTeléfono: 622303179\n<br>\nE-mail: hola@wildbalance.es \n<br>\nDelegado protección datos: dpo@procoden.es\n<br><br><br>\n<b>2. Destinatarios de los datos personales</b>\n<br><br>\n<ul class=\"listStyle\">\n<li>Los datos personales facilitados no serán objeto de cesión alguna salvo que así se disponga en los tratamientos específicos.</li>\n<li>Opcionalmente, para la contratación de servicios de computación en la nube y/o servicios para el envío de e-mails, de comunicación, así como otros servicios informáticos relacionados, los datos personales podrán ser: \n<ul>\n<li>Cedidos a empresas de servicios informáticos ubicadas dentro del Espacio Económico Europeo (EEE) o,</li>\n<li>Transferidos a empresas de servicios informáticos ubicadas fuera del EEE acogidos al escudo de protección Privacy Shield por lo que cuentan con medidas de protección adecuadas para garantizar la seguridad de los datos personales. Puede obtener más información visitando este enlace: https://www.privacyshield.gov/welcome</li>\n</ul>\n</li>\n<li>Opcionalmente, a administraciones y demás organismos cuando sean requeridos en cumplimiento de obligaciones legales. </li>\n</ul>",
+            "remove_br_tag": false,
+            "tag": "p",
+            "fontf": "inherit",
+            "text_cl": "#333333",
+            "text_fs": 16,
+            "text_lh": 0,
+            "text_fw": 400,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 5,
+            "text_fs_tb": 16,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 16,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "bl_col_JD7PR7": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "12",
+            "col_dk_w": "33.33333",
+            "col_tb": "12",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": true,
+            "content_align": "start",
+            "content_align_tablet": "start",
+            "content_align_mobile": "start",
+            "padding_inner": "30px,30px,30px,30px",
+            "padding_inner_tb": "30px,30px,30px,30px",
+            "padding_inner_mb": "20px,20px,20px,20px",
+            "round_inner": "",
+            "round_tb_inner": "",
+            "round_mb_inner": "",
+            "bg_cl": "#faf5e7",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_LYxYkm": {
+          "type": "custom_text",
+          "settings": {
+            "text": "1. Base legal que legitima el tratamiento de los datos personales",
+            "remove_br_tag": false,
+            "tag": "h3",
+            "fontf": "inherit",
+            "text_cl": "#00774f",
+            "text_fs": 20,
+            "text_lh": 0,
+            "text_fw": 800,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 15,
+            "text_fs_tb": 18,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 18,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_qmEeae": {
+          "type": "custom_text",
+          "settings": {
+            "text": "En cada tratamiento especíﬁco de datos personales le informaremos de la base legal que lo legitima.",
+            "remove_br_tag": false,
+            "tag": "p",
+            "fontf": "inherit",
+            "text_cl": "#333333",
+            "text_fs": 16,
+            "text_lh": 0,
+            "text_fw": 400,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 5,
+            "text_fs_tb": 16,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 16,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "bl_col_bac49K": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "12",
+            "col_dk_w": "33.33333",
+            "col_tb": "12",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": true,
+            "content_align": "start",
+            "content_align_tablet": "start",
+            "content_align_mobile": "start",
+            "padding_inner": "30px,30px,30px,30px",
+            "padding_inner_tb": "30px,30px,30px,30px",
+            "padding_inner_mb": "20px,20px,20px,20px",
+            "round_inner": "",
+            "round_tb_inner": "",
+            "round_mb_inner": "",
+            "bg_cl": "#faf5e7",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_qcMERJ": {
+          "type": "custom_text",
+          "settings": {
+            "text": "2. Derecho de acceso",
+            "remove_br_tag": false,
+            "tag": "h3",
+            "fontf": "inherit",
+            "text_cl": "#00774f",
+            "text_fs": 20,
+            "text_lh": 0,
+            "text_fw": 800,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 15,
+            "text_fs_tb": 18,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 18,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_pgeUKb": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Es el derecho a obtener del responsable del tratamiento conﬁrmación de si están tratando o no datos personales que conciernen al interesado y, en tal caso, derecho de acceso a los datos personales y a la siguiente información: los ﬁnes del tratamiento, las categorías de datos personales de que se trate, los destinatarios o las categorías de destinatarios a los que se comunicaron o serán comunicados los datos personales, plazo de conservación o los criterios utilizados para determinar este plazo, la existencia del derecho a solicitar del responsable la rectiﬁcación o supresión de datos personales o la limitación del tratamiento de datos personales relativos al interesado o a oponerse a dicho tratamiento, derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD), la existencia, en su caso, de decisiones automatizadas, incluida la elaboración de perﬁles, cuando se transﬁeran datos a terceros países el derecho a ser informado de las garantías adecuadas aplicadas.\n<br><br>\n<b>2.1 Derecho de rectificación</b>\n<br><br>\nEs el derecho a solicitar la rectiﬁcación de sus datos personales si son inexactos, incluyendo el derecho a completar datos que ﬁguren incompletos. Hay que tener en cuenta que al facilitarnos los datos personales por cualquier vía, garantiza que son ciertos y exactos y se compromete a notiﬁcarnos cualquier cambio o modiﬁcación de los mismos. Por lo tanto cualquier daño causado por motivo de una comunicación de información errónea, inexacta o incompleta en los formularios de la web, será responsabilidad exclusiva del interesado.\n<br><br>\n<b>2.2 Derecho de supresión</b>\n<br><br>\nEs el derecho a solicitar la supresión de sus datos personales cuando, entre otros supuestos, ya no son necesarios para la ﬁnalidad por la cual fueron recabados, o están siendo tratados de otro modo o retire el consentimiento. Hay que tener en cuenta que no procederá la supresión cuando el tratamiento de los datos personales sea necesario, entre otros supuestos, para el cumplimiento de obligaciones legales o para la formulación, el ejercicio o la defensa de reclamaciones.\n<br><br>\n<b>2.3 Derecho a la limitación</b>\n<br><br>\nEs el derecho a solicitar la limitación del tratamiento de sus datos personales, lo que supone que en determinados casos pueda solicitarnos que suspendamos temporalmente los tratamientos de sus datos personales o que los conservemos más allá del tiempo necesario cuando pueda necesitarlo.\n<br><br>\n<b>2.4 Derecho a retirar el consentimiento</b>\n<br><br>\nEs el derecho a retirar el consentimiento que ha proporcionado al marcar “He leído y acepto la política de privacidad” en cualquier momento y según se especíﬁca en el apartado correspondiente “Ejercicio de derechos” o en el tratamiento especíﬁco de comunicaciones comerciales o Newsletter. Hay que tener en cuenta que este derecho no surtirá efectos si, entre otros casos, el tratamiento de los datos personales es necesario para el cumplimiento de una obligación legal, la ejecución y el mantenimiento de una relación contractual, o para la formulación, ejercicio o la defensa de reclamaciones. Asimismo la retirada del consentimiento no tendrá efectos retroactivos, es decir, no afectará a la licitud del tratamiento basado en el consentimiento previo a su retirada.\n<br><br>\n<b>2.5 Derecho a la portabilidad</b>\n<br><br>\nEs el derecho a recibir los datos personales que le incumban y que nos haya facilitado, en un formato estructurado, de uso común y lectura mecánica, y a trasmitirlos a otro responsable, siempre y cuando: el tratamiento se base en su consentimiento y se efectúe por medios automatizados o informáticos.\n<br><br>\n<b>2.6 Derecho de oposición</b>\n<br><br>\nEs el derecho a oponerse al tratamiento de sus datos personales en base al interés legítimo nuestro. No seguiremos tratando sus datos personales a menos que podamos acreditar motivos legítimos imperiosos para el tratamiento que prevalezcan sobre sus intereses, derechos y libertades, o bien para la formulación, el ejercicio o la defensa de reclamaciones.\n<br><br>\n<b>2.7 Derecho a presentar una reclamación ante una autoridad de control</b>\n<br><br>\nSi considera que tratamos sus datos personales de un modo incorrecto, puede contactar con nosotros o también tiene derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD):  https://www.agpd.es/portalwebAGPD/index-ides-idphp.php\n<br><br>\n<b>2.8 Ejercicio de derechos</b>\n<br><br>\nPuede ejercer los derechos que le asisten a través de carta a la dirección postal arriba indicada o a través del e-mail hola@wildbalance.es, adjuntando en ambos casos copia de su NIF/NIE/Pasaporte o documento análogo.",
+            "remove_br_tag": false,
+            "tag": "p",
+            "fontf": "inherit",
+            "text_cl": "#333333",
+            "text_fs": 16,
+            "text_lh": 0,
+            "text_fw": 400,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 5,
+            "text_fs_tb": 16,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 16,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_HAr3fp": {
+          "type": "custom_text",
+          "settings": {
+            "text": "<b>2.9 Acceso y uso de los contenidos</b>\n<br><br>\nLos Contenidos del Website son puestos a disposición del Usuario con información procedente tanto de fuentes propias como de terceros.\n<br><br>\nWILD BALANCE procura que los Contenidos sean de la mayor calidad posible y estén razonablemente actualizados, pero no garantiza la utilidad, exactitud, exhaustividad, pertinencia y/o actualidad de los Contenidos.",
+            "remove_br_tag": false,
+            "tag": "p",
+            "fontf": "inherit",
+            "text_cl": "#333333",
+            "text_fs": 16,
+            "text_lh": 0,
+            "text_fw": 400,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 5,
+            "text_fs_tb": 16,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 16,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "bl_col_fAFNmW": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "12",
+            "col_dk_w": "33.33333",
+            "col_tb": "12",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": true,
+            "content_align": "start",
+            "content_align_tablet": "start",
+            "content_align_mobile": "start",
+            "padding_inner": "30px,30px,30px,30px",
+            "padding_inner_tb": "30px,30px,30px,30px",
+            "padding_inner_mb": "20px,20px,20px,20px",
+            "round_inner": "",
+            "round_tb_inner": "",
+            "round_mb_inner": "",
+            "bg_cl": "#faf5e7",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_39fYCN": {
+          "type": "custom_text",
+          "settings": {
+            "text": "3. Tratamiento de datos personales. Disposiciones genéricas",
+            "remove_br_tag": false,
+            "tag": "h3",
+            "fontf": "inherit",
+            "text_cl": "#00774f",
+            "text_fs": 20,
+            "text_lh": 0,
+            "text_fw": 800,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 15,
+            "text_fs_tb": 18,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 18,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_wbMVAh": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Son adecuados, pertinentes y limitados a lo necesario en relación con los ﬁnes para los que son tratados por lo que se cumple con el principio de minimización de datos.\n\nLos datos personales solicitados en cada uno de los tratamientos especíﬁcos son los estrictamente necesarios, la negativa a facilitarlos implicaría no poder prestar el servicio solicitado.\n\nLas comunicaciones de los datos personales previstas en cada uno de los tratamientos especíﬁcos en algunos casos son necesarias para la ejecución y el mantenimiento de un contrato y en otros casos para el cumplimiento de una obligación legal aplicable al responsable del tratamiento.\n<br><br>\n<b>3.1 Asistente digital - “Chatbot” o “Chat Online”</b>\n<br><br>\n\n\nEn caso de que esta web utilice el software de chat online, proporcionado como autoservicio para facilitar a los usuarios una respuesta adecuada y rápida a preguntas habituales y en mejorar los servicios de atención al consumidor para el beneﬁcio de los usuarios que visitan el sitio web, se someterán a tratamiento los siguientes datos durante la conversación con el “chat bot”: la dirección IP y otros datos personales que se introduzcan en la función de conversación del “chat bot”.\nLos datos recopilados no se utilizarán para identiﬁcar personalmente al visitante del sitio web, y no se fusionarán con datos personales sobre el portador del seudónimo, a menos que los datos personales se proporcionen voluntariamente al utilizar el chat online.\nEl fundamento jurídico de este tratamiento se establece en el artículo 6, apartado 1, letra f) del RGPD.\n<br><br>\n<b>3.2 Formulario de contacto</b>\n<br><br>\nLos datos personales serán tratados para canalizar las solicitudes de información, sugerencias y reclamaciones de usuarios o clientes.\nLa base legal que legitima el tratamiento de los datos personales es el consentimiento expreso al marcar “He leído y acepto la política de privacidad”.\nLos datos personales se conservarán por un período de dos años desde el momento en que dejen de tratarse, sin perjuicio del ejercicio de los derechos que le asisten como interesado.\n<br><br>\n<b> 3.3 Formulario de comercio electrónico (e-commerce)</b>\n<br><br>\nLos datos personales serán tratados para gestionar sus compras online mediante el procesamiento de sus pedidos y devoluciones a través de nuestros servicios online, enviarle notiﬁcaciones sobre el estado de la entrega o en caso de problemas con el envío de los artículos, administrar sus pagos, gestionar cualquier queja o cuestión sobre la garantía de los productos o servicios, identiﬁcarle y validar su edad legal para contratar, así como para y en su caso, la formulación, ejercicio o la defensa de reclamaciones. La base legal que legitima el tratamiento de los datos personales es el consentimiento expreso al marcar: “He leído y acepto la política de privacidad”.\n\nLos datos personales serán cedidos a la empresa de transporte para poder hacerte llegar el pedido a tu domicilio así como a proveedores del servicio de pago. Los datos personales se conservarán mientras no retire el consentimiento, salvo que deban conservarse para el mantenimiento de la relación entre las partes o durante los años necesarios para el cumplimiento de obligaciones legales.\n<br><br>\n<b>3.4 Formulario comunicaciones comerciales o newsletter</b>\n<br><br>\nLos datos personales serán tratados para gestionar la suscripción a nuestra Newsletter y comunicaciones, incluyendo el envío de información personalizada o no acerca de nuestros productos o servicios a través de diversos medios como teléfono, correo electrónico, WhatsApp, SMS, aplicaciones para dispositivos móviles, así como por cualquier procedimiento análogo. Hay que tener en cuenta que este tipo de tratamiento de datos puede conllevar el análisis de su perﬁl de usuario para determinar cuáles son sus preferencias y así poder hacerle llegar información más adecuada a sus intereses.\n<br><br>\nPuede solicitar la baja para este tipo de tratamiento, en función del medio empleado, de la siguiente forma:\n<ul class=\"listStyle\">\n<li>Correo electrónico: A través del enlace al efecto que encontrará en cada una de las comunicaciones electrónicas o mediante procedimiento análogo especiﬁcado en la comunicación comercial.</li>\n<li>WhatsApp (otras apps): Solicitando la baja a la suscripción.</li>\n<li>SMS: Solicitando la baja a la suscripción.</li>\n</ul>\n<p>\nLa base legal que legitima el tratamiento de los datos personales es el consentimiento expreso prestado: al marcar “He leído y acepto la política de privacidad” en la web, a través de documento físico o a través de correo electrónico, según cada caso.\n<br><br>\nHay que tener en cuenta que en caso de que el medio empleado sea WhatsApp los datos personales serán cedidos a WhatsApp Ireland Limited la cual se encuentra ubicada dentro del EEE.\nLos datos personales se conservarán mientras no retire el consentimiento según la forma indicada en el presente apartado.\n</p>",
+            "remove_br_tag": false,
+            "tag": "p",
+            "fontf": "inherit",
+            "text_cl": "#333333",
+            "text_fs": 16,
+            "text_lh": 0,
+            "text_fw": 400,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 5,
+            "text_fs_tb": 16,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 16,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        }
+      },
+      "block_order": [
+        "bl_col_K4YKVB",
+        "custom_text_M68m7P",
+        "bl_col_JD7PR7",
+        "custom_text_LYxYkm",
+        "custom_text_qmEeae",
+        "bl_col_bac49K",
+        "custom_text_qcMERJ",
+        "custom_text_pgeUKb",
+        "custom_text_HAr3fp",
+        "bl_col_fAFNmW",
+        "custom_text_39fYCN",
+        "custom_text_wbMVAh"
+      ],
+      "settings": {
+        "space_h_item": "30",
+        "space_v_item": "20",
+        "space_h_item_tb": "10",
+        "space_v_item_tb": "10",
+        "space_h_item_mb": "10",
+        "space_v_item_mb": "10",
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": "10px,10px,50px,10px",
+        "pd": "0%, 10%, 0%, 10%",
+        "mg_tb": "",
+        "pd_tb": "0%, 10%, 0%, 10%",
+        "mg_mb": "",
+        "pd_mb": "0%, 5%, 0%, 5%"
+      }
+    },
+    "custom_liquid_jJp9Xq": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\nh1{\n    text-align: justify;\n    padding-left: 10%;\n}\nul.listStyle li{\n    color: #333333;\n    list-style: disc;\n    font-size:16px;\n    line-height:initial;\n}\np{\n    color: #333333 !important;\n    font-size:16px;\n}\n</style>"
+      }
+    }
+  },
+  "order": [
+    "heading",
+    "main",
+    "custom_section_L9En4B",
+    "custom_liquid_jJp9Xq"
+  ]
+}

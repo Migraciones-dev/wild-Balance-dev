@@ -1,0 +1,341 @@
+<!-- Suscripciones personalizadas Result Page Wizard -->
+
+<section class="frequently">
+  <h2 class="t4s-section-title t4s-title">
+    <span>¿Cada cuánto tiempo te lo enviamos a casa?</span>
+  </h2>
+
+  <section class="freezerSpace">
+    {% comment %}
+      <h2 class="t4s-section-title t4s-title">
+      <span>Su plan recurrente</span>
+      </h2>
+    {% endcomment %}
+    
+   <!-- <p class="freezerSpaceSubtitle">
+      Te recomendamos al menos {{ result.medium_freezer_frequency }} semanas en el congelador, pero puedes modificar la
+      frecuencias de tus pedidos.
+    </p> -->
+
+    <p class="freezerSpaceSubtitle">
+      Deja espacio para tus heladitos, selecciona la capacidad que te queda disponible y 
+      el resto te lo llenamos entre la selección de menús que has hecho en el paso anterior 
+    </p>
+
+
+    <div class="contentFreezerSpace">
+
+    {% if result.food_type == "cooked" %}
+        {% assign small = 3.9 %}
+        {% assign medium = 7.8 %}
+        {% assign big = 11.7 %}
+    {% else %}
+        {% assign small = 5 %}
+        {% assign medium = 7.5 %}
+        {% assign big = 10 %}
+    {% endif %}
+
+      <label for="freezer_big">
+        <article class="articleInfoFrequently" data-subscriptionurl="{{ result.big_freezer_link }}">
+          <div class="imgAndLabelInfo">
+            <div>
+              <img
+                src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/NEVERA_DOS_CAJONES_sin-puerta.png"
+                alt=""
+              >
+            </div>
+            <div>
+              <h3>
+                <input type="radio" id="freezer_big" name="freezer" value="big" required checked> Tengo mucho espacio
+              </h3>
+              <p>
+                <span>{{ result.big_freezer_frequency }}</span> semana(s) de comida
+              </p>
+              <span class="label infoSpace">{{ big }}kg/comida</span>
+            </div>
+          </div>
+
+          <div class="textInfo">
+            <span class="label infoSpace">{{ big }}kg/comida</span>
+
+            <span class="label select">Seleccionar</span>
+            <span class="label selected" style="display:none">Seleccionado</span>
+          </div>
+        </article>
+      </label>
+
+      <label for="freezer_medium">
+        <article class="articleInfoFrequently active" data-subscriptionurl="{{ result.medium_freezer_link }}">
+          <div class="imgAndLabelInfo">
+            <div>
+              <img
+                src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/NERA_CAJON_Y_MEDIO_sinpuerta.png"
+                alt=""
+              >
+            </div>
+            <div>
+              <span class="label recomended">Recomendado</span>
+
+              <h3>
+                <input type="radio" id="freezer_medium" name="freezer" value="medium" required checked> Medio congelador
+              </h3>
+              <p>{{ result.medium_freezer_frequency }} semana(s) de comida</p>
+              <span class="label infoSpace">{{ medium }}kg/comida</span>
+            </div>
+          </div>
+
+          <div class="textInfo">
+            <span class="label infoSpace">{{ medium }}kg/comida</span>
+            <span class="label select" style="display:none">Seleccionar</span>
+            <span class="label selected">Seleccionado</span>
+          </div>
+        </article>
+      </label>
+
+      <label for="freezer_small">
+        <article class="articleInfoFrequently" data-subscriptionurl="{{ result.small_freezer_link }}">
+          <div class="imgAndLabelInfo">
+            <div>
+              <img
+                src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/NEVERA_1CAJON_sin-puerta.png"
+                alt=""
+              >
+            </div>
+            <div>
+              <h3><input type="radio" id="freezer_small" name="freezer" value="small" required>Tengo poco espacio</h3>
+              <p>
+                <span>{{ result.small_freezer_frequency }}</span> semana(s) de comida
+              </p>
+               <span class="label infoSpace">{{ small }}/comida</span>
+            </div>
+          </div>
+
+          <div class="textInfo">
+            <span class="label infoSpace">{{ small }}kg/comida</span>
+            <span class="label select">Seleccionar</span>
+            <span class="label selected" style="display:none">Seleccionado</span>
+          </div>
+        </article>
+      </label>
+    </div>
+  </section>
+
+  <section class="freezerSpace planContains">
+    <h2 class="t4s-section-title t4s-title">
+      <span>Tu plan de suscripción incluiría</span>
+    </h2>
+
+    <div class="containerChecks">
+      <p>Asesoramiento nutricional</p>
+      <p>Prueba 14 días</p>
+      <p>Ventajas exclusivas</p>
+      <p>Cancela cuando quieras</p>
+    </div>
+
+    {% if result.is_new_with_barf and result.pet == 'PERRO' %}
+      <article class="containerInfoFrequently">
+        <div class="headingPackName">
+          <h3>Pack de iniciación al BARF</h3>
+          <span class="label discountLabel">25% DESCUENTO*</span>
+        </div>
+
+        <div class="label frequentlyLabel">PRIMER ENVÍO</div>
+
+        <div class="infoContainerPack">
+          <ul>
+            <li>Menú de iniciación para los primeros días para una buena transición</li>
+            <li>Asesoramiento nutricional gratuito</li>
+            <li>Guía de iniciación</li>
+            <li>Ventajas exclusivas</li>
+            <li>Modifica, cancela o pausa tu plan desde “Mi cuenta” en cualquier momento</li>
+          </ul>
+          <span style="font-size: smaller"><i>*Descuento no aplicable en periodos especiales como Black Friday o Rebajas </i></span>
+        </div>
+      </article>
+    {% else %}
+      <article class="containerInfoFrequently">
+        <div class="label frequentlyLabel">
+          <h3>PRIMER ENVÍO</h3>
+          <span class="label discountLabel">25% DESCUENTO*</span>
+        </div>
+
+        <div class="infoContainerPack">
+          <ul>
+            <li>Oferta especial en el primer envío</li>
+            <li>Asesoramiento nutricional gratuito</li>
+            <li>Ventajas exclusivas</li>
+            <li>Modifica, cancela o pausa tu plan desde “Mi cuenta” en cualquier momento</li>
+          </ul>
+          <span style="font-size: smaller"><i>*Descuento no aplicable en periodos especiales como Black Friday o Rebajas </i></span>
+        </div>
+      </article>
+    {% endif %}
+  </section>
+</section>
+
+<section class="xselling frequently completePack">
+{% render 'wizard-xselling' result:result %}
+</section>
+
+<section class="calculate frequently">
+  <button type="button" onclick="recalculate()">Calcular mi pack</button> <br>
+
+  <div id="calculation-result" class="calculation-result" style="display:none">
+    {% for variant in result.product_recommendation_variants.value %}
+      <div class="variant-result-calculations _variant-result-calculations" id="_variant-result-{{ variant.id }}">
+        {% comment %}{{ variant.product.featured_image | image_url: width: 50 | image_tag}}{% endcomment %}
+        <p>{{ variant.product.title }}</p>
+
+        <span>{{ variant.price | money_with_currency }} </span>
+        x <span class="_qty">1</span>
+      </div>
+    {% endfor %}
+    <button class="_variant-result-calculations-button" onclick="">Quiero mi pack (funciono para 1 a 4 semanas)</button
+    ><br>
+  </div>
+
+  <a class="secondary retake" target="_blank" href="https://wildbalance.es/pages/tw2?retake=1"
+    >Volver a empezar</a
+  >
+  <br>
+</section>
+
+<script>
+  // click events for selected things
+
+  let freezerContainers = document.querySelectorAll('input[name="freezer"]');
+
+  Array.from(freezerContainers).forEach(function(freezer) {
+  freezer.addEventListener('click', function(event){ activateFreezer(freezer, freezerContainers); });
+  });
+
+  function activateFreezer(thisfreezer,freezerContainers) {
+
+  //deselect freezers
+
+  Array.from(freezerContainers).forEach(function(freezer){
+    let article = freezer.closest(".articleInfoFrequently");
+    article.classList.remove("active");
+    article.querySelector(".selected").style.display = "none";
+    article.querySelector(".select").style.display = "block";
+  });
+
+  //select current freezer
+
+  let thisarticle = thisfreezer.closest(".articleInfoFrequently");
+  thisarticle.classList.add("active");
+  thisarticle.querySelector(".selected").style.display = "block";
+  thisarticle.querySelector(".select").style.display = "none";
+
+  //hide results again
+
+  let results = document.querySelectorAll('._wizard-result-freezer');
+  Array.from(results).forEach(function(result){
+    result.style.display = "none";
+  });
+  }
+
+  function recalculate() {
+  let newWithBarf = false;
+  let selectedProteins = document.querySelectorAll( 'input[name="protein"]:checked');
+  let selectedProteinsValues = [];
+  Array.from(selectedProteins).forEach(function(protein){
+    var proteinObject = {'variantId': protein.value};
+    selectedProteinsValues.push(proteinObject);
+  });
+  let selectedXselling = document.querySelectorAll( 'input[name="xselling"]:checked');
+  let selectedXsellingValues = [];
+  Array.from(selectedXselling).forEach(function(xselling){
+    var xsellingObject = {'variantId': xselling.value};
+    selectedXsellingValues.push(xsellingObject);
+  });
+
+  let recalculateData = {
+    pet: "{{result.pet}}",
+    grams: {{result.grams}},
+    foodType: "{{result.food_type}}",
+    newWithBarf: {{result.is_new_with_barf | default: false}},
+    selectedFreezer: document.querySelector( 'input[name="freezer"]:checked').value,
+    selectedProteins: selectedProteinsValues,
+    selectedXselling: selectedXsellingValues
+  };
+
+
+
+  console.log('recalculateData', recalculateData)
+  $.ajax({
+  url: "https://wildbalance-app-rocket.fly.dev/recalculate",
+  type: "POST",
+  contentType: "application/json",
+  dataType: "json",
+  data: JSON.stringify(recalculateData),
+  success: function(data, textStatus, jqXHR) {
+    console.log(data);
+
+    let freezerVariantsAndQtys = data.freezerVariantsAndQtys;
+    let freezerLink = data.freezerLink;
+
+    // Construimos el array `items` para el fetch
+    const items = freezerVariantsAndQtys.map(item => {
+      const obj = {
+        id: item.variantId,
+        quantity: item.qty
+      };
+      if (item.selling_plan) {
+        obj.selling_plan = item.selling_plan;
+      }
+      return obj;
+    });
+
+    console.log('Items para add.js:', items);
+
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ items })
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Error al agregar productos al carrito');
+      }
+      window.location.href = '{{  shop.url }}/cart';
+    })
+    .catch(error => {
+      console.error('Hubo un problema con el add to cart:', error);
+    });
+
+    // Puedes mantener o eliminar este bloque visual
+    /*
+    let allVariantResults = document.querySelectorAll('._variant-result-calculations');
+    Array.from(allVariantResults).forEach(function(result){
+      result.classList.add("disabled");
+      result.querySelector("._qty").textContent = 0;
+    });
+
+    freezerVariantsAndQtys.forEach(function(variantAndQty){
+      let variantId = variantAndQty.variantId;
+      let qty = variantAndQty.qty;
+
+      let thisVariantResult = document.querySelector('#_variant-result-'+variantId);
+      thisVariantResult.classList.remove("disabled");
+      thisVariantResult.querySelector("._qty").textContent = qty;
+    });
+
+    let button = document.querySelector('._variant-result-calculations-button');
+    button.setAttribute('onclick', "window.location.href='" + freezerLink + "'");
+    let calculationResultSection = document.querySelector('#calculation-result');
+    calculationResultSection.style.display = "block";
+    */
+  },
+  error: function(jqXHR, textStatus, errorThrown) {
+    console.error(errorThrown);
+  }
+});
+
+
+
+
+  }
+</script>

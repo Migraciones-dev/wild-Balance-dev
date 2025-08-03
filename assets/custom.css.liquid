@@ -1,0 +1,2414 @@
+{% comment %}
+
+  Este fichero es únicamente para añadir código CSS, menos @mediaquery. Estos elementos tienen su propio fichero,
+  llamado "customQuerys.css.liquid" con la intención de tenerlas aisladas y controladas, evitando su repetición.
+  GRACIAS!
+ 
+{% endcomment %}
+
+
+
+
+
+.t4s-product__description .aporteImg{display: none;}
+.t4s-page_cart__edit{display: none;}
+/* cookiebot */
+#CybotCookiebotDialogFooter .CybotCookiebotDialogBodyButton {
+    border-radius: 8em;
+  padding: 0.75em;
+} 
+
+/* FIN cookiebot */
+/* Loyaltylion */
+#loyaltylion-beacon-frame {
+  bottom: 50px !important;
+  z-index: 20 !important;
+  display:none !important;
+}
+
+html:has(body.template-customers-account) #loyaltylion-beacon-frame{
+  display:block !important;
+}
+
+/* FIN Loyaltylion */
+/* Selector fecha */
+.cart-attribute__field{
+  background: #cae6c8;
+    width: 100%;
+    border-radius: 20px;
+    padding: 20px 20px;
+}
+.cart-attribute__field select{
+  border-top: none;
+    border-right: none;
+    border-left: none;
+    border-radius: 0px;
+    padding-left: 0px;
+}
+.cart-attribute__field label{
+  font-family: 'Barlow';
+    font-weight: 900;
+    color: #00774f;
+  font-size: 16px;
+}
+/* Selector fecha */
+/* -- POPup regalos TELEPIZZA--*/
+.aca-product-button {
+    border-radius: 20px !important; }
+#aca-products-container {
+    align-items: flex-end;
+}
+.aca-product-name, .aca-subscription-name {
+    height: 55px;
+}
+
+/* -- FIN POPup regalos TELEPIZZA --*/
+.t4s-btn-base, .t4s-btn-base.t4s-btn-style-outline:before, .t4s-btn-base.t4s-btn-style-outline:after, .t4s-btn-base.t4s-btn-effect-rectangle-out:hover:before {
+    border-radius: 50px;
+}
+.t4s-product-form__buttons .t4s-quantity-wrapper, .t4s-product-form__buttons .t4s-product-form__submit, .t4s-product-form__buttons .shopify-payment-button__button--unbranded, .t4s-product-form__buttons .shopify-payment-button__button--branded, .t4s-product-form__buttons .shopify-payment-button__more-options, .t4s-product-form__buttons .t4s-pr__notify-stock, .t4s-product-form__buttons .t4s-btn-style-outline:after {
+    border-radius: 50px !important;
+}
+.t4s-btn-color-dark {
+    --btn-color: var(--t4s-light-color);
+    --btn-background: #00774f;
+}
+.t4s-btn-base {
+    font-size: 16px;
+}
+/*--- PDP basica ---*/
+body.template-product .t4s-main-product__content .t4s_ratio img {
+    background-color: #FAF5E7;
+    border-radius: 2%;
+}
+body.template-product .t4s-product__description{color: #222222;}
+body.template-product section.extraProducto {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: flex-end;
+    background-color: #D9D9C8;
+    border-radius: 2%;
+    padding: 10px;
+}
+body.template-product section.extraProducto p{
+  margin-bottom: 0px;
+  font-size: 14px;
+}
+body.template-product .t4s-main-product__content .t4s-tab__title {
+    background-color: #FAF5E7;
+}
+body.template-product .t4s-main-product__content .t4s-tab__title .t4s-tab__text{
+    font-weight: 900;
+    font-family: 'Barlow';
+    font-size: 16px;
+}
+body.template-product .t4s-tab__title .t4s-tab__icon {
+    background-color: #faf5e8;
+    color: #02774f;
+}
+body.template-product .is--tab-design__accordion .t4s-tab-content{
+  color: #222222;
+  background-color: #faf5e8;
+}
+body.template-product .bloque-precio-badges {
+    display: flex;
+    align-items: center;
+}
+body.template-product .t4s-related-recent__tabs .t4s-pr-single_tab-item{
+  font-size: 20px;
+    font-family: 'Barlow';
+    font-weight: 900;
+}
+/* sticky add to cart */
+.t4s-sticky-atc__title {
+    font-size: 16px;
+    font-family: 'Barlow';
+    font-weight: 900;
+    white-space: normal;
+}
+.t4s-sticky-atc__price {
+    color: #00774f;
+}
+/* btn menu pdp */
+body.template-product .containerCtaPdp{
+      width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+      background-color: #faf5e7;
+      margin-bottom: -13px;
+}
+
+body.template-product .t4s-product__info-container .t4s-liquid_custom_liquid_ywgBhH{margin-bottom:0 !important;}
+
+body.template-product .containerCtaPdp p{
+    font-weight: 900;
+    font-family: 'Barlow';
+    font-size: 16px;
+    margin:0px;
+}
+
+
+
+
+body.template-product .creaSuMenuPdp{
+    background-color: #ffcd00;
+    height: 40px;
+    min-width: 148px;
+    padding: 0 15px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #357c54;
+    font-size: 16px;
+    font-weight: 500;
+}
+body.template-product .creaSuMenuPdp:hover{
+      background-color: #e0b400;
+    color: #00774f !important;
+}
+/* Inicio CSS del bloque de logos que contiene el tab "Ingredientes" en la PDP */
+body.template-product .extraProducto .aporteImg img{width:27px;}
+
+body.template-product .ingredientesImg{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom:20px;
+}
+
+body.template-product .ingredientesImg img{width:100%;}
+
+body.template-product .ingredientesImg .turkeyOrChicken{width:75%;}
+
+body.template-product .ingredientesImg .cajaIngrediente{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-right: 1px solid;
+    text-align: center;
+    padding:15px;
+  gap:20px;
+}
+
+body.template-product .ingredientesImg .cajaIngrediente:last-child{
+    border-right: 0px;
+}
+/* Fin CSS del bloque de logos que contiene el tab "Ingredientes" en la PDP */
+/* variante con selector de cantidad */
+ .t4s-swatch__item {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px;
+    border-bottom: 1px solid #CAE6C8;
+    border-radius: 0 !important;
+}
+ .t4s-swatch__list{
+  margin-bottom: 20px;
+}
+ .t4s-swatch__item div:first-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-size: 20px;
+   gap:20px;
+}
+body.template-product .t4s-swatch__item .color-circle {
+    width: 25px !important;
+  height: 25px;
+}
+ .t4s-form__product{
+  display: flex;
+    flex-wrap: wrap;
+  justify-content: space-between;
+    align-items: center;
+}
+ .t4s-form__product .t4s-swatch {
+  width: 100%;
+}
+
+.t4s-form__product .t4s-product-form__buttons button.t4s-product-form__submit{
+    width: 100%;
+    min-width: 200px;
+    margin: 0;
+}
+
+ .t4s-form__product .t4s-product-form__qty{
+  border: 1px solid #CAE6C8;
+    border-radius: 50px;
+   display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+
+}
+.t4s-form__product .t4s-product-form__qty .t4s-quantity-input{
+  border: none;
+  font-size: 16px;
+    text-align: center;
+   font-weight: 700;
+  padding: 10px 5px;
+}
+ .t4s-form__product .t4s-swatch__item div:first-child span,
+ .t4s-form__product .total-product-form span:nth-child(1){
+    font-family: Barlow;
+    font-weight: 800;
+    font-size: 16px;
+}
+ .t4s-form__product .total-product-form{
+  font-size: 20px;
+}
+
+ .t4s-form__product .t4s-product-form__buttons{
+    width: 65%;
+    align-items: flex-end;
+ }
+
+  .t4s-form__product .t4s-product-form__buttons .t4s-pr__qty_cart{justify-content: flex-end; width:100%;}
+
+  
+ .t4s-product-form__qty button.t4s-quantity-selector {
+    background-color: #fff;
+    padding: 5px 10px;
+    font-size: 25px;
+    margin: 0px 5px;
+    line-height: 15px;
+    color: #00774f;
+  height: 80%;
+  border-radius: 50px;
+}
+
+/* Fin variante con selector de cantidad */
+/* Selector de cantidad producto sin variante */
+.t4s-product-form__buttons .t4s-quantity-wrapper .is--minus, .t4s-product-form__buttons .t4s-quantity-wrapper .is--plus {
+    top: 5px;
+}
+.t4s-product-form__buttons button.t4s-quantity-selector.is--minus:after, .t4s-product-form__buttons button.t4s-quantity-selector.is--plus:before, .t4s-product-form__buttons button.t4s-quantity-selector.is--plus:after{
+   background-color: #00774f;
+}
+/*--- FIN PDP basica ---*/
+/*--- PDP Iniciacion ---*/
+  body.template-product .t4s-feature-columns h3.t4s-feature-columns__title{
+  font-size: 30px;
+
+}
+  body.template-product .t4s-feature-columns h3{
+     font-weight: 900;
+}
+body.template-product .t4s-feature-columns .t4s-feature-columns__content{
+    border-radius: 10px; 
+}
+body.template-product .t4s-feature-columns .t4s-col-item:first-child {
+margin-top: 85px;
+}
+/*--- FIN PDP Iniciacion ---*/
+/*--- BADGES ---*/
+/* 1.CSS Labels General */
+span._fx-badge,
+.as-bundle-html-wrapper .as-product-discount-badge{
+    width:auto;
+    font-size: 14px;
+    padding: 1px 15px;
+    border-radius: 20px !important;
+    font-weight: 900;
+}
+span._fx-badge.discount,
+.as-bundle-html-wrapper .as-product-discount-badge{
+  background-color: #FFCD00;
+}
+span._fx-badge.last-units{
+  background-color: #FFCD00;
+}
+
+.as-bundle-html-wrapper .as-product-discount-badge{
+  margin:1rem;
+  color: #00774f;
+}
+/* 1.CSS Labels General PDC */
+.containerLabelsPDC span._fx-badge{
+    margin: 0px 1rem 0px 0px;
+}
+
+html:not(body.template-page.black-friday) .customLabelsContainer ._fx-badge.blackFriday{
+    background-color: #222;
+    color: #fff;
+}
+html:has(body.template-page.black-friday) .customLabelsContainer ._fx-badge.blackFriday{
+    background-color: #ffce00;
+    color: #00774f;
+}
+
+/* CSS labels theme (Arrasando) PDC */
+.t4s-product .t4s-product-badge {
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+span.t4s-badge-item.t4s-badge-soldout {
+    width: 100%;
+    border-radius: 0px;
+    background-color: #CAE6C8;
+    color: #00774f;
+    font-weight: 500;
+    font-size: 14px;
+}
+/* CSS labels theme (Arrasando) PDP */
+body.template-product .t4s-single-product-badge {
+    height: 100%;
+    width: 100%;
+  left: 0;
+transform: none;
+    -webkit-transform: none;
+}
+/*--- Product card ---*/
+
+ .t4s-product-img.t4s_ratio.is-show-img2 {
+    background-color: #faf5e8;
+    border-radius: 2%;
+}
+ 
+
+
+ .t4s-product .t4s-product-price del {
+    font-size: 16px;
+    color: #CAE6C8;
+}
+
+.t4s-product .t4s-product-btns2 {
+    right: 5px;
+    top: 5px;
+}
+ .t4s-product a.t4s-pr-wishlist, .css_for_wis_app_true .t4s-product .t4s-pr-wishlist {
+    color: #00774f;
+  
+}
+
+
+.t4s-pr-style1 .t4s-product-btns>* {
+    transition: none;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+}
+ .t4s-product .t4s-pr-addtocart {
+    color: #fff;
+    background-color: #00774f;
+}
+.t4_has_atc_true .t4s-pr-style1 .t4s-product-inner .t4s-pr-group-variable {
+    display: none;
+}
+
+/*--- FIN Product card ---*/
+/*--- PDC ---*/
+.t4s-desc-collection h2 {
+    font-size: 24px;
+    line-height: 0.8;
+    margin-bottom: 15px;
+}
+.t4s-desc-collection h2 strong, .t4s-desc-collection h2 span{
+    font-weight: 900;
+}
+/* Filtros */
+.t4s-btn-filter-wrapper .t4s-btn-filter {
+    text-transform: none;
+    font-size: 16px;
+    font-weight: 800;
+    background-color: #ffce00 !important;
+    padding: 8px 15px !important;
+    height: 40px;
+    border-radius: 50px !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+button.t4s-btn-filter:after{
+  content: url('https://cdn.shopify.com/s/files/1/0713/9898/1933/files/right-arrow.png?v=1704799918');
+  margin-left: 6px;
+  margin-top: 6px;
+}
+.t4s-btn-filter svg{display: none;}
+.t4s-facets__form .t4s-facet-title {
+    font-size: 16px;
+    font-weight: 900;
+    text-transform: none;
+    margin-bottom: 10px;
+}
+.t4s-facets__form .t4s-facet ul li a {
+    font-size: 16px;
+}
+.t4s-facets__form .t4s-facet .t4s-facet-content .t4s-current-scrollbar {
+    max-height: 100%;
+    column-count: 2;
+}
+.t4s-checkbox-wrapper {
+    border-radius: 50px;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+}
+.t4s-filter-hidden{
+  background-color: #FAF5E7;
+}
+.t4s-filter-hidden  .t4s-drawer__header {
+    border-bottom: none;
+}
+button.t4s-drawer__close {
+  color: #00774f;
+  }
+.t4s-iconsvg-close {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2px;
+  }
+/* pagination */
+ .t4s-pagination__list .pagination__item--current {
+    color: var(--t4s-light-color);
+    background-color: #00774f;
+    border-color: #00774f;
+}
+ .t4s-pagination__item {
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 50px;
+}
+
+
+/* popup compra rápida */
+.t4s-product-quick-shop .t4s-widget__pr .t4s-widget__pr-title {
+    font-size: 16px;
+    font-weight: 900;
+    font-family: 'Barlow';
+}
+.t4s-product-quick-shop .t4s-widget__pr .t4s-widget__pr-price {
+    color: #00774f;
+    font-size: 16px;
+}
+.t4s-product-quick-shop .t4s-widget__pr .t4s-widget_img_pr {
+    max-width: 150px;
+    background-color: #FAF5E7;
+    border-radius: 2%;
+}
+/* mini cart */
+.t4s-mini_cart__title {
+    font-size: 14px;
+    font-family: 'Barlow';
+    font-weight: 900;
+}
+.t4s-mini_cart__title.t4s-truncate {
+    overflow: visible;
+    white-space: normal;
+}
+.t4s-mini_cart__meta .t4s-cart_meta_price .t4s-cart_price {
+    font-size: 14px;
+}
+#t4s-mini_cart .t4s-drawer__header span {
+    font-weight: 900;
+    font-size: 20px;
+    text-transform: none;
+    font-family: 'Barlow';
+    color: #00774f;
+}
+form#t4s-tab-minicart {
+    background-color: #ffffff;
+}
+#t4s-mini_cart .t4s-drawer__bottom {
+    background-color: #FAF5E7;
+}
+#t4s-mini_cart .t4s-cart-total strong {
+    font-weight: 900;
+    font-family: 'Barlow';
+    font-size: 16px;
+}
+
+#t4s-mini_cart .miniCartMessage{
+    padding: 5% 2%;
+    margin-bottom: 20px;
+}
+#t4s-mini_cart .miniCartMessage p{
+    margin-bottom: 0px;
+}
+
+ .t4s-cart__agree {
+        font-size: 14px !important;
+    }
+#t4s-mini_cart img.lazyautosizes.ls-is-cached.lazyloadt4sed {
+    background-color: #FAF5E7;
+    border-radius: 2%;
+}
+/*--- cart ---*/
+.t4s-cart_page_heading {
+    font-size: 36px;
+    font-weight: 900;
+}
+.t4s-cart-2column{
+  max-width: 100%;
+}
+.t4s-table-main-cart th {
+    font-size: 16px;
+    font-weight: 900;
+    font-family: 'Barlow';
+    text-transform: none;
+}
+.t4s-main-cart .t4s-page_cart__title {
+        font-size: 16px;
+        font-weight: 900;
+        font-family: 'Barlow';
+}
+.t4s-page_cart__item .t4s-page_cart__total_price {
+    font-size: 16px;
+    font-weight: 400;
+}
+.template-cart .t4s-page_cart__meta,.template-cart  .t4s-cart_meta_variant {
+    font-size: 16px;
+}
+.t4s-cartPage__items table,.t4s-cartPage__items td,.t4s-cartPage__items th{
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+}
+.t4s-cart-2column .t4s-summary-cart {
+    border: none;
+    background-color: #FAF5E7;
+    border-radius: 2%;
+}
+.t4s-page_cart__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.t4s-page_cart__item  img.lazyautosizes.ls-is-cached.lazyloadt4sed {
+    background-color: #FAF5E7;
+    border-radius: 2%;
+}
+.t4s-table-main-cart .t4s-page_cart__remove {
+    width: 10px;
+}
+
+.t4s-page_cart__tools{
+  vertical-align: middle;
+}
+.t4s-page_cart__tools .t4s-page_cart__edit {
+    margin-right: 30px;
+}
+.t4s-cart-total {
+    text-transform: none;
+    font-size: 20px;
+    font-weight: 900;
+    font-family: 'Barlow';
+}
+.t4s-cart__totalPrice {
+    font-weight: 400;
+    font-family: 'DM Sans';
+}
+.t4s-main-cart span.t4s-txt_add_note {
+    text-transform: none;
+    font-size: 16px;
+    font-weight: 900;
+    font-family: 'Barlow';
+  margin-left: 25px;
+}
+.t4s-main-cart textarea {
+    font-size: 16px;
+    border-radius: 20px;
+    background-color: #D9D9C8;
+  border: none;
+}
+.t4s-main-cart textarea::placeholder{
+  color: #CAE6C8;
+}
+.t4s-cartPage__footer {
+    margin-bottom: 50px;
+   display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.t4s-cartPage__footer .t4s-row{
+   background-color: #D9D9C8;
+  width: 48%;  
+    padding: 20px 10px;
+    border-radius: 5px;
+  order:2;
+}
+.bloque-upselling-cart {
+  width: 48%;
+  background-color: #D9D9C8;
+      padding: 10px 20px;
+  order:1;
+}
+.bloque-upselling-cart .ga-template_5.ga-products-box{
+  margin: 0px !important;
+    padding: 0px !important;
+  
+}
+.bloque-upselling-cart .ga-template_5.ga-products-box .ga-title  span{
+  font-size:16px;
+  font-weight: 900;
+  font-family: 'Barlow';
+}
+.bloque-upselling-cart .ga-related-vertical li.ga-product {
+    background: none;
+}
+.t4s-main-cart span.t4s-txt_add_note svg{
+    display: none;
+}
+/* --- HOME --- */
+body.template-index h3.t4s-section-title.t4s-title {
+    font-weight: 900;
+    color: #00774f;
+}
+
+body.template-index .t4s-counter h3.t4s-section-title.t4s-title {
+    font-weight: 900;
+    color: #fcf5e8;
+}
+
+body.template-index .t4s-counter .t4s-counter-list{
+    width: 60%;
+  margin: 0 auto;
+}
+
+body.template-index .t4s-counter h3.t4s-counter-number{
+      font-size: 50px;
+    line-height: 40px;
+    font-weight: 900;
+}
+
+body.template-index .t4s-section-des.t4s-subtitle {
+    font-size: 16px;
+    color: #00774f;
+    font-family: 'DM Sans';
+    margin-top: 10px;
+}
+/* ocultar top bar tiendas */
+body.calculadora-raciones-tiendas div#t4s-top-bar-main {
+  display: none !important; 
+}
+
+
+/* bloque iconos shipping */
+body.template-index .t4s-shipping-list.t4s-text-center .t4s-shipping-icon {
+    margin-bottom: 10px;
+}
+/* bloque faqs */
+body.template-index .t4s-block-accordion .t4s-accor-title .t4s-accor-text {
+    font-size: 16px;
+    line-height: 30px;
+}
+/* bloque Almudena */
+body.template-index .almudenaWildBalance {
+    display: flex;
+    align-items: center;
+}
+body.template-index article.greetingsAlmudena {
+    padding-left: 10%;
+}
+body.template-index .almudenaPresentation {
+    background-color: #CAE6C8;
+    padding: 20px;
+    max-width: 250px;
+    margin-bottom: 10px;
+    border-radius: 5% 5% 5% 0;
+}
+body.template-index .greetingsAlmudena button {
+    font-size: 16px;
+    background-color: #FFCD00;
+    width: 100%;
+    border-radius: 50px;
+    color: #00774F;
+    height: 40px;
+}
+body.template-index .almudenaPresentation p{margin-bottom: 0px;}
+body.template-index .almudenaPresentation h4{
+  font-size: 20px;
+  font-weight: 900;
+}
+/* bloque testimonios */
+body.template-index .t4s-testimonials-slider .t4s-testimonial-wrap .t4s-testimonial-content {
+    font-size: 16px;
+    line-height: 30px;
+  margin-bottom: 5px;
+}
+body.template-index .t4s-testimonials-slider .t4s-testimonial-wrap .t4s-testimonial-heading {
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+body.template-index .t4s-testimonials-slider .t4s-testimonial-wrap .t4s-testimonial-name {
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+}
+body.template-index .t4s-testimonial-wrap{
+  padding: 30px;
+}
+body.template-index .t4s-flickity-slider .flickityt4s-page-dots {
+    margin-top: 40px;
+}
+/* bloque recetas */
+body.template-index .t4s-feature-columns__title {
+  margin-top: 10px;
+    font-weight: 900;
+}
+body.template-index .t4s-pos-text-alt .t4s-feature-columns__content {
+        margin: -40px 10px 0;
+        padding: 10px 15px 20px;
+  border-radius: 5px;
+    }
+body.template-index .t4s-feature-columns .t4s-eff {
+    z-index: 6;
+    width: 80%;
+    margin: 0px auto 10px;
+}
+/* FIN HOME */
+/* CMS GENERAL*/
+body.template-page h3 {
+    font-size: 16px;
+    font-weight: 900;
+}
+body.template-page .t4s-top-heading h3.t4s-section-title{
+   font-size: 30px;
+   color: #00774f;
+}
+body.template-page .t4s-top-heading .t4s-section-des p{
+   font-size: 16px;
+  font-family: 'DM Sans';
+   color: #00774f;
+}
+/* bloque iconos custom */
+ .cms-bloque-iconos {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #FAF5E7;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px  
+}
+ .cms-bloque-iconos-item {
+    width: 20%;
+    text-align: center;
+}
+ .cms-bloque-iconos-item img{
+    width: 60%;
+}
+ .cms-bloque-iconos-content {
+    width: 80%;
+}
+ .cms-bloque-iconos-content p {
+    margin-bottom: 0px;
+}
+/* text with image - pasos */
+body.template-page .t4s-feature-columns h3.t4s-feature-columns__title{
+  font-size: 30px;
+}
+body.template-page .t4s-feature-columns .t4s-feature-columns__content{
+  background-color: #FAF5E7;
+    border-radius: 10px; 
+}
+body.template-page .t4s-feature-columns .t4s-col-item:first-child {
+margin-top: 85px;
+}
+
+/* bloque iconos shipping */
+body.template-page .t4s-shipping-list.t4s-text-center .t4s-shipping-icon {
+    margin-bottom: 10px;
+}
+body.template-page .t4s-shipping-item .t4s-shipping-inner {
+    border-radius: 10px;
+}
+/* cms historia */
+body.template-page .t4s-timeline-step {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'DM Sans';
+    font-style: italic;
+    background-color: #CAE6C8;
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+body.template-page .t4s-timeline-content .t4s-timeline-heading {
+    font-size: 20px;
+    font-weight: 900;
+}
+body.template-page .t4s-timeline-item__icon {
+    display: none;
+}
+
+body.template-page .t4s-timeline-item {
+    margin-bottom: 50px;
+}
+body.template-page .t4s-timeline-inner {
+    align-items: center;
+}
+/* MI CUENTA inicio de sesión */
+body.template-customers-login .t4s-login-heading {
+    text-align: left;
+    border-bottom: none;
+    padding: 20px 0px;
+    margin: 0;
+    width: -webkit-fill-available;
+    font-weight: 900;
+    text-transform: none;
+    font-size: 20px;
+}
+body.template-customers-login input{
+    border: 1px solid #FAF5E7;
+    background: #FAF5E7;
+    border-radius: 5px;
+    font-size: 16px;
+}
+body.template-customers-login .t4s_frm_input::placeholder{
+  font-size: 16px !important;
+}
+body.template-customers-login .t4s-customer .t4s_field input:-webkit-autofill {
+    border:2px solid #CAE6C8;
+}
+body.template-customers-login .t4s-last-btn {
+    margin-bottom: 10px;
+    display: none !important;
+}
+body.template-customers-login .t4s-customer .t4s_btn_submmit {
+    text-transform: none;
+    font-weight: 500;
+    height: 45px;
+}
+input.t4s_frm_input::placeholder{
+  font-size: 16px;
+}
+body.template-customers-login .t4s-customer a {
+    font-size: 16px;
+}
+body.template-customers-login #login, body.template-customers-login #recover, body.template-customers-login #register {
+    border: none !important;
+}
+body.template-customers-account .t4s-account-content h2 {
+    font-size: 20px;
+}
+body.template-customers-account .t4s-responsive-table th[role="columnheader"]{
+  font-family: 'Barlow';
+  font-weight: 900;
+}
+body.template-customers-account .t4s-table-res strong{
+ font-family: 'Barlow';
+  font-weight: 900;
+}
+body.template-customers-account .t4s-account-nav a {
+    font-size: 16px;
+  font-weight: 500;
+    border: 1px solid #00774F;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    margin-bottom: 10px;
+}
+body.template-customers-account  .t4s-account-nav ul {
+    line-height: normal;
+    border: none;
+}
+body.template-customers-account .t4s-account-nav .is--active a, body.template-customers-account .t4s-account-nav a:hover {
+    background-color: #CAE6C8;
+  border-color: #CAE6C8; 
+    color: #00774f;
+}
+body.template-customers-addresses  .t4s-account-nav a {
+    font-size: 16px;
+  font-weight: 500;
+    border: 1px solid #00774F;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    margin-bottom: 10px;
+}
+body.template-customers-addresses   .t4s-account-nav ul {
+    line-height: normal;
+    border: none;
+}
+body.template-customers-addresses  .t4s-account-nav .is--active a, body.template-customers-addresses  .t4s-account-nav a:hover {
+    background-color: #CAE6C8;
+  border-color: #CAE6C8; 
+    color: #00774f;
+}
+  body.template-customers-addresses li[data-address]{
+    margin: 10px;
+    border: 1px solid #CAE6C8;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-align: left;
+  }
+ body.template-customers-addresses .t4s_btn_black{
+   background-color: #00774f;
+   margin-right: 5px;
+ }
+  body.template-customers-addresses .t4s_btn_white{
+    color: #00774f;
+ }
+  body.template-customers-addresses .t4s-customer .t4s_btn_black:hover,   body.template-customers-addresses .t4s-customer .t4s_btn_white:hover {
+    background-color: #fff;
+    color: #00774f;
+    border: 1px solid #00774f ;
+}
+body.template-customers-addresses button{
+   border-radius: 50px;
+    margin-top: 20px !important;
+    margin-bottom: 20px;
+    min-width: 95px !important;
+}
+ body.template-customers-addresses .is--addresses [aria-expanded]~div[id] {
+        border-radius: 5px;
+        border: 1px solid var(--border-color);
+    }
+body.template-search .t4s_empty_page .t4s_empty_title {
+    font-size: 30px;
+    font-weight: 900;
+}
+body.template-search .t4s_empty_page .t4s_empty_des {
+    color: var(--text-color) !important;
+    font-size: 16px;
+}
+/* buscador */
+#t4s-search-hidden select.t4s-truncate {
+    font-size: 16px;
+}
+.t4s-mini-search__title {
+    font-weight: 900;
+    font-size: 20px;
+    font-family: 'Barlow';
+    border-top: none;
+    box-shadow: none;
+}
+#t4s-search-hidden img.lazyautosizes.lazyloadt4sed {
+    background-color: #FAF5E7;
+  border-radius: 5px;
+}
+#t4s-search-hidden .t4s-widget__pr .t4s-widget__pr-title {
+    font-weight: 900;
+  font-family: 'Barlow';
+    font-size: 16px;
+    text-align: left;
+}
+#t4s-search-hidden .t4s-widget__pr .t4s-widget__pr-price, .t4s-skeleton_txt2 {
+    color: #00774f;
+    font-size: 16px;
+    font-family: 'DM Sans';
+    font-weight: 400;
+    text-align: left;
+}
+#t4s-search-hidden .t4s-mini-search__viewAll {
+    font-size: 16px;
+    font-weight: 500;
+}
+#t4s-search-hidden .t4s-mini-search__input::placeholder{
+  color:#CAE6C8;
+}
+/* --- BLOG ---*/
+body.template-blog  .t4s-article-design5 .t4s-article-title {
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 20px;
+}
+body.template-blog .t4s-article-item .t4s-article-content {
+    font-size: 16px;
+    line-height: 20px;
+}
+body.template-blog .t4s-blog-tags .t4s-tags-filter li a:focus, .t4s-tags-filter li a:hover, .t4s-blog-tags .t4s-tags-filter li a.is--selected {
+    background-color: #CAE6C8;
+    color: var(--secondary-color);
+    padding: 0px 20px;
+    border-radius: 50px;
+}
+body.template-blog .t4s-blog-tags .t4s-tags-filter li a.is--selected::after {
+    display: none;;
+}
+body.template-article  .t4s-main-article-page .t4s-article-content p{
+  color: #222222;
+}
+body.template-article  .t4s-heading-article__wrap .t4s-container {
+    background-color: #fff;
+    max-width: 600px;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: left;
+}
+body.template-article  .t4s-heading-article__wrap .t4s-container h1{
+  font-size: 30px;
+    font-weight: 900;
+  margin-bottom: 0;
+}
+
+body.template-article aside.t4s-sidebar .t4s-sidebar-inner{
+    position: sticky;
+    top: 10vh;
+}
+
+body.template-article:has(aside.t4s-sidebar) section.t4s-main-article div.t4s-section-inner .t4s-container,
+body.template-article:has(aside.t4s-sidebar) section.t4s-accordion div.t4s-section-inner .t4s-container{
+    max-width: initial !important;
+    padding: 0px 4%;
+}
+
+body.template-article aside.t4s-sidebar .t4s-sidebar-inner .t4s-widget-heading{
+  display:none;
+}
+
+body.template-article aside.t4s-sidebar .t4s-sidebar-inner .t4s-sidebar-custom-liquid{
+  border:0px;
+}
+/*---------------- Custom CSS for only desktop -------------------*/
+
+
+/*---------------- Custom CSS for tablet, mobile -------------------*/
+
+
+/*---------------- Custom CSS for only tablet -------------------*/
+@media (min-width: 768px) and (max-width:1024px) {
+  {{- settings.tablet_css -}}
+   .t4s-timeline-content__left .t4s-timeline-col, .t4s-timeline-content__right .t4s-timeline-col {
+        text-align: left !important;
+    }
+}
+
+/*---------------- Custom CSS for only mobile -------------------*/
+@media (max-width:767px){
+  {{- settings.mobile_css -}}
+  /* cms historia */
+ .t4s-timeline-content__left .t4s-timeline-col, .t4s-timeline-content__right .t4s-timeline-col {
+        text-align: left !important;
+    }
+  .t4s-timeline-item {
+        margin: 50px 0;
+    }
+ /* cart */
+  .t4s-cartPage__footer .t4s-row{
+  width: 100%;  
+}
+.bloque-upselling-cart {width: 100%}
+/* Inicio código para el store locator */
+
+  #shopify-section-template--23234518024493__main .t4s-section-inner{
+    margin-left:initial;
+    margin-right:initial;
+    margin-top:initial;
+  }
+    #shopify-section-template--23234518024493__main .t4s-section-inner .t4s-col-item{
+    padding-left:initial;
+    padding-right:initial;
+  }
+  #shopify-section-template--20865588658477__f6964876-3b3d-49f0-bb67-6b15b1b28d29{
+    position: absolute;
+    bottom: 76px;
+    left: 50px;
+    right: 50px;
+  }
+  #shopify-section-template--20865588658477__f6964876-3b3d-49f0-bb67-6b15b1b28d29 .t4s-section-inner .t4s-bl-item{
+    background-color:#00774F;
+    color:#FFF;
+    font-weight: 700;
+    border-radius: 30px;
+    height: 50px;
+    border: 0 !important;
+    width: 100%;
+    padding: 6px 20px !important;
+    font-size:1.5em;
+  }
+  #shopify-section-template--20865588658477__f6964876-3b3d-49f0-bb67-6b15b1b28d29 .t4s-btn-style-outline::after{
+    border:initial !important;
+  }
+  #shopify-section-template--20865588658477__bd330848-6e65-4c45-aa92-c3948024a236{
+    margin-bottom:-110px;
+  }
+  #shopify-section-template--23234518024493__main .stockist-query-entry{
+    width: 100%;
+  }
+
+  #shopify-section-template--23234518024493__main .stockist-search-form{
+    width:100%;
+  }
+
+  #shopify-section-template--23234518024493__main .stockist-query-entry .stockist-search-field{
+    border-radius: 30px;
+    height: 50px;
+    border: 2px solid #00774f;
+    width: 100%;
+    padding: 6px 20px 2px !important;
+    background-color:#FFF;
+  }
+  #stockist-widget .stockist-query-entry .stockist-search-field::placeholder{
+    color:#00774f;
+    font-size:1.5em;
+    font-weight: bold;
+  }
+
+  #shopify-section-template--23234518024493__main .stockist-search-button{
+    position:absolute;
+    top: 3.1vh;
+    right: 73px;
+  }
+
+   #stockist-widget .stockist-search-button .stockist-feature-bg-color{
+    margin-left: 10px;
+    padding: 0 !important;
+    height: 42px !important;
+    color: #fff;
+    border: 0;
+    min-width: 0;
+    width: 42px !important;
+    min-height: 0;
+    border-radius: 30px;
+   }
+
+    #shopify-section-template--23234518024493__main .stockist-icon{
+      font-size:1.5em;
+    }
+
+/* Fin código para el store locator */ 
+
+/* Inicio código Whatsapp BTN darle altura */
+  #shopify-section-footer-bottom .floating-whatsapp {
+    bottom:133px;
+  }
+/* Fin código Whatsapp BTN darle altura */
+  
+} /* --> OJITO, este es el cierre del @media de ONLY MOBILE */
+
+
+/* Para quitar la "X" del pop up wizard - incrustado mediante Automatic */
+#qrHJw1 > span{
+  display:none !important;
+}
+
+
+#storePickupApp{
+  border:0px;
+  margin-bottom:0px;
+}
+
+/* CALENDARIO CARRITO */
+
+#storePickupApp .checkoutMethod{
+    background-color:#00774F !important;
+    flex-direction: row !important;
+    border-radius: 20px !important;
+    gap: 11px;
+    color:#fff;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    height: 40px;
+    padding:5px 15px;
+}
+#storePickupApp .checkoutMethod:hover{
+  color: #00774F;
+  background-color: #FAF5E7 !important;
+  border: 2px solid #00774F !important;
+}
+
+#storePickupApp .checkoutMethod .checkoutMethodImage{
+ display: none !important;
+}
+
+/* Inicio CSS App Suscripción - Páginas de suscripción suples*/
+
+section.suscriptionCoupon {
+  margin: 0 auto;
+  text-align: center;
+  padding: 15px;
+}
+
+section.suscriptionCoupon p{
+      font-weight: 600;
+  color: #00774F;
+
+}
+
+section.suscriptionCoupon b{
+    border-radius: 50px;
+    height: 40px;
+    display: inline-flex;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 15px;
+    color: green;
+    background-color: #CAE6C8;
+    margin-top: 14px;
+}
+
+section.suscriptionCoupon button {
+  margin: 0 auto;
+  border-radius: 50px;
+    background: transparent;
+    color: #00774F;
+    text-decoration: underline;
+    margin-top: -10px;
+  font-size:16px;
+}
+section.suscriptionCoupon button:hover {
+    text-decoration: initial;
+}
+
+div.appstle-wrapper div.false:nth-child(1) > div.false > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+div.appstle-wrapper .as-cart-btn-wrapper .as-cart-btn{
+    background-color:#00774F;
+    position: fixed;
+    z-index: 90;
+    border-radius: 62px;
+    right: 2px;
+    bottom: 161px;
+    --tw-ring-opacity: initial;
+}
+
+
+section.suscriptionBannerInitial{
+    width: 100%;
+    height: auto;
+}
+section.suscriptionBannerInitial img{
+    width: 100%;
+    height: auto;
+}
+
+
+section.suscriptionBannerInitial img.bannerSuscriMobile{
+    display: none;
+}
+
+
+div.appstle-wrapper div.false:nth-child(1) > div.false > div 
+div.as-checkout-btn-wrapper {
+    order:2;
+    margin-bottom: -15px;
+    align-self: flex-start;
+}
+div.appstle-wrapper div.false:nth-child(1) > div.false > div 
+div.as-checkout-btn-wrapper button.as-checkout-btn{
+    text-transform: math-auto;
+    background: transparent;
+    color: #00774f;
+    font-size: 20px;
+    box-shadow: none;
+    padding:0px !important;
+    margin-bottom: -18px;
+  display:none !important;
+}
+
+div.appstle-wrapper div.false:nth-child(1) > div.false > div 
+div.as-shadow {
+    order:1;
+    box-shadow: none !important;
+}
+div.appstle-wrapper div.false:nth-child(1) > div.false > div 
+div.as-shadow .as-bab-title{
+    font-family: var(--product-title-family);
+}
+
+div.appstle-wrapper div.false:nth-child(1) > div.false > div 
+div.as-choseProduct-title-wrapper {
+    order:3;
+    display:none;
+}
+div.appstle-wrapper div.false:nth-child(1) > div.false > div 
+div.box-wrap {
+    order:4;
+}
+
+div.appstle-wrapper div.false:nth-child(1) > div.false > div 
+div.box-wrap .top-section div.limit-progress{
+  margin-top:-30px !important;
+}
+
+div.appstle-wrapper div.false:nth-child(1) > div.false > div 
+div.box-wrap .as-progress-bar div.as-progress{
+    background-color: #00774f !important;
+}
+
+div.appstle-wrapper div.appstle_bundle .as-products div.as-group .as-w-full,
+div.appstle-wrapper div.FvzG8fQt.appstle_bundle .as-products div.as-group .as-w-full{
+    background-color: #faf5e7 !important;
+}
+
+div.appstle-wrapper div.appstle_bundle .as-products div.as-group {
+    box-shadow: initial;
+    display: flex !important;
+    justify-content: space-between;
+}
+
+div.appstle-wrapper div.appstle_bundle .as-products div.as-group button{
+    border-radius: 50px;
+}
+
+div.appstle-wrapper div.appstle_bundle .as-products div.as-group 
+div.as-w-full a.appstle-slider-prev,
+div.appstle-wrapper div.appstle_bundle .as-products div.as-group 
+div.as-w-full a.appstle-slider-next{
+    color: #00774f !important;
+    font-size: 14px;
+    font-weight: 100;
+    margin-top: -50px;
+    top: 70%;
+}
+div.appstle-wrapper div.appstle_bundle .as-products div.as-group 
+div.as-w-full a.appstle-slider-prev:hover,
+div.appstle-wrapper div.appstle_bundle .as-products div.as-group 
+div.as-w-full a.appstle-slider-next:hover{
+    background-color: transparent !important;
+}
+
+div.appstle-wrapper div.appstle_bundle .as-products div.as-group 
+button.as-mt-auto{
+    background: transparent !important;
+    color: #00774f;
+    margin: 0px;
+    border: 1.5px solid #00774f;
+}
+div.appstle-wrapper div.as-bundle-html-wrapper div.FvzG8fQt div.box-wrap .as-products div.as-group 
+button.as-mt-auto{
+  background: transparent !important;
+}
+
+div.appstle-wrapper div.appstle_bundle .as-products div.as-group 
+button:nth-child(1).as-w-full{
+    background-color: #00774f;
+    color: #FFF !important;
+}
+
+
+div.appstle-wrapper div.appstle_bundle .as-products div.as-group 
+div:nth-child(2) p.as-text-sm{
+    display:none;
+}
+
+div.appstle-wrapper div.appstle_bundle .as-products div.as-group 
+div:nth-child(2){
+    margin:8px 0px;
+}
+
+div.appstle-wrapper div.appstle_bundle .as-products div.as-group 
+div:nth-child(2) h3{
+    text-align: left !important;
+    color: #222 !important;
+    font-weight: 400;
+    font-size: 16px !important;
+    font-family: var(--product-title-family);
+    padding:0px;
+}
+
+div.appstle-wrapper div.appstle_bundle .limit-progress .as-progress-wrapper{
+  margin-top:41px !important;
+}
+
+div.appstle-wrapper div.appstle_bundle .limit-progress div.as-progress{
+  background-color:#00774F;
+}
+
+div.appstle-wrapper div.appstle_bundle .as-products div.as-group 
+div:nth-child(3){
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+div.appstle-wrapper div.appstle_bundle .as-products div.as-group 
+div:nth-child(3) span.null{
+    color:#696969 !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+
+div.appstle-wrapper div.appstle_bundle .as-products div.as-group 
+div:nth-child(3) p.as-flex:has(span.as-line-through) span.null.as-font-medium{
+    color:#e33131 !important;
+}
+
+div.appstle-wrapper div.appstle_bundle .as-products div.as-group 
+div:nth-child(3) div.as-flex:has(div.as-items-center.quantity-0) div.as-items-center.quantity-0{
+    align-items: flex-start !important;
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+div.appstle-wrapper div.appstle_bundle .as-products div.as-group 
+div:nth-child(3) div.as-flex .as-border-gray-200.quantity-0{
+    width: 100%;
+}
+
+div.appstle-wrapper div.appstle_bundle .as-products div.as-group 
+div:nth-child(3) .as-flex{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+div.appstle-wrapper div.appstle_bundle .as-products div.as-group 
+div:nth-child(3) p.as-flex{
+    padding-left: 0px;
+    padding-right: 0px;
+      align-self: flex-start;
+
+}
+
+div.appstle-wrapper div.appstle_bundle .as-products div.as-group 
+div:nth-child(3) button.as-inline-flex{
+    background-color: #00774f !important;
+  color:#FFF !important;
+}
+
+div.appstle-wrapper div.appstle_bundle .as-products div.as-group button:focus{
+    box-shadow: none !important;
+}
+
+div.appstle-wrapper div.appstle_bundle .as-products div.as-group 
+div:nth-child(3) .as-items-center:focus-visible{
+    border: 0px !important;
+}
+
+div.as-bg-white button.as-w-full{
+    border-radius: 50px;
+    background-color: #00774f;
+    color: #FFF;
+  margin:0px !important;
+}
+div.as-bg-white button.as-w-full:focus{
+    --tw-ring-opacity: initial !important; 
+}
+div.as-bg-white button.as-w-full:hover{
+    background-color: #00774f;
+}
+
+
+/* CSS Mini-cart Appstle App*/
+
+.as-bundle-cart-dailog div.as-progress{
+  background-color: #00774f !important;
+}
+
+.as-bundle-cart-dailog button.as-atc-btn{
+    background-color: #00774f !important;
+}
+
+.as-bundle-cart-dailog button.as-continue-shopping-btn{
+    color: #00774f !important;
+}
+
+.as-bundle-cart-dailog button.as-plan-select-btn:focus{
+    border-color:#00774f !important;
+}
+
+.as-bundle-cart-dailog div.as-bg-white button.as-plan-select-btn{
+    border-radius: 50px;
+    background-color: #00774f;
+    color: #222;
+}
+.as-bundle-cart-dailog div.as-bg-white button.as-plan-select-btn:focus{
+    --tw-ring-opacity: initial;
+}
+
+.as-bundle-cart-dailog ul.as-plan-options{
+      border-radius: 15px;
+}
+.appstle-wrapper :is(.as-bg-indigo-600){
+  background-color: #FFCD00 !important;
+  color:#00774f !important;
+}
+
+.as-bundle-cart-dailog .as-flex div.as-border-t{
+  display:flex;
+  flex-direction: column;
+}
+
+.as-bundle-cart-dailog .as-flex div.as-border-t div.as-order-note{
+    order: 1 !important;
+    margin-bottom: 31px;
+}
+.as-bundle-cart-dailog .as-flex div.as-border-t div.as-order-note div.as-mt-2{
+  display:none;
+}
+
+.as-bundle-cart-dailog .as-flex div.as-border-t div.as-mb-3{
+  order:2;
+}
+
+.as-bundle-cart-dailog .as-flex div.as-border-t div.as-sub-total{
+  order:3;
+}
+
+.as-bundle-cart-dailog .as-flex div.as-border-t p.as-checkout{
+  order:4;
+}
+
+.as-bundle-cart-dailog .as-flex div.as-border-t button.as-atc-btn{
+    order: 5;
+    color: #fff !important;
+}
+
+.as-bundle-cart-dailog .as-flex div.as-border-t div.as-continue-shopping-wrapper{
+  order:6;
+}
+
+body.template-product .t4s-swatch__list:has(.is-sw__color) {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  
+}
+/* FIN CSS Mini-cart Appstle App*/
+
+/* FIN CSS App Suscripción - Páginas de suscripción suples*/
+
+/*Cambio de menú con CTA*/
+
+#shopify-section-header-inline .t4s-header__wrapper .ctaCreaSuMenu{
+  display:none;
+}
+
+body.template-product .t4s-swatch__list .priceAndQuantity-pdpBlock > span{font-size:20px;}
+
+body.template-product .t4s-swatch__list .priceAndQuantity-pdpBlock{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+body.template-product .t4s-swatch__list .priceAndQuantity-pdpBlock .discountPrice{
+  order: 2;
+  color:#ce4949;
+  margin:0;
+}
+
+body.template-product .t4s-swatch__list .priceAndQuantity-pdpBlock .discountPercentage{
+  order: 3;
+    background-color: #222;
+    color: #fff;
+}
+
+body.template-product .t4s-swatch__list .priceAndQuantity-pdpBlock .normalPrice{
+  order: 1;
+  text-decoration: line-through;
+  color: #cae6c8;
+}
+body.template-product .t4s-swatch__list .priceAndQuantity-pdpBlock .t4s-quantity-wrapper{
+    order: 4;
+  border:2px solid;
+}
+
+body.template-product .vatiant_arrasado{
+      display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background-color: #CAE6C8;
+    padding: 5px 0;
+    width:120px;
+}
+
+body.template-collection .vatiant_arrasado{
+      display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background-color: #CAE6C8;
+    padding: 5px 0;
+  width:100px;
+}
+
+body.template-product .vatiant_arrasado p{
+    margin: 0;
+    color: #00774f;
+    text-transform: capitalize;
+    font-size: 16px;
+}
+/* Fin cambio de menú con CTA*/
+body.template-collection .t4s-header-banner{
+    margin: 0px;
+    border: initial;
+      padding-bottom: 0px;
+
+}
+body.template-collection h1.t4s-title-head{
+    line-height: initial;
+    margin-bottom: 10px;
+
+}
+
+body.template-collection .t4s-section-inner .t4s-collection-header{
+  margin-top:0px;
+}
+
+body.template-collection .t4s-section-inner .t4s-collection-header .t4s-btn-filter-wrapper{
+      justify-content: center !important;
+}
+/* menu mobile */
+
+.t4s-item-level-1 .t4s-sub-sub-menu{display: block !important;}
+
+#t4s-backToTop{
+  display:none !important;
+}
+
+ body.template-product .t4s-form__product 
+  .t4s-product-form__buttons:has(.arrasado) button.t4s-product-form__submit{
+    color:#00774f;
+    background-color:#fff;
+    width:100%;
+}
+
+/*
+#item_menu_kLMD4e{
+      padding: 0px 20px;
+}
+*/
+#menu-mb__ul li:nth-of-type(5) p.menu_infos_title{
+  display:none !important;
+}
+#menu-mb__ul li:nth-of-type(11) p.menu_infos_title{
+  display:none !important;
+}
+
+#menu-mb__ul #item_menu_Ej4LWb{
+  font-weight:900;
+}
+
+#item_menu_kLMD4e a{
+   /* background-color: #ffcd00; 
+    padding: 10px 31px; 
+    border-radius: 20px; */
+    color: #00774f;
+    height: 40px;
+    font-weight: 800;
+    max-width: 200px;
+}
+
+#item_menu_kLMD4e a:after{
+  content:url('https://cdn.shopify.com/s/files/1/0713/9898/1933/files/right-arrow.png?v=1704799918');
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+
+body.template-customers-account .t4s-account-nav-link--edit-mySuscription a img {
+    width: 17px;
+    margin-right: 4px;
+}
+
+
+body.template-customers-account .appstle_manageSubBtn{
+  display:none;
+}
+
+
+
+body.template-product span.normalPrice{
+    color: #ce4949;
+}
+
+/*
+body.template-product ._fx-badge.discount.blackFriday{
+  display:none !important;
+}
+*/
+body.template-collection .t4s-modal.t4s-modal--is-active .t4s-modal__inner{
+    max-height: initial !important;
+}
+body.template-collection .t4s-modal.t4s-modal--is-active .t4s-modal__content{
+        max-height: initial !important;
+}
+
+.shopify-section.t4-section.t4-section-announcement-bar{
+      z-index: 90;
+    position: fixed;
+    width: 100vw;
+    top: 0%;
+}
+
+.shopify-section.t4-section.t4-section-announcement-bar .t4s-col-item.t4s-col-auto{
+      display:none;
+}
+
+.shopify-section.t4s-section.t4s-section-header.calc-pos-submenu{
+    position: sticky;
+   /* top: 40px; */
+    z-index: 460;
+}
+
+{% comment %} Header con ANNOUCEMENT BAR Sticky 
+
+.shopify-section.t4s-section.t4s-section-header{
+      top: 40px;
+}
+{% endcomment %}
+
+body.template-product.sticks-dentales-de-ternera-copia .t4s-tabs-pr-content .t4s-tab-wrapper a.t4s-tab__title{
+      display: flex;
+}
+
+.t4s-form__product .t4s-product-form__qty{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  width:auto;
+}
+
+.vatiant_arrasado p{
+    margin: 0;
+    font-size: 16px;
+}
+
+body.template-product.bocaditos-navidad-premios-naturales .t4s-product-form__buttons .t4s-quantity-wrapper input.t4s-quantity-input[type=number]{
+      width: 100%;
+
+}
+
+body.template-collection .customLabelsContainer{
+      display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
+}
+body.template-product .customLabelsContainer{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 20px;
+    gap: 5px;
+}
+
+/*
+body.template-product .t4s-price__sale{
+  color:#00774f;
+}
+
+
+del {
+  text-decoration:none;
+}
+ins{
+  color:#00774f !important;
+}
+*/
+
+{% comment %} BOTÓN FLOTANTE WHATSAPP {% endcomment %}
+.floatingWhatsapp{
+    bottom: 1.25rem;
+    position: fixed;
+    right: 1.25rem;
+    z-index: 79;
+      align-items: center;
+    background-color: #fff;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    box-shadow: 0 4px 12px #0006;
+    cursor: pointer;
+    display: flex;
+    height: 64px;
+    justify-content: center;
+    width: 64px;
+}
+
+.floatingWhatsapp img{
+  width:40px;
+}
+
+
+
+
+.messageWhatsapp {
+    position: fixed;
+    bottom: 85px;
+    right: 1.25rem;
+    width: 314px;
+    border-radius: 13px;
+    display: none;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-between;
+    background-image: url('https://cdn.shopify.com/s/files/1/0713/9898/1933/files/whatsapp_bg.png?v=1736438403');
+
+      background-color: #eae6df;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px #0006;
+  z-index:999;
+}
+
+        
+.messageWhatsapp .close-btn {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.whatsapp-link {
+    font-size: 17.15px;
+      align-items: center;
+    background-color: #25d366;
+    border: 1px solid transparent;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    font-family: Manrope, sans-serif;
+    font-size: 17.15px;
+    font-weight: 500;
+    gap: .5rem;
+    justify-content: center;
+    line-height: 1.35;
+    padding: .75rem 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    transition: color .2s, background-color .2s;
+  margin:0 1rem 1rem;
+  cursor:pointer;
+
+}
+.whatsapp-link:hover{
+  background-color:#00784f;
+}
+
+.messageWhatsapp .header {
+    align-items: center;
+    background-color: #25d366;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+    width: 100%;
+}
+
+.messageWhatsapp .header .logoAndHeading{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.messageWhatsapp .header h4{
+      font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.messageBox{
+    align-self: flex-start;
+    background: #fff;
+    border-radius: 16px;
+    color: #767676;
+    font-size: 17.15px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-right: 2rem;
+    padding: 1rem;
+    position: relative;
+    margin: 1rem 2rem 1rem 2rem;
+}
+.messageBox:before{
+      background: #fff;
+    -webkit-clip-path: polygon(100% 50%, 0 50%, 50% 100%);
+    clip-path: polygon(100% 50%, 0 50%, 50% 100%);
+    content: "";
+    height: 32px;
+    left: -12px;
+    position: absolute;
+    top: -16px;
+    width: 32px;
+}
+html:has(body.template-customers-account) .floatingWhatsapp{
+  display:none;
+}
+
+{% comment %} BOTÓN FLOTANTE WHATSAPP {% endcomment %}
+
+.appstle-customer-portal .appstle-contract-action-wrapper a.appstle_contract_see_more.as-see-more-link.as-flex.as-justify-between.as-py-3.as-px-3{
+  display:none !important;
+}
+
+.appstle-customer-portal .appstle-contract-action-wrapper div.appstle-contract-cancel-and-detail-wrapper{
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  flex-flow:column wrap;
+    gap: 5px;
+}
+
+.t4s-drawer .miniCartMessage{
+  display:none;
+}
+
+{% comment %} CSS NUEVA PDC PACK INICIACIÓN {% endcomment %}
+
+body.template-collection.packs-de-iniciacion #MainContent{
+      display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: stretch;
+} 
+
+body.template-collection.packs-de-iniciacion #MainContent section.shopify-section.t4s-section.t4s-banner{
+      width: 100%;
+
+}
+body.template-collection.packs-de-iniciacion #MainContent section.shopify-section.t4s-collection-page{
+      width: 50%;
+      height: auto;
+}
+
+body.template-collection.packs-de-iniciacion #MainContent section:nth-of-type(3) .t4s-section-inner > .t4s-row:nth-child(1):before{
+    content:'Packs de iniciación';
+      width:100%;
+      color:#00774F;
+    font-family: Barlow;
+  font-weight: 800;
+  font-size: 30px;
+  padding:30px;
+}
+  
+body.template-collection.packs-de-iniciacion #MainContent section:nth-of-type(2),
+body.template-collection.packs-de-iniciacion #MainContent section:nth-of-type(3){
+      width: 50%;
+}
+body.template-collection.packs-de-iniciacion #MainContent section:nth-of-type(4){
+      width: 100%;
+}
+
+body.template-product.pack-iniciacion-barf-para-perros #MainContent .accordionsBlock,
+body.template-product.pack-iniciacion-barf-para-gatos #MainContent .accordionsBlock{
+    background-position: center bottom;
+}
+
+body.template-product.pack-iniciacion-barf-para-perros #MainContent .packConteins.desktop,
+body.template-product.pack-iniciacion-barf-para-gatos #MainContent .packConteins.desktop{
+    background-position-y: 45%;
+}
+
+body.template-collection.packs-de-iniciacion #MainContent section:nth-of-type(2) .t4s-w-100 div.t4s-bl-item,
+body.template-collection.packs-de-iniciacion #MainContent section:nth-of-type(3) .t4s-w-100 div.t4s-bl-item,
+body.template-collection.packs-de-iniciacion #MainContent section.shopify-section.t4s-custom-section.t4s-accordion .t4s-block-accordion a.t4s-accor-title,
+body.template-collection.packs-de-iniciacion #MainContent section.shopify-section.t4s-custom-section.t4s-accordion .t4s-tab-wrapper .t4s-tab-content,
+body.template-product.pack-iniciacion-barf-para-perros #MainContent .accordionsBlock .t4s-w-100 div.t4s-bl-item,
+body.template-product.pack-iniciacion-barf-para-perros #MainContent .accordionsBlock .t4s-w-100 .t4s-block-accordion a.t4s-accor-title,
+body.template-product.pack-iniciacion-barf-para-perros #MainContent .accordionsBlock .t4s-tab-wrapper .t4s-tab-content,
+body.template-product.pack-iniciacion-barf-para-gatos #MainContent .accordionsBlock .t4s-w-100 div.t4s-bl-item,
+body.template-product.pack-iniciacion-barf-para-gatos #MainContent .accordionsBlock .t4s-w-100 .t4s-block-accordion a.t4s-accor-title,
+body.template-product.pack-iniciacion-barf-para-gatos #MainContent .accordionsBlock .t4s-tab-wrapper .t4s-tab-content{
+    padding: 3%;
+    border-radius: 20px;
+  
+
+  
+}
+
+
+body.template-collection.packs-de-iniciacion #MainContent section:nth-of-type(2) .t4s-w-100 div.t4s-bl-item,
+body.template-collection.packs-de-iniciacion #MainContent section:nth-of-type(3) .t4s-w-100 div.t4s-bl-item,
+body.template-product.pack-iniciacion-barf-para-perros #MainContent .accordionsBlock .t4s-w-100 div.t4s-bl-item,
+body.template-product.pack-iniciacion-barf-para-gatos #MainContent .accordionsBlock .t4s-w-100 div.t4s-bl-item{
+    background-color: #faf5e7;
+}
+
+body.template-collection.packs-de-iniciacion #MainContent section.shopify-section.t4s-custom-section.t4s-accordion .t4s-tab-wrapper,
+body.template-product.pack-iniciacion-barf-para-perros #MainContent .accordionsBlock .t4s-tab-wrapper,
+body.template-product.pack-iniciacion-barf-para-gatos #MainContent .accordionsBlock .t4s-tab-wrapper{
+  border-bottom:0px;
+  margin-bottom:10px;
+}
+
+body.template-collection.packs-de-iniciacion #MainContent section.shopify-section.t4s-custom-section.t4s-accordion .t4s-block-accordion a.t4s-accor-title,
+body.template-product.pack-iniciacion-barf-para-perros #MainContent .accordionsBlock .t4s-block-accordion a.t4s-accor-title,
+body.template-product.pack-iniciacion-barf-para-gatos #MainContent .accordionsBlock .t4s-block-accordion a.t4s-accor-title{
+  border-bottom:0px;
+}
+
+body.template-collection.packs-de-iniciacion #MainContent section.shopify-section.t4s-custom-section.t4s-accordion .t4s-tab-wrapper .t4s-tab-content,
+body.template-product.pack-iniciacion-barf-para-perros #MainContent .accordionsBlock .t4s-tab-wrapper .t4s-tab-content,
+body.template-product.pack-iniciacion-barf-para-gatos #MainContent .accordionsBlock .t4s-tab-wrapper .t4s-tab-content{
+    background-color: #faf5e7;
+    margin-top: -20px;
+      border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+body.template-product.pack-iniciacion-barf-para-perros #MainContent .accordionsBlock .t4s-tab-wrapper .t4s-tab-content ul,
+body.template-product.pack-iniciacion-barf-para-gatos #MainContent .accordionsBlock .t4s-tab-wrapper .t4s-tab-content ul{list-style: auto;}
+
+body.template-collection.packs-de-iniciacion #MainContent section.shopify-section.t4s-custom-section.t4s-accordion .t4s-block-accordion .t4s-accor-title .t4s-accor-text,
+body.template-product.pack-iniciacion-barf-para-perros #MainContent .accordionsBlock .t4s-block-accordion .t4s-accor-title .t4s-accor-text,
+body.template-collection.packs-de-iniciacion #MainContent section.shopify-section.t4s-custom-section.t4s-accordion .t4s-w-100 div.t4s-bl-item h2,
+body.template-product.pack-iniciacion-barf-para-gatos #MainContent .accordionsBlock .t4s-block-accordion .t4s-accor-title .t4s-accor-text{
+    font-weight: 800;
+    font-size: 25px;
+    font-family: 'Barlow';
+}
+
+
+body.template-collection.packs-de-iniciacion #MainContent section.shopify-section.t4s-custom-section.t4s-accordion .t4s-w-100 div.ctaDoubts,
+body.template-product.pack-iniciacion-barf-para-perros #MainContent .accordionsBlock .t4s-w-100 div.ctaDoubts,
+body.template-product.pack-iniciacion-barf-para-gatos #MainContent .accordionsBlock .t4s-w-100 div.ctaDoubts{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body.template-collection.packs-de-iniciacion #MainContent section.shopify-section.t4s-custom-section.t4s-accordion .t4s-w-100 div:nth-of-type(3) .t4s-tab-wrapper:nth-child(1) 
+ol li{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 5px;
+    gap: 9px;
+}
+
+body.template-product.template-product.pack-iniciacion-barf-para-perros .shopify-section .packConteins.mobile,
+body.template-product.template-product.pack-iniciacion-barf-para-gatos .shopify-section .packConteins.mobile{display:none;}
+
+body.template-product.template-product.pack-iniciacion-barf-para-perros .shopify-section .packConteins.mobile .t4s-custom-col:nth-child(1),
+body.template-product.template-product.pack-iniciacion-barf-para-gatos .shopify-section .packConteins.mobile .t4s-custom-col:nth-child(1){
+    margin: 0;
+    padding: 0;
+}
+body.template-product.template-product.pack-iniciacion-barf-para-perros .shopify-section .packConteins.mobile .t4s-custom-col:nth-child(2),
+body.template-product.template-product.pack-iniciacion-barf-para-gatos .shopify-section .packConteins.mobile .t4s-custom-col:nth-child(2){
+  padding:0px 20px 20px 20px;
+  position:relative;
+  top:-60px;
+}
+
+body.template-product.template-product.pack-iniciacion-barf-para-perros .shopify-section .packConteins .t4s-col-inner,
+body.template-product.template-product.pack-iniciacion-barf-para-gatos .shopify-section .packConteins .t4s-col-inner{max-width:500px;}
+
+body.template-product.template-product.pack-iniciacion-barf-para-perros .shopify-section .packConteins .t4s-w-100 div ul,
+body.template-product.template-product.pack-iniciacion-barf-para-gatos .shopify-section .packConteins .t4s-w-100 div ul{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 13px 0px 0px 0px;
+}
+body.template-product.template-product.pack-iniciacion-barf-para-perros .shopify-section .packConteins .t4s-w-100 div ul li,
+body.template-product.template-product.pack-iniciacion-barf-para-gatos .shopify-section .packConteins .t4s-w-100 div ul li{
+      display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+body.template-product.template-product.pack-iniciacion-barf-para-perros .shopify-section .transitionBlock .t4s-custom-col h3,
+body.template-product.template-product.pack-iniciacion-barf-para-gatos .shopify-section .transitionBlock .t4s-custom-col h3{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 10px;
+}
+
+body.template-collection.packs-de-iniciacion #MainContent section.shopify-section.t4s-custom-section.t4s-accordion .t4s-w-100 div:nth-of-type(3) .t4s-tab-wrapper:nth-child(1) 
+ol li:nth-child(1):before,
+body.template-product.template-product.pack-iniciacion-barf-para-perros .shopify-section .packConteins .t4s-w-100 div:nth-of-type(1) ul li:nth-of-type(1):before,
+body.template-product.template-product.pack-iniciacion-barf-para-perros .shopify-section .transitionBlock .t4s-custom-col:nth-child(1) h3:before,
+body.template-product.template-product.pack-iniciacion-barf-para-perros .shopify-section .transitionBlock .t4s-custom-col:nth-child(2) h3:before,
+body.template-product.template-product.pack-iniciacion-barf-para-gatos .shopify-section .packConteins .t4s-w-100 div:nth-of-type(1) ul li:nth-of-type(1):before,
+body.template-product.template-product.pack-iniciacion-barf-para-gatos .shopify-section .transitionBlock .t4s-custom-col:nth-child(1) h3:before,
+body.template-product.template-product.pack-iniciacion-barf-para-gatos .shopify-section .transitionBlock .t4s-custom-col:nth-child(2) h3:before{
+    content:url(https://cdn.shopify.com/s/files/1/0713/9898/1933/files/1_tamano1.png?v=1741946228);
+}
+body.template-product.template-product.pack-iniciacion-barf-para-perros .shopify-section .transitionBlock .t4s-custom-col:nth-child(2) h3:after,
+body.template-product.template-product.pack-iniciacion-barf-para-gatos .shopify-section .transitionBlock .t4s-custom-col:nth-child(2) h3:after{
+    content:url(https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Frame_117_4.png?v=1742989562);
+}
+body.template-product.template-product.pack-iniciacion-barf-para-perros .shopify-section .transitionBlock .t4s-custom-col:nth-child(3) h3:after,
+body.template-product.template-product.pack-iniciacion-barf-para-perros .shopify-section .transitionBlock .t4s-custom-col:nth-child(4) h3:after,
+body.template-product.template-product.pack-iniciacion-barf-para-perros .shopify-section .transitionBlock .t4s-custom-col:nth-child(5) h3:after,
+body.template-product.template-product.pack-iniciacion-barf-para-gatos .shopify-section .transitionBlock .t4s-custom-col:nth-child(3) h3:after,
+body.template-product.template-product.pack-iniciacion-barf-para-gatos .shopify-section .transitionBlock .t4s-custom-col:nth-child(4) h3:after,
+body.template-product.template-product.pack-iniciacion-barf-para-gatos .shopify-section .transitionBlock .t4s-custom-col:nth-child(5) h3:after{
+    content:url(https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Frame_117_6.png?v=1742989571);
+}
+
+
+body.template-product.template-product.pack-iniciacion-barf-para-perros .shopify-section .packConteins .t4s-w-100 div:nth-of-type(2) ul li:nth-of-type(1):before,
+body.template-product.template-product.pack-iniciacion-barf-para-perros .shopify-section .packConteins .t4s-w-100 div:nth-of-type(2) ul li:nth-of-type(2):before,
+body.template-product.template-product.pack-iniciacion-barf-para-perros .shopify-section .packConteins .t4s-w-100 div:nth-of-type(2) ul li:nth-of-type(3):before,
+body.template-product.template-product.pack-iniciacion-barf-para-gatos .shopify-section .packConteins .t4s-w-100 div:nth-of-type(2) ul li:nth-of-type(1):before,
+body.template-product.template-product.pack-iniciacion-barf-para-gatos .shopify-section .packConteins .t4s-w-100 div:nth-of-type(2) ul li:nth-of-type(2):before,
+body.template-product.template-product.pack-iniciacion-barf-para-gatos .shopify-section .packConteins .t4s-w-100 div:nth-of-type(2) ul li:nth-of-type(3):before{
+    content:url(https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Frame_65_1.png?v=1742980711);
+}
+
+
+body.template-product.template-product.pack-iniciacion-barf-para-perros .shopify-section .packConteins .t4s-w-100 div:nth-of-type(1) ul li:nth-of-type(1):after,
+body.template-product.template-product.pack-iniciacion-barf-para-gatos .shopify-section .packConteins .t4s-w-100 div:nth-of-type(1) ul li:nth-of-type(1):after{
+    content:url(https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Frame_117.png?v=1742979604);
+}
+body.template-product.template-product.pack-iniciacion-barf-para-perros .shopify-section .packConteins .t4s-w-100 div:nth-of-type(1) ul li:nth-of-type(2):after,
+body.template-product.template-product.pack-iniciacion-barf-para-perros .shopify-section .packConteins .t4s-w-100 div:nth-of-type(1) ul li:nth-of-type(3):after
+{
+    content:url(https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Frame_117_1.png?v=1742980001);
+}
+
+body.template-product.template-product.pack-iniciacion-barf-para-gatos .shopify-section .packConteins .t4s-w-100 div:nth-of-type(1) ul li:nth-of-type(2):after,
+body.template-product.template-product.pack-iniciacion-barf-para-gatos .shopify-section .packConteins .t4s-w-100 div:nth-of-type(1) ul li:nth-of-type(3):after{
+    content:url(https://cdn.shopify.com/s/files/1/0713/9898/1933/files/WIB_label-gato.png?v=1745566883);
+}
+
+
+body.template-collection.packs-de-iniciacion #MainContent section.shopify-section.t4s-custom-section.t4s-accordion .t4s-w-100 div:nth-of-type(3) .t4s-tab-wrapper:nth-child(1) 
+ol li:nth-child(2):before,
+body.template-product.template-product.pack-iniciacion-barf-para-perros .shopify-section .packConteins .t4s-w-100 div:nth-of-type(1) ul li:nth-of-type(2):before,
+body.template-product.template-product.pack-iniciacion-barf-para-perros .shopify-section .transitionBlock .t4s-custom-col:nth-child(3) h3:before,
+body.template-product.template-product.pack-iniciacion-barf-para-gatos .shopify-section .packConteins .t4s-w-100 div:nth-of-type(1) ul li:nth-of-type(2):before,
+body.template-product.template-product.pack-iniciacion-barf-para-gatos .shopify-section .transitionBlock .t4s-custom-col:nth-child(3) h3:before{
+    content:url(https://cdn.shopify.com/s/files/1/0713/9898/1933/files/2_tamano1.png?v=1741946228);
+}
+body.template-collection.packs-de-iniciacion #MainContent section.shopify-section.t4s-custom-section.t4s-accordion .t4s-w-100 div:nth-of-type(3) .t4s-tab-wrapper:nth-child(1) 
+ol li:nth-child(3):before,
+body.template-product.template-product.pack-iniciacion-barf-para-perros .shopify-section .packConteins .t4s-w-100 div:nth-of-type(1) ul li:nth-of-type(3):before,
+body.template-product.template-product.pack-iniciacion-barf-para-perros .shopify-section .transitionBlock .t4s-custom-col:nth-child(4) h3:before,
+body.template-product.template-product.pack-iniciacion-barf-para-gatos .shopify-section .packConteins .t4s-w-100 div:nth-of-type(1) ul li:nth-of-type(3):before,
+body.template-product.template-product.pack-iniciacion-barf-para-gatos .shopify-section .transitionBlock .t4s-custom-col:nth-child(4) h3:before{
+    content:url(https://cdn.shopify.com/s/files/1/0713/9898/1933/files/3_tamano1.png?v=1741946227);
+}
+body.template-collection.packs-de-iniciacion #MainContent section.shopify-section.t4s-custom-section.t4s-accordion .t4s-w-100 div:nth-of-type(3) .t4s-tab-wrapper:nth-child(1) 
+ol li:nth-child(4):before,
+body.template-product.template-product.pack-iniciacion-barf-para-perros .shopify-section .transitionBlock .t4s-custom-col:nth-child(5) h3:before,
+body.template-product.template-product.pack-iniciacion-barf-para-gatos .shopify-section .transitionBlock .t4s-custom-col:nth-child(5) h3:before{
+    content:url(https://cdn.shopify.com/s/files/1/0713/9898/1933/files/4_tamano1.png?v=1741946227);
+}
+
+body.template-collection.packs-de-iniciacion #MainContent section.shopify-section.t4s-custom-section.t4s-accordion .t4s-w-100 div:nth-of-type(3) .t4s-tab-wrapper:nth-child(2){display:none;}
+
+body.template-collection.packs-de-iniciacion #MainContent section.shopify-section.t4s-custom-section.t4s-accordion .t4s-w-100 a.cta,
+body.template-product.pack-iniciacion-barf-para-perros #MainContent .accordionsBlock .t4s-w-100 a.cta.menu,
+body.template-product.pack-iniciacion-barf-para-gatos #MainContent .accordionsBlock .t4s-w-100 a.cta.menu,
+body.template-product.pack-iniciacion-barf-para-perros #MainContent .accordionsBlock .t4s-w-100 div.ctaDoubts a.cta.conect,
+body.template-product.pack-iniciacion-barf-para-gatos #MainContent .accordionsBlock .t4s-w-100 div.ctaDoubts a.cta.conect{
+  color:#00774F;
+  background-color:#FFCD00;
+  font-weight: 700;
+  font-size: 16px;
+  height: 40px;
+  gap:10px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body.template-collection.packs-de-iniciacion #MainContent section.shopify-section.t4s-custom-section.t4s-accordion .t4s-w-100 a.cta img{
+  margin-left:10px;
+}
+body.template-collection.packs-de-iniciacion #MainContent section.shopify-section.t4s-custom-section.t4s-accordion .t4s-w-100 a.cta.conect,
+body.template-product.pack-iniciacion-barf-para-perros #MainContent .accordionsBlock .t4s-w-100 div.ctaDoubts a.cta.conect,
+body.template-product.pack-iniciacion-barf-para-gatos #MainContent .accordionsBlock .t4s-w-100 div.ctaDoubts a.cta.conect{
+  width:150px;
+}
+
+body.template-collection.packs-de-iniciacion #MainContent section.shopify-section.t4s-custom-section.t4s-accordion .t4s-w-100 a.cta.menu,
+body.template-product.pack-iniciacion-barf-para-perros #MainContent .accordionsBlock .t4s-w-100 a.cta.menu,
+body.template-product.pack-iniciacion-barf-para-gatos #MainContent .accordionsBlock .t4s-w-100 a.cta.menu{
+    width: 100%;
+}
+
+body.template-collection ._fx-badge.discount.pdp{display:none;}
+body.template-product ._fx-badge.discount.pdc,
+body.template-search ._fx-badge.discount.pdp {display:none;}
+
+.appstle-bundle-bottom-html .almudenaFaqsContainer .backgroundFaqsWiB{
+    padding: 50px 5%;
+}
+
+.appstle-bundle-bottom-html .almudenaFaqsContainer details.accordion-item .accordion-header{
+    border-radius: 50px;
+    padding: 10px 15px;
+    background-color: #faf5e7;
+    color: #00774f !important;
+  cursor:pointer;
+}
+
+.appstle-bundle-bottom-html .almudenaFaqsContainer details.accordion-item{
+      margin: 10px 0px;
+}
+
+.appstle-bundle-bottom-html .almudenaFaqsContainer details.accordion-item .accordion-collapse{
+      padding: 2% 3%;
+}
+
+.appstle-bundle-bottom-html .almudenaFaqsContainer details.accordion-item ol,
+.appstle-bundle-bottom-html .almudenaFaqsContainer details.accordion-item ul{
+      list-style: auto;
+}
+
+.appstle-bundle-bottom-html .almudenaFaqsContainer details[open] .accordion-collapse {
+  animation: slideDown 0.3s ease-in-out;
+}
+
+.appstle-bundle-bottom-html .almudenaFaqsContainer details .accordion-collapse {
+  animation: slideUp 0.3s ease-in-out;
+}
+
+@keyframes slideDown {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+  100% {
+    max-height: 1000px; /* Ajusta este valor según el contenido máximo */
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    max-height: 1000px; /* Ajusta este valor según el contenido máximo */
+    opacity: 1;
+  }
+  100% {
+    max-height: 0;
+    opacity: 0;
+  }
+}
+
+.appstle-bundle-bottom-html .almudenaFaqsContainer .accordion-collapse {
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+
+/*MIGRACIONES*/
+.highlight {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.highlight::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;        /* asegura full‑width incluso si quitas width */
+  top: 90%;
+  height: .6em;    /* altura deseada */
+  max-height: ;
+  background: url(/cdn/shop/files/Clip_path_group.png?v=1752516896) no-repeat center top;
+  background-size: 100% 14px;  /* ← fuerza 100% de ancho */
+  z-index: -1;
+}
+.mig-section {
+  margin: 12rem auto;
+}
+.mig-button {
+      padding: 2rem 3rem!important;
+}
+.text-sm {
+font-size: clamp(1.5625rem, 1.5625rem + 0vw, 1.5625rem);
+line-height: 140%;
+}
+@media (max-width: 768px) {
+  .highlight::before {
+  bottom: -8px;
+}
+}
+
+
+
+  .text-center {
+    text-align: center !important;
+  }
+  @media (min-width: 1024px) {
+    .text-left {
+      text-align: left !important;
+    }
+  }
+
+  ::selection {
+  background-color: #004623; 
+  color: #ffffff;            
+}
+
+ @media (min-width:1024px) {
+   .items-center.lg\:items-start {
+     align-items: flex-start!important
+    }
+  }
+
+
+  @media (max-width: 767px) {
+    span.t4s-count-box, .t4s-site-nav__cart .t4s-count-box {
+        right: -6px;
+    }
+}
+
+
+.collection-page {
+  padding-top: 2rem;
+  background: #F4F0E2;
+}
+@media (max-width:1024px) {
+ .collection-page {
+ padding-top: 0rem;
+ background: #F4F0E2;
+}
+}
+
+.collection-page .t4s-product-img {
+  background: white!important;
+}
+
+.t4s-sidebar-inner .t4s-widget:not(:last-child), .t4s-sidebar-inner .t4s-facets__form > div:not(:last-child) {
+    margin-bottom: 0px;
+}
+
+.t4s-sidebar-inner .t4s-facets__form>div:not(:last-child) {
+    padding-bottom: 0px;
+    border-bottom: 0;
+}
+
+
+ @media (max-width:1024px) {
+   .t4s-main-collection-page {
+    padding-right: 0; 
+    padding-left: 0; 
+    }
+  }
+
+  .t4s-drawer__content {
+  background: #F4F0E2;
+  }
+
+  .t4s-active-filters {
+    margin-bottom: 0px;
+}
+
+.t4s-main-product__content {
+  max-width: 1600px!important;
+          margin-bottom: 0;
+}
+.t4s-section-main-product {
+  background: #F4F0E2;
+
+}

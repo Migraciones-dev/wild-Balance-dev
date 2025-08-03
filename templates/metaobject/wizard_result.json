@@ -1,0 +1,172 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_liquid_3JcHef": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{{ 'wizard-resultpage.css' | asset_url |stylesheet_tag }}"
+      }
+    },
+    "custom_liquid_YFw9fV": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{%render 'wizard-grams-results', result:metaobject %}"
+      }
+    },
+    "image_with_text_FNFnVH": {
+      "type": "image-with-text",
+      "settings": {
+        "design_heading": "1",
+        "heading_center": true,
+        "top_heading": "",
+        "top_subheading": "<h2>Nuestra recomendación</h2><h4><strong> Esta es nuestra selección de menús recomendados según la información facilitada de </strong><strong>{{ metaobject.pet_name.value }}</strong><strong>. <br/>Añade o modifica según preferencias:</strong></h4>",
+        "tophead_mb": 20,
+        "tophead_mb_tb": 0,
+        "tophead_mb_mb": 0,
+        "space_h_item": "20",
+        "space_v_item": "10",
+        "space_h_item_tb": "30",
+        "space_v_item_tb": "30",
+        "space_h_item_mb": "20",
+        "space_v_item_mb": "10",
+        "layout": "t4s-container-wrap",
+        "cl_bg": "#faf5e7",
+        "cl_bg_gradient": "",
+        "mg": "",
+        "pd": "60px,0px,0px,0px",
+        "mg_tb": "",
+        "pd_tb": "60px,0px,0px,0px",
+        "mg_mb": "",
+        "pd_mb": "20px,0px,10px,0px"
+      }
+    },
+    "shipping_8zD8H7": {
+      "type": "shipping",
+      "blocks": {
+        "shipping_NMN4Cj": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "hammer",
+            "icon": "las la-check-circle",
+            "title": "Asesoramiento nutricional",
+            "text": ""
+          }
+        },
+        "shipping_DHeXyU": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "shield1",
+            "icon": "las la-check-circle",
+            "title": "Prueba 14 días",
+            "text": ""
+          }
+        },
+        "shipping_V49kVF": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "box2",
+            "icon": "las la-check-circle",
+            "title": "Envío gratuito",
+            "text": ""
+          }
+        },
+        "shipping_xJQ3ar": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "customer-service",
+            "icon": "las la-check-circle",
+            "title": "Cancela cuando quieras",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "shipping_NMN4Cj",
+        "shipping_DHeXyU",
+        "shipping_V49kVF",
+        "shipping_xJQ3ar"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".t4s-shipping .t4s-shipping-icon {margin-right: 8px;}"
+      ],
+      "settings": {
+        "design_heading": "1",
+        "block_custom_class": "",
+        "heading_center": true,
+        "top_heading": "",
+        "top_subheading": "",
+        "tophead_mb": 30,
+        "tophead_mb_tb": 30,
+        "tophead_mb_mb": 25,
+        "content_align": "text-start",
+        "align_vertical": true,
+        "align_horizontal": false,
+        "divided": false,
+        "src_icon": "line_awesome",
+        "icon_size": "medium",
+        "icon_effect": "none",
+        "col_dk": "4",
+        "col_tb": "2",
+        "col_mb": "2",
+        "icon_cl": "#5ccc84",
+        "hd_cl": "#00774f",
+        "content_cl": "#878787",
+        "bg_wrap_cl": "#faf5e7",
+        "hd_fs": 16,
+        "hd_fw": 500,
+        "txt_fs": 10,
+        "space_h_item": "4",
+        "space_v_item": "30",
+        "space_h_item_tb": "15",
+        "space_v_item_tb": "15",
+        "space_h_item_mb": "30",
+        "space_v_item_mb": "10",
+        "padding_inner": "0px,20px,0px,20px",
+        "padding_inner_tb": "",
+        "padding_inner_mb": "0px,10px,0px,10px",
+        "carousel_mobile": false,
+        "dots_cl": "dark",
+        "dots_round": false,
+        "layout": "t4s-container-wrap",
+        "custom_width": 1000,
+        "cl_bg": "#faf5e7",
+        "cl_bg_gradient": "",
+        "mg": "",
+        "pd": "20px,0px,20px,0px",
+        "mg_tb": "",
+        "pd_tb": "20px,0px,20px,0px",
+        "mg_mb": "",
+        "pd_mb": ""
+      }
+    },
+    "custom_liquid_VHjrRy": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{%render 'wizard-variant-results', result:metaobject%}"
+      }
+    },
+    "custom_liquid_6tLgXA": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'wizard-subscription' result:metaobject %}"
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_3JcHef",
+    "custom_liquid_YFw9fV",
+    "image_with_text_FNFnVH",
+    "shipping_8zD8H7",
+    "custom_liquid_VHjrRy",
+    "custom_liquid_6tLgXA"
+  ]
+}

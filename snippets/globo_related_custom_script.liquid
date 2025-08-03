@@ -1,0 +1,46 @@
+{% raw %}
+  <script>
+    document.addEventListener('mincart:ajax-cart-updated',function(e){
+      if(typeof Globo != "undefined" && typeof Globo.RelatedProducts != "undefined" && typeof Globo.RelatedProducts.initialize != "undefined")   Globo.RelatedProducts.initialize();
+    })
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function(){
+          var divElement = document.querySelector({% endraw %}{% if product %}'.globo_widget_13881'{% endif %}{% if collection %}'globo_widget_13889'{% endif %}{% raw %});
+          // Check if the div is empty
+          if (divElement && divElement.innerHTML.trim() === '') {
+              if(typeof Globo != "undefined" && typeof Globo.RelatedProducts != "undefined" && typeof Globo.RelatedProducts.initialize != "undefined")   Globo.RelatedProducts.initialize();
+          }
+        },2000);
+    })
+  </script>
+  <style>
+    .t4s-drawer .ga-products-box {
+        margin: 0 auto !important;
+        padding: 20px !important;
+    }
+    .t4s-cart-count-0 .t4s-drawer  .ga-products-box{
+        display: none !important;
+    }
+    @media screen and (max-width: 767px){
+      
+      .t4s-drawer .ga-products-box {
+          max-height: 25vh;
+          overflow-y: auto;
+      }
+      .t4s-drawer .ga-products-box h2{
+        font-size: 16px !important;
+      }
+      .t4s-drawer .ga-products-box button.ga-addalltocart, .t4s-drawer .ga-products-box  button.ga-product_addtocart{
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+        font-size: 14px !important;
+      }
+      .t4s-drawer  .ga-related-vertical li.ga-product {
+          padding: 10px 0 !important;
+      }
+      .t4s-drawer  .ga-related-vertical li.ga-product:last-child{
+        margin-bottom: 0 !important;
+      }
+    }
+  </style>
+{% endraw %}

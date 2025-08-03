@@ -1,0 +1,749 @@
+{%- assign product_form_id = 'product-form-' | append: pr_sid -%}
+{%- liquid
+  assign pr_variants = product.variants
+  assign PR_buy_pr = false
+  if bk_stts.show_dynamic_checkout and isExternal == false and isProductAvailable
+    assign PR_buy_pr = true
+  endif
+  assign choose_an_option = 'products.product.choose_an_option' | t
+  assign date_in = settings.date_in
+  assign class_frm = 't4s-form__product has--form__swatch'
+  if isProductDefault
+    assign class_frm = 't4s-form__product'
+  endif
+  if arr_properties.size > 0 and isProductAvailable
+    assign class_frm = class_frm | append: ' has--properties'
+  endif
+  if settings.sticky_atc and type == 'main'
+    assign class_frm = class_frm | append: ' is--main-sticky'
+  else
+    assign class_frm = class_frm | append: ' is--atc-sticky'
+  endif
+
+  assign color_swatch = 'disabled-'
+  assign color_mode = bk_stts.color_mode
+  assign selector_mode = bk_stts.selector_mode
+  assign stt_color_ck = settings.color_ck | default: ';'
+  assign color_ck = stt_color_ck | append: ',color,colors,couleur,colour' | remove: ';,'
+  assign get_color = color_ck | downcase | replace: ' ,', ',' | replace: ', ', ',' | split: ',' | uniq
+  assign color_mode_list = 'color, color is-sw-cl__round, color is-sw-cl__round is-sw-cl__label, variant_image, variant_image is-sw-cl__round, variant_image is-sw-cl__round is-sw-cl__label' | split: ', '
+  if color_mode_list contains color_mode
+    assign color_swatch = 'is-sw__color '
+  endif
+  assign current_variant_available = current_variant.available
+  assign use_incoming_mess = settings.use_incoming_mess
+  assign current_variant_incoming = false
+  assign current_inventory_quantity = current_variant.inventory_quantity
+  if current_inventory_quantity <= 0 and current_variant.inventory_management == 'shopify' and current_variant.incoming
+    assign current_variant_incoming = true
+  endif
+  if pos_sizeg == '1'
+    assign html_sizeg = ''
+  endif
+  if current_variant.inventory_management != null and current_inventory_quantity > 0 and current_variant.inventory_policy != 'continue'
+    assign max_qty = current_inventory_quantity
+  else
+    assign max_qty = 9999
+  endif
+  if color_mode contains 'color' or color_mode contains 'variant'
+    assign show_tooltip = ''
+  else
+    assign show_tooltip = '-off'
+  endif
+-%}
+
+{%- if color_mode == 'dropdown' or selector_mode == 'dropdown' -%}
+  <link rel="stylesheet" href="{{ 'base_drop.min.css' | asset_url }}" media="all">
+{%- endif -%}
+<div
+  class="t4s-product-form__variants is-no-pick__{{ PR_no_pick }}{% if PR_buy_pr %} is-payment-btn-true t4s-payment-button t4s-btn-color-{{ bk_stts.button_color_payment }}{% endif %} is-remove-soldout-{{ remove_soldout }} is-btn-full-width__{{ bk_stts.btn_atc_full }} is-btn-atc-txt-{{ bk_stts.btn_txt }} is-btn-ck-txt-{{ bk_stts.btn_txt2 }} is--fist-ratio-{{ is_fit_ratio_img }}"
+  style="{% if is_fit_ratio_img %} --fit-ratio-img: {{ first_ratio_img }}; {% endif %} --wishlist-color: {{bk_stts.wishlist_color}};--wishlist-hover-color: {{bk_stts.wishlist_color_hover}};--wishlist-active-color: {{bk_stts.wishlist_color_active}};--compare-color: {{bk_stts.compare_color}};--compare-hover-color: {{bk_stts.compare_color_hover}};--compare-active-color: {{bk_stts.compare_color_active}};"
+  {{ shopify_attributes }}
+>
+  <div data-callBackVariant id="t4s-callBackVariant{{ product_form_id }}">
+    {%- form 'product',
+      product,
+      id: product_form_id,
+      data-productid: product.id,
+      class: class_frm,
+      novalidate: 'novalidate',
+      data-type: 'add-to-cart-form',
+      data-disable-swatch: isProductDefault
+    -%}
+      {{- form | payment_terms -}}
+      {%- if isProductDefault -%}
+        <input name="id" value="{{ pr_variants.first.id }}" type="hidden">
+        {%- if advance_pr_type != blank -%}
+          {%- render 'choose_style', advance_pr_type: advance_pr_type, title: advance_label, pid: product.id -%}
+        {%- endif -%}
+      {%- else -%}
+        {{ 'swatch.css' | asset_url | stylesheet_tag }}
+        <select name="id" id="product-select-{{ pr_sid }}" class="t4s-product__select t4s-d-none">
+          {%- for variant in pr_variants -%}
+            {%- if variant.available -%}
+              <option
+                value="{{ variant.id }}"
+                data-mdid="{{ variant.featured_media.id | json }}"
+                data-incoming="{{ variant.incoming }}"
+                data-inventoryQuantity="{{ variant.inventory_quantity | json }}"
+                data-inventoryPolicy="{{ variant.inventory_policy | json }}"
+                data-nextIncomingDate="{{ variant.next_incoming_date | date: date_in }}"
+                {% if variant.id == current_variant.id %}
+                  selected="selected"
+                {% endif %}
+              >
+                {{ variant.title | escape }}
+              </option>
+            {%- else -%}
+              <option
+                value="{{ variant.id }}"
+                data-mdid="{{ variant.featured_media.id | json }}"
+                data-incoming="{{ variant.incoming }}"
+                data-inventoryQuantity="{{ variant.inventory_quantity | json }}"
+                data-inventoryPolicy="{{ variant.inventory_policy | json }}"
+                data-nextIncomingDate="{{ variant.next_incoming_date | date: date_in }}"
+                {% if remove_soldout %}
+                  disabled="disabled"
+                {% endif %}
+                class="is--sold-out"
+              >
+                {{ variant.title | escape }}
+              </option>
+            {%- endif -%}
+          {%- endfor -%}
+        </select>
+        <div class="t4s-swatch t4s-color-mode__{{ color_mode }} t4s-color-size__{{ bk_stts.color_size }} t4s-selector-mode__{{ selector_mode }}">
+          {%- if advance_pr_type != blank -%}
+            {%- render 'choose_style', advance_pr_type: advance_pr_type, title: advance_label, pid: product.id -%}
+          {%- endif -%}
+          {%- for option in product.options_with_values -%}
+            {%- liquid
+              assign option_index = 'option' | append: forloop.index
+              assign selected_value = current_variant[option_index]
+              assign option_name = option.name
+              assign name_downcase = option_name | downcase
+            -%}
+            {%- if get_color contains name_downcase -%}
+              <div
+                data-swatch-option
+                data-id="{{ forloop.index0 }}"
+                class="t4s-swatch__option is-t4s-style__color is-t4s-name__{{ option_name | handle }} {% cycle 'is--first-color', '', '' %}"
+              >
+                {% comment %}
+                  <h4 class="t4s-swatch__title">
+                    <span>
+                      {{- option_name }}:
+                      <span data-current-value class="t4s-swatch__current t4s-dib">
+                        {{- selected_value | default: choose_an_option -}}
+                      </span></span
+                    >
+                    {%- if name_sizeg == name_downcase %}{{ html_sizeg }}{% endif %}
+                  </h4>
+                {% endcomment %}
+                <div data-swatch-list class="t4s-swatch__list">
+                  {%- if color_mode != 'dropdown' -%}
+                    {%- if color_mode contains 'is-sw-cl__label' -%}
+                      {%- for value in option.values -%}
+                        <div
+                          data-swatch-item
+                          class="t4s-swatch__btn-wrap{% if selected_value == value %} is--selected{% endif %}"
+                          data-value="{{ value | escape }}"
+                        >
+                          <div
+                            data-img-el
+                            class="t4s-swatch__item {{ color_swatch }}bg_color_{{ value | handle }} lazyloadt4s"
+                          ></div>
+                          <span class="t4s-swatch__label">{{ value }}</span>
+                        </div>
+                      {%- endfor -%}
+                    {%- else -%}
+                      {%- for value in option.values -%}
+                        <div
+                          data-swatch-item
+                          data-tooltip{{ show_tooltip }}="top"
+                          title="{{ value | escape }}"
+                          class="t4s-swatch__item {{ color_swatch }}bg_color_{{ value | handle }} lazyloadt4s{% if selected_value == value %} is--selected{% endif %}"
+                          data-value="{{ value | escape }}"
+                        >
+                          {{ value }}
+                        </div>
+                      {%- endfor -%}
+                    {%- endif -%}
+                  {%- else -%}
+                    <button
+                      type="button"
+                      data-dropdown-open
+                      data-position="bottom-end"
+                      data-id="t4s_nt_{{ pr_sid }}{{ forloop.index }}"
+                    >
+                      <span data-current-value>{{ selected_value | default: choose_an_option }}</span>
+                      <svg class="t4s-icon-select-arrow" role="presentation" viewBox="0 0 19 12">
+                        <use xlink:href="#t4s-select-arrow"></use>
+                      </svg>
+                    </button>
+                    <div
+                      data-dropdown-wrapper
+                      class="t4s-dropdown__wrapper t4s-current-scrollbar"
+                      id="t4s_nt_{{ pr_sid }}{{ forloop.index }}"
+                    >
+                      <div class="t4s-drop-arrow"></div>
+                      <div class="t4s-dropdown__header">
+                        <span data-current-value class="t4s-dropdown__title">
+                          {{- selected_value | default: choose_an_option -}}
+                        </span>
+                        <button data-dropdown-close aria-label="{{ 'general.aria.close' | t }}">
+                          <svg role="presentation" class="t4s-iconsvg-close" viewBox="0 0 16 14">
+                            <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="t4s-dropdown__content">
+                        {%- for value in option.values -%}
+                          <div
+                            data-swatch-item
+                            data-dropdown-off
+                            class="t4s-swatch__item t4s-truncate {{ color_swatch }}bg_color_{{ value | handle }} lazyloadt4s{% if selected_value == value %} is--selected{% endif %}"
+                            data-value="{{ value | escape }}"
+                          >
+                            {{ value }}
+                          </div>
+                        {%- endfor -%}
+                      </div>
+                    </div>
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- else -%}
+              <div
+                data-swatch-option
+                data-id="{{ forloop.index0 }}"
+                class="t4s-swatch__option is-t4s-name__{{ option_name | handle }}"
+              >
+                {% comment %}
+                  <h4 class="t4s-swatch__title">
+                    <span>
+                      {{- option_name }}:
+                      <span data-current-value class=" t4s-dib">
+                        {{- selected_value | default: choose_an_option -}}
+                      </span></span
+                    >
+                    {%- if name_sizeg == name_downcase %}{{ html_sizeg }}{% endif %}
+                  </h4>
+                {% endcomment %}
+                <div class="t4s-swatch__list">
+                  {% comment %} --- ADDED: variants and prices as array --- {% endcomment %}
+                  {% assign variants_and_prices = '' %}
+                  {%- for variant in pr_variants -%}
+                    {% assign variants_and_prices = variants_and_prices
+                      | append: '|'
+                      | append: variant.option1
+                      | append: '-'
+                      | append: variant.price
+                    %}
+                  {%- endfor -%}
+                  {% assign variants_and_prices = variants_and_prices | split: '|' %}
+                  {% comment %} --- END OF ADDED PART: variants and prices as array --- {% endcomment %}
+                  {%- if selector_mode != 'dropdown' -%}
+                    <form
+                      method="post"
+                      action="/cart/add"
+                      id="product-form-{{ section.id }}"
+                      accept-charset="UTF-8"
+                      class="t4s-form__product has--form__swatch singleProductPreOrderForm"
+                      enctype="multipart/form-data"
+                      data-productid="{{ product.id }}"
+                      novalidate
+                    >
+                      <input type="hidden" name="product_id" value="{{ product.id }}">
+                      <input type="hidden" name="form_type" value="product">
+                      <input type="hidden" name="utf8" value="✓">
+
+                      <!-- Swatches dinámicos -->
+
+                      <div class="flex justify-between gap-2 mb-6">
+                        <p class="font-[700] [font-family:'Barlow',Helvetica] text-[#004623] font-[16px]">
+                          Selecciona cantidad
+                        </p>
+                        <div class="text-gray-400 font-medium underline text-sm flex items-center ">
+                          <button
+                            class="inline-flex items-center ml-1 group flex flex-row items-center gap-2 "
+                            type="button"
+                          >
+                            <div
+                              class="icon_icon__PAVlB block w-6 h-6 mr-2 transition w-6 h-6"
+                              aria-hidden="true"
+                            >
+                              <div>
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="2 2 16 16"
+                                  role="img"
+                                  class="injected-svg fill-current text-[#004623] w-6 h-6"
+                                  data-src="/icons/question-mark.svg"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                                    clip-rule="evenodd"
+                                  />
+                                </svg>
+                              </div>
+                            </div>
+                            <span class="block text-left text-[#222222]">Calcula tu ración </span>
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="t4s-swatch-wrapper">
+                        {% for option in product.options_with_values %}
+                          {% assign option_index = forloop.index %}
+                          <div class="t4s-swatch-group" data-option-index="{{ option_index }}">
+                            {% comment %}<h4 class="t4s-swatch-title">{{ option.name }}:</h4>{% endcomment %}
+                            <div class="t4s-swatch-list lg:flex lg:flex-row gap-6">
+                              {% for value in option.values %}
+                                {%- comment -%}
+                                  Construimos el nombre de la propiedad ("option1", "option2", etc.)
+                                {%- endcomment -%}
+                                {% capture prop %}option{{ option_index }}{% endcapture %}
+                                {%- comment -%}
+                                  Buscamos la variante que coincide con este valor de opción
+                                {%- endcomment -%}
+                                {% assign variant = product.variants | where: prop, value | first %}
+
+                                <div
+                                  data-swatch-item
+                                  class="t4s-swatch-item {% if product.selected_or_first_available_variant.id == variant.id %}is--selected{% endif %} mb-4 lg:w-1/2"
+                                  data-value="{{ value | escape }}"
+                                >
+                                  <input
+                                    type="radio"
+                                    id="variant-{{ variant.id }}-input"
+                                    name="variant"
+                                    value="{{ variant.id }}"
+                                    {% if product.selected_or_first_available_variant.id == variant.id %}
+                                      checked
+                                    {% endif %}
+                                    class="t4s-swatch-radio hidden"
+                                  >
+
+                                  <div class="flex items-center gap-x-2 px-2 py-2 min-h-[80px] bg-white rounded-[8px] cursor-pointer">
+                                    <picture class="flex items-center justify-center bg-[#D9D9C8] rounded-md w-1/4">
+                                      {% assign featured = product.featured_image | default: product.images.first %}
+
+                                      <img
+                                        src="{{ featured | img_url: '112x112' }}?q=80"
+                                        alt="{{ product.title }}"
+                                        class="object-contain object-center"
+                                        loading="lazy"
+                                        decoding="async"
+                                        fetchpriority="low"
+                                      >
+                                    </picture>
+                                    <div class="flex flex-grow px-2">
+                                      <div class="flex flex-col items-start justify-center gap-y-0 grow">
+                                        <div class="flex flex-col gap-6">
+                                          <input
+                                            id="49809333649739-input"
+                                            class="hidden w-3 h-3 bg-gray-100 border-0 shrink-0 outline-none! ring-0! shadow-none!   checked:bg-purple-700 focus:bg-purple-700 checked:bg-none focus:ring-0 focus:ring-offset-0 hover:bg-purple-700 active:bg-purple-700"
+                                            type="radio"
+                                            value="49809333649739"
+                                            name="variant"
+                                          >
+                                          <p class=" leading-6  flex-grow items-center font-[700] font-[14.5px]">
+                                            {{- value -}}
+                                          </p>
+                                          <p class=" font-medium leading-6  shrink-0 font-[14.5px]">
+                                            {{- variant.price | money_with_currency -}}
+                                          </p>
+                                        </div>
+                                        {% comment %}
+                                          <div class="flex flex-wrap gap-1">
+                                            <span class="">Croquetas normales</span>
+                                          </div>
+                                        {% endcomment %}
+                                      </div>
+                                      <div class="flex flex-col justify-center items-end"></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              {% endfor %}
+                            </div>
+                          </div>
+                        {% endfor %}
+                      </div>
+
+                      <!-- Cantidad y botón de añadir -->
+                      <div class="t4s-product-form__controls flex items-center space-x-4 [@media(max-width:1024px)]:flex-col mt-6">
+                        <!-- Selector de cantidad (ancho fijo, alto 43.94px) -->
+                        <div
+                          class="t4s-quantity-wrapper  bg-white rounded-full border-[1.32px] border-[#d9d9c8] flex items-center"
+                        >
+                          <button
+                            type="button"
+                            data-decrease-qty
+                            class="w-[42px] h-[42px] flex items-center justify-center font-bold"
+                          >
+                            −
+                          </button>
+
+                          <div class="w-[49px] h-[42px] flex items-center justify-center">
+                            <span
+                              class="quantity-display font-bold text-base leading-[24.0px] text-wb-verde-oscuro text-center font-['DM_Sans_18pt-Bold',Helvetica]"
+                              >1</span
+                            >
+                          </div>
+
+                          <button
+                            type="button"
+                            data-increase-qty
+                            class="w-[42px] h-[42px] flex items-center justify-center font-bold"
+                          >
+                            +
+                          </button>
+                        </div>
+
+                        <!-- Botón de añadir al carrito (mismo alto que el selector) -->
+                        <button
+                          type="submit"
+                          name="add"
+                          class="t4s-btn-color-primary h-[43.94px] py-0 px-8 bg-[#ffcd00] hover:bg-[#004623] text-[#004623]  rounded-full font-[700] w-full"
+                          data-atc-form
+                        >
+                          Añadir al carrito
+                        </button>
+                      </div>
+
+                      <script>
+                        document.querySelectorAll('.t4s-quantity-wrapper').forEach(wrapper => {
+                          const btnDec = wrapper.querySelector('[data-decrease-qty]');
+                          const btnInc = wrapper.querySelector('[data-increase-qty]');
+                          const display = wrapper.querySelector('.quantity-display');
+                          const min = 1;
+                          const max = {{ product.selected_or_first_available_variant.inventory_quantity }};
+
+                          btnDec.addEventListener('click', () => {
+                            let val = parseInt(display.textContent, 10) || min;
+                            if (val > min) display.textContent = val - 1;
+                          });
+
+                          btnInc.addEventListener('click', () => {
+                            let val = parseInt(display.textContent, 10) || min;
+                            if (val < max) display.textContent = val + 1;
+                          });
+                        });
+                      </script>
+                    </form>
+
+                    <!-- SCRIPT: actualizar URL al cambiar variante -->
+                    <style>
+                      .t4s-swatch-item {
+                                                                border: 2px solid #D9D9C8 !important;
+                      border-radius: 8px;
+
+                      }
+                                        .is--selected {
+                                        border: 2px solid #004623 !important;
+                      border-radius: 8px;
+                                      }
+                    </style>
+                    <script>
+                      (function () {
+                        var radios = document.querySelectorAll('input[name="variant"]');
+                        function updateUrl(id) {
+                          if (!history.replaceState) return;
+                          var base = window.location.origin + window.location.pathname;
+                          history.replaceState(null, '', base + '?variant=' + id);
+                        }
+                        radios.forEach(function (radio) {
+                          radio.addEventListener('change', function () {
+                            if (this.checked) updateUrl(this.value);
+                          });
+                        });
+
+                        let productIDfromForm = document.querySelector('input[name="product_id"]');
+                        function updateLoopWidget(variantId) {
+                          if (window.LoopSubscriptions) {
+                            window.LoopSubscriptions.handleLoopWidgetVariantIdChange(
+                              productIDfromForm.value,
+                              variantId
+                            );
+                          }
+                        }
+                        // Si también usas un <select name="id"> (por compatibilidad)
+                        var select = document.querySelector('select[name="id"]');
+                        if (select) {
+                          select.addEventListener('change', function () {
+                            updateUrl(this.value);
+                            updateLoopWidget(this.value);
+                          });
+                        }
+                      })();
+                    </script>
+
+                  {%- else -%}
+                    <button
+                      type="button"
+                      data-dropdown-open
+                      data-position="bottom-end"
+                      data-id="t4s_nt_{{ pr_sid }}{{ forloop.index }}"
+                    >
+                      <span data-current-value>{{ selected_value | default: choose_an_option }}</span>
+                      <svg class="t4s-icon-select-arrow" role="presentation" viewBox="0 0 19 12">
+                        <use xlink:href="#t4s-select-arrow"></use>
+                      </svg>
+                    </button>
+                    <div
+                      data-dropdown-wrapper
+                      class="t4s-dropdown__wrapper t4s-current-scrollbar"
+                      id="t4s_nt_{{ pr_sid }}{{ forloop.index }}"
+                    >
+                      <div class="t4s-drop-arrow"></div>
+                      <div class="t4s-dropdown__header">
+                        <span data-current-value class="t4s-dropdown__title">
+                          {{- selected_value | default: choose_an_option -}}
+                        </span>
+                        <button data-dropdown-close aria-label="{{ 'general.aria.close' | t }}">
+                          <svg role="presentation" class="t4s-iconsvg-close" viewBox="0 0 16 14">
+                            <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="t4s-dropdown__content">
+                        {%- for value in option.values -%}
+                          <div
+                            data-swatch-item
+                            data-dropdown-off
+                            class="t4s-swatch__item t4s-truncate{% if selected_value == value %} is--selected{% endif %}"
+                            data-value="{{ value | escape }}"
+                          >
+                            {{ value }}
+                          </div>
+                        {%- endfor -%}
+                      </div>
+                    </div>
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+      <div class="flex flex-row gap-2 items-center">
+        <svg width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 11.0302H19.5V7.65203C19.5 7.25515 19.3406 6.8739 19.0594 6.59265L15.9375 3.47078C15.6562 3.18953 15.275 3.03015 14.8781 3.03015H13.5V1.53015C13.5 0.702026 12.8281 0.0301514 12 0.0301514H4C3.17188 0.0301514 2.5 0.702026 2.5 1.53015V3.03015H0.75C0.6125 3.03015 0.5 3.14265 0.5 3.28015V3.78015C0.5 3.91765 0.6125 4.03015 0.75 4.03015H9.25C9.3875 4.03015 9.5 4.14265 9.5 4.28015V4.78015C9.5 4.91765 9.3875 5.03015 9.25 5.03015H1.75C1.6125 5.03015 1.5 5.14265 1.5 5.28015V5.78015C1.5 5.91765 1.6125 6.03015 1.75 6.03015H8.25C8.3875 6.03015 8.5 6.14265 8.5 6.28015V6.78015C8.5 6.91765 8.3875 7.03015 8.25 7.03015H0.75C0.6125 7.03015 0.5 7.14265 0.5 7.28015V7.78015C0.5 7.91765 0.6125 8.03015 0.75 8.03015H7.25C7.3875 8.03015 7.5 8.14265 7.5 8.28015V8.78015C7.5 8.91765 7.3875 9.03015 7.25 9.03015H2.5V13.0302C2.5 14.6864 3.84375 16.0302 5.5 16.0302C7.15625 16.0302 8.5 14.6864 8.5 13.0302H12.5C12.5 14.6864 13.8438 16.0302 15.5 16.0302C17.1562 16.0302 18.5 14.6864 18.5 13.0302H20C20.275 13.0302 20.5 12.8052 20.5 12.5302V11.5302C20.5 11.2552 20.275 11.0302 20 11.0302ZM5.5 14.5302C4.67188 14.5302 4 13.8583 4 13.0302C4 12.202 4.67188 11.5302 5.5 11.5302C6.32812 11.5302 7 12.202 7 13.0302C7 13.8583 6.32812 14.5302 5.5 14.5302ZM15.5 14.5302C14.6719 14.5302 14 13.8583 14 13.0302C14 12.202 14.6719 11.5302 15.5 11.5302C16.3281 11.5302 17 12.202 17 13.0302C17 13.8583 16.3281 14.5302 15.5 14.5302ZM18 8.03015H13.5V4.53015H14.8781L18 7.65203V8.03015Z" fill="#004623"/>
+        </svg>
+        <p class="text-[#222222]">¡Haz tu pedido ahora y recíbelo en 24-48h!</p>
+      </div>
+      {%- liquid
+        if arr_properties.size > 0 and isProductAvailable
+          render 'frm_properties', arr_properties: arr_properties, product: product
+        endif
+      -%}
+
+      {%- if use_incoming_mess
+        and current_variant_incoming
+        and pr_variants.size == 1
+        and current_variant.next_incoming_date != blank
+      -%}
+        {%- assign format_date = current_variant.next_incoming_date | date: date_in -%}
+        <div class="t4s-incoming__mess">
+          {% if current_variant_available -%}
+            {{- 'products.product_single.will_not_ship_until_html' | t: date: format_date -}}
+          {%- else -%}
+            {{- 'products.product_single.will_be_in_stock_after_html' | t: date: format_date -}}
+          {%- endif %}
+        </div>
+      {%- elsif use_incoming_mess and pr_variants.size > 1 -%}
+        {%- liquid
+          assign format_date = current_variant.next_incoming_date | date: date_in
+          unless format_date
+            assign format_date = '19041994'
+          endunless
+        -%}
+        <div
+          data-incoming__mess
+          class="t4s-incoming__mess"
+          {% unless current_variant_incoming %}
+            hidden
+          {% endunless %}
+        >
+          <span
+            data-incoming-available
+            {% if current_variant_available == false or current_variant == blank %}
+              style="display: none"
+            {% endif %}
+          >
+            {{- 'products.product_single.will_not_ship_until_html' | t: date: format_date -}}</span
+          ><span
+            data-incoming-soldout
+            {% if current_variant_available or current_variant == blank %}
+              style="display: none"
+            {% endif %}
+          >
+            {{- 'products.product_single.will_be_in_stock_after_html' | t: date: format_date -}}
+          </span>
+        </div>
+      {%- endif -%}
+
+      {{ 'button-style.css' | asset_url | stylesheet_tag }}
+      <link href="{{ 'custom-effect.css' | asset_url }}" rel="stylesheet" media="print" onload="this.media='all'">
+
+      {{- html_price -}}
+
+      {% comment %}
+        <div
+          class="t4s-product-form__buttons"
+          style="--pr-btn-round: {{ bk_stts.pr_btn_round }}px;--wis-cp-btn-round: {{ bk_stts.wis_cp_btn_round }}px;"
+        >
+          <div class="t4s-pr__qty_cart t4s-d-flex t4s-flex-wrap">
+            {%- if isExternal -%}
+              <a
+                href="{{ external_link }}"
+                rel="nofollow"
+                target="_blank"
+                class="t4s-product-form__submit t4s-btn t4s-btn-base t4s-btn-style-{{ bk_stts.button_style }} t4s-btn-color-{{ bk_stts.button_color }} t4s-w-100 t4s-justify-content-center {% if bk_stts.button_style == 'default' or bk_stts.button_style == 'outline' %} t4s-btn-effect-{{ bk_stts.button_effect }}{% endif %} t4s-truncate is--btn-external t4s-btn-loading__svg"
+              >
+                {%- if bk_stts.btn_icon -%}
+                  <svg class="t4s-btn-icon" viewBox="0 0 24 24">
+                    <use xlink:href="#t4s-icon-atc"></use>
+                  </svg>
+                {%- endif -%}
+                <span class="t4s-btn-atc_text">{{ external_title }}</span>
+                <span class="t4s-loading__spinner" hidden>
+                  <svg
+                    width="16"
+                    height="16"
+                    hidden
+                    class="t4s-svg-spinner"
+                    focusable="false"
+                    role="presentation"
+                    viewBox="0 0 66 66"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle class="t4s-path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                  </svg>
+                </span>
+              </a>
+            {%- else -%}
+              {%- if bk_stts.show_qty and isProductAvailable -%}
+                <div data-quantity-wrapper class="t4s-quantity-wrapper t4s-product-form__qty">
+                  <button
+                    data-quantity-selector
+                    data-decrease-qty
+                    type="button"
+                    class="t4s-quantity-selector is--minus"
+                  ></button>
+                  <input
+                    data-quantity-value
+                    type="number"
+                    class="t4s-quantity-input"
+                    step="1"
+                    min="{{cus_qty}}"
+                    max="{{max_qty}}"
+                    name="quantity"
+                    value="{{cus_qty}}"
+                    size="4"
+                    pattern="[0-9]*"
+                    inputmode="numeric"
+                  >
+                  <button
+                    data-quantity-selector
+                    data-increase-qty
+                    type="button"
+                    class="t4s-quantity-selector is--plus"
+                  ></button>
+                </div>
+              {%- else -%}
+                <input type="hidden" name="quantity" value="1">
+              {%- endif -%}
+              <button
+                data-animation-atc='{ "ani": "{{ bk_stts.ani }}","time": {{ bk_stts.time }}000 }'
+                type="submit"
+                name="add"
+                data-atc-form
+                class="t4s-product-form__submit t4s-btn t4s-btn-base t4s-btn-style-{{ bk_stts.button_style }} t4s-btn-color-{{ bk_stts.button_color }} t4s-w-100 t4s-justify-content-center {% if bk_stts.button_style == 'default' or bk_stts.button_style == 'outline' %} t4s-btn-effect-{{ bk_stts.button_effect }}{% endif %} t4s-btn-loading__svg"
+                {% unless current_variant_available %}
+                  aria-disabled="true"
+                {% endunless -%}
+                {% unless isProductAvailable %}
+                  disabled="disabled"
+                {% endunless %}
+              >
+                <span>
+                  <img src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/shopping-cart_3.png?v=1690445262">
+                </span>
+
+                {%- if bk_stts.btn_icon -%}
+                  <svg class="t4s-btn-icon" viewBox="0 0 24 24">
+                    <use xlink:href="#t4s-icon-atc"></use>
+                  </svg>
+                {%- endif -%}
+                <span class="t4s-btn-atc_text">
+                  {%- if current_variant_available == false or isProductAvailable == false -%}
+                    {{- 'products.product.sold_out' | t -}}
+                  {%- elsif isPreoder -%}
+                    {{- 'products.product.pre_order' | t }}
+                  {%- else -%}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {%- endif -%}
+                </span>
+                <span class="t4s-loading__spinner" hidden>
+                  <svg
+                    width="16"
+                    height="16"
+                    hidden
+                    class="t4s-svg-spinner"
+                    focusable="false"
+                    role="presentation"
+                    viewBox="0 0 66 66"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle class="t4s-path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                  </svg>
+                </span>
+              </button>
+            {%- endif -%}
+          </div>
+          {%- if PR_buy_pr and type != 'main_sticky' %}{{- form | payment_button -}}{% endif -%}
+          {%- if settings.use_notify_me -%}
+            <button
+              data-class="t4s-mfp-btn-close-inline"
+              data-id="t4s-pr-popup__notify-stock"
+              data-storageid="notify-stock{{ current_variant.id }}"
+              data-mfp-src
+              data-open-mfp-ajax
+              class="t4s-pr__notify-stock{% if current_variant_available or current_variant == blank %} t4s-d-none{% endif %}"
+              type="button"
+              data-notify-stock-btn
+              data-variant-id="{{ current_variant.id }}"
+              data-root-url="{{ routes.root_url }}"
+            >
+              {{ 'products.notify_stock.trigger' | t }}
+            </button>
+          {%- endif -%}
+          {%- if bk_stts.enable_wishlist or bk_stts.enable_compare -%}
+            <div class="t4s-pr__wis_cp">
+              {%- render 't4s_wis_cp', product: product, bk_stts: bk_stts, disableTooltip: true -%}
+            </div>
+          {%- endif -%}
+        </div>
+      {% endcomment %}
+    {%- endform -%}
+    {%- unless isProductDefault or type == 'main_sticky' -%}
+      <script type="application/json" class="pr_variants_json">
+        {{ product.variants | json }}
+      </script>
+      <script type="application/json" class="pr_options_json">
+        {{ product.options_with_values | json }}
+      </script>
+    {%- endunless -%}
+    {%- if bk_stts.ani != 'none' -%}
+      <link href="{{ 'ani-atc.min.css' | asset_url }}" rel="stylesheet" media="print" onload="this.media='all'">
+    {%- endif -%}
+  </div>
+</div>
+{%- if PR_buy_pr and current_variant_available != true and type != 'main_sticky' -%}
+  <style>
+    #t4s-callBackVariant{{ product_form_id }} .shopify-payment-button { display: none;}
+  </style>
+{% endif -%}

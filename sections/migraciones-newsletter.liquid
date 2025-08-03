@@ -1,0 +1,111 @@
+<section
+  class="
+    w-full h-[950px] lg:h-[709px] relative
+    bg-[url('https://cdn.shopify.com/s/files/1/0713/9898/1933/files/e93272edbf81c4efb08275daad7417dd97837602_1.png?v=1753462544')]
+    bg-center
+    bg-cover
+    lg:bg-[url('https://cdn.shopify.com/s/files/1/0713/9898/1933/files/0e5a3327be9294e2fc3e89d93de21d1e4b907fa9.png?v=1753458765')]
+    lg:bg-center
+    lg:bg-cover
+  "
+>
+  <div class="flex flex-col items-start gap-[21px] relative max-w-[1600px] mx-auto top-[50px] lg:top-[110px] [@media(max-width:1024px)]:px-6">
+    <div class="flex flex-col items-start gap-12 relative self-stretch w-full flex-[0_0_auto] max-w-[800px] mx-auto lg:ml-0">
+      <div class="flex flex-col items-start gap-[13px] relative self-stretch w-full flex-[0_0_auto]">
+        <div class="flex flex-col w-[155px] items-center gap-2.5 relative flex-[0_0_auto] mx-auto lg:ml-0">
+          <img
+            class="h-[27px] sm:h-[37px] lg:h-[47px]"
+            alt="Vector"
+            src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Capa_1_15.png?v=1753458843"
+          >
+        </div>
+        <div class="relative w-[370px] mx-auto lg:ml-0">
+          <h2 class="top-0 left-0 [font-family:'Barlow',Helvetica] font-extrabold text-[#004623] text-[30px] sm:text-[38px] md:text-[44px] lg:text-[57px] xl:text-[64px] [@media(max-width:1024px)]:text-center leading-[1]">
+            Bienvenido a <span class="highlight">Wild Balance</span>
+          </h2>
+        </div>
+      </div>
+      <p class="w-full [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#222222] text-lg tracking-[0] leading-[26.1px] text-[14px] sm:text-[16px] lg:text-[18px] mx-auto lg:ml-0 [@media(max-width:1024px)]:text-center lg:text-left max-w-[550px]">
+        Suscríbete a nuestra newsletter para recibir contenidos exclusivos. ¡No dejes de aprender nunca sobre peludos!
+      </p>
+    </div>
+    <div class="mx-auto lg:ml-0">
+      {% form 'customer' %}
+        <!-- Hidden para que acepte marketing -->
+        <input type="hidden" name="customer[accepts_marketing]" value="1">
+
+        <!-- Input email -->
+        <div class="shadow h-9 flex bg-white items-center justify-center gap-2.5  rounded-[50px]  py-10 px-8 min-w-[360px]  [@media(max-width:1024px)]:mx-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-10 h-9 text-[#767676]"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect width="20" height="16" x="2" y="4" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+          <input
+            type="email"
+            name="contact[email]"
+            required
+            class="flex-1 bg-transparent ml-4"
+            placeholder="Introduce tu correo electrónico"
+            style="border:none;"
+          >
+        </div>
+
+        <!-- Botón de envío -->
+        <button
+          type="submit"
+          class="shadow h-9 flex items-center justify-center gap-2.5 bg-[#ffcd00] rounded-[50px] hover:bg-[#ffcd00]/90 py-10 px-14 mt-8 [@media(max-width:1024px)]:w-full"
+        >
+          <span class="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#004623] tracking-[0] leading-[26px] text-[16px] lg:text-[18px]"
+            >Quiero suscribirme</span
+          >
+          <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.4587 5.25439L17.6686 11.6536M17.6686 11.6536L12.4587 18.0528M17.6686 11.6536L4.27158 11.6536" stroke="#004623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      {% endform %}
+      <!-- Checkbox de políticas -->
+      <div class="flex lg:items-center gap-2 mt-4 [@media(max-width:1024px)]:mx-6">
+        <input
+          id="accepts_marketing"
+          type="checkbox"
+          class="w-6 h-6 [@media(max-width:1024px)]:w-10 [@media(max-width:1024px)]:h-10 border rounded [@media(max-width:1024px)]:mt-1 accent-[#004623] "
+        >
+        <label for="accepts_marketing" class="text-sm text-[#004623] [@media(max-width:1024px)]:ml-2">
+          He leído y acepto la
+          <a href="/política-de-calidad" class="underline">Política de calidad</a>
+          y las
+          <a href="/condiciones-de-uso" class="underline">Condiciones de uso</a>.
+        </label>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Migraciones newsletter",
+  "tag": "section",
+  "class": "t4s-section t4s-section-all t4s-custom-liquid",
+  "settings": [
+    {
+      "type": "liquid",
+      "id": "custom_liquid",
+      "label": "Custom Liquid",
+      "info": "Add app snippets or other Liquid code to create advanced customizations."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Migraciones newsletter"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,83 @@
+<!-- Variantes de resultados Result Page Wizard -->
+
+<div id="wizard-variant-results" class="wizard-variant-results">
+  {% for variant in result.product_recommendation_variants.value %}
+    <label for="protein_{{ variant.id }}">
+      <div class="variant-result  {% if forloop.index <=4 %}active{% endif %}">
+        <div class="mainResults">
+          {{ variant.product.featured_image | image_url: width: 300 | image_tag}}
+          <h2><input type="checkbox" id="protein_{{ variant.id }}" name="protein" value="{{ variant.id }}" {% if forloop.index <=4 %}checked{% endif %}/> {{variant.product.title}}</h2>
+          
+         <!-- {{variant.price | money_with_currency }} <br/><br> -->
+          <p>{{variant.product.metafields.custom.short_description_result_page}} </p>
+        </div>
+
+        <div class="ctaResults">
+          <span class="label select {% if forloop.index <= 4 %} hidden{% endif %} ">Seleccionar</span>
+          <span class="label selected {% if forloop.index > 4 %} hidden{% endif %}" >Seleccionado</span>
+        </div>
+      </div>
+    </label>
+  {% endfor %}
+    
+
+  <div class="needHelpContainer">
+    <button class="needHelp" onclick="window.open('https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0', '_blank')">
+      <img src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/communication.png?v=1709736424" alt="" style="width:20px;"/>
+      Haz click si necesitas ayuda
+    </button>
+  </div>
+</div>
+
+<script>
+
+  // click events for selected things
+    
+    let proteinContainers = document.querySelectorAll('input[name="protein"]');
+    
+    Array.from(proteinContainers).forEach(function(protein) {
+      protein.addEventListener('click', function(event){ activateProtein(protein, proteinContainers); });
+    });
+  
+  function activateProtein(thisProtein,proteinContainers) {
+
+      //select current protein
+      
+      let thisarticle = thisProtein.closest(".variant-result");
+      thisarticle.classList.toggle("active");
+      thisarticle.querySelector(".selected").classList.toggle("hidden");
+      thisarticle.querySelector(".select").classList.toggle("hidden");
+
+    }
+  
+    (function() {
+        const form = document.querySelector('#wizard-variant-results');
+        const checkboxes = form.querySelectorAll('input[name=protein]');
+        const checkboxLength = checkboxes.length;
+        const firstCheckbox = checkboxLength > 0 ? checkboxes[0] : null;
+    
+        function init() {
+            if (firstCheckbox) {
+                for (let i = 0; i < checkboxLength; i++) {
+                    checkboxes[i].addEventListener('change', checkValidity);
+                }
+                checkValidity();
+            }
+        }
+    
+        function isChecked() {
+            for (let i = 0; i < checkboxLength; i++) {
+                if (checkboxes[i].checked) return true;
+            }
+            return false;
+        }
+    
+        function checkValidity() {
+            const errorMessage = !isChecked() ? 'Al menos una proteína debe estar seleccionada' : '';
+            firstCheckbox.setCustomValidity(errorMessage);
+        }
+    
+        init();
+    })();
+  
+</script>

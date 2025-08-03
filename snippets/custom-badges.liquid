@@ -1,0 +1,67 @@
+<!-- Custom badges PDP & PDC -->
+
+<section class="customLabelsContainer">
+    {% if product.tags contains 'BF' %}
+      <span class="_fx-badge bag">Bolsa</span>
+    {% endif %}
+    
+    {% assign isLowInStock = product.collections | where: 'handle', 'low-in-stock' %}
+
+      {% if product.tags contains 'promomadre' %}
+          <span class="_fx-badge offer">Regalo boquerones</span>
+    {% endif %}
+
+  
+    {% if isLowInStock != blank %}
+      <span class="_fx-badge last-units">Últimas unidades</span>
+    {% endif %} 
+
+
+  {% comment %}
+    
+  
+    {% assign premiosNaturales = product.collections | where: 'title', 'Premios Naturales y Sticks Dentales' %}
+
+    {% if premiosNaturales != blank %}
+      <span class="_fx-badge discount pdc">EN OFERTA</span>
+      <span class="_fx-badge discount pdp">2ª unidad -40%</span>
+    {% endif %}
+  {% endcomment %}
+
+
+
+
+    {% comment %} pseudo-sales product using automated discounts {% endcomment %}
+  
+    {% assign commaSeparatedTags = settings.sales_discount_tags | split: "," %}
+    {% assign salesStartDate = settings.sales_start_time | date: "%s" %}
+    {% assign salesEndDate = settings.sales_end_time | date: "%s" %}
+    {% assign nowunix = 'now' | date: '%s'%}
+    
+    {% assign discount = "" %}
+    
+    {% if salesEndDate > nowunix and salesStartDate <= nowunix %}
+      {% for promoTag in commaSeparatedTags %}
+        {% if product.tags contains promoTag %}
+          {% assign discount = promoTag | split: "_" | last %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    
+    {% if discount != "" %}
+        <span class="_fx-badge discount">{{ discount }}%</span>
+    {% elsif product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
+        {%- assign savings = product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price | times: 100.0 | divided_by: product.selected_or_first_available_variant.compare_at_price | round | append: '%' -%}
+        <span class="_fx-badge discount">{{ savings }}</span>
+    {% endif %}
+ 
+
+{% comment %} REBAJAS FASE 3 - 5X4 
+  {% if product.tags contains '3rebajas_5x4' %}
+    <span class="_fx-badge discount 5x4">5x4</span>
+  {% endif %}
+{% endcomment %}
+
+
+  
+</section>

@@ -1,0 +1,799 @@
+:root {
+    --yellow-background-labels-color-css: #FFCD00;
+    --yellow-BG-labels-hover: #e0b400;
+    --labelsLetterColor-color-css:#00774f;
+    --bagLabel-color-css:#1F1F1F;
+  
+    --lightMediumGreen-css: #5ccc84;
+    --lightGreen-css: #cae6c8;
+    --beigBackgroundSections-css: #FAF5E7;
+    --WildBalanceGreen-css: #00774f;
+    --whiteStandar-css: #FFF;
+}
+
+/* GRAMS RESULT */
+
+div.recomendationText{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    background-color: #faf5e7;
+    padding-top: 1%;
+} 
+div.recomendationText p{
+    text-align: center;
+    margin: 0;
+    color:#00774f;
+    font-size:14px;
+    max-width:500px;
+}
+  
+span.deliveryDate {
+    padding: 5px 10px;
+    background-color: var(--lightMediumGreen-css);
+    color: #fff !important;
+    border-radius: 50px;
+    font-weight: 900;
+    margin: 20px;
+    font-size: 14px;
+    width: 305px;
+    text-align: center;
+}
+  
+section > h3 {
+    font-weight: 900 !important;
+    color: #00774f;
+    font-size: 25px;
+    margin-bottom: 5px;
+    text-align: center;
+    margin-top:80px;
+}
+
+#quiz-results{
+    background-color: #faf5e7;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 20px;
+
+}
+  
+.quiz-result {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    background-color: #FFF;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.quiz-result img{
+  width:100% !important;
+  height:auto;
+}
+
+
+.quiz-result .gramsDay {
+  width: 100%;
+  display: flex;
+  flex-direction: column !important;
+  justify-content: center;
+  align-items: center;
+  
+  padding-top: 13px;
+}
+
+.containerGrams {
+    align-items: center;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+.imgBurger {
+ width: 50px;
+}
+.imgCookedFood{
+  width: 300px;
+  padding:3%;
+}
+.imgCookedFood img{
+  margin-left: -30px;
+}
+.imgCookedFood img:nth-child(1){
+  margin-left: 0px;
+}
+
+.containerPicture {
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.quiz-result p {
+  margin: 0;
+  font-size: 18px;
+}
+
+.quantity {
+    padding: 2px 12px;
+    background-color: var(--lightMediumGreen-css);
+    color: #fff !important;
+    border-radius: 50px;
+    font-weight: 900;
+    width: 41%;
+}
+
+.frequendly {
+  color: #00774f;
+  font-weight: 900;
+}
+
+.resultQuantity {
+    background-color: var(--beigBackgroundSections-css);
+    padding: 6px 0px;
+    border-radius: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    width: 165px;
+}
+
+.containerPicture p:nth-child(3) {
+  font-size: 14px;
+  margin-top:20px;
+}
+@media (max-width:400px){
+  br{
+    display:none;
+  }
+}
+
+  /* PROTEINS AND XSELLING */
+
+  .wizard-variant-results {
+    background-color: #faf5e7;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 0px 20px !important;
+  }
+
+    .wizard-variant-results:nth-child(2) {
+    flex-wrap: nowrap;
+  }
+
+  .wizard-variant-results .needHelpContainer {
+    width: 100%;
+    text-align: center;
+  }
+
+  .wizard-variant-results .needHelp {
+    padding: 5px 15px;
+    color: var(--WildBalanceGreen-css);
+    border-radius: 50px;
+    font-weight: 900;
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+    background-color: var(--yellow-background-labels-color-css);
+    height: 40px;
+  }
+
+  .wizard-variant-results .needHelp:hover {
+    color: var(--WildBalanceGreen-css);
+    background-color: var(--yellow-BG-labels-hover);
+  }
+
+  input[name="protein"], input[name="xselling"] {
+    display: none;
+  }
+
+  label {
+    display: contents !important;
+  }
+
+  .variant-result {
+    width: clamp(134px, 46%, 330px);
+    height: auto;
+    display: flex;
+    padding: 10px 10px 0;
+    text-align: left;
+    background-color: var(--whiteStandar-css);
+    border: 2px solid var(--lightGreen-css);
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  
+    #MainContent section:nth-of-type(5) .variant-result {
+    align-items: flex-start;
+      min-width:200px;
+  }
+
+
+
+  .variant-result.active {
+    background-color: var(--lightGreen-css);
+    border: 2px solid var(--WildBalanceGreen-css);
+
+  }
+
+  
+  .variant-result:hover {
+    cursor:pointer;
+  }
+  
+
+
+  .variant-result .label {
+    padding: 5px 10px;
+    border-radius: 50px;
+    font-weight: 900;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .contentFreezerSpace .imgAndLabelInfo .label.infoSpace{
+    display:none;
+  }
+
+  .articleInfoFrequently.active .label.selected{
+      background-color: var(--WildBalanceGreen-css);
+    color:var(--whiteStandar-css);
+  }
+
+
+    .label.select {
+    background-color: var(--lightGreen-css);
+    color: var(--WildBalanceGreen-css);
+    align-self: auto;
+    font-size: 18px;
+    align-self: center;
+    padding: 5px 10px;
+  }
+
+
+  .variant-result .label.select,
+  .variant-result .label.selected:hover{
+    cursor:pointer;
+  }
+
+  .variant-result .label.hidden {
+    display: none !important;
+  }
+
+  .variant-result .label.select {
+    background-color: var(--lightGreen-css);
+    color: var(--WildBalanceGreen-css);
+    align-self: auto;
+    font-size: clamp(1em, 18px, 1.3rem);
+    position: relative;
+    bottom: -1.5vh;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    height: 40px;
+    padding: 5px 15px;
+    align-self: center;
+  }
+
+.variant-result .label.selected {
+    background-color: var(--WildBalanceGreen-css);
+    color: var(--whiteStandar-css);
+    align-self: auto;
+    font-size: clamp(16px, 15px, 2rem);
+    position: relative;
+    bottom: -1.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    padding: 5px 15px;
+}
+
+
+  .variant-result .label.selected:before{
+    content:url('https://cdn.shopify.com/s/files/1/0713/9898/1933/files/check_2.png?v=1706625800');
+    line-height: 15px;
+  }
+  
+
+@media (max-width:385px){
+  .variant-result .label.selected {
+      font-size:14px !important;
+    }
+    .variant-result .label.select {
+      font-size:14px !important;
+    }
+  .variant-result .label.selected:before{
+    content:initial;
+    line-height:initial;
+  }
+}
+
+  .variant-result h2 {
+    font-size: clamp(16px, 18px, 2rem);
+    font-weight: 600;
+  }
+
+  .variant-result p {
+    font-size: 14px;
+    color: var(--heading-color);
+  }
+
+
+  /* ========= */
+  /* FREEZERS  */
+  /* ========= */
+
+  input[name="freezer"] {
+    display: none;
+  }
+
+  .variant-result-calculations {
+    padding: 20px;
+    background: var(--lightGreen-css);
+    border: 2px solid var(--lightMediumGreen-css);
+    border-radius: 20px;
+  }
+
+  .variant-result-calculations.disabled {
+    background: lightgrey;
+  }
+
+  .frequently {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--labelsLetterColor-color-css);
+    background-color: var(--beigBackgroundSections-css);
+    padding: 20px;
+  }
+
+  .frequently img {
+    width: 100%;
+    height: auto;
+  }
+
+  .frequently h2 {
+    font-weight: 900 !important;
+    color: #00774f;
+    margin-bottom: 5px;
+    text-align: left;
+    padding: 20px 0px;
+    margin-top: 20px;
+  }
+
+
+
+  .frequently .infoSpace {
+    color: var(--WildBalanceGreen-css);
+    background-color: var(--beigBackgroundSections-css);
+    padding: 0px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .frequently .infoSpace:before {
+    content: url('https://cdn.shopify.com/s/files/1/0713/9898/1933/files/i_1.png?v=1710257306');
+    line-height: 10px;
+  }
+
+  .frequently .label {
+    padding: 5px 15px;
+    height: 40px;
+    border-radius: 50px;
+    display: flex;
+    font-weight: 900;
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+  }
+
+
+  .discountLabel {
+    padding: 5px 10px;
+    background-color: var(--lightMediumGreen-css);
+    color: #fff;
+    border-radius: 50px;
+    font-weight: 900;
+    font-size: 14px;
+    width: 194px;
+    text-align: center;
+  }
+
+  .containerInfoFrequently .label.frequentlyLabel{
+    justify-content: space-between;
+    gap:20px;
+    width: 100%;
+    padding:0px;
+  }
+/*
+  .frequentlyLabel h3{
+    background-color: var(--beigBackgroundSections-css);
+    color: green;
+  }
+  */
+
+  .frequentlyLabel span {
+    padding: 5px 10px;
+    background-color: var(--lightMediumGreen-css);
+    color: #fff !important;
+    border-radius: 50px;
+    font-weight: 900;
+    font-size: 14px;
+    width: auto;
+    text-align: center;
+  }
+
+  .containerInfoFrequently .label.frequentlyLabel .label.discountLabel{
+    width: 198px;
+    justify-content: center;
+  }
+
+  .containerInfoFrequently {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 18px;
+    gap: 10px;
+    background-color: #fff;
+    border-radius: 20px;
+  }
+
+  .headingPackName {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .infoContainerPack ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  .infoContainerPack li {
+    list-style: none;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 16px;
+  }
+
+  .infoContainerPack li:before {
+    content: url('https://cdn.shopify.com/s/files/1/0713/9898/1933/files/check_6.png?v=1713169070');
+    margin-right:6px;
+  }
+
+  .freezerSpace {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .freezerSpace .contentFreezerSpace {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .contentFreezerSpace h3 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .contentFreezerSpace .articleInfoFrequently {
+    width: clamp(130px, 46%, 400px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 16px 25px;
+    gap: 10px;
+    background-color: #fff;
+    border-radius: 20px;
+    border: 2px solid var(--lightGreen-css);
+  }
+
+  .contentFreezerSpace .articleInfoFrequently:hover {
+    background-color: var(--lightGreen-css);
+    border: 2px solid var(--WildBalanceGreen-css);
+    cursor: pointer;
+  }
+
+  .contentFreezerSpace .articleInfoFrequently:active,
+  .contentFreezerSpace .articleInfoFrequently.active {
+    background-color: var(--lightGreen-css);
+    border: 2px solid var(--WildBalanceGreen-css);
+  }
+
+  .contentFreezerSpace .articleInfoFrequently:visited {
+    background-color: var(--lightGreen-css);
+    border: 2px solid var(--WildBalanceGreen-css);
+  }
+
+  .imgAndLabelInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    height: auto;
+  }
+
+  .imgAndLabelInfo div:nth-child(1) {
+    width: 80px;
+  }
+
+  .imgAndLabelInfo div:nth-child(2) {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+
+  .freezerSpaceSubtitle {
+    text-align: center;
+  }
+
+  .freezerSpaceSubtitle:after {
+    content:url('https://cdn.shopify.com/s/files/1/0713/9898/1933/files/wink_1.png?v=1713513484');
+  }
+
+  .articleInfoFrequently .textInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap:wrap;
+  }
+
+  .articleInfoFrequently .textInfo div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .xselling.frequently .wizard-variant-results{
+    padding:initial;
+  }
+
+  .textInfo .label.select,
+  .textInfo .label.selected{
+    line-height:30px;
+  }
+
+/*
+  .articleInfoFrequently.active .label.selected:before {
+    content: url(/cdn/shop/files/check_2.png?v=1706625800);
+    line-height: 15px;
+}
+*/
+
+  .containerChecks{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: end;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-bottom: 20px;
+    display:none;
+  /* Este es el apartado de los checks que incluye el plan de suscri. Queda temporalmente ocultado */
+  }
+
+  .containerChecks p{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .containerChecks p:before{
+    content: url('https://cdn.shopify.com/s/files/1/0713/9898/1933/files/check_7.png?v=1713170701');
+  }
+
+
+  .label.recomended {
+    background-color: var(--lightMediumGreen-css);
+    color: var(--whiteStandar-css);
+    align-self: flex-end;
+  }
+
+  .calculate.frequently > button{
+    padding: 5px 15px;
+    color: var(--WildBalanceGreen-css);
+    border-radius: 50px;
+    font-weight: 900;
+    font-size: 14px;
+    text-align: center;
+    background-color: var(--yellow-background-labels-color-css);
+    height: 40px;
+  }
+
+  .calculate.frequently > button:hover {
+    color: var(--WildBalanceGreen-css);
+    background-color: var(--yellow-BG-labels-hover);
+  }
+
+  .freezerSpace.planContains .label.frequentlyLabel h3{
+    background-color: var(--beigBackgroundSections-css);
+    border-radius: 50px;
+    height: 40px;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    margin:0px;
+  }
+
+
+  .xselling.frequently .wizard-variant-results .variant-result .frequently h2{
+    margin-bottom: 0px;
+    padding: 0px;
+    margin-top: 0px;
+  }
+  .xselling.frequently .wizard-variant-results .variant-result{
+    font-size: 14px;
+  }
+  .xselling.frequently .wizard-variant-results .variant-result br:nth-of-type(1){
+    display:none;
+  }
+
+  .secondary.retake{
+    display:none;
+  }
+
+
+@media (max-width:765px) {
+  .articleInfoFrequently .textInfo{
+    justify-content: flex-end;
+    gap: 11px;
+  }
+
+  .contentFreezerSpace h3 {
+    font-size: 18px;
+    margin-top:8px;
+  }
+
+  .frequently.completePack h2.t4s-section-title.t4s-title{
+    position: sticky;
+    left: 0;
+  }
+
+  .articleInfoFrequently:nth-of-type(2) h3{
+    margin-top:10px;
+  }
+
+  .contentFreezerSpace .imgAndLabelInfo .label.infoSpace{
+    display:flex;
+    font-size:12px;
+  }
+  .contentFreezerSpace .textInfo .label.infoSpace:nth-of-type(1){
+    display:none;
+  }
+
+  .imgAndLabelInfo div:nth-child(1){
+        width: 65px;
+  }
+
+  .imgAndLabelInfo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    justify-content: space-between;
+    height: auto;
+  }
+  .imgAndLabelInfo div:nth-child(2){
+    text-align: end;
+  }
+
+  .textInfo .label.select,
+  .textInfo .label.selected{
+    display: flex;
+    width: 100%;
+    color: white;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .frequently {
+    overflow: overlay;
+  }
+
+    .wizard-variant-results:nth-child(2) {
+    overflow: scroll;
+    position: relative;
+    left: 250px;
+  }
+}
+
+
+@media (max-width:500px) {
+    .freezerSpace .contentFreezerSpace {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      gap: 8px;
+    }
+
+
+    .contentFreezerSpace .articleInfoFrequently {
+      width: 100%;
+      padding:10px 13px;
+    }
+
+  }
+
+@media (max-width:420px){
+
+  .variant-result .label.selected, .variant-result .label.select {
+    font-size: 14px !important;
+}
+
+
+  .containerChecks{
+    justify-content: flex-start;
+  }
+
+  .containerInfoFrequently .label.frequentlyLabel{
+    gap:10px;
+  }
+
+  .freezerSpace.planContains .label.frequentlyLabel h3{
+    font-size: 13px;
+    height: 35px;
+  }
+
+  .containerInfoFrequently .label.frequentlyLabel .label.discountLabel{
+    width: 139px;
+    font-size: 11px;
+    height: 35px;
+  }
+}

@@ -1,0 +1,112 @@
+<!-- sections/slideshow.liquid -->
+{{ 'pre_flickityt4s.min.css' | asset_url | stylesheet_tag }}
+{{ 'section.css' | asset_url | stylesheet_tag }}
+{{ 'slideshow.css' | asset_url | stylesheet_tag }}
+{{ 'content-position.css' | asset_url | stylesheet_tag }}
+{{ 'slider-settings.css' | asset_url | stylesheet_tag }}
+
+<section>
+  <!-- TODO – envuelve TODO lo móvil aquí -->
+  <div class="lg:hidden">
+    <div class="bg-[#E7EBEE] py-10 px-4 text-center flex flex-col content-center">
+      <h1 class="text-[50px] sm:text-[70px] [font-family:'Barlow',Helvetica] font-extrabold mt-8 leading-[1.25]">
+        <span class="block text-[#004623]">TU PELUDO</span>
+        <span class="block highlight text-[#004623]">ES ÚNICO</span>
+      </h1>
+
+      <p class="text-gray-800 leading-relaxed mt-10 text-[#222222] text-[14px] sm:text-[14px] ml:text-[16px] lg:text-[18px]">
+        Únete a la alimentación personalizada que se merece tu mascota y haz que disfrute de todos sus beneficios.
+      </p>
+      <img
+        class="mt-4 max-w-[28rem] mx-auto"
+        src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Frame_628_2.png?v=1753287599"
+      >
+      <div class="flex justify-center gap-4 mt-2 max-w-[450px] mx-auto">
+        <button class="bg-yellow-400 hover:bg-yellow-500 rounded-full font-medium transition shadow-lg text-[14px] text-[#004623] flex-grow basis-0 py-6 min-w-[180px] px-6">
+          Comida para perros
+        </button>
+        <button class="bg-[#004623] hover:bg-green-800 text-white rounded-full font-medium transition shadow-lg text-[14px] flex-grow basis-0 py-6 min-w-[180px] px-6">
+          Comida para gatos
+        </button>
+      </div>
+      <a
+        target="_blank"
+        href="https://www.trustpilot.com/review/wildbalance.es"
+        class="mt-10 text-gray-600  max-w-[20rem] mx-auto py-18"
+      >
+        <img src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Trusted_1.png?v=1753287003">
+      </a>
+    </div>
+
+    <!-- Imagen móvil incluida DENTRO del mismo wrapper -->
+    <img
+      src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/5f90d44833e7340c78f621df_hero_2.jpg_1_e63de8c4-f8ec-43cc-aa57-babaa191faec.png?v=1753122024"
+      alt="Mascotas"
+      class="w-full h-auto object-cover"
+    >
+  </div>
+
+  <!-- TODO – sólo desktop a partir de lg -->
+  <div class="hidden lg:block relative w-full overflow-hidden">
+    <!-- Imagen en flujo -->
+    <img
+      src="https://wildbalance.es/cdn/shop/files/5f90d44833e7340c78f621df_hero_2.jpg_1.jpg?v=1752511810"
+      alt="Mascotas"
+      class="w-full h-auto object-cover"
+    >
+
+    <!-- Overlay de contenido -->
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4 py-20 gap-10">
+      <h1 class="[font-family:'Barlow',Helvetica] font-extrabold  text-[105px] leading-tight">
+        <span class="block text-[#004623]">TU PELUDO</span>
+        <span class="block highlight text-[#004623]">ES ÚNICO</span>
+      </h1>
+
+      <p class="max-w-4xl text-lg leading-relaxed lg:text-[18px] text-[#222222] ">
+        Únete a la alimentación personalizada que se merece tu mascota y haz que disfrute de todos sus beneficios.
+      </p>
+      <img
+        class=" max-w-[38rem] mx-auto"
+        src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Frame_628_2.png?v=1753287599"
+      >
+      <div class="flex gap-4 ">
+        <button class="px-16 py-6 bg-yellow-400 hover:bg-yellow-500  rounded-full font-medium transition shadow-xl text-[#004623]">
+          Comida para perros
+        </button>
+        <button class="px-16 py-6 bg-[#004623] hover:bg-green-800 text-white rounded-full font-medium transition shadow-xl">
+          Comida para gatos
+        </button>
+      </div>
+      <a
+        target="_blank"
+        href="https://www.trustpilot.com/review/wildbalance.es"
+        class="mt-4 text-gray-600 text-sm mt-16 max max-w-[20rem]"
+      >
+        <img src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Trusted.png?v=1753286402">
+      </a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Migraciones banner home",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Imagen escritorio"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Imagen móvil"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Migraciones banner home"
+    }
+  ]
+}
+{% endschema %}

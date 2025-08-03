@@ -1,0 +1,180 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "heading": {
+      "type": "heading-template",
+      "blocks": {
+        "b49343f1-a16f-4a0c-834a-46b77fe777da": {
+          "type": "1",
+          "settings": {
+            "heading": "",
+            "fontf": "inherit",
+            "text_cl": "#000000",
+            "text_fs": 40,
+            "text_lh": 56,
+            "text_fw": 300,
+            "text_ls": 0,
+            "font_italic": false,
+            "font_uppercase": false,
+            "text_shadow": false,
+            "mgb": 0,
+            "text_fs_tb": 35,
+            "text_lh_tb": 46,
+            "text_ls_tb": 0,
+            "mgb_tb": 0,
+            "hidden_mobile": false,
+            "text_fs_mb": 35,
+            "text_lh_mb": 46,
+            "text_ls_mb": 0,
+            "mgb_mb": 0
+          }
+        }
+      },
+      "block_order": [
+        "b49343f1-a16f-4a0c-834a-46b77fe777da"
+      ],
+      "disabled": true,
+      "settings": {
+        "parallax": false,
+        "color": "#000000",
+        "overlay": 0,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "mg_b": 50,
+        "padding_top_tb": 50,
+        "padding_bottom_tb": 50,
+        "mg_btb": 50,
+        "padding_top_mb": 50,
+        "padding_bottom_mb": 50,
+        "mg_bmb": 50,
+        "box_border": "top_bottom",
+        "bg_pos": "center center",
+        "bg_repeat": "no-repeat",
+        "bg_size": "cover"
+      }
+    },
+    "custom_section_UaLqNV": {
+      "type": "custom-section",
+      "blocks": {
+        "bl_col_znUHVp": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "5",
+            "col_dk_w": "33.33333",
+            "col_tb": "6",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": false,
+            "content_align": "start",
+            "content_align_tablet": "start",
+            "content_align_mobile": "start",
+            "padding_inner": "40px,40px,40px,40px",
+            "padding_inner_tb": "40px,40px,40px,40px",
+            "padding_inner_mb": "40px,40px,40px,40px",
+            "round_inner": "10px,10px,10px,10px",
+            "round_tb_inner": "10px,10px,10px,10px",
+            "round_mb_inner": "10px,10px,10px,10px",
+            "bg_cl": "#fff",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_9tReDT": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Mi cuenta",
+            "remove_br_tag": false,
+            "tag": "h2",
+            "fontf": "2",
+            "text_cl": "#00774f",
+            "text_fs": 30,
+            "text_lh": 0,
+            "text_fw": 900,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 10,
+            "text_fs_tb": 30,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 30,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_cEGkTb": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Consulta tus suscripciones y modifícalas cuando quieras. Vista tu historial de pedidos y lista de deseos y revisa o modifica tus datos",
+            "remove_br_tag": false,
+            "tag": "p",
+            "fontf": "1",
+            "text_cl": "#00774f",
+            "text_fs": 16,
+            "text_lh": 20,
+            "text_fw": 400,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 0,
+            "text_fs_tb": 16,
+            "text_lh_tb": 20,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 16,
+            "text_lh_mb": 20,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        }
+      },
+      "block_order": [
+        "bl_col_znUHVp",
+        "custom_text_9tReDT",
+        "custom_text_cEGkTb"
+      ],
+      "settings": {
+        "space_h_item": "0",
+        "space_v_item": "0",
+        "space_h_item_tb": "0",
+        "space_v_item_tb": "0",
+        "space_h_item_mb": "0",
+        "space_v_item_mb": "0",
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "image_bg": "shopify://shop_images/WB-mi-cuenta1.jpg",
+        "mg": ",,50px,",
+        "pd": "50px,50px,50px,50px",
+        "mg_tb": ",,50px,",
+        "pd_tb": "20px,20px,20px,20px",
+        "mg_mb": ",,30px,",
+        "pd_mb": "20px,20px,20px,20px"
+      }
+    },
+    "main": {
+      "type": "main-customers-addresses",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "heading",
+    "custom_section_UaLqNV",
+    "main"
+  ]
+}

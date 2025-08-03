@@ -1,0 +1,70 @@
+<div id="advent-calendar-container">
+
+  {% assign adventCalendarEntries = shop.metaobjects.picture_christmas.values %}
+  {% assign adventCalendarEntries = adventCalendarEntries | sort_natural: 'dia' %}
+  {% for advent in adventCalendarEntries  %}
+
+    
+    <div class="advent-day" 
+      id="advent-day-{{ advent.dia | round }}" 
+      data-pictureHidden="{{ advent.product_disabled.value | image_url: width: 100 }}"
+      data-pictureActive="{{ advent.product_picture.value | image_url: width: 100 }}"
+    >
+        
+      <div class="cardImg">
+        <a href="{{ advent.product.value.url }}" class="productPicOn">
+          <div style="background-image:url({{ advent.product_picture.value | image_url: width: 600 }}); background-size: cover">
+          
+              <img class="image-frame-es" src="https://cdn.shopify.com/s/files/1/0736/4981/5837/files/plantilla-ES.png?v=1700667351" alt="productPicture" />
+              <img class="image-frame-en" src="https://cdn.shopify.com/s/files/1/0736/4981/5837/files/plantilla-EN.png?v=1700667351" alt="productPicture" />
+              <img class="image-frame-fr" src="https://cdn.shopify.com/s/files/1/0736/4981/5837/files/plantilla-FR.png?v=1700667351" alt="productPicture" />
+            
+    </div>
+        </a>
+        
+        <img src="{{ advent.product_disabled.value | image_url: width: 600 }}" class="productPicOff" alt="productPicture" />
+      </div>
+    
+      <h3>Día {{ advent.dia }}</h3>
+    </div>
+    
+  {% endfor %}
+
+</div>
+
+<script>
+// https://github.com/hongkiat/advent-calendar/blob/master/scripts/calendar.js
+var myCal = document.getElementById("advent-calendar-container");
+var currentDate = new Date();
+  
+function Door(calendar, day) {
+
+	this.content = function() { 
+        var adventDay = document.getElementById("advent-day-" + day);
+
+        //In JavaScript 0 is for January and 11 is for December
+		if(currentDate.getDate() >= day && currentDate.getMonth() === 10) {
+			adventDay.classList.add("active");
+		} else {
+            console.log(currentDate);
+		}
+
+        if(currentDate.getDate() == day) {
+			adventDay.classList.add("today");
+		} else {
+            console.log(currentDate);
+		}
+	};
+}
+
+(function() {
+	var doors = [];
+
+	for(var i = 0; i < 24; i++) {
+		doors[i] = new Door(myCal, i + 1);
+		doors[i].content();
+	}
+	return doors;
+})();
+  
+</script>

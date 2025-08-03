@@ -1,0 +1,327 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "heading": {
+      "type": "heading-article",
+      "blocks": {
+        "d46559fc-e99a-498c-9728-7bfe5b20e35c": {
+          "type": "title",
+          "settings": {
+            "fontf": "inherit",
+            "text_cl": "#00774f",
+            "text_fs": 36,
+            "text_lh": 40,
+            "text_fw": 300,
+            "text_ls": 0,
+            "mgb": 15,
+            "font_italic": false,
+            "font_uppercase": false,
+            "text_shadow": false,
+            "text_fs_tb": 30,
+            "text_lh_tb": 34,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 30,
+            "text_lh_mb": 34,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "text_cl_trans": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "d46559fc-e99a-498c-9728-7bfe5b20e35c"
+      ],
+      "settings": {
+        "use_specify_image": true,
+        "parallax": false,
+        "bg_overlay": "#ffffff",
+        "bg_opacity": 0,
+        "padding_top": 105,
+        "padding_bottom": 105,
+        "padding_top_tb": 50,
+        "padding_bottom_tb": 50,
+        "padding_top_mb": 50,
+        "padding_bottom_mb": 50,
+        "box_border": "none",
+        "bg_pos": "center center",
+        "bg_repeat": "no-repeat",
+        "bg_size": "cover",
+        "use_border": true,
+        "br_bg_trans": "#ffffff",
+        "br_opacity_trans": 15,
+        "bg_overlay_trans": "#000000",
+        "bg_opacity_trans": 0,
+        "padding_top_trans": 75,
+        "padding_bottom_trans": 75,
+        "padding_top_tb_trans": 50,
+        "padding_bottom_tb_trans": 50,
+        "padding_top_mb_trans": 50,
+        "padding_bottom_mb_trans": 50,
+        "mg_b": 50,
+        "mg_btb": 50,
+        "mg_bmb": 50
+      }
+    },
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "7e4b5fc6-02a8-446d-9a7b-125dfae2cca8": {
+          "type": "content",
+          "settings": {
+            "dessign_content": "default"
+          }
+        },
+        "navigation_MVL64t": {
+          "type": "navigation",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "7e4b5fc6-02a8-446d-9a7b-125dfae2cca8",
+        "navigation_MVL64t"
+      ],
+      "settings": {
+        "feature_image": false,
+        "content_width": "boxed",
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": "0px,0px,-40px,0px",
+        "pd": "",
+        "mg_tb": "0px,0px,-40px,0px",
+        "pd_tb": "",
+        "mg_mb": "0px,0px,-40px,0px",
+        "pd_mb": ""
+      }
+    },
+    "tabs_collection_mxpGen": {
+      "type": "tabs-collection",
+      "blocks": {
+        "tab_item_dn4c9G": {
+          "type": "tab_item",
+          "settings": {
+            "title": "🐶 Perro",
+            "icon_title": "",
+            "collection": "comida-perros",
+            "product_des": "1",
+            "rating_pos": "1",
+            "list_color_pos": "1",
+            "list_size_pos": "1",
+            "show_vendor": false,
+            "use_cdt": false,
+            "featured_items": false,
+            "image_ratio": "ratioadapt",
+            "image_size": "cover",
+            "image_position": "8",
+            "content_align": "start",
+            "limit": 8,
+            "col_dk": "5",
+            "col_tb": "3",
+            "col_mb": "2",
+            "space_h_item": "20",
+            "space_v_item": "30",
+            "space_h_item_tb": "10",
+            "space_v_item_tb": "20",
+            "space_h_item_mb": "10",
+            "space_v_item_mb": "20",
+            "layout_des": "2",
+            "border_pr": false,
+            "loop": true,
+            "au_time": 0,
+            "au_hover": true,
+            "nav_btn": false,
+            "btn_pos": "in",
+            "btn_distance": 15,
+            "btn_vi": "hover",
+            "btn_owl": "default",
+            "btn_shape": "none",
+            "btn_cl": "dark",
+            "btn_size": "small",
+            "btn_hidden_mobile": false,
+            "nav_dot": true,
+            "dot_owl": "outline",
+            "dots_cl": "primary",
+            "dots_round": true,
+            "dots_space": 10,
+            "dots_bottom_pos": 20,
+            "dots_hidden_mobile": false,
+            "border_pr_img": false,
+            "use_pagination": "none",
+            "enable_bar_lm": true,
+            "text_view_all": "",
+            "btn_icon": false,
+            "btn_rounded": false,
+            "button_style": "default",
+            "btns_size": "default",
+            "btns_cl": "dark",
+            "button_effect": "default",
+            "btns_pos": "t4s-text-center"
+          }
+        },
+        "tab_item_EKVHji": {
+          "type": "tab_item",
+          "settings": {
+            "title": "🐱 Gato",
+            "icon_title": "",
+            "collection": "comida-gatos",
+            "product_des": "1",
+            "rating_pos": "1",
+            "list_color_pos": "1",
+            "list_size_pos": "1",
+            "show_vendor": false,
+            "use_cdt": false,
+            "featured_items": false,
+            "image_ratio": "ratioadapt",
+            "image_size": "cover",
+            "image_position": "8",
+            "content_align": "start",
+            "limit": 8,
+            "col_dk": "5",
+            "col_tb": "3",
+            "col_mb": "2",
+            "space_h_item": "20",
+            "space_v_item": "30",
+            "space_h_item_tb": "10",
+            "space_v_item_tb": "20",
+            "space_h_item_mb": "10",
+            "space_v_item_mb": "20",
+            "layout_des": "2",
+            "border_pr": false,
+            "loop": true,
+            "au_time": 0,
+            "au_hover": true,
+            "nav_btn": false,
+            "btn_pos": "in",
+            "btn_distance": 15,
+            "btn_vi": "hover",
+            "btn_owl": "default",
+            "btn_shape": "none",
+            "btn_cl": "dark",
+            "btn_size": "small",
+            "btn_hidden_mobile": false,
+            "nav_dot": true,
+            "dot_owl": "outline",
+            "dots_cl": "primary",
+            "dots_round": true,
+            "dots_space": 10,
+            "dots_bottom_pos": 20,
+            "dots_hidden_mobile": false,
+            "border_pr_img": false,
+            "use_pagination": "none",
+            "enable_bar_lm": true,
+            "text_view_all": "",
+            "btn_icon": false,
+            "btn_rounded": false,
+            "button_style": "default",
+            "btns_size": "default",
+            "btns_cl": "dark",
+            "button_effect": "default",
+            "btns_pos": "t4s-text-center"
+          }
+        }
+      },
+      "block_order": [
+        "tab_item_dn4c9G",
+        "tab_item_EKVHji"
+      ],
+      "custom_css": [
+        "h3 {font-weight: 900; color: #00774f;}"
+      ],
+      "settings": {
+        "design_heading": "1",
+        "heading_center": true,
+        "top_heading": "No puedes perderte",
+        "top_subheading": "",
+        "head_bigger": false,
+        "tophead_mb": 23,
+        "tophead_mb_tb": 30,
+        "tophead_mb_mb": 25,
+        "title_inline": false,
+        "tabs_des": "border-bg",
+        "tabs_border": "solid",
+        "tabs_list_border": false,
+        "tabs_pos": "center",
+        "tabslist_mb": 30,
+        "item_fs": 16,
+        "item_lh": 30,
+        "item_fw": 500,
+        "item_ls": 0,
+        "item_rounded": true,
+        "pri_cl": "#00774f",
+        "secon_cl": "#00774f",
+        "pri_active_cl": "#00774f",
+        "secon_active_cl": "#ffffff",
+        "space_between": 10,
+        "space_between_tb": 10,
+        "space_between_mb": 10,
+        "head_btn_label": "",
+        "head_btn_url": "",
+        "head_btn_icon": true,
+        "btn_rounded": false,
+        "head_button_style": "outline",
+        "head_btns_size": "default",
+        "head_btns_cl": "dark",
+        "head_button_effect": "default",
+        "hidden_btn_mb": false,
+        "head_slide_btn": false,
+        "layout": "t4s-container-fluid",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",20px,80px,20px",
+        "pd": "",
+        "mg_tb": ",20px,50px,20px",
+        "pd_tb": "",
+        "mg_mb": ",20px,30px,20px",
+        "pd_mb": ""
+      }
+    },
+    "sidebar": {
+      "type": "sidebar-blog",
+      "blocks": {
+        "custom_liquid_Ctc6wg": {
+          "type": "custom_liquid",
+          "settings": {
+            "title": "CUSTOM LIQUID",
+            "custom_liquid": "<div class=\"klaviyo-form-R4dKyC\"></div>"
+          }
+        }
+      },
+      "block_order": [
+        "custom_liquid_Ctc6wg"
+      ],
+      "settings": {
+        "enable_drawer": false,
+        "space": 50,
+        "size": "large",
+        "br_style": "none",
+        "brcolor": "#222222",
+        "sidebar_bdr": 5,
+        "sidebar_pd": 10
+      }
+    },
+    "custom_liquid_BxJV3i": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\nh3.t4s-section-title{\n    font-weight: 800;\n    color: #00774f;\n}\n.t4s-accor-title{\n    padding: 0% 3% !important;\nfont-weight:700 !important;\n}\n\n.t4s-tab-content{\n    padding: 3% 3% 2% 3% !important;\n}\n\n.t4s-tab-wrapper{\n    margin-bottom: 10px;\n    border-bottom:initial !important;\n}\n.t4s-type-accordion .t4s-tab-wrapper.t4s-active .t4s-accor-title{\n    border-bottom:initial !important;\n}\n\np, li{\ncolor:#222;\nfont-size:16px;\n}\n\ndiv.containerCustomAnchor{\n    width: 100%;\n    display: flex;\n    flex-flow: row nowrap;\n    justify-content: center;\n}\n\na.customAnchor{\n    width: auto;\n    padding-bottom: 0 !important;\n    padding: 10px 25px !important;\n    border-radius: 50px;\n    cursor: pointer;\n    background-color: #FFCD00;\n    color: #00774F;\n    font-size: 18px;\n    font-weight: 700;\n    text-decoration: none;\n    border-bottom: 0px !important;\ndisplay: flex;\n    justify-content: center;\n    align-items: center;\n}\n\na.customAnchor:after {\n    content: url(https://cdn.shopify.com/s/files/1/0713/9898/1933/files/right-arrow_1_692f14cf-b429-4fcc-83dd-0a3cad9fec70.png?v=1738329633);\n    line-height: 11px;\n    margin-left: 12px;\n}\n\n@media (max-width:500px){\na.customAnchor{\n    padding: 10px 25px !important;\n    font-size: 14px;\n}\n}\n</style>"
+      }
+    }
+  },
+  "order": [
+    "heading",
+    "main",
+    "tabs_collection_mxpGen",
+    "sidebar",
+    "custom_liquid_BxJV3i"
+  ]
+}

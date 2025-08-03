@@ -1,0 +1,93 @@
+<!-- Primer bloque de resultados en GRAMOS Result Page Wizard -->
+
+<!-- <div class="grams-results">
+<span>Mascota -> {{ result.pet_name }}</span> <br/> X
+<span>Tipo -> {{ result.pet }}</span><br/>
+<span>Peso del bichito -> {{ result.weight }}</span> <br/>
+<span>Gramos de comida -> {{ result.grams }}</span> <br/> X
+<span>Hamburguesitas -> {{ result.burgers }}</span> <br/> X
+</div>
+-->
+
+
+<section class="containerQuantity">
+  <div id="quiz-results">
+    <span class="deliveryDate">Pedidos antes de las 14:00h, <br> entregas en 48h*</span>
+    <div id="quiz-result" class="quiz-result">
+      <div class="quiz-result">
+        <p>{{ result.pet_name }} tiene que comer</p>
+
+        <div class="gramsDay">
+          <div class="containerGrams">
+            <p class="resultQuantity">
+              <span id="quiz-petGrams" class="quantity">
+                {{ result.grams | round }}g
+              </span>
+              <span class="frequendly"> AL DÍA</span>
+            </p>
+            <p>o lo que es lo mismo</p>
+          </div>
+
+          <div class="containerPicture">
+
+            
+
+            {% if result.food_type == "cooked" %}
+              {% assign units = result.burgers |floor %}
+              {% assign decimals = result.burgers | minus: units | times: 3 | round %}
+
+              {% if decimals == 3 %}
+                {% assign units = units | plus: 1 %}
+                {% assign decimals = 0 %}
+              {% endif %}
+
+              <div class="imgCookedFood">
+                {% for i in (1..units) %}
+                  <img src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/bufitarrita.svg" alt="cookedFoodImg"
+                    style="width: 50px !important" />
+                {% endfor %}
+                {% if decimals > 0 %}
+                <img src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/bufitarrita-{{ decimals }}tercios.svg" alt="cookedFoodImg"
+                    style="width: 50px !important" />
+                {% endif %}
+              </div>
+              <p>
+                <span id="quiz-petBurgers"> 
+
+                  {% if units > 0 %}{{ units }} {{ units | pluralize: "unidad", "unidades" }} {% endif %} 
+                  {% if units > 0 and decimals > 0 %} + {% endif %}
+                  {% if decimals > 0 %} {{ decimals }} / 3 de porción {% endif %}
+                </span>
+                de <br/> comida cocinada al día
+              </p>
+            {% else %}
+              <div class="imgBurger">
+                <img
+                    src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/burger.png?v=1689843416"
+                    alt="burgerImg"
+                    height="100px"
+                  />
+                        </div>
+                        <p>
+                          <span id="quiz-petBurgers">{{ result.burgers }}</span>
+                          hamburguesitas
+                        </p>
+          {% endif %}
+            
+            {% if result.half_menu %}
+            <p>+ 50% de su dieta habitual</p>
+            {% endif %}
+            {% if result.food_type == "cooked" %}
+              <p>¡No te preocupes, dura hasta 2 días abierta en la nevera!</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="recomendationText">
+   <p>Las cantidades recomendadas son orientativas, cada animal tiene unas necesidades de alimentación diferentes. En caso de duda, consúltanos.</p>
+  </div>
+  
+</section>

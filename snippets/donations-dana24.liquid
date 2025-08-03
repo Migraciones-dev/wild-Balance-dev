@@ -1,0 +1,49 @@
+<div class="donation-box">
+  {% assign dogLink1 = "http://wildbalance.es/cart/49584675717421:2" %} 
+  {% assign catLink1 = "http://wildbalance.es/cart/49673210429741:2" %}
+  
+  {% assign dogLink2 = "http://wildbalance.es/cart/49584675717421:5" %}
+  {% assign catLink2 = "http://wildbalance.es/cart/49673210429741:5" %}
+  
+  {% assign dogLink3 = "http://wildbalance.es/cart/49584675750189:1" %}
+  {% assign catLink3 = "http://wildbalance.es/cart/49673210495277:1" %}
+
+  <h2>¿Quieres ayudar?</h2>
+    <p>Recuerda marcar la opción de <b>Retiro en tienda o donación</b> + <b>Donación a protectoras</b> antes de finalizar la compra</p>
+  <div class="donation-box-buttons">
+    <a href="{{ catLink1 }}" class="t4s-btn t4s-btn-base t4s-btn-style-default t4s-btn-color-primary t4s-justify-content-center">2 latas para gatos (4.98€)</a>
+    <a href="{{ dogLink1 }}" class="t4s-btn t4s-btn-base t4s-btn-style-default t4s-btn-color-primary t4s-justify-content-center">2 latas para perros (7.98€)</a>
+    
+    <a href="{{ catLink2 }}" class="t4s-btn t4s-btn-base t4s-btn-style-default t4s-btn-color-primary t4s-justify-content-center">5 latas para gatos (12.45€)</a>
+    <a href="{{ dogLink2 }}" class="t4s-btn t4s-btn-base t4s-btn-style-default t4s-btn-color-primary t4s-justify-content-center">5 latas para perros (19.95€)</a>
+    
+    <a href="{{ catLink3 }}" class="t4s-btn t4s-btn-base t4s-btn-style-default t4s-btn-color-primary t4s-justify-content-center">15 latas para gatos (34.95€)</a>
+    <a href="{{ dogLink3 }}" class="t4s-btn t4s-btn-base t4s-btn-style-default t4s-btn-color-primary t4s-justify-content-center">15 latas para perros (57.95€)</a>
+    
+  </div>
+</div>
+
+<style>
+  .donation-box {
+    text-align: center;
+    padding: 25px;
+    background: #faf5e7;
+  }
+  .donation-box h2{
+    margin-bottom: 20px;
+  }
+  .donation-box-buttons{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .donation-box-buttons a{
+    margin: 5px;
+    padding: 20px;
+  }
+@media (max-width:1024px){
+  .donation-box-buttons{
+    flex-direction: column;
+  }
+}
+</style>

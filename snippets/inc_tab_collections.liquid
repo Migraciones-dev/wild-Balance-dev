@@ -1,0 +1,18 @@
+{%- comment -%}
+  inc_tab_collections.liquid
+  Recibe ‘collections’ (array de objetos collection) y muestra sus títulos.
+{%- endcomment -%}
+
+<div class="t4s-collection-list">
+  {% if collections and collections.size > 0 %}
+    <ul class="t4s-collection-list__items">
+      {% for col in collections %}
+        <li class="t4s-collection-item">
+          {{ col.title }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="t4s-no-collections">No hay colecciones asignadas.</p>
+  {% endif %}
+</div>
