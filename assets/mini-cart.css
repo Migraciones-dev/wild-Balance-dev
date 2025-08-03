@@ -527,7 +527,7 @@ ul.t4s-cart_discount_price svg {
     min-width: 96px;
     width: 96px;
     height: 30px;
-    border: 1px solid var(--border-color);
+    border: 1px solid #004623;
     text-align: center;
     border-radius: var(--other-radius);
     display: block;
