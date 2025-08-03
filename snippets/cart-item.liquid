@@ -26,7 +26,7 @@
   <a
     href="{{ item_url }}"
     class="t4s-mini_cart__img t4s-pr t4s-oh t4s_ratio t4s-bg-11 rounded-[8px] !bg-white"
-    style="background: url({{ image | image_url: width: 1 }});--aspect-ratioapt: {{ image.aspect_ratio | default: 1 }}"
+    style="background: url({{ image | image_url: width: 1 }});--aspect-ratioapt: {{ image.aspect_ratio | default: 1 }};background-color:white!important;"
   >
     {%- if image != blank -%}
       <img
