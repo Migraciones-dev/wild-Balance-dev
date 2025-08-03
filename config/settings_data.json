@@ -304,24 +304,6 @@
               "padding_inner_bn": "30px,30px,30px,30px"
             }
           },
-          "drop_aQhEJ7": {
-            "type": "drop",
-            "disabled": true,
-            "settings": {
-              "title": "PLAN SUSCRIPCIÓN",
-              "url": "https://wildbalance.es/apps/subscriptions/bb/pAyyR402",
-              "open_link": "_self",
-              "menu": "plan-de-suscripci-n",
-              "icon": "",
-              "cus_cl": false,
-              "cl": "#ec0101",
-              "lb": "",
-              "lb_cl": "",
-              "lazy_mn": true,
-              "pos_sub": "bottom-start",
-              "cus_wid": 260
-            }
-          },
           "drop_hTn3r4": {
             "type": "drop",
             "settings": {
@@ -356,7 +338,6 @@
         "block_order": [
           "mega_dTwYKq",
           "mega_NQnT3c",
-          "drop_aQhEJ7",
           "drop_hTn3r4",
           "base_xHCd8G"
         ],
