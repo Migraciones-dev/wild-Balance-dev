@@ -64,7 +64,7 @@
     <a href="{{ item_url }}" class="t4s-mini_cart__title t4s-truncate text-[15px]">{{ item_pr.title }}</a>
     <div class="t4s-mini_cart__meta">
       <div class="t4s-cart_meta_price">
-        <div class="t4s-cart_price">
+        <div class="t4s-cart_price text-[11px]">
           {%- unless cart_ajax_enable %}{{ item_qty }} × {% endunless -%}
           {%- assign item_compare_price = item_variant.compare_at_price
             | default: item.original_price
