@@ -85,7 +85,7 @@
 
                     <div class="grid grid-cols-2 lg:grid-cols-3 gap-8 w-full">
                       {% for link in linklists[bk_stts.menu].links %}
-                        {% assign subtitle = obj.metafields.custom.subtitulo_para_el_mega_menu %}
+                        {% assign subtitle = obj.metafields.custom.subtitulo_para_el_mega_menu | default: '' %}
                         <a
                           href="{{ link.url }}"
                           class="flex items-center bg-white shadow border border-[#D9D9C8] rounded-[8px]  w-full h-[117px] overflow-hidden"
