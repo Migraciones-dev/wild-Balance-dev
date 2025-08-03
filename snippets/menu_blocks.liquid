@@ -86,33 +86,21 @@
                     <div class="grid grid-cols-2 lg:grid-cols-3 gap-8 w-full">
                       {% for link in linklists[bk_stts.menu].links %}
                         {% assign subtitle = obj.metafields.custom.subtitulo_para_el_mega_menu %}
-                        <a
-                          href="{{ link.url }}"
-                          class="flex items-center bg-white shadow border border-[#D9D9C8] rounded-[8px] w-full h-[117px] overflow-hidden hover:shadow-md transition-shadow"
-                        >
+                        <div class="flex items-center bg-white shadow border border-[#D9D9C8] rounded-[8px]  w-full h-[117px] overflow-hidden">
                           <!-- Imagen -->
                           <div class="flex-shrink-0 w-[134px] h-full">
-                            {% if img_url %}
-                              <img
-                                src="{{ img_url }}"
-                                alt="{{ link.title }}"
-                                class="w-full h-full object-cover p-2 rounded-[8px]"
-                              >
-                            {% else %}
-                              <div class="w-full h-full bg-gray-100 flex items-center justify-center p-2 rounded-[8px]">
-                                <span class="text-gray-400 text-sm">Sin imagen</span>
-                              </div>
-                            {% endif %}
+                            <img
+                              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/eedfebc2db8d8dc29c90175ff176af6847b4051f_1.png?v=1753638976"
+                              alt="Menú"
+                              class="w-full h-full object-cover p-2 rounded-[8px] "
+                            >
                           </div>
-
                           <!-- Texto -->
-                          <div class="flex-1 pl-4 [font-family:'Barlow',Helvetica] text-[#004623] px-6">
-                            <p class="font-bold text-[20px] leading-[25px]">{{ link.title }}</p>
-                            {% if subtitle %}
-                              <p class="text-[14px]">{{ subtitle }}</p>
-                            {% endif %}
+                          <div class="flex-1 pl-4 [font-family:'Barlow',Helvetica]  text-[#004623] px-6">
+                            <p class="font-bold text-[20px] leading-[25px] leading-[25px]">{{ link.title }}</p>
+                            <p class="text-[14px]">Subtitulo para el megamenu {{ subtitle }}</p>
                           </div>
-                        </a>
+                        </div>
                       {% endfor %}
                     </div>
                   </div>
