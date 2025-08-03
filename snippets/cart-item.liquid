@@ -63,6 +63,7 @@
   <div class="t4s-mini_cart__info">
     <a href="{{ item_url }}" class="t4s-mini_cart__title t4s-truncate text-[15px] font-bold">{{ item_pr.title }}</a>
     <div class="t4s-mini_cart__meta">
+      <p class="t4s-cart_subscription">{{ item.properties['Suscripción'] }}</p>
       <div class="t4s-cart_meta_price">
         <div class="t4s-cart_price text-[11px] mt-2">
           {%- unless cart_ajax_enable %}{{ item_qty }} × {% endunless -%}
