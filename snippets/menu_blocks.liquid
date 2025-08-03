@@ -73,7 +73,7 @@
                   <div class="flex flex-row gap-12">
                     <div class="w-1/5 flex flex-col">
                       {% if bk_stts.menu != blank and linklists[bk_stts.menu].links != blank %}
-                        <ul class="mega-menu-links grid grid-cols-{{ linklists[bk_stts.menu].links.size }} gap-4">
+                        <ul class="mega-menu-links gap-4">
                           {% for link in linklists[bk_stts.menu].links %}
                             {%- comment -%} Al principio del loop, determinamos el objeto y su imagen {%- endcomment -%}
                             {% assign image_src = blank %}
