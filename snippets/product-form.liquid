@@ -389,31 +389,14 @@
                           </button>
 
                           <input
+                            class="quantity-display"
                             data-quantity-value
                             type="number"
                             min="1"
                             value="1"
                             class="w-[49px] h-[42px] text-center font-bold border-0 focus:outline-none"
                           >
-                          <script>
-                              document.querySelectorAll('.t4s-quantity-wrapper').forEach(wrapper => {
-                              const btnDec = wrapper.querySelector('[data-decrease-qty]');
-                              const btnInc = wrapper.querySelector('[data-increase-qty]');
-                              const input = wrapper.querySelector('[data-quantity-value]');
-                              const min = 1;
-                              const max = {{ product.selected_or_first_available_variant.inventory_quantity }};
 
-                              btnDec.addEventListener('click', () => {
-                                let val = parseInt(input.value, 10) || min;
-                                if (val > min) input.value = val - 1;
-                              });
-
-                              btnInc.addEventListener('click', () => {
-                                let val = parseInt(input.value, 10) || min;
-                                if (val < max) input.value = val + 1;
-                              });
-                            });
-                          </script>
                           <button
                             type="button"
                             data-increase-qty
