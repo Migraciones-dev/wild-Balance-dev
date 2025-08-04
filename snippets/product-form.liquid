@@ -76,7 +76,7 @@
         {%- if advance_pr_type != blank -%}
           {%- render 'choose_style', advance_pr_type: advance_pr_type, title: advance_label, pid: product.id -%}
         {%- endif -%}
-
+      {%- else -%}
         {{ 'swatch.css' | asset_url | stylesheet_tag }}
         <select name="id" id="product-select-{{ pr_sid }}" class="t4s-product__select t4s-d-none">
           {%- for variant in pr_variants -%}
