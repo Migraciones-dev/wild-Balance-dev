@@ -252,97 +252,7 @@
     <input type="hidden" data-cart-attr-rm name="attributes[collection_items_per_row]" value="">
     <div class="t4s-row">
       <div class="{{ primary_col }}">
-        <div class="t4s-cartPage__items t4s_ratioadapt" data-cart-items>
-          {%- if ccount > 0 -%}
-            <table class="t4s-table-main-cart">
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>{{ 'cart.cart_page.label.product' | t }}</th>
-                  <th>{{ 'cart.cart_page.label.price' | t }}</th>
-                  <th>{{ 'cart.cart_page.label.quantity' | t }}</th>
-                  <th>{{ 'cart.cart_page.label.total' | t }}</th>
-                </tr>
-              </thead>
-              <tbody>
-                {%- for item in cart.items -%}
-                  {%- render 'cart-item-page',
-                    item: item,
-                    gift_pr_id: gift_pr_id,
-                    min_qty: min_qty,
-                    compare_tt_price: compare_tt_price,
-                    cart_change_url: cart_change_url,
-                    edit_item: edit_item,
-                    atc_ajax_enable: atc_ajax_enable
-                  -%}
-                {%- endfor -%}
-              </tbody>
-            </table>
-          {%- else -%}
-            <div class="t4s-mini_cart__empty t4s-text-center">
-              <div class="t4s-cart_page_icon t4s-d-inline-flex">
-                <svg id="icon-cart-emty" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                  <path xmlns="http://www.w3.org/2000/svg" d="m310.531 311.671-31.905 31.906 31.905 31.906c6.249 6.249 6.248 16.379 0 22.627-3.124 3.124-7.22 4.686-11.313 4.686-4.095 0-8.189-1.562-11.313-4.687l-31.905-31.904-31.904 31.906c-3.124 3.124-7.219 4.687-11.313 4.687s-8.189-1.562-11.313-4.686c-6.248-6.249-6.249-16.379 0-22.627l31.905-31.906-31.905-31.906c-6.249-6.249-6.248-16.379 0-22.627 6.249-6.248 16.38-6.248 22.627 0l31.903 31.904 31.904-31.906c6.248-6.248 16.379-6.249 22.627 0 6.248 6.248 6.249 16.378 0 22.627zm172.364-177.584v243.826c0 73.936-60.152 134.087-134.09 134.087h-185.61c-73.938 0-134.09-60.151-134.09-134.087v-243.826c0-8.836 7.163-16 16-16h84.088c4.657-65.895 59.75-118.087 126.81-118.087 67.059 0 122.152 52.192 126.808 118.087h84.083c8.837 0 16.001 7.163 16.001 16zm-321.594-16h189.403c-4.572-48.229-45.296-86.087-94.701-86.087-49.406 0-90.13 37.858-94.702 86.087zm289.594 32h-67.758v67.435c0 8.836-7.163 16-16 16s-16-7.164-16-16v-67.435h-190.269v67.435c0 8.836-7.163 16-16 16s-16-7.164-16-16v-67.435h-67.763v227.826c0 56.291 45.797 102.087 102.09 102.087h185.609c56.293 0 102.09-45.796 102.09-102.087v-227.826z" fill="currentColor"/>
-                </svg>
-              </div>
-              <h4 class="t4s-cart_page_heading">{{ 'cart.cart_page.empty' | t }}</h4>
-              <div class="t4s-cart_page_txt">{{ 'cart.cart_page.empty_html' | t }}</div>
-              {%- assign btn_blocks = section_blocks | where: 'type', 'btn' -%}
-              {%- if btn_blocks.size > 0 -%}
-                {%- for block in btn_blocks -%}
-                  {%- assign bk_stts = block.settings -%}
-                  {%- assign button_style = bk_stts.button_style -%}
-                  {%- if bk_stts.title != blank -%}
-                    <p class="t4s-return-to-shop">
-                      <a
-                        data-loading-bar
-                        class="t4s-btn-cart__emty t4s-btn t4s-btn-base t4s-btn-style-{{ button_style }} t4s-btn-color-{{ bk_stts.btn_cl }} {% if button_style == 'default' or button_style == 'outline' %}t4s-btn-effect-{{ bk_stts.button_effect }}{% endif %} t4s-justify-content-center t4s-truncate"
-                        href="{{ bk_stts.url | default: routes.all_products_collection_url }}"
-                      >
-                        {%- if bk_stts.btn_icon -%}
-                          <svg class="t4s-btn-icon" viewBox="0 0 14 10">
-                            <use xlink:href="#t4s-icon-btn"></use>
-                          </svg>
-                        {%- endif -%}
-                        {{ bk_stts.title -}}
-                      </a>
-                    </p>
-                  {%- endif -%}
-                {%- endfor -%}
-              {%- endif -%}
-              {%- if se_stts.enable_calc_ship and shipping_amount > -1 -%}
-                {%- liquid
-                  assign shipping_money = shipping_amount | money
-                  if enable_shipbar
-                    assign des_shipbar_per_1 = settings.des_shipbar_per_1
-                    assign des_shipbar_per_2 = settings.des_shipbar_per_2
-                    assign des_shipbar_per_3 = settings.des_shipbar_per_3
-                    assign less_100 = 99.99
-                    assign array_shipbar_per = des_shipbar_per_1 | append: ';' | append: des_shipbar_per_2 | append: ';' | append: des_shipbar_per_3 | split: ';' | sort_natural
-                    assign percent_class = array_shipbar_per[0] | plus: 0
-                    if percent_class == 100
-                      assign percent_class = less_100
-                    endif
-                  endif
-                -%}
-
-                {%- if enable_shipbar -%}
-                  {%- style -%}
-                    [data-t4s-percent="{% if des_shipbar_per_1 == 100 %}{{ less_100 }}{% else %}{{ des_shipbar_per_1 }}{% endif %}"] { --main-threshold-color: {{ settings.des_shipbar_cl_1 }}; }
-                    [data-t4s-percent="{% if des_shipbar_per_2 == 100 %}{{ less_100 }}{% else %}{{ des_shipbar_per_2 }}{% endif %}"] { --main-threshold-color: {{ settings.des_shipbar_cl_2 }}; }
-                    [data-t4s-percent="{% if des_shipbar_per_3 == 100 %}{{ less_100 }}{% else %}{{ des_shipbar_per_3 }}{% endif %}"] { --main-threshold-color: {{ settings.des_shipbar_cl_3 }}; }
-                    [data-t4s-percent="100"] { --main-threshold-color: {{ settings.des_shipbar_cl_4 }}; }
-                  {%- endstyle -%}
-                {%- endif -%}
-                <div class="t4s-cart__threshold" data-t4s-percent="{{ percent_class }}">
-                  <div class="t4s-cart__thres1">
-                    {{ 'cart.shipping_threshold.text_1_html' | t: money: shipping_money }}
-                  </div>
-                </div>
-              {%- endif -%}
-            </div>
-          {%- endif -%}
-        </div>
+        <div class="t4s-cartPage__items t4s_ratioadapt" data-cart-items></div>
         <div class="t4s-cartPage__footer">
           <div class="t4s-row">
             {%- if se_stts.enable_note
@@ -581,6 +491,96 @@
             </h3>
           </div>
         </div>
+        PRODUCTOS:
+        {%- if ccount > 0 -%}
+          <table class="t4s-table-main-cart">
+            <thead>
+              <tr>
+                <th></th>
+                <th>{{ 'cart.cart_page.label.product' | t }}</th>
+                <th>{{ 'cart.cart_page.label.price' | t }}</th>
+                <th>{{ 'cart.cart_page.label.quantity' | t }}</th>
+                <th>{{ 'cart.cart_page.label.total' | t }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {%- for item in cart.items -%}
+                {%- render 'cart-item-page',
+                  item: item,
+                  gift_pr_id: gift_pr_id,
+                  min_qty: min_qty,
+                  compare_tt_price: compare_tt_price,
+                  cart_change_url: cart_change_url,
+                  edit_item: edit_item,
+                  atc_ajax_enable: atc_ajax_enable
+                -%}
+              {%- endfor -%}
+            </tbody>
+          </table>
+        {%- else -%}
+          <div class="t4s-mini_cart__empty t4s-text-center">
+            <div class="t4s-cart_page_icon t4s-d-inline-flex">
+              <svg id="icon-cart-emty" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path xmlns="http://www.w3.org/2000/svg" d="m310.531 311.671-31.905 31.906 31.905 31.906c6.249 6.249 6.248 16.379 0 22.627-3.124 3.124-7.22 4.686-11.313 4.686-4.095 0-8.189-1.562-11.313-4.687l-31.905-31.904-31.904 31.906c-3.124 3.124-7.219 4.687-11.313 4.687s-8.189-1.562-11.313-4.686c-6.248-6.249-6.249-16.379 0-22.627l31.905-31.906-31.905-31.906c-6.249-6.249-6.248-16.379 0-22.627 6.249-6.248 16.38-6.248 22.627 0l31.903 31.904 31.904-31.906c6.248-6.248 16.379-6.249 22.627 0 6.248 6.248 6.249 16.378 0 22.627zm172.364-177.584v243.826c0 73.936-60.152 134.087-134.09 134.087h-185.61c-73.938 0-134.09-60.151-134.09-134.087v-243.826c0-8.836 7.163-16 16-16h84.088c4.657-65.895 59.75-118.087 126.81-118.087 67.059 0 122.152 52.192 126.808 118.087h84.083c8.837 0 16.001 7.163 16.001 16zm-321.594-16h189.403c-4.572-48.229-45.296-86.087-94.701-86.087-49.406 0-90.13 37.858-94.702 86.087zm289.594 32h-67.758v67.435c0 8.836-7.163 16-16 16s-16-7.164-16-16v-67.435h-190.269v67.435c0 8.836-7.163 16-16 16s-16-7.164-16-16v-67.435h-67.763v227.826c0 56.291 45.797 102.087 102.09 102.087h185.609c56.293 0 102.09-45.796 102.09-102.087v-227.826z" fill="currentColor"/>
+              </svg>
+            </div>
+            <h4 class="t4s-cart_page_heading">{{ 'cart.cart_page.empty' | t }}</h4>
+            <div class="t4s-cart_page_txt">{{ 'cart.cart_page.empty_html' | t }}</div>
+            {%- assign btn_blocks = section_blocks | where: 'type', 'btn' -%}
+            {%- if btn_blocks.size > 0 -%}
+              {%- for block in btn_blocks -%}
+                {%- assign bk_stts = block.settings -%}
+                {%- assign button_style = bk_stts.button_style -%}
+                {%- if bk_stts.title != blank -%}
+                  <p class="t4s-return-to-shop">
+                    <a
+                      data-loading-bar
+                      class="t4s-btn-cart__emty t4s-btn t4s-btn-base t4s-btn-style-{{ button_style }} t4s-btn-color-{{ bk_stts.btn_cl }} {% if button_style == 'default' or button_style == 'outline' %}t4s-btn-effect-{{ bk_stts.button_effect }}{% endif %} t4s-justify-content-center t4s-truncate"
+                      href="{{ bk_stts.url | default: routes.all_products_collection_url }}"
+                    >
+                      {%- if bk_stts.btn_icon -%}
+                        <svg class="t4s-btn-icon" viewBox="0 0 14 10">
+                          <use xlink:href="#t4s-icon-btn"></use>
+                        </svg>
+                      {%- endif -%}
+                      {{ bk_stts.title -}}
+                    </a>
+                  </p>
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endif -%}
+            {%- if se_stts.enable_calc_ship and shipping_amount > -1 -%}
+              {%- liquid
+                assign shipping_money = shipping_amount | money
+                if enable_shipbar
+                  assign des_shipbar_per_1 = settings.des_shipbar_per_1
+                  assign des_shipbar_per_2 = settings.des_shipbar_per_2
+                  assign des_shipbar_per_3 = settings.des_shipbar_per_3
+                  assign less_100 = 99.99
+                  assign array_shipbar_per = des_shipbar_per_1 | append: ';' | append: des_shipbar_per_2 | append: ';' | append: des_shipbar_per_3 | split: ';' | sort_natural
+                  assign percent_class = array_shipbar_per[0] | plus: 0
+                  if percent_class == 100
+                    assign percent_class = less_100
+                  endif
+                endif
+              -%}
+
+              {%- if enable_shipbar -%}
+                {%- style -%}
+                  [data-t4s-percent="{% if des_shipbar_per_1 == 100 %}{{ less_100 }}{% else %}{{ des_shipbar_per_1 }}{% endif %}"] { --main-threshold-color: {{ settings.des_shipbar_cl_1 }}; }
+                  [data-t4s-percent="{% if des_shipbar_per_2 == 100 %}{{ less_100 }}{% else %}{{ des_shipbar_per_2 }}{% endif %}"] { --main-threshold-color: {{ settings.des_shipbar_cl_2 }}; }
+                  [data-t4s-percent="{% if des_shipbar_per_3 == 100 %}{{ less_100 }}{% else %}{{ des_shipbar_per_3 }}{% endif %}"] { --main-threshold-color: {{ settings.des_shipbar_cl_3 }}; }
+                  [data-t4s-percent="100"] { --main-threshold-color: {{ settings.des_shipbar_cl_4 }}; }
+                {%- endstyle -%}
+              {%- endif -%}
+              <div class="t4s-cart__threshold" data-t4s-percent="{{ percent_class }}">
+                <div class="t4s-cart__thres1">
+                  {{ 'cart.shipping_threshold.text_1_html' | t: money: shipping_money }}
+                </div>
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
         <div class="p-6 px-[17px] py-4">
           <div class="flex">
             <div class="w-28 h-28 bg-wb-gris-oscuro rounded-lg overflow-hidden">
