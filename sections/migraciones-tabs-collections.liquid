@@ -5,12 +5,12 @@
       Comida a <span class="highlight">su medida</span>
     </h2>
     <div class="space-x-2 flex items-center justify-center flex-nowrap mt-14 lg:mt-0">
-      <button
+      {% comment %}<button
         data-tab="todos"
         class="px-10 py-4 rounded-full border border-[#004623] bg-[#004623] text-white font-medium focus:outline-none active hidden lg:block"
       >
         Todos
-      </button>
+      </button>    {% endcomment %}
       <button
         data-tab="perros"
         class="px-10 py-4 rounded-full border border-[#004623] text-[#004623] font-medium focus:outline-none flex items-center justify-center flex-nowrap gap-4"
@@ -55,7 +55,7 @@
   <!-- Tab Content -->
   <div id="tab-content" class="my-10 lg:my-20">
     <!-- Todos -->
-    <div id="todos" class="tab-panel">
+   {%comment %} <div id="todos" class="tab-panel">
       <div id="drag-scroll-todos" class=" cards-container flex space-x-4 overflow-x-auto pb-4 ">
         <!-- Card Item -->
 
@@ -236,7 +236,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> {%endcomment %} 
 </div>
 
 <script>
