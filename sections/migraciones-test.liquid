@@ -56,7 +56,7 @@
             progress = clamp(progress);
 
             // Velocidad más lenta (100 en vez de 150)
-            const hidePct = 100 - progress * 100;
+            const hidePct = 100 - progress * 150;
             ov.style.clipPath = `inset(0 ${hidePct}% 0 0)`;
           });
         }
