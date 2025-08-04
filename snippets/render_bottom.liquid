@@ -271,7 +271,7 @@ for link in linklists.menu-e-commerce-connect.links
      {%- endif -%}
   {%- endif -%}[split_t4snt]
   
-  {%- if settings.enable_atc -%}<a href="#t4s_pr_url" data-atc-selector data-test data-tooltip="" data-id="id_nt_94" rel="nofollow" class="!shadow !h-9 !flex !items-center !justify-center !gap-2.5 !bg-[#ffcd00] !rounded-[50px] !hover:bg-[#ffcd00]/90 !py-10 !px-14 mt-8 !text-[12px] lg:!text-[20px]" data-product-sku dat-qty="1"><span class="t4s-svg-pr-icon"><svg viewBox="0 0 24 24"><use xlink:href="#t4s-icon-atc"></use></svg></span><span class="t4s-text-pr">{{ 'products.product.add_to_cart' | t }}</span></a>{% endif %}[split_t4snt]
+  {%- if settings.enable_atc -%}<a href="#t4s_pr_url" data-atc-selector data-test data-tooltip="" data-id="id_nt_94" rel="nofollow" class="!shadow !h-9 !flex !items-center !justify-center !gap-2.5 !bg-[#ffcd00] !rounded-[50px] !hover:bg-[#ffcd00]/90 !py-10 !px-14 mt-8 !text-[12px] lg:!text-[20px] !font-[600]" data-product-sku dat-qty="1"><span class="t4s-svg-pr-icon"><svg viewBox="0 0 24 24"><use xlink:href="#t4s-icon-atc"></use></svg></span><span class="t4s-text-pr">{{ 'products.product.add_to_cart' | t }}</span></a>{% endif %}[split_t4snt]
   {%- if settings.show_qty -%}
   <div data-quantity-wrapper class="t4s-quantity-wrapper t4s-quantity-pr-item"> 
     <button data-quantity-selector data-decrease-qty type="button" class="t4s-quantity-selector is--minus"><svg focusable="false" class="icon icon--minus" viewBox="0 0 10 2" role="presentation"><path d="M10 0v2H0V0z" fill="currentColor"></path></svg></button>
