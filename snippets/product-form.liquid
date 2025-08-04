@@ -260,7 +260,7 @@
                       <input type="hidden" name="utf8" value="✓">
 
                       <!-- Swatches dinámicos -->
-                      {%- if isProductDefault -%}
+                      {%- unless isProductDefault -%}
                         TEST
                         <div class="flex justify-between gap-2 mb-6">
                           <p class="font-[700] [font-family:'Barlow',Helvetica] text-[#004623] font-[16px]">
@@ -373,7 +373,7 @@
                             </div>
                           {% endfor %}
                         </div>
-                      {% endif %}
+                      {% endunless %}
                       <!-- Cantidad y botón de añadir -->
                       <div class="t4s-product-form__controls flex items-center space-x-4 [@media(max-width:1024px)]:flex-col mt-6">
                         <!-- Selector de cantidad (ancho fijo, alto 43.94px) -->
