@@ -422,18 +422,18 @@
                         document.querySelectorAll('.t4s-quantity-wrapper').forEach(wrapper => {
                           const btnDec = wrapper.querySelector('[data-decrease-qty]');
                           const btnInc = wrapper.querySelector('[data-increase-qty]');
-                          const display = wrapper.querySelector('.quantity-display');
-                          const min = 1;
+                          const input = wrapper.querySelector('[data-quantity-value]');
+                          const min = parseInt(input.min) || 1;
                           const max = {{ product.selected_or_first_available_variant.inventory_quantity }};
 
                           btnDec.addEventListener('click', () => {
-                            let val = parseInt(display.textContent, 10) || min;
-                            if (val > min) display.textContent = val - 1;
+                            let val = parseInt(input.value, 10) || min;
+                            if (val > min) input.value = val - 1;
                           });
 
                           btnInc.addEventListener('click', () => {
-                            let val = parseInt(display.textContent, 10) || min;
-                            if (val < max) display.textContent = val + 1;
+                            let val = parseInt(input.value, 10) || min;
+                            if (val < max) input.value = val + 1;
                           });
                         });
                       </script>
