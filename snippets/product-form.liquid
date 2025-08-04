@@ -260,7 +260,8 @@
                       <input type="hidden" name="utf8" value="✓">
 
                       <!-- Swatches dinámicos -->
-                      {%- unless isProductDefault -%}
+                      {%- if isProductDefault -%}
+                        TEST
                         <div class="flex justify-between gap-2 mb-6">
                           <p class="font-[700] [font-family:'Barlow',Helvetica] text-[#004623] font-[16px]">
                             Selecciona cantidad
@@ -294,7 +295,7 @@
                             </button>
                           </div>
                         </div>
-                      {% endunless %}
+                      {% endif %}
                       <div class="t4s-swatch-wrapper">
                         {% for option in product.options_with_values %}
                           {% assign option_index = forloop.index %}
