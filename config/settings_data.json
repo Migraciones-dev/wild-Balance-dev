@@ -260,7 +260,7 @@
             "type": "mega",
             "settings": {
               "title": "Comida para perros",
-              "url": "shopify://collections",
+              "url": "shopify://collections/comida-perros",
               "open_link": "_self",
               "menu": "perros",
               "icon": "",
@@ -284,7 +284,7 @@
             "type": "mega",
             "settings": {
               "title": "Comida para gatos",
-              "url": "shopify://collections",
+              "url": "shopify://collections/comida-gatos",
               "open_link": "_self",
               "menu": "gatos",
               "icon": "",
