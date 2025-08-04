@@ -1,94 +1,81 @@
 <section>
-  <!-- Versión móvil -->
+  <!-- TODO – envuelve TODO lo móvil aquí -->
   <div class="lg:hidden">
     <div class="bg-[#E7EBEE] py-10 px-4 text-center flex flex-col content-center">
       <h1 class="text-[50px] sm:text-[70px] [font-family:'Barlow',Helvetica] font-extrabold mt-8 leading-[1.25]">
-        <span class="block text-[#004623]">{{ section.settings.title_line1 }}</span>
-        <span class="block highlight text-[#004623]">{{ section.settings.title_line2 }}</span>
+        <span class="block text-[#004623]">TU PELUDO</span>
+        <span class="block highlight text-[#004623]">ES ÚNICO</span>
       </h1>
 
-      <p class="text-gray-800 leading-relaxed mt-10 text-[#222222] text-[14px] sm:text-[14px]">
-        {{ section.settings.description }}
+      <p class="text-gray-800 leading-relaxed mt-10 text-[#222222] text-[14px] sm:text-[14px] ml:text-[16px] lg:text-[18px]">
+        Únete a la alimentación personalizada que se merece tu mascota y haz que disfrute de todos sus beneficios.
       </p>
-
-      {% if section.settings.mobile_image %}
-        <img
-          class="mt-4 max-w-[28rem] mx-auto"
-          src="{{ section.settings.mobile_image }}"
-          alt="{{ section.settings.mobile_image_alt }}"
-        >
-      {% endif %}
-
+      <img
+        class="mt-4 max-w-[28rem] mx-auto"
+        src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Frame_628_2.png?v=1753287599"
+      >
       <div class="flex justify-center gap-4 mt-2 max-w-[450px] mx-auto">
-        <a href="{{ section.settings.button1_url }}">
-          <button class="bg-yellow-400 hover:bg-yellow-500 rounded-full font-medium transition shadow-lg text-[14px] text-[#004623] flex-grow basis-0 py-6 min-w-[180px] px-6">
-            {{ section.settings.button1_text }}
-          </button>
-        </a>
-        <a href="{{ section.settings.button2_url }}">
-          <button class="bg-[#004623] hover:bg-green-800 text-white rounded-full font-medium transition shadow-lg text-[14px] flex-grow basis-0 py-6 min-w-[180px] px-6">
-            {{ section.settings.button2_text }}
-          </button>
-        </a>
+        <button class="bg-yellow-400 hover:bg-yellow-500 rounded-full font-medium transition shadow-lg text-[14px] text-[#004623] flex-grow basis-0 py-6 min-w-[180px] px-6">
+          Comida para perros
+        </button>
+        <button class="bg-[#004623] hover:bg-green-800 text-white rounded-full font-medium transition shadow-lg text-[14px] flex-grow basis-0 py-6 min-w-[180px] px-6">
+          Comida para gatos
+        </button>
       </div>
-
       <a
         target="_blank"
-        href="{{ section.settings.trustbadge_url }}"
-        class="mt-10 text-gray-600 max-w-[20rem] mx-auto py-18"
+        href="https://www.trustpilot.com/review/wildbalance.es"
+        class="mt-10 text-gray-600  max-w-[20rem] mx-auto py-18"
       >
-        {% if section.settings.trustbadge_image %}
-          <img src="{{ section.settings.trustbadge_image }}" alt="Trustpilot">
-        {% endif %}
+        <img src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Trusted_1.png?v=1753287003">
       </a>
     </div>
+
+    <!-- Imagen móvil incluida DENTRO del mismo wrapper -->
+    <img
+      src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/5f90d44833e7340c78f621df_hero_2.jpg_1_e63de8c4-f8ec-43cc-aa57-babaa191faec.png?v=1753122024"
+      alt="Mascotas"
+      class="w-full h-auto object-cover"
+    >
   </div>
 
-  <!-- Versión escritorio -->
+  <!-- TODO – sólo desktop a partir de lg -->
   <div class="hidden lg:block relative w-full overflow-hidden">
-    {% if section.settings.desktop_image %}
-      <img
-        src="{{ section.settings.desktop_image }}"
-        alt="{{ section.settings.desktop_image_alt }}"
-        class="w-full h-auto object-cover"
-      >
-    {% endif %}
+    <!-- Imagen en flujo -->
+    <img
+      src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/36badad8b83349a1ee622eb4da722c665a701c5c_1.png?v=1754230400"
+      alt="Mascotas"
+      class="w-full h-auto object-cover"
+    >
 
+    <!-- Overlay de contenido -->
     <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4 py-20 gap-10">
-      <h1 class="[font-family:'Barlow',Helvetica] font-extrabold text-[105px] leading-tight">
-        <span class="block text-[#004623]">{{ section.settings.title_line1 }}</span>
-        <span class="block highlight text-[#004623]">{{ section.settings.title_line2 }}</span>
+      <h1 class="[font-family:'Barlow',Helvetica] font-extrabold  text-[105px] leading-tight">
+        <span class="block text-[#004623]">TU PELUDO</span>
+        <span class="block highlight text-[#004623]">ES ÚNICO</span>
       </h1>
 
-      <p class="max-w-4xl text-lg leading-relaxed lg:text-[18px] text-[#222222]">
-        {{ section.settings.description }}
+      <p class="max-w-4xl text-lg leading-relaxed lg:text-[18px] text-[#222222] ">
+        Únete a la alimentación personalizada que se merece tu mascota y haz que disfrute de todos sus beneficios.
       </p>
-
-      {% if section.settings.overlay_image %}
-        <img
-          class="max-w-[38rem] mx-auto"
-          src="{{ section.settings.overlay_image }}"
-          alt="{{ section.settings.overlay_image_alt }}"
-        >
-      {% endif %}
-
-      <div class="flex gap-4">
-        <a href="{{ section.settings.button1_url }}">
-          <button class="px-16 py-6 bg-yellow-400 hover:bg-yellow-500 rounded-full font-medium transition shadow-xl text-[#004623]">
-            {{ section.settings.button1_text }}
-          </button>
-        </a>
-        <a href="{{ section.settings.button2_url }}">
-          <button class="px-16 py-6 bg-[#004623] hover:bg-green-800 text-white rounded-full font-medium transition shadow-xl">
-            {{ section.settings.button2_text }}
-          </button>
-        </a>
+      <img
+        class=" max-w-[38rem] mx-auto"
+        src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Frame_628_2.png?v=1753287599"
+      >
+      <div class="flex gap-4 ">
+        <button class="px-16 py-6 bg-yellow-400 hover:bg-yellow-500  rounded-full font-medium transition shadow-xl text-[#004623]">
+          Comida para perros
+        </button>
+        <button class="px-16 py-6 bg-[#004623] hover:bg-green-800 text-white rounded-full font-medium transition shadow-xl">
+          Comida para gatos
+        </button>
       </div>
-
-      <a target="_blank" href="{{ section.settings.trustbadge_url }}" class="mt-4 text-gray-600 text-sm max-w-[20rem]">
-        {% if section.settings.trustbadge_image_desktop %}
-          <img src="{{ section.settings.trustbadge_image_desktop }}" alt="Trustpilot">
-        {% endif %}
+      <a
+        target="_blank"
+        href="https://www.trustpilot.com/review/wildbalance.es"
+        class="mt-4 text-gray-600 text-sm mt-16 max max-w-[20rem]"
+      >
+        <img src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Trusted.png?v=1753286402">
       </a>
     </div>
   </div>
@@ -99,92 +86,14 @@
   "name": "Migraciones banner home",
   "settings": [
     {
-      "type": "text",
-      "id": "title_line1",
-      "label": "Título línea 1",
-      "default": "TU PELUDO"
-    },
-    {
-      "type": "text",
-      "id": "title_line2",
-      "label": "Título línea 2",
-      "default": "ES ÚNICO"
-    },
-    {
-      "type": "textarea",
-      "id": "description",
-      "label": "Descripción",
-      "default": "Únete a la alimentación personalizada que se merece tu mascota y haz que disfrute de todos sus beneficios."
-    },
-    {
-      "type": "image_picker",
-      "id": "mobile_image",
-      "label": "Imagen móvil"
-    },
-    {
-      "type": "text",
-      "id": "mobile_image_alt",
-      "label": "Alt texto imagen móvil",
-      "default": "Mascotas"
-    },
-    {
       "type": "image_picker",
       "id": "desktop_image",
       "label": "Imagen escritorio"
     },
     {
-      "type": "text",
-      "id": "desktop_image_alt",
-      "label": "Alt texto imagen escritorio",
-      "default": "Mascotas"
-    },
-    {
       "type": "image_picker",
-      "id": "overlay_image",
-      "label": "Imagen overlay (frame)"
-    },
-    {
-      "type": "text",
-      "id": "overlay_image_alt",
-      "label": "Alt texto overlay",
-      "default": "Frame decorativo"
-    },
-    {
-      "type": "text",
-      "id": "button1_text",
-      "label": "Texto botón 1",
-      "default": "Comida para perros"
-    },
-    {
-      "type": "url",
-      "id": "button1_url",
-      "label": "URL botón 1"
-    },
-    {
-      "type": "text",
-      "id": "button2_text",
-      "label": "Texto botón 2",
-      "default": "Comida para gatos"
-    },
-    {
-      "type": "url",
-      "id": "button2_url",
-      "label": "URL botón 2"
-    },
-    {
-      "type": "image_picker",
-      "id": "trustbadge_image",
-      "label": "Logo Trustpilot (móvil)"
-    },
-    {
-      "type": "url",
-      "id": "trustbadge_url",
-      "label": "Enlace Trustpilot"
-    },
-    {
-      "type": "image_picker",
-      "id": "trustbadge_image_desktop",
-      "label": "Logo Trustpilot (escritorio)"
+      "id": "mobile_image",
+      "label": "Imagen móvil"
     }
   ],
   "presets": [
