@@ -2536,5 +2536,10 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".t4s-btn-sidebar {display: none!important;}"
+    ]
   }
 }
