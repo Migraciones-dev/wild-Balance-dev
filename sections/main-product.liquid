@@ -459,7 +459,15 @@ t4option0_0 | alt text
                         {%- when 'size' -%}
                             <div class="t4s-product__size">{%- if bk_size_chart != '1' and pos_sizeg == '1' %}{{ html_sizeg }}{% endif -%}</div>
                         {%- when 'form' -%}
+                            {%- comment -%}
                             {%- liquid
+                                assign product_list = meta_theme.grouped.value
+                                assign advance_pr_type = meta_theme.advance_pr_type.value
+                                assign advance_label = meta_theme.advance_label.value -%}
+                            {%- endcomment -%}
+
+                            {%- liquid
+                                assign product_list = bk_stts.product_list
                                 assign advance_pr_type = bk_stts.advance_pr_list
                                 assign advance_label = bk_stts.advance_label
                                 assign is_fit_ratio_img = false
@@ -468,8 +476,11 @@ t4option0_0 | alt text
                                     assign first_ratio_img = variant_images[0].aspect_ratio
                                 endif
                                 assign arr_properties = seBlocks | where: 'type', 'properties'
-                                    render 'product-form', type: 'main', product: product, bk_stts: bk_stts, pr_sid: pr_sid, isExternal: isExternal, external_title: external_title, external_link: external_link, isProductAvailable: isProductAvailable, isProductDefault: isProductDefault, current_variant: current_variant, remove_soldout: remove_soldout, PR_no_pick: PR_no_pick, isPreoder: isPreoder, is_fit_ratio_img: is_fit_ratio_img, first_ratio_img: first_ratio_img, name_sizeg: name_sizeg, html_sizeg: html_sizeg, pos_sizeg: pos_sizeg, advance_pr_type: advance_pr_type, advance_label: advance_label, html_price: html_price, shopify_attributes: block.shopify_attributes, arr_properties: arr_properties, cus_qty: cus_qty
-                            -%}
+if product_list == blank
+                        render 'product-form', type: 'main', product: product, bk_stts: bk_stts, pr_sid: pr_sid, isExternal: isExternal, external_title: external_title, external_link: external_link, isProductAvailable: isProductAvailable, isProductDefault: isProductDefault, current_variant: current_variant, remove_soldout: remove_soldout, PR_no_pick: PR_no_pick, isPreoder: isPreoder, is_fit_ratio_img: is_fit_ratio_img, first_ratio_img: first_ratio_img, name_sizeg: name_sizeg, html_sizeg: html_sizeg,pos_sizeg: pos_sizeg, advance_pr_type: advance_pr_type, advance_label: advance_label, html_price: html_price ,shopify_attributes: block.shopify_attributes, arr_properties: arr_properties, cus_qty: cus_qty
+                    else
+                        render 'grouped-form', product: product, bk_stts: bk_stts, pr_sid: pr_sid, product_list: product_list, shopify_attributes: block.shopify_attributes, cus_qty: cus_qty
+                    endif                             -%}
                         {%- when 'delivery_ask' -%}
                             <div class="t4s-extra-link" {{ block.shopify_attributes }}>
                                 {%- assign page_delivery = bk_stts.page_dr %}{% if bk_stts.delivery and page_delivery != blank -%}
