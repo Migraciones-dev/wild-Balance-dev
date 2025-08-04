@@ -571,7 +571,7 @@ em {
 .t4s-col-item {
   padding-right: calc(var(--ts-gutter-x) * 0.5);
   padding-left: calc(var(--ts-gutter-x) * 0.5);
-  margin-bottom: var(--ts-gutter-y);
+  margin-top: var(--ts-gutter-y);
   box-sizing: border-box;
   flex-shrink: 0;
   width: 100%;
