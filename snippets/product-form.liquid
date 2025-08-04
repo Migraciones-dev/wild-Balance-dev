@@ -123,7 +123,7 @@
               assign option_name = option.name
               assign name_downcase = option_name | downcase
             -%}
-            {%- if get_color contains name_downcase -%}
+            {%- if true -%}
               <div
                 data-swatch-option
                 data-id="{{ forloop.index0 }}"
