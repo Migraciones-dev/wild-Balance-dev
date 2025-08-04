@@ -43,7 +43,7 @@ h3.t4s-fbt__title {
 }
 .t4s-fbt__total-price del,
 .t4s-fbt__price del {
-    color: var(--secondary-price-color);
+    color: #004623;
 }
 ul.t4s-fbt__list-img {
     padding: 0;

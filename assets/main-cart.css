@@ -142,7 +142,7 @@
   color: var(--primary-price-color);
 }
 .t4s-page-cart_prices del{
-    color: var(--secondary-price-color);
+    color: #004623;
     display: inline-block;
 }
 .t4s-page-cart_prices ins,

@@ -297,7 +297,7 @@ html:not(.t4s-cart-count-0) .t4s-when-cart-emty {
     font-size: 12px;
 }
 .t4s-minicart-tabs-item-content .t4s-widget__pr .t4s-widget__pr-price del {
-    color: var(--secondary-price-color);
+    color: #004623;
 }
 .t4s-minicart-tabs-item-content .t4s-widget__pr .t4s-widget__pr-price ins {
     color: var(--sale-price-color);
@@ -471,10 +471,10 @@ ul.t4s-cart_discount_price svg {
     margin-inline-start: 5px;
 }
 .t4s-mini_cart__meta .t4s-cart_price del {
-    color: var(--secondary-price-color);
+    color: #004623;
 }
 [data-item-qty-true="94"] .t4s-cart_meta_price {
-    color: var(--secondary-price-color);
+    color: #004623;
 }
 [data-item-qty-true="94"] .t4s-cart_meta_price ins {
     color: var(--primary-price-color);
@@ -513,7 +513,7 @@ ul.t4s-cart_discount_price svg {
     color: var(--primary-price-color);
 }
 .t4s-mini_cart__actions .t4s-cart_price-total del {
-    color: var(--secondary-price-color);
+    color: #004623;
 }
 .t4s-mini_cart__actions .t4s-cart_price-total ins {
     color: var(--sale-price-color);
@@ -1007,7 +1007,7 @@ form#t4s-tab-minicart {
 }   
 #t4s-mini_cart .t4s_box_pr_slider .t4s-widget__pr-price del,
 #t4s-mini_cart .t4s_box_pr_slider .t4s-widget__pr-price .t4s-price-from {
-   color: var(--secondary-price-color);
+   color: #004623;
 }
 #t4s-mini_cart .t4s_box_pr_slider .t4s-pr-quickview {
     color: var(--t4s-light-color);

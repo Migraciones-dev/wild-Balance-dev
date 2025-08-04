@@ -128,7 +128,7 @@
     color: var(--accent-color);
 }
 .t4s-products-loop  .t4s-widget__pr .t4s-widget__pr-price {
-    color: var(--secondary-price-color);
+    color: #004623;
     font-size: 12px;
 }
 .t4s-products-loop  .t4s-widget__pr .t4s-widget__pr-price ins {

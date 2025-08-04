@@ -160,7 +160,7 @@
     color: var(--primary-price-color);
 }
 .t4s-bundle-pr-item .t4s-bundle-pr__price del {
-    color: var(--secondary-price-color);
+    color: #004623;
 }
 .t4s-bundle-pr-item .t4s-bundle-pr__price ins {
     color: var(--sale-price-color);

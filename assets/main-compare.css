@@ -114,7 +114,7 @@
 }
 .t4s_compare_price .t4s-product-price ins .t4s-price-from,
 .t4s_compare_price .t4s-product-price del {
-    color: var(--secondary-price-color);
+    color: #004623;
     font-weight: 400;
 }
 .t4s_compare_price .t4s-product-price ins .t4s-price-from {
@@ -127,7 +127,7 @@
 }
 .t4s_compare_price .t4s-product-price del{
     font-size: 16px;
-    color: var(--secondary-price-color)
+    color: #004623
 }
 .t4s_compare_price .t4s_compare_onsale {
 	width: auto;

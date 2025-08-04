@@ -670,7 +670,7 @@ button.t4s-product-form__submit[disabled="disabled"]{
 .t4s-product__info-container .t4s-product-price del{ 
   display: inline-block;
   font-size: var(--price-del-size);
-  color: var(--secondary-price-color);
+  color: #004623;
 }
 .t4s-product__info-container .t4s-product-price ins {
   display: inline-block;
@@ -679,7 +679,7 @@ button.t4s-product-form__submit[disabled="disabled"]{
 }
 .t4s-product__info-container .t4s-product-price span.t4s-price-from{
   margin-right: 5px;
-  color: var(--secondary-price-color);
+  color: #004623;
 }
 .t4s-product__info-container .t4s-product-price ins>span.t4s-price-from{margin:0}
 .t4s-product__info-container .t4s-product-price .t4s-labrl-sale span {

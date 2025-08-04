@@ -69,7 +69,7 @@
 }
 .t4s-grouped__total-price del,
 .t4s-grouped-pr__price del {
-    color: var(--secondary-price-color);
+    color: #004623;
 }
 .t4s-grouped__total-price {
     color: var(--primary-price-color);
