@@ -1,89 +1,89 @@
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const observer = new MutationObserver(() => {
-            const div_padre = document.querySelector('.checkoutMethodsContainer');
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new MutationObserver(() => {
+      const div_padre = document.querySelector('.checkoutMethodsContainer');
 
-            if (div_padre && div_padre.children.length >= 2) {
-                div_padre.firstElementChild.remove(); 
-             /* observer.disconnect(); */
-            }
-        });
-
-        observer.observe(document.body, {
-            childList: true,
-            subtree: true
-        });
+      if (div_padre && div_padre.children.length >= 2) {
+        div_padre.firstElementChild.remove();
+        /* observer.disconnect(); */
+      }
     });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+  });
 </script>
 {{ 'button-style.css' | asset_url | stylesheet_tag }}
 <link href="{{ 'custom-effect.css' | asset_url }}" rel="stylesheet" media="print" onload="this.media='all'">
 {%- liquid
-    assign section_blocks   = section.blocks
-    assign se_stts          = section.settings
-    assign ccount           = cart.item_count
-    assign ck_lumise        = 'ck_lumise'  
-    assign cart_change_url  = routes.cart_change_url
-    assign min_qty          = settings.min_qty | plus: 0
-    assign compare_tt_price = 0
-    assign shipping_amount  = settings.free_ship_pr.metafields.theme.shipping_money.value | default: settings.free_ship_pr.price | default: -1
-    assign total_price      = cart.total_price
+  assign section_blocks = section.blocks
+  assign se_stts = section.settings
+  assign ccount = cart.item_count
+  assign ck_lumise = 'ck_lumise'
+  assign cart_change_url = routes.cart_change_url
+  assign min_qty = settings.min_qty | plus: 0
+  assign compare_tt_price = 0
+  assign shipping_amount = settings.free_ship_pr.metafields.theme.shipping_money.value | default: settings.free_ship_pr.price | default: -1
+  assign total_price = cart.total_price
 
-    assign gift_pr     = all_products[settings.gift_wrap_pr]
-    assign gift_pr_id  = gift_pr.id
-    assign arr_gift_id = cart.items | where: 'product_id', gift_pr_id
+  assign gift_pr = all_products[settings.gift_wrap_pr]
+  assign gift_pr_id = gift_pr.id
+  assign arr_gift_id = cart.items | where: 'product_id', gift_pr_id
 
-    assign ck_agree = false 
-    assign arrblock = section_blocks | where: "type", 'agree'
-    if arrblock.size > 0
-        assign cl_agree = ' t4s-pe-none'
-        assign ck_agree = true
+  assign ck_agree = false
+  assign arrblock = section_blocks | where: 'type', 'agree'
+  if arrblock.size > 0
+    assign cl_agree = ' t4s-pe-none'
+    assign ck_agree = true
+  endif
+  if cart.note != blank
+    assign style_add = ' t4s-d-none'
+    assign style_edit = ''
+  else
+    assign style_add = ''
+    assign style_edit = ' t4s-d-none'
+  endif
+  assign edit_item = settings.edit_item
+  assign enable_shipbar = settings.enable_shipbar
+  assign atc_ajax_enable = settings.atc_ajax_enable
+  assign cart_ajax_enable = settings.cart_ajax_enable
+  unless cart_ajax_enable
+    assign min_qty = 1
+  endunless
+  assign design_cart = se_stts.design_cart
+  assign primary_col = 't4s-col-item t4s-col-lg-12 t4s-col-md-12 t4s-col-12'
+  if design_cart == '1column'
+    assign col_cart_actions = 't4s-col-item t4s-col-12 t4s-col-md-6 cart_actions t4s-text-md-start t4s-text-center t4s-order-2'
+  else
+    if ccount > 0
+      assign primary_col = 't4s-col-item t4s-col-lg-9 t4s-col-md-12 t4s-col-12'
     endif
-    if cart.note != blank
-        assign style_add  = ' t4s-d-none'
-        assign style_edit = ''
-    else
-        assign style_add  = ''
-        assign style_edit = ' t4s-d-none'
-    endif
-    assign edit_item = settings.edit_item
-    assign enable_shipbar = settings.enable_shipbar
-    assign atc_ajax_enable  = settings.atc_ajax_enable
-    assign cart_ajax_enable = settings.cart_ajax_enable
-    unless cart_ajax_enable
-        assign min_qty = 1
-    endunless 
-    assign design_cart = se_stts.design_cart
-    assign primary_col = "t4s-col-item t4s-col-lg-12 t4s-col-md-12 t4s-col-12"
-    if design_cart == "1column"
-        assign col_cart_actions = "t4s-col-item t4s-col-12 t4s-col-md-6 cart_actions t4s-text-md-start t4s-text-center t4s-order-2"
-    else
-        if ccount > 0
-            assign primary_col = "t4s-col-item t4s-col-lg-9 t4s-col-md-12 t4s-col-12"
-        endif    
-        assign col_cart_actions = "t4s-col-item t4s-col-12 t4s-col-md-12 t4s-col-12"
-    endif
+    assign col_cart_actions = 't4s-col-item t4s-col-12 t4s-col-md-12 t4s-col-12'
+  endif
 -%}
 
 <link rel="stylesheet" href="{{ 'main-cart.css' | asset_url }}" media="all">
 <svg class="t4s-d-none">
-<symbol id="icon-cart-remove" viewBox="5 5 14 14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-</symbol>
-<symbol id="icon-cart-edit" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
-</symbol>
-<symbol id="icon-cart-tag" viewBox="0 0 448 512">
-  <path d="M48 32H197.5C214.5 32 230.7 38.74 242.7 50.75L418.7 226.7C443.7 251.7 443.7 292.3 418.7 317.3L285.3 450.7C260.3 475.7 219.7 475.7 194.7 450.7L18.75 274.7C6.743 262.7 0 246.5 0 229.5V80C0 53.49 21.49 32 48 32L48 32zM112 176C129.7 176 144 161.7 144 144C144 126.3 129.7 112 112 112C94.33 112 80 126.3 80 144C80 161.7 94.33 176 112 176z"/>
-</symbol>
-<symbol id="icon-cart-spinner" viewBox="0 0 66 66">
-  <circle class="t4s-path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-</symbol>
-<symbol id="icon-cart-check" viewBox="0 0 448 512">
-  <path d="M443.3 100.7C449.6 106.9 449.6 117.1 443.3 123.3L171.3 395.3C165.1 401.6 154.9 401.6 148.7 395.3L4.686 251.3C-1.562 245.1-1.562 234.9 4.686 228.7C10.93 222.4 21.06 222.4 27.31 228.7L160 361.4L420.7 100.7C426.9 94.44 437.1 94.44 443.3 100.7H443.3z"/>
-</symbol>
-<symbol id="icon-cart-selected" viewBox="0 0 24 24">
-<path d="M9 20l-7-7 3-3 4 4L19 4l3 3z"></path>
-</symbol>
+  <symbol id="icon-cart-remove" viewBox="5 5 14 14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+  </symbol>
+  <symbol id="icon-cart-edit" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+  </symbol>
+  <symbol id="icon-cart-tag" viewBox="0 0 448 512">
+    <path d="M48 32H197.5C214.5 32 230.7 38.74 242.7 50.75L418.7 226.7C443.7 251.7 443.7 292.3 418.7 317.3L285.3 450.7C260.3 475.7 219.7 475.7 194.7 450.7L18.75 274.7C6.743 262.7 0 246.5 0 229.5V80C0 53.49 21.49 32 48 32L48 32zM112 176C129.7 176 144 161.7 144 144C144 126.3 129.7 112 112 112C94.33 112 80 126.3 80 144C80 161.7 94.33 176 112 176z"/>
+  </symbol>
+  <symbol id="icon-cart-spinner" viewBox="0 0 66 66">
+    <circle class="t4s-path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+  </symbol>
+  <symbol id="icon-cart-check" viewBox="0 0 448 512">
+    <path d="M443.3 100.7C449.6 106.9 449.6 117.1 443.3 123.3L171.3 395.3C165.1 401.6 154.9 401.6 148.7 395.3L4.686 251.3C-1.562 245.1-1.562 234.9 4.686 228.7C10.93 222.4 21.06 222.4 27.31 228.7L160 361.4L420.7 100.7C426.9 94.44 437.1 94.44 443.3 100.7H443.3z"/>
+  </symbol>
+  <symbol id="icon-cart-selected" viewBox="0 0 24 24">
+  <path d="M9 20l-7-7 3-3 4 4L19 4l3 3z"></path>
+  </symbol>
 </svg>
 {% capture summary_cart %}
     {%- if se_stts.enable_calc_ship and shipping_amount > -1 -%}
@@ -240,247 +240,713 @@
 {% endcapture %}
 <div class="t4s-container t4s-cart-{{ design_cart }}">
   <div class="t4s-cookie-essage t4s-dn">{{ 'cart.general.cookies_required' | t }}</div>
-  <form data-cart-wrapper data-cart-content action="{{ routes.cart_url }}" method="post" novalidate class="t4s-cartPage__form t4s-pr t4s-oh" data-cart-ajax="{{ cart_ajax_enable }}">
+  <form
+    data-cart-wrapper
+    data-cart-content
+    action="{{ routes.cart_url }}"
+    method="post"
+    novalidate
+    class="t4s-cartPage__form t4s-pr t4s-oh"
+    data-cart-ajax="{{ cart_ajax_enable }}"
+  >
     <input type="hidden" data-cart-attr-rm name="attributes[collection_items_per_row]" value="">
     <div class="t4s-row">
-        <div class="{{ primary_col }}">
-            <div class="t4s-cartPage__items t4s_ratioadapt" data-cart-items>
-                {%- if ccount > 0 -%}
-                    <table class="t4s-table-main-cart">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>{{ 'cart.cart_page.label.product' | t }}</th>
-                                <th>{{ 'cart.cart_page.label.price' | t }}</th>
-                                <th>{{ 'cart.cart_page.label.quantity' | t }}</th>
-                                <th>{{ 'cart.cart_page.label.total' | t }}</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {%- for item in cart.items -%}
-                                {%- render 'cart-item-page', item: item, gift_pr_id: gift_pr_id, min_qty: min_qty, compare_tt_price: compare_tt_price, cart_change_url: cart_change_url, edit_item: edit_item, atc_ajax_enable: atc_ajax_enable -%}    
-                            {%- endfor -%}
-                        </tbody>
-                    </table>
-                {%- else -%}
-                    <div class="t4s-mini_cart__empty t4s-text-center">
-                        <div class="t4s-cart_page_icon t4s-d-inline-flex"><svg id="icon-cart-emty" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path xmlns="http://www.w3.org/2000/svg" d="m310.531 311.671-31.905 31.906 31.905 31.906c6.249 6.249 6.248 16.379 0 22.627-3.124 3.124-7.22 4.686-11.313 4.686-4.095 0-8.189-1.562-11.313-4.687l-31.905-31.904-31.904 31.906c-3.124 3.124-7.219 4.687-11.313 4.687s-8.189-1.562-11.313-4.686c-6.248-6.249-6.249-16.379 0-22.627l31.905-31.906-31.905-31.906c-6.249-6.249-6.248-16.379 0-22.627 6.249-6.248 16.38-6.248 22.627 0l31.903 31.904 31.904-31.906c6.248-6.248 16.379-6.249 22.627 0 6.248 6.248 6.249 16.378 0 22.627zm172.364-177.584v243.826c0 73.936-60.152 134.087-134.09 134.087h-185.61c-73.938 0-134.09-60.151-134.09-134.087v-243.826c0-8.836 7.163-16 16-16h84.088c4.657-65.895 59.75-118.087 126.81-118.087 67.059 0 122.152 52.192 126.808 118.087h84.083c8.837 0 16.001 7.163 16.001 16zm-321.594-16h189.403c-4.572-48.229-45.296-86.087-94.701-86.087-49.406 0-90.13 37.858-94.702 86.087zm289.594 32h-67.758v67.435c0 8.836-7.163 16-16 16s-16-7.164-16-16v-67.435h-190.269v67.435c0 8.836-7.163 16-16 16s-16-7.164-16-16v-67.435h-67.763v227.826c0 56.291 45.797 102.087 102.09 102.087h185.609c56.293 0 102.09-45.796 102.09-102.087v-227.826z" fill="currentColor"/></svg></div>
-                        <h4 class="t4s-cart_page_heading">{{ 'cart.cart_page.empty' | t }}</h4>
-                        <div class="t4s-cart_page_txt">{{ 'cart.cart_page.empty_html' | t }}</div>
-                        {%- assign btn_blocks = section_blocks | where: "type", 'btn' -%}
-                        {%- if btn_blocks.size > 0 -%}
-                            {%- for block in btn_blocks -%}
-                            {%- assign bk_stts = block.settings -%}
-                            {%- assign button_style = bk_stts.button_style -%}
-                                {%- if bk_stts.title != blank -%}
-                                    <p class="t4s-return-to-shop"><a data-loading-bar class="t4s-btn-cart__emty t4s-btn t4s-btn-base t4s-btn-style-{{ button_style }} t4s-btn-color-{{ bk_stts.btn_cl }} {% if button_style == 'default' or button_style == 'outline' %}t4s-btn-effect-{{ bk_stts.button_effect }}{% endif %} t4s-justify-content-center t4s-truncate" href="{{ bk_stts.url | default: routes.all_products_collection_url }}">{%- if bk_stts.btn_icon -%}<svg  class="t4s-btn-icon" viewBox="0 0 14 10"><use xlink:href="#t4s-icon-btn"></use></svg>{%- endif -%}{{ bk_stts.title }}</a></p>
-                                {%- endif -%}
-                            {%- endfor -%}
+      <div class="{{ primary_col }}">
+        <div class="t4s-cartPage__items t4s_ratioadapt" data-cart-items>
+          {%- if ccount > 0 -%}
+            <table class="t4s-table-main-cart">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>{{ 'cart.cart_page.label.product' | t }}</th>
+                  <th>{{ 'cart.cart_page.label.price' | t }}</th>
+                  <th>{{ 'cart.cart_page.label.quantity' | t }}</th>
+                  <th>{{ 'cart.cart_page.label.total' | t }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {%- for item in cart.items -%}
+                  {%- render 'cart-item-page',
+                    item: item,
+                    gift_pr_id: gift_pr_id,
+                    min_qty: min_qty,
+                    compare_tt_price: compare_tt_price,
+                    cart_change_url: cart_change_url,
+                    edit_item: edit_item,
+                    atc_ajax_enable: atc_ajax_enable
+                  -%}
+                {%- endfor -%}
+              </tbody>
+            </table>
+          {%- else -%}
+            <div class="t4s-mini_cart__empty t4s-text-center">
+              <div class="t4s-cart_page_icon t4s-d-inline-flex">
+                <svg id="icon-cart-emty" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path xmlns="http://www.w3.org/2000/svg" d="m310.531 311.671-31.905 31.906 31.905 31.906c6.249 6.249 6.248 16.379 0 22.627-3.124 3.124-7.22 4.686-11.313 4.686-4.095 0-8.189-1.562-11.313-4.687l-31.905-31.904-31.904 31.906c-3.124 3.124-7.219 4.687-11.313 4.687s-8.189-1.562-11.313-4.686c-6.248-6.249-6.249-16.379 0-22.627l31.905-31.906-31.905-31.906c-6.249-6.249-6.248-16.379 0-22.627 6.249-6.248 16.38-6.248 22.627 0l31.903 31.904 31.904-31.906c6.248-6.248 16.379-6.249 22.627 0 6.248 6.248 6.249 16.378 0 22.627zm172.364-177.584v243.826c0 73.936-60.152 134.087-134.09 134.087h-185.61c-73.938 0-134.09-60.151-134.09-134.087v-243.826c0-8.836 7.163-16 16-16h84.088c4.657-65.895 59.75-118.087 126.81-118.087 67.059 0 122.152 52.192 126.808 118.087h84.083c8.837 0 16.001 7.163 16.001 16zm-321.594-16h189.403c-4.572-48.229-45.296-86.087-94.701-86.087-49.406 0-90.13 37.858-94.702 86.087zm289.594 32h-67.758v67.435c0 8.836-7.163 16-16 16s-16-7.164-16-16v-67.435h-190.269v67.435c0 8.836-7.163 16-16 16s-16-7.164-16-16v-67.435h-67.763v227.826c0 56.291 45.797 102.087 102.09 102.087h185.609c56.293 0 102.09-45.796 102.09-102.087v-227.826z" fill="currentColor"/>
+                </svg>
+              </div>
+              <h4 class="t4s-cart_page_heading">{{ 'cart.cart_page.empty' | t }}</h4>
+              <div class="t4s-cart_page_txt">{{ 'cart.cart_page.empty_html' | t }}</div>
+              {%- assign btn_blocks = section_blocks | where: 'type', 'btn' -%}
+              {%- if btn_blocks.size > 0 -%}
+                {%- for block in btn_blocks -%}
+                  {%- assign bk_stts = block.settings -%}
+                  {%- assign button_style = bk_stts.button_style -%}
+                  {%- if bk_stts.title != blank -%}
+                    <p class="t4s-return-to-shop">
+                      <a
+                        data-loading-bar
+                        class="t4s-btn-cart__emty t4s-btn t4s-btn-base t4s-btn-style-{{ button_style }} t4s-btn-color-{{ bk_stts.btn_cl }} {% if button_style == 'default' or button_style == 'outline' %}t4s-btn-effect-{{ bk_stts.button_effect }}{% endif %} t4s-justify-content-center t4s-truncate"
+                        href="{{ bk_stts.url | default: routes.all_products_collection_url }}"
+                      >
+                        {%- if bk_stts.btn_icon -%}
+                          <svg class="t4s-btn-icon" viewBox="0 0 14 10">
+                            <use xlink:href="#t4s-icon-btn"></use>
+                          </svg>
                         {%- endif -%}
-                        {%- if se_stts.enable_calc_ship and shipping_amount > -1 -%}
-                        {%- liquid
-                        assign shipping_money  = shipping_amount | money
-                        if enable_shipbar
-                            assign des_shipbar_per_1 = settings.des_shipbar_per_1
-                            assign des_shipbar_per_2 = settings.des_shipbar_per_2
-                            assign des_shipbar_per_3 = settings.des_shipbar_per_3
-                            assign less_100 = 99.99
-                            assign array_shipbar_per = des_shipbar_per_1 | append: ';' | append: des_shipbar_per_2 | append: ';' | append: des_shipbar_per_3 | split: ';' | sort_natural
-                            assign percent_class =  array_shipbar_per[0] | plus: 0
-                            if percent_class == 100
-                                assign percent_class = less_100
-                            endif
-                        endif -%}
-                    
-                        {%- if enable_shipbar -%}
-                        {%- style -%}
-                        [data-t4s-percent="{% if des_shipbar_per_1 == 100 %}{{ less_100 }}{% else %}{{ des_shipbar_per_1 }}{% endif %}"] { --main-threshold-color: {{ settings.des_shipbar_cl_1 }}; }
-                        [data-t4s-percent="{% if des_shipbar_per_2 == 100 %}{{ less_100 }}{% else %}{{ des_shipbar_per_2 }}{% endif %}"] { --main-threshold-color: {{ settings.des_shipbar_cl_2 }}; }
-                        [data-t4s-percent="{% if des_shipbar_per_3 == 100 %}{{ less_100 }}{% else %}{{ des_shipbar_per_3 }}{% endif %}"] { --main-threshold-color: {{ settings.des_shipbar_cl_3 }}; }
-                        [data-t4s-percent="100"] { --main-threshold-color: {{ settings.des_shipbar_cl_4 }}; }
-                        {%- endstyle -%}
-                        {%- endif -%}
-                        <div class="t4s-cart__threshold" data-t4s-percent="{{ percent_class }}"><div class="t4s-cart__thres1">{{ 'cart.shipping_threshold.text_1_html' | t: money: shipping_money }}</div></div>
-                    {%- endif -%}
-                    </div>
+                        {{ bk_stts.title -}}
+                      </a>
+                    </p>
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endif -%}
+              {%- if se_stts.enable_calc_ship and shipping_amount > -1 -%}
+                {%- liquid
+                  assign shipping_money = shipping_amount | money
+                  if enable_shipbar
+                    assign des_shipbar_per_1 = settings.des_shipbar_per_1
+                    assign des_shipbar_per_2 = settings.des_shipbar_per_2
+                    assign des_shipbar_per_3 = settings.des_shipbar_per_3
+                    assign less_100 = 99.99
+                    assign array_shipbar_per = des_shipbar_per_1 | append: ';' | append: des_shipbar_per_2 | append: ';' | append: des_shipbar_per_3 | split: ';' | sort_natural
+                    assign percent_class = array_shipbar_per[0] | plus: 0
+                    if percent_class == 100
+                      assign percent_class = less_100
+                    endif
+                  endif
+                -%}
+
+                {%- if enable_shipbar -%}
+                  {%- style -%}
+                    [data-t4s-percent="{% if des_shipbar_per_1 == 100 %}{{ less_100 }}{% else %}{{ des_shipbar_per_1 }}{% endif %}"] { --main-threshold-color: {{ settings.des_shipbar_cl_1 }}; }
+                    [data-t4s-percent="{% if des_shipbar_per_2 == 100 %}{{ less_100 }}{% else %}{{ des_shipbar_per_2 }}{% endif %}"] { --main-threshold-color: {{ settings.des_shipbar_cl_2 }}; }
+                    [data-t4s-percent="{% if des_shipbar_per_3 == 100 %}{{ less_100 }}{% else %}{{ des_shipbar_per_3 }}{% endif %}"] { --main-threshold-color: {{ settings.des_shipbar_cl_3 }}; }
+                    [data-t4s-percent="100"] { --main-threshold-color: {{ settings.des_shipbar_cl_4 }}; }
+                  {%- endstyle -%}
                 {%- endif -%}
-            </div>
-            <div class="t4s-cartPage__footer">
-            
-                <div class="t4s-row">
-                    {%- if se_stts.enable_note or se_stts.enable_discount or se_stts.enable_gift_wrap and gift_pr.available == true -%}{%- assign ck_col = true -%}
-                        <div class="{{ col_cart_actions }}">
-                            {%- if se_stts.enable_gift_wrap and gift_pr.available == true -%}
-                                <div data-toogle-gift class="t4s-gift_wrap t4s-row t4s-align-items-center t4s-text-center t4s-text-md-start"{% if arr_gift_id.size > 0 %} style="display: none"{% endif %}>
-                                    <div class="t4s-gift_wrap_info t4s-col-lg-7 t4s-col-12 t4s-col-item">
-                                        {%- assign gift_pr_money = gift_pr.variants.first.price | money -%}
-                                        <span class="t4s-gift-wrap__text"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" class="t4s-d-inline-block t4s-pr"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>{{ 'cart.tool.gift_wrap_html' | t: money: gift_pr_money }}</span>
-                                    </div>
-                                    <div class="t4s-gift_wrap_action t4s-col-lg t4s-col-12 t4s-col-item t4s-text-center t4s-text-md-start t4s-text-lg-end">
-                                        <a href="{{ gift_pr.url }}" data-variant-id="{{ gift_pr.variants.first.id }}" data-action-atc data-add-gift class="t4s-gift_wrap_action_btn t4s-truncate t4s-btn-loading__svg"><span class="t4s-btn-atc_text">{{ 'cart.tool.add_gift_wrap' | t }}</span>
-                                        <div class="t4s-loading__spinner t4s-dn">
-                                        <svg  width="16" height="16" aria-hidden="true" focusable="false" role="presentation" class="t4s-svg__spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg"><circle class="t4s-path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle></svg>
-                                        </div>  
-                                    </a>
-                                    </div>
-                                </div>
-                            {%- endif -%}
-                        {%- if se_stts.enable_note -%}
-                            <label for="CartSpecialInstructions" class="t4s-cart-note__label">
-                                <span class="t4s-txt_add_note{{ style_add }}">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>{{ 'cart.tool.note' | t }}
-                                </span>
-                                <span class="t4s-txt_edit_note{{ style_edit }}">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>{{ 'cart.tool.edit_note' | t }}
-                                </span>
-                            </label>
-                            <textarea name="note" id="CartSpecialInstructions" class="t4s-cart-note__input" placeholder="{{ 'cart.tool.placeholder_note' | t }}">{{ cart.note }}</textarea>
-                        {%- endif -%}
-                        {%- if se_stts.enable_discount -%}
-                            <label for="CartDiscountcode" class="t4s-cart-couponcode__label">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>{{ 'cart.tool.coupon' | t }}</label>
-                                <p>{{ 'cart.tool.info_coupon' | t }}</p>
-                            <input type="text" data-name="discount" id="CartDiscountcode" value placeholder="{{ 'cart.tool.placeholder_coupon' | t }}">
-                        {%- endif -%}
-                        </div>
-                    {%- endif -%}
-                    
-                    {%- if design_cart == '1column' -%}
-                        <div class="t4s-col-item t4s-col-12 t4s-text-md-end t4s-text-center t4s-order-4{% if ck_col %} t4s-col-md-6{% endif %}">
-                            {{ summary_cart }}
-                        </div>
-                    {%- endif -%}
+                <div class="t4s-cart__threshold" data-t4s-percent="{{ percent_class }}">
+                  <div class="t4s-cart__thres1">
+                    {{ 'cart.shipping_threshold.text_1_html' | t: money: shipping_money }}
+                  </div>
                 </div>
-             <div class="bloque-upselling-cart">                    
-               <div class="globo_widget_13861"></div>
-             </div> 
+              {%- endif -%}
             </div>
+          {%- endif -%}
         </div>
-        {%- if design_cart == '2column' and ccount > 0 -%}
-            <div class="t4s-col-item t4s-col-lg-3 t4s-col-md-12 t4s-col-12">
-                <div class="t4s-summary-cart">{{ summary_cart }}</div>
-            </div>
-        {%- endif -%}
+        <div class="t4s-cartPage__footer">
+          <div class="t4s-row">
+            {%- if se_stts.enable_note
+              or se_stts.enable_discount
+              or se_stts.enable_gift_wrap
+              and gift_pr.available == true
+            -%}
+              {%- assign ck_col = true -%}
+              <div class="{{ col_cart_actions }}">
+                {%- if se_stts.enable_gift_wrap and gift_pr.available == true -%}
+                  <div
+                    data-toogle-gift
+                    class="t4s-gift_wrap t4s-row t4s-align-items-center t4s-text-center t4s-text-md-start"
+                    {% if arr_gift_id.size > 0 %}
+                      style="display: none"
+                    {% endif %}
+                  >
+                    <div class="t4s-gift_wrap_info t4s-col-lg-7 t4s-col-12 t4s-col-item">
+                      {%- assign gift_pr_money = gift_pr.variants.first.price | money -%}
+                      <span class="t4s-gift-wrap__text">
+                        <svg
+                          viewBox="0 0 24 24"
+                          width="24"
+                          height="24"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="t4s-d-inline-block t4s-pr"
+                        >
+                          <polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+                        </svg>
+                        {{ 'cart.tool.gift_wrap_html' | t: money: gift_pr_money -}}
+                      </span>
+                    </div>
+                    <div class="t4s-gift_wrap_action t4s-col-lg t4s-col-12 t4s-col-item t4s-text-center t4s-text-md-start t4s-text-lg-end">
+                      <a
+                        href="{{ gift_pr.url }}"
+                        data-variant-id="{{ gift_pr.variants.first.id }}"
+                        data-action-atc
+                        data-add-gift
+                        class="t4s-gift_wrap_action_btn t4s-truncate t4s-btn-loading__svg"
+                        ><span class="t4s-btn-atc_text">{{ 'cart.tool.add_gift_wrap' | t }}</span>
+                        <div class="t4s-loading__spinner t4s-dn">
+                          <svg
+                            width="16"
+                            height="16"
+                            aria-hidden="true"
+                            focusable="false"
+                            role="presentation"
+                            class="t4s-svg__spinner"
+                            viewBox="0 0 66 66"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle class="t4s-path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                          </svg>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                {%- endif -%}
+                {%- if se_stts.enable_note -%}
+                  <label for="CartSpecialInstructions" class="t4s-cart-note__label">
+                    <span class="t4s-txt_add_note{{ style_add }}">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                      </svg>
+                      {{ 'cart.tool.note' | t }}
+                    </span>
+                    <span class="t4s-txt_edit_note{{ style_edit }}">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                      </svg>
+                      {{ 'cart.tool.edit_note' | t }}
+                    </span>
+                  </label>
+                  <textarea
+                    name="note"
+                    id="CartSpecialInstructions"
+                    class="t4s-cart-note__input"
+                    placeholder="{{ 'cart.tool.placeholder_note' | t }}"
+                  >{{ cart.note }}</textarea>
+                {%- endif -%}
+                {%- if se_stts.enable_discount -%}
+                  <label for="CartDiscountcode" class="t4s-cart-couponcode__label">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/>
+                    </svg>
+                    {{ 'cart.tool.coupon' | t -}}
+                  </label>
+                  <p>{{ 'cart.tool.info_coupon' | t }}</p>
+                  <input
+                    type="text"
+                    data-name="discount"
+                    id="CartDiscountcode"
+                    value
+                    placeholder="{{ 'cart.tool.placeholder_coupon' | t }}"
+                  >
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+
+            {%- if design_cart == '1column' -%}
+              <div class="t4s-col-item t4s-col-12 t4s-text-md-end t4s-text-center t4s-order-4{% if ck_col %} t4s-col-md-6{% endif %}">
+                {{ summary_cart }}
+              </div>
+            {%- endif -%}
+          </div>
+          <div class="bloque-upselling-cart">
+            <div class="globo_widget_13861"></div>
+          </div>
+        </div>
+      </div>
+      {%- if design_cart == '2column' and ccount > 0 -%}
+        <div class="t4s-col-item t4s-col-lg-3 t4s-col-md-12 t4s-col-12">
+          <div class="t4s-summary-cart">{{ summary_cart }}</div>
+        </div>
+      {%- endif -%}
     </div>
-</form> 
-   {%- if se_stts.enable_rates %}{% assign idShip = 'main_cart' -%}
+  </form>
+  {%- if se_stts.enable_rates -%}
+    {%- assign idShip = 'main_cart' -%}
     <div data-estimate-shipping-wrap data-id="{{ idShip }}" class="t4s-shipping_calculator t4s-shipping_calc_page">
       <h3 class="t4s-truncate">{{ 'cart.shipping_estimator.title' | t }}</h3>
-       <div class="t4s-row t4s-align-items-center t4s-justify-content-center">
-          <div class="t4s-field t4s-col-lg-3 t4s-col-md-4 t4s-col-12 t4s-col-item">
-              <label for="ShippingCountry_{{ idShip }}">{{ 'cart.shipping_estimator.country' | t }}</label>
-              <select id="ShippingCountry_{{ idShip }}" name="country" data-default="{% if customer %}{{ customer.default_address.country }}{% elsif se_stts.ship_df_country != '' %}{{ se_stts.ship_df_country | escape }}{% endif %}">{{- country_option_tags -}}</select>
-          </div>
-          <div class="t4s-field t4s-col-lg-3 t4s-col-md-4 t4s-col-12 t4s-col-item" id="ShippingProvinceContainer_{{ idShip }}" style="display: none">
-               <label for="ShippingProvince_{{ idShip }}" id="address_province_label">{{ 'cart.shipping_estimator.province' | t }}</label>
-               <select id="ShippingProvince_{{ idShip }}" name="province" data-default="{% if customer %}{{ customer.default_address.province }}{% endif %}"></select>
-          </div>  
-          <div class="t4s-field t4s-col-lg-3 t4s-col-md-4 t4s-col-12 t4s-col-item">
-               <label for="ShippingZip_{{ idShip }}">{{ 'cart.shipping_estimator.zip_code' | t }}</label>
-               <input type="text" id="ShippingZip_{{ idShip }}" name="zip" value="{% if customer %}{{ customer.default_address.zip }}{% endif %}"/>
-          </div>
-          <div class="t4s-field t4s-col-lg-3 t4s-col-md-6 t4s-col-12 t4s-col-item">
-            <button data-action="estimate-shipping" type="button" class="t4s-get__rates t4s-btn-loading__svg">
-                <span class="t4s-btn-atc_text">{{ 'cart.shipping_estimator.estimate' | t }}</span>
-                <div class="t4s-loading__spinner t4s-dn">
-                  <svg  width="16" height="16" aria-hidden="true" focusable="false" role="presentation" class="t4s-svg__spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg"><circle class="t4s-path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle></svg>
-                </div> 
-            </button>
+      <div class="t4s-row t4s-align-items-center t4s-justify-content-center">
+        <div class="t4s-field t4s-col-lg-3 t4s-col-md-4 t4s-col-12 t4s-col-item">
+          <label for="ShippingCountry_{{ idShip }}">{{ 'cart.shipping_estimator.country' | t }}</label>
+          <select
+            id="ShippingCountry_{{ idShip }}"
+            name="country"
+            data-default="{% if customer %}{{ customer.default_address.country }}{% elsif se_stts.ship_df_country != '' %}{{ se_stts.ship_df_country | escape }}{% endif %}"
+          >
+            {{- country_option_tags -}}
+          </select>
+        </div>
+        <div
+          class="t4s-field t4s-col-lg-3 t4s-col-md-4 t4s-col-12 t4s-col-item"
+          id="ShippingProvinceContainer_{{ idShip }}"
+          style="display: none"
+        >
+          <label for="ShippingProvince_{{ idShip }}" id="address_province_label">
+            {{- 'cart.shipping_estimator.province' | t -}}
+          </label>
+          <select
+            id="ShippingProvince_{{ idShip }}"
+            name="province"
+            data-default="{% if customer %}{{ customer.default_address.province }}{% endif %}"
+          ></select>
+        </div>
+        <div class="t4s-field t4s-col-lg-3 t4s-col-md-4 t4s-col-12 t4s-col-item">
+          <label for="ShippingZip_{{ idShip }}">{{ 'cart.shipping_estimator.zip_code' | t }}</label>
+          <input
+            type="text"
+            id="ShippingZip_{{ idShip }}"
+            name="zip"
+            value="{% if customer %}{{ customer.default_address.zip }}{% endif %}"
+          >
+        </div>
+        <div class="t4s-field t4s-col-lg-3 t4s-col-md-6 t4s-col-12 t4s-col-item">
+          <button data-action="estimate-shipping" type="button" class="t4s-get__rates t4s-btn-loading__svg">
+            <span class="t4s-btn-atc_text">{{ 'cart.shipping_estimator.estimate' | t }}</span>
+            <div class="t4s-loading__spinner t4s-dn">
+              <svg
+                width="16"
+                height="16"
+                aria-hidden="true"
+                focusable="false"
+                role="presentation"
+                class="t4s-svg__spinner"
+                viewBox="0 0 66 66"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle class="t4s-path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+              </svg>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div data-response-rates class="t4s-response__rates t4s-text-center"></div>
+      <template data-lang-rates class="t4s-d-none">
+        { "multiple_rates": {{ 'cart.shipping_estimator.multiple_rates' | t | json }}, "one_rate":
+        {{ 'cart.shipping_estimator.one_rate' | t | json }}, "no_rates":
+        {{ 'cart.shipping_estimator.no_rates' | t | json }}, "rate_value":
+        {{ 'cart.shipping_estimator.rate_value' | t | json }}, "errors":
+        {{ 'cart.shipping_estimator.errors' | t | json }}
+        }
+      </template>
+    </div>
+  {%- endif -%}
+
+  _______________________________________________________ _______________________________________________________
+
+  <div class="flex flex-row w-full">
+    <section class="relative w-full max-w-[814px] py-12 px-[124px] bg-wb-beige">
+      <div class="flex justify-between items-center pb-2.5 border-b border-[#d9d9c8]">
+        <h2 class="font-bold [font-family:'Barlow',Helvetica] text-[#004623] text-[17.8px] leading-[23px]">
+          TU CARRITO DE LA COMPRA
+        </h2>
+        <span class="font-bold [font-family:'DM_Sans_18pt-Bold',Helvetica] text-[#004623] text-[14.9px] leading-[21.6px]"
+          >1 artículo</span
+        >
+      </div>
+      <div class="bg-card text-card-foreground shadow mt-6 border border-[#d9d9c8] rounded-lg">
+        <div class="flex flex-col space-y-1.5 p-6 px-[17px] py-[17px] pb-0">
+          <div class="pb-2 border-b border-[#e7eeef]">
+            <h3 class="font-bold [font-family:'Barlow',Helvetica] text-[#036147] text-[14.6px] leading-[21.6px]">
+              Compras únicas
+            </h3>
           </div>
         </div>
-        <div data-response-rates class="t4s-response__rates t4s-text-center"></div>
-        <template data-lang-rates class="t4s-d-none">
-          {
-            "multiple_rates": {{ 'cart.shipping_estimator.multiple_rates' | t | json }},
-            "one_rate": {{ 'cart.shipping_estimator.one_rate' | t | json }},
-            "no_rates": {{ 'cart.shipping_estimator.no_rates' | t | json }},
-            "rate_value": {{ 'cart.shipping_estimator.rate_value' | t | json }},
-            "errors": {{ 'cart.shipping_estimator.errors' | t | json }}
-          }
-        </template>  
+        <div class="p-6 px-[17px] py-4">
+          <div class="flex">
+            <div class="w-28 h-28 bg-wb-gris-oscuro rounded-lg overflow-hidden">
+              <div
+                class="h-28 rounded-lg [background:url(../\/picture---pack---dog-adult-kibble-venison-en.png)_50%_50%_/_cover]"
+              ></div>
+            </div>
+            <div class="flex flex-col ml-4 gap-[3px] w-[319px]">
+              <h4 class="font-bold [font-family:'Barlow',Helvetica] text-[#004623] text-[15.1px] leading-[18.4px]">
+                Menú BARF de Salmón con verduras para perros
+              </h4>
+              <p class="font-bold [font-family:'DM_Sans_18pt-Bold',Helvetica] text-[#004623] text-[12.8px] leading-[18.9px]">
+                1 kg - 9,49 €
+              </p>
+            </div>
+            <div class="ml-auto font-bold [font-family:'DM_Sans_18pt-Bold',Helvetica] text-[#004623] text-[14.4px] leading-[21.6px] self-center">
+              9,49 €
+            </div>
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-6 w-6 ml-4 self-start">
+              <img class="w-6 h-6" alt="Remove item" src="/button.svg">
+            </button>
+          </div>
+          <div class="flex mt-4">
+            <div class="flex h-[42px] w-[120px] rounded-[50px] border border-[#004623] overflow-hidden">
+              <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 w-[42px] p-0 rounded-none">
+                <img class="w-[42px] h-10" alt="Decrease quantity" src="/button---resta-uno-.svg">
+              </button>
+              <div class="flex items-center justify-center w-[34px] h-10 bg-white">
+                <span class="font-bold [font-family:'Inter',Helvetica] text-[#004623] text-base">1</span>
+              </div>
+              <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 w-[42px] p-0 rounded-none">
+                <img class="w-[42px] h-10" alt="Increase quantity" src="/button---a-ade-uno-.svg">
+              </button>
+            </div>
+          </div>
+          <div class="flex justify-between items-center mt-4 px-3 py-3 bg-[#f4f0e2] rounded-[50px] border border-[#d9d9c8]">
+            <div class="flex items-center gap-2">
+              <button
+                type="button"
+                role="checkbox"
+                aria-checked="false"
+                data-state="unchecked"
+                value="on"
+                class="peer shrink-0 shadow focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground w-5 h-5 rounded border-[1.5px] border-[#d9d9c8]"
+                id="subscribe"
+              ></button
+              ><label
+                for="subscribe"
+                class="font-medium [font-family:'DM_Sans_18pt-Medium',Helvetica] text-[#004623] text-[14.8px] leading-[21.6px]"
+                >Suscríbete y ahorra</label
+              >
+            </div>
+            <div class="flex items-center gap-[7px]">
+              <span class="font-medium [font-family:'DM_Sans_18pt-Medium',Helvetica] text-[#7f7d7b] text-[12.7px] leading-[18.9px] line-through"
+                >9,49 €</span
+              ><span class="font-bold [font-family:'DM_Sans_18pt-Bold',Helvetica] text-[#004623] text-[14.2px] leading-[21.6px]"
+                >xx €</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-10 pb-2.5 border-b border-[#d9d9c8]">
+        <h2 class="font-bold [font-family:'Barlow',Helvetica] text-[#004623] text-[17.7px] leading-[23px]">
+          TRAMBIÉN TE PUEDE INTERESAR
+        </h2>
+      </div>
+      <div class="flex gap-[9.77px] mt-8">
+        <div class="rounded-xl border bg-card text-card-foreground shadow w-[149.17px] border-none">
+          <div class="p-0">
+            <div class="relative w-full h-[161.73px] bg-white rounded-[4.02px]">
+              <div class="relative w-[155px] h-[150px] top-2.5 left-[-3px]">
+                <div class="absolute w-[155px] h-[143px] top-[7px] left-0 [background:url(..//picture---pack---dog-adult-kibble-venison-en.png)_50%_50%_/_cover]">
+                  <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow absolute top-28 left-[21px] h-[23px] px-[16.07px] py-[3.52px] bg-[#ffcd00] text-[#004623] rounded-[25.11px] hover:bg-[#ffcd00]/90">
+                    <span class="font-semibold [font-family:'DM_Sans_18pt-SemiBold',Helvetica] text-[10.5px] leading-[13.1px]"
+                      >Añadir al carrito</span
+                    >
+                  </button>
+                </div>
+                <div class="inline-flex items-center border text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-primary-foreground shadow hover:bg-primary/80 absolute top-0 left-[104px] w-[43px] px-[4.02px] py-[2.01px] bg-[#004623] rounded-[25.11px]">
+                  <span class="font-semibold [font-family:'DM_Sans_18pt-SemiBold',Helvetica] text-white text-[6.8px] leading-[9.5px]"
+                    >Bestseller</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="mt-[13.56px]">
+              <h3 class="font-bold [font-family:'Barlow',Helvetica] text-[#004623] text-[12.2px] leading-[15.7px]">
+                Menú BARF de Salmón con verduras frescas
+              </h3>
+              <p class="mt-[2.51px] font-medium [font-family:'DM_Sans_18pt-Medium',Helvetica] text-[#004623] text-[10.5px] leading-[12.2px]">
+                Desde 6,69 €
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-xl border bg-card text-card-foreground shadow w-[149.17px] border-none">
+          <div class="p-0">
+            <div class="relative w-full h-[161.73px] bg-white rounded-[4.02px]">
+              <div class="relative w-[155px] h-[150px] top-2.5 left-[-3px]">
+                <div class="absolute w-[155px] h-[143px] top-[7px] left-0 [background:url(..//picture---pack---dog-adult-kibble-venison-en.png)_50%_50%_/_cover]">
+                  <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow absolute top-28 left-[21px] h-[23px] px-[16.07px] py-[3.52px] bg-[#ffcd00] text-[#004623] rounded-[25.11px] hover:bg-[#ffcd00]/90">
+                    <span class="font-semibold [font-family:'DM_Sans_18pt-SemiBold',Helvetica] text-[10.5px] leading-[13.1px]"
+                      >Añadir al carrito</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="mt-[13.56px]">
+              <h3 class="font-bold [font-family:'Barlow',Helvetica] text-[#004623] text-[12.2px] leading-[15.7px]">
+                Lata de ternera para perros 400g - Filosofía BARF
+              </h3>
+              <p class="mt-[2.51px] font-medium [font-family:'DM_Sans_18pt-Medium',Helvetica] text-[#004623] text-[10.5px] leading-[12.2px]">
+                Desde 4,19 €
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-xl border bg-card text-card-foreground shadow w-[149.17px] border-none">
+          <div class="p-0">
+            <div class="relative w-full h-[161.73px] bg-white rounded-[4.02px]">
+              <div class="relative w-[155px] h-[150px] top-2.5 left-[-3px]">
+                <div class="absolute w-[155px] h-[143px] top-[7px] left-0 [background:url(..//picture---pack---dog-adult-kibble-venison-en.png)_50%_50%_/_cover]">
+                  <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow absolute top-28 left-[21px] h-[23px] px-[16.07px] py-[3.52px] bg-[#ffcd00] text-[#004623] rounded-[25.11px] hover:bg-[#ffcd00]/90">
+                    <span class="font-semibold [font-family:'DM_Sans_18pt-SemiBold',Helvetica] text-[10.5px] leading-[13.1px]"
+                      >Añadir al carrito</span
+                    >
+                  </button>
+                </div>
+                <div class="inline-flex items-center border text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-primary-foreground shadow hover:bg-primary/80 absolute top-0 left-[104px] w-[43px] px-[4.02px] py-[2.01px] bg-[#004623] rounded-[25.11px]">
+                  <span class="font-semibold [font-family:'DM_Sans_18pt-SemiBold',Helvetica] text-white text-[6.8px] leading-[9.5px]"
+                    >Bestseller</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="mt-[13.56px]">
+              <h3 class="font-bold [font-family:'Barlow',Helvetica] text-[#004623] text-[12.2px] leading-[15.7px]">
+                Sitcks Dentales de Ternera - Elimina el Sarro y la Placa
+              </h3>
+              <p class="mt-[2.51px] font-medium [font-family:'DM_Sans_18pt-Medium',Helvetica] text-[#004623] text-[10.5px] leading-[12.2px]">
+                Desde 5,99 €
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-xl border bg-card text-card-foreground shadow w-[149.17px] border-none">
+          <div class="p-0">
+            <div class="relative w-full h-[161.73px] bg-white rounded-[4.02px]">
+              <div class="relative w-[155px] h-[150px] top-2.5 left-[-3px]">
+                <div class="absolute w-[155px] h-[143px] top-[7px] left-0 [background:url(..//picture---pack---dog-adult-kibble-venison-en.png)_50%_50%_/_cover]">
+                  <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow absolute top-28 left-[21px] h-[23px] px-[16.07px] py-[3.52px] bg-[#ffcd00] text-[#004623] rounded-[25.11px] hover:bg-[#ffcd00]/90">
+                    <span class="font-semibold [font-family:'DM_Sans_18pt-SemiBold',Helvetica] text-[10.5px] leading-[13.1px]"
+                      >Añadir al carrito</span
+                    >
+                  </button>
+                </div>
+                <div class="inline-flex items-center border text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-primary-foreground shadow hover:bg-primary/80 absolute top-0 left-[104px] w-[43px] px-[4.02px] py-[2.01px] bg-[#004623] rounded-[25.11px]">
+                  <span class="font-semibold [font-family:'DM_Sans_18pt-SemiBold',Helvetica] text-white text-[6.8px] leading-[9.5px]"
+                    >Bestseller</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="mt-[13.56px]">
+              <h3 class="font-bold [font-family:'Barlow',Helvetica] text-[#004623] text-[12.2px] leading-[15.7px]">
+                Articulaciones de acero Condoprotector natural
+              </h3>
+              <p class="mt-[2.51px] font-medium [font-family:'DM_Sans_18pt-Medium',Helvetica] text-[#004623] text-[10.5px] leading-[12.2px]">
+                19,99€
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="rounded-xl border text-card-foreground shadow w-full max-w-[626px] bg-white p-12">
+      <div class="p-0">
+        <div class="flex flex-col w-full items-start gap-[47px]">
+          <div class="flex flex-col items-start gap-4 w-full">
+            <div class="w-full h-10 border-b border-[#d9d9c8]">
+              <h2 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-[18.4px] leading-[23px]">
+                TOTAL DEL CARRO
+              </h2>
+            </div>
+            <div class="relative w-full h-[38.59px] border-b border-[#d9d9c8] flex justify-between items-center">
+              <div class="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#7f7d7b] text-[15.1px] leading-[21.6px]">
+                Subtotal
+              </div>
+              <div class="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#7f7d7b] text-[14.5px] text-right leading-[21.6px]">
+                9,49 €
+              </div>
+            </div>
+            <div class="relative w-full h-[38.59px] border-b border-[#d9d9c8] flex justify-between items-center">
+              <div class="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#7f7d7b] text-[15.1px] leading-[21.6px]">
+                Envío
+              </div>
+              <div class="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#7f7d7b] text-[14.5px] text-right leading-[21.6px]">
+                xx €
+              </div>
+            </div>
+            <div class="flex items-center justify-between w-full">
+              <div class="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-[#004623] text-[17px] leading-[24.3px]">
+                Total
+              </div>
+              <div class="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-[#004623] text-[16.2px] text-right leading-[24.3px]">
+                9,49 €
+              </div>
+            </div>
+            <div class="w-full h-[47px] bg-wb-beige rounded-lg border border-[#d9d9c8] flex items-center px-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-calendar w-[18px] h-[18px] text-[#004623]"
+              >
+                <path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path>
+              </svg>
+              <span class="ml-3 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#004623] text-[13.3px]"
+                >Selecciona la fecha de entrega</span
+              >
+            </div>
+            <div class="w-full h-[63.8px] bg-wb-beige rounded-lg border border-[#d9d9c8] flex items-center px-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-info w-[21px] h-[21px] text-[#004623]"
+              >
+                <circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path>
+              </svg>
+              <div class="ml-2 [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#004623] text-[12.9px] leading-[18.9px]">
+                Los códigos de descuento pueden aplicarse en el<br>
+                siguiente paso.
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col items-center gap-[25px] w-full">
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground shadow h-9 w-full py-3.5 px-[129px] bg-[#ffcd00] rounded-[50px] hover:bg-[#ffcd00]/90">
+              <span class="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-[#004623] text-[16.9px] leading-[18px]"
+                >Finalizar compra</span
+              >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-arrow-right ml-1.5 w-[16.66px] h-[16.66px] text-[#004623]"
+              >
+                <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </button>
+            <div class="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-normal text-[#7f7d7b] text-[13px] text-center leading-[18.9px]">
+              <span class="font-medium">Al hacer su pedido, usted acepta nuestros </span
+              ><span class="font-medium underline">términos y condiciones<br></span><span class="font-medium">y </span
+              ><span class="font-medium underline">la política de privacidad</span>
+            </div>
+            <img class="w-[336px] h-[40.33px]" alt="Payment methods" src="/list.svg">
+          </div>
+        </div>
+      </div>
     </div>
-   {%- endif -%}
-
+  </div>
 </div>
-<script>window.cartT4SectionID = {{ section.id | json }};</script> 
+<script>
+  window.cartT4SectionID = {{ section.id | json }};
+</script>
 {% schema %}
 {
-    "name": "Cart",
-    "tag": "section",
-    "class": "t4s-section t4s-section-main t4s-main-cart",
-    "settings": [
+  "name": "Cart",
+  "tag": "section",
+  "class": "t4s-section t4s-section-main t4s-main-cart",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_calc_ship",
+      "label": "Enable calc shipping",
+      "info": "Free shipping minimum amount.",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_note",
+      "label": "Enable order notes",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_rates",
+      "label": "Enable shipping rates calculator",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_discount",
+      "label": "Enable input box discounts codes",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_gift_wrap",
+      "label": "Enable gift wrap",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "design_cart",
+      "label": "Design cart",
+      "default": "1column",
+      "options": [
         {
-            "type": "checkbox",
-            "id": "enable_calc_ship",
-            "label": "Enable calc shipping",
-            "info": "Free shipping minimum amount.",
-            "default": true
+          "value": "1column",
+          "label": "One column"
         },
         {
-            "type": "checkbox",
-            "id": "enable_note",
-            "label": "Enable order notes",
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "enable_rates",
-            "label": "Enable shipping rates calculator",
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "enable_discount",
-            "label": "Enable input box discounts codes",
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "enable_gift_wrap",
-            "label": "Enable gift wrap",
-            "default": true
-        },
-        {
-            "type":"select",
-            "id":"design_cart",
-            "label":"Design cart",
-            "default": "1column",
-            "options":[
-                {
-                    "value": "1column",
-                    "label":"One column"
-                },
-                {
-                    "value": "2column",
-                    "label":"Two column"
-                }
-            ]
-        },
-        {
-            "type": "header",
-            "content": "+ Shipping Rates Calculator"
-        },
-        {
-            "type": "text",
-            "id": "ship_df_country",
-            "label": "Default country selection",
-            "default": "United States"
-        },
-        {
-            "type": "paragraph",
-            "content": "If your customer is logged-in, the country in his default shipping address will be selected. If you are not sure about the  spelling to use here, refer to the first checkout page."
+          "value": "2column",
+          "label": "Two column"
         }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "+ Shipping Rates Calculator"
+    },
+    {
+      "type": "text",
+      "id": "ship_df_country",
+      "label": "Default country selection",
+      "default": "United States"
+    },
+    {
+      "type": "paragraph",
+      "content": "If your customer is logged-in, the country in his default shipping address will be selected. If you are not sure about the  spelling to use here, refer to the first checkout page."
+    }
   ],
-    "blocks": [
-      {
-        "type": "price",
-        "name": "Total price",
-        "limit": 1
-      },
-      {
-        "type": "tax",
-        "name": "Taxes and shipping info",
-        "limit": 1/*,
+  "blocks": [
+    {
+      "type": "price",
+      "name": "Total price",
+      "limit": 1
+    },
+    {
+      "type": "tax",
+      "name": "Taxes and shipping info",
+      "limit": 1 /*,
         "settings": [
           {
             "type": "richtext",
@@ -488,456 +954,464 @@
             "label": "Content"
           }
         ]*/
-      },
-    {
-        "type": "agree",
-        "name": "Terms,conditions checkbox",
-        "limit": 1
     },
     {
-        "type": "btnck",
-        "name": "Button checkout, update",
-        "limit": 1,
-        "settings": [
+      "type": "agree",
+      "name": "Terms,conditions checkbox",
+      "limit": 1
+    },
+    {
+      "type": "btnck",
+      "name": "Button checkout, update",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "+ Checkout button options"
+        },
+        {
+          "type": "checkbox",
+          "id": "btn_icon",
+          "label": "Enable button icon",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "Button style",
+          "options": [
             {
-              "type": "header",
-              "content": "+ Checkout button options"
+              "label": "Default",
+              "value": "default"
             },
             {
-              "type": "checkbox",
-              "id": "btn_icon",
-              "label": "Enable button icon",
-              "default": false
+              "label": "Outline",
+              "value": "outline"
             },
             {
-                "type": "select",
-                "id": "button_style",
-                "label": "Button style",
-                "options": [
-                    {
-                        "label": "Default",
-                        "value": "default"
-                    },
-                    {
-                        "label": "Outline",
-                        "value": "outline"
-                    },
-                    {
-                        "label": "Bordered bottom",
-                        "value": "bordered"
-                    },
-                    {
-                        "label": "Link",
-                        "value": "link"
-                    }
-                ]
+              "label": "Bordered bottom",
+              "value": "bordered"
             },
             {
-                "type": "select",
-                "id": "btn_size",
-                "label": "Button size",
-                "default": "default",
-                "options": [
-                    {
-                        "label": "Default",
-                        "value": "default"
-                    },
-                    {
-                        "label": "Custom size #1",
-                        "value": "1"
-                    },
-                    {
-                        "label": "Custom size #2",
-                        "value": "2"
-                    },
-                    {
-                        "label": "Custom size #3",
-                        "value": "3"
-                    }
-                ]
-            },
-            {
-                "type": "select",
-                "id": "btn_cl",
-                "label": "Button color",
-                "default": "dark",
-                "options": [
-                    {
-                        "value": "light",
-                        "label": "Light"
-                    },
-                    {
-                        "value": "dark",
-                        "label": "Dark"
-                    },
-                    {
-                        "value": "primary",
-                        "label": "Primary"
-                    },
-                    {
-                        "value": "custom1",
-                        "label": "Custom color 1"
-                    },
-                    {
-                        "value": "custom2",
-                        "label": "Custom color 2"
-                    }
-                ]
-            },
-            {
-                "type": "select",
-                "id": "button_effect",
-                "label": "Hover button effect",
-                "default": "default",
-                "info": "Only work for default, outline button style",
-                "options": [
-                    {
-                        "label": "Default",
-                        "value": "default"
-                    },
-                    {
-                        "label": "Fade",
-                        "value": "fade"
-                    },
-                    {
-                        "label": "Rectangle out",
-                        "value": "rectangle-out"
-                    },
-                    {
-                        "label": "Sweep to right",
-                        "value": "sweep-to-right"
-                    },
-                    {
-                        "label": "Sweep to left",
-                        "value": "sweep-to-left"
-                    },
-                    {
-                        "label": "Sweep to bottom",
-                        "value": "sweep-to-bottom"
-                    },
-                    {
-                        "label": "Sweep to top",
-                        "value": "sweep-to-top"
-                    },
-                    {
-                        "label": "Shutter out horizontal",
-                        "value": "shutter-out-horizontal"
-                    },
-                    {
-                        "label": "Outline",
-                        "value": "outline"
-                    },
-                    {
-                        "label": "Shadow",
-                        "value": "shadow"
-                    }
-                ]
-            },
-            {
-              "type": "header",
-              "content": "+ Update button options"
-            },
-            {
-              "type": "paragraph",
-              "content": "Only visible when disable automatic cart updates"
-            },
-            {
-                "type": "checkbox",
-                "id": "btn_icon2",
-                "label": "Enable button icon",
-                "default": false
-            },
-            {
-                "type": "select",
-                "id": "button_style2",
-                "label": "Button style",
-                "default": "outline",
-                "options": [
-                    {
-                        "label": "Default",
-                        "value": "default"
-                    },
-                    {
-                        "label": "Outline",
-                        "value": "outline"
-                    },
-                    {
-                        "label": "Bordered bottom",
-                        "value": "bordered"
-                    },
-                    {
-                        "label": "Link",
-                        "value": "link"
-                    }
-                ]
-            },
-            {
-                "type": "select",
-                "id": "btn_size2",
-                "label": "Button size",
-                "default": "default",
-                "options": [
-                    {
-                        "label": "Default",
-                        "value": "default"
-                    },
-                    {
-                        "label": "Custom size #1",
-                        "value": "1"
-                    },
-                    {
-                        "label": "Custom size #2",
-                        "value": "2"
-                    },
-                    {
-                        "label": "Custom size #3",
-                        "value": "3"
-                    }
-                ]
-            },
-            {
-                "type": "select",
-                "id": "btn_cl2",
-                "label": "Button color",
-                "default": "dark",
-                "options": [
-                    {
-                        "value": "light",
-                        "label": "Light"
-                    },
-                    {
-                        "value": "dark",
-                        "label": "Dark"
-                    },
-                    {
-                        "value": "primary",
-                        "label": "Primary"
-                    },
-                    {
-                        "value": "custom1",
-                        "label": "Custom color 1"
-                    },
-                    {
-                        "value": "custom2",
-                        "label": "Custom color 2"
-                    }
-                ]
-            },
-            {
-                "type": "select",
-                "id": "button_effect2",
-                "label": "Hover button effect",
-                "default": "default",
-                "info": "Only work for default, outline button style",
-                "options": [
-                    {
-                        "label": "Default",
-                        "value": "default"
-                    },
-                    {
-                        "label": "Fade",
-                        "value": "fade"
-                    },
-                    {
-                        "label": "Rectangle out",
-                        "value": "rectangle-out"
-                    },
-                    {
-                        "label": "Sweep to right",
-                        "value": "sweep-to-right"
-                    },
-                    {
-                        "label": "Sweep to left",
-                        "value": "sweep-to-left"
-                    },
-                    {
-                        "label": "Sweep to bottom",
-                        "value": "sweep-to-bottom"
-                    },
-                    {
-                        "label": "Sweep to top",
-                        "value": "sweep-to-top"
-                    },
-                    {
-                        "label": "Shutter out horizontal",
-                        "value": "shutter-out-horizontal"
-                    },
-                    {
-                        "label": "Outline",
-                        "value": "outline"
-                    },
-                    {
-                        "label": "Shadow",
-                        "value": "shadow"
-                    }
-                ]
+              "label": "Link",
+              "value": "link"
             }
-        ]
+          ]
+        },
+        {
+          "type": "select",
+          "id": "btn_size",
+          "label": "Button size",
+          "default": "default",
+          "options": [
+            {
+              "label": "Default",
+              "value": "default"
+            },
+            {
+              "label": "Custom size #1",
+              "value": "1"
+            },
+            {
+              "label": "Custom size #2",
+              "value": "2"
+            },
+            {
+              "label": "Custom size #3",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "btn_cl",
+          "label": "Button color",
+          "default": "dark",
+          "options": [
+            {
+              "value": "light",
+              "label": "Light"
+            },
+            {
+              "value": "dark",
+              "label": "Dark"
+            },
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "custom1",
+              "label": "Custom color 1"
+            },
+            {
+              "value": "custom2",
+              "label": "Custom color 2"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "button_effect",
+          "label": "Hover button effect",
+          "default": "default",
+          "info": "Only work for default, outline button style",
+          "options": [
+            {
+              "label": "Default",
+              "value": "default"
+            },
+            {
+              "label": "Fade",
+              "value": "fade"
+            },
+            {
+              "label": "Rectangle out",
+              "value": "rectangle-out"
+            },
+            {
+              "label": "Sweep to right",
+              "value": "sweep-to-right"
+            },
+            {
+              "label": "Sweep to left",
+              "value": "sweep-to-left"
+            },
+            {
+              "label": "Sweep to bottom",
+              "value": "sweep-to-bottom"
+            },
+            {
+              "label": "Sweep to top",
+              "value": "sweep-to-top"
+            },
+            {
+              "label": "Shutter out horizontal",
+              "value": "shutter-out-horizontal"
+            },
+            {
+              "label": "Outline",
+              "value": "outline"
+            },
+            {
+              "label": "Shadow",
+              "value": "shadow"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "content": "+ Update button options"
+        },
+        {
+          "type": "paragraph",
+          "content": "Only visible when disable automatic cart updates"
+        },
+        {
+          "type": "checkbox",
+          "id": "btn_icon2",
+          "label": "Enable button icon",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "button_style2",
+          "label": "Button style",
+          "default": "outline",
+          "options": [
+            {
+              "label": "Default",
+              "value": "default"
+            },
+            {
+              "label": "Outline",
+              "value": "outline"
+            },
+            {
+              "label": "Bordered bottom",
+              "value": "bordered"
+            },
+            {
+              "label": "Link",
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "btn_size2",
+          "label": "Button size",
+          "default": "default",
+          "options": [
+            {
+              "label": "Default",
+              "value": "default"
+            },
+            {
+              "label": "Custom size #1",
+              "value": "1"
+            },
+            {
+              "label": "Custom size #2",
+              "value": "2"
+            },
+            {
+              "label": "Custom size #3",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "btn_cl2",
+          "label": "Button color",
+          "default": "dark",
+          "options": [
+            {
+              "value": "light",
+              "label": "Light"
+            },
+            {
+              "value": "dark",
+              "label": "Dark"
+            },
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "custom1",
+              "label": "Custom color 1"
+            },
+            {
+              "value": "custom2",
+              "label": "Custom color 2"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "button_effect2",
+          "label": "Hover button effect",
+          "default": "default",
+          "info": "Only work for default, outline button style",
+          "options": [
+            {
+              "label": "Default",
+              "value": "default"
+            },
+            {
+              "label": "Fade",
+              "value": "fade"
+            },
+            {
+              "label": "Rectangle out",
+              "value": "rectangle-out"
+            },
+            {
+              "label": "Sweep to right",
+              "value": "sweep-to-right"
+            },
+            {
+              "label": "Sweep to left",
+              "value": "sweep-to-left"
+            },
+            {
+              "label": "Sweep to bottom",
+              "value": "sweep-to-bottom"
+            },
+            {
+              "label": "Sweep to top",
+              "value": "sweep-to-top"
+            },
+            {
+              "label": "Shutter out horizontal",
+              "value": "shutter-out-horizontal"
+            },
+            {
+              "label": "Outline",
+              "value": "outline"
+            },
+            {
+              "label": "Shadow",
+              "value": "shadow"
+            }
+          ]
+        }
+      ]
     },
-   {
-     "type": "btnmr",
-     "name": "Accelerated checkouts",
-     "limit": 1,
-     "settings": [
-            /*{
+    {
+      "type": "btnmr",
+      "name": "Accelerated checkouts",
+      "limit": 1,
+      "settings": [
+        /*{
                 "type": "paragraph",
                 "content": "Note: Only show when cart empty."
             }*/
-     ]
-   },
-    {
-        "type": "img",
-        "name": "Image trust",
-        "limit": 1,
-        "settings": [
-            {
-                "type": "image_picker",
-                "id": "image",
-                "label": "Image"
-            },
-            {
-                "type": "range",
-                "id": "wimg",
-                "min": 40,
-                "max": 100,
-                "step": 1,
-                "unit": "%",
-                "label": "Width image",
-                "default": 50
-            }
-        ]
+      ]
     },
     {
-        "type": "btn",
-        "name": "Button emty",
-        "settings": [
+      "type": "img",
+      "name": "Image trust",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "wimg",
+          "min": 40,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Width image",
+          "default": 50
+        }
+      ]
+    },
+    {
+      "type": "btn",
+      "name": "Button emty",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Note: Only show when cart empty."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Button title",
+          "default": "Return To Shop",
+          "info": "If set blank will not show"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Button link"
+        },
+        {
+          "type": "checkbox",
+          "id": "btn_icon",
+          "label": "Enable button icon",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "Button style",
+          "options": [
             {
-                "type": "paragraph",
-                "content": "Note: Only show when cart empty."
+              "label": "Default",
+              "value": "default"
             },
             {
-                "type": "text",
-                "id": "title",
-                "label": "Button title",
-                "default": "Return To Shop",
-                "info": "If set blank will not show"
+              "label": "Outline",
+              "value": "outline"
             },
             {
-                "type": "url","id": "url","label": "Button link"
+              "label": "Bordered bottom",
+              "value": "bordered"
             },
             {
-              "type": "checkbox",
-              "id": "btn_icon",
-              "label": "Enable button icon",
-              "default": false
-          },
-          {
-              "type": "select",
-              "id": "button_style",
-              "label": "Button style",
-              "options": [
-                  {
-                      "label": "Default",
-                      "value": "default"
-                  },
-                  {
-                      "label": "Outline",
-                      "value": "outline"
-                  },
-                  {
-                      "label": "Bordered bottom",
-                      "value": "bordered"
-                  },
-                  {
-                      "label": "Link",
-                      "value": "link"
-                  }
-              ]
-          },
-          {
-              "type": "select",
-              "id": "btn_cl",
-              "label": "Button color",
-              "default": "dark",
-              "options": [
-                  {
-                      "value": "light",
-                      "label": "Light"
-                  },
-                  {
-                      "value": "dark",
-                      "label": "Dark"
-                  },
-                  {
-                      "value": "primary",
-                      "label": "Primary"
-                  },
-                  {
-                      "value": "custom1",
-                      "label": "Custom color 1"
-                  },
-                  {
-                      "value": "custom2",
-                      "label": "Custom color 2"
-                  }
-              ]
-          },
-          {
-              "type": "select",
-              "id": "button_effect",
-              "label": "Hover button effect",
-              "default": "fade",
-              "info": "Only work for default, outline button style",
-              "options": [
-                  {
-                      "label": "Default",
-                      "value": "default"
-                  },
-                  {
-                      "label": "Fade",
-                      "value": "fade"
-                  },
-                  {
-                      "label": "Rectangle out",
-                      "value": "rectangle-out"
-                  },
-                  {
-                      "label": "Sweep to right",
-                      "value": "sweep-to-right"
-                  },
-                  {
-                      "label": "Sweep to left",
-                      "value": "sweep-to-left"
-                  },
-                  {
-                      "label": "Sweep to bottom",
-                      "value": "sweep-to-bottom"
-                  },
-                  {
-                      "label": "Sweep to top",
-                      "value": "sweep-to-top"
-                  },
-                  {
-                      "label": "Shutter out horizontal",
-                      "value": "shutter-out-horizontal"
-                  },
-                  {
-                      "label": "Outline",
-                      "value": "outline"
-                  },
-                  {
-                      "label": "Shadow",
-                      "value": "shadow"
-                  }
-              ]
-          }
-        ]
-    }
-   ],
-    "default": {
-      "blocks": [
-        {"type": "price"},{"type": "tax"},{"type": "agree"},{"type": "btnck"},{"type": "btnmr"},{"type": "img"},{"type": "btn"}
+              "label": "Link",
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "btn_cl",
+          "label": "Button color",
+          "default": "dark",
+          "options": [
+            {
+              "value": "light",
+              "label": "Light"
+            },
+            {
+              "value": "dark",
+              "label": "Dark"
+            },
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "custom1",
+              "label": "Custom color 1"
+            },
+            {
+              "value": "custom2",
+              "label": "Custom color 2"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "button_effect",
+          "label": "Hover button effect",
+          "default": "fade",
+          "info": "Only work for default, outline button style",
+          "options": [
+            {
+              "label": "Default",
+              "value": "default"
+            },
+            {
+              "label": "Fade",
+              "value": "fade"
+            },
+            {
+              "label": "Rectangle out",
+              "value": "rectangle-out"
+            },
+            {
+              "label": "Sweep to right",
+              "value": "sweep-to-right"
+            },
+            {
+              "label": "Sweep to left",
+              "value": "sweep-to-left"
+            },
+            {
+              "label": "Sweep to bottom",
+              "value": "sweep-to-bottom"
+            },
+            {
+              "label": "Sweep to top",
+              "value": "sweep-to-top"
+            },
+            {
+              "label": "Shutter out horizontal",
+              "value": "shutter-out-horizontal"
+            },
+            {
+              "label": "Outline",
+              "value": "outline"
+            },
+            {
+              "label": "Shadow",
+              "value": "shadow"
+            }
+          ]
+        }
       ]
     }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "price" },
+      { "type": "tax" },
+      { "type": "agree" },
+      { "type": "btnck" },
+      { "type": "btnmr" },
+      { "type": "img" },
+      { "type": "btn" }
+    ]
+  }
 }
 {% endschema %}
