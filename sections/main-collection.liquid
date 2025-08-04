@@ -217,7 +217,7 @@
   <div class="t4s-row">
     <div data-ntajax-container{% if show_filter %} data-has-filters{% endif %} data-ntajax-options='{"id": "{{ sid }}","type": "{{ typeAjax }}","typeFilters": "{{ type_filters }}","isProduct": true,"updateURL": true,"updateURLPrev": true,"sort_by":"{{ collection.sort_by | default: collection.default_sort_by }}"}'{% unless collection.current_type or collection.current_vendor %} data-collection-url="{{ collection.url }}"{% endunless %} class="t4s-col-item t4s-col-12 t4s-main-area t4s-main-collection-page">     
     
-    <div class="flex flex-col items-start w-full mb-6 lg:mb-0">
+    <div class="flex flex-col items-start gap-8 w-full mb-6 lg:mb-0">
       {% if collection.metafields.custom.banner_superior %}<img class="w-full hidden lg:block" src="{{ collection.metafields.custom.banner_superior | file_url }}"> {% endif %}
        
       
