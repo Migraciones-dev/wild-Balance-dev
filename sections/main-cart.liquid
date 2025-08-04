@@ -210,7 +210,7 @@
                 {{ 'cart.general.terms_and_conditions' | t }}
                 {%- endif -%}
                 {%- endcapture -%}
-                {% comment %}<p class="t4s-pr t4s-cart__agree"><input type="checkbox" id="cart_agree" data-agree-checkbox name="{{ ck_lumise }}"><label for="cart_agree">{{ terms_and_conditions }}</label><svg class="t4s-dn t4s-icon_checked"><use href="#icon-cart-selected"/></svg></p>{% endcomment %}
+                <p class="t4s-pr t4s-cart__agree"><input type="checkbox" id="cart_agree" data-agree-checkbox name="{{ ck_lumise }}"><label for="cart_agree">{{ terms_and_conditions }}</label><svg class="t4s-dn t4s-icon_checked"><use href="#icon-cart-selected"/></svg></p>
                 <div class="t4s-clearfix"></div>
             {%- when 'btnck' -%}
                 {%- if settings.currency_type == '2' and settings.notify_currency and settings.mess_currency != blank %}{% assign cart_iso_code = cart.currency.iso_code %}{% assign text1 = '{{ currency }}' -%}
@@ -238,7 +238,7 @@
         {%- endcase -%}
     {%- endfor -%}
 {% endcapture %}
-<div class="t4s-cart-{{ design_cart }}">
+<div class="t4s-container t4s-cart-{{ design_cart }}">
   <div class="t4s-cookie-essage t4s-dn">{{ 'cart.general.cookies_required' | t }}</div>
   <form
     data-cart-wrapper
@@ -252,7 +252,97 @@
     <input type="hidden" data-cart-attr-rm name="attributes[collection_items_per_row]" value="">
     <div class="t4s-row">
       <div class="{{ primary_col }}">
-        <div class="t4s-cartPage__items t4s_ratioadapt" data-cart-items></div>
+        <div class="t4s-cartPage__items t4s_ratioadapt" data-cart-items>
+          {%- if ccount > 0 -%}
+            <table class="t4s-table-main-cart">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>{{ 'cart.cart_page.label.product' | t }}</th>
+                  <th>{{ 'cart.cart_page.label.price' | t }}</th>
+                  <th>{{ 'cart.cart_page.label.quantity' | t }}</th>
+                  <th>{{ 'cart.cart_page.label.total' | t }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {%- for item in cart.items -%}
+                  {%- render 'cart-item-page',
+                    item: item,
+                    gift_pr_id: gift_pr_id,
+                    min_qty: min_qty,
+                    compare_tt_price: compare_tt_price,
+                    cart_change_url: cart_change_url,
+                    edit_item: edit_item,
+                    atc_ajax_enable: atc_ajax_enable
+                  -%}
+                {%- endfor -%}
+              </tbody>
+            </table>
+          {%- else -%}
+            <div class="t4s-mini_cart__empty t4s-text-center">
+              <div class="t4s-cart_page_icon t4s-d-inline-flex">
+                <svg id="icon-cart-emty" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path xmlns="http://www.w3.org/2000/svg" d="m310.531 311.671-31.905 31.906 31.905 31.906c6.249 6.249 6.248 16.379 0 22.627-3.124 3.124-7.22 4.686-11.313 4.686-4.095 0-8.189-1.562-11.313-4.687l-31.905-31.904-31.904 31.906c-3.124 3.124-7.219 4.687-11.313 4.687s-8.189-1.562-11.313-4.686c-6.248-6.249-6.249-16.379 0-22.627l31.905-31.906-31.905-31.906c-6.249-6.249-6.248-16.379 0-22.627 6.249-6.248 16.38-6.248 22.627 0l31.903 31.904 31.904-31.906c6.248-6.248 16.379-6.249 22.627 0 6.248 6.248 6.249 16.378 0 22.627zm172.364-177.584v243.826c0 73.936-60.152 134.087-134.09 134.087h-185.61c-73.938 0-134.09-60.151-134.09-134.087v-243.826c0-8.836 7.163-16 16-16h84.088c4.657-65.895 59.75-118.087 126.81-118.087 67.059 0 122.152 52.192 126.808 118.087h84.083c8.837 0 16.001 7.163 16.001 16zm-321.594-16h189.403c-4.572-48.229-45.296-86.087-94.701-86.087-49.406 0-90.13 37.858-94.702 86.087zm289.594 32h-67.758v67.435c0 8.836-7.163 16-16 16s-16-7.164-16-16v-67.435h-190.269v67.435c0 8.836-7.163 16-16 16s-16-7.164-16-16v-67.435h-67.763v227.826c0 56.291 45.797 102.087 102.09 102.087h185.609c56.293 0 102.09-45.796 102.09-102.087v-227.826z" fill="currentColor"/>
+                </svg>
+              </div>
+              <h4 class="t4s-cart_page_heading">{{ 'cart.cart_page.empty' | t }}</h4>
+              <div class="t4s-cart_page_txt">{{ 'cart.cart_page.empty_html' | t }}</div>
+              {%- assign btn_blocks = section_blocks | where: 'type', 'btn' -%}
+              {%- if btn_blocks.size > 0 -%}
+                {%- for block in btn_blocks -%}
+                  {%- assign bk_stts = block.settings -%}
+                  {%- assign button_style = bk_stts.button_style -%}
+                  {%- if bk_stts.title != blank -%}
+                    <p class="t4s-return-to-shop">
+                      <a
+                        data-loading-bar
+                        class="t4s-btn-cart__emty t4s-btn t4s-btn-base t4s-btn-style-{{ button_style }} t4s-btn-color-{{ bk_stts.btn_cl }} {% if button_style == 'default' or button_style == 'outline' %}t4s-btn-effect-{{ bk_stts.button_effect }}{% endif %} t4s-justify-content-center t4s-truncate"
+                        href="{{ bk_stts.url | default: routes.all_products_collection_url }}"
+                      >
+                        {%- if bk_stts.btn_icon -%}
+                          <svg class="t4s-btn-icon" viewBox="0 0 14 10">
+                            <use xlink:href="#t4s-icon-btn"></use>
+                          </svg>
+                        {%- endif -%}
+                        {{ bk_stts.title -}}
+                      </a>
+                    </p>
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endif -%}
+              {%- if se_stts.enable_calc_ship and shipping_amount > -1 -%}
+                {%- liquid
+                  assign shipping_money = shipping_amount | money
+                  if enable_shipbar
+                    assign des_shipbar_per_1 = settings.des_shipbar_per_1
+                    assign des_shipbar_per_2 = settings.des_shipbar_per_2
+                    assign des_shipbar_per_3 = settings.des_shipbar_per_3
+                    assign less_100 = 99.99
+                    assign array_shipbar_per = des_shipbar_per_1 | append: ';' | append: des_shipbar_per_2 | append: ';' | append: des_shipbar_per_3 | split: ';' | sort_natural
+                    assign percent_class = array_shipbar_per[0] | plus: 0
+                    if percent_class == 100
+                      assign percent_class = less_100
+                    endif
+                  endif
+                -%}
+
+                {%- if enable_shipbar -%}
+                  {%- style -%}
+                    [data-t4s-percent="{% if des_shipbar_per_1 == 100 %}{{ less_100 }}{% else %}{{ des_shipbar_per_1 }}{% endif %}"] { --main-threshold-color: {{ settings.des_shipbar_cl_1 }}; }
+                    [data-t4s-percent="{% if des_shipbar_per_2 == 100 %}{{ less_100 }}{% else %}{{ des_shipbar_per_2 }}{% endif %}"] { --main-threshold-color: {{ settings.des_shipbar_cl_2 }}; }
+                    [data-t4s-percent="{% if des_shipbar_per_3 == 100 %}{{ less_100 }}{% else %}{{ des_shipbar_per_3 }}{% endif %}"] { --main-threshold-color: {{ settings.des_shipbar_cl_3 }}; }
+                    [data-t4s-percent="100"] { --main-threshold-color: {{ settings.des_shipbar_cl_4 }}; }
+                  {%- endstyle -%}
+                {%- endif -%}
+                <div class="t4s-cart__threshold" data-t4s-percent="{{ percent_class }}">
+                  <div class="t4s-cart__thres1">
+                    {{ 'cart.shipping_threshold.text_1_html' | t: money: shipping_money }}
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        </div>
         <div class="t4s-cartPage__footer">
           <div class="t4s-row">
             {%- if se_stts.enable_note
@@ -398,6 +488,9 @@
         </div>
       </div>
       {%- if design_cart == '2column' and ccount > 0 -%}
+        <div class="t4s-col-item t4s-col-lg-3 t4s-col-md-12 t4s-col-12">
+          <div class="t4s-summary-cart">{{ summary_cart }}</div>
+        </div>
       {%- endif -%}
     </div>
   </form>
@@ -474,7 +567,7 @@
   _______________________________________________________ _______________________________________________________
 
   <div class="flex flex-row w-full">
-    <section class="relative w-3/5 bg-[#F4F0E2]">
+    <section class="relative w-full max-w-[814px] py-12 px-[124px] bg-wb-beige">
       <div class="flex justify-between items-center pb-2.5 border-b border-[#d9d9c8]">
         <h2 class="font-bold [font-family:'Barlow',Helvetica] text-[#004623] text-[17.8px] leading-[23px]">
           TU CARRITO DE LA COMPRA
@@ -491,96 +584,6 @@
             </h3>
           </div>
         </div>
-        PRODUCTOS:
-        {%- if ccount > 0 -%}
-          <table class="t4s-table-main-cart">
-            <thead>
-              <tr>
-                <th></th>
-                <th>{{ 'cart.cart_page.label.product' | t }}</th>
-                <th>{{ 'cart.cart_page.label.price' | t }}</th>
-                <th>{{ 'cart.cart_page.label.quantity' | t }}</th>
-                <th>{{ 'cart.cart_page.label.total' | t }}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {%- for item in cart.items -%}
-                {%- render 'cart-item-page',
-                  item: item,
-                  gift_pr_id: gift_pr_id,
-                  min_qty: min_qty,
-                  compare_tt_price: compare_tt_price,
-                  cart_change_url: cart_change_url,
-                  edit_item: edit_item,
-                  atc_ajax_enable: atc_ajax_enable
-                -%}
-              {%- endfor -%}
-            </tbody>
-          </table>
-        {%- else -%}
-          <div class="t4s-mini_cart__empty t4s-text-center">
-            <div class="t4s-cart_page_icon t4s-d-inline-flex">
-              <svg id="icon-cart-emty" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path xmlns="http://www.w3.org/2000/svg" d="m310.531 311.671-31.905 31.906 31.905 31.906c6.249 6.249 6.248 16.379 0 22.627-3.124 3.124-7.22 4.686-11.313 4.686-4.095 0-8.189-1.562-11.313-4.687l-31.905-31.904-31.904 31.906c-3.124 3.124-7.219 4.687-11.313 4.687s-8.189-1.562-11.313-4.686c-6.248-6.249-6.249-16.379 0-22.627l31.905-31.906-31.905-31.906c-6.249-6.249-6.248-16.379 0-22.627 6.249-6.248 16.38-6.248 22.627 0l31.903 31.904 31.904-31.906c6.248-6.248 16.379-6.249 22.627 0 6.248 6.248 6.249 16.378 0 22.627zm172.364-177.584v243.826c0 73.936-60.152 134.087-134.09 134.087h-185.61c-73.938 0-134.09-60.151-134.09-134.087v-243.826c0-8.836 7.163-16 16-16h84.088c4.657-65.895 59.75-118.087 126.81-118.087 67.059 0 122.152 52.192 126.808 118.087h84.083c8.837 0 16.001 7.163 16.001 16zm-321.594-16h189.403c-4.572-48.229-45.296-86.087-94.701-86.087-49.406 0-90.13 37.858-94.702 86.087zm289.594 32h-67.758v67.435c0 8.836-7.163 16-16 16s-16-7.164-16-16v-67.435h-190.269v67.435c0 8.836-7.163 16-16 16s-16-7.164-16-16v-67.435h-67.763v227.826c0 56.291 45.797 102.087 102.09 102.087h185.609c56.293 0 102.09-45.796 102.09-102.087v-227.826z" fill="currentColor"/>
-              </svg>
-            </div>
-            <h4 class="t4s-cart_page_heading">{{ 'cart.cart_page.empty' | t }}</h4>
-            <div class="t4s-cart_page_txt">{{ 'cart.cart_page.empty_html' | t }}</div>
-            {%- assign btn_blocks = section_blocks | where: 'type', 'btn' -%}
-            {%- if btn_blocks.size > 0 -%}
-              {%- for block in btn_blocks -%}
-                {%- assign bk_stts = block.settings -%}
-                {%- assign button_style = bk_stts.button_style -%}
-                {%- if bk_stts.title != blank -%}
-                  <p class="t4s-return-to-shop">
-                    <a
-                      data-loading-bar
-                      class="t4s-btn-cart__emty t4s-btn t4s-btn-base t4s-btn-style-{{ button_style }} t4s-btn-color-{{ bk_stts.btn_cl }} {% if button_style == 'default' or button_style == 'outline' %}t4s-btn-effect-{{ bk_stts.button_effect }}{% endif %} t4s-justify-content-center t4s-truncate"
-                      href="{{ bk_stts.url | default: routes.all_products_collection_url }}"
-                    >
-                      {%- if bk_stts.btn_icon -%}
-                        <svg class="t4s-btn-icon" viewBox="0 0 14 10">
-                          <use xlink:href="#t4s-icon-btn"></use>
-                        </svg>
-                      {%- endif -%}
-                      {{ bk_stts.title -}}
-                    </a>
-                  </p>
-                {%- endif -%}
-              {%- endfor -%}
-            {%- endif -%}
-            {%- if se_stts.enable_calc_ship and shipping_amount > -1 -%}
-              {%- liquid
-                assign shipping_money = shipping_amount | money
-                if enable_shipbar
-                  assign des_shipbar_per_1 = settings.des_shipbar_per_1
-                  assign des_shipbar_per_2 = settings.des_shipbar_per_2
-                  assign des_shipbar_per_3 = settings.des_shipbar_per_3
-                  assign less_100 = 99.99
-                  assign array_shipbar_per = des_shipbar_per_1 | append: ';' | append: des_shipbar_per_2 | append: ';' | append: des_shipbar_per_3 | split: ';' | sort_natural
-                  assign percent_class = array_shipbar_per[0] | plus: 0
-                  if percent_class == 100
-                    assign percent_class = less_100
-                  endif
-                endif
-              -%}
-
-              {%- if enable_shipbar -%}
-                {%- style -%}
-                  [data-t4s-percent="{% if des_shipbar_per_1 == 100 %}{{ less_100 }}{% else %}{{ des_shipbar_per_1 }}{% endif %}"] { --main-threshold-color: {{ settings.des_shipbar_cl_1 }}; }
-                  [data-t4s-percent="{% if des_shipbar_per_2 == 100 %}{{ less_100 }}{% else %}{{ des_shipbar_per_2 }}{% endif %}"] { --main-threshold-color: {{ settings.des_shipbar_cl_2 }}; }
-                  [data-t4s-percent="{% if des_shipbar_per_3 == 100 %}{{ less_100 }}{% else %}{{ des_shipbar_per_3 }}{% endif %}"] { --main-threshold-color: {{ settings.des_shipbar_cl_3 }}; }
-                  [data-t4s-percent="100"] { --main-threshold-color: {{ settings.des_shipbar_cl_4 }}; }
-                {%- endstyle -%}
-              {%- endif -%}
-              <div class="t4s-cart__threshold" data-t4s-percent="{{ percent_class }}">
-                <div class="t4s-cart__thres1">
-                  {{ 'cart.shipping_threshold.text_1_html' | t: money: shipping_money }}
-                </div>
-              </div>
-            {%- endif -%}
-          </div>
-        {%- endif -%}
         <div class="p-6 px-[17px] py-4">
           <div class="flex">
             <div class="w-28 h-28 bg-wb-gris-oscuro rounded-lg overflow-hidden">
@@ -614,6 +617,31 @@
               <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 w-[42px] p-0 rounded-none">
                 <img class="w-[42px] h-10" alt="Increase quantity" src="/button---a-ade-uno-.svg">
               </button>
+            </div>
+          </div>
+          <div class="flex justify-between items-center mt-4 px-3 py-3 bg-[#f4f0e2] rounded-[50px] border border-[#d9d9c8]">
+            <div class="flex items-center gap-2">
+              <button
+                type="button"
+                role="checkbox"
+                aria-checked="false"
+                data-state="unchecked"
+                value="on"
+                class="peer shrink-0 shadow focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground w-5 h-5 rounded border-[1.5px] border-[#d9d9c8]"
+                id="subscribe"
+              ></button
+              ><label
+                for="subscribe"
+                class="font-medium [font-family:'DM_Sans_18pt-Medium',Helvetica] text-[#004623] text-[14.8px] leading-[21.6px]"
+                >Suscríbete y ahorra</label
+              >
+            </div>
+            <div class="flex items-center gap-[7px]">
+              <span class="font-medium [font-family:'DM_Sans_18pt-Medium',Helvetica] text-[#7f7d7b] text-[12.7px] leading-[18.9px] line-through"
+                >9,49 €</span
+              ><span class="font-bold [font-family:'DM_Sans_18pt-Bold',Helvetica] text-[#004623] text-[14.2px] leading-[21.6px]"
+                >xx €</span
+              >
             </div>
           </div>
         </div>
@@ -733,131 +761,107 @@
         </div>
       </div>
     </section>
-    <div class="w-2/5 px-16">
-      <div class="flex flex-col items-start gap-4 w-full">
-        <div class="w-full h-10 border-b border-[#d9d9c8]">
-          <h2 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-[18.4px] leading-[23px]">
-            TOTAL DEL CARRO
-          </h2>
-        </div>
-
-        {% comment %}
-          <div class="w-full h-[47px] bg-wb-beige rounded-lg border border-[#d9d9c8] flex items-center px-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-calendar w-[18px] h-[18px] text-[#004623]"
-            >
-              <path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path>
-            </svg>
-            <span class="ml-3 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#004623] text-[13.3px]"
-              >Selecciona la fecha de entrega</span
-            >
+    <div class="rounded-xl border text-card-foreground shadow w-full max-w-[626px] bg-white p-12">
+      <div class="p-0">
+        <div class="flex flex-col w-full items-start gap-[47px]">
+          <div class="flex flex-col items-start gap-4 w-full">
+            <div class="w-full h-10 border-b border-[#d9d9c8]">
+              <h2 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-[18.4px] leading-[23px]">
+                TOTAL DEL CARRO
+              </h2>
+            </div>
+            <div class="relative w-full h-[38.59px] border-b border-[#d9d9c8] flex justify-between items-center">
+              <div class="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#7f7d7b] text-[15.1px] leading-[21.6px]">
+                Subtotal
+              </div>
+              <div class="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#7f7d7b] text-[14.5px] text-right leading-[21.6px]">
+                9,49 €
+              </div>
+            </div>
+            <div class="relative w-full h-[38.59px] border-b border-[#d9d9c8] flex justify-between items-center">
+              <div class="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#7f7d7b] text-[15.1px] leading-[21.6px]">
+                Envío
+              </div>
+              <div class="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#7f7d7b] text-[14.5px] text-right leading-[21.6px]">
+                xx €
+              </div>
+            </div>
+            <div class="flex items-center justify-between w-full">
+              <div class="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-[#004623] text-[17px] leading-[24.3px]">
+                Total
+              </div>
+              <div class="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-[#004623] text-[16.2px] text-right leading-[24.3px]">
+                9,49 €
+              </div>
+            </div>
+            <div class="w-full h-[47px] bg-wb-beige rounded-lg border border-[#d9d9c8] flex items-center px-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-calendar w-[18px] h-[18px] text-[#004623]"
+              >
+                <path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path>
+              </svg>
+              <span class="ml-3 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#004623] text-[13.3px]"
+                >Selecciona la fecha de entrega</span
+              >
+            </div>
+            <div class="w-full h-[63.8px] bg-wb-beige rounded-lg border border-[#d9d9c8] flex items-center px-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-info w-[21px] h-[21px] text-[#004623]"
+              >
+                <circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path>
+              </svg>
+              <div class="ml-2 [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#004623] text-[12.9px] leading-[18.9px]">
+                Los códigos de descuento pueden aplicarse en el<br>
+                siguiente paso.
+              </div>
+            </div>
           </div>
-        {% endcomment %}
-
-        <div class="w-full h-[63.8px] bg-wb-beige rounded-lg border !border-[#d9d9c8] flex items-center px-4 bg-[#F4F0E2]">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.2696 12.7106L12.4181 18.562C11.6196 19.3583 10.538 19.8055 9.41036 19.8055C8.28267 19.8055 7.20104 19.3583 6.40261 18.562L3.29862 15.4581C2.50204 14.6597 2.05469 13.5778 2.05469 12.45C2.05469 11.3222 2.50204 10.2404 3.29862 9.44192L9.15015 3.59055C9.54431 3.19433 10.0132 2.88022 10.5294 2.66639C11.0458 2.45257 11.5995 2.34329 12.1583 2.34487H16.1579C17.048 2.34605 17.9012 2.70015 18.5306 3.32952C19.16 3.95888 19.5141 4.81215 19.5153 5.7022V9.70258C19.5168 10.2614 19.4076 10.815 19.1938 11.3313C18.9799 11.8477 18.6658 12.3165 18.2696 12.7106ZM4.24701 14.5079L7.35189 17.6128C7.89818 18.1576 8.63828 18.4637 9.40991 18.4637C10.1815 18.4637 10.9216 18.1576 11.4678 17.6128L17.3194 11.7614C17.8639 11.2139 18.1703 10.4737 18.172 9.70168V5.7022C18.172 5.1678 17.9599 4.65525 17.5822 4.27711C17.2046 3.89898 16.6922 3.68618 16.1579 3.68547H12.1592C11.3871 3.68709 10.6468 3.99349 10.0995 4.53802L4.24701 10.3886C3.70122 10.935 3.39468 11.6759 3.39468 12.4483C3.39468 13.2206 3.70122 13.9614 4.24701 14.5079Z" fill="#004623"/>
-            <path d="M14.8146 7.94102C14.6375 7.94102 14.4643 7.88849 14.317 7.79008C14.1697 7.69167 14.0549 7.5518 13.9871 7.38814C13.9194 7.22449 13.9016 7.04441 13.9361 6.87068C13.9707 6.69694 14.056 6.53736 14.1813 6.4121C14.3065 6.28685 14.4661 6.20154 14.6399 6.16698C14.8136 6.13244 14.9937 6.15017 15.1573 6.21796C15.321 6.28575 15.4609 6.40053 15.5593 6.54782C15.6577 6.6951 15.7102 6.86827 15.7102 7.0454C15.7102 7.28294 15.6159 7.51074 15.4479 7.6787C15.2799 7.84666 15.0521 7.94102 14.8146 7.94102Z" fill="#004623"/>
-          </svg>
-
-          <div class="ml-2 [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#004623] text-[12.9px] leading-[18.9px]">
-            Los códigos de descuento pueden aplicarse en el<br>
-            siguiente paso.
+          <div class="flex flex-col items-center gap-[25px] w-full">
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground shadow h-9 w-full py-3.5 px-[129px] bg-[#ffcd00] rounded-[50px] hover:bg-[#ffcd00]/90">
+              <span class="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-[#004623] text-[16.9px] leading-[18px]"
+                >Finalizar compra</span
+              >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-arrow-right ml-1.5 w-[16.66px] h-[16.66px] text-[#004623]"
+              >
+                <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </button>
+            <div class="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-normal text-[#7f7d7b] text-[13px] text-center leading-[18.9px]">
+              <span class="font-medium">Al hacer su pedido, usted acepta nuestros </span
+              ><span class="font-medium underline">términos y condiciones<br></span><span class="font-medium">y </span
+              ><span class="font-medium underline">la política de privacidad</span>
+            </div>
+            <img class="w-[336px] h-[40.33px]" alt="Payment methods" src="/list.svg">
           </div>
         </div>
-      </div>
-      <div class=" !bg-white !mb-0">{{ summary_cart }}</div>
-      <div class="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-normal text-[#7f7d7b] text-[13px] text-center leading-[18.9px] bt-6">
-        <span class="font-medium">Al hacer su pedido, usted acepta nuestros </span
-        ><span class="font-medium underline">términos y condiciones<br></span><span class="font-medium">y </span
-        ><span class="font-medium underline">la política de privacidad</span>
-      </div>
-      <div
-        class="t4s-payment-footer-svg t4s-pr t4s-hidden-mobile-false flex flex-row justify-center pt-6"
-        id="b_payments_dwhjiY"
-        style="--height: 25px;--mgb: px;--mgb-mb: px;"
-      >
-        <img
-          loading="lazy"
-          class=" ls-is-cached lazyloadt4sed"
-          src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/master-54b5a7ce.svg"
-          data-src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/master-54b5a7ce.svg"
-          width=""
-          height=""
-          alt="master"
-
-        ><img
-          loading="lazy"
-          class=" ls-is-cached lazyloadt4sed"
-          src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/visa-65d650f7.svg"
-          data-src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/visa-65d650f7.svg"
-          width=""
-          height=""
-          alt="visa"
-
-        ><img
-          loading="lazy"
-          class=" ls-is-cached lazyloadt4sed"
-          src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/maestro-61c41725.svg"
-          data-src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/maestro-61c41725.svg"
-          width=""
-          height=""
-          alt="maestro"
-
-        ><img
-          loading="lazy"
-          class=" ls-is-cached lazyloadt4sed"
-          src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/american_express-1efdc6a3.svg"
-          data-src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/american_express-1efdc6a3.svg"
-          width=""
-          height=""
-          alt="american express"
-
-        ><img
-          loading="lazy"
-          class=" ls-is-cached lazyloadt4sed"
-          src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/unionpay-38c64159.svg"
-          data-src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/unionpay-38c64159.svg"
-          width=""
-          height=""
-          alt="unionpay"
-
-        ><img
-          loading="lazy"
-          class=" ls-is-cached lazyloadt4sed"
-          src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/apple_pay-1721ebad.svg"
-          data-src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/apple_pay-1721ebad.svg"
-          width=""
-          height=""
-          alt="apple pay"
-
-        ><img
-          loading="lazy"
-          class=" ls-is-cached lazyloadt4sed"
-          src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/google_pay-34c30515.svg"
-          data-src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/google_pay-34c30515.svg"
-          width=""
-          height=""
-          alt="google pay"
-
-        ><img
-          loading="lazy"
-          class=" ls-is-cached lazyloadt4sed"
-          src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/shopify_pay-925ab76d.svg"
-          data-src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/shopify_pay-925ab76d.svg"
-          width=""
-          height=""
-          alt="shopify pay"
-        >
       </div>
     </div>
   </div>
