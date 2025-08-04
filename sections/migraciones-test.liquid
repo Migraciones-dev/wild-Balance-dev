@@ -1,11 +1,48 @@
 <section class="relative w-full pt-16 flex flex-col items-center">
   <div class="flex flex-col items-center gap-[17px] mb-12 max-w-[940px]  mx-auto text-center lg:text-left">
     <div class="flex flex-col items-center gap-2.5 relative overflow-hidden">
-      <img
+      <p
         class="relative h-[27px] sm:h-[37px] lg:h-[47px]"
-        alt="Vector"
-        src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Capa_1_18.png?v=1753618239"
       >
+            <div id="ba-container" class="relative w-full overflow-hidden mt-12 max-w-[835px] mx-auto">
+      <!-- Imagen “antes” -->
+      <img
+        src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Diseno_sin_titulo_57_1.png?v=1754248227"
+        alt="Antes"
+        class="w-full h-auto block"
+      >
+
+      <!-- Imagen “después” superpuesta, clip-path al 100% derecha -->
+      <img
+        id="ba-overlay"
+        src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Diseno_sin_titulo_56_1_1.png?v=1754248226"
+        alt="Después"
+        class="absolute top-0 left-0 w-full h-auto block"
+        style="clip-path: inset(0 100% 0 0);"
+      >
+    </div>
+
+    <script>
+      (function () {
+        const cont = document.getElementById('ba-container');
+        const ov = document.getElementById('ba-overlay');
+
+        function clamp(v) {
+          return v < 0 ? 0 : v > 1 ? 1 : v;
+        }
+
+        window.addEventListener('scroll', () => {
+          const rect = cont.getBoundingClientRect();
+          const viewH = window.innerHeight;
+          // 0 cuando entra, 1 cuando sale
+          let progress = (viewH - rect.top) / (viewH + rect.height);
+          progress = clamp(progress);
+          // Clip-path: recorta por la derecha el resto
+          const hidePct = 100 - progress * 150;
+          ov.style.clipPath = `inset(0 ${hidePct}% 0 0)`;
+        });
+      })();
+    </script><p>
     </div>
     <h2 class="relative [font-family:'Barlow',Helvetica] font-extrabold text-[#004623] max-w-[1600px] text-[30px] lg:text-[64px] lg:text-center leading-[1]">
       Nutrición <span class="highlight">100% natural</span>, formulada por expertos
@@ -300,45 +337,7 @@
     </div>
     <!-- Imagen central -->
     <!-- before-after.html -->
-    <div id="ba-container" class="relative w-full overflow-hidden mt-12 max-w-[835px] mx-auto">
-      <!-- Imagen “antes” -->
-      <img
-        src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Diseno_sin_titulo_57_1.png?v=1754248227"
-        alt="Antes"
-        class="w-full h-auto block"
-      >
 
-      <!-- Imagen “después” superpuesta, clip-path al 100% derecha -->
-      <img
-        id="ba-overlay"
-        src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Diseno_sin_titulo_56_1_1.png?v=1754248226"
-        alt="Después"
-        class="absolute top-0 left-0 w-full h-auto block"
-        style="clip-path: inset(0 100% 0 0);"
-      >
-    </div>
-
-    <script>
-      (function () {
-        const cont = document.getElementById('ba-container');
-        const ov = document.getElementById('ba-overlay');
-
-        function clamp(v) {
-          return v < 0 ? 0 : v > 1 ? 1 : v;
-        }
-
-        window.addEventListener('scroll', () => {
-          const rect = cont.getBoundingClientRect();
-          const viewH = window.innerHeight;
-          // 0 cuando entra, 1 cuando sale
-          let progress = (viewH - rect.top) / (viewH + rect.height);
-          progress = clamp(progress);
-          // Clip-path: recorta por la derecha el resto
-          const hidePct = 100 - progress * 150;
-          ov.style.clipPath = `inset(0 ${hidePct}% 0 0)`;
-        });
-      })();
-    </script>
   </div>
 
   <!-- CSS extra para ocultar scrollbar -->
