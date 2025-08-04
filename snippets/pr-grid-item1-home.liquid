@@ -145,17 +145,6 @@
         <div data-replace-quickview data-tooltip-="top"></div>
         <div data-replace-atc data-tooltip-="top"></div>
       </div>
-      <div class="t4s-product-btns2">
-        {%- if isGrowaveWishlist -%}
-          {%- capture the_snippet_fave_icon %}{% render 'ssw-widget-faveicon' with pid %}{% endcapture -%}
-          {%- unless the_snippet_fave_icon contains 'Liquid error' -%}
-            <div class="t4s-pr-item-btn t4s-pr-wishlist is--growave">{{ the_snippet_fave_icon }}</div>
-          {%- endunless -%}
-        {%- else -%}
-          <div data-replace-wishlist data-tooltip="left"></div>
-        {%- endif -%}
-        <div data-replace-compare data-tooltip="left"></div>
-      </div>
       <a data-pr-href class="t4s-full-width-link" href="{{ pr_url }}"></a>
     </div>
     <div class="t4s-product-info text-left">
