@@ -295,85 +295,85 @@
                             </button>
                           </div>
                         </div>
-                      {% endif %}
-                      <div class="t4s-swatch-wrapper">
-                        {% for option in product.options_with_values %}
-                          {% assign option_index = forloop.index %}
-                          <div class="t4s-swatch-group" data-option-index="{{ option_index }}">
-                            {% comment %}<h4 class="t4s-swatch-title">{{ option.name }}:</h4>{% endcomment %}
-                            <div class="t4s-swatch-list lg:flex lg:flex-row gap-6">
-                              {% for value in option.values %}
-                                {%- comment -%}
-                                  Construimos el nombre de la propiedad ("option1", "option2", etc.)
-                                {%- endcomment -%}
-                                {% capture prop %}option{{ option_index }}{% endcapture %}
-                                {%- comment -%}
-                                  Buscamos la variante que coincide con este valor de opción
-                                {%- endcomment -%}
-                                {% assign variant = product.variants | where: prop, value | first %}
 
-                                <div
-                                  data-swatch-item
-                                  class="t4s-swatch-item {% if product.selected_or_first_available_variant.id == variant.id %}is--selected{% endif %} mb-4 lg:w-1/2"
-                                  data-value="{{ value | escape }}"
-                                >
-                                  <input
-                                    type="radio"
-                                    id="variant-{{ variant.id }}-input"
-                                    name="variant"
-                                    value="{{ variant.id }}"
-                                    {% if product.selected_or_first_available_variant.id == variant.id %}
-                                      checked
-                                    {% endif %}
-                                    class="t4s-swatch-radio hidden"
+                        <div class="t4s-swatch-wrapper">
+                          {% for option in product.options_with_values %}
+                            {% assign option_index = forloop.index %}
+                            <div class="t4s-swatch-group" data-option-index="{{ option_index }}">
+                              {% comment %}<h4 class="t4s-swatch-title">{{ option.name }}:</h4>{% endcomment %}
+                              <div class="t4s-swatch-list lg:flex lg:flex-row gap-6">
+                                {% for value in option.values %}
+                                  {%- comment -%}
+                                    Construimos el nombre de la propiedad ("option1", "option2", etc.)
+                                  {%- endcomment -%}
+                                  {% capture prop %}option{{ option_index }}{% endcapture %}
+                                  {%- comment -%}
+                                    Buscamos la variante que coincide con este valor de opción
+                                  {%- endcomment -%}
+                                  {% assign variant = product.variants | where: prop, value | first %}
+
+                                  <div
+                                    data-swatch-item
+                                    class="t4s-swatch-item {% if product.selected_or_first_available_variant.id == variant.id %}is--selected{% endif %} mb-4 lg:w-1/2"
+                                    data-value="{{ value | escape }}"
                                   >
+                                    <input
+                                      type="radio"
+                                      id="variant-{{ variant.id }}-input"
+                                      name="variant"
+                                      value="{{ variant.id }}"
+                                      {% if product.selected_or_first_available_variant.id == variant.id %}
+                                        checked
+                                      {% endif %}
+                                      class="t4s-swatch-radio hidden"
+                                    >
 
-                                  <div class="flex items-center gap-x-2 px-2 py-2 min-h-[80px] bg-white rounded-[8px] cursor-pointer">
-                                    <picture class="flex items-center justify-center bg-[#D9D9C8] rounded-md w-1/4">
-                                      {% assign featured = product.featured_image | default: product.images.first %}
+                                    <div class="flex items-center gap-x-2 px-2 py-2 min-h-[80px] bg-white rounded-[8px] cursor-pointer">
+                                      <picture class="flex items-center justify-center bg-[#D9D9C8] rounded-md w-1/4">
+                                        {% assign featured = product.featured_image | default: product.images.first %}
 
-                                      <img
-                                        src="{{ featured | img_url: '112x112' }}?q=80"
-                                        alt="{{ product.title }}"
-                                        class="object-contain object-center"
-                                        loading="lazy"
-                                        decoding="async"
-                                        fetchpriority="low"
-                                      >
-                                    </picture>
-                                    <div class="flex flex-grow px-2">
-                                      <div class="flex flex-col items-start justify-center gap-y-0 grow">
-                                        <div class="flex flex-col gap-6">
-                                          <input
-                                            id="49809333649739-input"
-                                            class="hidden w-3 h-3 bg-gray-100 border-0 shrink-0 outline-none! ring-0! shadow-none!   checked:bg-purple-700 focus:bg-purple-700 checked:bg-none focus:ring-0 focus:ring-offset-0 hover:bg-purple-700 active:bg-purple-700"
-                                            type="radio"
-                                            value="49809333649739"
-                                            name="variant"
-                                          >
-                                          <p class=" leading-6  flex-grow items-center font-[700] font-[14.5px]">
-                                            {{- value -}}
-                                          </p>
-                                          <p class=" font-medium leading-6  shrink-0 font-[14.5px]">
-                                            {{- variant.price | money_with_currency -}}
-                                          </p>
-                                        </div>
-                                        {% comment %}
-                                          <div class="flex flex-wrap gap-1">
-                                            <span class="">Croquetas normales</span>
+                                        <img
+                                          src="{{ featured | img_url: '112x112' }}?q=80"
+                                          alt="{{ product.title }}"
+                                          class="object-contain object-center"
+                                          loading="lazy"
+                                          decoding="async"
+                                          fetchpriority="low"
+                                        >
+                                      </picture>
+                                      <div class="flex flex-grow px-2">
+                                        <div class="flex flex-col items-start justify-center gap-y-0 grow">
+                                          <div class="flex flex-col gap-6">
+                                            <input
+                                              id="49809333649739-input"
+                                              class="hidden w-3 h-3 bg-gray-100 border-0 shrink-0 outline-none! ring-0! shadow-none!   checked:bg-purple-700 focus:bg-purple-700 checked:bg-none focus:ring-0 focus:ring-offset-0 hover:bg-purple-700 active:bg-purple-700"
+                                              type="radio"
+                                              value="49809333649739"
+                                              name="variant"
+                                            >
+                                            <p class=" leading-6  flex-grow items-center font-[700] font-[14.5px]">
+                                              {{- value -}}
+                                            </p>
+                                            <p class=" font-medium leading-6  shrink-0 font-[14.5px]">
+                                              {{- variant.price | money_with_currency -}}
+                                            </p>
                                           </div>
-                                        {% endcomment %}
+                                          {% comment %}
+                                            <div class="flex flex-wrap gap-1">
+                                              <span class="">Croquetas normales</span>
+                                            </div>
+                                          {% endcomment %}
+                                        </div>
+                                        <div class="flex flex-col justify-center items-end"></div>
                                       </div>
-                                      <div class="flex flex-col justify-center items-end"></div>
                                     </div>
                                   </div>
-                                </div>
-                              {% endfor %}
+                                {% endfor %}
+                              </div>
                             </div>
-                          </div>
-                        {% endfor %}
-                      </div>
-
+                          {% endfor %}
+                        </div>
+                      {% endif %}
                       <!-- Cantidad y botón de añadir -->
                       <div class="t4s-product-form__controls flex items-center space-x-4 [@media(max-width:1024px)]:flex-col mt-6">
                         <!-- Selector de cantidad (ancho fijo, alto 43.94px) -->
