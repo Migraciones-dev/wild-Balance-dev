@@ -71,9 +71,7 @@
       data-disable-swatch: isProductDefault
     -%}
       {{- form | payment_terms -}}
-      {%- if isProductDefault -%}
-        TEST VARIANTES
-      {% endif %}
+
       {%- if false -%}
         <input name="id" value="{{ pr_variants.first.id }}" type="hidden">
         {%- if advance_pr_type != blank -%}
@@ -262,41 +260,41 @@
                       <input type="hidden" name="utf8" value="✓">
 
                       <!-- Swatches dinámicos -->
-
-                      <div class="flex justify-between gap-2 mb-6">
-                        <p class="font-[700] [font-family:'Barlow',Helvetica] text-[#004623] font-[16px]">
-                          Selecciona cantidad
-                        </p>
-                        <div class="text-gray-400 font-medium underline text-sm flex items-center ">
-                          <button
-                            class="inline-flex items-center ml-1 group flex flex-row items-center gap-2 "
-                            type="button"
-                          >
-                            <div
-                              class="icon_icon__PAVlB block w-6 h-6 mr-2 transition w-6 h-6"
-                              aria-hidden="true"
+                      {%- unless isProductDefault -%}
+                        <div class="flex justify-between gap-2 mb-6">
+                          <p class="font-[700] [font-family:'Barlow',Helvetica] text-[#004623] font-[16px]">
+                            Selecciona cantidad
+                          </p>
+                          <div class="text-gray-400 font-medium underline text-sm flex items-center ">
+                            <button
+                              class="inline-flex items-center ml-1 group flex flex-row items-center gap-2 "
+                              type="button"
                             >
-                              <div>
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="2 2 16 16"
-                                  role="img"
-                                  class="injected-svg fill-current text-[#004623] w-6 h-6"
-                                  data-src="/icons/question-mark.svg"
-                                >
-                                  <path
-                                    fill-rule="evenodd"
-                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                                    clip-rule="evenodd"
-                                  />
-                                </svg>
+                              <div
+                                class="icon_icon__PAVlB block w-6 h-6 mr-2 transition w-6 h-6"
+                                aria-hidden="true"
+                              >
+                                <div>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="2 2 16 16"
+                                    role="img"
+                                    class="injected-svg fill-current text-[#004623] w-6 h-6"
+                                    data-src="/icons/question-mark.svg"
+                                  >
+                                    <path
+                                      fill-rule="evenodd"
+                                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                                      clip-rule="evenodd"
+                                    />
+                                  </svg>
+                                </div>
                               </div>
-                            </div>
-                            <span class="block text-left text-[#222222]">Calcula tu ración </span>
-                          </button>
+                              <span class="block text-left text-[#222222]">Calcula tu ración </span>
+                            </button>
+                          </div>
                         </div>
-                      </div>
-
+                      {% endunless %}
                       <div class="t4s-swatch-wrapper">
                         {% for option in product.options_with_values %}
                           {% assign option_index = forloop.index %}
