@@ -262,7 +262,7 @@
               "title": "Comida para perros",
               "url": "shopify://collections/comida-perros",
               "open_link": "_self",
-              "menu": "perros",
+              "menu": "perros-nuevo",
               "icon": "",
               "cus_cl": false,
               "cl": "#ec0101",
@@ -286,7 +286,7 @@
               "title": "Comida para gatos",
               "url": "shopify://collections/comida-gatos",
               "open_link": "_self",
-              "menu": "gatos",
+              "menu": "gatos-nuevo",
               "icon": "",
               "cus_cl": false,
               "cl": "#ec0101",
@@ -2539,7 +2539,7 @@
   },
   "platform_customizations": {
     "custom_css": [
-      ".t4s-btn-sidebar {display: none!important;}"
+      ".t4s-btn-sidebar {display: none !important;}"
     ]
   }
 }
