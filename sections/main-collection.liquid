@@ -236,7 +236,12 @@
     />
   </div>
   <div class="flex-1 pl-4 [font-family:'Barlow',Helvetica] font-bold text-[#004623] text-[12px] lg:text-[14px] leading-[18px] px-6">
-    {{ subcollection.title }}
+    
+    {% if subcollection.metafields.custom.titulo_corto %}
+      {{ subcollection.metafields.custom.titulo_corto }}
+      {%else %}
+        {{ subcollection.title }}
+        {%endif %}
   </div>
 </a>
 
