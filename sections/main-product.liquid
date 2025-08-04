@@ -459,15 +459,7 @@ t4option0_0 | alt text
                         {%- when 'size' -%}
                             <div class="t4s-product__size">{%- if bk_size_chart != '1' and pos_sizeg == '1' %}{{ html_sizeg }}{% endif -%}</div>
                         {%- when 'form' -%}
-                            {%- comment -%}
                             {%- liquid
-                                assign product_list = meta_theme.grouped.value
-                                assign advance_pr_type = meta_theme.advance_pr_type.value
-                                assign advance_label = meta_theme.advance_label.value -%}
-                            {%- endcomment -%}
-
-                            {%- liquid
-                                assign product_list = bk_stts.product_list
                                 assign advance_pr_type = bk_stts.advance_pr_list
                                 assign advance_label = bk_stts.advance_label
                                 assign is_fit_ratio_img = false
