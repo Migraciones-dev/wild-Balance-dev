@@ -376,7 +376,8 @@
                       <div class="t4s-product-form__controls flex items-center space-x-4 [@media(max-width:1024px)]:flex-col mt-6">
                         <!-- Selector de cantidad (ancho fijo, alto 43.94px) -->
                         <div
-                          class="t4s-quantity-wrapper  bg-white rounded-full border-[1.32px] border-[#d9d9c8] flex items-center [@media(max-width:1024px)]:w-full [@media(max-width:1024px)]:justify-between [@media(max-width:1024px)]:mb-5"
+                          data-quantity-wrapper
+                          class="t4s-quantity-wrapper bg-white rounded-full border-[1.32px] border-[#d9d9c8] flex items-center [@media(max-width:1024px)]:w-full [@media(max-width:1024px)]:justify-between [@media(max-width:1024px)]:mb-5"
                           style="border: 1px solid #004623"
                         >
                           <button
@@ -387,12 +388,30 @@
                             −
                           </button>
 
-                          <div class="w-[49px] h-[42px] flex items-center justify-center font-bold">
-                            <span
-                              class=""
-                              >1</span
-                            >
-                          </div>
+                          <input
+                            data-quantity-value
+                            type="number"
+                            min="1"
+                            value="1"
+                            class="w-[49px] h-[42px] text-center font-bold border-0 focus:outline-none"
+                          >
+                          <input
+                            data-action-change=""
+                            data-quantity-value=""
+                            type="number"
+                            id="miniupdates_49673158525229:5cac46a4eef32c8c37d8ab743ee2e221"
+                            data-id="49673158525229:5cac46a4eef32c8c37d8ab743ee2e221"
+                            class="t4s-quantity-input"
+                            step="1"
+                            min="0"
+                            max="9809"
+                            name="updates[]"
+                            data-current-qty="2"
+                            value="2"
+                            size="4"
+                            pattern="[0-9]*"
+                            inputmode="numeric"
+                          >
 
                           <button
                             type="button"
