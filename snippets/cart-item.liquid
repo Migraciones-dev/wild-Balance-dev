@@ -82,7 +82,7 @@
 
           {%- for option in item.options_with_values -%}
             {%- unless option.value == 'Default Title' -%}
-              - {{ option.value }}
+              &nbsp;- {{ option.value }}
             {%- endunless -%}
           {%- endfor -%}
         </div>
