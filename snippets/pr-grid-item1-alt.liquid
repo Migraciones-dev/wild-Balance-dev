@@ -141,7 +141,10 @@
           {{- countdown_html -}}
         </div>
       {% endif %}
-
+      <div class="t4s-product-btns">
+        <div data-replace-quickview data-tooltip-="top"></div>
+        <div data-replace-atc data-tooltip-="top"></div>
+      </div>
       <div class="t4s-product-btns2">
         {%- if isGrowaveWishlist -%}
           {%- capture the_snippet_fave_icon %}{% render 'ssw-widget-faveicon' with pid %}{% endcapture -%}
@@ -246,10 +249,6 @@
           {% endif %}
         </div>
       {% endif %}
-      <div class="t4s-product-btns">
-        <div data-replace-quickview data-tooltip-="top"></div>
-        <div data-replace-atc data-tooltip-="top"></div>
-      </div>
       <div class="containerLabelsPDC">
         {% render 'custom-badges', product: product %}
       </div>
