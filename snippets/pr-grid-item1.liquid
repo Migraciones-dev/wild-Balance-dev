@@ -141,7 +141,10 @@
           {{- countdown_html -}}
         </div>
       {% endif %}
-
+      <div class="t4s-product-btns">
+        <div data-replace-quickview data-tooltip-="top"></div>
+        <div data-replace-atc data-tooltip-="top"></div>
+      </div>
       <div class="t4s-product-btns2">
         {%- if isGrowaveWishlist -%}
           {%- capture the_snippet_fave_icon %}{% render 'ssw-widget-faveicon' with pid %}{% endcapture -%}
@@ -193,10 +196,6 @@
             {%- endif %}
           </div>
         {%- endif -%}
-        <div class=" pt-2 !justify-start">
-          <div data-replace-quickview data-tooltip-="top"></div>
-          <div data-replace-atc data-tooltip-="top"></div>
-        </div>
         {%- if color_count > 0 and list_color_pos == '2' %}
           <div
             class="t4s-product-colors"
@@ -225,17 +224,11 @@
               rel="nofollow"
               class="t4s-pr-item-btn t4s-pr-quickview"
               data-action-quickview
-            >
-              {% comment %}
-                <span class="t4s-svg-pr-icon">
-
-                    <svg viewBox="0 0 24 24">
-                      <use xlink:href="#t4s-icon-qv"></use>
-                    </svg>
-                 </span
-                >
-              {% endcomment %}
-              <span class="t4s-text-pr">{{ 'products.product_card.quick_view' | t }}</span></a
+              ><span class="t4s-svg-pr-icon">
+                <svg viewBox="0 0 24 24">
+                  <use xlink:href="#t4s-icon-qv"></use>
+                </svg></span
+              ><span class="t4s-text-pr">{{ 'products.product_card.quick_view' | t }}</span></a
             >
           {%- endif %}
           {%- if settings.enable_atc %}
