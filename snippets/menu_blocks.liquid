@@ -110,7 +110,11 @@
                           <!-- Texto -->
                           <div class="flex-1 pl-4 [font-family:'Barlow',Helvetica]  text-[#004623] px-6">
                             <p class="font-bold text-[20px] leading-[25px] leading-[25px]">
-                              {{ obj.metafields.custom.titulo_corto }}
+                              {% if obj.metafields.custom.titulo_corto %}
+                                {{ obj.metafields.custom.titulo_corto }}
+                              {% else %}
+                                {{ link.title }}
+                              {% endif %}
                             </p>
                             <p class="text-[14px]">
                               {{ obj.metafields.custom.subtitulo_para_el_mega_menu }}
