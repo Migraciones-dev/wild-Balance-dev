@@ -2,17 +2,17 @@
 
 <section class="customLabelsContainer">
   {% if product.tags contains 'BF' %}
-    <span class="_fx-badge bag text-[8px] lg:text[13px]">Bolsa</span>
+    <span class="_fx-badge bag [@media(max-width:1024px)]:!text-[8px] lg:text[13px]">Bolsa</span>
   {% endif %}
 
   {% assign isLowInStock = product.collections | where: 'handle', 'low-in-stock' %}
 
   {% if product.tags contains 'promomadre' %}
-    <span class="_fx-badge offer text-[8px] lg:text[13px]">Regalo boquerones</span>
+    <span class="_fx-badge offer [@media(max-width:1024px)]:!text-[8px] lg:text[13px]">Regalo boquerones</span>
   {% endif %}
 
   {% if isLowInStock != blank %}
-    <span class="_fx-badge last-units text-[8px] lg:text[13px]">Últimas unidades</span>
+    <span class="_fx-badge last-units [@media(max-width:1024px)]:!text-[8px] lg:text[13px]">Últimas unidades</span>
   {% endif %}
 
   {% comment %}
@@ -53,7 +53,7 @@
       | round
       | append: '%'
     -%}
-    <span class="_fx-badge discount !text-[8px] lg:!text[13px]">{{ savings }}</span>
+    <span class="_fx-badge discount [@media(max-width:1024px)]:!text-[8px] lg:!text[13px]">{{ savings }}</span>
   {% endif %}
 
   {% comment %}
