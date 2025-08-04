@@ -16,51 +16,54 @@
     lata. Tú eliges. Nosotros cuidamos.
   </p>
   <div class="relative w-full max-w-[1235px] h-[668px]  max-[1380px]:hidden">
-    <p
-      class="absolute w-[649px] h-[471px] top-[197px] left-[293px]"
-      alt="Group"
-      src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_5_1.png?v=1752776533"
-    >
-      <div id="ba-container" class="relative w-full overflow-hidden mt-12 max-w-[835px] mx-auto">
+    <div class="absolute w-[649px] h-[471px] top-[197px] left-[293px]">
+      <div id="ba-container-2" class="relative w-full h-full overflow-hidden">
         <!-- Imagen “antes” -->
         <img
           src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Diseno_sin_titulo_57_1.png?v=1754248227"
           alt="Antes"
-          class="w-full h-auto block"
+          class="w-full h-full object-cover block"
         >
 
-        <!-- Imagen “después” superpuesta, clip-path al 100% derecha -->
+        <!-- Imagen “después” -->
         <img
-          id="ba-overlay"
+          id="ba-overlay-2"
           src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Diseno_sin_titulo_56_1_1.png?v=1754248226"
           alt="Después"
-          class="absolute top-0 left-0 w-full h-auto block"
+          class="absolute top-0 left-0 w-full h-full object-cover block"
           style="clip-path: inset(0 100% 0 0);"
         >
       </div>
+    </div>
 
-      <script>
-        (function () {
-          const cont = document.getElementById('ba-container');
-          const ov = document.getElementById('ba-overlay');
+    <script>
+      (function () {
+        function clamp(v) {
+          return v < 0 ? 0 : v > 1 ? 1 : v;
+        }
 
-          function clamp(v) {
-            return v < 0 ? 0 : v > 1 ? 1 : v;
-          }
+        function initBA(containerId, overlayId) {
+          const cont = document.getElementById(containerId);
+          const ov = document.getElementById(overlayId);
+          if (!cont || !ov) return;
 
           window.addEventListener('scroll', () => {
             const rect = cont.getBoundingClientRect();
             const viewH = window.innerHeight;
-            // 0 cuando entra, 1 cuando sale
             let progress = (viewH - rect.top) / (viewH + rect.height);
             progress = clamp(progress);
-            // Clip-path: recorta por la derecha el resto
             const hidePct = 100 - progress * 150;
             ov.style.clipPath = `inset(0 ${hidePct}% 0 0)`;
           });
-        })();
-      </script>
-    </p>
+        }
+
+        // Instancia del slider
+        initBA('ba-container', 'ba-overlay');
+        // Instancia del bloque absoluto
+        initBA('ba-container-2', 'ba-overlay-2');
+      })();
+    </script>
+
     <div class="absolute w-full h-[613px] top-0 left-0">
       <a
         href="https://wildbalance.es/search?type=product&options%5Bunavailable_products%5D=last&options%5Bprefix%5D=last&q=pollo"
@@ -340,6 +343,45 @@
     </div>
     <!-- Imagen central -->
     <!-- before-after.html -->
+    <div id="ba-container" class="relative w-full overflow-hidden mt-12 max-w-[835px] mx-auto">
+      <!-- Imagen “antes” -->
+      <img
+        src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Diseno_sin_titulo_57_1.png?v=1754248227"
+        alt="Antes"
+        class="w-full h-auto block"
+      >
+
+      <!-- Imagen “después” superpuesta, clip-path al 100% derecha -->
+      <img
+        id="ba-overlay"
+        src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Diseno_sin_titulo_56_1_1.png?v=1754248226"
+        alt="Después"
+        class="absolute top-0 left-0 w-full h-auto block"
+        style="clip-path: inset(0 100% 0 0);"
+      >
+    </div>
+
+    <script>
+      (function () {
+        const cont = document.getElementById('ba-container');
+        const ov = document.getElementById('ba-overlay');
+
+        function clamp(v) {
+          return v < 0 ? 0 : v > 1 ? 1 : v;
+        }
+
+        window.addEventListener('scroll', () => {
+          const rect = cont.getBoundingClientRect();
+          const viewH = window.innerHeight;
+          // 0 cuando entra, 1 cuando sale
+          let progress = (viewH - rect.top) / (viewH + rect.height);
+          progress = clamp(progress);
+          // Clip-path: recorta por la derecha el resto
+          const hidePct = 100 - progress * 150;
+          ov.style.clipPath = `inset(0 ${hidePct}% 0 0)`;
+        });
+      })();
+    </script>
   </div>
 
   <!-- CSS extra para ocultar scrollbar -->
