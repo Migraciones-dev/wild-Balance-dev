@@ -394,6 +394,14 @@
       let scrollLeft;
       let isDragging = false;
 
+      // Evitar que el <a> inicie un drag nativo
+      slider.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('dragstart', (e) => e.preventDefault());
+        link.addEventListener('mousedown', (e) => {
+          e.preventDefault(); // Evita que el navegador arrastre el enlace/imagen
+        });
+      });
+
       slider.addEventListener('mousedown', (e) => {
         isDown = true;
         isDragging = false;
@@ -416,15 +424,15 @@
         if (!isDown) return;
         e.preventDefault();
         const x = e.pageX - slider.offsetLeft;
-        const walk = (x - startX) * 1; // factor de velocidad
+        const walk = (x - startX) * 1; // Velocidad
         if (Math.abs(walk) > 5) {
-          // más de 5px se considera arrastre
+          // Más de 5px = arrastre
           isDragging = true;
         }
         slider.scrollLeft = scrollLeft - walk;
       });
 
-      // Evita click accidental al arrastrar
+      // Bloquea click si fue arrastre
       slider.querySelectorAll('a').forEach((link) => {
         link.addEventListener('click', (e) => {
           if (isDragging) {
