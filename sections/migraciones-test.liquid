@@ -50,9 +50,13 @@
           window.addEventListener('scroll', () => {
             const rect = cont.getBoundingClientRect();
             const viewH = window.innerHeight;
-            let progress = (viewH - rect.top) / (viewH + rect.height);
+
+            // Ajustar inicio (0.3 = 30% retraso)
+            let progress = (viewH * 0.7 - rect.top) / (viewH + rect.height);
             progress = clamp(progress);
-            const hidePct = 100 - progress * 150;
+
+            // Velocidad más lenta (100 en vez de 150)
+            const hidePct = 100 - progress * 100;
             ov.style.clipPath = `inset(0 ${hidePct}% 0 0)`;
           });
         }
