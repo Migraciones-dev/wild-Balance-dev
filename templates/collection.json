@@ -177,9 +177,9 @@
         "cl_bg_gradient": "",
         "mg": "50px,50px,0px,50px",
         "pd": "",
-        "mg_tb": "20px,20px,20px,20px",
+        "mg_tb": "20px,20px,0px,20px",
         "pd_tb": "",
-        "mg_mb": "10px,10px,10px,10px",
+        "mg_mb": "10px,10px,0px,10px",
         "pd_mb": ""
       }
     }
