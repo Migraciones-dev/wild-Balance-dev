@@ -783,36 +783,82 @@
       </div>
       <div class="t4s-summary-cart !bg-white">{{ summary_cart }}</div>
       <div
-        class="t4s-payment-footer-svg t4s-pr t4s-hidden-mobile-{{ bk_stts.hidden_mobile }} flex flex-row"
-        id="b_{{ block.id }}"
-        style="--height: {{ bk_stts.height }}px;--mgb: {{ bk_stts.mgb }}px;--mgb-mb: {{ mgb.mgb_mb }}px;"
+        class="t4s-payment-footer-svg t4s-pr t4s-hidden-mobile-false flex flex-row"
+        id="b_payments_dwhjiY"
+        style="--height: 25px;--mgb: px;--mgb-mb: px;"
       >
-        {%- for img in arr -%}
-          {%- if img contains 'cust4__' -%}
-            {%- assign getIMG = img | remove_first: 'cust4__' -%}
-            {%- assign image = images[getIMG] -%}
-            {%- if image == blank %}{% continue %}{% endif -%}
-            <img
-              loading="lazy"
-              class="lazyloadt4s"
-              src="https://cdn.shopify.com/s/assets/payment_icons/generic-dfdcaf09b6731ca14dd7441354c0ad8bc934184eb15ae1fda6a6b9e307675485.svg"
-              data-src="{{ image | image_url: width: 100 }}"
-              width="{{ image.width }}"
-              height="{{ image.height }}"
-              alt="{{ image.alt | escape }}"
-            >
-          {%- else -%}
-            <img
-              loading="lazy"
-              class="lazyloadt4s"
-              src="https://cdn.shopify.com/s/assets/payment_icons/generic-dfdcaf09b6731ca14dd7441354c0ad8bc934184eb15ae1fda6a6b9e307675485.svg"
-              data-src="{{ img | payment_type_img_url }}"
-              width="{{ img.width }}"
-              height="{{ img.height }}"
-              alt="{{ img | replace: '_', ' ' }}"
-            >
-          {%- endif -%}
-        {%- endfor -%}
+        <img
+          loading="lazy"
+          class=" ls-is-cached lazyloadt4sed"
+          src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/master-54b5a7ce.svg"
+          data-src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/master-54b5a7ce.svg"
+          width=""
+          height=""
+          alt="master"
+
+        ><img
+          loading="lazy"
+          class=" ls-is-cached lazyloadt4sed"
+          src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/visa-65d650f7.svg"
+          data-src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/visa-65d650f7.svg"
+          width=""
+          height=""
+          alt="visa"
+
+        ><img
+          loading="lazy"
+          class=" ls-is-cached lazyloadt4sed"
+          src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/maestro-61c41725.svg"
+          data-src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/maestro-61c41725.svg"
+          width=""
+          height=""
+          alt="maestro"
+
+        ><img
+          loading="lazy"
+          class=" ls-is-cached lazyloadt4sed"
+          src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/american_express-1efdc6a3.svg"
+          data-src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/american_express-1efdc6a3.svg"
+          width=""
+          height=""
+          alt="american express"
+
+        ><img
+          loading="lazy"
+          class=" ls-is-cached lazyloadt4sed"
+          src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/unionpay-38c64159.svg"
+          data-src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/unionpay-38c64159.svg"
+          width=""
+          height=""
+          alt="unionpay"
+
+        ><img
+          loading="lazy"
+          class=" ls-is-cached lazyloadt4sed"
+          src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/apple_pay-1721ebad.svg"
+          data-src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/apple_pay-1721ebad.svg"
+          width=""
+          height=""
+          alt="apple pay"
+
+        ><img
+          loading="lazy"
+          class=" ls-is-cached lazyloadt4sed"
+          src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/google_pay-34c30515.svg"
+          data-src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/google_pay-34c30515.svg"
+          width=""
+          height=""
+          alt="google pay"
+
+        ><img
+          loading="lazy"
+          class=" ls-is-cached lazyloadt4sed"
+          src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/shopify_pay-925ab76d.svg"
+          data-src="//wildbalance.es/cdn/shopifycloud/storefront/assets/payment_icons/shopify_pay-925ab76d.svg"
+          width=""
+          height=""
+          alt="shopify pay"
+        >
       </div>
     </div>
   </div>
