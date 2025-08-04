@@ -228,7 +228,7 @@
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 w-full my-6 lg:mb-12">
   {% for subcollection in collection.metafields.custom.subcolecciones.value %}
   <a href="{{ subcollection.url }}" class="flex items-center bg-white shadow border border-[#D9D9C8] rounded-[8px] w-full h-[68px] lg:h-[88px] overflow-hidden">
-  <div class="flex-shrink-0 w-[88px] h-full">
+  <div class="flex-shrink-0 w-[8px] h-full">
     <img
       src="{{ subcollection.metafields.custom.imagen_para_el_mega_menu | img_url: 'x180' }}"
       alt="{{ subcollection.title }}"
