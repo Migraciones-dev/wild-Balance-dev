@@ -225,13 +225,17 @@
               rel="nofollow"
               class="t4s-pr-item-btn t4s-pr-quickview"
               data-action-quickview
-              ><span class="t4s-svg-pr-icon">
-                {% comment %}
-                  <svg viewBox="0 0 24 24">
-                    <use xlink:href="#t4s-icon-qv"></use>
-                  </svg>
-                {% endcomment %}</span
-              ><span class="t4s-text-pr">{{ 'products.product_card.quick_view' | t }}</span></a
+            >
+              {% comment %}
+                <span class="t4s-svg-pr-icon">
+
+                    <svg viewBox="0 0 24 24">
+                      <use xlink:href="#t4s-icon-qv"></use>
+                    </svg>
+                 </span
+                >
+              {% endcomment %}
+              <span class="t4s-text-pr">{{ 'products.product_card.quick_view' | t }}</span></a
             >
           {%- endif %}
           {%- if settings.enable_atc %}
