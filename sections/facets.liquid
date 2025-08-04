@@ -181,6 +181,99 @@
                   </div>
 
                 {%- else -%}
+                  <details class="group border border-[#D9D9C8] rounded-[8px] bg-white mb-8 w-full" open="">
+                    <summary
+                      class="
+                        flex justify-between items-center py-8 px-8 font-medium text-left cursor-pointer list-none
+                        transition-transform hover:bg-transparent bg-white rounded-[8px]
+                      "
+                    >
+                      <div class="flex items-center gap-2">
+                        <!-- icon opcional de tu filtro -->
+                        <span class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-[14.6px] leading-[21.6px]">
+                          <div class="flex flex-row gap-2">
+                            <svg
+                              width="19"
+                              height="18"
+                              viewBox="0 0 19 18"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path d="M6.99473 0.692814C7.54273 0.692814 8.04553 0.899369 8.41153 1.28101C8.77753 1.66306 8.99473 2.2085 8.99473 2.86649C8.99473 3.52125 8.78033 4.17844 8.43073 4.67587C8.08273 5.17087 7.57873 5.53396 6.99473 5.53396C6.41073 5.53396 5.90673 5.17087 5.55873 4.67587C5.20913 4.17844 4.99473 3.52125 4.99473 2.86689C4.99473 2.2085 5.21193 1.66306 5.57833 1.28101C5.94393 0.899369 6.44673 0.692814 6.99473 0.692814ZM2.59473 4.32367C3.14273 4.32367 3.64553 4.53023 4.01153 4.91187C4.37753 5.29392 4.59473 5.83935 4.59473 6.49735C4.59473 7.15211 4.38033 7.8093 4.03073 8.30673C3.68273 8.80173 3.17873 9.16482 2.59473 9.16482C2.01073 9.16482 1.50673 8.80173 1.15873 8.30673C0.809127 7.8093 0.594727 7.15171 0.594727 6.49775C0.594727 5.83935 0.811927 5.29392 1.17833 4.91187C1.54393 4.53023 2.04673 4.32367 2.59473 4.32367ZM9.59473 7.14767C6.74513 7.14767 4.38433 9.59447 3.64113 12.6625C3.31153 14.0237 3.81433 15.4837 5.05433 16.1756C6.03953 16.7259 7.51393 17.2334 9.59433 17.2334C11.6751 17.2334 13.1495 16.7259 14.1351 16.1756C15.3747 15.4837 15.8775 14.0237 15.5479 12.663C14.8051 9.59447 12.4439 7.14767 9.59473 7.14767ZM16.5947 4.32367C16.0467 4.32367 15.5439 4.53023 15.1783 4.91187C14.8119 5.29392 14.5947 5.83935 14.5947 6.49735C14.5947 7.15211 14.8091 7.8093 15.1587 8.30673C15.5067 8.80173 16.0107 9.16482 16.5947 9.16482C17.1787 9.16482 17.6827 8.80173 18.0307 8.30673C18.3803 7.8093 18.5947 7.15211 18.5947 6.49775C18.5947 5.83935 18.3775 5.29392 18.0115 4.91187C17.6455 4.53023 17.1427 4.32367 16.5947 4.32367ZM12.1947 0.692814C11.6467 0.692814 11.1439 0.899369 10.7783 1.28101C10.4119 1.66306 10.1947 2.2085 10.1947 2.86649C10.1947 3.52125 10.4091 4.17844 10.7587 4.67587C11.1067 5.17087 11.6107 5.53396 12.1947 5.53396C12.7787 5.53396 13.2827 5.17087 13.6307 4.67587C13.9803 4.17844 14.1947 3.52125 14.1947 2.86689C14.1947 2.2085 13.9775 1.66306 13.6115 1.28101C13.2455 0.899369 12.7427 0.692814 12.1947 0.692814Z" fill="#004623"></path>
+                            </svg>
+                            Mascota
+                          </div>
+                        </span>
+                      </div>
+
+                      <!-- “+” (visible cuando está plegado) -->
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="25"
+                        height="25"
+                        viewBox="0 0 25 25"
+                        fill="none"
+                        class="block h-12 w-12 shrink-0 text-muted-foreground transition-transform duration-200 group-open:hidden"
+                      >
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5947 6.8031C12.913 6.8031 13.2182 6.92953 13.4433 7.15457C13.6683 7.37962 13.7947 7.68484 13.7947 8.0031V11.6031H17.3947C17.713 11.6031 18.0182 11.7295 18.2433 11.9546C18.4683 12.1796 18.5947 12.4848 18.5947 12.8031C18.5947 13.1214 18.4683 13.4266 18.2433 13.6516C18.0182 13.8767 17.713 14.0031 17.3947 14.0031H13.7947V17.6031C13.7947 17.9214 13.6683 18.2266 13.4433 18.4516C13.2182 18.6767 12.913 18.8031 12.5947 18.8031C12.2765 18.8031 11.9712 18.6767 11.7462 18.4516C11.5212 18.2266 11.3947 17.9214 11.3947 17.6031V14.0031H7.79473C7.47647 14.0031 7.17124 13.8767 6.9462 13.6516C6.72116 13.4266 6.59473 13.1214 6.59473 12.8031C6.59473 12.4848 6.72116 12.1796 6.9462 11.9546C7.17124 11.7295 7.47647 11.6031 7.79473 11.6031H11.3947V8.0031C11.3947 7.68484 11.5212 7.37962 11.7462 7.15457C11.9712 6.92953 12.2765 6.8031 12.5947 6.8031Z" fill="#004623"></path>
+                      </svg>
+
+                      <!-- “–” (visible cuando está desplegado) -->
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="25"
+                        height="25"
+                        viewBox="0 0 25 25"
+                        fill="none"
+                        class="hidden h-12 w-12 shrink-0 text-muted-foreground transition-transform duration-200 group-open:block"
+                      >
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.59473 12.0431C6.59473 11.7248 6.72116 11.4196 6.9462 11.1946C7.17124 10.9695 7.47647 10.8431 7.79473 10.8431H17.3947C17.713 10.8431 18.0182 10.9695 18.2433 11.1946C18.4683 11.4196 18.5947 11.7248 18.5947 12.0431C18.5947 12.3614 18.4683 12.6666 18.2433 12.8916C18.0182 13.1167 17.713 13.2431 17.3947 13.2431H7.79473C7.47647 13.2431 7.17124 13.1167 6.9462 12.8916C6.72116 12.6666 6.59473 12.3614 6.59473 12.0431Z" fill="#004623"></path>
+                      </svg>
+                    </summary>
+
+                    <div class="px-[17px] pb-8">
+                      <ul class="grid gap-2">
+                        <li class="flex items-start justify-between py-2 rounded px-6">
+                          <div class="flex flex-col">
+                            <span class="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#004623] text-[14.6px] leading-[21.6px] capitalize">
+                              Perros
+                            </span>
+                          </div>
+                          <a
+                            href="/collections/all?filter.p.m.custom.pet_type=Perros"
+                            class="
+                              aspect-square w-8 h-8 rounded-full border-[1.5px] border-[#004623] flex items-center justify-center shadow
+                              focus:outline-none ring-[1.5px] ring-[#004623]
+                              focus-visible:[--tw-ring-shadow:0_0_0_4px_#004623] focus-visible:ring
+                              text-transparent
+                            "
+                            role="switch"
+                            aria-checked="false"
+                          >
+                          </a>
+                        </li>
+                        <li class="flex items-start justify-between py-2 rounded px-6">
+                          <div class="flex flex-col">
+                            <span class="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#004623] text-[14.6px] leading-[21.6px] capitalize">
+                              Gatos
+                            </span>
+                          </div>
+                          <a
+                            href="/collections/all?filter.p.m.custom.pet_type=Gatos"
+                            class="
+                              aspect-square w-8 h-8 rounded-full border-[1.5px] border-[#004623] flex items-center justify-center shadow
+                              focus:outline-none ring-[1.5px] ring-[#004623]
+                              focus-visible:[--tw-ring-shadow:0_0_0_4px_#004623] focus-visible:ring
+                              text-transparent
+                            "
+                            role="switch"
+                            aria-checked="false"
+                          >
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </details>
                   {%- comment -%} Contenedor general de los filtros (acordeón vertical) {%- endcomment -%}
                   <details
                     class="group border border-[#D9D9C8] rounded-[8px] bg-white mb-8 w-full"
