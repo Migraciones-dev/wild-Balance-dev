@@ -1,4 +1,4 @@
-    {% if collection.metafields.custom.banner_superior_mobile %}  <img class="w-full lg:hidden" src="{{ collection.metafields.custom.banner_superior_mobile | file_url }}"> {% endif %}
+    {% if collection.metafields.custom.banner_superior_mobile %}     {% if collection.metafields.custom.enlace_del_banner_superior %}<a href="{{collection.metafields.custom.enlace_del_banner_superior}}">{% endif %}<img class="w-full lg:hidden" src="{{ collection.metafields.custom.banner_superior_mobile | file_url }}"> {% endif %}{% if collection.metafields.custom.enlace_del_banner_superior %}</a>{% endif %} 
 
 
 <!-- sections/main-collection.liquid -->
