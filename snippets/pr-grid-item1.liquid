@@ -141,10 +141,7 @@
           {{- countdown_html -}}
         </div>
       {% endif %}
-      <div class="t4s-product-btns !relative">
-        <div data-replace-quickview data-tooltip-="top"></div>
-        <div data-replace-atc data-tooltip-="top"></div>
-      </div>
+      
       <div class="t4s-product-btns2">
         {%- if isGrowaveWishlist -%}
           {%- capture the_snippet_fave_icon %}{% render 'ssw-widget-faveicon' with pid %}{% endcapture -%}
@@ -214,7 +211,6 @@
           -%}
         {% endif -%}
       </div>
-      {%- if show_list_btns -%}
         <div class="t4s-product-btns t4s-product-info__btns">
           {%- if settings.enable_quickview -%}
             <a
@@ -230,8 +226,6 @@
                 </svg></span
               ><span class="t4s-text-pr">{{ 'products.product_card.quick_view' | t }}</span></a
             >
-          {%- endif %}
-          {%- if settings.enable_atc %}
             {%- render 'product-atc',
               pr_available: product.available,
               pr_url: pr_url,
@@ -246,7 +240,6 @@
               cus_qty: cus_qty,
               max_qty: max_qty
             -%}
-          {% endif %}
         </div>
       {% endif %}
       <div class="containerLabelsPDC">
