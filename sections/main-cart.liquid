@@ -782,6 +782,38 @@
         </div>
       </div>
       <div class="t4s-summary-cart !bg-white">{{ summary_cart }}</div>
+      <div
+        class="t4s-payment-footer-svg t4s-pr t4s-hidden-mobile-{{ bk_stts.hidden_mobile }} flex flex-row"
+        id="b_{{ block.id }}"
+        style="--height: {{ bk_stts.height }}px;--mgb: {{ bk_stts.mgb }}px;--mgb-mb: {{ mgb.mgb_mb }}px;"
+      >
+        {%- for img in arr -%}
+          {%- if img contains 'cust4__' -%}
+            {%- assign getIMG = img | remove_first: 'cust4__' -%}
+            {%- assign image = images[getIMG] -%}
+            {%- if image == blank %}{% continue %}{% endif -%}
+            <img
+              loading="lazy"
+              class="lazyloadt4s"
+              src="https://cdn.shopify.com/s/assets/payment_icons/generic-dfdcaf09b6731ca14dd7441354c0ad8bc934184eb15ae1fda6a6b9e307675485.svg"
+              data-src="{{ image | image_url: width: 100 }}"
+              width="{{ image.width }}"
+              height="{{ image.height }}"
+              alt="{{ image.alt | escape }}"
+            >
+          {%- else -%}
+            <img
+              loading="lazy"
+              class="lazyloadt4s"
+              src="https://cdn.shopify.com/s/assets/payment_icons/generic-dfdcaf09b6731ca14dd7441354c0ad8bc934184eb15ae1fda6a6b9e307675485.svg"
+              data-src="{{ img | payment_type_img_url }}"
+              width="{{ img.width }}"
+              height="{{ img.height }}"
+              alt="{{ img | replace: '_', ' ' }}"
+            >
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
     </div>
   </div>
 </div>
