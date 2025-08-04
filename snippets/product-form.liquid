@@ -71,6 +71,9 @@
       data-disable-swatch: isProductDefault
     -%}
       {{- form | payment_terms -}}
+      {%- if isProductDefault -%}
+        TEST VARIANTES
+      {% endif %}
       {%- if false -%}
         <input name="id" value="{{ pr_variants.first.id }}" type="hidden">
         {%- if advance_pr_type != blank -%}
