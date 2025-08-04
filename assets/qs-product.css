@@ -83,7 +83,7 @@
     margin: 4px 0;
 }
 .t4s-product-quick-shop .t4s-widget__pr .t4s-widget__pr-price {
-    color: var(--secondary-price-color);
+    color: #004623;
     font-size: 14px;
 }
 .t4s-product-quick-shop .t4s-widget__pr .t4s-widget__pr-price ins {

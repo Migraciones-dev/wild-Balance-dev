@@ -167,7 +167,7 @@
 	color: var(--primary-price-color);
 }
 .t4s-testimonial-wrap .t4s-widget__pr .t4s-widget_if_pr .t4s-widget__pr-price del {
-	color: var(--secondary-price-color);
+	color: #004623;
 }
 .t4s-testimonial-wrap .t4s-widget__pr .t4s-widget_if_pr .t4s-widget__pr-price ins {
 	display: inline-block;

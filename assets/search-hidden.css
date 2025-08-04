@@ -160,14 +160,14 @@
 }
 #t4s-search-hidden .t4s-widget__pr .t4s-widget__pr-price,
 .t4s-skeleton_txt2 {
-    color: var(--secondary-price-color);
+    color: #004623;
     font-size: 13px;
 }
 #t4s-search-hidden .t4s-widget__pr .t4s-widget__pr-price ins {
     color: var(--sale-price-color);
 }
 #t4s-search-hidden .t4s-widget__pr .t4s-widget__pr-price del {
-    color: var(--secondary-price-color);
+    color: #004623;
 }
 
 #t4s-search-hidden .t4s-drawer__content .t4s-drawer__main>.t4s-drawer__scroll {

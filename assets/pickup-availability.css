@@ -106,7 +106,7 @@ button.t4s-pickup-availability-information__button,
     font-size: 15px;
 }
 .t4s-product-pickup__price {
-    color: var(--secondary-price-color);
+    color: #004623;
 }
 .t4s-product-pickup__price ins{
     color: var(--primary-price-color);

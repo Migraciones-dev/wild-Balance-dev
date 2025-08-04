@@ -1,9 +1,9 @@
 [t4splitlz]
 {%- liquid
-  assign product         = product_variant.product
-  assign image           = product_variant.featured_image | default: product.featured_image | default: settings.placeholder_img
+  assign product = product_variant.product
+  assign image = product_variant.featured_image | default: product.featured_image | default: settings.placeholder_img
   assign variant_options = product_variant.options
-  assign formId          = 'ContactFormNotify' | append: product_variant.id
+  assign formId = 'ContactFormNotify' | append: product_variant.id
 -%}
 <style>
   #t4s-pr-popup__notify-stock {
@@ -57,7 +57,7 @@
     align-items: center;
     border-bottom: 1px solid rgba(var(--border-color-rgb),.85);
   }
-  .t4s-product-notify-stock__img { 
+  .t4s-product-notify-stock__img {
     width: 106px;
     height: 131px;
     min-width: 106px;
@@ -81,7 +81,7 @@
     font-weight: 400;
   }
   .t4s-product-notify-stock__price {
-    color: var(--secondary-price-color);
+    color: #004623;
   }
   .t4s-product-notify-stock__price ins{
     color: var(--primary-price-color);
@@ -101,31 +101,48 @@
     background-color: var(--accent-color-darken);
   }
   .t4s-product-notify-stock__variant {margin-bottom: 2px;}
-</style>  
+</style>
 {%- assign formId = 'ContactFormNotifyStock' | append: product_variant.id -%}
 
 <div class="t4s-product-notify-stock">
   {%- if image != blank -%}
-  <div class="t4s-product-notify-stock__img t4s-bg-11" style="background: url({{ image | image_url: width: 1 }})">
-    <img class="lazyloadt4s t4s-lz--fadeIn" data-src="{{ image | image_url: width: 1 }}" data-widths="[80,120,160,200]" data-optimumx="1.2" data-sizes="auto" src="{% render 'img_svg', w: image.width, h: image.height %}" width="{{ image.width }}" height="{{ image.height }}" alt="{{ image.alt | escape }}">
-  </div>
+    <div class="t4s-product-notify-stock__img t4s-bg-11" style="background: url({{ image | image_url: width: 1 }})">
+      <img
+        class="lazyloadt4s t4s-lz--fadeIn"
+        data-src="{{ image | image_url: width: 1 }}"
+        data-widths="[80,120,160,200]"
+        data-optimumx="1.2"
+        data-sizes="auto"
+        src="{% render 'img_svg', w: image.width, h: image.height %}"
+        width="{{ image.width }}"
+        height="{{ image.height }}"
+        alt="{{ image.alt | escape }}"
+      >
+    </div>
   {%- endif -%}
   <div class="t4s-product-notify-stock__infos t4s-text-start">
     <div class="t4s-product-notify-stock__title">{{ product.title | escape }}</div>
     {%- unless product.has_only_default_variant -%}
-    <p class="t4s-product-notify-stock__variant">
-      {%- for product_option in product.options_with_values -%}
-        {{ product_option.name | escape }}:&nbsp;<span class="t4s-csecondary">{{ variant_options[forloop.index0] | escape }}</span>
-        {%- unless forloop.last -%},&nbsp;{%- endunless forloop.last -%}
-      {%- endfor -%}
-    </p>
+      <p class="t4s-product-notify-stock__variant">
+        {%- for product_option in product.options_with_values -%}
+          {{ product_option.name | escape }}:&nbsp;<span class="t4s-csecondary">
+            {{- variant_options[forloop.index0] | escape -}}
+          </span>
+          {%- unless forloop.last -%},&nbsp;{%- endunless -%}
+        {%- endfor -%}
+      </p>
     {%- endunless -%}
-    <div class="t4s-product-notify-stock__price">{%- if product_variant.compare_at_price > product_variant.price -%} <del>{{ product_variant.compare_at_price | money }}</del> <ins>{{ product_variant.price | money }}</ins>{%- else -%}{{ product_variant.price | money }}{%- endif -%}</div>
+    <div class="t4s-product-notify-stock__price">
+      {%- if product_variant.compare_at_price > product_variant.price -%}
+        <del>{{ product_variant.compare_at_price | money }}</del> <ins>{{ product_variant.price | money }}</ins>
+      {%- else -%}
+        {{ product_variant.price | money }}
+      {%- endif -%}
+    </div>
   </div>
 </div>
 
 {%- form 'contact', id: formId -%}
-
   {%- render 'form-status', form: form, form_id: formId -%}
   <div class="t4s-product-notify-stock__svg">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -138,10 +155,16 @@
   </div>
   <h3 class="t4s-text-center">{{ 'products.notify_stock.title' | t }}</h3>
   {%- if customer and customer.name != blank -%}
-  <p class="t4s-d-none">
-    <label for="{{ formId }}-name">Name</label>
-    <input type="text" id="{{ formId }}-name" name="contact[name]" required="required" value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
-  </p>
+    <p class="t4s-d-none">
+      <label for="{{ formId }}-name">Name</label>
+      <input
+        type="text"
+        id="{{ formId }}-name"
+        name="contact[name]"
+        required="required"
+        value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}"
+      >
+    </p>
   {%- endif -%}
   <p>
     <input
@@ -154,24 +177,39 @@
       aria-required="true"
       required="required"
       placeholder="{{ 'products.notify_stock.email' | t }}"
-      {%- if form.errors contains 'email' %} class="input--error" aria-invalid="true" aria-describedby="{{ formId }}-email-error"{%- endif -%}>
+      {%- if form.errors contains 'email' %}
+        class="input--error" aria-invalid="true" aria-describedby="{{ formId }}-email-error"
+      {%- endif -%}
+    >
     {%- if form.errors contains 'email' -%}
-      <span id="{{ formId }}-email-error" class="input-error-message"><i class="facl facl-attention cr mr__5"></i>{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+      <span id="{{ formId }}-email-error" class="input-error-message"
+        ><i class="facl facl-attention cr mr__5"></i>{{ form.errors.translated_fields.email | capitalize }}
+        {{ form.errors.messages.email }}.</span
+      >
     {%- endif -%}
   </p>
-    
+
   <p class="t4s-d-none">
-    <label for="{{ formId }}-product">Product</label> 
-    <textarea rows="20" id="{{ formId }}-product" name="contact[product]" required="required">{{ product.title }} {% if product_variant.title != blank %}( {{ product_variant.title }} ){% endif %} - {{ request.origin }}{{ product_variant.url }}</textarea>
+    <label for="{{ formId }}-product">Product</label>
+    <textarea
+      rows="20"
+      id="{{ formId }}-product"
+      name="contact[product]"
+      required="required"
+    >{{ product.title }} {% if product_variant.title != blank %}( {{ product_variant.title }} ){% endif %} - {{ request.origin }}{{ product_variant.url }}</textarea>
   </p>
   <p class="t4s-d-none">
     <label for="{{ formId }}-message">Message</label>
-    <textarea rows="9" id="{{ formId }}-message" name="contact[body]" required="required">{{ 'products.notify_stock.please' | t }}</textarea>
+    <textarea
+      rows="9"
+      id="{{ formId }}-message"
+      name="contact[body]"
+      required="required"
+    >{{ 'products.notify_stock.please' | t }}</textarea>
   </p>
   <div class="t4s-product-notify-stock__submit t4s-text-center">
     <input type="submit" class="button" value="{{ 'products.notify_stock.button' | t }}">
   </div>
-
 {%- endform -%}
 [t4splitlz]
 

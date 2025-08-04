@@ -45,7 +45,7 @@
     font-weight: 500;
 }
 .t4s-sticky-atc__price {
-    color: var(--secondary-price-color);
+    color: #004623;
 }
 .t4s-sticky-atc__price ins {
     color: var(--primary-price-color);
