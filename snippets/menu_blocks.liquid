@@ -101,7 +101,7 @@
                           {% if obj.metafields.custom.imagen_para_el_mega_menu %}
                             <div class="flex-shrink-0 w-[134px] h-full">
                               <img
-                                src="{{ obj.metafields.custom.imagen_para_el_mega_menu | file_url }}"
+                                src="{{ obj.metafields.custom.imagen_para_el_mega_menu | img_url: 'x180' }}"
                                 alt="{{ link.title }}"
                                 class="w-full h-full object-cover p-2 rounded-[8px] "
                               >
