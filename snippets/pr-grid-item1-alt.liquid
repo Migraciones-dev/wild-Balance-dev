@@ -171,7 +171,7 @@
         {% if rating_pos == '1' %}
           {%- render 'product-rating', product: product, app_review: app_review -%}
         {% endif %}
-        <h3 class="t4s-product-title text-left text-[14px] lg:text-[18px]">
+        <h3 class="t4s-product-title text-left !text-[14px] lg:!text-[18px]">
           <a data-pr-href href="{{ pr_url }}">{{ product.title }}</a>
         </h3>
         {%- render 'product-price',
