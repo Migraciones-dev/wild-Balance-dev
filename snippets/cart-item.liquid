@@ -79,9 +79,11 @@
           {%- else -%}
             {{ item.original_price | money }}
           {%- endif -%}
-          -
+
           {%- for option in item.options_with_values -%}
-            {{ option.value }}
+            {%- unless option.value == 'Default Title' -%}
+              {{ option.value }}
+            {%- endunless -%}
           {%- endfor -%}
         </div>
         {%- if item.line_level_discount_allocations != blank -%}
