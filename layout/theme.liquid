@@ -307,17 +307,23 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
           const featPerros = document.querySelector('.feat-perros');
           const featGatos = document.querySelector('.feat-gatos');
 
-          if (btnPerros && featPerros) {
-            btnPerros.addEventListener('click', () => {
-              featPerros.style.display = 'block';
-            });
+          function isHidden(el) {
+            return window.getComputedStyle(el).display === 'none';
           }
 
-          if (btnGatos && featGatos) {
-            btnGatos.addEventListener('click', () => {
-              featGatos.style.display = 'block';
-            });
-          }
+          btnPerros.addEventListener('click', () => {
+            // Hide gatos section
+            featGatos.style.display = 'none';
+            // Toggle perros section
+            featPerros.style.display = isHidden(featPerros) ? 'block' : 'none';
+          });
+
+          btnGatos.addEventListener('click', () => {
+            // Hide perros section
+            featPerros.style.display = 'none';
+            // Toggle gatos section
+            featGatos.style.display = isHidden(featGatos) ? 'block' : 'none';
+          });
         });
       </script>
     </body>
