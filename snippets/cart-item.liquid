@@ -79,9 +79,7 @@
           {%- else -%}
             {{ item.original_price | money }}
           {%- endif -%}
-          {% if item.properties['Suscripción'] %}
-            Sub:
-          {% endif %}
+
           {%- for option in item.options_with_values -%}
             {%- unless option.value == 'Default Title' -%}
               &nbsp;- {{ option.value }}
