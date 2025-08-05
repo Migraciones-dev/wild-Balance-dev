@@ -256,7 +256,7 @@
         "loop": true,
         "au_time": 0,
         "au_hover": true,
-        "nav_btn": false,
+        "nav_btn": true,
         "btn_pos": "in",
         "btn_distance": 15,
         "btn_vi": "hover",
