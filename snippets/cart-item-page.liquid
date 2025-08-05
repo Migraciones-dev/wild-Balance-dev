@@ -100,7 +100,7 @@
         </div>
     </td> 
     <td class="t4s-page-cart_prices" t4s-cart-data-title="{{ 'cart.cart_page.label.price' | t }}">
-        <div class="t4s-cart_price t4s-text-center">          
+        <div class="t4s-cart_price t4s-text-center [@media(max-width:1024px)]:!text-left">          
             {%- assign item_compare_price = item.variant.compare_at_price | default: item.original_price | times: item_qty -%}
             {%- assign compare_tt_price = compare_tt_price | plus: item_compare_price -%}
             {%- if item.original_price != item.final_price -%}{%- assign final_price = item.final_price -%}
