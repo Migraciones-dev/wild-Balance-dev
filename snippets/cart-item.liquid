@@ -67,7 +67,9 @@
       <div class="t4s-cart_meta_price">
         <div class="t4s-cart_price text-[11px] mt-2">
           {%- assign is_subscription = item.properties['Suscripción'] -%}
-          {{ is_subscription }}
+          {%- if is_subscription != blank -%}
+            Subscription:
+          {%- endif -%}
           {%- unless cart_ajax_enable %}{{ item_qty }} × {% endunless -%}
           {%- assign item_compare_price = item_variant.compare_at_price
             | default: item.original_price
