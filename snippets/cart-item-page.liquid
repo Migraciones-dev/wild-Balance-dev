@@ -105,8 +105,8 @@
     {%- assign orig_cents = item.original_price -%}
     {%- assign disc_cents = orig_cents | divided_by: 0.9 | round: 0 -%}
 
-    <del>{{ orig_cents | money }}</del>
-    <ins>{{ disc_cents  | money }}</ins>
+    <del>{{ disc_cents  | money }}</del>
+    <ins>{{ orig_cents | money }}</ins>
   </div>
 {%- else -%}
   <div class="t4s-cart_price t4s-text-center [@media(max-width:1024px)]:!text-left cart-price-item">
