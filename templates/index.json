@@ -1,1 +1,500 @@
-{"sections":{"banner_home_tHiHUK":{"type":"banner-home","name":"Migraciones banner home","settings":{}},"migraciones_tabs_collections_BaRKMi":{"type":"migraciones-tabs-collections","blocks":{"tab_item_reC7wk":{"type":"tab_item","settings":{"title":"Tab title","icon_title":"","collection":"","multi_collections":[],"product_des":"1","rating_pos":"1","list_color_pos":"1","list_size_pos":"1","show_vendor":false,"use_cdt":false,"featured_items":false,"image_ratio":"rationt","image_size":"cover","image_position":"8","content_align":"start","limit":8,"col_dk":"4","col_tb":"3","col_mb":"2","space_h_item":"30","space_v_item":"30","space_h_item_tb":"30","space_v_item_tb":"30","space_h_item_mb":"10","space_v_item_mb":"10","layout_des":"2","border_pr":false,"loop":true,"au_time":0,"au_hover":true,"nav_btn":false,"btn_pos":"in","btn_distance":15,"btn_vi":"hover","btn_owl":"default","btn_shape":"none","btn_cl":"dark","btn_size":"small","btn_hidden_mobile":false,"nav_dot":false,"dot_owl":"default","dots_cl":"dark","dots_round":true,"dots_space":10,"dots_bottom_pos":20,"dots_hidden_mobile":false,"border_pr_img":false,"use_pagination":"none","enable_bar_lm":true,"text_view_all":"","btn_icon":false,"btn_rounded":false,"button_style":"default","btns_size":"default","btns_cl":"dark","button_effect":"default","btns_pos":"t4s-text-center"}}},"block_order":["tab_item_reC7wk"],"name":"Migraciones col tabs","settings":{"design_heading":"1","heading_center":true,"top_heading":"Trending Products","top_subheading":"","head_bigger":false,"tophead_mb":30,"tophead_mb_tb":30,"tophead_mb_mb":25,"title_inline":false,"tabs_des":"border","tabs_border":"dashed","tabs_list_border":false,"tabs_pos":"center","tabslist_mb":30,"item_fs":16,"item_lh":30,"item_fw":500,"item_ls":0,"item_rounded":true,"pri_cl":"#868686","secon_cl":"#868686","pri_active_cl":"#222222","secon_active_cl":"#868686","space_between":5,"space_between_tb":5,"space_between_mb":5,"head_btn_label":"Explore all products","head_btn_url":"","head_btn_icon":true,"btn_rounded":false,"head_button_style":"outline","head_btns_size":"default","head_btns_cl":"dark","head_button_effect":"default","hidden_btn_mb":false,"head_slide_btn":false,"layout":"t4s-container-wrap","cl_bg":"","cl_bg_gradient":"","mg":",,50px,","pd":"","mg_tb":",,30px,","pd_tb":"","mg_mb":",,30px,","pd_mb":""}},"migraciones_feafured_collection_eMTCmk":{"type":"migraciones-feafured-collection","name":"Migraciones collection","settings":{"design_heading":"1","heading_center":true,"top_heading":"","top_subheading":"","head_bigger":false,"tophead_mb":30,"tophead_mb_tb":30,"tophead_mb_mb":25,"collection":"barf","product_des":"1","rating_pos":"1","list_color_pos":"1","list_size_pos":"1","show_vendor":false,"use_cdt":false,"image_ratio":"rationt","image_size":"cover","image_position":"8","content_align":"default","limit":8,"col_dk":"4","col_tb":"3","col_mb":"2","space_h_item":"30","space_v_item":"30","space_h_item_tb":"30","space_v_item_tb":"30","space_h_item_mb":"10","space_v_item_mb":"10","layout_des":"2","border_pr":false,"loop":true,"au_time":0,"au_hover":true,"nav_btn":true,"btn_pos":"out","btn_distance":15,"btn_vi":"hover","btn_owl":"default","btn_shape":"none","btn_cl":"dark","btn_size":"small","btn_hidden_mobile":false,"nav_dot":false,"dot_owl":"default","dots_cl":"dark","dots_round":true,"dots_space":10,"dots_bottom_pos":20,"dots_hidden_mobile":false,"border_pr_img":false,"use_pagination":"none","enable_bar_lm":true,"text_view_all":"","btn_icon":false,"btn_rounded":false,"button_style":"default","btns_size":"default","btns_cl":"dark","button_effect":"default","btns_pos":"t4s-text-center","head_btn_label":"Shop All","head_btn_url":"","head_btn_icon":true,"head_btn_rounded":false,"head_button_style":"outline","head_btns_size":"default","head_btns_cl":"dark","head_button_effect":"default","hidden_btn_mb":false,"head_slide_btn":false,"layout":"t4s-container-wrap","cl_bg":"","cl_bg_gradient":"","mg":",,50px,","pd":"","mg_tb":",,30px,","pd_tb":"","mg_mb":",,30px,","pd_mb":""}},"migraciones_test_VNQXyJ":{"type":"migraciones-test","name":"Migraciones","settings":{"custom_liquid":""}},"shipping_N8EKqT":{"type":"shipping","blocks":{"shipping_FfnAjM":{"type":"shipping","settings":{"icon_themes":"box1","image_icon":"shopify:\/\/shop_images\/cora.svg","icon":"las la-truck","title":"","text":"<p>+ Esperanza de vida<\/p>"}},"shipping_9bJXRi":{"type":"shipping","settings":{"icon_themes":"box2","image_icon":"shopify:\/\/shop_images\/dog-3-1.svg","icon":"las la-redo-alt","title":"","text":"<p>Previene la obesidad<\/p>"}},"shipping_wWcCAP":{"type":"shipping","settings":{"icon_themes":"car","image_icon":"shopify:\/\/shop_images\/Group-795.svg","icon":"las la-headphones","title":"","text":"<p>Previene el sarro<\/p>"}},"shipping_wUEcP8":{"type":"shipping","settings":{"icon_themes":"shield1","image_icon":"shopify:\/\/shop_images\/Group-4.svg","icon":"las la-shield-alt","title":"","text":"<p>Pelo más brillante<\/p>"}}},"block_order":["shipping_FfnAjM","shipping_9bJXRi","shipping_wWcCAP","shipping_wUEcP8"],"custom_css":[".probando {border: 2px solid;}"],"settings":{"design_heading":"1","block_custom_class":"probando","heading_center":true,"top_heading":"","top_subheading":"","tophead_mb":10,"tophead_mb_tb":10,"tophead_mb_mb":10,"content_align":"text-start","align_vertical":true,"align_horizontal":false,"divided":false,"src_icon":"get_image","icon_size":"medium","icon_effect":"none","col_dk":"4","col_tb":"3","col_mb":"2","icon_cl":"#ffffff","hd_cl":"#ffffff","content_cl":"#ffffff","bg_wrap_cl":"","hd_fs":16,"hd_fw":500,"txt_fs":16,"space_h_item":"10","space_v_item":"15","space_h_item_tb":"10","space_v_item_tb":"15","space_h_item_mb":"10","space_v_item_mb":"10","padding_inner":"","padding_inner_tb":"","padding_inner_mb":"","carousel_mobile":false,"dots_cl":"dark","dots_round":true,"layout":"t4s-container-fluid","custom_width":1000,"cl_bg":"#004623","cl_bg_gradient":"","mg":",,0px,","pd":"20px,200px,20px,200px","mg_tb":",,0px,","pd_tb":"20px,20px,20px,20px","mg_mb":",,0px,","pd_mb":"20px,20px,20px,20px"}},"migraciones_image_text_2_yJ9bmh":{"type":"migraciones-image-text-2","name":"Migraciones imagen+text 2","settings":{}},"migraciones_image_width_text_amVn3j":{"type":"migraciones-image-width-text","name":"Migraciones image+text","settings":{"custom_liquid":""}},"migraciones_columns_jjVGXh":{"type":"migraciones-columns","name":"Migraciones columnas","settings":{"custom_liquid":""}},"migraciones_rich_text_AFedhg":{"type":"migraciones-rich-text","disabled":true,"name":"Migraciones rich text","settings":{"custom_liquid":""}},"migraciones_image_Hth9r7":{"type":"migraciones-image","disabled":true,"name":"Migraciones imagen","settings":{"desktop_image":"shopify:\/\/shop_images\/5f90d44833e7340c78f621df_hero_2.jpg_2.jpg","mobile_image":"shopify:\/\/shop_images\/5f90d44833e7340c78f621df_hero_2.jpg_2.jpg"}},"migraciones_ugc_UrjgJT":{"type":"migraciones-ugc","name":"Migraciones ugc","settings":{"custom_liquid":""}},"migraciones_faq_tUMPqn":{"type":"migraciones-faq","name":"Migraciones faq","settings":{"custom_liquid":""}},"migraciones_reviews_x9hAB4":{"type":"migraciones-reviews","disabled":true,"name":"Migraciones clientes","settings":{"custom_liquid":""}},"migraciones_newsletter_qXCxVc":{"type":"migraciones-newsletter","name":"Migraciones newsletter","settings":{"custom_liquid":""}}},"order":["banner_home_tHiHUK","migraciones_tabs_collections_BaRKMi","migraciones_feafured_collection_eMTCmk","migraciones_test_VNQXyJ","shipping_N8EKqT","migraciones_image_text_2_yJ9bmh","migraciones_image_width_text_amVn3j","migraciones_columns_jjVGXh","migraciones_rich_text_AFedhg","migraciones_image_Hth9r7","migraciones_ugc_UrjgJT","migraciones_faq_tUMPqn","migraciones_reviews_x9hAB4","migraciones_newsletter_qXCxVc"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner_home_tHiHUK": {
+      "type": "banner-home",
+      "name": "Migraciones banner home",
+      "settings": {}
+    },
+    "migraciones_tabs_collections_BaRKMi": {
+      "type": "migraciones-tabs-collections",
+      "blocks": {
+        "tab_item_reC7wk": {
+          "type": "tab_item",
+          "settings": {
+            "title": "Tab title",
+            "icon_title": "",
+            "collection": "",
+            "multi_collections": [],
+            "product_des": "1",
+            "rating_pos": "1",
+            "list_color_pos": "1",
+            "list_size_pos": "1",
+            "show_vendor": false,
+            "use_cdt": false,
+            "featured_items": false,
+            "image_ratio": "rationt",
+            "image_size": "cover",
+            "image_position": "8",
+            "content_align": "start",
+            "limit": 8,
+            "col_dk": "4",
+            "col_tb": "3",
+            "col_mb": "2",
+            "space_h_item": "30",
+            "space_v_item": "30",
+            "space_h_item_tb": "30",
+            "space_v_item_tb": "30",
+            "space_h_item_mb": "10",
+            "space_v_item_mb": "10",
+            "layout_des": "2",
+            "border_pr": false,
+            "loop": true,
+            "au_time": 0,
+            "au_hover": true,
+            "nav_btn": false,
+            "btn_pos": "in",
+            "btn_distance": 15,
+            "btn_vi": "hover",
+            "btn_owl": "default",
+            "btn_shape": "none",
+            "btn_cl": "dark",
+            "btn_size": "small",
+            "btn_hidden_mobile": false,
+            "nav_dot": false,
+            "dot_owl": "default",
+            "dots_cl": "dark",
+            "dots_round": true,
+            "dots_space": 10,
+            "dots_bottom_pos": 20,
+            "dots_hidden_mobile": false,
+            "border_pr_img": false,
+            "use_pagination": "none",
+            "enable_bar_lm": true,
+            "text_view_all": "",
+            "btn_icon": false,
+            "btn_rounded": false,
+            "button_style": "default",
+            "btns_size": "default",
+            "btns_cl": "dark",
+            "button_effect": "default",
+            "btns_pos": "t4s-text-center"
+          }
+        }
+      },
+      "block_order": [
+        "tab_item_reC7wk"
+      ],
+      "name": "Migraciones col tabs",
+      "settings": {
+        "design_heading": "1",
+        "heading_center": true,
+        "top_heading": "Trending Products",
+        "top_subheading": "",
+        "head_bigger": false,
+        "tophead_mb": 30,
+        "tophead_mb_tb": 30,
+        "tophead_mb_mb": 25,
+        "title_inline": false,
+        "tabs_des": "border",
+        "tabs_border": "dashed",
+        "tabs_list_border": false,
+        "tabs_pos": "center",
+        "tabslist_mb": 30,
+        "item_fs": 16,
+        "item_lh": 30,
+        "item_fw": 500,
+        "item_ls": 0,
+        "item_rounded": true,
+        "pri_cl": "#868686",
+        "secon_cl": "#868686",
+        "pri_active_cl": "#222222",
+        "secon_active_cl": "#868686",
+        "space_between": 5,
+        "space_between_tb": 5,
+        "space_between_mb": 5,
+        "head_btn_label": "Explore all products",
+        "head_btn_url": "",
+        "head_btn_icon": true,
+        "btn_rounded": false,
+        "head_button_style": "outline",
+        "head_btns_size": "default",
+        "head_btns_cl": "dark",
+        "head_button_effect": "default",
+        "hidden_btn_mb": false,
+        "head_slide_btn": false,
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,50px,",
+        "pd": "",
+        "mg_tb": ",,30px,",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": ""
+      }
+    },
+    "migraciones_feafured_collection_eMTCmk": {
+      "type": "migraciones-feafured-collection",
+      "name": "Migraciones collection",
+      "settings": {
+        "design_heading": "1",
+        "heading_center": true,
+        "top_heading": "",
+        "top_subheading": "",
+        "head_bigger": false,
+        "tophead_mb": 30,
+        "tophead_mb_tb": 30,
+        "tophead_mb_mb": 25,
+        "collection": "barf",
+        "product_des": "1",
+        "rating_pos": "1",
+        "list_color_pos": "1",
+        "list_size_pos": "1",
+        "show_vendor": false,
+        "use_cdt": false,
+        "image_ratio": "rationt",
+        "image_size": "cover",
+        "image_position": "8",
+        "content_align": "default",
+        "limit": 8,
+        "col_dk": "4",
+        "col_tb": "3",
+        "col_mb": "2",
+        "space_h_item": "30",
+        "space_v_item": "30",
+        "space_h_item_tb": "30",
+        "space_v_item_tb": "30",
+        "space_h_item_mb": "10",
+        "space_v_item_mb": "10",
+        "layout_des": "2",
+        "border_pr": false,
+        "loop": true,
+        "au_time": 0,
+        "au_hover": true,
+        "nav_btn": true,
+        "btn_pos": "out",
+        "btn_distance": 15,
+        "btn_vi": "hover",
+        "btn_owl": "default",
+        "btn_shape": "none",
+        "btn_cl": "dark",
+        "btn_size": "small",
+        "btn_hidden_mobile": false,
+        "nav_dot": false,
+        "dot_owl": "default",
+        "dots_cl": "dark",
+        "dots_round": true,
+        "dots_space": 10,
+        "dots_bottom_pos": 20,
+        "dots_hidden_mobile": false,
+        "border_pr_img": false,
+        "use_pagination": "none",
+        "enable_bar_lm": true,
+        "text_view_all": "",
+        "btn_icon": false,
+        "btn_rounded": false,
+        "button_style": "default",
+        "btns_size": "default",
+        "btns_cl": "dark",
+        "button_effect": "default",
+        "btns_pos": "t4s-text-center",
+        "head_btn_label": "Shop All",
+        "head_btn_url": "",
+        "head_btn_icon": true,
+        "head_btn_rounded": false,
+        "head_button_style": "outline",
+        "head_btns_size": "default",
+        "head_btns_cl": "dark",
+        "head_button_effect": "default",
+        "hidden_btn_mb": false,
+        "head_slide_btn": false,
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,50px,",
+        "pd": "",
+        "mg_tb": ",,30px,",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": ""
+      }
+    },
+    "migraciones_featured_collection_2_f9XwGn": {
+      "type": "migraciones-featured-collection-2",
+      "name": "Migraciones collection 2",
+      "settings": {
+        "design_heading": "1",
+        "heading_center": true,
+        "top_heading": "",
+        "top_subheading": "",
+        "head_bigger": false,
+        "tophead_mb": 30,
+        "tophead_mb_tb": 30,
+        "tophead_mb_mb": 25,
+        "collection": "barf-gatos",
+        "product_des": "1",
+        "rating_pos": "1",
+        "list_color_pos": "1",
+        "list_size_pos": "1",
+        "show_vendor": false,
+        "use_cdt": false,
+        "image_ratio": "rationt",
+        "image_size": "cover",
+        "image_position": "8",
+        "content_align": "default",
+        "limit": 8,
+        "col_dk": "4",
+        "col_tb": "3",
+        "col_mb": "2",
+        "space_h_item": "30",
+        "space_v_item": "30",
+        "space_h_item_tb": "30",
+        "space_v_item_tb": "30",
+        "space_h_item_mb": "10",
+        "space_v_item_mb": "10",
+        "layout_des": "2",
+        "border_pr": false,
+        "loop": true,
+        "au_time": 0,
+        "au_hover": true,
+        "nav_btn": false,
+        "btn_pos": "in",
+        "btn_distance": 15,
+        "btn_vi": "hover",
+        "btn_owl": "default",
+        "btn_shape": "none",
+        "btn_cl": "dark",
+        "btn_size": "small",
+        "btn_hidden_mobile": false,
+        "nav_dot": false,
+        "dot_owl": "default",
+        "dots_cl": "dark",
+        "dots_round": true,
+        "dots_space": 10,
+        "dots_bottom_pos": 20,
+        "dots_hidden_mobile": false,
+        "border_pr_img": false,
+        "use_pagination": "none",
+        "enable_bar_lm": true,
+        "text_view_all": "",
+        "btn_icon": false,
+        "btn_rounded": false,
+        "button_style": "default",
+        "btns_size": "default",
+        "btns_cl": "dark",
+        "button_effect": "default",
+        "btns_pos": "t4s-text-center",
+        "head_btn_label": "Shop All",
+        "head_btn_url": "",
+        "head_btn_icon": true,
+        "head_btn_rounded": false,
+        "head_button_style": "outline",
+        "head_btns_size": "default",
+        "head_btns_cl": "dark",
+        "head_button_effect": "default",
+        "hidden_btn_mb": false,
+        "head_slide_btn": false,
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,50px,",
+        "pd": "",
+        "mg_tb": ",,30px,",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": ""
+      }
+    },
+    "migraciones_test_VNQXyJ": {
+      "type": "migraciones-test",
+      "name": "Migraciones",
+      "settings": {
+        "custom_liquid": ""
+      }
+    },
+    "shipping_N8EKqT": {
+      "type": "shipping",
+      "blocks": {
+        "shipping_FfnAjM": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "box1",
+            "image_icon": "shopify://shop_images/cora.svg",
+            "icon": "las la-truck",
+            "title": "",
+            "text": "<p>+ Esperanza de vida</p>"
+          }
+        },
+        "shipping_9bJXRi": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "box2",
+            "image_icon": "shopify://shop_images/dog-3-1.svg",
+            "icon": "las la-redo-alt",
+            "title": "",
+            "text": "<p>Previene la obesidad</p>"
+          }
+        },
+        "shipping_wWcCAP": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "car",
+            "image_icon": "shopify://shop_images/Group-795.svg",
+            "icon": "las la-headphones",
+            "title": "",
+            "text": "<p>Previene el sarro</p>"
+          }
+        },
+        "shipping_wUEcP8": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "shield1",
+            "image_icon": "shopify://shop_images/Group-4.svg",
+            "icon": "las la-shield-alt",
+            "title": "",
+            "text": "<p>Pelo más brillante</p>"
+          }
+        }
+      },
+      "block_order": [
+        "shipping_FfnAjM",
+        "shipping_9bJXRi",
+        "shipping_wWcCAP",
+        "shipping_wUEcP8"
+      ],
+      "custom_css": [
+        ".probando {border: 2px solid;}"
+      ],
+      "settings": {
+        "design_heading": "1",
+        "block_custom_class": "probando",
+        "heading_center": true,
+        "top_heading": "",
+        "top_subheading": "",
+        "tophead_mb": 10,
+        "tophead_mb_tb": 10,
+        "tophead_mb_mb": 10,
+        "content_align": "text-start",
+        "align_vertical": true,
+        "align_horizontal": false,
+        "divided": false,
+        "src_icon": "get_image",
+        "icon_size": "medium",
+        "icon_effect": "none",
+        "col_dk": "4",
+        "col_tb": "3",
+        "col_mb": "2",
+        "icon_cl": "#ffffff",
+        "hd_cl": "#ffffff",
+        "content_cl": "#ffffff",
+        "bg_wrap_cl": "",
+        "hd_fs": 16,
+        "hd_fw": 500,
+        "txt_fs": 16,
+        "space_h_item": "10",
+        "space_v_item": "15",
+        "space_h_item_tb": "10",
+        "space_v_item_tb": "15",
+        "space_h_item_mb": "10",
+        "space_v_item_mb": "10",
+        "padding_inner": "",
+        "padding_inner_tb": "",
+        "padding_inner_mb": "",
+        "carousel_mobile": false,
+        "dots_cl": "dark",
+        "dots_round": true,
+        "layout": "t4s-container-fluid",
+        "custom_width": 1000,
+        "cl_bg": "#004623",
+        "cl_bg_gradient": "",
+        "mg": ",,0px,",
+        "pd": "20px,200px,20px,200px",
+        "mg_tb": ",,0px,",
+        "pd_tb": "20px,20px,20px,20px",
+        "mg_mb": ",,0px,",
+        "pd_mb": "20px,20px,20px,20px"
+      }
+    },
+    "migraciones_image_text_2_yJ9bmh": {
+      "type": "migraciones-image-text-2",
+      "name": "Migraciones imagen+text 2",
+      "settings": {}
+    },
+    "migraciones_image_width_text_amVn3j": {
+      "type": "migraciones-image-width-text",
+      "name": "Migraciones image+text",
+      "settings": {
+        "custom_liquid": ""
+      }
+    },
+    "migraciones_columns_jjVGXh": {
+      "type": "migraciones-columns",
+      "name": "Migraciones columnas",
+      "settings": {
+        "custom_liquid": ""
+      }
+    },
+    "migraciones_rich_text_AFedhg": {
+      "type": "migraciones-rich-text",
+      "disabled": true,
+      "name": "Migraciones rich text",
+      "settings": {
+        "custom_liquid": ""
+      }
+    },
+    "migraciones_image_Hth9r7": {
+      "type": "migraciones-image",
+      "disabled": true,
+      "name": "Migraciones imagen",
+      "settings": {
+        "desktop_image": "shopify://shop_images/5f90d44833e7340c78f621df_hero_2.jpg_2.jpg",
+        "mobile_image": "shopify://shop_images/5f90d44833e7340c78f621df_hero_2.jpg_2.jpg"
+      }
+    },
+    "migraciones_ugc_UrjgJT": {
+      "type": "migraciones-ugc",
+      "name": "Migraciones ugc",
+      "settings": {
+        "custom_liquid": ""
+      }
+    },
+    "migraciones_faq_tUMPqn": {
+      "type": "migraciones-faq",
+      "name": "Migraciones faq",
+      "settings": {
+        "custom_liquid": ""
+      }
+    },
+    "migraciones_reviews_x9hAB4": {
+      "type": "migraciones-reviews",
+      "disabled": true,
+      "name": "Migraciones clientes",
+      "settings": {
+        "custom_liquid": ""
+      }
+    },
+    "migraciones_newsletter_qXCxVc": {
+      "type": "migraciones-newsletter",
+      "name": "Migraciones newsletter",
+      "settings": {
+        "custom_liquid": ""
+      }
+    }
+  },
+  "order": [
+    "banner_home_tHiHUK",
+    "migraciones_tabs_collections_BaRKMi",
+    "migraciones_feafured_collection_eMTCmk",
+    "migraciones_featured_collection_2_f9XwGn",
+    "migraciones_test_VNQXyJ",
+    "shipping_N8EKqT",
+    "migraciones_image_text_2_yJ9bmh",
+    "migraciones_image_width_text_amVn3j",
+    "migraciones_columns_jjVGXh",
+    "migraciones_rich_text_AFedhg",
+    "migraciones_image_Hth9r7",
+    "migraciones_ugc_UrjgJT",
+    "migraciones_faq_tUMPqn",
+    "migraciones_reviews_x9hAB4",
+    "migraciones_newsletter_qXCxVc"
+  ]
+}
