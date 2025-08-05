@@ -166,11 +166,11 @@
                     <div class="t4s-col-auto t4s-col-item">{{ 'cart.cart_page.subtotal' | t }}</div>
                     <div data-cart-prices class="t4s-col-auto t4s-col-item t4s-text-right t4s-cart__ttprice">
                         {%- if cart.total_discount > 0 -%}
-                        <div class="t4s-cart__originalPrice">{{ cart.original_total_price | money }}</div>
-                        <div class="t4s-cart__discountPrice"> - {{ cart.total_discount | money }}</div>
+                       {% comment %} <div class="t4s-cart__originalPrice">{{ cart.original_total_price | money }}</div> 
+                        <div class="t4s-cart__discountPrice"> - {{ cart.total_discount | money }}</div>{% endcomment %} 
                         {%- elsif compare_tt_price > total_price and false -%}
-                        <div class="t4s-cart__originalPrice">{{ compare_tt_price | money }}</div>
-                        <div class="t4s-cart__discountPrice"> - {{ compare_tt_price | minus: total_price | money }}</div>
+                       {% comment %}  <div class="t4s-cart__originalPrice">{{ compare_tt_price | money }}</div>
+                        <div class="t4s-cart__discountPrice"> - {{ compare_tt_price | minus: total_price | money }}</div>{% endcomment %} 
                         {%- endif -%}
                         <div class="t4s-cart__totalPrice">{{ total_price | money_with_currency }}</div>
                     </div>
