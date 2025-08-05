@@ -489,7 +489,7 @@ ul.t4s-cart_discount_price svg {
    right: 0;
    width: 25px;
    height: 25px;
-   border: solid 1px var(--border-color);
+   border: solid 1px var(--secondary-color);
    display: flex;
    align-items: center;
    justify-content: center;
@@ -830,7 +830,7 @@ ul.t4s-cart_discount_price svg {
 #t4s-mini_cart .t4s-results__rates ul{list-style: disc;font-size: 12.5px;margin-bottom: 0;}
 #t4s-mini_cart .t4s-cookie-message {
     padding: 10px 20px;
-    border-bottom: 1px solid rgba(var(--border-color-rgb),.8);
+    border-bottom: 1px solid #c0c0c0cc;
     color: var(--secondary-color);
 }
 .t4s-mini_cart-tool__text,
