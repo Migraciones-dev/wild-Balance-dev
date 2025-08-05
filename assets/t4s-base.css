@@ -3839,6 +3839,7 @@ em {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
+    padding:2rem;
 }
 @media screen and (max-width: 767px) {
     .t4s-responsive-table {
