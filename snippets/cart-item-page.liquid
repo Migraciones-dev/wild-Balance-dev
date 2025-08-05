@@ -100,17 +100,13 @@
         </div>
     </td> 
     <td class="t4s-page-cart_prices [@media(max-width:1024px)]:flex" t4s-cart-data-title="{{ 'cart.cart_page.label.price' | t }}">
-        <div class="t4s-cart_price t4s-text-center [@media(max-width:1024px)]:!text-left">          
-            {%- assign item_compare_price = item.variant.compare_at_price | default: item.original_price | times: item_qty -%}
-            {%- assign compare_tt_price = compare_tt_price | plus: item_compare_price -%}
-            {%- if item.original_price != item.final_price -%}{%- assign final_price = item.final_price -%}
-            <del>{{ item.original_price | money }}</del> <ins>{{ item.final_price | money }}</ins>
-            {%- elsif item.variant.compare_at_price > item.original_price -%}{%- assign final_price = item.final_price -%}
-            <del>{{ item.variant.compare_at_price | money }}</del> <ins>{{ item.final_price | money }}</ins>
-            {%- else -%}{%- assign final_price = item.original_price -%}
-            {{ item.original_price | money }}
-            {%- endif -%}
-        </div>
+        <div class="t4s-cart_price t4s-text-center [@media(max-width:1024px)]:!text-left cart-price-item">
+  {%- assign orig_cents = item.original_price -%}
+  {%- assign disc_cents = orig_cents | divided_by: 0.9 | round: 0 -%}
+
+  <del>{{ orig_cents | money }}</del>
+  <ins>{{ disc_cents | money }}</ins>
+</div>
         {%- if item.unit_price_measurement -%}
             {%- capture unit_price_base_unit -%}
             {%- if item.unit_price_measurement.reference_value != 1 -%}
