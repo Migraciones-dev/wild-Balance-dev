@@ -184,9 +184,11 @@
                   {%- comment -%} Contenedor general de los filtros (acordeón vertical) {%- endcomment -%}
                   <details
                     class="group border border-[#D9D9C8] rounded-[8px] bg-white mb-8 w-full"
-                    {% if forloop.index <= 1 %}
-                      open
-                    {% endif %}
+                    {% comment %}
+                      {% if forloop.index <= 1 %}
+                        open
+                      {% endif %}
+                    {% endcomment %}
                   >
                     <summary
                       class="
