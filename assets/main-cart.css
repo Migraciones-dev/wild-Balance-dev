@@ -367,7 +367,7 @@ input[type=checkbox][data-agree-checkbox]:checked~svg {
 
 .t4s-main-cart .t4s-cookie-message {
     padding: 10px 20px;
-    border-bottom: 1px solid rgba(var(--border-color-rgb),.8);
+    border-bottom: 1px solid #c0c0c0cc;
     color: var(--secondary-color);
 }
 .t4s-main-cart .t4s-cat__imgtrust{margin-top: 10px;}
@@ -628,7 +628,7 @@ input[type=checkbox][data-agree-checkbox]:checked~svg {
     table.t4s-table-main-cart{border: 0;}
     .t4s-cartPage__items .t4s-page_cart__item{
         border: 0;
-        border-bottom: 1px solid rgba(var(--border-color-rgb),.8);
+        border-bottom: 1px solid #c0c0c0cc;
         margin-bottom: 15px;
         padding-bottom: 5px;
         padding-left: 115px;
