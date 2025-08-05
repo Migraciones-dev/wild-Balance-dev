@@ -969,6 +969,20 @@
               "text": ""
             }
           },
+          "menu_LQAt8E": {
+            "type": "menu",
+            "settings": {
+              "block_custom_class": "",
+              "title": "Encuentra tu tienda",
+              "url": "shopify://pages/store-locator",
+              "open_link": "_self",
+              "menu": "",
+              "lb": "",
+              "lb_cl": "",
+              "icons_op": "2",
+              "icon": ""
+            }
+          },
           "menu_PV4AXT": {
             "type": "menu",
             "settings": {
@@ -1025,16 +1039,16 @@
               "icon": ""
             }
           },
-          "help_eLcwKz": {
-            "type": "help",
-            "settings": {
-              "title": "Need help?",
-              "text": ""
-            }
-          },
           "mb_nav-5": {
             "type": "sea",
             "settings": {}
+          },
+          "help_eLcwKz": {
+            "type": "help",
+            "settings": {
+              "title": "Mi cuenta",
+              "text": ""
+            }
           },
           "mb_nav-6": {
             "type": "acc",
@@ -1068,12 +1082,13 @@
           "help_kJKjyK",
           "menu_Ej4LWb",
           "help_KQbRnD",
+          "menu_LQAt8E",
           "menu_PV4AXT",
           "menu_DTpcPz",
           "menu_jdT6Hr",
           "menu_kLMD4e",
-          "help_eLcwKz",
           "mb_nav-5",
+          "help_eLcwKz",
           "mb_nav-6",
           "mb_nav-4",
           "menu_69xD6J"
