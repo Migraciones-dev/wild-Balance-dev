@@ -1952,72 +1952,19 @@
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const container = document.querySelector('#{{ section.id }} .cards-container');
-    if (!container) return;
+  window.addEventListener('load', function () {
+    // Busca los botones ya existentes que sí funcionan
+    var nativePrev = document.querySelector('#{{section.id }} .flickityt4s-button.previous');
+    var nativeNext = document.querySelector('#{{section.id }} .flickityt4s-button.next');
+    var myPrev = document.querySelector('#{{section.id }} .slider-prev');
+    var myNext = document.querySelector('#{{section.id }} .slider-next');
+    if (!nativePrev || !nativeNext || !myPrev || !myNext) return;
 
-    // Sólo en pantallas >=1024px
-    function isDesktop() {
-      return window.innerWidth >= 1024;
-    }
-
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-    let moved = false;
-
-    container.style.cursor = 'grab';
-
-    container.addEventListener('mousedown', (e) => {
-      if (!isDesktop()) return;
-      isDown = true;
-      moved = false;
-      container.classList.add('cursor-grabbing');
-      startX = e.pageX - container.offsetLeft;
-      scrollLeft = container.scrollLeft;
+    myPrev.addEventListener('click', function () {
+      nativePrev.click();
     });
-
-    container.addEventListener('mouseleave', () => {
-      if (!isDesktop()) return;
-      isDown = false;
-      container.classList.remove('cursor-grabbing');
-    });
-
-    container.addEventListener('mouseup', () => {
-      if (!isDesktop()) return;
-      isDown = false;
-      container.classList.remove('cursor-grabbing');
-    });
-
-    container.addEventListener('mousemove', (e) => {
-      if (!isDesktop() || !isDown) return;
-      e.preventDefault();
-      const x = e.pageX - container.offsetLeft;
-      const walk = x - startX;
-      if (Math.abs(walk) > 5) moved = true; // Umbral para distinguir click vs drag
-      container.scrollLeft = scrollLeft - walk;
-    });
-
-    // Para que los <a> sigan recibiendo click si no hubo un drag significativo
-    container.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', (e) => {
-        if (moved) {
-          e.preventDefault();
-          // opcional: después de un drag, reinicia moved para futuros clicks
-          moved = false;
-        }
-      });
-    });
-
-    // Ajustar al redimensionar
-    window.addEventListener('resize', () => {
-      if (!isDesktop()) {
-        // restaurar estilos si baja de desktop
-        container.style.cursor = '';
-        container.classList.remove('cursor-grabbing');
-      } else {
-        container.style.cursor = 'grab';
-      }
+    myNext.addEventListener('click', function () {
+      nativeNext.click();
     });
   });
 </script>
