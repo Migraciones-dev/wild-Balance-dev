@@ -950,6 +950,7 @@
           },
           "menu_Ej4LWb": {
             "type": "menu",
+            "disabled": true,
             "settings": {
               "block_custom_class": "",
               "title": "Plan de suscripción",
