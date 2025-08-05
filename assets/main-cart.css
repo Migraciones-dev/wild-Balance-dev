@@ -658,7 +658,7 @@ input[type=checkbox][data-agree-checkbox]:checked~svg {
     }
     .t4s-table-main-cart .t4s-page_cart__infos{padding-top:0}
     .t4s-page_cart__item td:not(:last-child){
-        border-bottom: 1px dashed rgba(var(--border-color-rgb),.8);
+        border-bottom: 1px solid #c0c0c0cc;
     }
     .t4s-page_cart__item td:last-child{ border-bottom: none; }
     .t4s-table-main-cart .t4s-page_cart__remove{
