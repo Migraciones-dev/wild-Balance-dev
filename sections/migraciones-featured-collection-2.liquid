@@ -1954,10 +1954,10 @@
 <script>
   window.addEventListener('load', function () {
     // Busca los botones ya existentes que sí funcionan
-    var nativePrev = document.querySelector('#{{section.id }} .flickityt4s-button.previous');
-    var nativeNext = document.querySelector('#{{section.id }} .flickityt4s-button.next');
-    var myPrev = document.querySelector('#{{section.id }} .slider-prev');
-    var myNext = document.querySelector('#{{section.id }} .slider-next');
+    var nativePrev = document.querySelector('#{{ section.id }} .flickityt4s-button.previous');
+    var nativeNext = document.querySelector('#{{ section.id }} .flickityt4s-button.next');
+    var myPrev = document.querySelector('#{{ section.id }} .slider-prev');
+    var myNext = document.querySelector('#{{ section.id }} .slider-next');
     if (!nativePrev || !nativeNext || !myPrev || !myNext) return;
 
     myPrev.addEventListener('click', function () {
@@ -1965,6 +1965,68 @@
     });
     myNext.addEventListener('click', function () {
       nativeNext.click();
+    });
+  });
+</script>
+
+<!-- DRAG-TO-SCROLL -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const section = document.getElementById('{{ section.id }}');
+    const container = section.querySelector('.flickityt4s-slider') || section.querySelector('.cards-container');
+    if (!container) return;
+
+    const isDesktop = () => window.innerWidth >= 1024;
+    let isDown = false,
+      startX,
+      scrollLeft,
+      moved = false;
+
+    container.style.cursor = 'grab';
+
+    container.addEventListener('mousedown', (e) => {
+      if (!isDesktop()) return;
+      isDown = true;
+      moved = false;
+      container.classList.add('cursor-grabbing');
+      startX = e.pageX - container.offsetLeft;
+      scrollLeft = container.scrollLeft;
+    });
+
+    ['mouseleave', 'mouseup'].forEach((evt) =>
+      container.addEventListener(evt, () => {
+        isDown = false;
+        container.classList.remove('cursor-grabbing');
+      })
+    );
+
+    container.addEventListener('mousemove', (e) => {
+      if (!isDesktop() || !isDown) return;
+      e.preventDefault();
+      const x = e.pageX - container.offsetLeft;
+      const walk = x - startX;
+      if (Math.abs(walk) > 5) moved = true;
+      container.scrollLeft = scrollLeft - walk;
+    });
+
+    // Si ha sido un drag, cancelar el click en los links
+    container.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        if (moved) {
+          e.preventDefault();
+          moved = false;
+        }
+      });
+    });
+
+    // Restaurar al cambiar tamaño de ventana
+    window.addEventListener('resize', () => {
+      if (isDesktop()) {
+        container.style.cursor = 'grab';
+      } else {
+        container.style.cursor = '';
+        container.classList.remove('cursor-grabbing');
+      }
     });
   });
 </script>
