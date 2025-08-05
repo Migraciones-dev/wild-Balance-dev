@@ -42,6 +42,12 @@
             "pr_title_color": "#004623"
           }
         },
+        "custom_liquid_HeetbV": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'bloque-iconos-info-producto', product:product %}"
+          }
+        },
         "18a8b200-4f94-4b72-b0eb-01abf185ecb3": {
           "type": "price",
           "settings": {
@@ -73,12 +79,6 @@
           "disabled": true,
           "settings": {
             "custom_liquid": "<div class=\"containerLabelsPDP\">\n{% render 'custom-badges' %}\n</div>"
-          }
-        },
-        "custom_liquid_HeetbV": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<section class=\"extraProducto\">\n\n      <div class=\"cajaIngrediente\">\n        <div class=\"aporteImg\">\n          <img src=\"https://cdn.shopify.com/s/files/1/0713/9898/1933/files/wib-gato.svg?v=1727775092\" alt=\"\" style=\"width:27px;\"/> \n        </div>\n\n        <div class=\"porcentajes\">\n          <p>\n             Para gatos\n          </p>\n        </div>\n      </div>\n\n      <div class=\"cajaIngrediente\">\n        <div class=\"aporteImg\">\n          <img src=\"https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Vector_1.png?v=1742901678\" alt=\"\" />\n        </div>\n\n        <div class=\"porcentajes\">\n          <p>\n             Burger 50gr\n          </p>\n        </div>\n      </div>\n\n      <div class=\"cajaIngrediente\">\n        <div class=\"aporteImg\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Vector_2.png?v=1742901677\" alt=\"\">\n        </div>\n\n        <div class=\"porcentajes\">\n          <p>\n             Bolsa reciclable\n          </p>\n        </div>\n      </div>\n\n      <div class=\"cajaIngrediente\">\n        <div class=\"aporteImg\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Vector_3.png?v=1742901677\" alt=\"\">\n        </div>\n\n        <div class=\"porcentajes\">\n          <p>\n             Producto congelado\n          </p>\n        </div>\n      </div>\n    </section>"
           }
         },
         "description_PqQjKj": {
@@ -166,11 +166,11 @@
       },
       "block_order": [
         "3eaacecf-c956-46e5-84ef-40474509a065",
+        "custom_liquid_HeetbV",
         "18a8b200-4f94-4b72-b0eb-01abf185ecb3",
         "custom_liquid_FdMfKx",
         "text_bcwFJJ",
         "custom_liquid_PkGhkJ",
-        "custom_liquid_HeetbV",
         "description_PqQjKj",
         "8f619784-04a8-4c20-b813-6902f9e3e922",
         "custom_liquid_ywgBhH",
