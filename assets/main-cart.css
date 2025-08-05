@@ -228,7 +228,7 @@ input[type=checkbox][data-agree-checkbox]:checked~svg {
     min-width: 140px;
     width: 140px;
     height: 38px;
-    border: 1px solid var(--border-color);
+    border: 1px solid #004623;
     text-align: center;
     border-radius: var(--other-radius);
     display: block;
