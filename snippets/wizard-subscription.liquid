@@ -11,29 +11,29 @@
       <span>Su plan recurrente</span>
       </h2>
     {% endcomment %}
-    
-   <!-- <p class="freezerSpaceSubtitle">
-      Te recomendamos al menos {{ result.medium_freezer_frequency }} semanas en el congelador, pero puedes modificar la
-      frecuencias de tus pedidos.
-    </p> -->
+
+    <!--
+      <p class="freezerSpaceSubtitle">
+        Te recomendamos al menos {{ result.medium_freezer_frequency }} semanas en el congelador, pero puedes modificar la
+        frecuencias de tus pedidos.
+      </p>
+    -->
 
     <p class="freezerSpaceSubtitle">
-      Deja espacio para tus heladitos, selecciona la capacidad que te queda disponible y 
-      el resto te lo llenamos entre la selección de menús que has hecho en el paso anterior 
+      Deja espacio para tus heladitos, selecciona la capacidad que te queda disponible y el resto te lo llenamos entre
+      la selección de menús que has hecho en el paso anterior
     </p>
 
-
     <div class="contentFreezerSpace">
-
-    {% if result.food_type == "cooked" %}
+      {% if result.food_type == 'cooked' %}
         {% assign small = 3.9 %}
         {% assign medium = 7.8 %}
         {% assign big = 11.7 %}
-    {% else %}
+      {% else %}
         {% assign small = 5 %}
         {% assign medium = 7.5 %}
         {% assign big = 10 %}
-    {% endif %}
+      {% endif %}
 
       <label for="freezer_big">
         <article class="articleInfoFrequently" data-subscriptionurl="{{ result.big_freezer_link }}">
@@ -106,7 +106,7 @@
               <p>
                 <span>{{ result.small_freezer_frequency }}</span> semana(s) de comida
               </p>
-               <span class="label infoSpace">{{ small }}/comida</span>
+              <span class="label infoSpace">{{ small }}/comida</span>
             </div>
           </div>
 
@@ -136,7 +136,7 @@
       <article class="containerInfoFrequently">
         <div class="headingPackName">
           <h3>Pack de iniciación al BARF</h3>
-          <span class="label discountLabel">25% DESCUENTO*</span>
+          <span class="label discountLabel">10% DESCUENTO*</span>
         </div>
 
         <div class="label frequentlyLabel">PRIMER ENVÍO</div>
@@ -149,14 +149,16 @@
             <li>Ventajas exclusivas</li>
             <li>Modifica, cancela o pausa tu plan desde “Mi cuenta” en cualquier momento</li>
           </ul>
-          <span style="font-size: smaller"><i>*Descuento no aplicable en periodos especiales como Black Friday o Rebajas </i></span>
+          <span style="font-size: smaller"
+            ><i>*Descuento no aplicable en periodos especiales como Black Friday o Rebajas </i></span
+          >
         </div>
       </article>
     {% else %}
       <article class="containerInfoFrequently">
         <div class="label frequentlyLabel">
           <h3>PRIMER ENVÍO</h3>
-          <span class="label discountLabel">25% DESCUENTO*</span>
+          <span class="label discountLabel">10% DESCUENTO*</span>
         </div>
 
         <div class="infoContainerPack">
@@ -166,7 +168,9 @@
             <li>Ventajas exclusivas</li>
             <li>Modifica, cancela o pausa tu plan desde “Mi cuenta” en cualquier momento</li>
           </ul>
-          <span style="font-size: smaller"><i>*Descuento no aplicable en periodos especiales como Black Friday o Rebajas </i></span>
+          <span style="font-size: smaller"
+            ><i>*Descuento no aplicable en periodos especiales como Black Friday o Rebajas </i></span
+          >
         </div>
       </article>
     {% endif %}
@@ -174,7 +178,7 @@
 </section>
 
 <section class="xselling frequently completePack">
-{% render 'wizard-xselling' result:result %}
+  {% render 'wizard-xselling', result: result %}
 </section>
 
 <section class="calculate frequently">
@@ -194,9 +198,7 @@
     ><br>
   </div>
 
-  <a class="secondary retake" target="_blank" href="https://wildbalance.es/pages/tw2?retake=1"
-    >Volver a empezar</a
-  >
+  <a class="secondary retake" target="_blank" href="https://wildbalance.es/pages/tw2?retake=1">Volver a empezar</a>
   <br>
 </section>
 
