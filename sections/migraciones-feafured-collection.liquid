@@ -1952,19 +1952,19 @@
 </style>
 
 <script>
-  window.addEventListener('load', () => {
-    document.querySelectorAll('.feat-col-section').forEach((section) => {
-      // 1) Encuentra el elemento Flickity de esta sección
-      const flickEl = section.querySelector('.flickityt4s');
-      if (!flickEl || !flickEl.flickity) return;
+  window.addEventListener('load', function () {
+    // Busca los botones ya existentes que sí funcionan
+    var nativePrev = document.querySelector('.flickityt4s-button.previous');
+    var nativeNext = document.querySelector('.flickityt4s-button.next');
+    var myPrev = document.querySelector('.slider-prev');
+    var myNext = document.querySelector('.slider-next');
+    if (!nativePrev || !nativeNext || !myPrev || !myNext) return;
 
-      const flkty = flickEl.flickity;
-      const btnPrev = section.querySelector('.slider-prev');
-      const btnNext = section.querySelector('.slider-next');
-
-      // 2) Enlaza las flechas personalizadas a la API
-      if (btnPrev) btnPrev.addEventListener('click', () => flkty.previous());
-      if (btnNext) btnNext.addEventListener('click', () => flkty.next());
+    myPrev.addEventListener('click', function () {
+      nativePrev.click();
+    });
+    myNext.addEventListener('click', function () {
+      nativeNext.click();
     });
   });
 </script>
