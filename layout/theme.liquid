@@ -302,22 +302,24 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
       </style>
       <script>
         document.addEventListener('DOMContentLoaded', () => {
-          const btnPerros = document.getElementById('boton-perros');
-          const btnGatos = document.getElementById('boton-gatos');
           const featPerros = document.querySelector('.feat-perros');
           const featGatos = document.querySelector('.feat-gatos');
+          const btnPerros = document.getElementById('boton-perros');
+          const btnGatos = document.getElementById('boton-gatos');
+
+          // al cargar, asegúrate de ocultar gatos y mostrar perros
+          featPerros.style.display = 'block';
+          featGatos.style.display = 'none';
 
           btnPerros.addEventListener('click', () => {
-            // Solo actúa si no está ya visible
-            if (window.getComputedStyle(featPerros).display === 'none') {
+            if (getComputedStyle(featPerros).display === 'none') {
               featPerros.style.display = 'block';
             }
-            // Siempre oculta la otra sección
             featGatos.style.display = 'none';
           });
 
           btnGatos.addEventListener('click', () => {
-            if (window.getComputedStyle(featGatos).display === 'none') {
+            if (getComputedStyle(featGatos).display === 'none') {
               featGatos.style.display = 'block';
             }
             featPerros.style.display = 'none';
