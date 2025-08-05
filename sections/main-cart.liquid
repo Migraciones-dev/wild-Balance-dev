@@ -269,7 +269,7 @@
             </h2>
           </div>
           {%- if ccount > 0 -%}
-            <table class="{%comment%}t4s-table-main-cart{%endcomment%} bg-white rounded-[8px] mt-10">
+            <table class="{%comment%}t4s-table-main-cart{%endcomment%} bg-white rounded-[8px] [@media(max-width:1024px)]:mx-10 mt-10">
               {%- for item in cart.items -%}
                 {%- render 'cart-item-page',
                   item: item,
