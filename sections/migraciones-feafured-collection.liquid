@@ -1952,21 +1952,19 @@
 </style>
 
 <script>
-  window.addEventListener('load', function () {
-    document.querySelectorAll('.feat-col-section').forEach(function (section) {
-      var nativePrev = section.querySelector('.flickityt4s-button.previous');
-      var nativeNext = section.querySelector('.flickityt4s-button.next');
-      var myPrev = section.querySelector('.slider-prev');
-      var myNext = section.querySelector('.slider-next');
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.feat-col-section').forEach((section) => {
+      // 1) Encuentra el elemento Flickity de esta sección
+      const flickEl = section.querySelector('.flickityt4s');
+      if (!flickEl || !flickEl.flickity) return;
 
-      if (!nativePrev || !nativeNext || !myPrev || !myNext) return;
+      const flkty = flickEl.flickity;
+      const btnPrev = section.querySelector('.slider-prev');
+      const btnNext = section.querySelector('.slider-next');
 
-      myPrev.addEventListener('click', function () {
-        nativePrev.click();
-      });
-      myNext.addEventListener('click', function () {
-        nativeNext.click();
-      });
+      // 2) Enlaza las flechas personalizadas a la API
+      if (btnPrev) btnPrev.addEventListener('click', () => flkty.previous());
+      if (btnNext) btnNext.addEventListener('click', () => flkty.next());
     });
   });
 </script>
