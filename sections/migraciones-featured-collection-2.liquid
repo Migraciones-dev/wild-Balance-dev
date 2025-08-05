@@ -2039,3 +2039,17 @@
         padding: 2.5rem 3.5rem !important;
   }
 </style>
+<style>
+  /* Sólo en móvil, fuerza overflow-scroll horizontal */
+  @media (max-width: 1024px) {
+    #{{ section.id }} .flickityt4s-viewport {
+      touch-action: pan-y pan-x !important;
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch;
+    }
+    /* Asegura que los slides queden en fila para scrollear */
+    #{{ section.id }} .flickityt4s-slider {
+      display: flex !important;
+    }
+  }
+</style>
