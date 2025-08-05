@@ -300,6 +300,26 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
             transition: transform .4s ease;
         }
       </style>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const btnPerros = document.getElementById('boton-perros');
+          const btnGatos = document.getElementById('boton-gatos');
+          const featPerros = document.querySelector('.feat-perros');
+          const featGatos = document.querySelector('.feat-gatos');
+
+          if (btnPerros && featPerros) {
+            btnPerros.addEventListener('click', () => {
+              featPerros.style.display = 'none';
+            });
+          }
+
+          if (btnGatos && featGatos) {
+            btnGatos.addEventListener('click', () => {
+              featGatos.style.display = 'none';
+            });
+          }
+        });
+      </script>
     </body>
   </html>
 
