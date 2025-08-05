@@ -108,7 +108,7 @@
   assign enable_bar_lm = se_stts.enable_bar_lm
   assign results_count = collection.products_count
 -%}
-<div class="feat-col-section py-20 bg-[#FAF5E7] lg:px-10">
+<div class="feat-col-section py-20 bg-[#FAF5E7] lg:px-10" id="{{section.id }}">
   {%- paginate collection.products by limit -%}
     <div
       data-not-main
