@@ -434,6 +434,18 @@
 <script>
   window.cartT4SectionID = {{ section.id | json }};
 </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (window.location.pathname === '/cart') {
+      const cartLink = document.querySelector('.t4s-site-nav__cart');
+      if (cartLink) {
+        cartLink.style.pointerEvents = 'none';
+        cartLink.style.opacity = '0.6'; // opcional, para que se vea desactivado
+        cartLink.setAttribute('aria-disabled', 'true');
+      }
+    }
+  });
+</script>
 {% schema %}
 {
   "name": "Cart",
