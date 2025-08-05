@@ -74,7 +74,7 @@
     "2fa35883-7762-4b11-9a64-3e08390ea41e": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<div class=\"headerWizard\">\n<section class=\"logo\">\n<a href=\"https://wildbalance.es/\">\n<img src=\"https://cdn.shopify.com/s/files/1/0713/9898/1933/files/LOGO_1_1.png?v=1699453886\"/>\n</a>\n</section>\n\n<section class=\"wizardBubbleDiscount\">\n<div>\n<p>25% DESCUENTO</p>\n</div>\n</section>\n</div>"
+        "custom_liquid": "<div class=\"headerWizard\">\n<section class=\"logo\">\n<a href=\"https://wildbalance.es/\">\n<img src=\"https://cdn.shopify.com/s/files/1/0713/9898/1933/files/LOGO_1_1.png?v=1699453886\"/>\n</a>\n</section>\n\n<section class=\"wizardBubbleDiscount\">\n<div>\n<p>10% DESCUENTO</p>\n</div>\n</section>\n</div>"
       }
     },
     "custom_liquid_ibzxRE": {
