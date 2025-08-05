@@ -66,10 +66,6 @@
       <p class="t4s-cart_subscription">{{ item.properties['Suscripción'] }}</p>
       <div class="t4s-cart_meta_price">
         <div class="t4s-cart_price text-[11px] mt-2">
-          {%- assign is_subscription = item.properties['Suscripción'] -%}
-          {%- if is_subscription != blank -%}
-            Subscription:
-          {%- endif -%}
           {%- unless cart_ajax_enable %}{{ item_qty }} × {% endunless -%}
           {%- assign item_compare_price = item_variant.compare_at_price
             | default: item.original_price
@@ -80,28 +76,6 @@
             <del>{{ item.original_price | money }}</del> <ins>{{ item.final_price | money }}</ins>
           {%- elsif item_variant.compare_at_price > item.original_price -%}
             <del>{{ item_variant.compare_at_price | money }}</del> <ins>{{ item.final_price | money }}</ins>
-          {%- else -%}
-            {{ item.original_price | money }}
-          {%- endif -%}
-          {%- assign is_sub = item.properties['Suscripción'] -%}
-
-          {%- if is_sub -%}
-            {%- comment -%}
-              Para dividir item.original_price entre 0.9 usamos times:10/divided_by:9
-              (e.g. 1000 céntimos → 1000*10/9 ≃ 1111 céntimos)
-            {%- endcomment -%}
-            {%- assign sub_compare = item.original_price | times: 10 | divided_by: 9 -%}
-            <del>{{ sub_compare | money }}</del>
-            <ins>{{ item.final_price | money }}</ins>
-
-          {%- elsif item.original_price != item.final_price -%}
-            <del>{{ item.original_price | money }}</del>
-            <ins>{{ item.final_price | money }}</ins>
-
-          {%- elsif item_variant.compare_at_price > item.original_price -%}
-            <del>{{ item_variant.compare_at_price | money }}</del>
-            <ins>{{ item.final_price | money }}</ins>
-
           {%- else -%}
             {{ item.original_price | money }}
           {%- endif -%}
