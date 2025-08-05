@@ -135,7 +135,7 @@
             <button data-quantity-selector data-increase-qty type="button" class="t4s-quantity-selector is--plus"><svg focusable="false" class="icon icon--plus" viewBox="0 0 10 10" role="presentation"><path d="M6 4h4v2H6v4H4V6H0V4h4V0h2v4z" fill="currentColor" fill-rule="evenodd"></path></svg></button>
         </div>
     </td>
-    <td class="t4s-page_cart__total_price [@media(max-width:1024px)]:!text-left" t4s-cart-data-title="{{ 'cart.cart_page.label.total' | t }}">
+    <td class="t4s-page_cart__total_price [@media(max-width:1024px)]:!text-left font-bold" t4s-cart-data-title="{{ 'cart.cart_page.label.total' | t }}">
         <span>
             {%- if item.original_line_price != item.final_line_price -%}
             <dl>
