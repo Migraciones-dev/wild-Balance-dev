@@ -1,34 +1,20 @@
-{%- comment -%}
-  Detectar si hay al menos un ítem congelado en el carrito
-{%- endcomment -%}
-{%- assign tiene_congelados = false -%}
-{%- for item in cart.items -%}
-  {%- if item.product.tags contains 'congelado' -%}
-    {%- assign tiene_congelados = true -%}
-    {%- break -%}
-  {%- endif -%}
-{%- endfor -%}
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new MutationObserver(() => {
+      const div_padre = document.querySelector('.checkoutMethodsContainer');
 
-{%- comment -%}
-  Sólo inyectamos el script de “bloqueo” si hay congelados
-{%- endcomment -%}
-{%- if tiene_congelados -%}
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const observer = new MutationObserver(() => {
-        const div_padre = document.querySelector('.checkoutMethodsContainer');
-        if (div_padre && div_padre.children.length >= 2) {
-          div_padre.firstElementChild.remove();
-          /* observer.disconnect(); */
-        }
-      });
-      observer.observe(document.body, {
-        childList: true,
-        subtree: true,
-      });
+      if (div_padre && div_padre.children.length >= 2) {
+        div_padre.firstElementChild.remove();
+        /* observer.disconnect(); */
+      }
     });
-  </script>
-{%- endif -%}
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+  });
+</script>
 {{ 'button-style.css' | asset_url | stylesheet_tag }}
 <link href="{{ 'custom-effect.css' | asset_url }}" rel="stylesheet" media="print" onload="this.media='all'">
 {%- liquid
