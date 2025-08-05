@@ -270,28 +270,17 @@
           </div>
           {%- if ccount > 0 -%}
             <table class="t4s-table-main-cart">
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>{{ 'cart.cart_page.label.product' | t }}</th>
-                  <th>{{ 'cart.cart_page.label.price' | t }}</th>
-                  <th>{{ 'cart.cart_page.label.quantity' | t }}</th>
-                  <th>{{ 'cart.cart_page.label.total' | t }}</th>
-                </tr>
-              </thead>
-              <tbody>
-                {%- for item in cart.items -%}
-                  {%- render 'cart-item-page',
-                    item: item,
-                    gift_pr_id: gift_pr_id,
-                    min_qty: min_qty,
-                    compare_tt_price: compare_tt_price,
-                    cart_change_url: cart_change_url,
-                    edit_item: edit_item,
-                    atc_ajax_enable: atc_ajax_enable
-                  -%}
-                {%- endfor -%}
-              </tbody>
+              {%- for item in cart.items -%}
+                {%- render 'cart-item-page',
+                  item: item,
+                  gift_pr_id: gift_pr_id,
+                  min_qty: min_qty,
+                  compare_tt_price: compare_tt_price,
+                  cart_change_url: cart_change_url,
+                  edit_item: edit_item,
+                  atc_ajax_enable: atc_ajax_enable
+                -%}
+              {%- endfor -%}
             </table>
           {%- else -%}
             <div class="t4s-mini_cart__empty t4s-text-center">
