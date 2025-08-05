@@ -293,7 +293,7 @@
                   <hr>
                   <div class="cart-subscription mb-8">
                     {% for item in subscription_items %}
-                      {% render 'cart-item-sub',
+                      {% render 'cart-item',
                         item: item,
                         gift_pr_id: gift_pr_id,
                         min_qty: min_qty,
@@ -320,7 +320,7 @@
                   </div>
                   <div class="cart-onetime">
                     {% for item in onetime_items %}
-                      {% render 'cart-item',
+                      {% render 'cart-item-sub',
                         item: item,
                         gift_pr_id: gift_pr_id,
                         min_qty: min_qty,
