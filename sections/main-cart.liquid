@@ -343,7 +343,7 @@
             </div>
           {%- endif -%}
         </div>
-        <div class="t4s-cartPage__footer">
+       {%comment %} <div class="t4s-cartPage__footer">
           <div class="t4s-row">
             {%- if se_stts.enable_note
               or se_stts.enable_discount
@@ -486,7 +486,7 @@
             <div class="globo_widget_13861"></div>
           </div>
         </div>
-      </div>
+      </div> {%endcomment %} 
       {%- if design_cart == '2column' and ccount > 0 -%}
         <div class="t4s-col-item t4s-col-lg-3 t4s-col-md-12 t4s-col-12">
           <div class="t4s-summary-cart">{{ summary_cart }}</div>
