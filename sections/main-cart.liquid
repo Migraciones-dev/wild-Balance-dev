@@ -260,7 +260,7 @@
     data-cart-ajax="{{ cart_ajax_enable }}"
   >
     <input type="hidden" data-cart-attr-rm name="attributes[collection_items_per_row]" value="">
-    <div class="t4s-row">
+    <div class="t4s-row flex flex-col lg:flex-row">
       <div class="{{ primary_col }}">
         <div class="t4s-cartPage__items t4s_ratioadapt" data-cart-items>
           {%- if ccount > 0 -%}
