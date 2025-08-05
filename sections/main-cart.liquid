@@ -269,7 +269,7 @@
             </h2>
           </div>
           {%- if ccount > 0 -%}
-            <table class="t4s-table-main-cart bg-white rounded-[8px]">
+            <div class="t4s-table-main-cart bg-white rounded-[8px] mt-10">
               {%- for item in cart.items -%}
                 {%- render 'cart-item-page',
                   item: item,
@@ -281,7 +281,7 @@
                   atc_ajax_enable: atc_ajax_enable
                 -%}
               {%- endfor -%}
-            </table>
+            </div>
           {%- else -%}
             <div class="t4s-mini_cart__empty t4s-text-center">
               <div class="t4s-cart_page_icon t4s-d-inline-flex">
