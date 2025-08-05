@@ -211,7 +211,6 @@
                 {{ 'cart.general.terms_and_conditions' | t }}
                 {%- endif -%}
                 {%- endcapture -%}
-                <p class="t4s-pr t4s-cart__agree"><input type="checkbox" id="cart_agree" data-agree-checkbox name="{{ ck_lumise }}"><label for="cart_agree">{{ terms_and_conditions }}</label><svg class="t4s-dn t4s-icon_checked"><use href="#icon-cart-selected"/></svg></p>
                 <div class="t4s-clearfix"></div>
             {%- when 'btnck' -%}
                 {%- if settings.currency_type == '2' and settings.notify_currency and settings.mess_currency != blank %}{% assign cart_iso_code = cart.currency.iso_code %}{% assign text1 = '{{ currency }}' -%}
