@@ -1953,18 +1953,20 @@
 
 <script>
   window.addEventListener('load', function () {
-    // Busca los botones ya existentes que sí funcionan
-    var nativePrev = document.querySelector('.flickityt4s-button.previous');
-    var nativeNext = document.querySelector('.flickityt4s-button.next');
-    var myPrev = document.querySelector('.slider-prev');
-    var myNext = document.querySelector('.slider-next');
-    if (!nativePrev || !nativeNext || !myPrev || !myNext) return;
+    document.querySelectorAll('.feat-col-section').forEach(function (section) {
+      var nativePrev = section.querySelector('.flickityt4s-button.previous');
+      var nativeNext = section.querySelector('.flickityt4s-button.next');
+      var myPrev = section.querySelector('.slider-prev');
+      var myNext = section.querySelector('.slider-next');
 
-    myPrev.addEventListener('click', function () {
-      nativePrev.click();
-    });
-    myNext.addEventListener('click', function () {
-      nativeNext.click();
+      if (!nativePrev || !nativeNext || !myPrev || !myNext) return;
+
+      myPrev.addEventListener('click', function () {
+        nativePrev.click();
+      });
+      myNext.addEventListener('click', function () {
+        nativeNext.click();
+      });
     });
   });
 </script>
