@@ -128,7 +128,7 @@
             </ul>
         {%- endif -%}
     </td>
-    <td class="t4s-page_cart__actions" t4s-cart-data-title="{{ 'cart.cart_page.label.quantity' | t }}">
+    <td class="t4s-page_cart__actions [@media(max-width:1024px)]:flex" t4s-cart-data-title="{{ 'cart.cart_page.label.quantity' | t }}">
         <div data-quantity-wrapper class="t4s-quantity-wrapper t4s-quantity-cart-item"> 
             <button data-quantity-selector data-decrease-qty type="button" class="t4s-quantity-selector is--minus ">{% if item_qty > 1 or min_qty == 1 %}<svg focusable="false" class="icon icon--minus" viewBox="0 0 10 2" role="presentation"><path d="M10 0v2H0V0z" fill="currentColor"></path></svg>{% else %}<svg viewBox="0 0 24 24" style="width: 10px"><use href="#icon-cart-remove"/></svg>{% endif %}</button>
             <input data-action-change data-quantity-value type="number" id="miniupdates_{{ item_key }}" data-id="{{ item_key }}" class="t4s-quantity-input" step="{{ item.variant.quantity_rule.increment | default: 1 }}" min="{{ min_qty }}" max="{{ max_qty }}" name="updates[]" data-current-qty="{{ item_qty }}" value="{{ item_qty }}" size="4" pattern="[0-9]*" inputmode="numeric">
