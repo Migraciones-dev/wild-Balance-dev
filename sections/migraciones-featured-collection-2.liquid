@@ -1954,10 +1954,10 @@
 <script>
   window.addEventListener('load', function () {
     // Busca los botones ya existentes que sí funcionan
-    var nativePrev = document.querySelector('.flickityt4s-button.previous');
-    var nativeNext = document.querySelector('.flickityt4s-button.next');
-    var myPrev = document.querySelector('.slider-prev');
-    var myNext = document.querySelector('.slider-next');
+    var nativePrev = document.querySelector('#{{section.id }} .flickityt4s-button.previous');
+    var nativeNext = document.querySelector('#{{section.id }} .flickityt4s-button.next');
+    var myPrev = document.querySelector('#{{section.id }} .slider-prev');
+    var myNext = document.querySelector('#{{section.id }} .slider-next');
     if (!nativePrev || !nativeNext || !myPrev || !myNext) return;
 
     myPrev.addEventListener('click', function () {
