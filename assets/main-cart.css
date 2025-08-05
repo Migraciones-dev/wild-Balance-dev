@@ -92,7 +92,7 @@
 
 .t4s-cartPage__form dd, .t4s-cartPage__form dl { margin: 0; }
 
-.t4s-main-cart{margin-top: 44px;}
+.t4s-main-cart{}
 .t4s-cartPage__header{
     font-size: 14px;
     color: var(--secondary-color);
