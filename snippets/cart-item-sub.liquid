@@ -72,13 +72,11 @@
             | times: item_qty
           -%}
           {%- assign compare_tt_price = compare_tt_price | plus: item_compare_price -%}
-          {%- if item.original_price != item.final_price -%}
-            <del>{{ item.original_price | money }}</del> <ins>{{ item.final_price | money }}</ins>
-          {%- elsif item_variant.compare_at_price > item.original_price -%}
-            <del>{{ item_variant.compare_at_price | money }}</del> <ins>{{ item.final_price | money }}</ins>
-          {%- else -%}
-            {{ item.original_price | money }}
-          {%- endif -%}
+          {%- assign orig_cents = item.original_price -%}
+          {%- assign discounted_cents = orig_cents | divided_by: 0.9 | round: 0 -%}
+
+          <del>{{ discounted_cents | money }}</del>
+          <ins>{{ orig_cents | money }}</ins>
 
           {%- for option in item.options_with_values -%}
             {%- unless option.value == 'Default Title' -%}
