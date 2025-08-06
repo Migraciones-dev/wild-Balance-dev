@@ -466,7 +466,7 @@ max-sm:w-full md:w-auto text-[18px] font-bold hover:text-[#004623]">
     const btn = document.querySelector('button[name="checkout"]');
     if (!btn) return;
 
-    const subs = items.filter((item) => item.selling_plan_allocation);
+    const subs = items.filter((i) => i.selling_plan_allocation);
     if (subs.length === 0) {
       btn.removeAttribute('disabled');
       btn.innerHTML = checkoutHTML;
@@ -479,9 +479,8 @@ max-sm:w-full md:w-auto text-[18px] font-bold hover:text-[#004623]">
         return prod.tags.includes('congelado') ? item.grams * item.quantity : 0;
       })
     );
-    const subWeight = weights.reduce((sum, w) => sum + w, 0);
+    const subWeight = weights.reduce((a, b) => a + b, 0);
 
-    // <-- AÑADIDO: si no hay kilos de congelado, no bloquear
     if (subWeight === 0) {
       btn.removeAttribute('disabled');
       btn.innerHTML = checkoutHTML;
@@ -502,9 +501,18 @@ max-sm:w-full md:w-auto text-[18px] font-bold hover:text-[#004623]">
     const btn = document.querySelector('button[name="checkout"]');
     if (btn) checkoutHTML = btn.innerHTML;
 
+    // Validación inicial y tras los eventos AJAX
     updateSubscriptionCheckout();
     document.addEventListener('mincart:ajax-cart-updated', updateSubscriptionCheckout);
     document.addEventListener('cart:ajax-cart-updated', updateSubscriptionCheckout);
+
+    // **NUEVO**: si cambia una cantidad, volvemos a validar
+    document.body.addEventListener('change', (e) => {
+      // Shopify suele llamar a los inputs de cantidad "updates[]" o "quantity"
+      if (e.target.matches('input[name="updates[]"]') || e.target.matches('input[name="quantity"]')) {
+        updateSubscriptionCheckout();
+      }
+    });
   });
 </script>
 
