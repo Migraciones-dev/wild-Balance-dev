@@ -491,7 +491,7 @@
       "name": "Migraciones ugc",
       "settings": {
         "button_text": "Prueba Wild Balance",
-        "button_url": ""
+        "button_url": "shopify://collections"
       }
     },
     "migraciones_faq_tUMPqn": {
