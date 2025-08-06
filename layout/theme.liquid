@@ -120,7 +120,7 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
 
       <!-- frameresizer -->
       <script async src="https://shopify-media-s3.s3.eu-west-1.amazonaws.com/libs/iframeResizer.min.js"></script>
-      {% render 'loyaltylion' %}
+      {% comment %}{% render 'loyaltylion' %}  {% endcomment %}
       {% render 'globo_related_custom_script' %}
 
       {% if handle contains 'yogur-helado' or handle == 'iniciacion' or template contains 'wizard_result' %}
