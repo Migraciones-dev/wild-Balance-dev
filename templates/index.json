@@ -452,9 +452,46 @@
     },
     "migraciones_ugc_UrjgJT": {
       "type": "migraciones-ugc",
+      "blocks": {
+        "video_CY9jYP": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/648c8d2e41e245df8bbd0862e4b4552f.mp4",
+            "caption": ""
+          }
+        },
+        "video_EaJL63": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/1a371b412b1a42d09a0e7ea44f543aeb.mp4",
+            "caption": ""
+          }
+        },
+        "video_xQbR4R": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/2683a89d409c48b1904c82d634b8b261.mp4",
+            "caption": ""
+          }
+        },
+        "video_V8gqXJ": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/94f8facdfcd145f3ac97a77a12ccf711.mp4",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_CY9jYP",
+        "video_EaJL63",
+        "video_xQbR4R",
+        "video_V8gqXJ"
+      ],
       "name": "Migraciones ugc",
       "settings": {
-        "custom_liquid": ""
+        "button_text": "Prueba Wild Balance",
+        "button_url": ""
       }
     },
     "migraciones_faq_tUMPqn": {
