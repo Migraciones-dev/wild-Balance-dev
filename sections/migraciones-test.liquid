@@ -15,9 +15,12 @@
     En Wild Balance ofrecemos comida natural de verdad: sin rellenos, sin engaños sin concesiones. Crudo, cocinado o en
     lata. Tú eliges. Nosotros cuidamos.
   </p>
+
+  <!-- Desktop -->
   <div class="relative w-full max-w-[1235px] h-[750px]  max-[1380px]:hidden">
-    <div class="absolute  h-[491px] top-[259px] left-[293px]">
-      <div id="ba-container-2" class="relative w-full h-full overflow-hidden">
+    <!-- Contenedor absoluto centrado y con ancho/alto definidos -->
+    <div class="absolute h-[491px] top-[259px]" style="left:50%; transform:translateX(-50%);">
+      <div id="ba-container-2" class="relative overflow-hidden" style="width:649px; height:491px;">
         <!-- Imagen “antes” -->
         <img
           src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Diseno_sin_titulo_57_1.png?v=1754248227"
@@ -31,7 +34,7 @@
           src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Diseno_sin_titulo_56_1_1.png?v=1754248226"
           alt="Después"
           class="absolute top-0 left-0 w-full h-full object-cover block"
-          style="clip-path: inset(0 100% 0 0);"
+          style="clip-path: inset(0 100% 0 0); -webkit-clip-path: inset(0 100% 0 0); will-change: clip-path;"
         >
       </div>
     </div>
@@ -41,29 +44,32 @@
         function clamp(v) {
           return v < 0 ? 0 : v > 1 ? 1 : v;
         }
-
+        function setClip(el, pctRight) {
+          const v = `inset(0 ${pctRight}% 0 0)`;
+          el.style.clipPath = v;
+          el.style.webkitClipPath = v; // Safari
+        }
         function initBA(containerId, overlayId) {
           const cont = document.getElementById(containerId);
           const ov = document.getElementById(overlayId);
           if (!cont || !ov) return;
 
-          window.addEventListener('scroll', () => {
-            const rect = cont.getBoundingClientRect();
-            const viewH = window.innerHeight;
-
-            // Ajustar inicio (0.3 = 30% retraso)
-            let progress = (viewH * 0.9 - rect.top) / (viewH + rect.height);
-            progress = clamp(progress);
-
-            // Velocidad más lenta (100 en vez de 150)
-            const hidePct = 100 - progress * 130;
-            ov.style.clipPath = `inset(0 ${hidePct}% 0 0)`;
-          });
+          window.addEventListener(
+            'scroll',
+            () => {
+              const rect = cont.getBoundingClientRect();
+              const viewH = window.innerHeight;
+              let progress = (viewH * 0.9 - rect.top) / (viewH + rect.height);
+              progress = clamp(progress);
+              const hidePct = 100 - progress * 130; // velocidad
+              setClip(ov, hidePct);
+            },
+            { passive: true }
+          );
         }
 
-        // Instancia del slider
+        // Instancia del slider móvil (más abajo en el DOM) y del desktop
         initBA('ba-container', 'ba-overlay');
-        // Instancia del bloque absoluto
         initBA('ba-container-2', 'ba-overlay-2');
       })();
     </script>
@@ -160,7 +166,7 @@
             src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_6_2.png?v=1753292737"
           >
           <div class="flex flex-col items-center gap-3">
-            <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px] text-[18px] lg:text-[24px]">
+            <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px]">
               Salmón
             </h3>
             <p class="w-[208.2px] [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#222222] text-lg text-center tracking-[0] leading-[23px] text-[14px] lg:text-[18px] mt-2">
@@ -212,7 +218,7 @@
     </div>
   </div>
 
-  <!-- slider de ingredientes -->
+  <!-- Mobile / tablet -->
   <div class="w-full max-w-[1235px] mx-auto px-4 pt-8 min-[1381px]:hidden">
     <!-- Slider horizontal -->
     <div
@@ -230,7 +236,7 @@
             alt="Salmón"
             class="w-auto h-36 mb-4"
           >
-          <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px] text-[18px] lg:text-[24px]">
+          <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px]">
             Salmón
           </h3>
           <p class="mt-2 text-gray-700 text-sm">Fuente de Omega 3 y ácidos grasos</p>
@@ -248,7 +254,7 @@
             alt="Zanahoria"
             class="w-auto h-36 mb-4"
           >
-          <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px] text-[18px] lg:text-[24px]">
+          <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px]">
             Zanahoria
           </h3>
           <p class="mt-2 text-gray-700 text-sm">Fuente de fibra, vitamina A y carotenoides</p>
@@ -266,7 +272,7 @@
             alt="Pollo"
             class="w-auto h-36 mb-4"
           >
-          <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px] text-[18px] lg:text-[24px]">
+          <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px]">
             Pollo
           </h3>
           <p class="mt-2 text-gray-700 text-sm">Fuente de proteína baja en grasa</p>
@@ -284,7 +290,7 @@
             alt="Calabacín"
             class="w-auto h-36 mb-4"
           >
-          <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px] text-[18px] lg:text-[24px]">
+          <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px]">
             Calabacín
           </h3>
           <p class="mt-2 text-gray-700 text-sm">Excelente fuente de vitaminas y minerales</p>
@@ -302,7 +308,7 @@
             alt="Calabaza"
             class="w-auto h-36 mb-4"
           >
-          <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px] text-[18px] lg:text-[24px]">
+          <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px]">
             Calabaza
           </h3>
           <p class="mt-2 text-gray-700 text-sm">Ayuda a fortalecer el sistema inmunológico</p>
@@ -320,7 +326,7 @@
             alt="Pavo"
             class="w-auto h-36 mb-4"
           >
-          <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px] text-[18px] lg:text-[24px]">
+          <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px]">
             Pavo
           </h3>
           <p class="mt-2 text-gray-700 text-sm">Fuente de proteína baja en grasa</p>
@@ -338,30 +344,27 @@
             alt="Ternera"
             class="w-auto h-36 mb-4"
           >
-          <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px] text-[18px] lg:text-[24px]">
+          <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px]">
             Ternera
           </h3>
           <p class="mt-2 text-gray-700 text-sm">La mejor calidad en carne</p>
         </div>
       </a>
     </div>
-    <!-- Imagen central -->
-    <!-- before-after.html -->
+
+    <!-- before-after móvil -->
     <div id="ba-container" class="relative w-full overflow-hidden mt-12 max-w-[835px] mx-auto">
-      <!-- Imagen “antes” -->
       <img
         src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Diseno_sin_titulo_57_1.png?v=1754248227"
         alt="Antes"
         class="w-full h-auto block"
       >
-
-      <!-- Imagen “después” superpuesta, clip-path al 100% derecha -->
       <img
         id="ba-overlay"
         src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Diseno_sin_titulo_56_1_1.png?v=1754248226"
         alt="Después"
         class="absolute top-0 left-0 w-full h-auto block"
-        style="clip-path: inset(0 100% 0 0);"
+        style="clip-path: inset(0 100% 0 0); -webkit-clip-path: inset(0 100% 0 0); will-change: clip-path;"
       >
     </div>
 
@@ -373,17 +376,24 @@
         function clamp(v) {
           return v < 0 ? 0 : v > 1 ? 1 : v;
         }
+        function setClip(el, pctRight) {
+          const v = `inset(0 ${pctRight}% 0 0)`;
+          el.style.clipPath = v;
+          el.style.webkitClipPath = v; // Safari
+        }
 
-        window.addEventListener('scroll', () => {
-          const rect = cont.getBoundingClientRect();
-          const viewH = window.innerHeight;
-          // 0 cuando entra, 1 cuando sale
-          let progress = (viewH - rect.top) / (viewH + rect.height);
-          progress = clamp(progress);
-          // Clip-path: recorta por la derecha el resto
-          const hidePct = 100 - progress * 150;
-          ov.style.clipPath = `inset(0 ${hidePct}% 0 0)`;
-        });
+        window.addEventListener(
+          'scroll',
+          () => {
+            const rect = cont.getBoundingClientRect();
+            const viewH = window.innerHeight;
+            let progress = (viewH - rect.top) / (viewH + rect.height);
+            progress = clamp(progress);
+            const hidePct = 100 - progress * 150;
+            setClip(ov, hidePct);
+          },
+          { passive: true }
+        );
       })();
     </script>
   </div>
@@ -490,6 +500,7 @@
   /* Color heredado para tarjetas */
   .text-card-foreground { color: inherit; }
 </style>
+
 {% schema %}
 {
   "name": "Migraciones ingredientes",
