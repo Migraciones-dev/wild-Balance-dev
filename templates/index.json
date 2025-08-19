@@ -555,7 +555,8 @@
         "video_CY9jYP": {
           "type": "video",
           "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/648c8d2e41e245df8bbd0862e4b4552f.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/8cf2487450614772bf4df9dd2d4f6cff.mov",
+            "poster_url": "shopify://shop_images/T3_-_IMG_Stories.jpg",
             "caption": ""
           }
         },
