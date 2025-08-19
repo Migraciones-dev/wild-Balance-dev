@@ -193,6 +193,7 @@
         "blocks": {
           "ed1245c2-90d5-4e45-985b-c841c911e75a": {
             "type": "html",
+            "disabled": true,
             "settings": {
               "html": "<!-- Suscripción desktop -->\n<div class=\"suscripcion-desk\">\n<span>Inscríbete ¡-10% en tu primer pedido! </span><button class=\"klaviyo_form_trigger_desk\">RECOGER CUPÓN</button>\n</div>\n\n<style>\n.klaviyo_form_trigger_desk{\ncolor:#ffce00;\ntext-decoration:underline;\n}\n.klaviyo_form_trigger_desk:hover{\ncolor:#ffce00;\n}\n.suscripcion-desk span{\nfont-size: 13px;\n}\n\n.suscripcion-desk {\npadding-top: 8px;\npadding-bottom: 8px;}\n\n\n\n</style>\n\n<script type=\"text/javascript\">\n\tdocument.querySelector('.klaviyo_form_trigger_desk').addEventListener('click', function (){\n\t\twindow._klOnsite = window._klOnsite || [];\nwindow._klOnsite.push(['openForm', 'UwKvbm']);\n\t});\n</script>",
               "hide": false,
@@ -202,7 +203,6 @@
           },
           "html_D94WcX": {
             "type": "html",
-            "disabled": true,
             "settings": {
               "html": "<!-- Suscripción mobile -->\n\n<div class=\"suscripcion-mobile\">\n<span>Inscríbete ¡-10% en tu primer pedido! </span><button class=\"klaviyo_form_trigger_mob\">RECOGER CUPÓN</button>\n</div>\n\n<style>\n.klaviyo_form_trigger_mob{\ncolor:#ffce00;\ntext-decoration:underline;\n}\n.klaviyo_form_trigger_mob:hover{\ncolor:#ffce00;\n}\n\n.suscripcion-mobile span{\nfont-size:15px;\n}\n\nbutton {\npadding: 0px;\n}\n\n</style>\n\n<script type=\"text/javascript\">\n\tdocument.querySelector('.klaviyo_form_trigger_mob').addEventListener('click', function (){\n\t\twindow._klOnsite = window._klOnsite || [];\nwindow._klOnsite.push(['openForm', 'QYueub']);\n\t});\n</script>",
               "hide": false,
@@ -2512,11 +2512,6 @@
       },
       "6279071938380501511": {
         "type": "shopify://apps/powerful-form-builder/blocks/app-embed/e4bcb1eb-35b2-42e6-bc37-bfe0e1542c9d",
-        "disabled": false,
-        "settings": {}
-      },
-      "10436698916776057164": {
-        "type": "shopify://apps/appstle-subscription/blocks/appstle-subscription-helper/fe257d39-6f88-4f35-ab08-bd437e3aa94e",
         "disabled": false,
         "settings": {}
       },
