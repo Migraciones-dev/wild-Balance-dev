@@ -335,6 +335,7 @@
         "html_DwaiyN"
       ],
       "settings": {
+        "block_custom_class": "",
         "space_h_item": "0",
         "space_v_item": "0",
         "space_h_item_tb": "0",
@@ -342,7 +343,7 @@
         "space_h_item_mb": "0",
         "space_v_item_mb": "0",
         "layout": "t4s-container-fluid",
-        "cl_bg": "#004623",
+        "cl_bg": "#00774f",
         "cl_bg_gradient": "",
         "mg": ",,,",
         "pd": "",
