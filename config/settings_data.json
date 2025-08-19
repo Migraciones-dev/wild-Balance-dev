@@ -193,7 +193,6 @@
         "blocks": {
           "ed1245c2-90d5-4e45-985b-c841c911e75a": {
             "type": "html",
-            "disabled": true,
             "settings": {
               "html": "<!-- Suscripción desktop -->\n<div class=\"suscripcion-desk\">\n<span>Inscríbete ¡-10% en tu primer pedido! </span><button class=\"klaviyo_form_trigger_desk\">RECOGER CUPÓN</button>\n</div>\n\n<style>\n.klaviyo_form_trigger_desk{\ncolor:#ffce00;\ntext-decoration:underline;\n}\n.klaviyo_form_trigger_desk:hover{\ncolor:#ffce00;\n}\n.suscripcion-desk span{\nfont-size: 13px;\n}\n\n.suscripcion-desk {\npadding-top: 8px;\npadding-bottom: 8px;}\n\n\n\n</style>\n\n<script type=\"text/javascript\">\n\tdocument.querySelector('.klaviyo_form_trigger_desk').addEventListener('click', function (){\n\t\twindow._klOnsite = window._klOnsite || [];\nwindow._klOnsite.push(['openForm', 'UwKvbm']);\n\t});\n</script>",
               "hide": false,
