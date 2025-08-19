@@ -571,7 +571,8 @@
         "video_xQbR4R": {
           "type": "video",
           "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/2683a89d409c48b1904c82d634b8b261.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/975a98b000094c57b2148b082c944d33.mov",
+            "poster_url": "shopify://shop_images/T3_-_IMG_Stories.png",
             "caption": ""
           }
         },
@@ -579,6 +580,7 @@
           "type": "video",
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/94f8facdfcd145f3ac97a77a12ccf711.mp4",
+            "poster_url": "shopify://shop_images/T3_-_IMG_Stories_2.jpg",
             "caption": ""
           }
         }
