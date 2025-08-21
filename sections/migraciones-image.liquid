@@ -2,18 +2,32 @@
   {%- if section.settings.desktop_image or section.settings.mobile_image -%}
     <!-- Imagen de escritorio en pantallas md (768px) en adelante -->
     {% if section.settings.desktop_image %}
+      {% if section.settings.image_link != blank %}
+        <a href="{{ section.settings.image_link }}">
+      {% endif %}
       <img
         src="{{ section.settings.desktop_image | img_url: '2048x' }}"
         class="hidden md:block w-full h-auto object-cover"
+        alt="{{ section.settings.desktop_image.alt | escape }}"
       >
+      {% if section.settings.image_link != blank %}
+        </a>
+      {% endif %}
     {% endif %}
 
     <!-- Imagen de móvil en pantallas menores a md -->
     {% if section.settings.mobile_image %}
+      {% if section.settings.image_link != blank %}
+        <a href="{{ section.settings.image_link }}">
+      {% endif %}
       <img
         src="{{ section.settings.mobile_image | img_url: '768x' }}"
         class="block md:hidden w-full h-auto object-cover"
+        alt="{{ section.settings.mobile_image.alt | escape }}"
       >
+      {% if section.settings.image_link != blank %}
+        </a>
+      {% endif %}
     {% endif %}
   {%- endif -%}
 </section>
@@ -32,7 +46,11 @@
       "id": "mobile_image",
       "label": "Imagen móvil"
     },
-
+    {
+      "type": "url",
+      "id": "image_link",
+      "label": "Enlace de la imagen"
+    }
   ],
   "presets": [
     {
