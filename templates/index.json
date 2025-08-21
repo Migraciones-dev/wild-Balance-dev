@@ -229,6 +229,7 @@
         "image_parent_wH8UbL",
         "image_parent_iTeb4J"
       ],
+      "disabled": true,
       "name": "Slideshow",
       "settings": {
         "se_height": "t4s_ratioadapt_f_mix",
@@ -281,9 +282,7 @@
     },
     "banner_home_tHiHUK": {
       "type": "banner-home",
-      "custom_css": [
-        "div {display: none;}"
-      ],
+      "custom_css": [],
       "name": "Migraciones banner home",
       "settings": {}
     },
