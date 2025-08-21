@@ -281,7 +281,9 @@
     },
     "banner_home_tHiHUK": {
       "type": "banner-home",
-      "disabled": true,
+      "custom_css": [
+        "div {display: none;}"
+      ],
       "name": "Migraciones banner home",
       "settings": {}
     },
