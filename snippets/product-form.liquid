@@ -265,37 +265,128 @@
                           <p class="font-[700] [font-family:'Barlow',Helvetica] text-[#004623] font-[16px]">
                             Selecciona cantidad
                           </p>
-                          {% comment %}
-                            <div class="text-gray-400 font-medium underline text-sm flex items-center ">
-                              <button
-                                class="inline-flex items-center ml-1 group flex flex-row items-center gap-2 "
-                                type="button"
+                          <div class="text-gray-400 font-medium underline text-sm flex items-center">
+                            <button
+                              id="openRationModalBtn"
+                              class="
+                                inline-flex items-center ml-1 group flex flex-row items-center gap-2 my-nohover-btn hover:!bg-transparent
+                                hover:!border-transparent
+                                hover:!text-current
+                              "
+                              type="button"
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="2 2 16 16"
+                                role="img"
+                                class="injected-svg fill-current text-[#004623] w-6 h-6"
+                                data-src="/icons/question-mark.svg"
                               >
-                                <div
-                                  class="icon_icon__PAVlB block w-6 h-6 mr-2 transition w-6 h-6"
-                                  aria-hidden="true"
-                                >
-                                  <div>
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      viewBox="2 2 16 16"
-                                      role="img"
-                                      class="injected-svg fill-current text-[#004623] w-6 h-6"
-                                      data-src="/icons/question-mark.svg"
-                                    >
-                                      <path
-                                        fill-rule="evenodd"
-                                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                                        clip-rule="evenodd"
-                                      />
-                                    </svg>
-                                  </div>
-                                </div>
-                                <span class="block text-left text-[#222222]">Calcula tu ración </span>
-                              </button>
-                            </div>
-                          {% endcomment %}
+                                <path
+                                  fill-rule="evenodd"
+                                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                                  clip-rule="evenodd"
+                                />
+                              </svg>
+                              <span class="block text-left text-[#222222]">Calcula tu ración</span>
+                            </button>
+                          </div>
                         </div>
+                        <!-- MODAL (oculto por defecto) -->
+                        <div id="rationModal" class="hidden" aria-hidden="true">
+                          <div
+                            class="fixed inset-0 z-50 bg-[#004622] bg-opacity-25 transition-opacity"
+                            id="headlessui-dialog-overlay-:r23:"
+                            aria-hidden="true"
+                          ></div>
+
+                          <!-- Contenedor del panel (mismo layout que tu código) -->
+                          <div
+                            class="fixed flex items-center inset-0 overflow-y-auto"
+                            style="z-index:999999999999"
+                            role="dialog"
+                            aria-modal="true"
+                          >
+                            <div class="my-auto mx-auto w-full sm:max-w-3xl overflow-y-auto p-4">
+                              <div class="flex flex-col bg-white rounded-lg text-left shadow-xl transform transition-all my-8 pt-12 overflow-hidden bg-[#00774f]">
+                                <!-- Botón cerrar -->
+                                <button
+                                  id="closeRationModal"
+                                  class="absolute right-0 top-0 z-50 flex items-center justify-center ml-auto w-12 h-12 transition rounded-bl-lg rounded-tr-lg text-white"
+                                  type="button"
+                                  aria-label="Cerrar"
+                                >
+                                  <!-- Tu icono de cerrar -->
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                    class="w-6 h-6"
+                                    role="img"
+                                  >
+                                    <path fill-rule="evenodd"
+                                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                      clip-rule="evenodd"/>
+                                  </svg>
+                                </button>
+
+                                <!-- Contenido -->
+                                <div class="grow flex-col p-4 pt-0 sm:p-8 sm:pt-0">
+                                  <!-- Aquí se inyectará el iframe al abrir -->
+                                  <div id="quizContainer" class="max-h-[90vh] overflow-y-auto"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Scripts: iframe resizer -->
+                        <script
+                          src="https://shopify-media-s3.s3.eu-west-1.amazonaws.com/libs/iframeResizer.min.js"
+                        ></script>
+
+                        <script>
+                          (function () {
+                            const openBtn = document.getElementById('openRationModalBtn');
+                            const modal = document.getElementById('rationModal');
+                            const overlay = document.getElementById('headlessui-dialog-overlay-:r23:');
+                            const closeBtn = document.getElementById('closeRationModal');
+                            const container = document.getElementById('quizContainer');
+
+                            let iframeLoaded = false;
+
+                            function openModal() {
+                              // mostrar modal
+                              modal.classList.remove('hidden');
+                              modal.setAttribute('aria-hidden', 'false');
+
+                              // cargar iframe solo la primera vez
+                              if (!iframeLoaded) {
+                                container.innerHTML =
+                                  '<iframe id="quizIframe" src="https://wildbalance-widget.fly.dev/quiz-Wild-Balance" class="w-full h-[570px] border-0""></iframe>';
+                                if (window.iFrameResize) {
+                                }
+                              }
+                            }
+
+                            function closeModal() {
+                              modal.classList.add('hidden');
+                              modal.setAttribute('aria-hidden', 'true');
+                            }
+
+                            // Listeners
+                            if (openBtn) openBtn.addEventListener('click', openModal);
+                            if (closeBtn) closeBtn.addEventListener('click', closeModal);
+                            if (overlay) overlay.addEventListener('click', closeModal);
+
+                            // Cerrar con ESC
+                            document.addEventListener('keydown', function (e) {
+                              if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                                closeModal();
+                              }
+                            });
+                          })();
+                        </script>
 
                         <div class="t4s-swatch-wrapper">
                           {% for option in product.options_with_values %}
