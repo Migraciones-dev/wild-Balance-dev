@@ -9,57 +9,6 @@
  */
 {
   "sections": {
-    "heading": {
-      "type": "heading-template",
-      "blocks": {
-        "b49343f1-a16f-4a0c-834a-46b77fe777da": {
-          "type": "1",
-          "settings": {
-            "heading": "Bases Legales Sorteo Kiwoko",
-            "fontf": "inherit",
-            "text_cl": "#004623",
-            "text_fs": 30,
-            "text_lh": 56,
-            "text_fw": 800,
-            "text_ls": 0,
-            "font_italic": false,
-            "font_uppercase": false,
-            "text_shadow": false,
-            "mgb": 0,
-            "text_fs_tb": 25,
-            "text_lh_tb": 46,
-            "text_ls_tb": 0,
-            "mgb_tb": 0,
-            "hidden_mobile": false,
-            "text_fs_mb": 25,
-            "text_lh_mb": 46,
-            "text_ls_mb": 0,
-            "mgb_mb": 0
-          }
-        }
-      },
-      "block_order": [
-        "b49343f1-a16f-4a0c-834a-46b77fe777da"
-      ],
-      "settings": {
-        "parallax": false,
-        "color": "#000000",
-        "overlay": 0,
-        "padding_top": 60,
-        "padding_bottom": 20,
-        "mg_b": 0,
-        "padding_top_tb": 50,
-        "padding_bottom_tb": 0,
-        "mg_btb": 0,
-        "padding_top_mb": 0,
-        "padding_bottom_mb": 20,
-        "mg_bmb": 0,
-        "box_border": "none",
-        "bg_pos": "right center",
-        "bg_repeat": "no-repeat",
-        "bg_size": "cover"
-      }
-    },
     "slideshow_VHjLeD": {
       "type": "slideshow",
       "blocks": {
@@ -155,6 +104,57 @@
         "pd_tb": "",
         "mg_mb": ",,30px,",
         "pd_mb": ""
+      }
+    },
+    "heading": {
+      "type": "heading-template",
+      "blocks": {
+        "b49343f1-a16f-4a0c-834a-46b77fe777da": {
+          "type": "1",
+          "settings": {
+            "heading": "Bases Legales Sorteo Kiwoko",
+            "fontf": "inherit",
+            "text_cl": "#004623",
+            "text_fs": 30,
+            "text_lh": 56,
+            "text_fw": 800,
+            "text_ls": 0,
+            "font_italic": false,
+            "font_uppercase": false,
+            "text_shadow": false,
+            "mgb": 0,
+            "text_fs_tb": 25,
+            "text_lh_tb": 46,
+            "text_ls_tb": 0,
+            "mgb_tb": 0,
+            "hidden_mobile": false,
+            "text_fs_mb": 25,
+            "text_lh_mb": 46,
+            "text_ls_mb": 0,
+            "mgb_mb": 0
+          }
+        }
+      },
+      "block_order": [
+        "b49343f1-a16f-4a0c-834a-46b77fe777da"
+      ],
+      "settings": {
+        "parallax": false,
+        "color": "#000000",
+        "overlay": 0,
+        "padding_top": 60,
+        "padding_bottom": 20,
+        "mg_b": 0,
+        "padding_top_tb": 50,
+        "padding_bottom_tb": 0,
+        "mg_btb": 0,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 20,
+        "mg_bmb": 0,
+        "box_border": "none",
+        "bg_pos": "right center",
+        "bg_repeat": "no-repeat",
+        "bg_size": "cover"
       }
     },
     "main": {
@@ -1207,8 +1207,8 @@
     }
   },
   "order": [
-    "heading",
     "slideshow_VHjLeD",
+    "heading",
     "main",
     "custom_section_mPDNqc",
     "custom_section_L9En4B",
