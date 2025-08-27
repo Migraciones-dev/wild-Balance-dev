@@ -15,7 +15,7 @@
         "b49343f1-a16f-4a0c-834a-46b77fe777da": {
           "type": "1",
           "settings": {
-            "heading": "Aviso legal",
+            "heading": "Bases Legales Sorteo Kiwoko",
             "fontf": "inherit",
             "text_cl": "#004623",
             "text_fs": 30,
@@ -58,6 +58,103 @@
         "bg_pos": "right center",
         "bg_repeat": "no-repeat",
         "bg_size": "cover"
+      }
+    },
+    "slideshow_VHjLeD": {
+      "type": "slideshow",
+      "blocks": {
+        "image_parent_zUgWbK": {
+          "type": "image_parent",
+          "settings": {
+            "image": "shopify://shop_images/image_30.png",
+            "image_position": "8",
+            "cl_img": "",
+            "link_img1": "",
+            "open_link": "_blank",
+            "animate_slide": "none",
+            "text_align": "center",
+            "text_align_tb": "center",
+            "text_align_mb": "center",
+            "content_width": "container",
+            "cv_pos": 50,
+            "ch_pos": 50,
+            "cv_pos_tb": 50,
+            "ch_pos_tb": 50,
+            "cv_pos_mb": 50,
+            "ch_pos_mb": 50,
+            "bg_overlay": "#000",
+            "bg_opacity": 0,
+            "bg_content_cl": "#fff",
+            "bg_content_op": 0,
+            "content_pd_tb": 15,
+            "content_pd_lr": 15,
+            "content_pd_tb_tb": 15,
+            "content_pd_lr_tb": 15,
+            "content_pd_tb_mb": 10,
+            "content_pd_lr_mb": 10,
+            "border_bl": false,
+            "br_color": "#222",
+            "br_bg": "#fff",
+            "br_opacity": 50,
+            "br_style": "solid",
+            "br_pd": 20,
+            "br_pd_mb": 10,
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        }
+      },
+      "block_order": [
+        "image_parent_zUgWbK"
+      ],
+      "name": "Slideshow",
+      "settings": {
+        "se_height": "t4s_ratioadapt_mix",
+        "custom_dk": true,
+        "height_dk": 600,
+        "custom_tb": true,
+        "height_tb": 400,
+        "custom_mb": true,
+        "height_mb": 250,
+        "bottom_arrow": false,
+        "bottom_arrow_style": "button",
+        "bottom_arrow_color": "light",
+        "bottom_arrow_pos": "2",
+        "eff": "slide",
+        "loop": true,
+        "au_time": 0,
+        "au_hover": true,
+        "nav_btn": false,
+        "btn_distance": 90,
+        "nav_btn_icon": "default",
+        "btn_pos": "default",
+        "btn_vi": "always",
+        "btn_owl": "default",
+        "btn_shape": "none",
+        "btn_cl": "dark",
+        "btn_size": "small",
+        "btn_hidden_mobile": false,
+        "nav_dot": false,
+        "dots_width": "fullwidth",
+        "dots_align": "center",
+        "dots_design": "default",
+        "dot_owl": "default",
+        "dots_cl": "dark",
+        "dots_pd_lr": 15,
+        "dots_space": 10,
+        "dots_pos_vy": 20,
+        "unit_dots_vertical": "px",
+        "dots_round": false,
+        "dots_hidden_mobile": false,
+        "layout": "t4s-container-fluid",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,50px,",
+        "pd": "",
+        "mg_tb": ",,50px,",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": ""
       }
     },
     "main": {
@@ -104,7 +201,7 @@
         "custom_text_XqGgXn": {
           "type": "custom_text",
           "settings": {
-            "text": "En cumplimiento del art. 10 de Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico, le informamos que el responsable de este sitio web es:  \n<br><br><br>\n<ul class=\"listStyle\">\n<li>Identidad: “WILD CAPITAL PARTNERS SL”</li>\n<li>C.I.F / N.I.F.: B98995020</li>\n<li>Domicilio: AVDA. ARAGON, 15, 46010 VALENCIA (VALENCIA)</li>\n<li>Teléfono: 622303179</li>\n<li>E-mail: hola@wildbalance.es</li>\n<li>Datos registrales: Sociedad inscrita en el Registro Mercantil de Valencia, tomo 10492, folio 115, hoja V-181718</li>\n</ul>",
+            "text": "<h3><strong><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">El organizador</span></strong></h3>\n<p><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">Wild Capital Partners S.L. (de aquí en adelante, WILD BALANCE), con domicilio en Avda/ Aragón 15, 46010, Valencia (Valencia) y CIF B98995020 organiza el presente sorteo denominado </span><strong><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">“Sorteo Wild Balance – Tarjetas Regalo BARF”</span></strong><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">, dirigido a clientes que realicen compras de producto BARF en establecimientos de KIWOKO durante el periodo promocional designado para ello.</span></p>\n<p><br></p>\n<h3><strong><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">Objeto del sorteo</span></strong></h3>\n<p><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">Con el fin de premiar la fidelidad de los clientes, Wild Balance sorteará </span><strong><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">5 tarjetas regalo valoradas en 300€ cada una</span></strong><span style=\"font-size:11pt;font-family:Arial,sans-serif;\"> (importe total de premios: 1.500€) entre los clientes que efectúen una compra de producto BARF en un establecimiento de KIWOKO.</span></p>\n<p><br></p>\n<p><strong><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">Fechas de participación</span></strong></p>\n<p><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">El sorteo tendrá lugar entre el </span><strong><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">1 de octubre de 2025 a las 00:00h</span></strong><span style=\"font-size:11pt;font-family:Arial,sans-serif;\"> y el </span><strong><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">18 de octubre de 2025 a las 23:59h</span></strong><span style=\"font-size:11pt;font-family:Arial,sans-serif;\"> (hora peninsular).</span><span style=\"font-size:11pt;font-family:Arial,sans-serif;\"><br></span><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">Las compras realizadas fuera de este periodo no entrarán en el sorteo.</span></p>\n<p><br></p>\n<h3><strong><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">Requisitos de participación</span></strong></h3>\n<ul>\n    <li style=\"list-style-type:disc;font-size:11pt;font-family:Arial,sans-serif;\">\n        <p><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">Podrán participar en el sorteo todas las personas físicas mayores de 18 años residentes en España.</span></p>\n    </li>\n    <li style=\"list-style-type:disc;font-size:11pt;font-family:Arial,sans-serif;\">\n        <p><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">Para poder participar, el cliente tendrá que rellenar el formulario destinado para tal fin y adjuntar el ticket de compra correspondiente a su compra de producto BARF de Wild Balance adquirido en un establecimiento de KIWOKO dentro del periodo promocional.</span></p>\n    </li>\n    <li style=\"list-style-type:disc;font-size:11pt;font-family:Arial,sans-serif;\">\n        <p><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">No podrán participar empleados de Wild Balance ni de KIWOKO ni familiares directos hasta segundo grado.</span></p>\n    </li>\n    <li style=\"list-style-type:disc;font-size:11pt;font-family:Arial,sans-serif;\">\n        <p><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">El sorteo solo es válido en España (Islas Canarias incluido)</span><span style=\"font-size:11pt;font-family:Arial,sans-serif;\"><br><br></span></p>\n    </li>\n</ul>\n<p><br></p>\n<p><br></p>\n<h3><strong><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">Dinámica del sorteo</span></strong></h3>\n<ol>\n    <li style=\"list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;\">\n        <p><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">Cada compra de producto BARF dentro del periodo indicado equivaldrá a una participación.</span></p>\n    </li>\n    <li style=\"list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;\">\n        <p><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">Finalizado el plazo, se recopilarán todas las participaciones válidas.</span></p>\n    </li>\n    <li style=\"list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;\">\n        <p><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">El día </span><strong><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">21 de octubre de 2025</span></strong><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">, se realizará el sorteo de forma aleatoria mediante un sistema digital que garantice la transparencia.</span></p>\n    </li>\n    <li style=\"list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;\">\n        <p><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">Se designarán los </span><strong><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">5 ganadores y 5 suplentes.</span></strong></p>\n    </li>\n</ol>\n<h3><strong><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">Premios</span></strong></h3>\n<ul>\n    <li style=\"list-style-type:disc;font-size:11pt;font-family:Arial,sans-serif;\">\n        <p><strong><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">5 tarjetas regalo valoradas en 300€ cada una</span></strong><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">, canjeables en tiendas KIWOKO.</span></p>\n    </li>\n    <li style=\"list-style-type:disc;font-size:11pt;font-family:Arial,sans-serif;\">\n        <p><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">Cada ganador recibirá 6 tarjetas regalo por valor de 50€ que podrán ser canjeados hasta el 31/03/2026 en cualquier tienda KIWOKO en productos WILD BALANCE.</span></p>\n    </li>\n    <li style=\"list-style-type:disc;font-size:11pt;font-family:Arial,sans-serif;\">\n        <p><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">El premio se enviará por correo postal. </span></p>\n    </li>\n    <li style=\"list-style-type:disc;font-size:11pt;font-family:Arial,sans-serif;\">\n        <p><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">El premio solo podrá ser canjeado en productos de WILD BALANCE. No podrá ser canjeado por dinero en metálico.</span></p>\n    </li>\n</ul>\n<p><br></p>\n<h3><strong><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">Comunicación a los ganadores</span></strong></h3>\n<ul>\n    <li style=\"list-style-type:disc;font-size:11pt;font-family:Arial,sans-serif;\">\n        <p><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">Los ganadores serán contactados por correo electrónico y teléfono en un plazo máximo de 7 días tras la realización del sorteo.</span></p>\n    </li>\n    <li style=\"list-style-type:disc;font-size:11pt;font-family:Arial,sans-serif;\">\n        <p><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">En caso de que un ganador no responda en un plazo de 5 días naturales, se contactará al suplente correspondiente.</span><span style=\"font-size:11pt;font-family:Arial,sans-serif;\"><br><br></span></p>\n    </li>\n</ul>\n<h3><strong><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">Fiscalidad</span></strong></h3>\n<p><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">Los premios de este sorteo estarán sujetos a la normativa fiscal vigente en España.</span><span style=\"font-size:11pt;font-family:Arial,sans-serif;\"><br></span><span style=\"font-size:11pt;font-family:Arial,sans-serif;\"> Wild Balance, S.L. se responsabilizará de cumplir con las obligaciones fiscales correspondientes (retenciones o declaraciones si fueran necesarias).</span></p>\n<p><br></p>\n<h3><strong><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">Protección de datos</span></strong></h3>\n<p><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">Los datos personales de los participantes se tratarán conforme al Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD).</span></p>\n<ul>\n    <li style=\"list-style-type:disc;font-size:11pt;font-family:Arial,sans-serif;\">\n        <p><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">Responsable: Wild Balance </span><span style=\"font-size:11pt;font-family:Arial,sans-serif;\"><br><br></span></p>\n    </li>\n    <li style=\"list-style-type:disc;font-size:11pt;font-family:Arial,sans-serif;\">\n        <p><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">Finalidad: gestionar la participación en el sorteo, contactar con los ganadores y enviar información comercial (siempre que exista consentimiento previo).</span><span style=\"font-size:11pt;font-family:Arial,sans-serif;\"><br><br></span></p>\n    </li>\n    <li style=\"list-style-type:disc;font-size:11pt;font-family:Arial,sans-serif;\">\n        <p><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">Derechos: acceso, rectificación, supresión y demás reconocidos en la normativa vigente, mediante correo a hola@wildbalance.es.</span><span style=\"font-size:11pt;font-family:Arial,sans-serif;\"><br><br></span></p>\n    </li>\n</ul>\n<h3><strong><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">Aceptación de las bases</span></strong></h3>\n<p><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">La participación en el sorteo implica la aceptación íntegra de estas bases.</span><span style=\"font-size:11pt;font-family:Arial,sans-serif;\"><br></span><span style=\"font-size:11pt;font-family:Arial,sans-serif;\">Wild Balance se reserva el derecho de modificar, suspender o cancelar el sorteo en caso de fuerza mayor, comprometiéndose a comunicar dichas circunstancias de forma transparente a los participantes.</span></p>\n<p><br></p>",
             "remove_br_tag": false,
             "tag": "p",
             "fontf": "inherit",
@@ -134,6 +231,7 @@
         "custom_text_XqGgXn"
       ],
       "settings": {
+        "block_custom_class": "",
         "space_h_item": "30",
         "space_v_item": "30",
         "space_h_item_tb": "10",
@@ -1037,7 +1135,9 @@
         "custom_text_LhdzHT",
         "custom_text_LRrnqG"
       ],
+      "disabled": true,
       "settings": {
+        "block_custom_class": "",
         "space_h_item": "30",
         "space_v_item": "20",
         "space_h_item_tb": "10",
@@ -1060,13 +1160,59 @@
       "settings": {
         "custom_liquid": "<style>\nh1{\n    text-align: justify;\n    padding-left: 10%;\n}\n\nul.listStyle li{\n    color: #333333;\n    list-style: disc;\n    font-size:16px;\n    line-height:initial;\n}\np{\n    color: #333333 !important;\n    font-size:16px;\nline-height:20px !important;\n}\nb{\nfont-weight:700;\nfont-size:16px;\ncolor:#222;\n}\n</style>"
       }
+    },
+    "custom_section_XkENGN": {
+      "type": "custom-section",
+      "blocks": {
+        "newsletter_6mKPza": {
+          "type": "newsletter",
+          "settings": {
+            "newl_des": "1",
+            "custom_width": true,
+            "form_width": 500,
+            "form_width_tb": 500,
+            "form_width_mb": 350,
+            "newl_size": "small",
+            "source_btn": "text",
+            "news_icon": "plane",
+            "input_cl": "#868686",
+            "btn_cl": "#000000",
+            "btn_hover_cl": "#000000",
+            "border_cl": "#000"
+          }
+        }
+      },
+      "block_order": [
+        "newsletter_6mKPza"
+      ],
+      "name": "Custom section",
+      "settings": {
+        "block_custom_class": "",
+        "space_h_item": "30",
+        "space_v_item": "30",
+        "space_h_item_tb": "10",
+        "space_v_item_tb": "10",
+        "space_h_item_mb": "10",
+        "space_v_item_mb": "10",
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,50px,",
+        "pd": "",
+        "mg_tb": ",,50px,",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": ""
+      }
     }
   },
   "order": [
     "heading",
+    "slideshow_VHjLeD",
     "main",
     "custom_section_mPDNqc",
     "custom_section_L9En4B",
-    "custom_liquid_jJp9Xq"
+    "custom_liquid_jJp9Xq",
+    "custom_section_XkENGN"
   ]
 }
