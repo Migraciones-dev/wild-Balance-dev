@@ -265,80 +265,36 @@
                           <p class="font-[700] [font-family:'Barlow',Helvetica] text-[#004623] font-[16px]">
                             Selecciona cantidad
                           </p>
-                          <!-- Botón -->
-                          <div class="text-gray-400 font-medium underline text-sm flex items-center">
-                            <button
-                              id="openQuizModal"
-                              class="inline-flex items-center ml-1 group flex flex-row items-center gap-2"
-                              type="button"
-                            >
-                              <div class="icon_icon__PAVlB block w-6 h-6 mr-2 transition">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="2 2 16 16"
-                                  role="img"
-                                  class="injected-svg fill-current text-[#004623] w-6 h-6"
-                                  data-src="/icons/question-mark.svg"
-                                >
-                                  <path fill-rule="evenodd"
-                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                                    clip-rule="evenodd" />
-                                </svg>
-                              </div>
-                              <span class="block text-left text-[#222222]">Calcula tu ración</span>
-                            </button>
-                          </div>
-
-                          <!-- Modal -->
-                          <div
-                            id="quizModal"
-                            class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50"
-                          >
-                            <div class="bg-white rounded-lg shadow-lg w-11/12 md:w-3/4 lg:w-1/2 relative">
-                              <!-- Botón cerrar -->
+                          {% comment %}
+                            <div class="text-gray-400 font-medium underline text-sm flex items-center ">
                               <button
-                                id="closeQuizModal"
-                                class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl leading-none"
+                                class="inline-flex items-center ml-1 group flex flex-row items-center gap-2 "
+                                type="button"
                               >
-                                &times;
+                                <div
+                                  class="icon_icon__PAVlB block w-6 h-6 mr-2 transition w-6 h-6"
+                                  aria-hidden="true"
+                                >
+                                  <div>
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      viewBox="2 2 16 16"
+                                      role="img"
+                                      class="injected-svg fill-current text-[#004623] w-6 h-6"
+                                      data-src="/icons/question-mark.svg"
+                                    >
+                                      <path
+                                        fill-rule="evenodd"
+                                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                                        clip-rule="evenodd"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
+                                <span class="block text-left text-[#222222]">Calcula tu ración </span>
                               </button>
-
-                              <!-- Iframe -->
-                              <iframe
-                                id="quizIframe"
-                                src="https://wildbalance-widget.fly.dev/quiz-Wild-Balance"
-                                class="w-full h-[80vh] border-0"
-                              ></iframe>
                             </div>
-                          </div>
-
-                          <!-- Scripts -->
-                          <script
-                            src="https://shopify-media-s3.s3.eu-west-1.amazonaws.com/libs/iframeResizer.min.js"
-                          ></script>
-                          <script>
-                            // Inicializar iframe resizer
-                            iFrameResize({ log: false }, '#quizIframe');
-
-                            const openBtn = document.getElementById('openQuizModal');
-                            const closeBtn = document.getElementById('closeQuizModal');
-                            const modal = document.getElementById('quizModal');
-
-                            openBtn.addEventListener('click', () => {
-                              modal.classList.remove('hidden');
-                            });
-
-                            closeBtn.addEventListener('click', () => {
-                              modal.classList.add('hidden');
-                            });
-
-                            // Cerrar al hacer click fuera del modal
-                            modal.addEventListener('click', (e) => {
-                              if (e.target === modal) {
-                                modal.classList.add('hidden');
-                              }
-                            });
-                          </script>
+                          {% endcomment %}
                         </div>
 
                         <div class="t4s-swatch-wrapper">
