@@ -485,7 +485,24 @@
     {%- case se_stts.layout -%}
 
       {%- when 'logo_left' -%}
-        <div class="t4s-col-md-4 t4s-col-3 t4s-d-lg-none t4s-col-item">{%- render 'push_menu' -%}</div>
+        <div class="t4s-col-md-4 t4s-col-3 t4s-d-lg-none t4s-col-item">
+        <button id="menu-toggle" class="p-2 focus:outline-none lg:hidden hover:no-underline hover:bg-transparent focus:bg-transparent active:bg-transparent
+         hover:text-current focus:text-current active:text-current">
+  <!-- Ícono hamburguesa -->
+  <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" 
+       class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" 
+          d="M4 6h16M4 12h16M4 18h16" />
+  </svg>
+  <!-- Ícono X -->
+  <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" 
+       class="h-14 w-14 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" 
+          d="M6 18L18 6M6 6l12 12" />
+  </svg>
+</button>
+</div>
+        {% comment %} <div class="t4s-col-md-4 t4s-col-3 t4s-d-lg-none t4s-col-item">{%- render 'push_menu' -%}</div> {% endcomment %}
         <div class="t4s-col-lg-{% if se_stts.align == 'center' %}{{ col_action_split }}{% else %}auto{% endif %} t4s-col-md-4 t4s-col-6 t4s-text-center t4s-text-lg-start t4s-col-item">{%- render 't4s_logo', tag: 'div', isTransparent: h_transparent -%}</div>
         <div class="t4s-col t4s-d-none t4s-d-lg-block t4s-col-item">{%- render 'menu_blocks', placement: 'bottom', admin_sp: admin_sp, se_blocks: se_blocks, se_stts: se_stts -%}</div>
         <div class="t4s-col-lg-{% if se_stts.align == 'center' %}{{ col_action_split }}{% else %}auto{% endif %} t4s-col-md-4 t4s-col-3 t4s-text-end t4s-col-group_btns t4s-col-item t4s-lh-1 pr-0 flex justify-end">{%- render 't4s_group_btns', se_stts: se_stts -%}</div>
@@ -518,6 +535,252 @@
   </div>
 </div>
 
+<div
+  class="py-10 max-h-0 overflow-hidden opacity-0 transition-all duration-300 ease-in-out bg-white"
+  id="mig-menu"
+style="    position: absolute;
+    background: #F4F0E2;
+    width: 100%;
+    z-index:9999999;"
+>
+  <div class="t4s-container">
+      {%- assign group_id = 'wb-tabs-' | append: section.id -%}
+<div class="t4s-tabs t4s-type-tabs t4s-accordion-mb-true t4s-tabs-enabled t4s-tabs-accordion-enabled"
+     data-accordion-group="{{ group_id }}"
+     data-t4s-tabs data-t4s-accordion-pr>
+  <div class="t4s-tabs-pr-content">
+    {%- for block in section.blocks -%}
+      {%- comment -%}
+        Solo bloques con menú asignado (mega, drop, base si lo usas para menú).
+      {%- endcomment -%}
+      {%- if block.settings.menu != blank and linklists[block.settings.menu] and linklists[block.settings.menu].links.size > 0 -%}
+        {%- assign menu = linklists[block.settings.menu] -%}
+        {%- assign item_open = forloop.first -%}
+        <div data-accordion-item
+             data-state="{{ item_open | default: false | if: true, 'open', 'closed' }}"
+             data-orientation="vertical"
+             class="border-2 border-[#d9d9c8] rounded-[8px] bg-white mb-4 overflow-hidden" {{ block.shopify_attributes }}
+            style="    border: 2px solid #d9d9c8a8;">
+
+          <h3 class="flex">
+            <button
+  type="button"
+  data-accordion-trigger
+  id="btn-{{ block.id }}"
+  aria-controls="pnl-{{ block.id }}"
+  aria-expanded="{{ item_open }}"
+  class="flex flex-1 items-center justify-between text-sm font-medium transition-all text-left
+         px-9 py-8 hover:no-underline hover:bg-transparent focus:bg-transparent active:bg-transparent
+         hover:text-current focus:text-current active:text-current
+         [&[aria-expanded='true']>svg]:rotate-90"
+>
+              <span class="font-bold text-wb-verde-oscuro text-[17px] leading-[21.6px] font-['Barlow',Helvetica] flex gap-4">
+                
+                {% if block.settings.title contains "perro" %}
+                <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.329 10.6061L21.637 1.538C21.5956 1.31696 21.5095 1.10671 21.3839 0.920189C21.2583 0.733667 21.0958 0.574811 20.9066 0.45339C20.7173 0.331969 20.5052 0.250549 20.2833 0.214139C20.0614 0.177728 19.8344 0.187096 19.6162 0.241667L19.5843 0.250941L14.1722 1.84714H9.46301L4.05099 0.256093L4.01904 0.246819C3.80089 0.192249 3.57388 0.182881 3.35198 0.219291C3.13007 0.255702 2.91796 0.337121 2.72868 0.458542C2.53941 0.579963 2.37698 0.738819 2.25137 0.925342C2.12576 1.11186 2.03964 1.32211 1.99829 1.54315L0.306263 10.6061C0.233906 10.9691 0.287616 11.3459 0.458506 11.6742C0.629397 12.0025 0.90723 12.2626 1.24605 12.4115C1.46308 12.5109 1.69879 12.5629 1.93749 12.564C2.2232 12.5638 2.50361 12.4869 2.7495 12.3414V16.6859C2.7495 17.7791 3.18377 18.8275 3.95677 19.6005C4.72977 20.3735 5.77819 20.8078 6.87138 20.8078H16.7639C17.8571 20.8078 18.9055 20.3735 19.6785 19.6005C20.4515 18.8275 20.8857 17.7791 20.8857 16.6859V12.3425C21.1313 12.4878 21.4114 12.5646 21.6967 12.565C21.9357 12.5644 22.1718 12.5127 22.3892 12.4136C22.7284 12.2646 23.0066 12.0041 23.1775 11.6754C23.3484 11.3467 23.4019 10.9694 23.329 10.6061ZM1.92513 10.9153L3.61819 1.84714L7.95337 3.12183L1.92513 10.9153ZM16.7639 19.159H12.642V17.8513L14.0496 16.4448C14.2043 16.2901 14.2912 16.0803 14.2912 15.8615C14.2912 15.6428 14.2043 15.433 14.0496 15.2783C13.8949 15.1236 13.6851 15.0367 13.4664 15.0367C13.2476 15.0367 13.0378 15.1236 12.8831 15.2783L11.8176 16.3448L10.7521 15.2783C10.5974 15.1236 10.3876 15.0367 10.1689 15.0367C9.95012 15.0367 9.74032 15.1236 9.58563 15.2783C9.43095 15.433 9.34404 15.6428 9.34404 15.8615C9.34404 16.0803 9.43095 16.2901 9.58563 16.4448L10.9933 17.8513V19.159H6.87138C6.21546 19.159 5.58642 18.8984 5.12261 18.4346C4.65881 17.9708 4.39825 17.3418 4.39825 16.6859V10.4114L9.74845 3.49589H13.8858L19.237 10.4114V16.6859C19.237 17.3418 18.9764 17.9708 18.5126 18.4346C18.0488 18.8984 17.4198 19.159 16.7639 19.159ZM21.7101 10.9153L15.6819 3.12183L20.0171 1.84714L21.7101 10.9153ZM9.3445 12.1518C9.3445 12.3964 9.27198 12.6355 9.1361 12.8388C9.00023 13.0422 8.8071 13.2007 8.58115 13.2943C8.3552 13.3878 8.10657 13.4123 7.8667 13.3646C7.62683 13.3169 7.40649 13.1991 7.23356 13.0262C7.06062 12.8533 6.94285 12.6329 6.89514 12.3931C6.84742 12.1532 6.87191 11.9046 6.96551 11.6786C7.0591 11.4527 7.21759 11.2595 7.42094 11.1237C7.62429 10.9878 7.86337 10.9153 8.10794 10.9153C8.4359 10.9153 8.75042 11.0455 8.98232 11.2774C9.21422 11.5093 9.3445 11.8239 9.3445 12.1518ZM16.7639 12.1518C16.7639 12.3964 16.6914 12.6355 16.5555 12.8388C16.4196 13.0422 16.2265 13.2007 16.0005 13.2943C15.7746 13.3878 15.5259 13.4123 15.2861 13.3646C15.0462 13.3169 14.8259 13.1991 14.6529 13.0262C14.48 12.8533 14.3622 12.6329 14.3145 12.3931C14.2668 12.1532 14.2913 11.9046 14.3849 11.6786C14.4785 11.4527 14.637 11.2595 14.8403 11.1237C15.0437 10.9878 15.2827 10.9153 15.5273 10.9153C15.8553 10.9153 16.1698 11.0455 16.4017 11.2774C16.6336 11.5093 16.7639 11.8239 16.7639 12.1518Z" fill="#004623"/>
+</svg>
+{% endif %}
+{% if block.settings.title contains "gato" %}
+<svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.96672 10.2525C6.96672 10.4758 6.90049 10.6941 6.77641 10.8798C6.65233 11.0655 6.47597 11.2103 6.26963 11.2957C6.0633 11.3812 5.83625 11.4036 5.6172 11.36C5.39815 11.3164 5.19695 11.2089 5.03902 11.051C4.8811 10.893 4.77355 10.6918 4.72998 10.4728C4.68641 10.2537 4.70877 10.0267 4.79424 9.82035C4.87971 9.61401 5.02444 9.43765 5.21014 9.31357C5.39584 9.18949 5.61416 9.12326 5.8375 9.12326C6.13699 9.12326 6.42421 9.24223 6.63598 9.454C6.84775 9.66577 6.96672 9.95299 6.96672 10.2525ZM14.1184 9.12326C13.8951 9.12326 13.6768 9.18949 13.4911 9.31357C13.3054 9.43765 13.1606 9.61401 13.0752 9.82035C12.9897 10.0267 12.9673 10.2537 13.0109 10.4728C13.0545 10.6918 13.162 10.893 13.32 11.051C13.4779 11.2089 13.6791 11.3164 13.8981 11.36C14.1172 11.4036 14.3442 11.3812 14.5506 11.2957C14.7569 11.2103 14.9333 11.0655 15.0573 10.8798C15.1814 10.6941 15.2477 10.4758 15.2477 10.2525C15.2477 9.95299 15.1287 9.66577 14.9169 9.454C14.7051 9.24223 14.4179 9.12326 14.1184 9.12326ZM19.7645 1.59514V9.87608C19.7645 14.8569 15.3747 18.9098 9.97797 18.9098C4.58124 18.9098 0.191406 14.8569 0.191406 9.87608V1.59514C0.191544 1.29745 0.279922 1.00649 0.445372 0.759023C0.610822 0.511552 0.845917 0.31868 1.12095 0.20478C1.39598 0.0908806 1.6986 0.0610655 1.99057 0.119103C2.28254 0.17714 2.55076 0.320424 2.76132 0.530849C2.77449 0.544023 2.78579 0.556257 2.79708 0.569431L4.42598 2.44205C6.09152 1.39854 8.01724 0.84511 9.98267 0.84511C11.9481 0.84511 13.8738 1.39854 15.5394 2.44205L17.1589 0.569431C17.1702 0.556257 17.1814 0.544023 17.1946 0.530849C17.4052 0.320424 17.6734 0.17714 17.9654 0.119103C18.2573 0.0610655 18.56 0.0908806 18.835 0.20478C19.11 0.31868 19.3451 0.511552 19.5106 0.759023C19.676 1.00649 19.7644 1.29745 19.7645 1.59514ZM18.2589 1.59514L16.2301 3.92886C16.106 4.07243 15.9322 4.16384 15.7436 4.18478C15.555 4.20572 15.3654 4.15464 15.2128 4.04178C14.7535 3.70224 14.2607 3.41057 13.742 3.17134V5.3592C13.742 5.55886 13.6627 5.75034 13.5215 5.89152C13.3804 6.0327 13.1889 6.11201 12.9892 6.11201C12.7896 6.11201 12.5981 6.0327 12.4569 5.89152C12.3157 5.75034 12.2364 5.55886 12.2364 5.3592V2.63496C11.7425 2.5079 11.2389 2.42229 10.7308 2.379V5.3592C10.7308 5.55886 10.6515 5.75034 10.5103 5.89152C10.3691 6.0327 10.1776 6.11201 9.97797 6.11201C9.77831 6.11201 9.58683 6.0327 9.44565 5.89152C9.30447 5.75034 9.22516 5.55886 9.22516 5.3592V2.379C8.71703 2.42229 8.21341 2.5079 7.71953 2.63496V5.3592C7.71953 5.55886 7.64022 5.75034 7.49904 5.89152C7.35786 6.0327 7.16638 6.11201 6.96672 6.11201C6.76706 6.11201 6.57558 6.0327 6.4344 5.89152C6.29322 5.75034 6.21391 5.55886 6.21391 5.3592V3.17134C5.69524 3.41057 5.2024 3.70224 4.7431 4.04178C4.59086 4.15497 4.40151 4.20652 4.2129 4.18611C4.0243 4.16569 3.85035 4.07483 3.72586 3.93168L1.69703 1.59514V9.87608C1.69703 13.7963 5.01035 17.0278 9.22516 17.3731V15.4572L7.93973 14.1718C7.86985 14.1019 7.81442 14.0188 7.77663 13.9275C7.73883 13.8361 7.7194 13.7382 7.71945 13.6393C7.71949 13.5405 7.73901 13.4426 7.77688 13.3512C7.81476 13.2599 7.87026 13.1769 7.9402 13.1071C8.08146 12.9659 8.27299 12.8867 8.47268 12.8868C8.57155 12.8868 8.66944 12.9063 8.76077 12.9442C8.8521 12.9821 8.93508 13.0376 9.00496 13.1075L9.97797 14.0805L10.951 13.1075C11.0209 13.0376 11.1038 12.9821 11.1952 12.9442C11.2865 12.9063 11.3844 12.8868 11.4833 12.8868C11.5821 12.8867 11.68 12.9062 11.7714 12.944C11.8628 12.9817 11.9458 13.0372 12.0157 13.1071C12.0857 13.1769 12.1412 13.2599 12.1791 13.3512C12.2169 13.4426 12.2364 13.5405 12.2365 13.6393C12.2365 13.7382 12.2171 13.8361 12.1793 13.9275C12.1415 14.0188 12.0861 14.1019 12.0162 14.1718L10.7308 15.4572V17.3731C14.9456 17.0259 18.2589 13.7973 18.2589 9.87608V1.59514Z" fill="#004623"/>
+</svg>
+
+{% endif %}
+
+ {% if block.settings.title contains "perro" %}
+Perros
+ {% elsif block.settings.title contains "gato" %}
+Gatos
+ {% else %}
+                {{ block.settings.title | default: menu.title }}
+
+ {% endif %}
+              </span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+       class="lucide lucide-chevron-right h-7 w-7 shrink-0 text-muted-foreground transition-transform duration-200"
+       fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m9 18 6-6-6-6"></path>
+  </svg>
+            </button>
+          </h3>
+
+          <div id="pnl-{{ block.id }}" data-accordion-content class="px-9 pb-6" {% unless item_open %}hidden{% endunless %}>
+            <ul class="list-none {% if block.settings.title contains "gato" or block.settings.title contains "perro" %}pl-12{% else %}pl-0{% endif %} space-y-1">
+              {%- for link in menu.links -%}
+                <li>
+                  <a href="{{ link.url }}" class="hover:no-underline">{{ link.title }}</a>
+                  {%- if link.links.size > 0 -%}
+                    <ul class="list-disc pl-5 mt-1 space-y-1">
+                      {%- for child in link.links -%}
+                        <li><a href="{{ child.url }}" class="hover:no-underline">{{ child.title }}</a></li>
+                      {%- endfor -%}
+                    </ul>
+                  {%- endif -%}
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+    <div class="border-2 border-[#d9d9c8] rounded-[8px] bg-white mb-4 overflow-hidden"
+    style="    border: 2px solid #d9d9c8a8;">
+  <a href="/pages/store-locator" class="flex flex-1 items-center text-sm font-medium px-9 py-8 hover:no-underline">
+    <span class="font-bold text-wb-verde-oscuro text-[17px] leading-[21.6px] font-['Barlow',Helvetica]">
+      Tiendas
+    </span>
+  </a>
+</div>
+<a class="w-full" href="{{ section.settings.promo_img_irl }}"><img class="w-full" src="{{ section.settings.promo_img | image_url: width: 1200 }}"></a>
+  </div>
+</div>
+
+    </div>
+</div>
+<script>
+(function () {
+  // Helper para ID único
+  const uid = () =>
+    (typeof crypto !== "undefined" && crypto.randomUUID)
+      ? "acc-" + crypto.randomUUID()
+      : "acc-" + Math.random().toString(36).slice(2);
+
+  // Inicializa cada contenedor de tabs/accordion
+  document.querySelectorAll('.t4s-tabs').forEach((root, rootIndex) => {
+    // Aislar por contenedor
+    const items = root.querySelectorAll('[data-accordion-item]');
+    const groupId = root.getAttribute('data-accordion-group') || ('wbgrp-' + rootIndex);
+
+    items.forEach((item, i) => {
+      const btn = item.querySelector('[data-accordion-trigger]');
+      const panel = item.querySelector('[data-accordion-content]');
+      if (!btn || !panel) return;
+
+      // Forzar IDs únicos y relación aria
+      let panelId = panel.id && panel.id.trim() ? panel.id.trim() : uid();
+      // Evitar choques con IDs de otros bloques
+      panelId = groupId + '-' + panelId;
+
+      panel.id = panelId;
+      btn.setAttribute('aria-controls', panelId);
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('role', 'button');
+      btn.setAttribute('tabindex', '0');
+
+      // Estado inicial (cerrado si no hay data-state=open)
+      const isOpen = item.getAttribute('data-state') === 'open';
+      panel.hidden = !isOpen;
+      btn.setAttribute('aria-expanded', String(isOpen));
+      item.setAttribute('data-state', isOpen ? 'open' : 'closed');
+    });
+
+    // Cerrar todos menos uno
+    const closeAll = (except) => {
+      items.forEach((it) => {
+        if (it === except) return;
+        const b = it.querySelector('[data-accordion-trigger]');
+        const p = it.querySelector('[data-accordion-content]');
+        if (!b || !p) return;
+        it.setAttribute('data-state', 'closed');
+        b.setAttribute('aria-expanded', 'false');
+        p.hidden = true;
+      });
+    };
+
+    // Toggle de un item
+    const toggleItem = (item) => {
+      const btn = item.querySelector('[data-accordion-trigger]');
+      const panel = item.querySelector('[data-accordion-content]');
+      if (!btn || !panel) return;
+
+      const currentlyOpen = item.getAttribute('data-state') === 'open';
+      if (currentlyOpen) {
+        item.setAttribute('data-state', 'closed');
+        btn.setAttribute('aria-expanded', 'false');
+        panel.hidden = true;
+      } else {
+        closeAll(item); // acordeón: solo uno abierto
+        item.setAttribute('data-state', 'open');
+        btn.setAttribute('aria-expanded', 'true');
+        panel.hidden = false;
+      }
+    };
+
+    // Delegación de eventos (click + teclado)
+    root.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-accordion-trigger]');
+      if (!btn || !root.contains(btn)) return;
+      const item = btn.closest('[data-accordion-item]');
+      if (!item) return;
+      e.preventDefault();
+      toggleItem(item);
+    });
+
+    root.addEventListener('keydown', (e) => {
+      const btn = e.target.closest('[data-accordion-trigger]');
+      if (!btn || !root.contains(btn)) return;
+
+      const triggers = Array.from(root.querySelectorAll('[data-accordion-trigger]'));
+      const idx = triggers.indexOf(btn);
+
+      // Enter/Space -> toggle
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const item = btn.closest('[data-accordion-item]');
+        if (item) toggleItem(item);
+      }
+
+      // Navegación accesible
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        const next = triggers[(idx + 1) % triggers.length];
+        next && next.focus();
+      }
+      if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        const prev = triggers[(idx - 1 + triggers.length) % triggers.length];
+        prev && prev.focus();
+      }
+      if (e.key === 'Home') {
+        e.preventDefault();
+        triggers[0] && triggers[0].focus();
+      }
+      if (e.key === 'End') {
+        e.preventDefault();
+        triggers[triggers.length - 1] && triggers[triggers.length - 1].focus();
+      }
+    });
+  });
+})();
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+  const toggleBtn = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mig-menu");
+  const iconOpen = document.getElementById("icon-open");
+  const iconClose = document.getElementById("icon-close");
+
+  toggleBtn.addEventListener("click", () => {
+    const isOpen = menu.classList.contains("max-h-0");
+
+    if (isOpen) {
+      // Abrir
+      menu.classList.remove("max-h-0", "opacity-0");
+      menu.classList.add("max-h-[1000px]", "opacity-100");
+      iconOpen.classList.add("hidden");
+      iconClose.classList.remove("hidden");
+    } else {
+      // Cerrar
+      menu.classList.remove("max-h-[1000px]", "opacity-100");
+      menu.classList.add("max-h-0", "opacity-0");
+      iconClose.classList.add("hidden");
+      iconOpen.classList.remove("hidden");
+    }
+  });
+});
+
+</script>
 {%- if h_transparent -%}
 <script>
 document.documentElement.classList.add('is--header-transparent');
@@ -534,6 +797,16 @@ document.documentElement.style.setProperty('--header-height', document.getElemen
    "max_blocks": 16,
    "class": "t4s-section t4s-section-header",
    "settings": [
+    {
+        "type": "image_picker",
+        "id": "promo_img",
+        "label": "Mobile promo image"
+      },
+      {
+  "type": "url",
+  "id": "promo_img_irl",
+  "label": "Mobile promo image link"
+},
       {
         "type": "select",
         "id": "layout",
