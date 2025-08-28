@@ -477,8 +477,15 @@
     margin-bottom: 7.5px;
     padding-bottom: 7.5px;
   }
-  #shopify-section-header-inline .t4s-header__wrapper > .t4s-container .t4s-row{
-      justify-content: space-between!important;
+  @media (max-width: 1024px) {
+    #shopify-section-header-inline .t4s-header__wrapper > .t4s-container .t4s-row{
+    justify-content: space-between!important;
+  }
+@media (max-width: 1024px) {
+    #shopify-section-header-inline .t4s-header__wrapper .t4s-site-nav__icon.t4s-site-nav__search {
+        display: block!important;
+    }
+}
   }
   
 {%- endstyle -%}
