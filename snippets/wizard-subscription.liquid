@@ -6,19 +6,6 @@
   </h2>
 
   <section class="freezerSpace">
-    {% comment %}
-      <h2 class="t4s-section-title t4s-title">
-      <span>Su plan recurrente</span>
-      </h2>
-    {% endcomment %}
-
-    <!--
-      <p class="freezerSpaceSubtitle">
-        Te recomendamos al menos {{ result.medium_freezer_frequency }} semanas en el congelador, pero puedes modificar la
-        frecuencias de tus pedidos.
-      </p>
-    -->
-
     <p class="freezerSpaceSubtitle">
       Deja espacio para tus heladitos, selecciona la capacidad que te queda disponible y el resto te lo llenamos entre
       la selección de menús que has hecho en el paso anterior
@@ -36,7 +23,11 @@
       {% endif %}
 
       <label for="freezer_big">
-        <article class="articleInfoFrequently" data-subscriptionurl="{{ result.big_freezer_link }}">
+        <article
+          class="articleInfoFrequently"
+          data-subscriptionurl="{{ result.big_freezer_link }}"
+          data-selling-plan-id="{{ result.big_freezer_plan_id }}"
+        >
           <div class="imgAndLabelInfo">
             <div>
               <img
@@ -46,7 +37,8 @@
             </div>
             <div>
               <h3>
-                <input type="radio" id="freezer_big" name="freezer" value="big" required checked> Tengo mucho espacio
+                <!-- sin checked por defecto -->
+                <input type="radio" id="freezer_big" name="freezer" value="big" required> Tengo mucho espacio
               </h3>
               <p>
                 <span>{{ result.big_freezer_frequency }}</span> semana(s) de comida
@@ -54,10 +46,8 @@
               <span class="label infoSpace">{{ big }}kg/comida</span>
             </div>
           </div>
-
           <div class="textInfo">
             <span class="label infoSpace">{{ big }}kg/comida</span>
-
             <span class="label select">Seleccionar</span>
             <span class="label selected" style="display:none">Seleccionado</span>
           </div>
@@ -65,25 +55,25 @@
       </label>
 
       <label for="freezer_medium">
-        <article class="articleInfoFrequently active" data-subscriptionurl="{{ result.medium_freezer_link }}">
+        <article
+          class="articleInfoFrequently active"
+          data-subscriptionurl="{{ result.medium_freezer_link }}"
+          data-selling-plan-id="{{ result.medium_freezer_plan_id }}"
+        >
           <div class="imgAndLabelInfo">
             <div>
-              <img
-                src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/NERA_CAJON_Y_MEDIO_sinpuerta.png"
-                alt=""
-              >
+              <img src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/NERA_CAJON_Y_MEDIO_sinpuerta.png" alt="">
             </div>
             <div>
               <span class="label recomended">Recomendado</span>
-
               <h3>
+                <!-- checked por defecto -->
                 <input type="radio" id="freezer_medium" name="freezer" value="medium" required checked> Medio congelador
               </h3>
               <p>{{ result.medium_freezer_frequency }} semana(s) de comida</p>
               <span class="label infoSpace">{{ medium }}kg/comida</span>
             </div>
           </div>
-
           <div class="textInfo">
             <span class="label infoSpace">{{ medium }}kg/comida</span>
             <span class="label select" style="display:none">Seleccionar</span>
@@ -93,23 +83,23 @@
       </label>
 
       <label for="freezer_small">
-        <article class="articleInfoFrequently" data-subscriptionurl="{{ result.small_freezer_link }}">
+        <article
+          class="articleInfoFrequently"
+          data-subscriptionurl="{{ result.small_freezer_link }}"
+          data-selling-plan-id="{{ result.small_freezer_plan_id }}"
+        >
           <div class="imgAndLabelInfo">
             <div>
-              <img
-                src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/NEVERA_1CAJON_sin-puerta.png"
-                alt=""
-              >
+              <img src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/NEVERA_1CAJON_sin-puerta.png" alt="">
             </div>
             <div>
-              <h3><input type="radio" id="freezer_small" name="freezer" value="small" required>Tengo poco espacio</h3>
+              <h3><input type="radio" id="freezer_small" name="freezer" value="small" required> Tengo poco espacio</h3>
               <p>
                 <span>{{ result.small_freezer_frequency }}</span> semana(s) de comida
               </p>
-              <span class="label infoSpace">{{ small }}/comida</span>
+              <span class="label infoSpace">{{ small }}kg/comida</span>
             </div>
           </div>
-
           <div class="textInfo">
             <span class="label infoSpace">{{ small }}kg/comida</span>
             <span class="label select">Seleccionar</span>
@@ -121,10 +111,7 @@
   </section>
 
   <section class="freezerSpace planContains">
-    <h2 class="t4s-section-title t4s-title">
-      <span>Tu plan de suscripción incluiría</span>
-    </h2>
-
+    <h2 class="t4s-section-title t4s-title"><span>Tu plan de suscripción incluiría</span></h2>
     <div class="containerChecks">
       <p>Asesoramiento nutricional</p>
       <p>Prueba 14 días</p>
@@ -138,9 +125,7 @@
           <h3>Pack de iniciación al BARF</h3>
           <span class="label discountLabel">10% DESCUENTO*</span>
         </div>
-
         <div class="label frequentlyLabel">PRIMER ENVÍO</div>
-
         <div class="infoContainerPack">
           <ul>
             <li>Menú de iniciación para los primeros días para una buena transición</li>
@@ -160,7 +145,6 @@
           <h3>PRIMER ENVÍO</h3>
           <span class="label discountLabel">10% DESCUENTO*</span>
         </div>
-
         <div class="infoContainerPack">
           <ul>
             <li>Oferta especial en el primer envío</li>
@@ -182,14 +166,18 @@
 </section>
 
 <section class="calculate frequently">
-  <button type="button" onclick="recalculate()">Calcular mi pack</button> <br>
+  <button
+    type="button"
+    onclick="recalculate()"
+  >
+    Calcular mi pack
+  </button>
+  <br>
 
   <div id="calculation-result" class="calculation-result" style="display:none">
     {% for variant in result.product_recommendation_variants.value %}
       <div class="variant-result-calculations _variant-result-calculations" id="_variant-result-{{ variant.id }}">
-        {% comment %}{{ variant.product.featured_image | image_url: width: 50 | image_tag}}{% endcomment %}
         <p>{{ variant.product.title }}</p>
-
         <span>{{ variant.price | money_with_currency }} </span>
         x <span class="_qty">1</span>
       </div>
@@ -198,146 +186,133 @@
     ><br>
   </div>
 
-  <a class="secondary retake" target="_blank" href="https://wildbalance.es/pages/tw2?retake=1">Volver a empezar</a>
+  <a
+    class="secondary retake"
+    target="_blank"
+    href="https://wildbalance.es/pages/tw2?retake=1"
+    >Volver a empezar</a
+  >
   <br>
 </section>
 
 <script>
-  // click events for selected things
+  // Mapa semanas -> selling_plan_id (Loop)
+  // IDs proporcionados por ti (vistos en el carrito / selector)
+  window.planIdByWeeks = {
+    1: 712729952640,
+    2: 712729985408,
+    3: 712730018176,
+    4: 712730050944,
+    5: 712753348992,
+    6: 712753381760,
+    7: 712753414528,
+    8: 712753447296
+  };
 
+  // Frecuencias por tamaño (nº de semanas) que ya vienen del backend
+  window.freezerFrequencies = {
+    small: {{ result.small_freezer_frequency | json }},
+    medium: {{ result.medium_freezer_frequency | json }},
+    big: {{ result.big_freezer_frequency | json }}
+  };
+</script>
+
+<script>
+  // --- UI: selección de freezer ---
   let freezerContainers = document.querySelectorAll('input[name="freezer"]');
-
   Array.from(freezerContainers).forEach(function(freezer) {
-  freezer.addEventListener('click', function(event){ activateFreezer(freezer, freezerContainers); });
+    freezer.addEventListener('click', function(){ activateFreezer(freezer, freezerContainers); });
   });
 
   function activateFreezer(thisfreezer,freezerContainers) {
+    Array.from(freezerContainers).forEach(function(freezer){
+      let article = freezer.closest(".articleInfoFrequently");
+      article.classList.remove("active");
+      article.querySelector(".selected").style.display = "none";
+      article.querySelector(".select").style.display = "block";
+    });
+    let thisarticle = thisfreezer.closest(".articleInfoFrequently");
+    thisarticle.classList.add("active");
+    thisarticle.querySelector(".selected").style.display = "block";
+    thisarticle.querySelector(".select").style.display = "none";
 
-  //deselect freezers
-
-  Array.from(freezerContainers).forEach(function(freezer){
-    let article = freezer.closest(".articleInfoFrequently");
-    article.classList.remove("active");
-    article.querySelector(".selected").style.display = "none";
-    article.querySelector(".select").style.display = "block";
-  });
-
-  //select current freezer
-
-  let thisarticle = thisfreezer.closest(".articleInfoFrequently");
-  thisarticle.classList.add("active");
-  thisarticle.querySelector(".selected").style.display = "block";
-  thisarticle.querySelector(".select").style.display = "none";
-
-  //hide results again
-
-  let results = document.querySelectorAll('._wizard-result-freezer');
-  Array.from(results).forEach(function(result){
-    result.style.display = "none";
-  });
+    let results = document.querySelectorAll('._wizard-result-freezer');
+    Array.from(results).forEach(function(result){ result.style.display = "none"; });
   }
 
+  // --- Acción principal ---
   function recalculate() {
-  let newWithBarf = false;
-  let selectedProteins = document.querySelectorAll( 'input[name="protein"]:checked');
-  let selectedProteinsValues = [];
-  Array.from(selectedProteins).forEach(function(protein){
-    var proteinObject = {'variantId': protein.value};
-    selectedProteinsValues.push(proteinObject);
-  });
-  let selectedXselling = document.querySelectorAll( 'input[name="xselling"]:checked');
-  let selectedXsellingValues = [];
-  Array.from(selectedXselling).forEach(function(xselling){
-    var xsellingObject = {'variantId': xselling.value};
-    selectedXsellingValues.push(xsellingObject);
-  });
-
-  let recalculateData = {
-    pet: "{{result.pet}}",
-    grams: {{result.grams}},
-    foodType: "{{result.food_type}}",
-    newWithBarf: {{result.is_new_with_barf | default: false}},
-    selectedFreezer: document.querySelector( 'input[name="freezer"]:checked').value,
-    selectedProteins: selectedProteinsValues,
-    selectedXselling: selectedXsellingValues
-  };
-
-
-
-  console.log('recalculateData', recalculateData)
-  $.ajax({
-  url: "https://wildbalance-app-rocket.fly.dev/recalculate",
-  type: "POST",
-  contentType: "application/json",
-  dataType: "json",
-  data: JSON.stringify(recalculateData),
-  success: function(data, textStatus, jqXHR) {
-    console.log(data);
-
-    let freezerVariantsAndQtys = data.freezerVariantsAndQtys;
-    let freezerLink = data.freezerLink;
-
-    // Construimos el array `items` para el fetch
-    const items = freezerVariantsAndQtys.map(item => {
-      const obj = {
-        id: item.variantId,
-        quantity: item.qty
-      };
-      if (item.selling_plan) {
-        obj.selling_plan = item.selling_plan;
-      }
-      return obj;
+    let selectedProteins = document.querySelectorAll('input[name="protein"]:checked');
+    let selectedProteinsValues = [];
+    Array.from(selectedProteins).forEach(function(protein){
+      selectedProteinsValues.push({ variantId: protein.value });
     });
 
-    console.log('Items para add.js:', items);
+    let selectedXselling = document.querySelectorAll('input[name="xselling"]:checked');
+    let selectedXsellingValues = [];
+    Array.from(selectedXselling).forEach(function(xselling){
+      selectedXsellingValues.push({ variantId: xselling.value });
+    });
 
-    fetch('/cart/add.js', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
+    let selectedFreezerKey = document.querySelector('input[name="freezer"]:checked').value;
+    let targetWeeks = window.freezerFrequencies[selectedFreezerKey];
+
+    // Validar que existe plan para esas semanas
+    const planId = window.planIdByWeeks[targetWeeks];
+    if (!planId) {
+      alert(`No hay un plan configurado para ${targetWeeks} semana(s). Revisa el mapping semanas → selling_plan_id.`);
+      return;
+    }
+
+    let recalculateData = {
+      pet: "{{result.pet}}",
+      grams: {{result.grams}},
+      foodType: "{{result.food_type}}",
+      newWithBarf: {{result.is_new_with_barf | default: false}},
+      selectedFreezer: selectedFreezerKey,
+      selectedProteins: selectedProteinsValues,
+      selectedXselling: selectedXsellingValues
+    };
+
+    $.ajax({
+      url: "https://wildbalance-app-rocket.fly.dev/recalculate",
+      type: "POST",
+      contentType: "application/json",
+      dataType: "json",
+      data: JSON.stringify(recalculateData),
+      success: function(data) {
+        const freezerVariantsAndQtys = data.freezerVariantsAndQtys || [];
+
+        // Construimos items con el selling_plan correspondiente a las semanas target
+        const items = freezerVariantsAndQtys.map(item => ({
+          id: item.variantId,
+          quantity: item.qty,
+          selling_plan: planId
+        }));
+
+        if (!items.length) {
+          alert('No hay items que añadir al carrito.');
+          return;
+        }
+
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ items })
+        })
+        .then(response => {
+          if (!response.ok) throw new Error('Error al agregar productos al carrito');
+          window.location.href = '{{ shop.url }}/cart';
+        })
+        .catch(error => {
+          console.error('Hubo un problema con el add to cart:', error);
+          alert('No se pudo añadir el pack al carrito. Inténtalo de nuevo.');
+        });
       },
-      body: JSON.stringify({ items })
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Error al agregar productos al carrito');
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.error(errorThrown);
+        alert('No se pudo recalcular el pack. Inténtalo de nuevo.');
       }
-      window.location.href = '{{  shop.url }}/cart';
-    })
-    .catch(error => {
-      console.error('Hubo un problema con el add to cart:', error);
     });
-
-    // Puedes mantener o eliminar este bloque visual
-    /*
-    let allVariantResults = document.querySelectorAll('._variant-result-calculations');
-    Array.from(allVariantResults).forEach(function(result){
-      result.classList.add("disabled");
-      result.querySelector("._qty").textContent = 0;
-    });
-
-    freezerVariantsAndQtys.forEach(function(variantAndQty){
-      let variantId = variantAndQty.variantId;
-      let qty = variantAndQty.qty;
-
-      let thisVariantResult = document.querySelector('#_variant-result-'+variantId);
-      thisVariantResult.classList.remove("disabled");
-      thisVariantResult.querySelector("._qty").textContent = qty;
-    });
-
-    let button = document.querySelector('._variant-result-calculations-button');
-    button.setAttribute('onclick', "window.location.href='" + freezerLink + "'");
-    let calculationResultSection = document.querySelector('#calculation-result');
-    calculationResultSection.style.display = "block";
-    */
-  },
-  error: function(jqXHR, textStatus, errorThrown) {
-    console.error(errorThrown);
-  }
-});
-
-
-
-
   }
 </script>
