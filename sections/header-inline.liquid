@@ -559,9 +559,11 @@ style="    position: absolute;
 >
   <div class="t4s-container">
       {%- assign group_id = 'wb-tabs-' | append: section.id -%}
-<div class="t4s-tabs t4s-type-tabs t4s-accordion-mb-true t4s-tabs-enabled t4s-tabs-accordion-enabled"
+<div id="wb-mobile-accordion-{{ section.id }}"
+     class="t4s-tabs t4s-type-tabs t4s-accordion-mb-true t4s-tabs-enabled t4s-tabs-accordion-enabled"
      data-accordion-group="{{ group_id }}"
      data-t4s-tabs data-t4s-accordion-pr>
+
   <div class="t4s-tabs-pr-content"  data-accordion-group="menu">
     {%- for block in section.blocks -%}
       {%- comment -%}
@@ -571,7 +573,8 @@ style="    position: absolute;
         {%- assign menu = linklists[block.settings.menu] -%}
         {%- assign item_open = forloop.first -%}
         <div data-accordion-item
-             data-state="{{ item_open | default: false | if: true, 'open', 'closed' }}"
+             data-state="{% if item_open %}open{% else %}closed{% endif %}"
+
              data-orientation="vertical"
              class="border-2 border-[#d9d9c8] rounded-[8px] bg-white mb-4 overflow-hidden" {{ block.shopify_attributes }}
             style="    border: 2px solid #d9d9c8a8;">
@@ -654,120 +657,107 @@ Gatos
 </div>
 <script>
 (function () {
-  // Helper para ID único
+  // Solo el acordeón del menú móvil
+  const root = document.querySelector('#wb-mobile-accordion-{{ section.id }}');
+  if (!root) return;
+
   const uid = () =>
     (typeof crypto !== "undefined" && crypto.randomUUID)
       ? "acc-" + crypto.randomUUID()
       : "acc-" + Math.random().toString(36).slice(2);
 
-  // Inicializa cada contenedor de tabs/accordion
-  document.querySelectorAll('.t4s-tabs').forEach((root, rootIndex) => {
-    // Aislar por contenedor
-    const items = root.querySelectorAll('[data-accordion-item]');
-    const groupId = root.getAttribute('data-accordion-group') || ('wbgrp-' + rootIndex);
+  const items = root.querySelectorAll('[data-accordion-item]');
+  const groupId = root.getAttribute('data-accordion-group') || 'wbgrp-{{ section.id }}';
 
-    items.forEach((item, i) => {
-      const btn = item.querySelector('[data-accordion-trigger]');
-      const panel = item.querySelector('[data-accordion-content]');
-      if (!btn || !panel) return;
+  items.forEach((item) => {
+    const btn = item.querySelector('[data-accordion-trigger]');
+    const panel = item.querySelector('[data-accordion-content]');
+    if (!btn || !panel) return;
 
-      // Forzar IDs únicos y relación aria
-      let panelId = panel.id && panel.id.trim() ? panel.id.trim() : uid();
-      // Evitar choques con IDs de otros bloques
-      panelId = groupId + '-' + panelId;
+    // IDs únicos y ARIA
+    let panelId = panel.id && panel.id.trim() ? panel.id.trim() : uid();
+    panelId = groupId + '-' + panelId;
+    panel.id = panelId;
+    btn.setAttribute('aria-controls', panelId);
+    btn.setAttribute('role', 'button');
+    btn.setAttribute('tabindex', '0');
 
-      panel.id = panelId;
-      btn.setAttribute('aria-controls', panelId);
+    const isOpen = item.getAttribute('data-state') === 'open';
+    panel.hidden = !isOpen;
+    btn.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  const closeAll = (except) => {
+    items.forEach((it) => {
+      if (it === except) return;
+      const b = it.querySelector('[data-accordion-trigger]');
+      const p = it.querySelector('[data-accordion-content]');
+      if (!b || !p) return;
+      it.setAttribute('data-state', 'closed');
+      b.setAttribute('aria-expanded', 'false');
+      p.hidden = true;
+    });
+  };
+
+  const toggleItem = (item) => {
+    const btn = item.querySelector('[data-accordion-trigger]');
+    const panel = item.querySelector('[data-accordion-content]');
+    if (!btn || !panel) return;
+
+    const open = item.getAttribute('data-state') === 'open';
+    if (open) {
+      item.setAttribute('data-state', 'closed');
       btn.setAttribute('aria-expanded', 'false');
-      btn.setAttribute('role', 'button');
-      btn.setAttribute('tabindex', '0');
+      panel.hidden = true;
+    } else {
+      closeAll(item);
+      item.setAttribute('data-state', 'open');
+      btn.setAttribute('aria-expanded', 'true');
+      panel.hidden = false;
+    }
+  };
 
-      // Estado inicial (cerrado si no hay data-state=open)
-      const isOpen = item.getAttribute('data-state') === 'open';
-      panel.hidden = !isOpen;
-      btn.setAttribute('aria-expanded', String(isOpen));
-      item.setAttribute('data-state', isOpen ? 'open' : 'closed');
-    });
+  root.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-accordion-trigger]');
+    if (!btn || !root.contains(btn)) return;
+    const item = btn.closest('[data-accordion-item]');
+    if (!item) return;
+    e.preventDefault();
+    toggleItem(item);
+  });
 
-    // Cerrar todos menos uno
-    const closeAll = (except) => {
-      items.forEach((it) => {
-        if (it === except) return;
-        const b = it.querySelector('[data-accordion-trigger]');
-        const p = it.querySelector('[data-accordion-content]');
-        if (!b || !p) return;
-        it.setAttribute('data-state', 'closed');
-        b.setAttribute('aria-expanded', 'false');
-        p.hidden = true;
-      });
-    };
+  root.addEventListener('keydown', (e) => {
+    const btn = e.target.closest('[data-accordion-trigger]');
+    if (!btn || !root.contains(btn)) return;
 
-    // Toggle de un item
-    const toggleItem = (item) => {
-      const btn = item.querySelector('[data-accordion-trigger]');
-      const panel = item.querySelector('[data-accordion-content]');
-      if (!btn || !panel) return;
+    const triggers = Array.from(root.querySelectorAll('[data-accordion-trigger]'));
+    const idx = triggers.indexOf(btn);
 
-      const currentlyOpen = item.getAttribute('data-state') === 'open';
-      if (currentlyOpen) {
-        item.setAttribute('data-state', 'closed');
-        btn.setAttribute('aria-expanded', 'false');
-        panel.hidden = true;
-      } else {
-        closeAll(item); // acordeón: solo uno abierto
-        item.setAttribute('data-state', 'open');
-        btn.setAttribute('aria-expanded', 'true');
-        panel.hidden = false;
-      }
-    };
-
-    // Delegación de eventos (click + teclado)
-    root.addEventListener('click', (e) => {
-      const btn = e.target.closest('[data-accordion-trigger]');
-      if (!btn || !root.contains(btn)) return;
-      const item = btn.closest('[data-accordion-item]');
-      if (!item) return;
+    if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      toggleItem(item);
-    });
-
-    root.addEventListener('keydown', (e) => {
-      const btn = e.target.closest('[data-accordion-trigger]');
-      if (!btn || !root.contains(btn)) return;
-
-      const triggers = Array.from(root.querySelectorAll('[data-accordion-trigger]'));
-      const idx = triggers.indexOf(btn);
-
-      // Enter/Space -> toggle
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        const item = btn.closest('[data-accordion-item]');
-        if (item) toggleItem(item);
-      }
-
-      // Navegación accesible
-      if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        const next = triggers[(idx + 1) % triggers.length];
-        next && next.focus();
-      }
-      if (e.key === 'ArrowUp') {
-        e.preventDefault();
-        const prev = triggers[(idx - 1 + triggers.length) % triggers.length];
-        prev && prev.focus();
-      }
-      if (e.key === 'Home') {
-        e.preventDefault();
-        triggers[0] && triggers[0].focus();
-      }
-      if (e.key === 'End') {
-        e.preventDefault();
-        triggers[triggers.length - 1] && triggers[triggers.length - 1].focus();
-      }
-    });
+      const item = btn.closest('[data-accordion-item]');
+      if (item) toggleItem(item);
+    }
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      triggers[(idx + 1) % triggers.length]?.focus();
+    }
+    if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      triggers[(idx - 1 + triggers.length) % triggers.length]?.focus();
+    }
+    if (e.key === 'Home') {
+      e.preventDefault();
+      triggers[0]?.focus();
+    }
+    if (e.key === 'End') {
+      e.preventDefault();
+      triggers[triggers.length - 1]?.focus();
+    }
   });
 })();
 </script>
+
 <script>
   document.addEventListener("DOMContentLoaded", function() {
   const toggleBtn = document.getElementById("menu-toggle");
