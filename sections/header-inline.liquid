@@ -477,6 +477,10 @@
     margin-bottom: 7.5px;
     padding-bottom: 7.5px;
   }
+  #shopify-section-header-inline .t4s-header__wrapper > .t4s-container .t4s-row{
+      justify-content: space-between!important;
+  }
+  
 {%- endstyle -%}
 
 <div data-header-options='{ "isTransparent": {{ h_transparent }},"isSticky": {{ se_stts.sticky_header }},"hideScroldown": {{ se_stts.scroll_header }} }' class="t4s-header__wrapper t4s-pr t4s-header-layout_{{ se_stts.layout }} {% if h__bgimg != blank %} lazyloadt4s t4s-header__bgimg" data-bgset="{{ h__bgimg | image_url: width: 1 }}" data-ratio="{{ h__bgimg.aspect_ratio }}" data-sizes="auto"{% else %}"{% endif %} {%- if se_stts.full_header -%} style="--pd-top: {{ padding_section[0] | default: "0px" }};--pd-right: {{ padding_section[1] | default: "0px" }};--pd-bottom: {{ padding_section[2] | default: "0px" }};--pd-left: {{ padding_section[3] | default: "0px" }};"{% endif %}>
