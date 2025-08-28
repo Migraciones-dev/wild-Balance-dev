@@ -559,7 +559,7 @@ style="    position: absolute;
 >
   <div class="t4s-container">
       {%- assign group_id = 'wb-tabs-' | append: section.id -%}
-<div class="t4s-tabs t4s-type-tabs t4s-accordion-mb-true t4s-tabs-enabled t4s-tabs-accordion-enabled"
+<div class="menu-tabs t4s-tabs t4s-type-tabs t4s-accordion-mb-true t4s-tabs-enabled t4s-tabs-accordion-enabled"
      data-accordion-group="{{ group_id }}"
      data-t4s-tabs data-t4s-accordion-pr>
   <div class="t4s-tabs-pr-content">
@@ -661,7 +661,7 @@ Gatos
       : "acc-" + Math.random().toString(36).slice(2);
 
   // Inicializa cada contenedor de tabs/accordion
-  document.querySelectorAll('.t4s-container .t4s-tabs').forEach((root, rootIndex) => {
+  document.querySelectorAll('.menu-tabs.t4s-tabs').forEach((root, rootIndex) => {
     // Aislar por contenedor
     const items = root.querySelectorAll('[data-accordion-item]');
     const groupId = root.getAttribute('data-accordion-group') || ('wbgrp-' + rootIndex);
