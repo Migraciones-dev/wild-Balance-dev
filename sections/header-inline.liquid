@@ -570,7 +570,7 @@ style="    position: absolute;
       {%- if block.settings.menu != blank and linklists[block.settings.menu] and linklists[block.settings.menu].links.size > 0 -%}
         {%- assign menu = linklists[block.settings.menu] -%}
         {%- assign item_open = forloop.first -%}
-        <div data-accordion-item
+        <div data-accordion-item-1
              data-state="{{ item_open | default: false | if: true, 'open', 'closed' }}"
              data-orientation="vertical"
              class="border-2 border-[#d9d9c8] rounded-[8px] bg-white mb-4 overflow-hidden" {{ block.shopify_attributes }}
@@ -663,7 +663,7 @@ Gatos
   // Inicializa cada contenedor de tabs/accordion
   document.querySelectorAll('.menu-tabs.t4s-tabs').forEach((root, rootIndex) => {
     // Aislar por contenedor
-    const items = root.querySelectorAll('[data-accordion-item]');
+    const items = root.querySelectorAll('[data-accordion-item-1]');
     const groupId = root.getAttribute('data-accordion-group') || ('wbgrp-' + rootIndex);
 
     items.forEach((item, i) => {
@@ -725,7 +725,7 @@ Gatos
     root.addEventListener('click', (e) => {
       const btn = e.target.closest('[data-accordion-trigger]');
       if (!btn || !root.contains(btn)) return;
-      const item = btn.closest('[data-accordion-item]');
+      const item = btn.closest('[data-accordion-item-1]');
       if (!item) return;
       e.preventDefault();
       toggleItem(item);
@@ -741,7 +741,7 @@ Gatos
       // Enter/Space -> toggle
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        const item = btn.closest('[data-accordion-item]');
+        const item = btn.closest('[data-accordion-item-1]');
         if (item) toggleItem(item);
       }
 
