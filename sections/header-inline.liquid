@@ -622,7 +622,7 @@ Gatos
           <div id="pnl-{{ block.id }}" data-accordion-content class="px-9 pb-6" {% unless item_open %}hidden{% endunless %}>
             <ul class="list-none {% if block.settings.title contains "gato" or block.settings.title contains "perro" %}pl-12{% else %}pl-0{% endif %} space-y-1">
               {%- for link in menu.links -%}
-                <li>
+                <li class="py-2">
                   <a href="{{ link.url }}" class="hover:no-underline">{{ link.title }}</a>
                   {%- if link.links.size > 0 -%}
                     <ul class="list-disc pl-5 mt-1 space-y-1">
