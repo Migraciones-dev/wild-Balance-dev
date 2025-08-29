@@ -375,34 +375,6 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
           });
         });
       </script>
-      <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          const widget = document.querySelector('.loop-widget-container');
-          const targetMobile = document.querySelector('#product-sub-mobile');
-          const targetDesk = document.querySelector('#product-sub-desk');
-
-          if (!widget || (!targetMobile && !targetDesk)) return;
-
-          // Función para mover el widget según ancho
-          function moveWidget() {
-            if (window.matchMedia('(max-width: 767px)').matches) {
-              if (targetMobile && widget.parentNode !== targetMobile) {
-                targetMobile.appendChild(widget);
-              }
-            } else {
-              if (targetDesk && widget.parentNode !== targetDesk) {
-                targetDesk.appendChild(widget);
-              }
-            }
-          }
-
-          // Ejecutar al cargar
-          moveWidget();
-
-          // Detectar cambios de resolución
-          window.addEventListener('resize', moveWidget);
-        });
-      </script>
     </body>
   </html>
 
