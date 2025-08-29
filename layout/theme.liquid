@@ -325,55 +325,6 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
           });
         });
       </script>
-      <script>
-        document.addEventListener('DOMContentLoaded', () => {
-          const container = document.querySelector('#t4s-desc-collection');
-          if (!container) return;
-
-          // Encuentra todos los H2 dentro
-          const headers = container.querySelectorAll('h2');
-
-          headers.forEach((h2, index) => {
-            // Crear un botón dentro del h2
-            const btn = document.createElement('button');
-            btn.innerHTML = h2.innerHTML;
-            btn.className = 'w-full flex justify-between items-center py-4 text-left font-bold text-wb-verde-oscuro';
-            btn.setAttribute('aria-expanded', 'false');
-
-            h2.innerHTML = ''; // limpia el H2
-            h2.appendChild(btn);
-
-            // Recoge todos los elementos hasta el próximo h2
-            let contentEls = [];
-            let next = h2.nextElementSibling;
-            while (next && next.tagName !== 'H2') {
-              contentEls.push(next);
-              next = next.nextElementSibling;
-            }
-
-            if (contentEls.length) {
-              const wrapper = document.createElement('div');
-              wrapper.className = 'overflow-hidden max-h-0 opacity-0 transition-all duration-300 ease-in-out';
-              wrapper.setAttribute('data-accordion-content', '');
-
-              contentEls.forEach((el) => wrapper.appendChild(el));
-              h2.insertAdjacentElement('afterend', wrapper);
-
-              btn.addEventListener('click', () => {
-                const expanded = btn.getAttribute('aria-expanded') === 'true';
-                btn.setAttribute('aria-expanded', String(!expanded));
-                if (expanded) {
-                  wrapper.classList.remove('max-h-screen', 'opacity-100', 'py-4');
-                  wrapper.classList.add('max-h-0', 'opacity-0', 'py-0');
-                } else {
-                  wrapper.classList.remove('max-h-0', 'opacity-0', 'py-0');
-                  wrapper.classList.add('max-h-screen', 'opacity-100', 'py-4');
-                }
-              });
-            }
-          });
-        });
-      </script>
     </body>
   </html>
 
