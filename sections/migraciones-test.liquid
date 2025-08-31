@@ -219,183 +219,182 @@
   </div>
 
   <!-- Mobile / tablet -->
+  <!-- Mobile / tablet -->
   <div class="w-full max-w-[1235px] mx-auto px-4 pt-8 min-[1381px]:hidden">
-    <!-- Slider horizontal -->
-    <div
-      class="flex gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide"
-      style="scroll-padding: 0 1rem;"
-    >
-      <!-- Salmón -->
-      <a
-        href="https://wildbalance.es/search?type=product&options%5Bunavailable_products%5D=last&options%5Bprefix%5D=last&q=salmon"
-        class="flex-shrink-0 w-64 snap-start"
-      >
-        <div class="flex flex-col items-center text-center">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_6_2.png?v=1753292737"
-            alt="Salmón"
-            class="w-auto h-36 mb-4"
-          >
-          <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px]">
-            Salmón
-          </h3>
-          <p class="mt-2 text-gray-700 text-sm">Fuente de Omega 3 y ácidos grasos</p>
-        </div>
-      </a>
+    <!-- Wrapper relativo para posicionar flechas -->
+    <div class="relative">
+      <!-- Flecha izquierda -->
 
-      <!-- Zanahoria -->
-      <a
-        href="https://wildbalance.es/search?type=product&options%5Bunavailable_products%5D=last&options%5Bprefix%5D=last&q=zanahoria"
-        class="flex-shrink-0 w-64 snap-start"
+      <button
+        id="wb-prev"
+        class="flickityt4s-button flickityt4s-prev-next-button previous"
+        style="
+          left:0!important; z-index: 4!important;     min-width: 0;
+          min-height: 0;
+        "
+        type="button"
+        aria-label="Anterior"
       >
-        <div class="flex flex-col items-center text-center">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_6_3.png?v=1753292737"
-            alt="Zanahoria"
-            class="w-auto h-36 mb-4"
-          >
-          <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px]">
-            Zanahoria
-          </h3>
-          <p class="mt-2 text-gray-700 text-sm">Fuente de fibra, vitamina A y carotenoides</p>
-        </div>
-      </a>
+        <svg class="flickityt4s-button-icon" style="height: 11px!important;" viewBox="0 0 100 100">
+          <path d="M 10,50 L 60,100 L 65,95 L 20,50  L 65,5 L 60,0 Z" class="arrow"></path>
+        </svg>
+      </button>
 
-      <!-- Pollo -->
-      <a
-        href="https://wildbalance.es/search?type=product&options%5Bunavailable_products%5D=last&options%5Bprefix%5D=last&q=pollo"
-        class="flex-shrink-0 w-64 snap-start"
+      <!-- Slider horizontal -->
+      <div
+        id="wb-carousel"
+        class="flex gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide"
+        style="scroll-padding: 0 1rem; scroll-behavior: smooth;"
       >
-        <div class="flex flex-col items-center text-center">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_6_1.png?v=1753292737"
-            alt="Pollo"
-            class="w-auto h-36 mb-4"
-          >
-          <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px]">
-            Pollo
-          </h3>
-          <p class="mt-2 text-gray-700 text-sm">Fuente de proteína baja en grasa</p>
-        </div>
-      </a>
+        <!-- Salmón -->
+        <a
+          href="https://wildbalance.es/search?type=product&options%5Bunavailable_products%5D=last&options%5Bprefix%5D=last&q=salmon"
+          class="flex-shrink-0 w-64 snap-start"
+        >
+          <div class="flex flex-col items-center text-center">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_6_2.png?v=1753292737"
+              alt="Salmón"
+              class="w-auto h-36 mb-4"
+            >
+            <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px]">
+              Salmón
+            </h3>
+            <p class="mt-2 text-gray-700 text-sm">Fuente de Omega 3 y ácidos grasos</p>
+          </div>
+        </a>
 
-      <!-- Calabacín -->
-      <a
-        href="https://wildbalance.es/search?type=product&options%5Bunavailable_products%5D=last&options%5Bprefix%5D=last&q=calabacin"
-        class="flex-shrink-0 w-64 snap-start"
-      >
-        <div class="flex flex-col items-center text-center">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_6_6.png?v=1753292736"
-            alt="Calabacín"
-            class="w-auto h-36 mb-4"
-          >
-          <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px]">
-            Calabacín
-          </h3>
-          <p class="mt-2 text-gray-700 text-sm">Excelente fuente de vitaminas y minerales</p>
-        </div>
-      </a>
+        <!-- Zanahoria -->
+        <a
+          href="https://wildbalance.es/search?type=product&options%5Bunavailable_products%5D=last&options%5Bprefix%5D=last&q=zanahoria"
+          class="flex-shrink-0 w-64 snap-start"
+        >
+          <div class="flex flex-col items-center text-center">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_6_3.png?v=1753292737"
+              alt="Zanahoria"
+              class="w-auto h-36 mb-4"
+            >
+            <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px]">
+              Zanahoria
+            </h3>
+            <p class="mt-2 text-gray-700 text-sm">Fuente de fibra, vitamina A y carotenoides</p>
+          </div>
+        </a>
 
-      <!-- Calabaza -->
-      <a
-        href="https://wildbalance.es/search?type=product&options%5Bunavailable_products%5D=last&options%5Bprefix%5D=last&q=calabaza"
-        class="flex-shrink-0 w-64 snap-start"
-      >
-        <div class="flex flex-col items-center text-center">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_6_8cf37145-9781-4379-968c-c6c65de47a34.png?v=1753292737"
-            alt="Calabaza"
-            class="w-auto h-36 mb-4"
-          >
-          <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px]">
-            Calabaza
-          </h3>
-          <p class="mt-2 text-gray-700 text-sm">Ayuda a fortalecer el sistema inmunológico</p>
-        </div>
-      </a>
+        <!-- Pollo -->
+        <a
+          href="https://wildbalance.es/search?type=product&options%5Bunavailable_products%5D=last&options%5Bprefix%5D=last&q=pollo"
+          class="flex-shrink-0 w-64 snap-start"
+        >
+          <div class="flex flex-col items-center text-center">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_6_1.png?v=1753292737"
+              alt="Pollo"
+              class="w-auto h-36 mb-4"
+            >
+            <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px]">
+              Pollo
+            </h3>
+            <p class="mt-2 text-gray-700 text-sm">Fuente de proteína baja en grasa</p>
+          </div>
+        </a>
 
-      <!-- Pavo -->
-      <a
-        href="https://wildbalance.es/search?type=product&options%5Bunavailable_products%5D=last&options%5Bprefix%5D=last&q=pavo"
-        class="flex-shrink-0 w-64 snap-start"
-      >
-        <div class="flex flex-col items-center text-center">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/aade0ea9591a489db32ee32ade97c3aca84da1b0.png?v=1752776297"
-            alt="Pavo"
-            class="w-auto h-36 mb-4"
-          >
-          <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px]">
-            Pavo
-          </h3>
-          <p class="mt-2 text-gray-700 text-sm">Fuente de proteína baja en grasa</p>
-        </div>
-      </a>
+        <!-- Calabacín -->
+        <a
+          href="https://wildbalance.es/search?type=product&options%5Bunavailable_products%5D=last&options%5Bprefix%5D=last&q=calabacin"
+          class="flex-shrink-0 w-64 snap-start"
+        >
+          <div class="flex flex-col items-center text-center">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_6_6.png?v=1753292736"
+              alt="Calabacín"
+              class="w-auto h-36 mb-4"
+            >
+            <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px]">
+              Calabacín
+            </h3>
+            <p class="mt-2 text-gray-700 text-sm">Excelente fuente de vitaminas y minerales</p>
+          </div>
+        </a>
 
-      <!-- Ternera -->
-      <a
-        href="https://wildbalance.es/search?type=product&options%5Bunavailable_products%5D=last&options%5Bprefix%5D=last&q=ternera"
-        class="flex-shrink-0 w-64 snap-start"
+        <!-- Calabaza -->
+        <a
+          href="https://wildbalance.es/search?type=product&options%5Bunavailable_products%5D=last&options%5Bprefix%5D=last&q=calabaza"
+          class="flex-shrink-0 w-64 snap-start"
+        >
+          <div class="flex flex-col items-center text-center">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_6_8cf37145-9781-4379-968c-c6c65de47a34.png?v=1753292737"
+              alt="Calabaza"
+              class="w-auto h-36 mb-4"
+            >
+            <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px]">
+              Calabaza
+            </h3>
+            <p class="mt-2 text-gray-700 text-sm">Ayuda a fortalecer el sistema inmunológico</p>
+          </div>
+        </a>
+
+        <!-- Pavo -->
+        <a
+          href="https://wildbalance.es/search?type=product&options%5Bunavailable_products%5D=last&options%5Bprefix%5D=last&q=pavo"
+          class="flex-shrink-0 w-64 snap-start"
+        >
+          <div class="flex flex-col items-center text-center">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/aade0ea9591a489db32ee32ade97c3aca84da1b0.png?v=1752776297"
+              alt="Pavo"
+              class="w-auto h-36 mb-4"
+            >
+            <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px]">
+              Pavo
+            </h3>
+            <p class="mt-2 text-gray-700 text-sm">Fuente de proteína baja en grasa</p>
+          </div>
+        </a>
+
+        <!-- Ternera -->
+        <a
+          href="https://wildbalance.es/search?type=product&options%5Bunavailable_products%5D=last&options%5Bprefix%5D=last&q=ternera"
+          class="flex-shrink-0 w-64 snap-start"
+        >
+          <div class="flex flex-col items-center text-center">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_6_7.png?v=1753292737"
+              alt="Ternera"
+              class="w-auto h-36 mb-4"
+            >
+            <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px]">
+              Ternera
+            </h3>
+            <p class="mt-2 text-gray-700 text-sm">La mejor calidad en carne</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Flecha derecha -->
+
+      <button
+        id="wb-next"
+        class="flickityt4s-button flickityt4s-prev-next-button next"
+        style="
+          right:0!important; z-index: 5!important;     min-width: 0;
+          min-height: 0;
+        "
+        type="button"
+        aria-label="Siguiente"
       >
-        <div class="flex flex-col items-center text-center">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_6_7.png?v=1753292737"
-            alt="Ternera"
-            class="w-auto h-36 mb-4"
-          >
-          <h3 class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-center tracking-[0] leading-[28.8px] whitespace-nowrap text-[18px] lg:text-[24px]">
-            Ternera
-          </h3>
-          <p class="mt-2 text-gray-700 text-sm">La mejor calidad en carne</p>
-        </div>
-      </a>
+        <svg class="flickityt4s-button-icon" style="height: 11px!important;" viewBox="0 0 100 100">
+          <path d="M 10,50 L 60,100 L 65,95 L 20,50  L 65,5 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path>
+        </svg>
+      </button>
     </div>
 
-    <!-- before-after móvil -->
+    <!-- before-after móvil (igual que lo tenías) -->
     <div id="ba-container" class="relative w-full overflow-hidden mt-12 max-w-[835px] mx-auto">
-      <img
-        src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Diseno_sin_titulo_57_1.png?v=1754248227"
-        alt="Antes"
-        class="w-full h-auto block"
-      >
-      <img
-        id="ba-overlay"
-        src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Diseno_sin_titulo_56_1_1.png?v=1754248226"
-        alt="Después"
-        class="absolute top-0 left-0 w-full h-auto block"
-        style="clip-path: inset(0 100% 0 0); -webkit-clip-path: inset(0 100% 0 0); will-change: clip-path;"
-      >
+      <!-- ... -->
     </div>
-
-    <script>
-      (function () {
-        const cont = document.getElementById('ba-container');
-        const ov = document.getElementById('ba-overlay');
-
-        function clamp(v) {
-          return v < 0 ? 0 : v > 1 ? 1 : v;
-        }
-        function setClip(el, pctRight) {
-          const v = `inset(0 ${pctRight}% 0 0)`;
-          el.style.clipPath = v;
-          el.style.webkitClipPath = v; // Safari
-        }
-
-        window.addEventListener(
-          'scroll',
-          () => {
-            const rect = cont.getBoundingClientRect();
-            const viewH = window.innerHeight;
-            let progress = (viewH - rect.top) / (viewH + rect.height);
-            progress = clamp(progress);
-            const hidePct = 100 - progress * 150;
-            setClip(ov, hidePct);
-          },
-          { passive: true }
-        );
-      })();
-    </script>
   </div>
 
   <!-- CSS extra para ocultar scrollbar -->
@@ -406,99 +405,129 @@
 </section>
 
 <style>
-  /* Posicionamiento y display */
-  .relative { position: relative; }
-  .absolute { position: absolute; }
-  .flex { display: flex; }
-  .flex-col { flex-direction: column; }
-  .items-center { align-items: center; }
-  .text-center { text-align: center; }
-  .overflow-hidden { overflow: hidden; }
+    /* Posicionamiento y display */
+    .relative { position: relative; }
+    .absolute { position: absolute; }
+    .flex { display: flex; }
+    .flex-col { flex-direction: column; }
+    .items-center { align-items: center; }
+    .text-center { text-align: center; }
+    .overflow-hidden { overflow: hidden; }
 
-  /* Sizing genérico */
-  .w-full { width: 100%; }
-  .h-full { height: 100%; }
-  .max-w-\[940px\] { max-width: 940px; }
-  .max-w-\[733px\] { max-width: 733px; }
-  .max-w-\[1235px\] { max-width: 1235px; }
+    /* Sizing genérico */
+    .w-full { width: 100%; }
+    .h-full { height: 100%; }
+    .max-w-\[940px\] { max-width: 940px; }
+    .max-w-\[733px\] { max-width: 733px; }
+    .max-w-\[1235px\] { max-width: 1235px; }
 
-  /* Padding / Margins */
-  .py-16 { margin-top: 4rem }
-  .mb-12 { margin-bottom: 3rem; }
-  .mb-16 { margin-bottom: 4rem; }
+    /* Padding / Margins */
+    .py-16 { margin-top: 4rem }
+    .mb-12 { margin-bottom: 3rem; }
+    .mb-16 { margin-bottom: 4rem; }
 
-  /* Gaps */
-  .gap-\[17px\] { gap: 17px; }
-  .gap-2\.5 { gap: 0.625rem; }
-  .gap-\[22px\] { gap: 22px; }
-  .gap-3 { gap: 0.75rem; }
+    /* Gaps */
+    .gap-\[17px\] { gap: 17px; }
+    .gap-2\.5 { gap: 0.625rem; }
+    .gap-\[22px\] { gap: 22px; }
+    .gap-3 { gap: 0.75rem; }
 
-  /* Widths y alturas concretas */
-  .w-\[189\.02px\] { width: 189.02px; }
-  .h-\[46\.99px\] { height: 46.99px; }
-  .w-\[139px\] { width: 139px; }
-  .h-6 { height: 1.5rem; }
-  .w-\[379px\] { width: 379px; }
-  .h-2\.5 { height: 0.625rem; }
-  .h-\[668px\] { height: 668px; }
-  .w-\[649px\] { width: 649px; }
-  .h-\[471px\] { height: 471px; }
-  .h-\[613px\] { height: 613px; }
-  .w-\[119px\] { width: 119px; }
-  .h-\[100px\] { height: 100px; }
-  .w-\[208\.2px\] { width: 208.2px; }
+    /* Widths y alturas concretas */
+    .w-\[189\.02px\] { width: 189.02px; }
+    .h-\[46\.99px\] { height: 46.99px; }
+    .w-\[139px\] { width: 139px; }
+    .h-6 { height: 1.5rem; }
+    .w-\[379px\] { width: 379px; }
+    .h-2\.5 { height: 0.625rem; }
+    .h-\[668px\] { height: 668px; }
+    .w-\[649px\] { width: 649px; }
+    .h-\[471px\] { height: 471px; }
+    .h-\[613px\] { height: 613px; }
+    .w-\[119px\] { width: 119px; }
+    .h-\[100px\] { height: 100px; }
+    .w-\[208\.2px\] { width: 208.2px; }
 
-  /* Posiciones concretas */
-  .top-0 { top: 0; }
-  .left-0 { left: 0; }
-  .top-3\.5 { top: 0.875rem; }
-  .left-\[25px\] { left: 25px; }
-  .top-\[51px\] { top: 51px; }
-  .left-\[750px\] { left: 750px; }
-  .top-\[170px\] { top: 170px; }
-  .left-\[912px\] { left: 912px; }
-  .top-\[404px\] { top: 404px; }
-  .left-\[1063px\] { left: 1063px; }
-  .top-\[197px\] { top: 197px; }
-  .left-\[293px\] { left: 293px; }
-  .left-\[509px\] { left: 509px; }
-  .left-\[267px\] { left: 267px; }
-  .left-\[63px\] { left: 63px; }
+    /* Posiciones concretas */
+    .top-0 { top: 0; }
+    .left-0 { left: 0; }
+    .top-3\.5 { top: 0.875rem; }
+    .left-\[25px\] { left: 25px; }
+    .top-\[51px\] { top: 51px; }
+    .left-\[750px\] { left: 750px; }
+    .top-\[170px\] { top: 170px; }
+    .left-\[912px\] { left: 912px; }
+    .top-\[404px\] { top: 404px; }
+    .left-\[1063px\] { left: 1063px; }
+    .top-\[197px\] { top: 197px; }
+    .left-\[293px\] { left: 293px; }
+    .left-\[509px\] { left: 509px; }
+    .left-\[267px\] { left: 267px; }
+    .left-\[63px\] { left: 63px; }
 
-  /* Tipografía */
-  .font-normal { font-weight: 400; }
-  .font-bold { font-weight: 700; }
-  .font-extrabold { font-weight: 800; }
+    /* Tipografía */
+    .font-normal { font-weight: 400; }
+    .font-bold { font-weight: 700; }
+    .font-extrabold { font-weight: 800; }
 
-  .text-\[64px\] { font-size: 64px; }
+    .text-\[64px\] { font-size: 64px; }
 
-  .leading-\[23\.4px\] { line-height: 23.4px; }
-  .leading-\[30px\] { line-height: 30px; }
-  .leading-\[63px\] { line-height: 63px; }
-  .leading-\[28\.8px\] { line-height: 28.8px; }
-  .leading-\[23px\] { line-height: 23px; }
+    .leading-\[23\.4px\] { line-height: 23.4px; }
+    .leading-\[30px\] { line-height: 30px; }
+    .leading-\[63px\] { line-height: 63px; }
+    .leading-\[28\.8px\] { line-height: 28.8px; }
+    .leading-\[23px\] { line-height: 23px; }
 
-  .tracking-\[0\] { letter-spacing: 0; }
-  .whitespace-nowrap { white-space: nowrap; }
+    .tracking-\[0\] { letter-spacing: 0; }
+    .whitespace-nowrap { white-space: nowrap; }
 
-  /* Colores de texto */
-  .text-\[\#00a36c\] { color: #00a36c; }
-  .text-\[\#004623\] { color: #004623; }
-  .text-\[\#222222\] { color: #222222; }
-  .text-\[\#69ba81\] { color: #69ba81; }
+    /* Colores de texto */
+    .text-\[\#00a36c\] { color: #00a36c; }
+    .text-\[\#004623\] { color: #004623; }
+    .text-\[\#222222\] { color: #222222; }
+    .text-\[\#69ba81\] { color: #69ba81; }
 
-  /* Otros utilitarios */
-  .border { border: 1px solid #e5e7eb; }
-  .border-none { border: none; }
-  .rounded-xl { border-radius: 0.75rem; }
-  .bg-transparent { background-color: transparent; }
-  .shadow-none { box-shadow: none; }
-  .p-0 { padding: 0; }
+    /* Otros utilitarios */
+    .border { border: 1px solid #e5e7eb; }
+    .border-none { border: none; }
+    .rounded-xl { border-radius: 0.75rem; }
+    .bg-transparent { background-color: transparent; }
+    .shadow-none { box-shadow: none; }
+    .p-0 { padding: 0; }
 
-  /* Clases de fuente personalizada */
+    /* Clases de fuente personalizada */
 
-  /* Color heredado para tarjetas */
-  .text-card-foreground { color: inherit; }
+    /* Color heredado para tarjetas */
+    .text-card-foreground { color: inherit; }
+    /* Flechas del carrusel móvil */
+  .wb-arrow{
+    position:absolute; top:50%; transform:translateY(-50%);
+        width: 30px;
+        height: 30px;
+            background: transparent;
+    color: #004623;
+    border: 1px solid #004623;
+    border-radius: 50px;
+            display:flex; align-items:center; justify-content:center;
+    font-size:28px; line-height:1; font-weight:700;
+    background:rgba(255,255,255,0.9);
+    border:1px solid #e5e7eb;
+    box-shadow:0 4px 12px rgba(0,0,0,0.12);
+    color:#004623;
+    z-index:5;
+    cursor:pointer;
+    user-select:none;
+  }
+  .wb-arrow-left{ left:4px; }
+  .wb-arrow-right{ right:4px; }
+  .wb-arrow:disabled{ opacity:.4; cursor:default; }
+
+  /* opcional: degradados en bordes para indicar scroll */
+  .relative:has(#wb-carousel)::before,
+  .relative:has(#wb-carousel)::after{
+    content:""; position:absolute; top:0; height:100%; width:24px; z-index:4; pointer-events:none;
+  }
+  .relative:has(#wb-carousel)::before{ left:0; background:linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0)); }
+  .relative:has(#wb-carousel)::after{ right:0; background:linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0)); }
 </style>
 
 {% schema %}
@@ -521,3 +550,42 @@
   ]
 }
 {% endschema %}
+
+<script>
+  (function () {
+    const scroller = document.getElementById('wb-carousel');
+    const prevBtn = document.getElementById('wb-prev');
+    const nextBtn = document.getElementById('wb-next');
+    if (!scroller || !prevBtn || !nextBtn) return;
+
+    const getStep = () => Math.max(1, Math.round(scroller.clientWidth * 0.8));
+
+    function updateArrows() {
+      const max = scroller.scrollWidth - scroller.clientWidth;
+      const x = scroller.scrollLeft;
+      prevBtn.disabled = x <= 1;
+      nextBtn.disabled = x >= max - 1;
+    }
+
+    function scrollByStep(dir) {
+      scroller.scrollBy({ left: dir * getStep(), behavior: 'smooth' });
+    }
+
+    prevBtn.addEventListener('click', () => scrollByStep(-1));
+    nextBtn.addEventListener('click', () => scrollByStep(1));
+    scroller.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows);
+
+    // Accesibilidad
+    scroller.setAttribute('tabindex', '-1');
+    prevBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') scrollByStep(-1);
+    });
+    nextBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') scrollByStep(1);
+    });
+
+    // Init tras pintar
+    requestAnimationFrame(updateArrows);
+  })();
+</script>
