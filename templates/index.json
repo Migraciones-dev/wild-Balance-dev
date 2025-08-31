@@ -482,7 +482,7 @@
         "au_time": 0,
         "au_hover": true,
         "nav_btn": true,
-        "btn_pos": "in",
+        "btn_pos": "out",
         "btn_distance": 15,
         "btn_vi": "hover",
         "btn_owl": "default",
