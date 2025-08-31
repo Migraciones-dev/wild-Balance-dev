@@ -398,7 +398,7 @@
         "nav_btn": true,
         "btn_pos": "out",
         "btn_distance": 15,
-        "btn_vi": "hover",
+        "btn_vi": "always",
         "btn_owl": "default",
         "btn_shape": "none",
         "btn_cl": "dark",
