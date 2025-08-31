@@ -125,88 +125,90 @@
           Best Sellers <span class="highlight">para gatos</span>
         </h2>
 
-        <div class="slider-nav-buttons hidden lg:block my-auto">
-          <button
-            type="button"
-            class="group slider-prev focus:outline-none transition-all duration-200"
-            aria-label="Anterior"
-          >
-            <svg
-              width="48"
-              height="49"
-              viewBox="0 0 48 49"
-              xmlns="http://www.w3.org/2000/svg"
-              class="fill-none"
+        {% comment %}
+          <div class="slider-nav-buttons hidden lg:block my-auto">
+            <button
+              type="button"
+              class="group slider-prev focus:outline-none transition-all duration-200"
+              aria-label="Anterior"
             >
-              <!-- 1) CÍRCULO: outline verde + sin relleno -->
-              <path
-                d="M24 1.03931C11.0213 1.03931 0.5 11.5606 0.5 24.5393C0.5 37.518 11.0213 48.0393 24 48.0393C36.9787 48.0393 47.5 37.518 47.5 24.5393C47.5 11.5606 36.9787 1.03931 24 1.03931Z"
-                class="stroke-[#004623] fill-none
-                       group-hover:fill-[#004623]      /* al hover rellena el círculo */
-                       group-hover:stroke-none        /* y quita el stroke */
-                       transition-all duration-200"
-                stroke-width="1"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <!-- 2) LÍNEA: hereda color de texto (verde) y en hover blanco -->
-              <path
-                d="M32 24.5393H16"
-                class="stroke-current group-hover:stroke-white transition-all duration-200"
-                stroke-width="1"
-                stroke-linecap="round"
-              />
-              <!-- 3) FLECHA: lo mismo -->
-              <path
-                d="M21.6 18.1395L16 24.5395L21.6 30.9395"
-                class="stroke-current group-hover:stroke-white transition-all duration-200"
-                stroke-width="1"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </button>
+              <svg
+                width="48"
+                height="49"
+                viewBox="0 0 48 49"
+                xmlns="http://www.w3.org/2000/svg"
+                class="fill-none"
+              >
+                <!-- 1) CÍRCULO: outline verde + sin relleno -->
+                <path
+                  d="M24 1.03931C11.0213 1.03931 0.5 11.5606 0.5 24.5393C0.5 37.518 11.0213 48.0393 24 48.0393C36.9787 48.0393 47.5 37.518 47.5 24.5393C47.5 11.5606 36.9787 1.03931 24 1.03931Z"
+                  class="stroke-[#004623] fill-none
+                         group-hover:fill-[#004623]      /* al hover rellena el círculo */
+                         group-hover:stroke-none        /* y quita el stroke */
+                         transition-all duration-200"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <!-- 2) LÍNEA: hereda color de texto (verde) y en hover blanco -->
+                <path
+                  d="M32 24.5393H16"
+                  class="stroke-current group-hover:stroke-white transition-all duration-200"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                />
+                <!-- 3) FLECHA: lo mismo -->
+                <path
+                  d="M21.6 18.1395L16 24.5395L21.6 30.9395"
+                  class="stroke-current group-hover:stroke-white transition-all duration-200"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
 
-          <button
-            type="button"
-            class="group slider-next text-[#004623] focus:outline-none transition-all duration-200"
-            aria-label="Siguiente"
-          >
-            <svg
-              width="48"
-              height="49"
-              viewBox="0 0 48 49"
-              xmlns="http://www.w3.org/2000/svg"
-              class="fill-none"
+            <button
+              type="button"
+              class="group slider-next text-[#004623] focus:outline-none transition-all duration-200"
+              aria-label="Siguiente"
             >
-              <!-- CÍRCULO: outline verde, sin relleno; en hover relleno verde y sin trazo -->
-              <path
-                d="M24 48.0393C36.9787 48.0393 47.5 37.518 47.5 24.5393C47.5 11.5606 36.9787 1.03931 24 1.03931C11.0213 1.03931 0.5 11.5606 0.5 24.5393C0.5 37.518 11.0213 48.0393 24 48.0393Z"
-                class="stroke-[#004623] fill-none
-                       group-hover:fill-[#004623] group-hover:stroke-none
-                       transition-all duration-200"
-                stroke-width="1"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <!-- LÍNEA: verde → blanco en hover -->
-              <path
-                d="M16 24.5393H32"
-                class="stroke-current group-hover:stroke-white transition-all duration-200"
-                stroke-width="1"
-                stroke-linecap="round"
-              />
-              <!-- FLECHA: verde → blanco en hover -->
-              <path
-                d="M26.4 30.9392L32 24.5392L26.4 18.1392"
-                class="stroke-current group-hover:stroke-white transition-all duration-200"
-                stroke-width="1"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </button>
-        </div>
+              <svg
+                width="48"
+                height="49"
+                viewBox="0 0 48 49"
+                xmlns="http://www.w3.org/2000/svg"
+                class="fill-none"
+              >
+                <!-- CÍRCULO: outline verde, sin relleno; en hover relleno verde y sin trazo -->
+                <path
+                  d="M24 48.0393C36.9787 48.0393 47.5 37.518 47.5 24.5393C47.5 11.5606 36.9787 1.03931 24 1.03931C11.0213 1.03931 0.5 11.5606 0.5 24.5393C0.5 37.518 11.0213 48.0393 24 48.0393Z"
+                  class="stroke-[#004623] fill-none
+                         group-hover:fill-[#004623] group-hover:stroke-none
+                         transition-all duration-200"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <!-- LÍNEA: verde → blanco en hover -->
+                <path
+                  d="M16 24.5393H32"
+                  class="stroke-current group-hover:stroke-white transition-all duration-200"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                />
+                <!-- FLECHA: verde → blanco en hover -->
+                <path
+                  d="M26.4 30.9392L32 24.5392L26.4 18.1392"
+                  class="stroke-current group-hover:stroke-white transition-all duration-200"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        {% endcomment %}
       </div>
       <style>
         .slider-nav-buttons button:hover {
