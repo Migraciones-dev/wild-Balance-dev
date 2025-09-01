@@ -116,7 +116,7 @@
   {%- when 'payments' -%}
     {%- assign arr = bk_stts.svg | remove: ' ' | split: ',' -%}
     <div
-      class="t4s-payment-footer-svg t4s-pr t4s-hidden-mobile-{{ bk_stts.hidden_mobile }} flex flex-row"
+      class="t4s-payment-footer-svg t4s-pr t4s-hidden-mobile-{{ bk_stts.hidden_mobile }} flex flex-row flex-wrap"
       id="b_{{ block.id }}"
       style="--height: {{ bk_stts.height }}px;--mgb: {{ bk_stts.mgb }}px;--mgb-mb: {{ mgb.mgb_mb }}px;"
     >
