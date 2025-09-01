@@ -80,7 +80,10 @@
       {% if section.settings.button_text != blank and section.settings.button_url != blank %}
         <a
           href="{{ section.settings.button_url }}"
-          class="shadow h-9 flex items-center justify-center gap-2.5 bg-[#ffcd00] rounded-[50px] hover:bg-[#ffcd00]/90 py-10 px-14"
+          class="
+            shadow h-9 inline-flex items-center justify-center gap-2.5 py-8 px-12 bg-[#ffcd00] rounded-[50px] text-[#004623] hover:bg-[#ffcd00]/90
+            max-sm:w-[91%] md:w-1/2 lg:w-auto text-[18px]  [@media(max-width:1024px)]:mx-6
+          "
         >
           <span class="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#004623] tracking-[0] leading-[26px] text-[16px] lg:text-[18px]">
             {{ section.settings.button_text }}
