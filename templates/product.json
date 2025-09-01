@@ -508,11 +508,52 @@
         "custom_liquid": ""
       }
     },
-    "migraciones_ugc_8hxqtX": {
+    "migraciones_ugc_JwCMTN": {
       "type": "migraciones-ugc",
+      "blocks": {
+        "video_E7RTWF": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/8cf2487450614772bf4df9dd2d4f6cff.mov",
+            "poster_url": "shopify://shop_images/T3_-_IMG_Stories.jpg",
+            "caption": ""
+          }
+        },
+        "video_8NwidE": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/1a371b412b1a42d09a0e7ea44f543aeb.mp4",
+            "poster_url": "shopify://shop_images/T3_-_IMG_Stories_1.jpg",
+            "caption": ""
+          }
+        },
+        "video_miqyn4": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/975a98b000094c57b2148b082c944d33.mov",
+            "poster_url": "shopify://shop_images/T3_-_IMG_Stories.png",
+            "caption": ""
+          }
+        },
+        "video_zGtGE6": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/94f8facdfcd145f3ac97a77a12ccf711.mp4",
+            "poster_url": "shopify://shop_images/T3_-_IMG_Stories_2.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_E7RTWF",
+        "video_8NwidE",
+        "video_miqyn4",
+        "video_zGtGE6"
+      ],
       "name": "Migraciones ugc",
       "settings": {
-        "custom_liquid": ""
+        "button_text": "Prueba Wild Balance",
+        "button_url": "shopify://collections/comida"
       }
     }
   },
@@ -525,6 +566,6 @@
     "shipping_9n8YjA",
     "product-related-recent",
     "migraciones_faq_jPHr6f",
-    "migraciones_ugc_8hxqtX"
+    "migraciones_ugc_JwCMTN"
   ]
 }
