@@ -552,8 +552,8 @@
       ],
       "name": "Migraciones ugc",
       "settings": {
-        "button_text": "Prueba Wild Balance",
-        "button_url": "shopify://collections/comida"
+        "button_text": "",
+        "button_url": ""
       }
     }
   },
