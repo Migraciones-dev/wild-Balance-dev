@@ -393,8 +393,48 @@
 
     <!-- before-after móvil (igual que lo tenías) -->
     <div id="ba-container" class="relative w-full overflow-hidden mt-12 max-w-[835px] mx-auto">
-      <!-- ... -->
+      <img
+        src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Diseno_sin_titulo_57_1.png?v=1754248227"
+        alt="Antes"
+        class="w-full h-auto block"
+      >
+      <img
+        id="ba-overlay"
+        src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Diseno_sin_titulo_56_1_1.png?v=1754248226"
+        alt="Después"
+        class="absolute top-0 left-0 w-full h-auto block"
+        style="clip-path: inset(0 100% 0 0); -webkit-clip-path: inset(0 100% 0 0); will-change: clip-path;"
+      >
     </div>
+
+    <script>
+      (function () {
+        const cont = document.getElementById('ba-container');
+        const ov = document.getElementById('ba-overlay');
+
+        function clamp(v) {
+          return v < 0 ? 0 : v > 1 ? 1 : v;
+        }
+        function setClip(el, pctRight) {
+          const v = `inset(0 ${pctRight}% 0 0)`;
+          el.style.clipPath = v;
+          el.style.webkitClipPath = v; // Safari
+        }
+
+        window.addEventListener(
+          'scroll',
+          () => {
+            const rect = cont.getBoundingClientRect();
+            const viewH = window.innerHeight;
+            let progress = (viewH - rect.top) / (viewH + rect.height);
+            progress = clamp(progress);
+            const hidePct = 100 - progress * 150;
+            setClip(ov, hidePct);
+          },
+          { passive: true }
+        );
+      })();
+    </script>
   </div>
 
   <!-- CSS extra para ocultar scrollbar -->
@@ -526,8 +566,6 @@
   .relative:has(#wb-carousel)::after{
     content:""; position:absolute; top:0; height:100%; width:24px; z-index:4; pointer-events:none;
   }
-  .relative:has(#wb-carousel)::before{ left:0; background:linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0)); }
-  .relative:has(#wb-carousel)::after{ right:0; background:linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0)); }
 </style>
 
 {% schema %}
