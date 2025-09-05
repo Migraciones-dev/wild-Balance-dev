@@ -1,100 +1,136 @@
 <div class="{{ section.id }}">
-  <div class=" lg:flex justify-between gap-[29px] max-w-[1600px] my-20 mx-auto lg:px-10">
+  <div class="lg:flex justify-between gap-[29px] max-w-[1600px] my-20 mx-auto lg:px-10">
     <div class="flex flex-col lg:w-1/2 items-start justify-center text-left text-center ">
       <div class="flex flex-col items-start gap-[38px] w-full [@media(max-width:1024px)]:px-6">
         <div class="flex flex-col items-start gap-[13px] w-full">
-          <div class="flex flex-col w-[104px] items-center gap-2.5 relative mx-auto lg:mx-0">
-            <img
-              class="relative w-auto h-[27px] sm:h-[37px] lg:h-[47px]"
-              alt="Vector"
-              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Capa_1_17.png?v=1753618429"
-            >
-          </div>
+          {% if section.settings.brand_mark %}
+            <div class="flex flex-col w-[104px] items-center gap-2.5 relative mx-auto lg:mx-0">
+              {{
+                section.settings.brand_mark
+                | image_url: width: 200
+                | image_tag:
+                  loading: 'lazy',
+                  alt: section.settings.brand_mark_alt,
+                  class: 'relative w-auto h-[27px] sm:h-[37px] lg:h-[47px]'
+              }}
+            </div>
+          {% endif %}
+
           <div class="relative w-full">
             <h2 class="top-0 left-0 [font-family:'Barlow',Helvetica] font-extrabold text-[#004623] lg:mb-10 text-[30px] sm:text-[38px] md:text-[44px] lg:text-[57px] xl:text-[64px] max-w-[750px] leading-[1]">
-              Encuentra la comida adecuada para <span class="highlight">tu mascota</span>
+              {{ section.settings.heading_before }}
+              <span class="highlight">{{ section.settings.heading_highlight }}</span>
+              {{ section.settings.heading_after }}
             </h2>
           </div>
         </div>
-        <div class="mb-12 lg:mb-16 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#222222] tracking-[0] leading-[30px] text-[14px] lg:text-[18px]">
-          ¿Quieres saber el precio exacto de su plan personalizado? Responde un breve formulario con preguntas cortas
-          sobre tu peludo?
-        </div>
-      </div>
-      <div class="lg:hidden mb-12">
-        <div id="drag-scroll-todos" class=" cards-container flex space-x-4 overflow-x-auto pb-4 ">
-          <!-- Card Item -->
 
-          <div class=" rounded-lg px-4">
-            <img
-              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/WILDBALANCE_Precios_1.png?v=1754327171"
-              alt="Producto"
-              class="w-full  object-cover"
-              draggable="false"
-            >
+        {% if section.settings.body_text != blank %}
+          <div class="mb-12 lg:mb-16 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#222222] tracking-[0] leading-[30px] text-[14px] lg:text-[18px]">
+            {{ section.settings.body_text }}
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Imagen móvil (carrusel simple 1 imagen) -->
+      <div class="lg:hidden mb-12">
+        <div id="drag-scroll-todos" class="cards-container flex space-x-4 overflow-x-auto pb-4">
+          <div class="rounded-lg px-4">
+            {% if section.settings.mobile_image %}
+              {{
+                section.settings.mobile_image
+                | image_url: width: 1600
+                | image_tag:
+                  loading: 'lazy',
+                  alt: section.settings.mobile_image_alt,
+                  class: 'w-full object-cover',
+                  draggable: 'false'
+              }}
+            {% endif %}
           </div>
         </div>
       </div>
 
-      <div class="flex flex-col items-center lg:items-start gap-4 mx-auto lg:mr-auto lg:ml-0  [@media(max-width:1024px)]:w-full  [@media(max-width:1024px)]:px-6">
-        <a
-          href="/pages/crea-su-menu"
-          class="
-            shadow h-9 inline-flex items-center justify-center gap-2.5 py-8 px-12 bg-[#ffcd00] rounded-[50px] text-[#004623] hover:bg-[#ffcd00]/90
-            max-sm:w-full md:w-auto text-[18px]
-          "
-        >
-          <span class="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#004623] tracking-[0] leading-[26px] text-[18px] lg:text-[18px] "
-            >Haz el test</span
+      <div class="flex flex-col items-center lg:items-start gap-4 mx-auto lg:mr-auto lg:ml-0 [@media(max-width:1024px)]:w-full [@media(max-width:1024px)]:px-6">
+        {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+          <a
+            href="{{ section.settings.button_link }}"
+            class="shadow h-9 inline-flex items-center justify-center gap-2.5 py-8 px-12 bg-[#ffcd00] rounded-[50px] text-[#004623] hover:bg-[#ffcd00]/90 max-sm:w-full md:w-auto text-[18px]"
           >
-          <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12.4587 5.25439L17.6686 11.6536M17.6686 11.6536L12.4587 18.0528M17.6686 11.6536L4.27158 11.6536" stroke="#004623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-        <div class="flex items-center  gap-2 mt-2">
-          <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <span class="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#004623] tracking-[0] leading-[26px] text-[18px] lg:text-[18px]">
+              {{ section.settings.button_label }}
+            </span>
+            <svg
+              width="22"
+              height="23"
+              viewBox="0 0 22 23"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M12.4587 5.25439L17.6686 11.6536M17.6686 11.6536L12.4587 18.0528M17.6686 11.6536L4.27158 11.6536" stroke="#004623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        {% endif %}
+
+        <div class="flex items-center gap-2 mt-2">
+          <!-- Icono fijo (no editable) -->
+          <svg
+            width="16"
+            height="17"
+            viewBox="0 0 16 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            focusable="false"
+          >
             <path d="M8 5.43709V8.10376L10 10.1038M14 8.10376C14 8.89169 13.8448 9.67191 13.5433 10.3999C13.2417 11.1278 12.7998 11.7892 12.2426 12.3464C11.6855 12.9036 11.0241 13.3455 10.2961 13.647C9.56815 13.9486 8.78793 14.1038 8 14.1038C7.21207 14.1038 6.43185 13.9486 5.7039 13.647C4.97595 13.3455 4.31451 12.9036 3.75736 12.3464C3.20021 11.7892 2.75825 11.1278 2.45672 10.3999C2.15519 9.67191 2 8.89169 2 8.10376C2 6.51246 2.63214 4.98634 3.75736 3.86112C4.88258 2.7359 6.4087 2.10376 8 2.10376C9.5913 2.10376 11.1174 2.7359 12.2426 3.86112C13.3679 4.98634 14 6.51246 14 8.10376Z" stroke="#004623" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-
           <div class="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[13.2px] tracking-[0] leading-[18.9px] text-[#004623] mt-1">
-            3 minutos
+            {{ section.settings.time_text }}
           </div>
         </div>
       </div>
     </div>
-    <!-- 1. Incluye Swiper CSS (en <head>) -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    >
 
-    <!-- 2. Estructura HTML -->
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <!-- Slider desktop -->
     <div class="relative max-w-5xl mx-auto object-cover object-center lg:w-1/2 hidden lg:block rounded-lg">
-      <!-- Swiper -->
       <div class="swiper-container-img-text overflow-hidden rounded-lg">
         <div class="swiper-wrapper rounded-lg">
-          <!-- Slide 1 (desktop) -->
-          <div class="swiper-slide flex justify-center">
-            <img
-              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Diseno_sin_titulo_59.png?v=1756999221"
-              alt="Versión desktop"
-              class="w-full object-cover "
-            >
-          </div>
-          <!-- Slide 2 (mobile) -->
-
-          <!-- añade más slides si quieres -->
+          {% if section.blocks.size > 0 %}
+            {% for block in section.blocks %}
+              {% if block.type == 'slide' and block.settings.slide_image %}
+                <div class="swiper-slide flex justify-center" {{ block.shopify_attributes }}>
+                  {{
+                    block.settings.slide_image
+                    | image_url: width: 2000
+                    | image_tag: loading: 'lazy', alt: block.settings.slide_image_alt, class: 'w-full object-cover'
+                  }}
+                </div>
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            {% if section.settings.desktop_fallback %}
+              <div class="swiper-slide flex justify-center">
+                {{
+                  section.settings.desktop_fallback
+                  | image_url: width: 2000
+                  | image_tag: loading: 'lazy', alt: section.settings.desktop_fallback_alt, class: 'w-full object-cover'
+                }}
+              </div>
+            {% endif %}
+          {% endif %}
         </div>
 
-        <!-- Flechas (solo en desktop ≥lg) -->
-        <button
-          class="swiper-button-prev hidden hover:none"
-        ></button>
-        <button
-          class="swiper-button-next hidden hover:none"
-        ></button>
+        <!-- Flechas (desktop) -->
+        <button class="swiper-button-prev hidden hover:none" aria-label="Anterior"></button>
+        <button class="swiper-button-next hidden hover:none" aria-label="Siguiente"></button>
 
-        <!-- Paginación (solo en móvil <lg) -->
+        <!-- Paginación (móvil) -->
         <div class="swiper-pagination block lg:hidden mt-4"></div>
       </div>
     </div>
@@ -102,35 +138,35 @@
 </div>
 
 <script>
-  const swiper = new Swiper('.swiper-container-img-text', {
-    loop: true,
-    // móvil por defecto: paginación (bullets) y swipe táctil
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    // cambios a partir de lg (1024px)
-    breakpoints: {
-      1024: {
-        // desactiva bullets
-        pagination: false,
-        // activa flechas
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+  if (typeof Swiper !== 'undefined') {
+    const swiper = new Swiper('.swiper-container-img-text', {
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        1024: {
+          pagination: false,
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
         },
       },
-    },
-  });
+    });
+  }
 </script>
 
 <style>
-      .swiper-button-prev,
-    .swiper-button-next {
-      color: #00462320;
-    }
-    {{ section.id }} .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
-      content: ''!important;
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #00462320;
+  }
+  /* Escopetado a la sección concreta */
+  .{{ section.id }} .swiper-button-next:after,
+  .swiper-rtl .swiper-button-prev:after {
+    content: '' !important;
   }
 </style>
 
@@ -140,18 +176,101 @@
   "settings": [
     {
       "type": "image_picker",
-      "id": "desktop_image",
-      "label": "Imagen escritorio"
+      "id": "brand_mark",
+      "label": "Marca/Isotipo sobre el título"
+    },
+    {
+      "type": "text",
+      "id": "brand_mark_alt",
+      "label": "Alt imagen marca",
+      "default": "Marca"
+    },
+    {
+      "type": "text",
+      "id": "heading_before",
+      "label": "Título (antes del resaltado)",
+      "default": "Encuentra la comida adecuada para"
+    },
+    {
+      "type": "text",
+      "id": "heading_highlight",
+      "label": "Texto resaltado",
+      "default": "tu mascota"
+    },
+    {
+      "type": "text",
+      "id": "heading_after",
+      "label": "Título (después del resaltado)"
+    },
+    {
+      "type": "richtext",
+      "id": "body_text",
+      "label": "Texto descriptivo",
+      "default": "<p>¿Quieres saber el precio exacto de su plan personalizado? Responde un breve formulario con preguntas cortas sobre tu peludo.</p>"
     },
     {
       "type": "image_picker",
       "id": "mobile_image",
       "label": "Imagen móvil"
+    },
+    {
+      "type": "text",
+      "id": "mobile_image_alt",
+      "label": "Alt imagen móvil",
+      "default": "Imagen móvil"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texto del botón",
+      "default": "Haz el test"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Enlace del botón"
+    },
+    {
+      "type": "text",
+      "id": "time_text",
+      "label": "Texto de tiempo (junto al icono)",
+      "default": "3 minutos"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_fallback",
+      "label": "Imagen de escritorio (fallback si no hay bloques)"
+    },
+    {
+      "type": "text",
+      "id": "desktop_fallback_alt",
+      "label": "Alt imagen escritorio (fallback)",
+      "default": "Imagen escritorio"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Diapositiva (desktop)",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "slide_image",
+          "label": "Imagen diapositiva"
+        },
+        {
+          "type": "text",
+          "id": "slide_image_alt",
+          "label": "Alt imagen diapositiva",
+          "default": "Slide desktop"
+        }
+      ]
     }
   ],
   "presets": [
     {
-      "name": "Migraciones imagen+text 2"
+      "name": "Migraciones imagen+text 2",
+      "blocks": [{ "type": "slide" }]
     }
   ]
 }
