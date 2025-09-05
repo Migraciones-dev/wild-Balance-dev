@@ -644,7 +644,6 @@
       "name": "Migraciones imagen+text 2",
       "settings": {
         "brand_mark": "shopify://shop_images/Capa_1_17.webp",
-        "brand_mark_alt": "Marca",
         "heading_before": "Encuentra la comida adecuada para",
         "heading_highlight": "tu mascota",
         "heading_after": "",
