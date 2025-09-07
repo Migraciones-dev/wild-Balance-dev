@@ -1,3 +1,9 @@
+{{ 'section.css' | asset_url | stylesheet_tag }}
+{{ 'collection-products.css' | asset_url | stylesheet_tag }}
+{{ 'slider-settings.css' | asset_url | stylesheet_tag }}
+{{ 'pre_flickityt4s.min.css' | asset_url | stylesheet_tag }}
+<link href="{{ 'loading.css' | asset_url }}" rel="stylesheet" media="print" onload="this.media='all'">
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const observer = new MutationObserver(() => {
@@ -295,8 +301,8 @@ max-sm:w-full md:w-auto text-[18px] font-bold hover:text-[#004623]">
     <div class="{%comment%}t4s-row {%endcomment%} flex flex-col lg:flex-row">
       <div class="{{ primary_col }}">
         <div class="t4s-cartPage__items t4s_ratioadapt pt-16 lg:p-24" data-cart-items>
-          <div class="lg:flex lg:justify-between lg:items-center pb-2.5 border-b border-[#d9d9c8] text-center">
-            <h2 class="font-bold [font-family:'Barlow',Helvetica] text-[#004623] text-[17.8px] leading-[23px]">
+          <div class="lg:flex lg:justify-between lg:items-center pb-2.5 border-b border-[#d9d9c8]">
+            <h2 class=" p-4 font-bold [font-family:'Barlow',Helvetica] text-[#004623] text-[17.8px] leading-[23px] pb-6 mt-10 sm:mt-6 w-full border-b border-solid border-[#d9d9c8]">
               TU CARRITO DE LA COMPRA
             </h2>
           </div>
@@ -378,6 +384,285 @@ max-sm:w-full md:w-auto text-[18px] font-bold hover:text-[#004623]">
               {%- endif -%}
             </div>
           {%- endif -%}
+
+          <h2 class=" p-4 font-bold [font-family:'Barlow',Helvetica] text-[#004623] text-[17.8px] leading-[23px] pb-6 mb-10 sm:mb-12 mt-10 sm:mt-6 w-full border-b border-solid border-[#d9d9c8]">
+            TAMBIÉN TE PUEDE INTERESAR
+          </h2>
+          {% assign perros_collection = collections.perros %}
+          {% if perros_collection and perros_collection.products_count > 0 %}
+            {% assign cart_product_ids = cart.items | map: 'product_id' %}
+            {% comment %} MÓVIL {% endcomment %}
+            <ul class="flex flex-col items-start gap-2 w-full lg:hidden p-4 mb-10">
+              {% paginate perros_collection.products by 4 %}
+                {% for product in perros_collection.products %}
+                  {%- comment -%} Item renderizado arriba {%- endcomment -%}
+                  <li class="w-full">
+                    <div class="flex items-center justify-between gap-3 w-full bg-white rounded-lg border border-[#d9d9c8] p-3">
+                      {%- assign main_img = product.featured_image -%}
+
+                      <!-- Izquierda: imagen + texto -->
+                      <a href="{{ product.url }}" class="flex items-center gap-3 min-w-0">
+                        <div class="shrink-0 h-28 rounded-md overflow-hidden bg-[#E7E8D7]">
+                          {% if main_img %}
+                            <img
+                              src="{{ main_img | image_url: width: 120, height: 120, crop: 'center' }}"
+                              alt="{{ main_img.alt | default: product.title }}"
+                              class="w-full h-full object-cover"
+                              loading="lazy"
+                              width="48"
+                              height="48"
+                            >
+                          {% else %}
+                            {{ 'product-1' | placeholder_svg_tag: 'w-full h-full object-cover' }}
+                          {% endif %}
+                        </div>
+
+                        <div class="min-w-0">
+                          <h3 class="font-bold text-[#004623] leading-5 truncate !text-[14px]">
+                            {{ product.title }}
+                          </h3>
+                          <div class="text-[#004623] leading-5  !text-[14px]">
+                            {%- if product.compare_at_price_max > product.price_min -%}
+                              <span class="font-medium">{{ product.price_min | money }}</span>
+                              <span class="line-through opacity-70 ml-1">
+                                {{- product.compare_at_price_max | money -}}
+                              </span>
+                            {%- else -%}
+                              {%- if product.price_varies -%}
+                                <span>Desde </span>
+                              {%- endif -%}
+                              <span class="font-medium">{{ product.price_min | money }}</span>
+                            {%- endif -%}
+                          </div>
+                        </div>
+                      </a>
+
+                      <!-- Derecha: selector cantidad (solo layout) -->
+                      <div class="shrink-0">
+                        <a
+                          href="{{product.url}}"
+                          data-atc-selector=""
+                          rel="nofollow"
+                          class="!shadow !h-8 !gap-2.5 !bg-[#ffcd00] !rounded-[50px] !hover:bg-[#ffcd00]/90 py-2 lg:!py-5 !px-10 lg:!px-14 mt-2 lg:mt-4 !text-[12px] lg:!text-[20px] !font-[600] t4s-tooltip-actived"
+                          data-id="{{ first_variant.id }}"
+                          dat-qty="1"
+                          data-action-quickshop=""
+                          data-preorder-handle="{{ product.handle }}"
+                          d-handle="{{ product.handle }}"
+                          preorder-product-element="handle"
+                        >
+                          <span class="!text-[10px]">Añadir</span>
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                {% endfor %}
+              {% endpaginate %}
+            </ul>
+
+            {% comment %} DESKTOP {% endcomment %}
+            <div class="cart-recommendations w-100 [@media(max-width:1024px)]:hidden">
+              <ul class="flex no-wrap  gap-5">
+                {% paginate perros_collection.products by 4 %}
+                  {% for product in perros_collection.products %}
+                    {%- comment -%}
+                      PR CARD – lee datos reales del objeto `product` que llega por `render ... as product`
+                      Variables que pueden venir del render:
+                      isGrowaveWishlist, show_img, show_vendor, use_link_vendor, rating_pos,
+                      list_color_pos, list_size_pos, enable_pr_color, show_cl_type, get_color,
+                      enable_pr_size, pr_size_pos, get_size, show_size_type, price_varies_style,
+                      app_review, enable_rating, use_countdown, imgatt, show_list_btns, placeholder_img
+                    {%- endcomment -%}
+
+                    {%- assign main_img = product.featured_image -%}
+                    {%- assign first_variant = product.selected_or_first_available_variant -%}
+
+                    <div class="t4s-product t4s-pr-grid t4s-pr-style1 t4s-pr-{{ product.id }} t4s-pr-item w-1/4">
+                      <div class="t4s-product-wrapper relative" data-cacl-slide timeline hdt-reveal="slide-in">
+                        <div class="t4s-product-inner t4s-pr t4s-oh">
+                          <!-- Imagen -->
+                          <div
+                            class="t4s-product-img t4s_ratio {% if main_img and main_img != blank %}is-show-img2{% endif %}"
+                            {{ imgatt }}style="--aspect-ratioapt: 1.0"
+                          >
+                            {% if main_img %}
+                              <img
+                                data-pr-img
+                                class="t4s-product-main-img lazyautosizes lazyloadt4sed"
+                                loading="lazy"
+                                alt="{{ main_img.alt | default: product.title }}"
+                                width="{{ main_img.width | default: 1080 }}"
+                                height="{{ main_img.height | default: 1080 }}"
+                                data-widths="[100,200,360,400,500,600,700,800,900,1000]"
+                                data-optimumx="2"
+                                data-sizes="auto"
+                                data-srcset="
+                                  {{ main_img | image_url: width: 100 }} 100w,
+                                  {{ main_img | image_url: width: 200 }} 200w,
+                                  {{ main_img | image_url: width: 360 }} 360w,
+                                  {{ main_img | image_url: width: 400 }} 400w,
+                                  {{ main_img | image_url: width: 500 }} 500w,
+                                  {{ main_img | image_url: width: 600 }} 600w,
+                                  {{ main_img | image_url: width: 700 }} 700w,
+                                  {{ main_img | image_url: width: 800 }} 800w,
+                                  {{ main_img | image_url: width: 900 }} 900w,
+                                  {{ main_img | image_url: width: 1000 }} 1000w
+                                "
+                                src="{{ main_img | image_url: width: 400 }}"
+                                srcset="{{ main_img | image_url: width: 400 }} 400w"
+                              >
+                              <span class="lazyloadt4s-loader"></span>
+                              <noscript>
+                                <img
+                                  class="t4s-product-main-img"
+                                  loading="lazy"
+                                  src="{{ main_img | image_url: width: 600 }}"
+                                  alt="{{ main_img.alt | default: product.title }}"
+                                >
+                              </noscript>
+                            {% else %}
+                              {% if placeholder_img %}
+                                <img
+                                  class="t4s-product-main-img"
+                                  src="{{ placeholder_img | image_url: width: 600 }}"
+                                  alt="{{ product.title }}"
+                                >
+                              {% else %}
+                                {{ 'product-1' | placeholder_svg_tag: 't4s-placeholder-svg' }}
+                              {% endif %}
+                            {% endif %}
+                          </div>
+
+                          <div
+                            class="t4s-product-badge"
+                            data-product-badge
+                            data-sort="sale,new,soldout,preOrder,custom"
+                          ></div>
+
+                          <!-- Botón ATC: usa el primer variant disponible -->
+                          <div class="t4s-product-btns">
+                            <a
+                              href="{{ product.url }}"
+                              data-atc-selector
+                              rel="nofollow"
+                              class="!shadow !h-8 !gap-2.5 !bg-[#ffcd00] !rounded-[50px] !hover:bg-[#ffcd00]/90 py-2 lg:!py-5 lg:!px-14 [@media(max-width:1333px)]:!px-4 mt-2 lg:mt-4 !text-[12px] lg:!text-[20px] !font-[600] t4s-tooltip-actived"
+                              data-id="{{ first_variant.id }}"
+                              dat-qty="1"
+                              data-action-quickshop
+                              data-preorder-handle="{{ product.handle }}"
+                              d-handle="{{ product.handle }}"
+                            >
+                              <span class="text-[10px] [@media(max-width:1024px)]:text-[10px]">Añadir al carrito</span>
+                            </a>
+
+                            <!-- Fallback sin JS -->
+                          </div>
+
+                          <!-- Clic en toda la tarjeta -->
+                          <a
+                            class="t4s-full-width-link"
+                            href="{{ product.url }}"
+                            data-preorder-handle="{{ product.handle }}"
+                            d-handle="{{ product.handle }}"
+                          ></a>
+                        </div>
+
+                        <div class="t4s-product-info text-left">
+                          <div class="t4s-product-info__inner text-left">
+                            <!-- Nombre -->
+                            <h3 class="t4s-product-title text-left !text-[12px] lg:!text-[12px]">
+                              <a href="{{ product.url }}">{{ product.title }}</a>
+                            </h3>
+
+                            <!-- Precio -->
+                            <div class="t4s-product-price !text-[10px]" data-pr-price data-product-price>
+                              {%- assign min_price = product.price_min -%}
+                              {%- assign max_compare = product.compare_at_price_max | default: 0 -%}
+                              {%- if max_compare > min_price -%}
+                                <span class="t4s-price-sale">{{ min_price | money }}</span>
+                                <span class="line-through opacity-70">{{ max_compare | money }}</span>
+                              {%- else -%}
+                                {%- if product.price_varies -%}
+                                  <span class="t4s-price-from">Desde </span>
+                                {%- endif -%}
+                                {{ min_price | money }}
+                              {%- endif -%}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  {% endfor %}
+                {% endpaginate %}
+              </ul>
+            </div>
+          {% endif %}
+
+          {%- for product in cart.recommendations.products -%}
+            {%- liquid
+              assign pr_url = product.url
+              assign image = product.featured_media | default: placeholder_img
+            -%}
+            <div class="t4s-minicart-recommendations__item t4s-col-item">
+              <div class="t4s-row t4s-g-0 t4s-space-item-inner t4s-widget__pr">
+                <div class="t4s-col-item t4s-col-auto t4s-widget_img_pr">
+                  {%- if image != blank -%}
+                    <a
+                      class="t4s-d-block t4s-pr t4s-oh t4s_ratio"
+                      href="{{ pr_url }}"
+                      style="--aspect-ratioapt: {{ image.aspect_ratio | default: 1 }}"
+                    >
+                      <img
+                        class="lazyloadt4s"
+                        data-src="{{ image | image_url: width: 1 }}"
+                        data-widths="[100,200,400,600,700,800,900,1000,1200,1400,1600]"
+                        data-optimumx="2"
+                        data-sizes="auto"
+                        src="{% render 'img_svg', w: image.width, h: image.height %}"
+                        width="{{ image.width }}"
+                        height="{{ image.height }}"
+                        alt="{{ image.alt | escape }}"
+                      >
+                      <span
+                        class="lazyloadt4s-loader is-bg-img"
+                        style="background: url({{ image | image_url: width: 1 }});"
+                      ></span>
+                    </a>
+                  {%- endif -%}
+                </div>
+                <div class="t4s-col-item t4s-col t4s-pr t4s-oh t4s-widget_if_pr{% if settings.enable_quickview %} t4s-has-quickview{% endif %}">
+                  {%- if enable_rating -%}
+                    {%- render 'product-rating', product: product, app_review: app_review -%}
+                  {%- endif -%}
+                  <a href="{{ pr_url }}" class="t4s-d-block t4s-widget__pr-title t4s-truncate">{{ product.title }}</a>
+                  {%- render 'product-price',
+                    class_price: 't4s-widget__pr-price',
+                    product: product,
+                    price_varies_style: price_varies_style,
+                    type: 'card',
+                    isGrouped: false
+                  -%}
+                </div>
+                {%- if settings.enable_quickview %}
+                  <div class="t4s-col-item t4s-col-auto">
+                    <a
+                      href="{{ pr_url }}"
+                      data-id="{{ product.id }}"
+                      data-tooltip="top"
+                      title="{{ 'products.product_card.quick_view' | t | escape }}"
+                      rel="nofollow"
+                      class="t4s-pr-item-btn t4s-pr-quickview"
+                      data-action-quickview
+                    >
+                      <svg viewBox="0 0 24 24">
+                        <use xlink:href="#t4s-icon-qv"></use>
+                      </svg>
+                    </a>
+                  </div>
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endfor -%}
         </div>
       </div>
       {%- if design_cart == '2column' and ccount > 0 -%}
@@ -530,6 +815,141 @@ max-sm:w-full md:w-auto text-[18px] font-bold hover:text-[#004623]">
     }
   });
 </script>
+<div
+  {% if enable_tab %}
+    data-t4s-tabs2
+  {% endif %}
+  class="t4s-section-inner t4s_nt_se_{{ sid }} {% if enable_tab %}t4s-related-recent__tabs {% endif %}{{ stt_layout }}{% if stt_image_bg != blank and stt_layout != 't4s-se-container' %} t4s-has-imgbg lazyloadt4s{% endif %}"
+  {% if stt_image_bg != blank and stt_layout != 't4s-se-container' %}
+    data-bgset="{{ stt_image_bg | image_url: width: 1 }}" data-sizes="auto" data-optimumx="1.5"
+  {% endif %}
+  {% render 'section_style', se_stts: se_stts -%}
+>
+  {{- html_layout[0] -}}
+  {%- if stt_layout == 't4s-se-container' -%}
+    <div
+      class="t4s-container-inner{% if stt_image_bg != blank %} t4s-has-imgbg lazyloadt4s{% endif %}"
+      {% if stt_image_bg != blank %}
+        data-bgset="{{ stt_image_bg | image_url: width: 1 }}" data-sizes="auto" data-optimumx="1.5"
+      {% endif %}
+    >
+  {% endif -%}
+  {%- if enable_tab -%}
+    <div class="t4s-pr-single_tabs" data-t4s-tab-ul2>
+      {%- for block in se_blocks -%}
+        {%- liquid
+          assign bk_stts = block.settings
+          capture class_active
+            cycle 'group_1': ' t4s-active', ''
+          endcapture
+        -%}
+
+        {%- if block.type == 'recently' -%}
+          <button
+            type="button"
+            class="t4s-pr-single_tab-item{{ class_active }}"
+            id="b_{{ block.id }}"
+            data-t4s-tab-item
+            data-id-tab="#recently_wrap"
+            {{ block.shopify_attributes }}
+          >
+            {{ bk_stts.title | default: 'Recently viewed' }}
+          </button>
+        {%- else -%}
+          <button
+            type="button"
+            class="t4s-pr-single_tab-item{{ class_active }}"
+            id="b_{{ block.id }}"
+            data-t4s-tab-item
+            data-id-tab="#pr_recommendations"
+            {{ block.shopify_attributes }}
+          >
+            {{ bk_stts.title | default: 'Related products' }}
+          </button>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+  {{ html_tab[0] }}
+  {%- for block in se_blocks -%}
+    {%- liquid
+      assign bk_stts = block.settings
+      capture class_active
+        cycle 'group_2': ' t4s-active', ''
+      endcapture
+    -%}
+
+    {%- if block.type == 'recently' -%}
+      <div
+        class="t4s-product-extra{{ class_content }}{{ class_active }}"
+        data-t4s-tab-content
+        id="recently_wrap"
+        data-section-type="product-recently"
+        data-sid="{{ sid }}"
+        data-unpr="{{ bk_stts.unavailable_prs }}"
+        data-id="id:{{ product.id | default: 19041994 }}"
+        data-limit="{{ bk_stts.limit }}"
+        style="--mgb: {{ bk_stts.mgb }}px;--mgb-tb: {{ bk_stts.mgb_tb }}px;--mgb-mb: {{ bk_stts.mgb_mb }}px;"
+      >
+        <div class="t4s-loading--bg"></div>
+        <div data-emty-product class="t4s-dn">{{ 'products.sections.empty_visited' | t }}</div>
+      </div>
+    {%- else -%}
+      {%- liquid
+        assign limit = bk_stts.limit
+        assign display_type = bk_stts.display_type
+        assign product_list = bk_stts.product_list
+        assign cart_items = cart.items
+        assign cart_items_size = cart_items.size
+      -%}
+      {% capture style_extra %}style="--mgb: {{ bk_stts.mgb }}px;--mgb-tb: {{ bk_stts.mgb_tb }}px;--mgb-mb: {{ bk_stts.mgb_mb }}px;"{% endcapture %}
+      {%- if display_type == '3' and cart_items_size > 0 or enable_tab -%}
+        <div
+          class="t4s-product-extra{{ class_content }}{{ class_active }}{% if cart_items_size == 0 %} is--not-rub-js{% endif %}"
+          data-t4s-tab-content
+          data-sid="{{ sid }}"
+          data-baseurl="{{ routes.product_recommendations_url }}"
+          id="pr_recommendations"
+          data-id="{{ cart_items.first.product_id }}"
+          data-limit="{{ limit }}"
+          data-type="{{ display_type }}"
+          {{ style_extra }}
+        >
+          {% if cart_items_size == 0 %}
+            <div data-emty-product>{{ 'products.sections.empty_related' | t }}</div>
+          {% else %}
+            <div class="t4s-loading--bg"></div>
+            <div data-emty-product class="t4s-dn">{{ 'products.sections.empty_related' | t }}</div>
+          {% endif %}
+        </div>
+      {%- elsif display_type == '1' and product_list != blank or enable_tab -%}
+        <div
+          class="t4s-product-extra{{ class_content }}{{ class_active }}{% if product_list == blank %} is--not-rub-js{% endif %}"
+          data-t4s-tab-content
+          data-sid="{{ sid }}"
+          data-baseurl="/?type=page&q=cart_related"
+          id="pr_recommendations"
+          data-limit="{{ limit }}"
+          data-type="{{ display_type }}"
+          {{ style_extra }}
+        >
+          {% if product_list == blank %}
+            <div data-emty-product>{{ 'products.sections.empty_related' | t }}</div>
+          {% else %}
+            <div class="t4s-loading--bg"></div>
+            <div data-emty-product class="t4s-dn">{{ 'products.sections.empty_related' | t }}</div>
+          {% endif %}
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {{ html_tab[1] }}
+  {{- html_layout[1] -}}
+</div>
+
+<style>
+  .t4s-pr-rencent-related .t4s-pr-single_tabs{margin-bottom: 38px;}.t4s-pr-rencent-related .t4s-pr-single_tabs .t4s-pr-single_tab-item:first-child{margin-right: 36px;}.t4s-pr-rencent-related .t4s-pr-single_tab-item{background: transparent;color: var(--text-color);font-size: 24px;font-weight: 400;line-height: 30px;border: none;position: relative;padding: 12px 0px;}.t4s-pr-rencent-related .t4s-pr-single_tab-item:after{content:"";position: absolute;width: 0;height: 1px;left: 0;bottom: 0;transition: all .3s;background-color : transparent;}.t4s-pr-rencent-related .t4s-pr-single_tab-item.t4s-active{color: var(--secondary-color)}.t4s-pr-rencent-related .t4s-pr-single_tab-item.t4s-active:after{width: 100%;background-color : var(--secondary-color);}.t4s-pr-rencent-related .t4s-pr-single_tab-content{pointer-events: none;opacity: 0;visibility: hidden;position: absolute;z-index: 1;top: 0;left: 0;right: 0;-webkit-transform: translateY(40px);-ms-transform: translateY(40px);transform: translateY(40px);-webkit-transition: .2s ease-in-out;transition: .2s ease-in-out;margin-bottom: 0px!important;}.t4s-pr-rencent-related .t4s-pr-single_tab-content.t4s-active{pointer-events: auto;opacity: 1;visibility: visible;position: relative;z-index: 2;-webkit-transform: none;-ms-transform: none;transform: none;-webkit-transition: .2s ease-in-out .2s;transition: .2s ease-in-out .2s;}.t4s-pr-rencent-related .t4s-product-extra{margin-bottom: var(--mgb);}@media (max-width:1024px){.t4s-pr-rencent-related .t4s-product-extra{margin-bottom: var(--mgb-tb);}}@media (max-width:767px) {.t4s-pr-rencent-related .t4s-product-extra{margin-bottom: var(--mgb-mb);}.t4s-pr-single_tabs{display: inline-block}.t4s-pr-rencent-related .t4s-pr-single_tabs{margin-bottom: 20px;}.t4s-pr-rencent-related .t4s-pr-single_tabs .t4s-pr-single_tab-item:first-child{margin-right: 20px;}.t4s-pr-rencent-related .t4s-pr-single_tab-item{font-size: 16px;padding: 5px 0px;margin-bottom: 10px;}}@media (-moz-touch-enabled: 0), (hover:hover) {.t4s-pr-rencent-related .t4s-pr-single_tab-item:hover{color: var(--secondary-color);background-color: transparent;border-color: none;}}
+</style>
 
 {% schema %}
 {
