@@ -393,207 +393,205 @@ max-sm:w-full md:w-auto text-[18px] font-bold hover:text-[#004623]">
             {% assign cart_product_ids = cart.items | map: 'product_id' %}
             {% comment %} MÓVIL {% endcomment %}
             <ul class="flex flex-col items-start gap-2 w-full lg:hidden p-4 mb-10">
-              {% paginate perros_collection.products by 4 %}
-                {% for product in perros_collection.products %}
-                  {%- comment -%} Item renderizado arriba {%- endcomment -%}
-                  <li class="w-full">
-                    <div class="flex items-center justify-between gap-3 w-full bg-white rounded-lg border border-[#d9d9c8] p-3">
-                      {%- assign main_img = product.featured_image -%}
+              {% assign cart_product_ids = cart.items | map: 'product_id' %}
+              {% assign mostrados = 0 %}
 
-                      <!-- Izquierda: imagen + texto -->
-                      <a href="{{ product.url }}" class="flex items-center gap-3 min-w-0">
-                        <div class="shrink-0 h-28 rounded-md overflow-hidden bg-[#E7E8D7]">
-                          {% if main_img %}
-                            <img
-                              src="{{ main_img | image_url: width: 120, height: 120, crop: 'center' }}"
-                              alt="{{ main_img.alt | default: product.title }}"
-                              class="w-full h-full object-cover"
-                              loading="lazy"
-                              width="48"
-                              height="48"
-                            >
-                          {% else %}
-                            {{ 'product-1' | placeholder_svg_tag: 'w-full h-full object-cover' }}
-                          {% endif %}
-                        </div>
+              {% for product in perros_collection.products %}
+                {%- if cart_product_ids contains product.id -%}{% continue %}{%- endif -%}
 
-                        <div class="min-w-0">
-                          <h3 class="font-bold text-[#004623] leading-5 truncate !text-[14px]">
-                            {{ product.title }}
-                          </h3>
-                          <div class="text-[#004623] leading-5  !text-[14px]">
-                            {%- if product.compare_at_price_max > product.price_min -%}
-                              <span class="font-medium">{{ product.price_min | money }}</span>
-                              <span class="line-through opacity-70 ml-1">
-                                {{- product.compare_at_price_max | money -}}
-                              </span>
-                            {%- else -%}
-                              {%- if product.price_varies -%}
-                                <span>Desde </span>
-                              {%- endif -%}
-                              <span class="font-medium">{{ product.price_min | money }}</span>
-                            {%- endif -%}
-                          </div>
-                        </div>
-                      </a>
+                {%- assign main_img = product.featured_image -%}
+                {%- assign first_variant = product.selected_or_first_available_variant -%}
 
-                      <!-- Derecha: selector cantidad (solo layout) -->
-                      <div class="shrink-0">
-                        <a
-                          href="{{product.url}}"
-                          data-atc-selector=""
-                          rel="nofollow"
-                          class="!shadow !h-8 !gap-2.5 !bg-[#ffcd00] !rounded-[50px] !hover:bg-[#ffcd00]/90 py-2 lg:!py-5 !px-10 lg:!px-14 mt-2 lg:mt-4 !text-[12px] lg:!text-[20px] !font-[600] t4s-tooltip-actived"
-                          data-id="{{ first_variant.id }}"
-                          dat-qty="1"
-                          data-action-quickshop=""
-                          data-preorder-handle="{{ product.handle }}"
-                          d-handle="{{ product.handle }}"
-                          preorder-product-element="handle"
-                        >
-                          <span class="!text-[10px]">Añadir</span>
-                        </a>
+                <li class="w-full">
+                  <div class="flex items-center justify-between gap-3 w-full bg-white rounded-lg border border-[#d9d9c8] p-3">
+                    <!-- Izquierda: imagen + texto -->
+                    <a href="{{ product.url }}" class="flex items-center gap-3 min-w-0">
+                      <div class="shrink-0 h-28 rounded-md overflow-hidden bg-[#E7E8D7]">
+                        {% if main_img %}
+                          <img
+                            src="{{ main_img | image_url: width: 120, height: 120, crop: 'center' }}"
+                            alt="{{ main_img.alt | default: product.title }}"
+                            class="w-full h-full object-cover"
+                            loading="lazy"
+                            width="48"
+                            height="48"
+                          >
+                        {% else %}
+                          {{ 'product-1' | placeholder_svg_tag: 'w-full h-full object-cover' }}
+                        {% endif %}
                       </div>
+
+                      <div class="min-w-0">
+                        <h3 class="font-bold text-[#004623] leading-5 truncate !text-[14px]">
+                          {{ product.title }}
+                        </h3>
+                        <div class="text-[#004623] leading-5 !text-[14px]">
+                          {%- if product.compare_at_price_max > product.price_min -%}
+                            <span class="font-medium">{{ product.price_min | money }}</span>
+                          {%- else -%}
+                            {%- if product.price_varies -%}
+                              <span>Desde </span>
+                            {%- endif -%}
+                            <span class="font-medium">{{ product.price_min | money }}</span>
+                          {%- endif -%}
+                        </div>
+                      </div>
+                    </a>
+
+                    <!-- Derecha: botón -->
+                    <div class="shrink-0">
+                      <a
+                        href="{{ product.url }}"
+                        data-atc-selector
+                        rel="nofollow"
+                        class="!shadow !h-8 !gap-2.5 !bg-[#ffcd00] !rounded-[50px] !hover:bg-[#ffcd00]/90 py-2 lg:!py-5 !px-10 lg:!px-14 mt-2 lg:mt-4 !text-[12px] lg:!text-[20px] !font-[600] t4s-tooltip-actived"
+                        data-id="{{ first_variant.id }}"
+                        dat-qty="1"
+                        data-action-quickshop
+                        data-preorder-handle="{{ product.handle }}"
+                        d-handle="{{ product.handle }}"
+                        preorder-product-element="handle"
+                      >
+                        <span class="!text-[10px]">Añadir</span>
+                      </a>
                     </div>
-                  </li>
-                {% endfor %}
-              {% endpaginate %}
+                  </div>
+                </li>
+
+                {% assign mostrados = mostrados | plus: 1 %}
+                {% if mostrados >= 4 %}{% break %}{% endif %}
+              {% endfor %}
             </ul>
 
             {% comment %} DESKTOP {% endcomment %}
             <div class="cart-recommendations w-100 [@media(max-width:1024px)]:hidden">
-              <ul class="flex no-wrap  gap-5">
-                {% paginate perros_collection.products by 4 %}
-                  {% for product in perros_collection.products %}
-                    {%- comment -%}
-                      PR CARD – lee datos reales del objeto `product` que llega por `render ... as product`
-                      Variables que pueden venir del render:
-                      isGrowaveWishlist, show_img, show_vendor, use_link_vendor, rating_pos,
-                      list_color_pos, list_size_pos, enable_pr_color, show_cl_type, get_color,
-                      enable_pr_size, pr_size_pos, get_size, show_size_type, price_varies_style,
-                      app_review, enable_rating, use_countdown, imgatt, show_list_btns, placeholder_img
-                    {%- endcomment -%}
+              <ul class="flex no-wrap gap-5">
+                {% assign cart_product_ids = cart.items | map: 'product_id' %}
+                {% assign mostrados = 0 %}
 
-                    {%- assign main_img = product.featured_image -%}
-                    {%- assign first_variant = product.selected_or_first_available_variant -%}
+                {% for product in perros_collection.products %}
+                  {%- if cart_product_ids contains product.id -%}
+                    {%- continue -%}
+                  {%- endif -%}
 
-                    <div class="t4s-product t4s-pr-grid t4s-pr-style1 t4s-pr-{{ product.id }} t4s-pr-item w-1/4">
-                      <div class="t4s-product-wrapper relative" data-cacl-slide timeline hdt-reveal="slide-in">
-                        <div class="t4s-product-inner t4s-pr t4s-oh">
-                          <!-- Imagen -->
-                          <div
-                            class="t4s-product-img t4s_ratio {% if main_img and main_img != blank %}is-show-img2{% endif %}"
-                            {{ imgatt }}style="--aspect-ratioapt: 1.0"
-                          >
-                            {% if main_img %}
-                              <img
-                                data-pr-img
-                                class="t4s-product-main-img lazyautosizes lazyloadt4sed"
-                                loading="lazy"
-                                alt="{{ main_img.alt | default: product.title }}"
-                                width="{{ main_img.width | default: 1080 }}"
-                                height="{{ main_img.height | default: 1080 }}"
-                                data-widths="[100,200,360,400,500,600,700,800,900,1000]"
-                                data-optimumx="2"
-                                data-sizes="auto"
-                                data-srcset="
-                                  {{ main_img | image_url: width: 100 }} 100w,
-                                  {{ main_img | image_url: width: 200 }} 200w,
-                                  {{ main_img | image_url: width: 360 }} 360w,
-                                  {{ main_img | image_url: width: 400 }} 400w,
-                                  {{ main_img | image_url: width: 500 }} 500w,
-                                  {{ main_img | image_url: width: 600 }} 600w,
-                                  {{ main_img | image_url: width: 700 }} 700w,
-                                  {{ main_img | image_url: width: 800 }} 800w,
-                                  {{ main_img | image_url: width: 900 }} 900w,
-                                  {{ main_img | image_url: width: 1000 }} 1000w
-                                "
-                                src="{{ main_img | image_url: width: 400 }}"
-                                srcset="{{ main_img | image_url: width: 400 }} 400w"
-                              >
-                              <span class="lazyloadt4s-loader"></span>
-                              <noscript>
-                                <img
-                                  class="t4s-product-main-img"
-                                  loading="lazy"
-                                  src="{{ main_img | image_url: width: 600 }}"
-                                  alt="{{ main_img.alt | default: product.title }}"
-                                >
-                              </noscript>
-                            {% else %}
-                              {% if placeholder_img %}
-                                <img
-                                  class="t4s-product-main-img"
-                                  src="{{ placeholder_img | image_url: width: 600 }}"
-                                  alt="{{ product.title }}"
-                                >
-                              {% else %}
-                                {{ 'product-1' | placeholder_svg_tag: 't4s-placeholder-svg' }}
-                              {% endif %}
-                            {% endif %}
-                          </div>
+                  {%- assign main_img = product.featured_image -%}
+                  {%- assign first_variant = product.selected_or_first_available_variant -%}
 
-                          <div
-                            class="t4s-product-badge"
-                            data-product-badge
-                            data-sort="sale,new,soldout,preOrder,custom"
-                          ></div>
-
-                          <!-- Botón ATC: usa el primer variant disponible -->
-                          <div class="t4s-product-btns">
-                            <a
-                              href="{{ product.url }}"
-                              data-atc-selector
-                              rel="nofollow"
-                              class="!shadow !h-8 !gap-2.5 !bg-[#ffcd00] !rounded-[50px] !hover:bg-[#ffcd00]/90 py-2 lg:!py-5 lg:!px-14 [@media(max-width:1333px)]:!px-4 mt-2 lg:mt-4 !text-[12px] lg:!text-[20px] !font-[600] t4s-tooltip-actived"
-                              data-id="{{ first_variant.id }}"
-                              dat-qty="1"
-                              data-action-quickshop
-                              data-preorder-handle="{{ product.handle }}"
-                              d-handle="{{ product.handle }}"
+                  <div class="t4s-product t4s-pr-grid t4s-pr-style1 t4s-pr-{{ product.id }} t4s-pr-item w-1/4">
+                    <div class="t4s-product-wrapper relative" data-cacl-slide timeline hdt-reveal="slide-in">
+                      <div class="t4s-product-inner t4s-pr t4s-oh">
+                        <!-- Imagen -->
+                        <div
+                          class="t4s-product-img t4s_ratio {% if main_img and main_img != blank %}is-show-img2{% endif %}"
+                          {{ imgatt }}
+                          style="--aspect-ratioapt: 1.0"
+                        >
+                          {% if main_img %}
+                            <img
+                              data-pr-img
+                              class="t4s-product-main-img lazyautosizes lazyloadt4sed"
+                              loading="lazy"
+                              alt="{{ main_img.alt | default: product.title }}"
+                              width="{{ main_img.width | default: 1080 }}"
+                              height="{{ main_img.height | default: 1080 }}"
+                              data-widths="[100,200,360,400,500,600,700,800,900,1000]"
+                              data-optimumx="2"
+                              data-sizes="auto"
+                              data-srcset="
+                                {{ main_img | image_url: width: 100 }} 100w,
+                                {{ main_img | image_url: width: 200 }} 200w,
+                                {{ main_img | image_url: width: 360 }} 360w,
+                                {{ main_img | image_url: width: 400 }} 400w,
+                                {{ main_img | image_url: width: 500 }} 500w,
+                                {{ main_img | image_url: width: 600 }} 600w,
+                                {{ main_img | image_url: width: 700 }} 700w,
+                                {{ main_img | image_url: width: 800 }} 800w,
+                                {{ main_img | image_url: width: 900 }} 900w,
+                                {{ main_img | image_url: width: 1000 }} 1000w
+                              "
+                              src="{{ main_img | image_url: width: 400 }}"
+                              srcset="{{ main_img | image_url: width: 400 }} 400w"
                             >
-                              <span class="text-[10px] [@media(max-width:1024px)]:text-[10px]">Añadir al carrito</span>
-                            </a>
-
-                            <!-- Fallback sin JS -->
-                          </div>
-
-                          <!-- Clic en toda la tarjeta -->
-                          <a
-                            class="t4s-full-width-link"
-                            href="{{ product.url }}"
-                            data-preorder-handle="{{ product.handle }}"
-                            d-handle="{{ product.handle }}"
-                          ></a>
+                            <span class="lazyloadt4s-loader"></span>
+                            <noscript>
+                              <img
+                                class="t4s-product-main-img"
+                                loading="lazy"
+                                src="{{ main_img | image_url: width: 600 }}"
+                                alt="{{ main_img.alt | default: product.title }}"
+                              >
+                            </noscript>
+                          {% else %}
+                            {% if placeholder_img %}
+                              <img
+                                class="t4s-product-main-img"
+                                src="{{ placeholder_img | image_url: width: 600 }}"
+                                alt="{{ product.title }}"
+                              >
+                            {% else %}
+                              {{ 'product-1' | placeholder_svg_tag: 't4s-placeholder-svg' }}
+                            {% endif %}
+                          {% endif %}
                         </div>
 
-                        <div class="t4s-product-info text-left">
-                          <div class="t4s-product-info__inner text-left">
-                            <!-- Nombre -->
-                            <h3 class="t4s-product-title text-left !text-[12px] lg:!text-[12px]">
-                              <a href="{{ product.url }}">{{ product.title }}</a>
-                            </h3>
+                        <div
+                          class="t4s-product-badge"
+                          data-product-badge
+                          data-sort="sale,new,soldout,preOrder,custom"
+                        ></div>
 
-                            <!-- Precio -->
-                            <div class="t4s-product-price !text-[10px]" data-pr-price data-product-price>
-                              {%- assign min_price = product.price_min -%}
-                              {%- assign max_compare = product.compare_at_price_max | default: 0 -%}
-                              {%- if max_compare > min_price -%}
-                                <span class="t4s-price-sale">{{ min_price | money }}</span>
-                                <span class="line-through opacity-70">{{ max_compare | money }}</span>
-                              {%- else -%}
-                                {%- if product.price_varies -%}
-                                  <span class="t4s-price-from">Desde </span>
-                                {%- endif -%}
-                                {{ min_price | money }}
+                        <!-- Botón ATC -->
+                        <div class="t4s-product-btns">
+                          <a
+                            href="{{ product.url }}"
+                            data-atc-selector
+                            rel="nofollow"
+                            class="!shadow !h-8 !gap-2.5 !bg-[#ffcd00] !rounded-[50px] !hover:bg-[#ffcd00]/90 py-2 lg:!py-5 lg:!px-14 [@media(max-width:1333px)]:!px-4 mt-2 lg:mt-4 !text-[12px] lg:!text-[20px] !font-[600] t4s-tooltip-actived"
+                            data-id="{{ first_variant.id }}"
+                            dat-qty="1"
+                            data-action-quickshop
+                            data-preorder-handle="{{ product.handle }}"
+                            d-handle="{{ product.handle }}"
+                          >
+                            <span class="text-[10px] [@media(max-width:1024px)]:text-[10px]">Añadir al carrito</span>
+                          </a>
+                        </div>
+
+                        <a
+                          class="t4s-full-width-link"
+                          href="{{ product.url }}"
+                          data-preorder-handle="{{ product.handle }}"
+                          d-handle="{{ product.handle }}"
+                        ></a>
+                      </div>
+
+                      <div class="t4s-product-info text-left">
+                        <div class="t4s-product-info__inner text-left">
+                          <h3 class="t4s-product-title text-left !text-[12px] lg:!text-[12px]">
+                            <a href="{{ product.url }}">{{ product.title }}</a>
+                          </h3>
+
+                          <div class="t4s-product-price !text-[10px]" data-pr-price data-product-price>
+                            {%- assign min_price = product.price_min -%}
+                            {%- assign max_compare = product.compare_at_price_max | default: 0 -%}
+                            {%- if max_compare > min_price -%}
+                              <span class="t4s-price-sale">{{ min_price | money }}</span>
+                              <span class="line-through opacity-70">{{ max_compare | money }}</span>
+                            {%- else -%}
+                              {%- if product.price_varies -%}
+                                <span class="t4s-price-from">Desde </span>
                               {%- endif -%}
-                            </div>
+                              {{ min_price | money }}
+                            {%- endif -%}
                           </div>
                         </div>
                       </div>
                     </div>
-                  {% endfor %}
-                {% endpaginate %}
+                  </div>
+
+                  {% assign mostrados = mostrados | plus: 1 %}
+                  {% if mostrados >= 4 %}{% break %}{% endif %}
+                {% endfor %}
               </ul>
             </div>
           {% endif %}
