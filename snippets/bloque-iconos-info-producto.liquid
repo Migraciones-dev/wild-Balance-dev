@@ -9,7 +9,7 @@
   {% endunless %}
 {% endif %}
 
-{% unless product.tags contains 'polvos' %}
+{% unless product.tags contains 'suplementos y aceites' %}
 <section class="extraProducto !rounded-[8px]">
   {% if animal %}
     <div class="cajaIngrediente">
@@ -97,26 +97,16 @@
   </div>
 
   {% if product.tags contains 'congelado' %}
-    {% assign cocinadoGato = false %}
-    {% if product.tags contains 'comida cocinada' and animal == 'gato' %}
-      {% assign cocinadoGato = true %}
-    {% endif %}
-    {% if cocinadoGato == true or product.tags contains 'comida cruda' %}
-      <div class="cajaIngrediente">
-        <div class="aporteImg">
-          <img
-            class="mx-auto my-2 my-2"
-            src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Vector_2.svg?v=1753719548"
-            alt="Pedido mínimo 5kg"
-          >
-        </div>
+  <div class="cajaIngrediente">
+    <div class="aporteImg">
+      <img src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Vector_2.svg?v=1753719548" alt="Pedido mínimo 5kg">
+    </div>
+    <div class="porcentajes font-[600]">
+      <p>Pedido mínimo 5kg</p>
+    </div>
+  </div>
+{% endif %}
 
-        <div class="porcentajes font-[600]">
-          <p>Pedido mínimo 5kg</p>
-        </div>
-      </div>
-    {% endif %}
-  {% endif %}
 
   {% if product.tags contains 'congelado' %}
     <div class="cajaIngrediente">
