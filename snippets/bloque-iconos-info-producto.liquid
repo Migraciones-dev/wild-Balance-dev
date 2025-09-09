@@ -9,6 +9,7 @@
   {% endunless %}
 {% endif %}
 
+{% unless product.tags contains 'suplemento' %}
 <section class="extraProducto !rounded-[8px]">
   {% if animal %}
     <div class="cajaIngrediente">
@@ -133,3 +134,4 @@
     </div>
   {% endif %}
 </section>
+{% endunless %}
