@@ -79,7 +79,6 @@
     },
     "custom_liquid_ibzxRE": {
       "type": "custom-liquid",
-      "disabled": true,
       "settings": {
         "custom_liquid": "{% render 'wizard-resultpage-js' %}"
       }
