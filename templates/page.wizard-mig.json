@@ -79,6 +79,7 @@
     },
     "custom_liquid_ibzxRE": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "custom_liquid": "{% render 'wizard-resultpage-js' %}"
       }
@@ -120,6 +121,13 @@
       "settings": {
         "custom_liquid": "<style>\ndiv.rh-fullwidth .rh-widget.rh-inline.rh-quiz-GrHkMm{\n  height: 100vh !important;\n}\n</style>"
       }
+    },
+    "custom_liquid_cHa9Hx": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
+      "settings": {
+        "custom_liquid": "<script>\n  window.prqQuizCallback = function(quizResponse){\n    console.error(\"quizcallback\");\n    console.error(quizResponse);\n\n    try { localStorage.setItem('response', JSON.stringify(quizResponse)); } catch(e){}\n\n    // Id inmediato desde la respuesta del quiz\n    var immediateId = (quizResponse && (quizResponse.quizid || (quizResponse.quiz && quizResponse.quiz.id))) || null;\n\n    var base = \"https://wildbalance.es/pages/wizard-result\";\n    var redirect = function(id){\n      var target = id ? base + \"/\" + encodeURIComponent(id) : base;\n      window.location.href = target;\n    };\n\n    // Si quieres, ya puedes redirigir en caliente y enviar datos en segundo plano\n    // redirect(immediateId); return;\n\n    // Si prefieres intentar el backend primero pero con fallback garantizado:\n    if (!window.jQuery || !jQuery.ajax) {\n      // Sin jQuery, no bloquees UX\n      return redirect(immediateId);\n    }\n\n    var timedOut = false;\n    var to = setTimeout(function(){ timedOut = true; redirect(immediateId); }, 3500);\n\n    jQuery.ajax({\n      url: \"https://wildbalance-app-rocket.fly.dev/insert-data\",\n      type: \"POST\",\n      dataType: \"json\",\n      data: JSON.stringify(quizResponse),\n      contentType: \"application/json; charset=UTF-8\",\n      timeout: 3000,\n      success: function(data){\n        clearTimeout(to);\n        if (timedOut) return;\n        var id = (data && (data.quizId || data['quizId'])) || immediateId;\n        redirect(id);\n      },\n      error: function(){\n        clearTimeout(to);\n        if (timedOut) return;\n        // Falla el backend: redirige igual usando el id del quiz\n        redirect(immediateId);\n      }\n    });\n  };\n</script>"
+      }
     }
   },
   "order": [
@@ -128,6 +136,7 @@
     "custom_liquid_ibzxRE",
     "17007363095c6db749",
     "main",
-    "custom_liquid_HBy9ba"
+    "custom_liquid_HBy9ba",
+    "custom_liquid_cHa9Hx"
   ]
 }
