@@ -79,16 +79,9 @@
     },
     "custom_liquid_ibzxRE": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "custom_liquid": "{% render 'wizard-resultpage-js' %}"
-      }
-    },
-    "custom_liquid_BqAicP": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "name": "Custom Liquid",
-      "settings": {
-        "custom_liquid": "<script>\n  window.prqQuizCallback = function(quizResponse){\n    console.error(\"quizcallback\");\n    console.error(quizResponse);\n\n    try { localStorage.setItem('response', JSON.stringify(quizResponse)); } catch(e){}\n\n    // ← ID correcto de la RESPUESTA\n    var responseId = quizResponse && quizResponse.response && quizResponse.response.id;\n\n    function go(id){\n      var base = \"https://wildbalance.es/pages/wizard-result\";\n      window.location.href = id ? base + \"/\" + encodeURIComponent(id) : base;\n    }\n\n    // Si no hay jQuery, redirige al menos con el responseId\n    if (!window.jQuery || !jQuery.ajax) {\n      return go(responseId);\n    }\n\n    jQuery.ajax({\n      url: \"https://wildbalance-app-rocket.fly.dev/insert-data\",\n      type: \"POST\",\n      dataType: \"json\",\n      data: JSON.stringify(quizResponse),\n      contentType: \"application/json; charset=UTF-8\",\n      timeout: 3500,\n      success: function(data){\n        // Si el backend devuelve su propio ID (p.ej. quizId/resultId), úsalo; si no, usa responseId del quiz\n        var idFromServer = data && (data.resultId || data.quizId);\n        go(idFromServer || responseId);\n      },\n      error: function(){\n        // Backend en 500 → usa el responseId del quiz\n        go(responseId);\n      }\n    });\n  };\n</script>"
       }
     },
     "17007363095c6db749": {
@@ -108,6 +101,13 @@
         "0ffae087-4c23-4da3-ad42-99aef600abfa"
       ],
       "settings": {}
+    },
+    "custom_liquid_BqAicP": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
+      "settings": {
+        "custom_liquid": "<script>\n  window.prqQuizCallback = function(quizResponse){\n    // Guarda el payload por si el server falla (lo usaremos en la página de resultados)\n    try { localStorage.setItem('prq_last_response', JSON.stringify(quizResponse)); } catch(e){}\n\n    // ID de resultado (en tus logs aparece como response.id o responseId)\n    var rid = quizResponse?.response?.id || quizResponse?.responseId || null;\n\n    // Opción B (si quisieras ir a la vista nativa del widget):\n    // var permalink = quizResponse?.response?.attributes?.permalink; // ej: https://wildbalance.es/#results-<quizid>-<rid>\n    // if (permalink) { window.location.replace(permalink); return; }\n\n    // Tu página de resultados (sin 404), pasando el id por querystring\n    var base = \"https://wildbalance.es/pages/wizard-result\";\n    var url  = rid ? (base + \"?rid=\" + encodeURIComponent(rid)) : base;\n\n    console.log(\"[prqQuizCallback] redirect ->\", url);\n    window.location.replace(url); // replace para no dejar el paso intermedio en el historial\n  };\n</script>"
+      }
     },
     "main": {
       "type": "main-page",
@@ -134,8 +134,8 @@
     "heading",
     "2fa35883-7762-4b11-9a64-3e08390ea41e",
     "custom_liquid_ibzxRE",
-    "custom_liquid_BqAicP",
     "17007363095c6db749",
+    "custom_liquid_BqAicP",
     "main",
     "custom_liquid_HBy9ba"
   ]
