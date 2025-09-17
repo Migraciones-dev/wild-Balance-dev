@@ -1983,3 +1983,19 @@ document.addEventListener('DOMContentLoaded', () => {
 #calculadora-bg.active { pointer-events: auto; }
  
 </style>
+<script>
+  function openCalc() {
+  calc.classList.add('open');
+  calc.style.pointerEvents = 'auto'; // <-- fuerza clicable ya mismo
+  overlay.classList.add('active');
+  document.body.classList.add('calc-open');
+  requestAnimationFrame(sizeWrapper);
+}
+function closeCalc() {
+  calc.classList.remove('open');
+  calc.style.pointerEvents = ''; // vuelve al CSS
+  overlay.classList.remove('active');
+  document.body.classList.remove('calc-open');
+}
+
+</script>
