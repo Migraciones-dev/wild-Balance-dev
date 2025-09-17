@@ -666,6 +666,7 @@
     },
     "migraciones_columns_jjVGXh": {
       "type": "migraciones-columns",
+      "disabled": true,
       "name": "Migraciones columnas",
       "settings": {
         "custom_liquid": ""
