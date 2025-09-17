@@ -33,6 +33,7 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "layout": "t4s-container-wrap",
         "cl_bg": "",
@@ -372,6 +373,14 @@
         "pd_mb": ""
       }
     },
+    "calculadora_rVBBCC": {
+      "type": "calculadora",
+      "disabled": true,
+      "name": "Migraciones calculadora",
+      "settings": {
+        "custom_liquid": ""
+      }
+    },
     "migraciones_columns_HAXrhY": {
       "type": "migraciones-columns",
       "blocks": {
@@ -424,7 +433,7 @@
         "title_color": "#004623",
         "highlight_color": "#004623",
         "text_color": "#004623",
-        "accent_color": "#FFCD00"
+        "accent_color": "#ffcd00"
       }
     }
   },
@@ -435,6 +444,7 @@
     "custom_liquid_gW49Yt",
     "custom_section_JNEwHR",
     "feature_columns_xhN9WG",
+    "calculadora_rVBBCC",
     "migraciones_columns_HAXrhY"
   ]
 }
