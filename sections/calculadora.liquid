@@ -1,0 +1,726 @@
+<div id="wb2-calc" class="flex flex-col items-center gap-20 max-w-[1600px] mx-auto my-12 lg:my-24">
+  <div class="relative w-full text-center [@media(max-width:1024px)]:px-6 flex flex-col items-center justify-center gap-10">
+    <h2 class="relative [font-family:'Barlow',Helvetica] font-extrabold text-[#004623] max-w-[1600px] text-[30px] lg:text-[64px] lg:text-center leading-[1] mb-8">
+      ¿Cuánto cuesta mejorar la <br>
+      <span class="highlight">salud de tu peludo?</span>
+    </h2>
+    <p class="max-w-[785px] lg:my-10 lg:mt-6 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#222222] text-center tracking-[0] leading-[1.4] text-[14px] lg:text-[18px]">
+      Para que podamos hacer el cálculo correctamente, debes conocer el peso ideal de tu mascota (en kg). Ten en cuenta
+      que las cantidades recomendadas son orientativas.
+    </p>
+  </div>
+
+  <!-- Tabs especie (AISLADOS) -->
+  <div class="space-x-2 flex items-center justify-center flex-nowrap mt-0" id="wb2-tabs">
+    <button
+      data-tab="perro"
+      class="px-10 py-4 rounded-full !border !border-[#004623] bg-[#004623] text-white font-medium focus:outline-none flex items-center gap-4"
+      style="border: 1px solid"
+      id="wb2-dog"
+      aria-selected="true"
+    >
+      <svg
+        width="24"
+        height="21"
+        viewBox="0 0 24 21"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="fill-current"
+      >
+        <path fill="currentColor" d="M23.8783 10.6675L22.1863 1.5994C22.1449 1.37836 22.0588 1.16811 21.9332 0.981591C21.8076 0.795068 21.6452 0.636212 21.4559 0.514791C21.2666 0.39337 21.0545 0.311951 20.8326 0.27554C20.6107 0.23913 20.3837 0.248498 20.1655 0.303068L20.1336 0.312342L14.7216 1.90854H10.0123L4.6003 0.317495L4.56836 0.30822C4.35021 0.25365 4.1232 0.244282 3.90129 0.280692C3.67939 0.317103 3.46728 0.398522 3.278 0.519943C3.08873 0.641364 2.92629 0.800221 2.80068 0.986743C2.67508 1.17327 2.58895 1.38351 2.54761 1.60455L0.855579 10.6675C0.783223 11.0305 0.836932 11.4073 1.00782 11.7356C1.17871 12.0639 1.45655 12.324 1.79537 12.4729C2.01239 12.5723 2.24811 12.6243 2.48681 12.6254C2.77252 12.6252 3.05293 12.5483 3.29882 12.4028V16.7473C3.29882 17.8405 3.73309 18.8889 4.50609 19.6619C5.27909 20.4349 6.32751 20.8692 7.42069 20.8692H17.3132C18.4064 20.8692 19.4548 20.4349 20.2278 19.6619C21.0008 18.8889 21.4351 17.8405 21.4351 16.7473V12.4039C21.6807 12.5492 21.9607 12.626 22.246 12.6264C22.485 12.6258 22.7211 12.5741 22.9385 12.475C23.2777 12.326 23.5559 12.0655 23.7268 11.7368C23.8977 11.4081 23.9512 11.0308 23.8783 10.6675ZM2.47445 10.9767L4.1675 1.90854L8.50269 3.18323L2.47445 10.9767ZM17.3132 19.2204H13.1913V17.9127L14.5989 16.5062C14.7536 16.3515 14.8405 16.1417 14.8405 15.9229C14.8405 15.7042 14.7536 15.4944 14.5989 15.3397C14.4443 15.185 14.2345 15.0981 14.0157 15.0981C13.7969 15.0981 13.5871 15.185 13.4324 15.3397L12.3669 16.4062L11.3014 15.3397C11.1468 15.185 10.937 15.0981 10.7182 15.0981C10.4994 15.0981 10.2896 15.185 10.1349 15.3397C9.98026 15.4944 9.89336 15.7042 9.89336 15.9229C9.89336 16.1417 9.98026 16.3515 10.1349 16.5062L11.5426 17.9127V19.2204H7.42069C6.76478 19.2204 6.13573 18.9599 5.67193 18.496C5.20813 18.0322 4.94757 17.4032 4.94757 16.7473V10.4728L10.2978 3.55729H14.4351L19.7863 10.4728V16.7473C19.7863 17.4032 19.5258 18.0322 19.062 18.496C18.5982 18.9599 17.9691 19.2204 17.3132 19.2204ZM22.2594 10.9767L16.2312 3.18323L20.5664 1.90854L22.2594 10.9767ZM9.89382 12.2132C9.89382 12.4578 9.8213 12.6969 9.68542 12.9002C9.54955 13.1036 9.35642 13.2621 9.13047 13.3557C8.90452 13.4493 8.65588 13.4737 8.41601 13.426C8.17615 13.3783 7.95581 13.2605 7.78287 13.0876C7.60994 12.9147 7.49217 12.6943 7.44445 12.4545C7.39674 12.2146 7.42123 11.966 7.51482 11.74C7.60841 11.5141 7.76691 11.3209 7.97026 11.1851C8.17361 11.0492 8.41269 10.9767 8.65726 10.9767C8.98521 10.9767 9.29974 11.1069 9.53164 11.3388C9.76354 11.5707 9.89382 11.8853 9.89382 12.2132ZM17.3132 12.2132C17.3132 12.4578 17.2407 12.6969 17.1048 12.9002C16.9689 13.1036 16.7758 13.2621 16.5498 13.3557C16.3239 13.4493 16.0753 13.4737 15.8354 13.426C15.5955 13.3783 15.3752 13.2605 15.2022 13.0876C15.0293 12.9147 14.9115 12.6943 14.8638 12.4545C14.8161 12.2146 14.8406 11.966 14.9342 11.74C15.0278 11.5141 15.1863 11.3209 15.3896 11.1851C15.593 11.0492 15.8321 10.9767 16.0766 10.9767C16.4046 10.9767 16.7191 11.1069 16.951 11.3388C17.1829 11.5707 17.3132 11.8853 17.3132 12.2132Z"></path>
+      </svg>
+      <span>Perros</span>
+    </button>
+    <button
+      data-tab="gato"
+      class="px-10 py-4 rounded-full !border !border-[#004623] text-[#004623] font-medium focus:outline-none flex items-center gap-4"
+      style="border: 1px solid"
+      id="wb2-cat"
+      aria-selected="false"
+    >
+      <svg
+        class="fill-current"
+        width="25"
+        height="25"
+        viewBox="0 0 25 25"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path fill="currentColor" d="M9.94365 13.6908C9.94365 13.9142 9.87742 14.1325 9.75334 14.3182C9.62926 14.5039 9.4529 14.6486 9.24656 14.7341C9.04022 14.8196 8.81318 14.8419 8.59413 14.7984C8.37508 14.7548 8.17387 14.6472 8.01595 14.4893C7.85803 14.3314 7.75048 14.1302 7.70691 13.9111C7.66334 13.6921 7.6857 13.465 7.77117 13.2587C7.85663 13.0524 8.00137 12.876 8.18707 12.7519C8.37277 12.6278 8.59109 12.5616 8.81443 12.5616C9.11392 12.5616 9.40114 12.6806 9.61291 12.8924C9.82468 13.1041 9.94365 13.3913 9.94365 13.6908ZM17.0954 12.5616C16.872 12.5616 16.6537 12.6278 16.468 12.7519C16.2823 12.876 16.1376 13.0524 16.0521 13.2587C15.9666 13.465 15.9443 13.6921 15.9878 13.9111C16.0314 14.1302 16.139 14.3314 16.2969 14.4893C16.4548 14.6472 16.656 14.7548 16.8751 14.7984C17.0941 14.8419 17.3212 14.8196 17.5275 14.7341C17.7338 14.6486 17.9102 14.5039 18.0343 14.3182C18.1584 14.1325 18.2246 13.9142 18.2246 13.6908C18.2246 13.3913 18.1056 13.1041 17.8938 12.8924C17.6821 12.6806 17.3949 12.5616 17.0954 12.5616ZM22.7415 5.03349V13.3144C22.7415 18.2952 18.3516 22.3482 12.9549 22.3482C7.55817 22.3482 3.16833 18.2952 3.16833 13.3144V5.03349C3.16847 4.73581 3.25685 4.44485 3.4223 4.19738C3.58775 3.94991 3.82285 3.75703 4.09788 3.64313C4.37291 3.52924 4.67553 3.49942 4.9675 3.55746C5.25947 3.61549 5.52769 3.75878 5.73825 3.9692C5.75142 3.98238 5.76271 3.99461 5.77401 4.00779L7.40291 5.88041C9.06845 4.8369 10.9942 4.28346 12.9596 4.28346C14.925 4.28346 16.8508 4.8369 18.5163 5.88041L20.1358 4.00779C20.1471 3.99461 20.1584 3.98238 20.1715 3.9692C20.3821 3.75878 20.6503 3.61549 20.9423 3.55746C21.2343 3.49942 21.5369 3.52924 21.8119 3.64313C22.087 3.75703 22.322 3.94991 22.4875 4.19738C22.6529 4.44485 22.7413 4.73581 22.7415 5.03349ZM21.2358 5.03349L19.207 7.36721C19.0829 7.51079 18.9091 7.60219 18.7205 7.62313C18.5319 7.64407 18.3423 7.593 18.1898 7.48013C17.7305 7.14059 17.2376 6.84893 16.719 6.60969V8.79755C16.719 8.99721 16.6396 9.18869 16.4985 9.32987C16.3573 9.47105 16.1658 9.55037 15.9661 9.55037C15.7665 9.55037 15.575 9.47105 15.4338 9.32987C15.2926 9.18869 15.2133 8.99721 15.2133 8.79755V6.07331C14.7195 5.94626 14.2158 5.86064 13.7077 5.81736V8.79755C13.7077 8.99721 13.6284 9.18869 13.4872 9.32987C13.346 9.47105 13.1546 9.55037 12.9549 9.55037C12.7552 9.55037 12.5638 9.47105 12.4226 9.32987C12.2814 9.18869 12.2021 8.99721 12.2021 8.79755V5.81736C11.694 5.86064 11.1903 5.94626 10.6965 6.07331V8.79755C10.6965 8.99721 10.6171 9.18869 10.476 9.32987C10.3348 9.47105 10.1433 9.55037 9.94365 9.55037C9.74399 9.55037 9.55251 9.47105 9.41133 9.32987C9.27015 9.18869 9.19083 8.99721 9.19083 8.79755V6.60969C8.67217 6.84893 8.17933 7.14059 7.72003 7.48013C7.56779 7.59333 7.37843 7.64487 7.18983 7.62446C7.00122 7.60405 6.82728 7.51318 6.70279 7.37003L4.67396 5.03349V13.3144C4.67396 17.2347 7.98728 20.4661 12.2021 20.8115V18.8956L10.9167 17.6102C10.8468 17.5402 10.7914 17.4572 10.7536 17.3658C10.7158 17.2745 10.6963 17.1766 10.6964 17.0777C10.6964 16.9788 10.7159 16.8809 10.7538 16.7896C10.7917 16.6983 10.8472 16.6153 10.9171 16.5454C11.0584 16.4043 11.2499 16.325 11.4496 16.3251C11.5485 16.3252 11.6464 16.3447 11.7377 16.3826C11.829 16.4204 11.912 16.4759 11.9819 16.5459L12.9549 17.5189L13.9279 16.5459C13.9978 16.4759 14.0808 16.4204 14.1721 16.3826C14.2634 16.3447 14.3613 16.3252 14.4602 16.3251C14.5591 16.3251 14.657 16.3445 14.7483 16.3823C14.8397 16.4201 14.9227 16.4755 14.9927 16.5454C15.0626 16.6153 15.1181 16.6983 15.156 16.7896C15.1939 16.8809 15.2134 16.9788 15.2134 17.0777C15.2135 17.1766 15.194 17.2745 15.1562 17.3658C15.1184 17.4572 15.063 17.5402 14.9931 17.6102L13.7077 18.8956V20.8115C17.9225 20.4643 21.2358 17.2356 21.2358 13.3144V5.03349Z"></path>
+      </svg>
+      <span>Gatos</span>
+    </button>
+  </div>
+
+  <section class="inputsPet flex items-center gap-6 flex-wrap justify-center">
+    <!-- Nombre -->
+    <div class="[@media(max-width:1024px)]:w-[93%]">
+      <input
+        required
+        id="wb2-name"
+        name="name"
+        type="text"
+        placeholder="Nombre de tu peludo"
+        class="w-full h-[44px] bg-white rounded-[50px] border border-[#d9d9c8] px-12 outline-none text-center"
+      >
+    </div>
+
+    <!-- Edad (dinámica por especie) -->
+    <div class="ageCard [@media(max-width:1024px)]:w-[93%]">
+      <select
+        id="wb2-age"
+        name="age"
+        required
+        class="w-full h-[44px] bg-white rounded-[50px] border border-[#d9d9c8] px-12 text-center text-[#7F7D7B]"
+      >
+        <option value="" disabled selected>Edad</option>
+      </select>
+    </div>
+
+    <!-- Peso -->
+    <div class="weightCard relative [@media(max-width:1024px)]:w-[93%]">
+      <input
+        id="wb2-weight"
+        name="weight"
+        type="number"
+        placeholder="Peso (kg)"
+        min="1"
+        max="60"
+        step="1"
+        class="w-full h-[44px] bg-white rounded-[50px] border border-[#d9d9c8] px-12 text-center text-[#004623] placeholder-[#7f7d7b] outline-none no-arrows min-w-[220px]"
+        required
+      >
+      <button
+        type="button"
+        id="wb2-weight-dec"
+        class="absolute left-1 top-1/2 -translate-y-1/2 inline-flex items-center justify-center w-[42px] h-[42px] rounded-full hover:bg-transparent"
+        aria-label="Disminuir peso"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-5 h-5 text-[#7f7d7b]"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M5 12h14"></path>
+        </svg>
+      </button>
+      <button
+        type="button"
+        id="wb2-weight-inc"
+        class="absolute right-1 top-1/2 -translate-y-1/2 inline-flex items-center justify-center w-[42px] h-[42px] rounded-full hover:bg-transparent"
+        aria-label="Aumentar peso"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-5 h-5 text-[#7f7d7b]"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M5 12h14"></path><path d="M12 5v14"></path>
+        </svg>
+      </button>
+      <div class="answerErrorPa text-[12px] text-red-600 mt-1"></div>
+    </div>
+
+    <!-- Tipo de comida -->
+    <div class="foodTypeCard [@media(max-width:1024px)]:w-[93%]">
+      <select
+        id="wb2-foodType"
+        name="foodType"
+        class="w-full h-[44px] bg-white rounded-[50px] border border-[#d9d9c8] px-12 text-center text-[#7F7D7B]"
+      >
+        <option value="" disabled selected>¿Qué quieres que coma?</option>
+        <option value="burgers">Comida BARF</option>
+        <option value="cooked">Comida cocinada</option>
+      </select>
+    </div>
+
+    <!-- Actividad -->
+    <div class="activityCard [@media(max-width:1024px)]:w-[93%]">
+      <select
+        id="wb2-activity"
+        name="activity"
+        class="w-full h-[44px] bg-white rounded-[50px] border border-[#d9d9c8] px-12 text-center text-[#7F7D7B]"
+      >
+        <option value="" disabled selected>Actividad</option>
+        <option value="bajo">Castrados, sedentarios o abuelitos</option>
+        <option value="moderado">Actividad media y no castrados</option>
+        <option value="alto">Actividad alta, exterior y no castrados</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- CTA + Resultado -->
+  <div class="flex flex-col items-center gap-4 [@media(max-width:1024px)]:w-[93%]">
+    <a
+      href="#"
+      id="wb2-calc-btn"
+      class="shadow inline-flex items-center justify-center gap-2.5 py-6 px-12 bg-[#ffcd00] rounded-[50px] text-[#004623] hover:bg-[#ffcd00]/90 w-full text-[18px] font-bold mt-8 lg:max-w-[360px] lg:min-w-[360px]"
+      >Calcular
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7.13133 1.38196L11.0878 6.24153M11.0878 6.24153L7.13133 11.1011M11.0878 6.24153L0.914062 6.24153" stroke="#004623" stroke-width="1.5188" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+  <div
+    id="wb2-result"
+    class="max-w-3xl rounded-2xl bg-white p-6 shadow-md ring-1 ring-black/5 hidden [@media(max-width:1024px)]:mx-6 flex flex-col items-center justify-center"
+  >
+    <h3 class="[font-family:'Barlow',Helvetica] font-medium text-[#004623] tracking-[0] leading-[28.8px] !text-[20px] lg:!text-[24px]">
+      Para <span id="wb2-petname">tu peludo</span> te recomendamos:
+    </h3>
+
+    <!-- Línea con icono, cantidad y resultado -->
+    <div class="mt-4 flex items-center gap-3 text-gray-900 !my-16">
+      <!-- Icono (según tipo de comida) -->
+      <span class="inline-flex h-16 w-16 items-center justify-center rounded-full ring-1 ring-gray-200">
+        <img
+          id="wb2-result-img"
+          src="https://wildbalance-widget.fly.dev/static/media/burger.3e9372d5a59b67123d58.png"
+          alt=""
+          class="h-10 w-10"
+        >
+      </span>
+
+      <div class="flex-1">
+        <div class="flex items-center gap-2 !text-[17px]">
+          <p class="">
+            <span class="font-semibold">X <span class="wb2-res-units">—</span></span>
+            <span class="wb2-unit-label font-semibold">hamburguesitas</span>
+          </p>
+          <p class="font-semibold">= <span class="wb2-res-grams">—</span> gr/día</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Texto aclaratorio -->
+    <p class="mt-4 text-sm leading-6 text-gray-600 !text-[12px] lg:!text-[13px]">
+      Recuerda que las cantidades recomendadas son orientativas. Cada animal tiene unas necesidades de alimentación
+      diferentes, deberás aumentar o disminuir su ración si fuera necesario. Consúltanos si tienes cualquier duda.
+    </p>
+
+    <!-- CTA -->
+    <div class="w-full">
+      <a
+        id="wb2-cta"
+        href="#"
+        class="shadow inline-flex items-center justify-center gap-2.5 py-6 px-12 bg-[#ffcd00] rounded-[50px] text-[#004623] hover:bg-[#ffcd00]/90 w-full text-[18px] font-bold mt-8"
+        aria-label="Descubre BARF"
+      >
+        <span id="wb2-cta-text">Descubre BARF</span
+        ><span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.13133 1.38196L11.0878 6.24153M11.0878 6.24153L7.13133 11.1011M11.0878 6.24153L0.914062 6.24153" stroke="#004623" stroke-width="1.5188" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function initWB2Calculator() {
+    const root = document.getElementById('wb2-calc');
+    if (!root) return;
+
+    // ================== Datos aislados (SIN tocar window) ==================
+    const FACTORS_BURGERS = {
+      perro: {
+        baby0: {
+          base: {
+            min_posible_value: 50,
+            max_posible_value: 900,
+            values: [
+              { min: 10, max: 500, value: 0.1 },
+              { min: 500, max: 4000, value: 0.1 },
+              { min: 4000, max: 7000, value: 0.09 },
+              { min: 7000, max: 10000, value: 0.08 },
+              { min: 10000, max: 12000, value: 0.07 },
+              { min: 12000, max: 15000, value: 0.06 },
+              { min: 15000, max: 60000, value: 0.05 },
+            ],
+          },
+        },
+        baby4: {
+          base: {
+            min_posible_value: 60,
+            max_posible_value: 1125,
+            values: [
+              { min: 10, max: 1000, value: 0.07 },
+              { min: 1000, max: 11000, value: 0.06 },
+              { min: 11000, max: 16000, value: 0.06 },
+              { min: 16000, max: 21000, value: 0.05 },
+              { min: 21000, max: 30000, value: 0.05 },
+              { min: 30000, max: 300000, value: 0.035 },
+            ],
+          },
+        },
+        baby6: {
+          base: {
+            min_posible_value: 50,
+            max_posible_value: 1237.5,
+            values: [
+              { min: 10, max: 1000, value: 0.06 },
+              { min: 1000, max: 4000, value: 0.05 },
+              { min: 4000, max: 5000, value: 0.04 },
+              { min: 5000, max: 18000, value: 0.04 },
+              { min: 18000, max: 26000, value: 0.04 },
+              { min: 26000, max: 36000, value: 0.04 },
+              { min: 36000, max: 45000, value: 0.04 },
+              { min: 45000, max: 450000, value: 0.03 },
+            ],
+          },
+        },
+        baby10: {
+          base: {
+            min_posible_value: 50,
+            max_posible_value: 1200,
+            values: [
+              { min: 10, max: 1000, value: 0.06 },
+              { min: 1000, max: 4000, value: 0.04 },
+              { min: 4000, max: 7000, value: 0.03 },
+              { min: 7000, max: 9000, value: 0.03 },
+              { min: 9000, max: 26000, value: 0.025 },
+              { min: 26000, max: 50000, value: 0.025 },
+              { min: 50000, max: 60000, value: 0.0225 },
+              { min: 60000, max: 600000, value: 0.02 },
+            ],
+          },
+        },
+        adult: {
+          senior: {
+            min_posible_value: 50,
+            max_posible_value: 1200,
+            values: [
+              { min: 10, max: 999, value: 0.03 },
+              { min: 1000, max: 1999, value: 0.03 },
+              { min: 2000, max: 2999, value: 0.03 },
+              { min: 3000, max: 3999, value: 0.03 },
+              { min: 4000, max: 5999, value: 0.03 },
+              { min: 6000, max: 6999, value: 0.0275 },
+              { min: 7000, max: 9999, value: 0.025 },
+              { min: 10000, max: 21000, value: 0.02 },
+              { min: 21000, max: 31000, value: 0.02 },
+              { min: 31000, max: 80000, value: 0.015 },
+              { min: 80000, max: 800000, value: 0.012 },
+            ],
+          },
+          normal: {
+            min_posible_value: 50,
+            max_posible_value: 1400,
+            values: [
+              { min: 10, max: 1000, value: 0.035 },
+              { min: 1000, max: 2999, value: 0.035 },
+              { min: 2000, max: 3999, value: 0.035 },
+              { min: 3000, max: 4999, value: 0.035 },
+              { min: 5000, max: 8999, value: 0.03 },
+              { min: 9000, max: 12999, value: 0.025 },
+              { min: 13000, max: 45999, value: 0.02 },
+              { min: 46000, max: 80000, value: 0.0175 },
+              { min: 80000, max: 800000, value: 0.016 },
+            ],
+          },
+          high: {
+            min_posible_value: 60,
+            max_posible_value: 1600,
+            values: [
+              { min: 10, max: 1000, value: 0.035 },
+              { min: 1000, max: 3000, value: 0.035 },
+              { min: 3000, max: 4000, value: 0.035 },
+              { min: 4000, max: 5000, value: 0.035 },
+              { min: 5000, max: 9000, value: 0.035 },
+              { min: 9000, max: 21000, value: 0.03 },
+              { min: 21000, max: 31000, value: 0.025 },
+              { min: 31000, max: 80000, value: 0.025 },
+              { min: 80000, max: 800000, value: 0.02 },
+            ],
+          },
+        },
+      },
+      gato: {
+        baby0: {
+          base: {
+            min_posible_value: 50,
+            max_posible_value: 400,
+            values: [
+              { min: 50, max: 499, value: 0.11 },
+              { min: 500, max: 4000, value: 0.1 },
+              { min: 4001, max: 40000, value: 0.1 },
+            ],
+          },
+        },
+        baby3: {
+          base: {
+            min_posible_value: 40,
+            max_posible_value: 3200,
+            values: [
+              { min: 50, max: 499, value: 0.09 },
+              { min: 500, max: 4000, value: 0.08 },
+              { min: 4001, max: 40000, value: 0.08 },
+            ],
+          },
+        },
+        baby5: {
+          base: {
+            min_posible_value: 30,
+            max_posible_value: 240,
+            values: [
+              { min: 50, max: 499, value: 0.07 },
+              { min: 500, max: 4000, value: 0.06 },
+              { min: 4001, max: 40000, value: 0.06 },
+            ],
+          },
+        },
+        adult: {
+          senior: {
+            min_posible_value: 30,
+            max_posible_value: 300,
+            values: [
+              { min: 30, max: 999, value: 0.035 },
+              { min: 1000, max: 10000, value: 0.03 },
+              { min: 10001, max: 100000, value: 0.025 },
+            ],
+          },
+          normal: {
+            min_posible_value: 35,
+            max_posible_value: 350,
+            values: [
+              { min: 30, max: 999, value: 0.04 },
+              { min: 1000, max: 10000, value: 0.035 },
+              { min: 10001, max: 100000, value: 0.025 },
+            ],
+          },
+          high: {
+            min_posible_value: 50,
+            max_posible_value: 500,
+            values: [
+              { min: 30, max: 999, value: 0.05 },
+              { min: 1000, max: 10000, value: 0.05 },
+              { min: 10001, max: 100000, value: 0.04 },
+            ],
+          },
+        },
+      },
+    };
+
+    const GRAMS_PER_UNIT = { perro: { burgers: 50, cooked: 325 }, gato: { burgers: 50, cooked: 120 } };
+    const EURO_PER_UNIT = { perro: { burgers: 0.33, cooked: 1.8 }, gato: { burgers: 0.42, cooked: 0.95 } };
+
+    const AGE_OPTIONS = {
+      perro: [
+        { value: '', label: 'Edad', disabled: true, selected: true },
+        { value: 'baby0', label: 'Destete hasta 3 meses' },
+        { value: 'baby4', label: '4-6 meses' },
+        { value: 'baby6', label: '7–9 meses' },
+        { value: 'baby10', label: '10–11 meses' },
+        { value: 'adulto', label: 'Adulto (12+ meses)' },
+      ],
+      gato: [
+        { value: '', label: 'Edad', disabled: true, selected: true },
+        { value: 'baby0', label: 'Destete hasta 2 meses' },
+        { value: 'baby3', label: '3–4 meses' },
+        { value: 'baby5', label: '5–6 meses' },
+        { value: 'adulto', label: 'Adulto +6 meses' },
+      ],
+    };
+
+    // ================== Utils scopeados al root ==================
+    const qs = (sel) => root.querySelector(sel);
+    const qsa = (sel) => Array.from(root.querySelectorAll(sel));
+
+    const dogBtn = qs('#wb2-dog');
+    const catBtn = qs('#wb2-cat');
+    const tabsWrap = qs('#wb2-tabs');
+    const ageSel = qs('#wb2-age');
+    const weightInp = qs('#wb2-weight');
+    const decBtn = qs('#wb2-weight-dec');
+    const incBtn = qs('#wb2-weight-inc');
+    const foodSel = qs('#wb2-foodType');
+    const actSel = qs('#wb2-activity');
+    const btnCalc = qs('#wb2-calc-btn');
+    const cardRes = qs('#wb2-result');
+
+    const activeSpecies = () => (dogBtn.getAttribute('aria-selected') === 'true' ? 'perro' : 'gato');
+
+    const applySelectColor = (sel) => {
+      if (!sel || sel.value === '') {
+        sel?.classList.add('text-[#7F7D7B]');
+        sel?.classList.remove('text-[#004623]');
+      } else {
+        sel.classList.remove('text-[#7F7D7B]');
+        sel.classList.add('text-[#004623]');
+      }
+    };
+
+    function populateAgeOptions(species, keepValue) {
+      if (!ageSel || !AGE_OPTIONS[species]) return;
+      const prev = typeof keepValue === 'string' ? keepValue : ageSel.value;
+      ageSel.innerHTML = '';
+      AGE_OPTIONS[species].forEach((opt) => {
+        const o = document.createElement('option');
+        o.value = opt.value;
+        o.textContent = opt.label;
+        if (opt.disabled) o.disabled = true;
+        if (opt.selected) o.selected = true;
+        ageSel.appendChild(o);
+      });
+      if (prev && AGE_OPTIONS[species].some((o) => o.value === prev)) ageSel.value = prev;
+      ageSel.dispatchEvent(new Event('change'));
+      applySelectColor(ageSel);
+    }
+
+    function mapActivityKey(act) {
+      if (act === 'bajo') return 'senior';
+      if (act === 'moderado') return 'normal';
+      if (act === 'alto') return 'high';
+      return 'normal';
+    }
+
+    function mapAgeKey(especie, edadUI) {
+      if (edadUI && edadUI.startsWith && edadUI.startsWith('baby')) return edadUI; // usa bucket
+      if (edadUI === 'adulto' || edadUI === 'senior') return 'adult';
+      // fallback por especie
+      return especie === 'gato' ? 'baby3' : 'baby6';
+    }
+
+    function pickFactorAndClamp(especie, ageKey, activityKey, weightGr) {
+      const tblAge = FACTORS_BURGERS?.[especie]?.[ageKey];
+      if (!tblAge) return { factor: null, minPossible: null, maxPossible: null };
+      const node = ageKey === 'adult' ? tblAge[activityKey] : tblAge.base;
+      if (!node?.values?.length) return { factor: null, minPossible: null, maxPossible: null };
+      const match =
+        node.values.find((r) => weightGr >= r.min && weightGr <= r.max) || node.values[node.values.length - 1];
+      return {
+        factor: match?.value ?? null,
+        minPossible: node.min_posible_value ?? null,
+        maxPossible: node.max_posible_value ?? null,
+      };
+    }
+
+    function setTextAll(sel, value) {
+      qsa(sel).forEach((el) => (el.textContent = value));
+    }
+
+    // ================== Init selects y tabs ==================
+    // Color helper para selects (locales a este root)
+    ['#wb2-age', '#wb2-foodType', '#wb2-activity'].forEach((sel) => {
+      const el = qs(sel);
+      const apply = () => applySelectColor(el);
+      el?.addEventListener('change', apply);
+      apply();
+    });
+
+    // Stepper peso (entero) – local
+    if (weightInp) {
+      const min = parseInt(weightInp.min, 10) || 1;
+      const max = parseInt(weightInp.max, 10) || 60;
+      const step = parseInt(weightInp.step, 10) || 1;
+      const norm = (v) => {
+        if (v === '' || isNaN(v)) return '';
+        v = Math.round(parseFloat(v));
+        return Math.max(min, Math.min(max, v));
+      };
+      weightInp.addEventListener('input', () => {
+        if (weightInp.value !== '') weightInp.value = norm(weightInp.value);
+      });
+      weightInp.addEventListener('change', () => {
+        weightInp.value = weightInp.value === '' ? '' : norm(weightInp.value);
+      });
+      decBtn?.addEventListener('click', () => {
+        let v = weightInp.value === '' ? min : norm(weightInp.value);
+        weightInp.value = Math.max(min, v - step);
+        weightInp.dispatchEvent(new Event('change'));
+      });
+      incBtn?.addEventListener('click', () => {
+        let v = weightInp.value === '' ? min : norm(weightInp.value);
+        weightInp.value = Math.min(max, v + step);
+        weightInp.dispatchEvent(new Event('change'));
+      });
+    }
+
+    // Poblado inicial de edad (Perro activo por defecto)
+    populateAgeOptions(activeSpecies());
+
+    // Tabs toggling (solo dentro del root)
+    tabsWrap?.addEventListener('click', (e) => {
+      const btn = e.target.closest('button[data-tab]');
+      if (!btn) return;
+
+      // Visual
+      [dogBtn, catBtn].forEach((b) => {
+        b.classList.remove('bg-[#004623]', 'text-white');
+        b.classList.add('text-[#004623]');
+      });
+      btn.classList.add('bg-[#004623]', 'text-white');
+      btn.classList.remove('text-[#004623]');
+
+      // Estado seleccionable
+      const species = btn.getAttribute('data-tab');
+      dogBtn.setAttribute('aria-selected', species === 'perro' ? 'true' : 'false');
+      catBtn.setAttribute('aria-selected', species === 'gato' ? 'true' : 'false');
+
+      // Actualiza edades
+      populateAgeOptions(species);
+    });
+
+    // ================== Cálculo ==================
+    btnCalc?.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      const especie = activeSpecies(); // perro|gato
+      const edadUI = (ageSel?.value || 'adulto').trim(); // bucket UI
+      const foodType = (foodSel?.value || 'burgers').trim(); // burgers|cooked
+      const actUI = (actSel?.value || 'moderado').trim(); // bajo|moderado|alto
+
+      // Peso robusto con coma
+      const raw = (weightInp?.value ?? '').replace(',', '.');
+      const w = Number(raw);
+      const weightKg = Number.isFinite(w) ? Math.max(1, w) : 1;
+      const weightGr = weightKg * 1000;
+
+      // Claves
+      const ageKey = mapAgeKey(especie, edadUI); // babyX | adult
+      const activityKey = ageKey === 'adult' ? mapActivityKey(actUI) : 'base';
+
+      // Factor y límites
+      const pick = pickFactorAndClamp(especie, ageKey, activityKey, weightGr) || {};
+      let { factor, minPossible, maxPossible } = pick;
+      if (!factor || !Number.isFinite(factor)) factor = 0.025; // fallback
+
+      // Ración en gramos
+      let grams = Math.round(weightGr * factor);
+      if (typeof minPossible === 'number') grams = Math.max(grams, minPossible);
+      if (typeof maxPossible === 'number') grams = Math.min(grams, maxPossible);
+      if (foodType === 'cooked') grams = Math.round(grams * 1.1); // +10% cocinada
+
+      // Unidades y costes
+      const gramsPerUnit = (GRAMS_PER_UNIT?.[especie] || {})[foodType] ?? 50;
+      const units = Math.max(1, Math.round(grams / gramsPerUnit));
+      const euroPerUnit = (EURO_PER_UNIT?.[especie] || {})[foodType] ?? 0.33;
+      const daily = +(units * euroPerUnit).toFixed(2);
+      const monthly = +(daily * 31).toFixed(2);
+
+      // Pintado (scope local, sin chocar con otras calculadoras)
+      setTextAll('.wb2-res-grams', String(grams));
+      setTextAll('.wb2-res-units', String(units));
+      setTextAll('.wb2-res-day', daily.toFixed(2));
+      setTextAll('.wb2-res-month', monthly.toFixed(2));
+      cardRes?.classList.remove('hidden');
+
+      updateWB2ResultExtras(especie, foodType);
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Migraciones calculadora",
+  "tag": "section",
+  "class": "t4s-section t4s-section-all t4s-custom-liquid",
+  "settings": [
+    {
+      "type": "liquid",
+      "id": "custom_liquid",
+      "label": "Custom Liquid",
+      "info": "Add app snippets or other Liquid code to create advanced customizations."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Migraciones calculadora"
+    }
+  ]
+}
+{% endschema %}
+
+<!-- Añade dentro de tu <script> de la calculadora, usando tus utilidades qs/qsa -->
+<script>
+  // Llama a esta función al final del cálculo: updateWB2ResultExtras(especie, foodType)
+  function updateWB2ResultExtras(especie, foodType) {
+    const root = document.getElementById('wb2-calc');
+    if (!root) return;
+    const qs = (sel) => root.querySelector(sel);
+
+    const name = (qs('#wb2-name')?.value || '').trim();
+    const petName = name || 'tu peludo';
+    const cooked = foodType === 'cooked';
+
+    // Nombre en el título
+    const nameEl = qs('#wb2-petname');
+    if (nameEl) nameEl.textContent = petName;
+
+    // Imagen e “unidad” según tipo de comida
+    const imgEl = qs('#wb2-result-img');
+    const unitLabelEl = qs('.wb2-unit-label');
+    if (imgEl) {
+      imgEl.src = cooked
+        ? 'https://wildbalance-widget.fly.dev/static/media/cooked.bd39e9d79cb4b3364c02.png'
+        : 'https://wildbalance-widget.fly.dev/static/media/burger.3e9372d5a59b67123d58.png';
+    }
+    if (unitLabelEl) unitLabelEl.textContent = cooked ? 'unidades' : 'hamburguesitas';
+
+    // CTA texto y URL según especie + comida
+    const cta = qs('#wb2-cta');
+    const ctaText = qs('#wb2-cta-text');
+    let url = '#';
+    let text = 'Descubre BARF';
+
+    if (especie === 'perro' && !cooked) {
+      url = '/collections/barf-perros';
+      text = 'Descubre BARF';
+    } else if (especie === 'perro' && cooked) {
+      url = '/collections/comida-cocinada-para-perros';
+      text = 'Descubre nuestra comida cocinada';
+    } else if (especie === 'gato' && !cooked) {
+      url = '/collections/barf-gatos';
+      text = 'Descubre BARF';
+    } else if (especie === 'gato' && cooked) {
+      url = '/collections/comida-cocinada-para-gatos';
+      text = 'Descubre nuestra comida cocinada';
+    }
+
+    if (cta) {
+      cta.href = url;
+      cta.setAttribute('aria-label', text);
+    }
+    if (ctaText) ctaText.textContent = text;
+  }
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('wb2-calc-btn');
+    const result = document.getElementById('wb2-result');
+
+    if (!btn || !result) return;
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      // Verificar si ya se generó un cálculo válido (gramos distinto de "—")
+      const gramsEl = result.querySelector('.wb2-res-grams');
+      const grams = gramsEl ? gramsEl.textContent.trim() : '—';
+
+      if (grams !== '—' && grams !== '') {
+        // Mostrar resultado si estaba oculto
+        result.classList.remove('hidden');
+
+        // Calcular la posición para centrar el bloque en pantalla
+        const rect = result.getBoundingClientRect();
+        const absoluteTop = window.scrollY + rect.top;
+        const offset = absoluteTop - window.innerHeight / 2 + rect.height / 2;
+
+        window.scrollTo({
+          top: offset,
+          behavior: 'smooth',
+        });
+      }
+      // si grams sigue en "—" no hace nada
+    });
+  });
+</script>
