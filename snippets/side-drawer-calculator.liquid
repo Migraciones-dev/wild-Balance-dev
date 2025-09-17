@@ -1972,3 +1972,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+
+<style>
+ .calculadora-container.open{
+  pointer-events: auto !important;
+  -webkit-transform: translateZ(0); /* fuerza layer en iOS */
+  touch-action: manipulation;       /* elimina retrasos de tap */
+}
+#calculadora-bg { pointer-events: none; }
+#calculadora-bg.active { pointer-events: auto; }
+ 
+</style>
