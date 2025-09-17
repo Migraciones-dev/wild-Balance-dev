@@ -470,7 +470,7 @@
           </div>
           <div class="basis-3/6 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#4E4B48] leading-relaxed text-[13px]">
             {% if pp.metafields.custom.short_title_result_page.value %}
-              {{ pp.metafields.custom.short_title_result_page }} {%if pp.selected_or_first_available_variant.title %}- {{pp.selected_or_first_available_variant.title}}{%endif %}
+              {{ pp.metafields.custom.short_title_result_page }} {%if pp.selected_or_first_available_variant.title and pp.selected_or_first_available_variant.title != "Default Title" %}- {{pp.selected_or_first_available_variant.title}}{%endif %}
             {% else %}
               {{ pp.title }}
             {% endif %}
@@ -518,7 +518,7 @@
                     </div>
                     <div class="basis-3/6 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#4E4B48] leading-relaxed text-[13px]">
                       {% if pp.metafields.custom.short_title_result_page.value %}
-                        {{ pp.metafields.custom.short_title_result_page }} {%if pp.selected_or_first_available_variant.title %}- {{pp.selected_or_first_available_variant.title}}{%endif %}
+                        {{ pp.metafields.custom.short_title_result_page }} {%if pp.selected_or_first_available_variant.title and pp.selected_or_first_available_variant.title != "Default Title" %}- {{pp.selected_or_first_available_variant.title}}{%endif %}
                       {% else %}
                         {{ pp.title }}
                       {% endif %}
@@ -625,7 +625,7 @@
               </div>
               <div class="basis-3/6 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#4E4B48] leading-relaxed text-[13px]">
                 {% if pp.metafields.custom.short_title_result_page.value %}
-                  {{ pp.metafields.custom.short_title_result_page }} {%if pp.selected_or_first_available_variant.title %}- {{pp.selected_or_first_available_variant.title}}{%endif %}
+                  {{ pp.metafields.custom.short_title_result_page }} {%if pp.selected_or_first_available_variant.title and pp.selected_or_first_available_variant.title != "Default Title" %}- {{pp.selected_or_first_available_variant.title}}{%endif %}
                 {% else %}
                   {{ pp.title }}
                 {% endif %}
@@ -664,7 +664,7 @@
               </div>
               <div class="basis-3/6 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#4E4B48] leading-relaxed text-[13px]">
                 {% if pp.metafields.custom.short_title_result_page.value %}
-                  {{ pp.metafields.custom.short_title_result_page }} {%if pp.selected_or_first_available_variant.title %}- {{pp.selected_or_first_available_variant.title}}{%endif %}
+                  {{ pp.metafields.custom.short_title_result_page }} {%if pp.selected_or_first_available_variant.title and pp.selected_or_first_available_variant.title != "Default Title" %}- {{pp.selected_or_first_available_variant.title}}{%endif %}
                 {% else %}
                   {{ pp.title }}
                 {% endif %}
@@ -702,7 +702,7 @@
               </div>
               <div class="basis-3/6 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#4E4B48] leading-relaxed text-[13px]">
                 {% if pp.metafields.custom.short_title_result_page.value %}
-                  {{ pp.metafields.custom.short_title_result_page }} {%if pp.selected_or_first_available_variant.title %}- {{pp.selected_or_first_available_variant.title}}{%endif %}
+                  {{ pp.metafields.custom.short_title_result_page }} {%if pp.selected_or_first_available_variant.title and pp.selected_or_first_available_variant.title != "Default Title" %}- {{pp.selected_or_first_available_variant.title}}{%endif %}
                 {% else %}
                   {{ pp.title }}
                 {% endif %}
@@ -741,7 +741,7 @@
               </div>
               <div class="basis-3/6 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#4E4B48] leading-relaxed text-[13px]">
                 {% if pp.metafields.custom.short_title_result_page.value %}
-                  {{ pp.metafields.custom.short_title_result_page }} {%if pp.selected_or_first_available_variant.title %}- {{pp.selected_or_first_available_variant.title}}{%endif %}
+                  {{ pp.metafields.custom.short_title_result_page }} {%if pp.selected_or_first_available_variant.title and pp.selected_or_first_available_variant.title != "Default Title" %}- {{pp.selected_or_first_available_variant.title}}{%endif %}
                 {% else %}
                   {{ pp.title }}
                 {% endif %}
@@ -792,7 +792,7 @@
                     </div>
                     <div class="basis-3/6 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#4E4B48] leading-relaxed text-[13px]">
                       {% if pp.metafields.custom.short_title_result_page.value %}
-              {{ pp.metafields.custom.short_title_result_page }} {%if pp.selected_or_first_available_variant.title %}- {{pp.selected_or_first_available_variant.title}}{%endif %}
+              {{ pp.metafields.custom.short_title_result_page }} {%if pp.selected_or_first_available_variant.title and pp.selected_or_first_available_variant.title != "Default Title" %}- {{pp.selected_or_first_available_variant.title}}{%endif %}
             {% else %}
               {{ pp.title }}
             {% endif %}
@@ -839,7 +839,7 @@
                     </div>
                     <div class="basis-3/6 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#4E4B48] leading-relaxed text-[13px]">
                       {% if pp.metafields.custom.short_title_result_page.value %}
-              {{ pp.metafields.custom.short_title_result_page }} {%if pp.selected_or_first_available_variant.title %}- {{pp.selected_or_first_available_variant.title}}{%endif %}
+              {{ pp.metafields.custom.short_title_result_page }} {%if pp.selected_or_first_available_variant.title and pp.selected_or_first_available_variant.title != "Default Title" %}- {{pp.selected_or_first_available_variant.title}}{%endif %}
             {% else %}
               {{ pp.title }}
             {% endif %}
