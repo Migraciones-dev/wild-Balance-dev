@@ -376,6 +376,7 @@
     "calculadora_rVBBCC": {
       "type": "calculadora",
       "disabled": true,
+      "custom_css": [],
       "name": "Migraciones calculadora",
       "settings": {
         "custom_liquid": ""
@@ -421,6 +422,10 @@
         "card_TfEqc4"
       ],
       "disabled": true,
+      "custom_css": [
+        ".mig-section {margin: 0;}",
+        ".gap-\\[13px\\].\\[\\@media\\(max-width\\:1024px\\)\\]\\:px-6 {display: none;}"
+      ],
       "name": "Migraciones columnas",
       "settings": {
         "title_prefix": "",
@@ -429,7 +434,7 @@
         "cards_link": "",
         "btn_label": "Empezar mi plan con un -10%",
         "btn_link": "",
-        "bg_color": "#ffffff",
+        "bg_color": "#f4f0e2",
         "title_color": "#004623",
         "highlight_color": "#004623",
         "text_color": "#004623",
