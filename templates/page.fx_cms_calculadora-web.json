@@ -132,6 +132,7 @@
         "custom_text_m7Yigt",
         "custom_text_arwXgX"
       ],
+      "disabled": true,
       "settings": {
         "block_custom_class": "",
         "space_h_item": "30",
@@ -153,6 +154,7 @@
     },
     "custom_liquid_gW49Yt": {
       "type": "custom-liquid",
+      "disabled": true,
       "custom_css": [
         "iframe {background-color: #004623; width: 100%; height: 100%;}"
       ],
@@ -229,6 +231,7 @@
         "bl_col_HgqyN4",
         "custom_button_p87RCH"
       ],
+      "disabled": true,
       "custom_css": [
         "a.t4s-btn-custom {background-color: #ffcd00; color: #004623; width: auto; height: 40px; padding: 0px 28px; border-radius: 20px; font-size: 16px;}",
         "a:hover {background-color: #005139; color: #ffcd00 !important; cursor: pointer;}"
@@ -312,6 +315,7 @@
         "text_block_D6y78X",
         "text_block_H8TtgX"
       ],
+      "disabled": true,
       "custom_css": [
         ".t4s-feature-columns .t4s-col-item:first-child {margin-top: 30px;}"
       ],
@@ -375,7 +379,6 @@
     },
     "calculadora_rVBBCC": {
       "type": "calculadora",
-      "disabled": true,
       "custom_css": [],
       "name": "Migraciones calculadora",
       "settings": {
@@ -421,7 +424,6 @@
         "card_YA3aGM",
         "card_TfEqc4"
       ],
-      "disabled": true,
       "custom_css": [
         ".mig-section {margin: 0;}",
         ".gap-\\[13px\\].\\[\\@media\\(max-width\\:1024px\\)\\]\\:px-6 {display: none;}"
