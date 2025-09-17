@@ -371,6 +371,61 @@
         "mg_mb": ",,30px,",
         "pd_mb": ""
       }
+    },
+    "migraciones_columns_HAXrhY": {
+      "type": "migraciones-columns",
+      "blocks": {
+        "card_f8rttB": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/0b96dabecdbb4cf34b108a2839639115a98d33a8.png",
+            "image_alt": "Imagen card",
+            "step_number": "",
+            "card_title": "Descongela",
+            "card_text": "Saca del congelador su ración diaria la noche anterior y déjala en la nevera"
+          }
+        },
+        "card_YA3aGM": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/498c991126423bbe3fc7bc8a536baecf266d2ea9.png",
+            "image_alt": "Imagen card",
+            "step_number": "",
+            "card_title": "Sirve",
+            "card_text": "Unos minutos antes de servir, saca las hamburguesas de la nevera para que se atemperen."
+          }
+        },
+        "card_TfEqc4": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/be6ddcaade1bc0a5900ed3c24cd7410160bcbee7.jpg",
+            "image_alt": "¡Y a disfrutar!",
+            "step_number": "",
+            "card_title": "Enamórate",
+            "card_text": "¡Abre bien los ojos porque va a ser un visto y no visto!"
+          }
+        }
+      },
+      "block_order": [
+        "card_f8rttB",
+        "card_YA3aGM",
+        "card_TfEqc4"
+      ],
+      "disabled": true,
+      "name": "Migraciones columnas",
+      "settings": {
+        "title_prefix": "",
+        "title_highlight": "",
+        "decor_image_alt": "Decorativo",
+        "cards_link": "",
+        "btn_label": "Empezar mi plan con un -10%",
+        "btn_link": "",
+        "bg_color": "#ffffff",
+        "title_color": "#004623",
+        "highlight_color": "#004623",
+        "text_color": "#004623",
+        "accent_color": "#FFCD00"
+      }
     }
   },
   "order": [
@@ -379,6 +434,7 @@
     "custom_section_rzfWBH",
     "custom_liquid_gW49Yt",
     "custom_section_JNEwHR",
-    "feature_columns_xhN9WG"
+    "feature_columns_xhN9WG",
+    "migraciones_columns_HAXrhY"
   ]
 }
