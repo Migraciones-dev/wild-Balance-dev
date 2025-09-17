@@ -426,7 +426,8 @@
       ],
       "custom_css": [
         ".mig-section {margin-top: 0; margin-bottom: 0;}",
-        ".gap-\\[13px\\].\\[\\@media\\(max-width\\:1024px\\)\\]\\:px-6 {display: none;}"
+        ".gap-\\[13px\\].\\[\\@media\\(max-width\\:1024px\\)\\]\\:px-6 {display: none;}",
+        ".t4s-custom-liquid {background:#F4F0E2;}"
       ],
       "name": "Migraciones columnas",
       "settings": {
@@ -436,7 +437,7 @@
         "cards_link": "",
         "btn_label": "Empezar mi plan con un -10%",
         "btn_link": "",
-        "bg_color": "#fff",
+        "bg_color": "#f4f0e2",
         "title_color": "#004623",
         "highlight_color": "#004623",
         "text_color": "#004623",
