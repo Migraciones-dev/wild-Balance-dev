@@ -1971,7 +1971,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 80);
   });
 });
-.quiz-next-btn,
+
+</script>
+
+<style>
+ .calculadora-container.open{
+  pointer-events: auto !important;
+  -webkit-transform: translateZ(0); /* fuerza layer en iOS */
+  touch-action: manipulation;       /* elimina retrasos de tap */
+}
+#calculadora-bg { pointer-events: none; }
+#calculadora-bg.active { pointer-events: auto; }
+ .quiz-next-btn,
 .quiz-prev-btn,
 .quiz-restart-btn,
 .wb-add-btn,
@@ -1986,17 +1997,6 @@ document.addEventListener('DOMContentLoaded', () => {
   transform: translateX(0);
 }
 
-</script>
-
-<style>
- .calculadora-container.open{
-  pointer-events: auto !important;
-  -webkit-transform: translateZ(0); /* fuerza layer en iOS */
-  touch-action: manipulation;       /* elimina retrasos de tap */
-}
-#calculadora-bg { pointer-events: none; }
-#calculadora-bg.active { pointer-events: auto; }
- 
 </style>
 <script>
   function openCalc() {
