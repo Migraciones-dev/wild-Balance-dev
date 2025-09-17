@@ -1978,6 +1978,14 @@ document.addEventListener('DOMContentLoaded', () => {
 .t4s-btn-color-primary {
   touch-action: manipulation;
 }
+/* opcional, más suave en iOS */
+.calculadora-container{
+  right: 0; transform: translateX(100%); transition: transform .32s cubic-bezier(.4,0,.2,1);
+}
+.calculadora-container.open{
+  transform: translateX(0);
+}
+
 </script>
 
 <style>
