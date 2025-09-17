@@ -1,0 +1,1974 @@
+<div id="calculadora-bg" class="calculadora-bg w-full h-[100vh] bg-[#00462350] absolute z-10" style="opacity: 0"></div>
+
+<div class="calculadora-container" id="calculadora-container" style="right:-100%">
+  <!-- Header -->
+  <header class="w-full h-[65px] bg-white flex items-center justify-between px-4 lg:border-t border-[#d4d4d3]/50">
+    <h1 class="font-bold text-[#004623] text-[17px]">Calculadora de alimentación</h1>
+    <button class="close-btn">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-12 h-12"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M18 6 6 18"></path><path d="m6 6 12 12"></path>
+      </svg>
+    </button>
+  </header>
+
+  <!-- Barra de progreso -->
+  <div class="w-full h-[3px] bg-[#f5f9f4]">
+    <div
+      id="progress-bar"
+      class="w-[33%] h-[3px] bg-[#004623] rounded-[0px_50px_50px_0px] transition-all duration-500"
+    ></div>
+  </div>
+
+  <!-- Wrapper pasos -->
+  <div class="calculadora-wrapper p-10">
+    <!-- Paso 1 -->
+    <div class="quiz-step" data-step="1">
+      <!-- Pregunta animal -->
+      <h3 class="font-bold text-[#004623] text-[15px] mb-6">¿Quién es el rey de la casa?</h3>
+      <div class="inline-flex items-center gap-2 w-full">
+        <label class="rounded-xl border border-[#d9d9c8] bg-white cursor-pointer w-full has-[:checked]:bg-[#D9D9C8]">
+          <input type="radio" name="animal" value="perro" class="hidden">
+          <div class="p-6 flex flex-col items-center gap-4 py-4">
+            <img alt="Perro" src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_9_4.png?v=1757927045">
+            <div class="font-bold text-[#004623] text-[16.5px] text-center">Perro</div>
+          </div>
+        </label>
+        <label class="rounded-xl border border-[#d9d9c8] bg-white cursor-pointer w-full has-[:checked]:bg-[#D9D9C8]">
+          <input type="radio" name="animal" value="gato" class="hidden">
+          <div class="p-6 flex flex-col items-center gap-4 py-4">
+            <img alt="Gato" src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_9_6.png?v=1757945998">
+            <div class="font-bold text-[#004623] text-[16.5px] text-center">Gato</div>
+          </div>
+        </label>
+      </div>
+
+      <!-- Pregunta edad -->
+      <div data-orientation="horizontal" role="none" class="shrink-0 w-100 h-px bg-[#d4d4d3] opacity-50 my-12"></div>
+      <h3 class="font-bold text-[#004623] text-[15px] mb-6">
+        ¿Qué edad tiene tu <span class="animal-label">peludo</span>?
+      </h3>
+      <select name="edad" class="w-full h-[44px] bg-white rounded-[50px] border border-[#d9d9c8] px-6">
+        <option value="cachorro">Cachorro (0-1 años)</option>
+        <option value="adulto">Adulto (2-8 años)</option>
+        <option value="senior">Senior (+8 años)</option>
+      </select>
+
+      <!-- Pregunta peso -->
+      <div data-orientation="horizontal" role="none" class="shrink-0 w-100 h-px bg-[#d4d4d3] opacity-50 my-12"></div>
+
+      <h3 class="font-bold text-[#004623] text-[15px] mb-6">
+        ¿Cuál es el peso actual de tu <span class="animal-label">peludo</span>?
+      </h3>
+      <div
+        class="relative w-full h-[50px] bg-white rounded-[50px] flex items-center mb-10 "
+        style="border: 1px solid #004623"
+      >
+        <button
+          type="button"
+          class="inline-flex items-center justify-center w-16 h-16 ml-[7px] rounded-full bg-[#F4F0E2]"
+          onclick="this.nextElementSibling.querySelector('input').stepDown()"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M5 12h14"></path>
+          </svg>
+        </button>
+        <div class="flex-1 flex items-center justify-center">
+          <input
+            type="number"
+            name="peso"
+            value="1"
+            min="1"
+            class="font-bold text-[#004623] !text-[16px] text-center w-12 outline-none border-none bg-transparent no-arrows"
+          >
+        </div>
+        <button
+          type="button"
+          class="inline-flex items-center justify-center w-16 h-16 mr-[7px] rounded-full bg-[#F4F0E2]"
+          onclick="this.previousElementSibling.querySelector('input').stepUp()"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M5 12h14"></path><path d="M12 5v14"></path>
+          </svg>
+        </button>
+      </div>
+
+      <a
+        href="#"
+        class="
+          quiz-next-btn
+          shadow inline-flex items-center justify-center gap-2.5 py-6 px-12 bg-[#ffcd00] rounded-[50px] text-[#004623] hover:bg-[#ffcd00]/90
+          w-full text-[18px] font-bold mt-8
+        "
+        >Siguiente paso
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7.13133 1.38196L11.0878 6.24153M11.0878 6.24153L7.13133 11.1011M11.0878 6.24153L0.914062 6.24153" stroke="#004623" stroke-width="1.5188" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Paso 2 -->
+    <div class="quiz-step hidden" data-step="2">
+      <h3 class="font-bold text-[#004623] text-[15px] mb-6">¿Qué quieres que coma?</h3>
+      <div class="flex flex-col gap-4 w-full">
+        <!-- Card Burgers -->
+        <label class="rounded-xl border border-[#d9d9c8] bg-white cursor-pointer w-full has-[:checked]:bg-[#D9D9C8] p-4">
+          <input type="radio" name="comida" value="burgers" class="hidden">
+          <div class="flex flex-row items-center gap-4">
+            <img
+              alt="Pienso"
+              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Image_68.png?v=1757932113"
+              class="w-20"
+            >
+            <div class="font-bold text-[#004623] text-[16.5px]">Dieta BARF</div>
+          </div>
+        </label>
+
+        <!-- Card Cocinada -->
+        <label class="rounded-xl border border-[#d9d9c8] bg-white cursor-pointer w-full has-[:checked]:bg-[#D9D9C8] p-4">
+          <input type="radio" name="comida" value="cooked" class="hidden">
+          <div class="flex flex-row items-center gap-4">
+            <img
+              alt="Cocinada"
+              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Image_67.png?v=1757932116"
+              class="w-20"
+            >
+            <div class="font-bold text-[#004623] text-[16.5px]">Comida Cocinada</div>
+          </div>
+        </label>
+      </div>
+
+      <div data-orientation="horizontal" role="none" class="shrink-0 w-100 h-px bg-[#d4d4d3] opacity-50 my-12"></div>
+      <h3 class="font-bold text-[#004623] text-[15px] mb-6">
+        ¿Cuál es el nivel de actividad de tu <span class="animal-label">peludo</span>?
+      </h3>
+      <div class="flex flex-col gap-4">
+        <label class="rounded-xl border border-[#d9d9c8] bg-white cursor-pointer has-[:checked]:bg-[#D9D9C8] p-4">
+          <input type="radio" name="actividad" value="bajo" class="hidden">
+          <div class="font-bold text-[#004623] text-[16px]">Bajo</div>
+          <p class="text-[#7F7D7B] text-[13px]">Menos de 1 hora de paseos diarios de baja intensidad</p>
+        </label>
+        <label class="rounded-xl border border-[#d9d9c8] bg-white cursor-pointer has-[:checked]:bg-[#D9D9C8] p-4">
+          <input type="radio" name="actividad" value="moderado" class="hidden">
+          <div class="font-bold text-[#004623] text-[16px]">Moderado</div>
+          <p class="text-[#7F7D7B] text-[13px]">Paseos diarios de 1 a 2 horas</p>
+        </label>
+        <label class="rounded-xl border border-[#d9d9c8] bg-white cursor-pointer has-[:checked]:bg-[#D9D9C8] p-4">
+          <input type="radio" name="actividad" value="alto" class="hidden">
+          <div class="font-bold text-[#004623] text-[16px]">Alto</div>
+          <p class="text-[#7F7D7B] text-[13px]">Más de 2 horas de paseo intenso sin correa</p>
+        </label>
+      </div>
+
+      <div class=" mt-12 flex flex-col items-center">
+        <a
+          href="#"
+          class="
+            quiz-next-btn
+             shadow inline-flex items-center justify-center gap-2.5 py-6 px-12 bg-[#ffcd00] rounded-[50px] text-[#004623] hover:bg-[#ffcd00]/90
+            w-full text-[18px] font-bold mt-8 mb-8
+          "
+          >Siguiente paso</a
+        >
+        <a
+          href="#"
+          class="quiz-prev-btn underline"
+          >Volver atrás</a
+        >
+      </div>
+    </div>
+
+    <!-- Paso 3 (resultado) -->
+    <div class="quiz-step hidden" data-step="3">
+      <h3 class="font-bold text-[#004623] text-[22px] mb-2">Nuestra recomendación</h3>
+      {% comment %}
+        <p class="text-[13px] text-[#4E4B48]">
+          Lorem ipsum dolor sit amet consectetur. Ornare varius amet quisque quisque. Aliquam aliquet lectus.
+        </p>
+      {% endcomment %}
+
+      <div class="inline-flex items-center gap-2 w-full my-6">
+        <div class="rounded-xl border border-[#d9d9c8] bg-white cursor-pointer w-full has-[:checked]:bg-[#D9D9C8]">
+          <div class="p-6 flex flex-col items-center py-4">
+            <img
+              alt="Perro"
+              class="!max-w-[100px]"
+              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Vector_5.png?v=1757946976"
+            >
+            <div class="font-bold text-[#004623] text-[16.5px] text-center mt-6"><span id="res-grams">—</span> g</div>
+            <p class="text-[13px] text-[#7F7D7B]"><span id="res-foodtype">—</span> / día</p>
+          </div>
+        </div>
+      </div>
+      <!-- Botón -->
+
+      <div class="text-card-foreground shadow w-full rounded-lg border border-[#d9d9c8] bg-[#ffffff80]">
+        <div class="p-8">
+          <div class="flex items-start justify-between items-center gap-8">
+            <img src="https://wildbalance.es/cdn/shop/files/digestivo.png?v=1750408311&width=240" class="w-1/4">
+            <div class="flex-1 ">
+              <h3 class="font-bold text-[#004623] text-[15px] mb-2">Incluir premios</h3>
+
+              <p class="text-[13px] text-[#7F7D7B]">
+                Los premios forman parte de su felicidad diaria. Incluye snacks naturales en su rutina sin sobrepasar el
+                10% de su dieta.
+              </p>
+            </div>
+            <!-- Toggle -->
+            <!-- Toggle -->
+            <div class="flex-shrink-0 mt-1">
+              <label class="inline-flex items-center cursor-pointer">
+                <input id="add-on-toggle" type="checkbox" class="sr-only peer">
+                <div
+                  class="
+                    relative w-14 h-9 bg-gray-200 rounded-full peer dark:bg-gray-700
+                    after:content-[''] after:absolute after:top-[1px] after:left-[2px]
+                    after:bg-white after:border-gray-300 after:border after:rounded-full
+                    after:h-8 after:w-8 after:transition-all after:duration-200
+                    peer-checked:after:translate-x-[12px]
+                    peer-checked:bg-[#004623]
+                  "
+                ></div>
+              </label>
+            </div>
+
+            <script>
+              document.addEventListener('DOMContentLoaded', () => {
+                // === CONFIGURA AQUÍ EL HANDLE DEL PRODUCTO AÑADIDO/QUITADO CON EL CHECKBOX ===
+                const HANDLE = 'snacks-premios-naturales-perros-digestivo-pato';
+
+                const toggle = document.getElementById('add-on-toggle');
+
+                // Helpers tema (refrescar minicart de T4S si existe)
+                const refreshMiniCart = () => {
+                  if (window.T4SThemeSP?.Cart?.getToFetch) {
+                    window.T4SThemeSP.Cart.getToFetch();
+                  }
+                };
+
+                // Cargar product.json y elegir la primera variante disponible (o la primera)
+                const loadVariant = async () => {
+                  const res = await fetch(`/products/${HANDLE}.js`, { headers: { Accept: 'application/json' } });
+                  if (!res.ok) throw new Error('No se pudo cargar el producto');
+                  const product = await res.json();
+                  const variant = (product.variants || []).find((v) => v.available) || product.variants?.[0];
+                  if (!variant) throw new Error('El producto no tiene variantes disponibles');
+                  return variant;
+                };
+
+                // Añadir / Quitar
+                const addVariant = async (variantId, qty = 1) => {
+                  const res = await fetch('/cart/add.js', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                    body: JSON.stringify({ id: variantId, quantity: qty }),
+                  });
+                  if (!res.ok) {
+                    const err = await res.json().catch(() => ({}));
+                    throw new Error(err.description || 'No se pudo añadir al carrito');
+                  }
+                  return res.json();
+                };
+
+                // Deja la cantidad total de esa variante a 0 (la elimina del carrito)
+                const removeVariant = async (variantId) => {
+                  const res = await fetch('/cart/update.js', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                    body: JSON.stringify({ updates: { [variantId]: 0 } }),
+                  });
+                  if (!res.ok) {
+                    const err = await res.json().catch(() => ({}));
+                    throw new Error(err.description || 'No se pudo eliminar del carrito');
+                  }
+                  return res.json();
+                };
+
+                // Reflejar estado inicial del toggle si ya estaba en el carrito
+                const syncInitialChecked = async (variantId) => {
+                  try {
+                    const res = await fetch('/cart.js', { headers: { Accept: 'application/json' } });
+                    if (!res.ok) return;
+                    const cart = await res.json();
+                    const exists = (cart.items || []).some((item) => item.variant_id === variantId);
+                    toggle.checked = !!exists;
+                  } catch (_) {}
+                };
+
+                // Estado de "trabajando"
+                const setBusy = (busy) => {
+                  toggle.disabled = busy;
+                };
+
+                // MAIN
+                (async () => {
+                  let variant;
+                  try {
+                    variant = await loadVariant();
+                    // marcar si ya está en el carrito
+                    await syncInitialChecked(variant.id);
+                  } catch (e) {
+                    console.error(e);
+                    // si no hay variante, deshabilita el toggle
+                    toggle.disabled = true;
+                    return;
+                  }
+
+                  toggle.addEventListener('change', async () => {
+                    const wantAdd = toggle.checked;
+                    setBusy(true);
+                    try {
+                      if (wantAdd) {
+                        await addVariant(variant.id, 1);
+                      } else {
+                        await removeVariant(variant.id);
+                      }
+                      refreshMiniCart();
+                    } catch (e) {
+                      console.error(e);
+                      alert(e.message || 'Error al actualizar el carrito');
+                      // revertir UI si hubo error
+                      toggle.checked = !wantAdd;
+                    } finally {
+                      setBusy(false);
+                    }
+                  });
+                })();
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-[11px] text-[#AAA8A7] mt-5">
+        Nuestra recomendación se basa en la información proporcionada y debe entenderse como una guía orientativa,
+        pensada para ayudarte a tomar la mejor decisión.
+      </p>
+      <div data-orientation="horizontal" role="none" class="shrink-0 w-100 h-px bg-[#d4d4d3] opacity-50 my-12"></div>
+
+      <h3 class="font-bold text-[#004623] text-[15px] mb-6">Completa tu compra</h3>
+      {%- comment -%}
+        RECOMENDACIONES DINÁMICAS SIN JS (sin 'macro')
+        Usa colecciones:
+        - collections['barf']
+        - collections['comida-cocinada']
+        y muestra bloques según tags del producto y radio seleccionado.
+      {%- endcomment -%}
+
+      {%- assign is_barf = false -%}
+      {%- assign is_cooked = false -%}
+      {%- for t in product.tags -%}
+        {%- if t == 'producto barf' -%}{% assign is_barf = true %}{%- endif -%}
+        {%- if t == 'comida cocinada' -%}{% assign is_cooked = true %}{%- endif -%}
+      {%- endfor -%}
+
+      {%- assign barf_collection = collections.barf -%}
+      {%- assign cooked_collection = collections['comida-cocinada'] -%}
+
+      <style>
+        .wb-recs .wb-block { display:none; }
+        .calculadora-container:has(input[name="comida"][value="burgers"]:checked) .wb-recs .case-barf-burgers { display:block; }
+        .calculadora-container:has(input[name="comida"][value="cooked"]:checked):has(input[name="animal"][value="perro"]:checked) .wb-recs .case-barf-cooked-perro { display:block; }
+        .calculadora-container:has(input[name="comida"][value="cooked"]:checked):has(input[name="animal"][value="gato"]:checked)  .wb-recs .case-barf-cooked-gato  { display:block; }
+
+        .calculadora-container:has(input[name="comida"][value="burgers"]:checked) .wb-recs .case-cooked-burgers { display:block; }
+        .calculadora-container:has(input[name="comida"][value="cooked"]:checked):has(input[name="animal"][value="perro"]:checked) .wb-recs .case-cooked-cooked-perro { display:block; }
+        .calculadora-container:has(input[name="comida"][value="cooked"]:checked):has(input[name="animal"][value="gato"]:checked)  .wb-recs .case-cooked-cooked-gato  { display:block; }
+
+        .calculadora-container:has(input[name="comida"][value="burgers"]:checked):has(input[name="animal"][value="gato"]:checked)  .item-perro  { display:none!important; }
+        .calculadora-container:has(input[name="comida"][value="burgers"]:checked):has(input[name="animal"][value="perro"]:checked)  .item-gato  { display:none!important; }
+      </style>
+
+      <div class="wb-recs flex flex-col gap-6">
+        {%- if is_barf -%}
+          {%- comment -%} Producto BARF + seleccionado BURGERS → variantes del producto actual --- OK {%- endcomment -%}
+         <div class="wb-block case-barf-burgers">
+  {%- comment -%} Identifica especie del producto actual (para marcar sus variantes) {%- endcomment -%}
+  {%- assign page_is_dog = false -%}
+  {%- assign page_is_cat = false -%}
+  {%- for t in product.tags -%}
+    {%- if t == 'perro' or t == 'perros' -%}{%- assign page_is_dog = true -%}{%- endif -%}
+    {%- if t == 'gato'  or t == 'gatos'  -%}{%- assign page_is_cat = true -%}{%- endif -%}
+  {%- endfor -%}
+
+  {%- comment -%}
+    1) Variantes del producto actual → se marcan con la especie del propio producto
+       y se añaden por AJAX con data-variant-id.
+       Si el usuario elige la otra especie, tu CSS las oculta.
+  {%- endcomment -%}
+  {%- for v in product.variants -%}
+    <div class="flex items-center gap-2.5 w-full {% if page_is_cat %}item-gato{% else %}item-perro{% endif %}">
+      <div class="basis-1/6 flex-shrink-0 max-w-[50px]">
+        {%- assign v_img = v.featured_image | default: product.featured_image -%}
+        <img
+          src="{{ v_img | img_url: '400x' }}"
+          alt="{{ product.title | escape }} — {{ v.title | escape }}"
+          class="w-full h-auto rounded border border-[#d9d9c8] object-cover bg-white rounded-[4px]"
+        >
+      </div>
+      <div class="basis-3/6 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#4E4B48] leading-relaxed text-[13px]">
+        {% if product.metafields.custom.short_title_result_page.value %}
+          {{ product.metafields.custom.short_title_result_page }}
+        {% else %}
+          {{ product.title }}
+        {% endif %}
+        {% unless v.title contains 'Default' %} — {{ v.title }}{% endunless %}
+      </div>
+      <div class="basis-2/6 flex justify-end">
+        <button
+          type="button"
+          class="t4s-btn-color-primary h-[43.94px] py-0 px-6 bg-[#ffcd00] hover:bg-[#004623] text-[#004623] rounded-full font-[700] w-full text-[11px] md:text-[12px] wb-add-btn"
+          data-variant-id="{{ v.id }}"
+        >
+          Añadir al carrito
+        </button>
+      </div>
+    </div>
+  {%- endfor -%}
+
+  {%- comment -%}
+    2) Alternativa para GATO: si el usuario elige GATO + BARF, queremos mostrar productos BARF de gato
+       (no el producto actual). Generamos hasta 3 items de la colección BARF con tag gato.
+       Se marcan como .item-gato y usan data-handle para el AJAX.
+  {%- endcomment -%}
+  {%- assign picked_cat = 0 -%}
+  {%- if collections.barf and collections.barf.products_count > 0 -%}
+    {%- for pp in collections.barf.products -%}
+      {%- assign is_cat = false -%}
+      {%- for tg in pp.tags -%}
+        {%- if tg == 'gato' or tg == 'gatos' -%}{%- assign is_cat = true -%}{%- endif -%}
+      {%- endfor -%}
+      {%- if is_cat and pp.id != product.id -%}
+        <div class="flex items-center gap-2.5 w-full item-gato">
+          <div class="basis-1/6 flex-shrink-0 max-w-[50px]">
+            <img
+              src="{{ pp.featured_image | img_url: '400x' }}"
+              alt="{{ pp.title | escape }}"
+              class="w-full h-auto rounded border border-[#d9d9c8] object-cover bg-white rounded-[4px]"
+            >
+          </div>
+          <div class="basis-3/6 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#4E4B48] leading-relaxed text-[13px]">
+            {% if pp.metafields.custom.short_title_result_page.value %}
+              {{ pp.metafields.custom.short_title_result_page }} {%if pp.selected_or_first_available_variant.title %}- {{pp.selected_or_first_available_variant.title}}{%endif %}
+            {% else %}
+              {{ pp.title }}
+            {% endif %}
+          </div>
+          <div class="basis-2/6 flex justify-end">
+            <button
+              type="button"
+              class="t4s-btn-color-primary h-[43.94px] py-0 px-6 bg-[#ffcd00] hover:bg-[#004623] text-[#004623] rounded-full font-[700] w-full text-[11px] md:text-[12px] text-center inline-flex items-center justify-center wb-add-btn"
+              data-handle="{{ pp.handle }}"
+            >
+              Añadir al carrito
+            </button>
+          </div>
+        </div>
+        {%- assign picked_cat = picked_cat | plus: 1 -%}
+        {%- if picked_cat >= 3 -%}{% break %}{%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+
+  <div class="mt-2">
+    <a
+      href="{{ collections.barf.url | default: '/collections/barf' }}"
+      class="t4s-btn-color-primary h-[43.94px] py-0 px-6 bg-[#004623] text-white hover:text-white rounded-full font-[700] w-full text-[11px] md:text-[12px] text-center inline-flex items-center justify-center mt-5"
+    >
+      Ver más BARF
+    </a>
+  </div>
+</div>
+
+
+          {%- comment -%} Producto BARF + seleccionado COCINADA → 3 perro / 2 gato de colección cocinada -- OK {%- endcomment -%}
+          <div class="wb-block case-barf-cooked-perro">
+            {%- assign shown = 0 -%}
+            {%- if cooked_collection and cooked_collection.products_count > 0 -%}
+              {%- for pp in cooked_collection.products -%}
+                {%- if pp.tags contains 'perros' -%}
+                  <div class="flex items-center gap-2.5 w-full">
+                    <div class="basis-1/6 flex-shrink-0 max-w-[50px]">
+                      <img
+                        src="{{ pp.featured_image | img_url: '400x' }}"
+                        alt="{{ pp.title | escape }}"
+                        class="w-full h-auto rounded border border-[#d9d9c8] object-cover bg-white rounded-[4px]"
+                      >
+                    </div>
+                    <div class="basis-3/6 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#4E4B48] leading-relaxed text-[13px]">
+                      {% if pp.metafields.custom.short_title_result_page.value %}
+                        {{ pp.metafields.custom.short_title_result_page }} {%if pp.selected_or_first_available_variant.title %}- {{pp.selected_or_first_available_variant.title}}{%endif %}
+                      {% else %}
+                        {{ pp.title }}
+                      {% endif %}
+                    </div>
+                    <div class="basis-2/6 flex justify-end">
+                      <button
+                        type="button"
+                        class="t4s-btn-color-primary h-[43.94px] py-0 px-6 bg-[#ffcd00] hover:bg-[#004623] text-[#004623] rounded-full font-[700] w-full text-[11px] md:text-[12px] text-center inline-flex items-center justify-center wb-add-btn"
+                        data-handle="{{ pp.handle }}"
+                      >
+                        Añadir al carrito
+                      </button>
+                      
+                    </div>
+                  </div>
+                  {%- assign shown = shown | plus: 1 -%}
+                  {%- if shown >= 3 -%}{% break %}{%- endif -%}
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endif -%}
+            <div class="mt-2">
+              <a
+                href="{{ cooked_collection.url | default: '/collections/comida-cocinada' }}"
+                class="t4s-btn-color-primary h-[43.94px] py-0 px-6 bg-[#004623] text-white hover:text-white rounded-full font-[700] w-full text-[11px] md:text-[12px] text-center inline-flex items-center justify-center mt-5"
+              >
+                Ver comida cocinada
+              </a>
+            </div>
+          </div>
+
+          <div class="wb-block case-barf-cooked-gato">
+            {%- assign shown = 0 -%}
+            {%- if cooked_collection and cooked_collection.products_count > 0 -%}
+              {%- for pp in cooked_collection.products -%}
+                {%- if pp.tags contains 'gatos' -%}
+                  <div class="flex items-center gap-2.5 w-full">
+                    <div class="basis-1/6 flex-shrink-0 max-w-[50px]">
+                      <img
+                        src="{{ pp.featured_image | img_url: '400x' }}"
+                        alt="{{ pp.title | escape }}"
+                        class="w-full h-auto rounded border border-[#d9d9c8] object-cover bg-white rounded-[4px]"
+                      >
+                    </div>
+                    <div class="basis-3/6 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#4E4B48] leading-relaxed text-[13px]">
+                      {% if pp.metafields.custom.short_title_result_page.value %}
+              {{ pp.metafields.custom.short_title_result_page }} {%if pp.selected_or_first_available_variant.title %}- {{pp.selected_or_first_available_variant.title}}{%endif %}
+            {% else %}
+              {{ pp.title }}
+            {% endif %}
+                    </div>
+                    <div class="basis-2/6 flex justify-end">
+                      <button
+  type="button"
+  class="t4s-btn-color-primary h-[43.94px] py-0 px-6 bg-[#ffcd00] hover:bg-[#004623] text-[#004623] rounded-full font-[700] w-full text-[11px] md:text-[12px] text-center inline-flex items-center justify-center wb-add-btn"
+  data-handle="{{ pp.handle }}"
+>
+  Añadir al carrito
+</button>
+
+                      </a>
+                    </div>
+                  </div>
+                  {%- assign shown = shown | plus: 1 -%}
+                  {%- if shown >= 2 -%}{% break %}{%- endif -%}
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endif -%}
+            <div class="mt-2">
+              <a
+                href="{{ cooked_collection.url | default: '/collections/comida-cocinada' }}"
+                class="t4s-btn-color-primary h-[43.94px] py-0 px-6 bg-[#004623] text-white hover:text-white rounded-full font-[700] w-full text-[11px] md:text-[12px] text-center inline-flex items-center justify-center mt-5"
+              >
+                Ver comida cocinada
+              </a>
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- if is_cooked -%}
+          {%- comment -%} Producto COCINADO + seleccionado BURGERS → 3 sabores (pollo/ternera/salmon si existen, si no los 3 primeros) -- falta barf perro/gato {%- endcomment -%}
+          <div class="wb-block case-cooked-burgers">
+  {%- assign picked_cat = 0 -%}
+  {%- assign picked_dog = 0 -%}
+  {%- assign chosen_cat = '' -%}
+  {%- assign chosen_dog = '' -%}
+
+  {%- if barf_collection and barf_collection.products_count > 0 -%}
+    {%- assign wanted = 'pollo,ternera,salmon' | split: ',' -%}
+
+    {%- comment -%} === GATO: preferidos (pollo/ternera/salmon) === {%- endcomment -%}
+    {%- for w in wanted -%}
+      {%- for pp in barf_collection.products -%}
+        {%- assign is_cat = false -%}
+        {%- for tg in pp.tags -%}
+          {%- if tg == 'gato' or tg == 'gatos' -%}{%- assign is_cat = true -%}{%- endif -%}
+        {%- endfor -%}
+        {%- assign needle = '|' | append: pp.id | append: '|' -%}
+        {%- if is_cat and picked_cat < 3 and pp.handle contains w -%}
+          {%- unless chosen_cat contains needle -%}
+            <div class="flex items-center gap-2.5 w-full item-gato">
+              <div class="basis-1/6 flex-shrink-0 max-w-[50px]">
+                <img src="{{ pp.featured_image | img_url: '400x' }}" alt="{{ pp.title | escape }}"
+                     class="w-full h-auto rounded border border-[#d9d9c8] object-cover bg-white rounded-[4px]">
+              </div>
+              <div class="basis-3/6 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#4E4B48] leading-relaxed text-[13px]">
+                {% if pp.metafields.custom.short_title_result_page.value %}
+                  {{ pp.metafields.custom.short_title_result_page }} {%if pp.selected_or_first_available_variant.title %}- {{pp.selected_or_first_available_variant.title}}{%endif %}
+                {% else %}
+                  {{ pp.title }}
+                {% endif %}
+              </div>
+              <div class="basis-2/6 flex justify-end">
+                <button type="button"
+                        class="t4s-btn-color-primary h-[43.94px] py-0 px-6 bg-[#ffcd00] hover:bg-[#004623] text-[#004623] rounded-full font-[700] w-full text-[11px] md:text-[12px] text-center inline-flex items-center justify-center wb-add-btn"
+                        data-handle="{{ pp.handle }}">
+                  Añadir al carrito
+                </button>
+              </div>
+            </div>
+            {%- assign chosen_cat = chosen_cat | append: needle -%}
+            {%- assign picked_cat = picked_cat | plus: 1 -%}
+          {%- endunless -%}
+        {%- endif -%}
+        {%- if picked_cat >= 3 -%}{% break %}{%- endif -%}
+      {%- endfor -%}
+      {%- if picked_cat >= 3 -%}{% break %}{%- endif -%}
+    {%- endfor -%}
+
+    {%- comment -%} === GATO: completar hasta 3 === {%- endcomment -%}
+    {%- if picked_cat < 3 -%}
+      {%- for pp in barf_collection.products -%}
+        {%- assign is_cat = false -%}
+        {%- for tg in pp.tags -%}
+          {%- if tg == 'gato' or tg == 'gatos' -%}{%- assign is_cat = true -%}{%- endif -%}
+        {%- endfor -%}
+        {%- assign needle = '|' | append: pp.id | append: '|' -%}
+        {%- if is_cat -%}
+          {%- unless chosen_cat contains needle -%}
+            <div class="flex items-center gap-2.5 w-full item-gato">
+              <div class="basis-1/6 flex-shrink-0 max-w-[50px]">
+                <img src="{{ pp.featured_image | img_url: '400x' }}" alt="{{ pp.title | escape }}"
+                     class="w-full h-auto rounded border border-[#d9d9c8] object-cover bg-white rounded-[4px]">
+              </div>
+              <div class="basis-3/6 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#4E4B48] leading-relaxed text-[13px]">
+                {% if pp.metafields.custom.short_title_result_page.value %}
+                  {{ pp.metafields.custom.short_title_result_page }} {%if pp.selected_or_first_available_variant.title %}- {{pp.selected_or_first_available_variant.title}}{%endif %}
+                {% else %}
+                  {{ pp.title }}
+                {% endif %}
+              </div>
+              <div class="basis-2/6 flex justify-end">
+                <button type="button"
+                        class="t4s-btn-color-primary h-[43.94px] py-0 px-6 bg-[#ffcd00] hover:bg-[#004623] text-[#004623] rounded-full font-[700] w-full text-[11px] md:text-[12px] text-center inline-flex items-center justify-center wb-add-btn"
+                        data-handle="{{ pp.handle }}">
+                  Añadir al carrito
+                </button>
+              </div>
+            </div>
+            {%- assign chosen_cat = chosen_cat | append: needle -%}
+            {%- assign picked_cat = picked_cat | plus: 1 -%}
+            {%- if picked_cat >= 3 -%}{% break %}{%- endif -%}
+          {%- endunless -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+
+    {%- comment -%} === PERRO: preferidos === {%- endcomment -%}
+    {%- for w in wanted -%}
+      {%- for pp in barf_collection.products -%}
+        {%- assign is_dog = false -%}
+        {%- for tg in pp.tags -%}
+          {%- if tg == 'perro' or tg == 'perros' -%}{%- assign is_dog = true -%}{%- endif -%}
+        {%- endfor -%}
+        {%- assign needle = '|' | append: pp.id | append: '|' -%}
+        {%- if is_dog and picked_dog < 3 and pp.handle contains w -%}
+          {%- unless chosen_dog contains needle -%}
+            <div class="flex items-center gap-2.5 w-full item-perro">
+              <div class="basis-1/6 flex-shrink-0 max-w-[50px]">
+                <img src="{{ pp.featured_image | img_url: '400x' }}" alt="{{ pp.title | escape }}"
+                     class="w-full h-auto rounded border border-[#d9d9c8] object-cover bg-white rounded-[4px]">
+              </div>
+              <div class="basis-3/6 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#4E4B48] leading-relaxed text-[13px]">
+                {% if pp.metafields.custom.short_title_result_page.value %}
+                  {{ pp.metafields.custom.short_title_result_page }} {%if pp.selected_or_first_available_variant.title %}- {{pp.selected_or_first_available_variant.title}}{%endif %}
+                {% else %}
+                  {{ pp.title }}
+                {% endif %}
+              </div>
+              <div class="basis-2/6 flex justify-end">
+                <button type="button"
+                        class="t4s-btn-color-primary h-[43.94px] py-0 px-6 bg-[#ffcd00] hover:bg-[#004623] text-[#004623] rounded-full font-[700] w-full text-[11px] md:text-[12px] text-center inline-flex items-center justify-center wb-add-btn"
+                        data-handle="{{ pp.handle }}">
+                  Añadir al carrito
+                </button>
+              </div>
+            </div>
+            {%- assign chosen_dog = chosen_dog | append: needle -%}
+            {%- assign picked_dog = picked_dog | plus: 1 -%}
+          {%- endunless -%}
+        {%- endif -%}
+        {%- if picked_dog >= 3 -%}{% break %}{%- endif -%}
+      {%- endfor -%}
+      {%- if picked_dog >= 3 -%}{% break %}{%- endif -%}
+    {%- endfor -%}
+
+    {%- comment -%} === PERRO: completar hasta 3 === {%- endcomment -%}
+    {%- if picked_dog < 3 -%}
+      {%- for pp in barf_collection.products -%}
+        {%- assign is_dog = false -%}
+        {%- for tg in pp.tags -%}
+          {%- if tg == 'perro' or tg == 'perros' -%}{%- assign is_dog = true -%}{%- endif -%}
+        {%- endfor -%}
+        {%- assign needle = '|' | append: pp.id | append: '|' -%}
+        {%- if is_dog -%}
+          {%- unless chosen_dog contains needle -%}
+            <div class="flex items-center gap-2.5 w-full item-perro">
+              <div class="basis-1/6 flex-shrink-0 max-w-[50px]">
+                <img src="{{ pp.featured_image | img_url: '400x' }}" alt="{{ pp.title | escape }}"
+                     class="w-full h-auto rounded border border-[#d9d9c8] object-cover bg-white rounded-[4px]">
+              </div>
+              <div class="basis-3/6 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#4E4B48] leading-relaxed text-[13px]">
+                {% if pp.metafields.custom.short_title_result_page.value %}
+                  {{ pp.metafields.custom.short_title_result_page }} {%if pp.selected_or_first_available_variant.title %}- {{pp.selected_or_first_available_variant.title}}{%endif %}
+                {% else %}
+                  {{ pp.title }}
+                {% endif %}
+              </div>
+              <div class="basis-2/6 flex justify-end">
+                <button type="button"
+                        class="t4s-btn-color-primary h-[43.94px] py-0 px-6 bg-[#ffcd00] hover:bg-[#004623] text-[#004623] rounded-full font-[700] w-full text-[11px] md:text-[12px] text-center inline-flex items-center justify-center wb-add-btn"
+                        data-handle="{{ pp.handle }}">
+                  Añadir al carrito
+                </button>
+              </div>
+            </div>
+            {%- assign chosen_dog = chosen_dog | append: needle -%}
+            {%- assign picked_dog = picked_dog | plus: 1 -%}
+            {%- if picked_dog >= 3 -%}{% break %}{%- endif -%}
+          {%- endunless -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+  {%- endif -%}
+
+  <div class="mt-2">
+    <a href="/collections/barf-gatos"
+       class="t4s-btn-color-primary h-[43.94px] py-0 px-6 bg-[#004623] text-white hover:text-white rounded-full font-[700] w-full text-[11px] md:text-[12px] text-center inline-flex items-center justify-center mt-5 item-gato">
+      Ver más BARF para gatos
+    </a>
+    <a href="/collections/barf-perros"
+       class="t4s-btn-color-primary h-[43.94px] py-0 px-6 bg-[#004623] text-white hover:text-white rounded-full font-[700] w-full text-[11px] md:text-[12px] text-center inline-flex items-center justify-center mt-5 item-perro">
+      Ver más BARF para perros
+    </a>
+  </div>
+</div>
+
+
+          {%- comment -%} Producto COCINADO + seleccionado COCINADA → 3 perro / 2 gato desde colección cocinada --- OK  {%- endcomment -%}
+          <div class="wb-block case-cooked-cooked-perro">
+            {%- assign shown = 0 -%}
+            {%- if cooked_collection and cooked_collection.products_count > 0 -%}
+              {%- for pp in cooked_collection.products -%}
+                {%- if pp.tags contains 'perros' -%}
+                  <div class="flex items-center gap-2.5 w-full">
+                    <div class="basis-1/6 flex-shrink-0 max-w-[50px]">
+                      <img
+                        src="{{ pp.featured_image | img_url: '400x' }}"
+                        alt="{{ pp.title | escape }}"
+                        class="w-full h-auto rounded border border-[#d9d9c8] object-cover bg-white rounded-[4px]"
+                      >
+                    </div>
+                    <div class="basis-3/6 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#4E4B48] leading-relaxed text-[13px]">
+                      {% if pp.metafields.custom.short_title_result_page.value %}
+              {{ pp.metafields.custom.short_title_result_page }} {%if pp.selected_or_first_available_variant.title %}- {{pp.selected_or_first_available_variant.title}}{%endif %}
+            {% else %}
+              {{ pp.title }}
+            {% endif %}
+                    </div>
+                    <div class="basis-2/6 flex justify-end">
+                      <button
+  type="button"
+  class="t4s-btn-color-primary h-[43.94px] py-0 px-6 bg-[#ffcd00] hover:bg-[#004623] text-[#004623] rounded-full font-[700] w-full text-[11px] md:text-[12px] text-center inline-flex items-center justify-center wb-add-btn"
+  data-handle="{{ pp.handle }}"
+>
+  Añadir al carrito
+</button>
+
+                      </a>
+                    </div>
+                  </div>
+                  {%- assign shown = shown | plus: 1 -%}
+                  {%- if shown >= 3 -%}{% break %}{%- endif -%}
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endif -%}
+            {%comment %}<div class="mt-2">
+              <a
+                href="{{ cooked_collection.url | default: '/collections/comida-cocinada-para-perros' }}"
+                class="t4s-btn-color-primary h-[43.94px] py-0 px-6 bg-[#004623] text-white hover:text-white rounded-full font-[700] w-full text-[11px] md:text-[12px] text-center inline-flex items-center justify-center mt-5"
+              >
+                Ver más cocinados
+              </a>
+            </div> {% endcomment %}
+          </div>
+
+          <div class="wb-block case-cooked-cooked-gato">
+            {%- assign shown = 0 -%}
+            {%- if cooked_collection and cooked_collection.products_count > 0 -%}
+              {%- for pp in cooked_collection.products -%}
+                {%- if pp.tags contains 'gatos' -%}
+                  <div class="flex items-center gap-2.5 w-full">
+                    <div class="basis-1/6 flex-shrink-0 max-w-[50px]">
+                      <img
+                        src="{{ pp.featured_image | img_url: '400x' }}"
+                        alt="{{ pp.title | escape }}"
+                        class="w-full h-auto rounded border border-[#d9d9c8] object-cover bg-white rounded-[4px]"
+                      >
+                    </div>
+                    <div class="basis-3/6 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#4E4B48] leading-relaxed text-[13px]">
+                      {% if pp.metafields.custom.short_title_result_page.value %}
+              {{ pp.metafields.custom.short_title_result_page }} {%if pp.selected_or_first_available_variant.title %}- {{pp.selected_or_first_available_variant.title}}{%endif %}
+            {% else %}
+              {{ pp.title }}
+            {% endif %}
+                    </div>
+                    <div class="basis-2/6 flex justify-end">
+                      <button
+  type="button"
+  class="t4s-btn-color-primary h-[43.94px] py-0 px-6 bg-[#ffcd00] hover:bg-[#004623] text-[#004623] rounded-full font-[700] w-full text-[11px] md:text-[12px] text-center inline-flex items-center justify-center wb-add-btn"
+  data-handle="{{ pp.handle }}"
+>
+  Añadir al carrito
+</button>
+
+                      </a>
+                    </div>
+                  </div>
+                  {%- assign shown = shown | plus: 1 -%}
+                  {%- if shown >= 2 -%}{% break %}{%- endif -%}
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endif -%}
+            {%comment %}<div class="mt-2">
+              <a
+                href="{{ cooked_collection.url | default: '/collections/comida-cocinada-para-gatos' }}"
+                class="t4s-btn-color-primary h-[43.94px] py-0 px-6 bg-[#004623] text-white hover:text-white rounded-full font-[700] w-full text-[11px] md:text-[12px] text-center inline-flex items-center justify-center mt-5"
+              >
+                Ver más cocinados
+              </a>
+            </div>{%endcomment %}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div data-orientation="horizontal" role="none" class="shrink-0 w-100 h-px bg-[#d4d4d3] opacity-50 my-12"></div>
+      <h3 class="font-bold text-[#004623] text-[15px] mb-6">¿Nuevo en Wild Balance?</h3>
+      <p class="text-[13px] text-[#7F7D7B]">
+        ¿Es su primera vez con Wild Balance?<br>
+        Comienza con una transición de 4 días: añade progresivamente nuestra comida natural y reduce la anterior. En
+        solo 1 semana, podrá disfrutar de todas nuestras proteínas y descubrir su favorita, mientras su digestión se
+        adapta suavemente.
+      </p>
+      <div data-orientation="horizontal" role="none" class="shrink-0 w-100 h-px bg-[#d4d4d3] opacity-50 my-12"></div>
+
+      {% comment %}
+        <div class="space-y-2 text-[#004623]">
+          <p>Ración diaria: <strong> g</strong></p>
+          <p>
+            Unidades / día: <strong><span id="res-units">—</span></strong>
+          </p>
+          <p>
+            Coste / día: <strong>€ <span id="res-day">—</span></strong>
+          </p>
+          <p>
+            Coste / mes: <strong>€ <span id="res-month">—</span></strong>
+          </p>
+        </div>
+      {% endcomment %}
+
+      <div class="flex flex-col gap-4 mt-12">
+        <a
+          href="#"
+          class="quiz-restart-btn h-9 text-[#004623] text-[16px] underline flex items-center gap-2 font-500"
+        >
+          <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2502 7.47925C10.0503 8.22522 9.65758 8.90542 9.11149 9.45152C8.56541 9.99761 7.88521 10.3904 7.13925 10.5903C6.39329 10.7902 5.60785 10.7903 4.86186 10.5905C4.11586 10.3907 3.4356 9.99805 2.88942 9.45205L2.63982 9.20325H4.58622C4.74535 9.20325 4.89796 9.14004 5.01048 9.02752C5.123 8.91499 5.18622 8.76238 5.18622 8.60325C5.18622 8.44412 5.123 8.29151 5.01048 8.17899C4.89796 8.06647 4.74535 8.00325 4.58622 8.00325H1.19182C1.03269 8.00325 0.880076 8.06647 0.767554 8.17899C0.655032 8.29151 0.591818 8.44412 0.591818 8.60325V11.9969C0.591818 12.156 0.655032 12.3086 0.767554 12.4211C0.880076 12.5336 1.03269 12.5969 1.19182 12.5969C1.35095 12.5969 1.50356 12.5336 1.61608 12.4211C1.7286 12.3086 1.79182 12.156 1.79182 11.9969V10.0529L2.03982 10.3009C2.73489 10.9961 3.60075 11.4961 4.55034 11.7506C5.49993 12.0051 6.49978 12.0052 7.4494 11.7508C8.39901 11.4963 9.26491 10.9964 9.96004 10.3012C10.6552 9.60602 11.1551 8.74008 11.4094 7.79045C11.4508 7.63673 11.4294 7.47287 11.35 7.33492C11.2705 7.19697 11.1395 7.09623 10.9858 7.05485C10.8321 7.01348 10.6682 7.03486 10.5303 7.1143C10.3923 7.19374 10.2916 7.32553 10.2502 7.47925ZM11.2342 4.50085C11.3465 4.38831 11.4095 4.23581 11.4094 4.07685V0.683252C11.4094 0.524122 11.3462 0.37151 11.2337 0.258988C11.1212 0.146466 10.9685 0.083252 10.8094 0.083252C10.6503 0.083252 10.4977 0.146466 10.3852 0.258988C10.2726 0.37151 10.2094 0.524122 10.2094 0.683252V2.62805L9.96142 2.38005C9.26634 1.68481 8.40049 1.18479 7.4509 0.930278C6.50131 0.675765 5.50145 0.675721 4.55184 0.93015C3.60223 1.18458 2.73633 1.68452 2.04119 2.3797C1.34606 3.07489 0.846181 3.94082 0.591818 4.89045C0.568699 4.96734 0.561247 5.04809 0.569904 5.12791C0.57856 5.20773 0.603149 5.285 0.642214 5.35515C0.681278 5.42529 0.734024 5.48688 0.797325 5.53627C0.860627 5.58566 0.933198 5.62184 1.01074 5.64267C1.08828 5.66351 1.16921 5.66856 1.24874 5.65754C1.32827 5.64653 1.40478 5.61966 1.47374 5.57853C1.54269 5.53741 1.6027 5.48286 1.65019 5.41812C1.69768 5.35339 1.73169 5.27978 1.75022 5.20165C1.94987 4.45531 2.34253 3.7747 2.88868 3.22826C3.43484 2.68182 4.11526 2.28882 4.86149 2.08878C5.60773 1.88874 6.39348 1.88871 7.13973 2.0887C7.88599 2.28869 8.56642 2.68165 9.11262 3.22805L9.36142 3.47605H7.41582C7.25669 3.47605 7.10408 3.53927 6.99155 3.65179C6.87903 3.76431 6.81582 3.91692 6.81582 4.07605C6.81582 4.23518 6.87903 4.38779 6.99155 4.50032C7.10408 4.61284 7.25669 4.67605 7.41582 4.67605H10.8102C10.9692 4.67612 11.1217 4.61311 11.2342 4.50085Z" fill="#004623"/>
+          </svg>
+
+          Comenzar de nuevo</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer pasos -->
+  <div id="quiz-footer" class="w-full p-10 !bg-[#FFFFFF80] h-full">
+    <h3 class="font-bold text-[#004623] text-[15px] mb-6">¿Necesitas ayuda?</h3>
+    <p class="text-[13px] text-[#7F7D7B]">
+      Tranquilo, no te dejamos solo/a. Al empezar con nosotros, tienes acceso directo a nuestro equipo de nutricionistas
+      para acompañarte y resolver cualquier pregunta que tengas. El éxito está garantizado.
+    </p>
+    <a
+      target="_blank"
+      href="https://wa.me/34670319204"
+      class="h-9 text-[#004623] text-[16px] underline flex items-center gap-2 font-500 mt-8"
+    >
+     <svg fill="#004623" width="16px" height="16px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>whatsapp</title> <path d="M26.576 5.363c-2.69-2.69-6.406-4.354-10.511-4.354-8.209 0-14.865 6.655-14.865 14.865 0 2.732 0.737 5.291 2.022 7.491l-0.038-0.070-2.109 7.702 7.879-2.067c2.051 1.139 4.498 1.809 7.102 1.809h0.006c8.209-0.003 14.862-6.659 14.862-14.868 0-4.103-1.662-7.817-4.349-10.507l0 0zM16.062 28.228h-0.005c-0 0-0.001 0-0.001 0-2.319 0-4.489-0.64-6.342-1.753l0.056 0.031-0.451-0.267-4.675 1.227 1.247-4.559-0.294-0.467c-1.185-1.862-1.889-4.131-1.889-6.565 0-6.822 5.531-12.353 12.353-12.353s12.353 5.531 12.353 12.353c0 6.822-5.53 12.353-12.353 12.353h-0zM22.838 18.977c-0.371-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.185-0.837 0.187-0.246 0.371-0.958 1.207-1.175 1.455-0.216 0.249-0.434 0.279-0.805 0.094-1.15-0.466-2.138-1.087-2.997-1.852l0.010 0.009c-0.799-0.74-1.484-1.587-2.037-2.521l-0.028-0.052c-0.216-0.371-0.023-0.572 0.162-0.757 0.167-0.166 0.372-0.434 0.557-0.65 0.146-0.179 0.271-0.384 0.366-0.604l0.006-0.017c0.043-0.087 0.068-0.188 0.068-0.296 0-0.131-0.037-0.253-0.101-0.357l0.002 0.003c-0.094-0.186-0.836-2.014-1.145-2.758-0.302-0.724-0.609-0.625-0.836-0.637-0.216-0.010-0.464-0.012-0.712-0.012-0.395 0.010-0.746 0.188-0.988 0.463l-0.001 0.002c-0.802 0.761-1.3 1.834-1.3 3.023 0 0.026 0 0.053 0.001 0.079l-0-0.004c0.131 1.467 0.681 2.784 1.527 3.857l-0.012-0.015c1.604 2.379 3.742 4.282 6.251 5.564l0.094 0.043c0.548 0.248 1.25 0.513 1.968 0.74l0.149 0.041c0.442 0.14 0.951 0.221 1.479 0.221 0.303 0 0.601-0.027 0.889-0.078l-0.031 0.004c1.069-0.223 1.956-0.868 2.497-1.749l0.009-0.017c0.165-0.366 0.261-0.793 0.261-1.242 0-0.185-0.016-0.366-0.047-0.542l0.003 0.019c-0.092-0.155-0.34-0.247-0.712-0.434z"></path> </g></svg> Hablar con la nutricionista</a
+    >
+  </div>
+</div>
+
+<style>
+  .calculadora-container {
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    background: #F4F0E2;
+    width: 30%;
+    z-index: 999;
+  }
+  .no-arrows::-webkit-inner-spin-button,
+  .no-arrows::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+  .no-arrows[type=number] { -moz-appearance: textfield; }
+</style>
+<script>
+  // ===== TABLAS NUEVAS (solo BURGERS). COCINADA = mismo cálculo +10% gramos =====
+  const FACTORS_BURGERS = {
+    perro: {
+      baby0: {
+        base: {
+          min_posible_value: 50,
+          max_posible_value: 900,
+          values: [
+            { min: 10, max: 500, value: 0.1 },
+            { min: 500, max: 4000, value: 0.1 },
+            { min: 4000, max: 7000, value: 0.09 },
+            { min: 7000, max: 10000, value: 0.08 },
+            { min: 10000, max: 12000, value: 0.07 },
+            { min: 12000, max: 15000, value: 0.06 },
+            { min: 15000, max: 60000, value: 0.05 },
+          ],
+        },
+      },
+      baby4: {
+        base: {
+          min_posible_value: 60,
+          max_posible_value: 1125,
+          values: [
+            { min: 10, max: 1000, value: 0.07 },
+            { min: 1000, max: 11000, value: 0.06 },
+            { min: 11000, max: 16000, value: 0.06 },
+            { min: 16000, max: 21000, value: 0.05 },
+            { min: 21000, max: 30000, value: 0.05 },
+            { min: 30000, max: 300000, value: 0.035 },
+          ],
+        },
+      },
+      baby6: {
+        base: {
+          min_posible_value: 50,
+          max_posible_value: 1237.5,
+          values: [
+            { min: 10, max: 1000, value: 0.06 },
+            { min: 1000, max: 4000, value: 0.05 },
+            { min: 4000, max: 5000, value: 0.04 },
+            { min: 5000, max: 18000, value: 0.04 },
+            { min: 18000, max: 26000, value: 0.04 },
+            { min: 26000, max: 36000, value: 0.04 },
+            { min: 36000, max: 45000, value: 0.04 },
+            { min: 45000, max: 450000, value: 0.03 },
+          ],
+        },
+      },
+      baby10: {
+        base: {
+          min_posible_value: 50,
+          max_posible_value: 1200,
+          values: [
+            { min: 10, max: 1000, value: 0.06 },
+            { min: 1000, max: 4000, value: 0.04 },
+            { min: 4000, max: 7000, value: 0.03 },
+            { min: 7000, max: 9000, value: 0.03 },
+            { min: 9000, max: 26000, value: 0.025 },
+            { min: 26000, max: 50000, value: 0.025 },
+            { min: 50000, max: 60000, value: 0.0225 },
+            { min: 60000, max: 600000, value: 0.02 },
+          ],
+        },
+      },
+      adult: {
+        senior: {
+          min_posible_value: 50,
+          max_posible_value: 1200,
+          values: [
+            { min: 10, max: 999, value: 0.03 },
+            { min: 1000, max: 1999, value: 0.03 },
+            { min: 2000, max: 2999, value: 0.03 },
+            { min: 3000, max: 3999, value: 0.03 },
+            { min: 4000, max: 5999, value: 0.03 },
+            { min: 6000, max: 6999, value: 0.0275 },
+            { min: 7000, max: 9999, value: 0.025 },
+            { min: 10000, max: 21000, value: 0.02 },
+            { min: 21000, max: 31000, value: 0.02 },
+            { min: 31000, max: 80000, value: 0.015 },
+            { min: 80000, max: 800000, value: 0.012 },
+          ],
+        },
+        normal: {
+          min_posible_value: 50,
+          max_posible_value: 1400,
+          values: [
+            { min: 10, max: 1000, value: 0.035 },
+            { min: 1000, max: 2999, value: 0.035 },
+            { min: 2000, max: 3999, value: 0.035 },
+            { min: 3000, max: 4999, value: 0.035 },
+            { min: 5000, max: 8999, value: 0.03 },
+            { min: 9000, max: 12999, value: 0.025 },
+            { min: 13000, max: 45999, value: 0.02 },
+            { min: 46000, max: 80000, value: 0.0175 },
+            { min: 80000, max: 800000, value: 0.016 },
+          ],
+        },
+        high: {
+          min_posible_value: 60,
+          max_posible_value: 1600,
+          values: [
+            { min: 10, max: 1000, value: 0.035 },
+            { min: 1000, max: 3000, value: 0.035 },
+            { min: 3000, max: 4000, value: 0.035 },
+            { min: 4000, max: 5000, value: 0.035 },
+            { min: 5000, max: 9000, value: 0.035 },
+            { min: 9000, max: 21000, value: 0.03 },
+            { min: 21000, max: 31000, value: 0.025 },
+            { min: 31000, max: 80000, value: 0.025 },
+            { min: 80000, max: 800000, value: 0.02 },
+          ],
+        },
+      },
+    },
+    gato: {
+      baby0: {
+        base: {
+          min_posible_value: 50,
+          max_posible_value: 400,
+          values: [
+            { min: 50, max: 499, value: 0.11 },
+            { min: 500, max: 4000, value: 0.1 },
+            { min: 4001, max: 40000, value: 0.1 },
+          ],
+        },
+      },
+      baby3: {
+        base: {
+          min_posible_value: 40,
+          max_posible_value: 3200,
+          values: [
+            { min: 50, max: 499, value: 0.09 },
+            { min: 500, max: 4000, value: 0.08 },
+            { min: 4001, max: 40000, value: 0.08 },
+          ],
+        },
+      },
+      baby5: {
+        base: {
+          min_posible_value: 30,
+          max_posible_value: 240,
+          values: [
+            { min: 50, max: 499, value: 0.07 },
+            { min: 500, max: 4000, value: 0.06 },
+            { min: 4001, max: 40000, value: 0.06 },
+          ],
+        },
+      },
+      adult: {
+        senior: {
+          min_posible_value: 30,
+          max_posible_value: 300,
+          values: [
+            { min: 30, max: 999, value: 0.035 },
+            { min: 1000, max: 10000, value: 0.03 },
+            { min: 10001, max: 100000, value: 0.025 },
+          ],
+        },
+        normal: {
+          min_posible_value: 35,
+          max_posible_value: 350,
+          values: [
+            { min: 30, max: 999, value: 0.04 },
+            { min: 1000, max: 10000, value: 0.035 },
+            { min: 10001, max: 100000, value: 0.025 },
+          ],
+        },
+        high: {
+          min_posible_value: 50,
+          max_posible_value: 500,
+          values: [
+            { min: 30, max: 999, value: 0.05 },
+            { min: 1000, max: 10000, value: 0.05 },
+            { min: 10001, max: 100000, value: 0.04 },
+          ],
+        },
+      },
+    },
+  };
+
+  // === Helpers de mapeo (tu UI → claves de la tabla) ===
+  function mapActivityKey(act) {
+    // tu UI: bajo / moderado / alto
+    if (act === 'bajo') return 'senior';
+    if (act === 'moderado') return 'normal';
+    if (act === 'alto') return 'high';
+    return 'normal';
+  }
+  // tu UI: cachorro/adulto/senior → tabla: babyX/adult
+  function defaultPuppyBucket(especie) {
+    // si no distingues meses, elegimos bucket por defecto razonable:
+    return especie === 'gato' ? 'baby3' : 'baby6';
+  }
+    function mapAgeKey(especie, edadUI) {
+    // si el select ya trae un bucket babyX, úsalo tal cual
+    if (typeof edadUI === 'string' && edadUI.startsWith('baby')) return edadUI;
+    // adulto/senior usan el nodo "adult" en la tabla
+    if (edadUI === 'adulto' || edadUI === 'senior') return 'adult';
+    // fallback si quedara algún "cachorro" genérico
+    return defaultPuppyBucket(especie);
+  }
+
+
+  // Selecciona factor por tramo + devuelve min/max posibles del nodo
+  function pickFactorAndClamp(especie, ageKey, activityKey, weightGr) {
+    const tblAge = FACTORS_BURGERS[especie]?.[ageKey];
+    if (!tblAge) return { factor: null, minPossible: null, maxPossible: null };
+
+    const node = ageKey === 'adult' ? tblAge[activityKey] : tblAge.base;
+    if (!node?.values?.length) return { factor: null, minPossible: null, maxPossible: null };
+
+    const match =
+      node.values.find((r) => weightGr >= r.min && weightGr <= r.max) || node.values[node.values.length - 1];
+    return {
+      factor: match?.value ?? null,
+      minPossible: node.min_posible_value ?? null,
+      maxPossible: node.max_posible_value ?? null,
+    };
+  }
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    /* =========================
+     OVERLAY / PANEL OPEN-CLOSE
+  ========================== */
+    const calc = document.getElementById('calculadora-container');
+    const overlay = document.getElementById('calculadora-bg');
+    const btnAbrir = document.getElementById('abrir-calculadora');
+    const btnCerrar = calc.querySelector('.close-btn');
+
+    const openCalc = () => {
+      calc.classList.add('open');
+      overlay.classList.add('active');
+      document.body.classList.add('calc-open'); // bloquea scroll de página
+    };
+
+    const closeCalc = () => {
+      calc.classList.remove('open');
+      overlay.classList.remove('active');
+      document.body.classList.remove('calc-open');
+    };
+
+    btnAbrir.addEventListener('click', openCalc);
+    btnCerrar.addEventListener('click', closeCalc);
+    overlay.addEventListener('click', closeCalc); // cerrar al clicar fuera
+
+    /* =========================
+     PERSISTENCIA (localStorage)
+  ========================== */
+    const STORAGE_KEY = 'wb_calc_quiz_v1';
+
+    const saveState = (partial) => {
+      const prev = loadState() || {};
+      const next = { ...prev, ...partial, savedAt: Date.now() };
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+      } catch (e) {}
+    };
+
+    const loadState = () => {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        return raw ? JSON.parse(raw) : null;
+      } catch (e) {
+        return null;
+      }
+    };
+
+    const clearState = () => {
+      try {
+        localStorage.removeItem(STORAGE_KEY);
+      } catch (e) {}
+    };
+
+    /* =========================
+     CONSTANTES / FACTORES
+  ========================== */
+    // Porcentajes (%), NO proporciones decimales
+    const FACTORS = {
+      perro: {
+        burgers: {
+          cachorro: { base: [{ min: 0, max: 100000, value: 6 }] }, // 6%
+          adulto: {
+            bajo: [{ min: 0, max: 100000, value: 3 }], // 3%
+            moderado: [{ min: 0, max: 100000, value: 2.5 }], // 2.5%
+            alto: [{ min: 0, max: 100000, value: 3.5 }], // 3.5% (trabajo/alto)
+          },
+          senior: { base: [{ min: 0, max: 100000, value: 2 }] }, // 2%
+        },
+        cooked: {
+          cachorro: { base: [{ min: 0, max: 100000, value: 6 }] },
+          adulto: {
+            bajo: [{ min: 0, max: 100000, value: 3 }],
+            moderado: [{ min: 0, max: 100000, value: 2.5 }],
+            alto: [{ min: 0, max: 100000, value: 3.5 }],
+          },
+          senior: { base: [{ min: 0, max: 100000, value: 2 }] },
+        },
+      },
+      gato: {
+        burgers: {
+          cachorro: { base: [{ min: 0, max: 50000, value: 7 }] }, // 7%
+          adulto: { base: [{ min: 0, max: 50000, value: 4 }] }, // 4%
+          senior: { base: [{ min: 0, max: 50000, value: 3 }] }, // 3%
+        },
+        cooked: {
+          cachorro: { base: [{ min: 0, max: 50000, value: 7 }] },
+          adulto: { base: [{ min: 0, max: 50000, value: 4 }] },
+          senior: { base: [{ min: 0, max: 50000, value: 3 }] },
+        },
+      },
+    };
+
+    /* =========================
+     UTILIDADES DOM
+  ========================== */
+    const steps = document.querySelectorAll('.quiz-step');
+    const progress = document.getElementById('progress-bar');
+
+    const getCheckedValue = (name) => {
+      const el = document.querySelector(`input[name="${name}"]:checked`);
+      return el ? el.value : null;
+    };
+    const setText = (id, value) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = value;
+    };
+    const checkRadio = (name, value) => {
+      if (!value) return;
+      const el = document.querySelector(`input[name="${name}"][value="${value}"]`);
+      if (el) el.checked = true;
+    };
+    const getFoodLabel = (foodType) => (foodType === 'burgers' ? 'Comida BARF' : 'Comida cocinada');
+
+    /* =========================
+     VALIDACIÓN POR PASO
+  ========================== */
+    let currentStep = 1;
+
+    const isChecked = (name) => !!document.querySelector(`input[name="${name}"]:checked`);
+    const getNumber = (sel) => {
+      const el = document.querySelector(sel);
+      const v = parseFloat(el?.value ?? '');
+      return Number.isFinite(v) ? v : NaN;
+    };
+
+    function validateStep(step) {
+      if (step === 1) {
+        const animalOk = isChecked('animal');
+        const peso = getNumber('input[name="peso"]');
+        const pesoOk = Number.isFinite(peso) && peso >= 1;
+        return animalOk && pesoOk; // edad tiene default
+      }
+      if (step === 2) {
+        const comidaOk = isChecked('comida');
+        const actividadOk = isChecked('actividad');
+        return comidaOk && actividadOk;
+      }
+      return true; // paso 3 no requiere validación
+    }
+
+    function getNextBtn(step) {
+      return document.querySelector(`.quiz-step[data-step="${step}"] .quiz-next-btn`);
+    }
+
+    function updateNextBtnState() {
+      const btn = getNextBtn(currentStep);
+      if (!btn) return;
+      const ok = validateStep(currentStep);
+      btn.setAttribute('aria-disabled', ok ? 'false' : 'true');
+    }
+
+    /* =========================
+     NAVEGACIÓN ENTRE PASOS
+  ========================== */
+    function showStep(step) {
+      steps.forEach((s) => s.classList.add('hidden'));
+      const target = document.querySelector(`.quiz-step[data-step="${step}"]`);
+      if (target) target.classList.remove('hidden');
+
+      const percent = (step / steps.length) * 100;
+      progress.style.width = percent + '%';
+      currentStep = step;
+
+      // Mostrar/ocultar footer
+      const footer = document.getElementById('quiz-footer');
+      if (footer) {
+        if (step === 3) {
+          footer.classList.remove('hidden');
+        } else {
+          footer.classList.add('hidden');
+        }
+      }
+
+      saveState({ step: currentStep });
+      updateNextBtnState();
+    }
+
+    /* =========================
+     CÁLCULO
+  ========================== */
+    function computeResultFromInputs() {
+      const animal = getCheckedValue('animal') || 'perro';
+      const especie = animal === 'gato' ? 'gato' : 'perro';
+      const ageUI = document.querySelector('select[name="edad"]')?.value || 'adulto'; // cachorro|adulto|senior
+      const weightKg = +(document.querySelector('input[name="peso"]')?.value || 1);
+      const foodType = getCheckedValue('comida') || 'burgers'; // burgers|cooked
+      const activityUI = getCheckedValue('actividad') || 'moderado'; // bajo|moderado|alto
+
+      const weightGr = weightKg * 1000;
+
+      // Mapear a claves de tabla nueva
+      const ageKey = mapAgeKey(especie, ageUI); // babyX | adult
+      const activityKey = ageKey === 'adult' ? mapActivityKey(activityUI) : 'base';
+
+      // 1) Elegir factor con la tabla BURGERS por tramos
+      const { factor, minPossible, maxPossible } = pickFactorAndClamp(especie, ageKey, activityKey, weightGr);
+
+      // Si por algún motivo no hay factor (no debería), caemos a tu lógica antigua como seguro:
+      let f = factor;
+      if (!f) {
+        const ranges =
+          (((FACTORS?.[especie] || {})[foodType] || {})[ageUI] || {})[ageUI === 'adulto' ? activityUI : 'base'] || [];
+        const match = ranges.find((r) => weightGr >= r.min && weightGr <= r.max);
+        f = match ? match.value : ranges[0]?.value || 0.025;
+      }
+
+      // 2) Gramos base (BURGER)
+      let grams = Math.round(weightGr * f);
+
+      // 3) Clamp a min/max posibles si estaban definidos
+      if (typeof minPossible === 'number') grams = Math.max(grams, minPossible);
+      if (typeof maxPossible === 'number') grams = Math.min(grams, maxPossible);
+
+      // 4) Si es COCINADA, sumar +10% a los gramos (después del clamp)
+      if (foodType === 'cooked') {
+        grams = Math.round(grams * 1.1);
+      }
+
+      // === Lo demás igual que ya tienes ===
+      const gramsPerUnit = (GRAMS_PER_UNIT[especie] || {})[foodType] || 50;
+      const units = Math.max(1, Math.round(grams / gramsPerUnit));
+      const euroPerUnit = (EURO_PER_UNIT[especie] || {})[foodType] || 0.33;
+      const dailyEuros = +(units * euroPerUnit).toFixed(2);
+      const monthEuros = +(dailyEuros * 31).toFixed(2);
+
+      const result = { grams, units, dailyEuros, monthEuros, foodType };
+
+      saveState({
+        step: 3,
+        inputs: { animal, edad: ageUI, peso: weightKg, comida: foodType, actividad: activityUI },
+        result,
+      });
+
+      return result;
+    }
+
+    function renderResult({ grams, units, dailyEuros, monthEuros, foodType }) {
+      setText('res-grams', grams);
+      setText('res-units', units);
+      setText('res-day', dailyEuros.toFixed(2));
+      setText('res-month', monthEuros.toFixed(2));
+      const ft = foodType || getCheckedValue('comida'); // fallback si viene de estado antiguo
+      setText('res-foodtype', ft ? getFoodLabel(ft) : '—');
+    }
+
+    /* =========================
+     LISTENERS DE NAVEGACIÓN
+  ========================== */
+    document.querySelectorAll('.quiz-next-btn').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        // Bloqueo si el paso no es válido (y actualizo estado visual)
+        if (!validateStep(currentStep)) {
+          updateNextBtnState();
+          return;
+        }
+
+        if (currentStep < steps.length) {
+          const next = currentStep + 1;
+          if (next === steps.length) {
+            const result = computeResultFromInputs();
+            renderResult(result);
+          }
+          showStep(next);
+        }
+      });
+    });
+
+    document.querySelectorAll('.quiz-prev-btn').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (currentStep > 1) showStep(currentStep - 1);
+      });
+    });
+
+    document.querySelectorAll('.quiz-restart-btn').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        // Limpia estado persistido
+        clearState();
+
+        // Resetea inputs
+        const animalChecked = document.querySelector('input[name="animal"]:checked');
+        if (animalChecked) animalChecked.checked = false;
+
+        const edadSel = document.querySelector('select[name="edad"]');
+        if (edadSel) edadSel.value = 'adulto';
+
+        const pesoInput = document.querySelector('input[name="peso"]');
+        if (pesoInput) pesoInput.value = '1';
+
+        const comidaChecked = document.querySelector('input[name="comida"]:checked');
+        if (comidaChecked) comidaChecked.checked = false;
+
+        const actividadChecked = document.querySelector('input[name="actividad"]:checked');
+        if (actividadChecked) actividadChecked.checked = false;
+
+        // Limpia resultados en UI
+        setText('res-grams', '—');
+        setText('res-units', '—');
+        setText('res-day', '—');
+        setText('res-month', '—');
+        setText('res-foodtype', '—');
+
+        // Vuelve al paso 1 y actualiza botón
+        showStep(1);
+        updateNextBtnState();
+      });
+    });
+
+    /* =========================
+     GUARDAR CAMBIOS (inputs)
+  ========================== */
+    const edadSel = document.querySelector('select[name="edad"]');
+    const pesoInp = document.querySelector('input[name="peso"]');
+
+    // Animal
+    document.querySelectorAll('input[name="animal"]').forEach((el) => {
+      el.addEventListener('change', () => {
+        const prev = loadState()?.inputs || {};
+        saveState({ inputs: { ...prev, animal: el.value } });
+        updateNextBtnState();
+      });
+    });
+
+    // Edad
+    if (edadSel) {
+      edadSel.addEventListener('change', () => {
+        const prev = loadState()?.inputs || {};
+        saveState({ inputs: { ...prev, edad: edadSel.value } });
+        updateNextBtnState();
+      });
+    }
+
+    // Peso
+    if (pesoInp) {
+      const handler = () => {
+        const val = parseFloat(pesoInp.value);
+        const prev = loadState()?.inputs || {};
+        saveState({ inputs: { ...prev, peso: Number.isFinite(val) ? val : 1 } });
+        updateNextBtnState();
+      };
+      pesoInp.addEventListener('input', handler);
+      pesoInp.addEventListener('change', handler);
+    }
+
+    // Comida
+    document.querySelectorAll('input[name="comida"]').forEach((el) => {
+      el.addEventListener('change', () => {
+        const prev = loadState()?.inputs || {};
+        saveState({ inputs: { ...prev, comida: el.value } });
+        updateNextBtnState();
+      });
+    });
+
+    // Actividad
+    document.querySelectorAll('input[name="actividad"]').forEach((el) => {
+      el.addEventListener('change', () => {
+        const prev = loadState()?.inputs || {};
+        saveState({ inputs: { ...prev, actividad: el.value } });
+        updateNextBtnState();
+      });
+    });
+
+    /* =========================
+     HIDRATACIÓN INICIAL
+  ========================== */
+    const state = loadState();
+
+    if (state?.inputs) {
+      checkRadio('animal', state.inputs.animal);
+      if (edadSel && state.inputs.edad) edadSel.value = state.inputs.edad;
+      if (pesoInp && typeof state.inputs.peso !== 'undefined') pesoInp.value = state.inputs.peso;
+      checkRadio('comida', state.inputs.comida);
+      checkRadio('actividad', state.inputs.actividad);
+    }
+
+    if (state?.step === 3 && state?.result) {
+      renderResult(state.result); // ya pinta res-foodtype si viene foodType
+      // Fallback por si estados antiguos no tenían foodType
+      if (!state.result.foodType && state.inputs?.comida) {
+        setText('res-foodtype', getFoodLabel(state.inputs.comida));
+      }
+      showStep(3);
+    } else if (state?.step === 2) {
+      showStep(2);
+    } else {
+      showStep(1);
+    }
+
+    // Asegura estado correcto del botón en el arranque
+    updateNextBtnState();
+  });
+</script>
+
+<style>
+        /* Panel oculto por posición, NO por display */
+        .calculadora-container {
+          right: -30%;        /* oculto por defecto en desktop */
+          width: 30%;
+          height: 100vh;
+          background: #F4F0E2;
+          z-index: 999;
+          /* ANIMACIÓN DEL MOVIMIENTO */
+          transition: right 320ms cubic-bezier(.4,0,.2,1);
+          will-change: right;
+        }
+
+        @media (max-width: 768px) {
+          .calculadora-container {
+            width: 100%;
+            right: -100%;     /* oculto por defecto en móvil */
+          }
+
+        }
+
+        /* Estado abierto: se desplaza hasta el borde derecho */
+        .calculadora-container.open {
+          right: 0!important;
+        }
+
+        /* Opcional: que no reciba clics cuando está fuera de pantalla */
+        .calculadora-container:not(.open) {
+          pointer-events: none;
+        }
+        body.calc-open {
+        overflow: hidden;
+        display:block!important;
+      }
+      #calculadora-bg {
+      background: rgba(0,70,35,0.4); /* #00462350 */
+      z-index: 998; /* debajo del panel */
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Estado activo */
+    #calculadora-bg.active {
+      opacity: 1!important;
+      pointer-events: auto;
+    }
+    html{
+    /* reserva el canal del scrollbar para evitar saltos */
+    scrollbar-gutter: stable;
+  }
+</style>
+
+<style>
+  .quiz-next-btn[aria-disabled="true"] {
+    opacity: .5;
+    pointer-events: none;
+    cursor: not-allowed;
+    filter: grayscale(20%);
+  }
+  @media (min-width: 768px) {
+    #calculadora-container header {
+      border-top: 1px solid #00000015;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const calc = document.getElementById('calculadora-container');
+    const btnAbrir = document.getElementById('abrir-calculadora');
+    const btnCerrar = calc.querySelector('.close-btn');
+
+    btnAbrir.addEventListener('click', () => {
+      calc.classList.add('open');
+    });
+
+    btnCerrar.addEventListener('click', () => {
+      calc.classList.remove('open');
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const calc = document.getElementById('calculadora-container');
+    const overlay = document.getElementById('calculadora-bg');
+    const btnAbrir = document.getElementById('abrir-calculadora');
+    const btnCerrar = calc.querySelector('.close-btn');
+
+    const openCalc = () => {
+      calc.classList.add('open');
+      overlay.classList.add('active');
+      document.body.classList.add('calc-open'); // evita scroll
+    };
+
+    const closeCalc = () => {
+      calc.classList.remove('open');
+      overlay.classList.remove('active');
+      document.body.classList.remove('calc-open');
+    };
+
+    btnAbrir.addEventListener('click', openCalc);
+    btnCerrar.addEventListener('click', closeCalc);
+    overlay.addEventListener('click', closeCalc); // cierra si clicas fuera
+  });
+</script>
+
+<style>
+    /* Layout del panel en columna y alto real del viewport móvil */
+  .calculadora-container{
+    position: fixed !important;    /* mejor para panel deslizante */
+    top: 0; right: -30%; bottom: 0;
+    width: 30%;
+    height: 100dvh !important;     /* usare d(vh) para iOS/Android */
+    display: flex !important;
+    flex-direction: column !important;
+    background: #F4F0E2;
+    z-index: 999;
+  }
+
+  /* En móvil el panel ocupa todo el ancho fuera de pantalla */
+  @media (max-width: 768px){
+    .calculadora-container{ right: -100%; width: 100%; }
+  }
+
+  /* Al abrir, se pega al borde derecho */
+  .calculadora-container.open{ right: 0 !important; }
+
+  /* El wrapper debe poder hacer scroll */
+  .calculadora-wrapper{
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    min-height: 0 !important;  /* imprescindible en flex para que scrollee */
+  }
+
+  /* El header, la barra y el footer no crecen */
+  .calculadora-container > header,
+  .calculadora-container > .w-full.h-\[3px\],
+  #quiz-footer{
+    flex: 0 0 auto !important;
+  }
+
+  /* El bloque footer no debe llevar h-full, lo neutralizamos */
+  #quiz-footer{ height: auto !important; }
+</style>
+<script>
+  // …tu código anterior…
+
+  // === Calcula el alto disponible para el wrapper (scroll interno) ===
+  function sizeWrapper() {
+    const panel = document.getElementById('calculadora-container');
+    const wrapper = panel.querySelector('.calculadora-wrapper');
+    const header = panel.querySelector('header');
+    const bar = panel.querySelector('.w-full.h-[3px]');
+    const footer = document.getElementById('quiz-footer');
+
+    if (!panel || !wrapper) return;
+
+    const panelH = panel.getBoundingClientRect().height;
+    const headerH = header ? header.getBoundingClientRect().height : 0;
+    const barH = bar ? bar.getBoundingClientRect().height : 0;
+    const footerH = footer && !footer.classList.contains('hidden') ? footer.getBoundingClientRect().height : 0;
+
+    // Resta también el padding vertical del wrapper para evitar cortes
+    const cs = getComputedStyle(wrapper);
+    const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom);
+
+    const max = Math.max(120, panelH - headerH - barH - footerH);
+    wrapper.style.maxHeight = max + 'px';
+  }
+
+  // Hookeamos sizeWrapper en los puntos clave:
+  const _origShowStep = showStep;
+  showStep = function (step) {
+    _origShowStep(step);
+    // Espera al reflow del footer para medir correctamente
+    requestAnimationFrame(sizeWrapper);
+  };
+
+  // Cuando abres/cerras el panel, vuelve a calcular
+  const openCalc_orig = window.openCalc;
+  const closeCalc_orig = window.closeCalc;
+
+  // Si no expusiste open/close en window, coge las locales:
+  const calc = document.getElementById('calculadora-container');
+  const overlay = document.getElementById('calculadora-bg');
+  const btnAbrir = document.getElementById('abrir-calculadora');
+  const btnCerrar = calc.querySelector('.close-btn');
+
+  function openCalc() {
+    calc.classList.add('open');
+    overlay.classList.add('active');
+    document.body.classList.add('calc-open');
+    requestAnimationFrame(sizeWrapper);
+  }
+  function closeCalc() {
+    calc.classList.remove('open');
+    overlay.classList.remove('active');
+    document.body.classList.remove('calc-open');
+  }
+
+  // Re-asigna los listeners usando las funciones nuevas
+  btnAbrir?.addEventListener('click', openCalc);
+  btnCerrar?.addEventListener('click', closeCalc);
+  overlay?.addEventListener('click', closeCalc);
+
+  // Recalcula cuando se redimensiona/rota el dispositivo (con debounce)
+  let _tm;
+  window.addEventListener('resize', () => {
+    clearTimeout(_tm);
+    _tm = setTimeout(sizeWrapper, 120);
+  });
+
+  // Llama una vez al cargar
+  document.addEventListener('DOMContentLoaded', () => {
+    requestAnimationFrame(sizeWrapper);
+  });
+
+  // …tu código posterior…
+</script>
+
+<script>
+  // === Deben existir ANTES de computeResultFromInputs ===
+  // Usa || para no machacar si ya estaban definidas en otro script
+  window.GRAMS_PER_UNIT = window.GRAMS_PER_UNIT || {
+    perro: { burgers: 50, cooked: 325 },
+    gato: { burgers: 50, cooked: 120 },
+  };
+
+  window.EURO_PER_UNIT = window.EURO_PER_UNIT || {
+    perro: { burgers: 0.33, cooked: 1.8 },
+    gato: { burgers: 0.42, cooked: 0.95 },
+  };
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const labels = document.querySelectorAll('.animal-label');
+
+    function updateLabels() {
+      const animal = document.querySelector('input[name="animal"]:checked')?.value;
+      let word = 'peludo'; // default
+      if (animal === 'gato') word = 'gato';
+      if (animal === 'perro') word = 'perro';
+      labels.forEach((el) => (el.textContent = word));
+    }
+
+    // Inicializa
+    updateLabels();
+
+    // Escucha cambios en el selector de animal
+    document.querySelectorAll('input[name="animal"]').forEach((el) => {
+      el.addEventListener('change', updateLabels);
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // === Igual que el toggle: refresca minicart T4S si existe
+    const refreshMiniCart = () => {
+      if (window.T4SThemeSP?.Cart?.getToFetch) {
+        window.T4SThemeSP.Cart.getToFetch();
+      }
+    };
+
+    // Carga el product.json y devuelve la PRIMERA variante disponible (o la primera)
+    async function loadFirstAvailableVariant(handle) {
+      const res = await fetch(`/products/${handle}.js`, { headers: { Accept: 'application/json' } });
+      if (!res.ok) throw new Error('No se pudo cargar el producto');
+      const product = await res.json();
+      const variant = (product.variants || []).find(v => v.available) || product.variants?.[0];
+      if (!variant) throw new Error('El producto no tiene variantes disponibles');
+      return variant;
+    }
+
+    async function addVariant(variantId, qty = 1) {
+      const res = await fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ id: variantId, quantity: qty })
+      });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.description || 'No se pudo añadir al carrito');
+      }
+      return res.json();
+    }
+
+    function setBusy(btn, busy) {
+      if (!btn.dataset.originalText) btn.dataset.originalText = btn.textContent.trim();
+      btn.disabled = busy;
+      btn.textContent = busy ? 'Añadiendo…' : btn.dataset.originalText;
+    }
+
+    // Delegación: cualquier .wb-add-btn añade al carrito
+    document.body.addEventListener('click', async (e) => {
+      const btn = e.target.closest('.wb-add-btn');
+      if (!btn) return;
+
+      e.preventDefault();
+      setBusy(btn, true);
+      try {
+        let variantId = btn.dataset.variantId;
+        if (!variantId) {
+          // No tenemos id, cargamos por handle
+          const handle = btn.dataset.handle;
+          if (!handle) throw new Error('Falta identificador de producto');
+          const variant = await loadFirstAvailableVariant(handle);
+          variantId = variant.id;
+        }
+        await addVariant(Number(variantId), 1);
+        refreshMiniCart();
+        btn.textContent = 'Añadido ✓';
+        setTimeout(() => { btn.textContent = btn.dataset.originalText; }, 1500);
+      } catch (err) {
+        console.error(err);
+        alert(err.message || 'Error al añadir al carrito');
+        btn.textContent = 'Reintentar';
+        setTimeout(() => { btn.textContent = btn.dataset.originalText; }, 1500);
+      } finally {
+        setBusy(btn, false);
+      }
+    });
+  });
+
+
+
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const edadSel = document.querySelector('select[name="edad"]');
+
+    // Opciones de edad por especie (value debe coincidir con tus tablas FACTORS_BURGERS)
+    const AGE_OPTIONS = {
+      perro: [
+        { value: 'baby0',  label: 'Cachorro 0–3 meses' },
+        { value: 'baby4',  label: 'Cachorro 4–6 meses' },
+        { value: 'baby6',  label: 'Cachorro 7–9 meses' },
+        { value: 'baby10', label: 'Cachorro 10–11 meses' },
+        { value: 'adulto', label: 'Adulto (2–8 años)' },
+        { value: 'senior', label: 'Senior (+8 años)' },
+      ],
+      gato: [
+        { value: 'baby0',  label: 'Gatito 0–2 meses' },
+        { value: 'baby3',  label: 'Gatito 3–4 meses' },
+        { value: 'baby5',  label: 'Gatito 5–6 meses' },
+        { value: 'adulto', label: 'Adulto (1+ años)' },
+        { value: 'senior', label: 'Senior (+8 años)' },
+      ],
+    };
+
+    function getAnimal() {
+      return document.querySelector('input[name="animal"]:checked')?.value || null;
+    }
+
+    function populateAgeOptions(species, keepValue) {
+      if (!edadSel || !species || !AGE_OPTIONS[species]) return;
+      const prev = keepValue ?? edadSel.value;
+
+      // limpia y rellena
+      edadSel.innerHTML = '';
+      AGE_OPTIONS[species].forEach(opt => {
+        const o = document.createElement('option');
+        o.value = opt.value;
+        o.textContent = opt.label;
+        edadSel.appendChild(o);
+      });
+
+      // intenta mantener selección previa si existe en la nueva lista; si no, selecciona la primera
+      const exists = AGE_OPTIONS[species].some(o => o.value === prev);
+      edadSel.value = exists ? prev : AGE_OPTIONS[species][0].value;
+
+      // dispara change para que persista
+      edadSel.dispatchEvent(new Event('change'));
+    }
+
+    // Rehidrata desde localStorage si tenías persistencia
+    const stateRaw = (() => {
+      try { return localStorage.getItem('wb_calc_quiz_v1'); } catch(_) { return null; }
+    })();
+    const state = stateRaw ? JSON.parse(stateRaw) : null;
+
+    // Al cargar: si ya hay animal elegido, pinta sus opciones; si no, muestra perro por defecto
+    const initialAnimal = getAnimal() || 'perro';
+    populateAgeOptions(initialAnimal, state?.inputs?.edad);
+
+    // Cuando cambie el animal, repinta las opciones de edad
+    document.querySelectorAll('input[name="animal"]').forEach(r => {
+      r.addEventListener('change', () => {
+        const ani = getAnimal() || 'perro';
+        populateAgeOptions(ani);
+      });
+    });
+  });
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.addEventListener('click', (e) => {
+    const addBtn = e.target.closest('.wb-add-btn');
+    if (!addBtn) return;
+
+    // Pequeño delay para dejar que Shopify/T4S procese el add.js
+    setTimeout(() => {
+      document.querySelector('.t4s-site-nav__cart a')?.click();
+    }, 80);
+  });
+});
+</script>
