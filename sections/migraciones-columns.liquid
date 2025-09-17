@@ -41,12 +41,14 @@
       </div>
     {% endif %}
 
-    <div class="relative w-full text-center [@media(max-width:1024px)]:px-6">
-      <h2 class="mig-title [font-family:'Barlow',Helvetica] font-extrabold max-w-[1600px] text-[30px] lg:text-[64px] lg:text-center leading-[1]">
-        {{ section.settings.title_prefix }}
-        <span class="highlight">{{ section.settings.title_highlight }}</span>
-      </h2>
-    </div>
+    {% if section.settings.title_prefix %}
+      <div class="relative w-full text-center [@media(max-width:1024px)]:px-6">
+        <h2 class="mig-title [font-family:'Barlow',Helvetica] font-extrabold max-w-[1600px] text-[30px] lg:text-[64px] lg:text-center leading-[1]">
+          {{ section.settings.title_prefix }}
+          <span class="highlight">{{ section.settings.title_highlight }}</span>
+        </h2>
+      </div>
+    {% endif %}
   </div>
 
   <!-- GRID / SLIDER -->
