@@ -34,15 +34,15 @@
       <!-- Pregunta animal -->
       <h3 class="font-bold text-[#004623] text-[15px] mb-6">¿Quién es el rey de la casa?</h3>
       <div class="inline-flex items-center gap-2 w-full">
-        <label class="rounded-xl border border-[#d9d9c8] bg-white cursor-pointer w-full has-[:checked]:bg-[#D9D9C8]">
-          <input type="radio" name="animal" value="perro" class="hidden">
+        <label class="rounded-xl border border-[#d9d9c8] bg-white cursor-pointer w-full ">
+          <input type="radio" name="animal" value="perro" class="vh-radio">
           <div class="p-6 flex flex-col items-center gap-4 py-4">
             <img alt="Perro" src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_9_4.png?v=1757927045">
             <div class="font-bold text-[#004623] text-[16.5px] text-center">Perro</div>
           </div>
         </label>
-        <label class="rounded-xl border border-[#d9d9c8] bg-white cursor-pointer w-full has-[:checked]:bg-[#D9D9C8]">
-          <input type="radio" name="animal" value="gato" class="hidden">
+        <label class="rounded-xl border border-[#d9d9c8] bg-white cursor-pointer w-full ">
+          <input type="radio" name="animal" value="gato" class="vh-radio">
           <div class="p-6 flex flex-col items-center gap-4 py-4">
             <img alt="Gato" src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_9_6.png?v=1757945998">
             <div class="font-bold text-[#004623] text-[16.5px] text-center">Gato</div>
@@ -133,8 +133,8 @@
       <h3 class="font-bold text-[#004623] text-[15px] mb-6">¿Qué quieres que coma?</h3>
       <div class="flex flex-col gap-4 w-full">
         <!-- Card Burgers -->
-        <label class="rounded-xl border border-[#d9d9c8] bg-white cursor-pointer w-full has-[:checked]:bg-[#D9D9C8] p-4">
-          <input type="radio" name="comida" value="burgers" class="hidden">
+        <label class="rounded-xl border border-[#d9d9c8] bg-white cursor-pointer w-full  p-4">
+          <input type="radio" name="comida" value="burgers" class="vh-radio">
           <div class="flex flex-row items-center gap-4">
             <img
               alt="Pienso"
@@ -146,8 +146,8 @@
         </label>
 
         <!-- Card Cocinada -->
-        <label class="rounded-xl border border-[#d9d9c8] bg-white cursor-pointer w-full has-[:checked]:bg-[#D9D9C8] p-4">
-          <input type="radio" name="comida" value="cooked" class="hidden">
+        <label class="rounded-xl border border-[#d9d9c8] bg-white cursor-pointer w-full  p-4">
+          <input type="radio" name="comida" value="cooked" class="vh-radio">
           <div class="flex flex-row items-center gap-4">
             <img
               alt="Cocinada"
@@ -164,18 +164,18 @@
         ¿Cuál es el nivel de actividad de tu <span class="animal-label">peludo</span>?
       </h3>
       <div class="flex flex-col gap-4">
-        <label class="rounded-xl border border-[#d9d9c8] bg-white cursor-pointer has-[:checked]:bg-[#D9D9C8] p-4">
-          <input type="radio" name="actividad" value="bajo" class="hidden">
+        <label class="rounded-xl border border-[#d9d9c8] bg-white cursor-pointer  p-4">
+          <input type="radio" name="actividad" value="bajo" class="vh-radio">
           <div class="font-bold text-[#004623] text-[16px]">Bajo</div>
           <p class="text-[#7F7D7B] text-[13px]">Menos de 1 hora de paseos diarios de baja intensidad</p>
         </label>
-        <label class="rounded-xl border border-[#d9d9c8] bg-white cursor-pointer has-[:checked]:bg-[#D9D9C8] p-4">
-          <input type="radio" name="actividad" value="moderado" class="hidden">
+        <label class="rounded-xl border border-[#d9d9c8] bg-white cursor-pointer  p-4">
+          <input type="radio" name="actividad" value="moderado" class="vh-radio">
           <div class="font-bold text-[#004623] text-[16px]">Moderado</div>
           <p class="text-[#7F7D7B] text-[13px]">Paseos diarios de 1 a 2 horas</p>
         </label>
-        <label class="rounded-xl border border-[#d9d9c8] bg-white cursor-pointer has-[:checked]:bg-[#D9D9C8] p-4">
-          <input type="radio" name="actividad" value="alto" class="hidden">
+        <label class="rounded-xl border border-[#d9d9c8] bg-white cursor-pointer  p-4">
+          <input type="radio" name="actividad" value="alto" class="vh-radio">
           <div class="font-bold text-[#004623] text-[16px]">Alto</div>
           <p class="text-[#7F7D7B] text-[13px]">Más de 2 horas de paseo intenso sin correa</p>
         </label>
@@ -209,7 +209,7 @@
       {% endcomment %}
 
       <div class="inline-flex items-center gap-2 w-full my-6">
-        <div class="rounded-xl border border-[#d9d9c8] bg-white cursor-pointer w-full has-[:checked]:bg-[#D9D9C8]">
+        <div class="rounded-xl border border-[#d9d9c8] bg-white cursor-pointer w-full ">
           <div class="p-6 flex flex-col items-center py-4">
             <img
               alt="Perro"
@@ -1971,46 +1971,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 80);
   });
 });
-
 </script>
 
 <style>
- .calculadora-container.open{
-  pointer-events: auto !important;
-  -webkit-transform: translateZ(0); /* fuerza layer en iOS */
-  touch-action: manipulation;       /* elimina retrasos de tap */
+  /* Ocultar sin romper el click del label en iOS */
+.vh-radio{
+  position:absolute !important;
+  opacity:0 !important;
+  width:1px !important;
+  height:1px !important;
+  margin:0 !important;
+  padding:0 !important;
+  pointer-events:none; /* el label recibe el tap */
 }
-#calculadora-bg { pointer-events: none; }
-#calculadora-bg.active { pointer-events: auto; }
- .quiz-next-btn,
-.quiz-prev-btn,
-.quiz-restart-btn,
-.wb-add-btn,
-.t4s-btn-color-primary {
-  touch-action: manipulation;
+label > input[type="radio"]:checked + div{
+  background:#D9D9C8 !important;
 }
-/* opcional, más suave en iOS */
-.calculadora-container{
-  right: 0; transform: translateX(100%); transition: transform .32s cubic-bezier(.4,0,.2,1);
-}
-.calculadora-container.open{
-  transform: translateX(0);
-}
-
 </style>
-<script>
-  function openCalc() {
-  calc.classList.add('open');
-  calc.style.pointerEvents = 'auto'; // <-- fuerza clicable ya mismo
-  overlay.classList.add('active');
-  document.body.classList.add('calc-open');
-  requestAnimationFrame(sizeWrapper);
-}
-function closeCalc() {
-  calc.classList.remove('open');
-  calc.style.pointerEvents = ''; // vuelve al CSS
-  overlay.classList.remove('active');
-  document.body.classList.remove('calc-open');
-}
-
-</script>
