@@ -1972,3 +1972,70 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+
+<style>
+  /* pon esto una sola vez */
+.vh-radio{
+  position:absolute !important;
+  opacity:0 !important;
+  width:1px !important;
+  height:1px !important;
+  margin:0 !important;
+  padding:0 !important;
+  pointer-events:none; /* el tap va al label */
+}
+
+/* pinta el seleccionado SIN :has() (100% compatible iOS) */
+label > input[type="radio"]:checked + div{
+  background:#D9D9C8 !important;
+}
+
+/* evita que el primer tap seleccione texto en iOS */
+label > div{
+  -webkit-user-select:none;
+  user-select:none;
+  touch-action:manipulation;
+  cursor:pointer;
+}
+
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const panel = document.getElementById('calculadora-container');
+  panel.querySelectorAll('input[type="radio"].hidden').forEach((inp) => {
+    inp.classList.remove('hidden');
+    inp.classList.add('vh-radio');
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const panel = document.getElementById('calculadora-container');
+
+  function handlePick(e){
+    const label = e.target.closest('label');
+    if (!label || !panel.contains(label)) return;
+
+    const input = label.querySelector('input[type="radio"]');
+    if (!input) return;
+
+    // Evita que iOS seleccione texto y “coma” el tap
+    e.preventDefault();
+
+    if (!input.checked){
+      input.checked = true;
+
+      // desmarca radios del mismo grupo
+      panel.querySelectorAll(`input[type="radio"][name="${input.name}"]`).forEach(r => {
+        if (r !== input) r.checked = false;
+      });
+
+      // dispara change para tu lógica existente
+      input.dispatchEvent(new Event('change', { bubbles:true }));
+    }
+  }
+
+  // pointerup funciona mejor que click/touchend en iOS modernos
+  panel.addEventListener('pointerup', handlePick, { passive:false });
+});
+</script>
