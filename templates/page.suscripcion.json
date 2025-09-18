@@ -237,6 +237,87 @@
             "rating": 5,
             "text": "Hemos probado la nueva variedad de snacks\ny nos han gustado muchísimo. Bolsa en formato cómodo de llevar, chuches de tamaño de bocadito que me parecen muy prácticos. Por otra parte, la variedad está muy bien y más si tienes mascota con algún tipo de alergia. La composición muy bien descrita y para que mentir, una pasada. La verdad es que estamos muy contentos."
           }
+        },
+        "review_3e33Fj": {
+          "type": "review",
+          "settings": {
+            "avatar_alt": "Lola Mata",
+            "name": "Lola Mata",
+            "rating": 5,
+            "text": "Estoy encantada con Wild Balance. Desde que probé las latas noté la diferencia con el resto de marcas. Ahora he probado la comida natural cocinada y a mis perros les encantan y he notado un cambio increíble en su pelo, energía...no se dejan nada en el plato. Me encanta porque por fin he encontrado una comida perfecta para ellos totalmente natural y no tengo que preocuparme yo de tener que prepararla."
+          }
+        },
+        "review_Nmki8J": {
+          "type": "review",
+          "settings": {
+            "avatar_alt": "Avatar",
+            "name": "Noelia",
+            "rating": 5,
+            "text": "Estoy encantada con la nueva comida cocida, a mi perrita Ginny le encanta, no puede comer casi de nada debido a una enfermedad gastrointestinal crónica y la comida de Wild Balance le sienta de maravilla y lo mejor que son ingredientes 100% naturales de calidad y eso se nota, la devora🥰"
+          }
+        },
+        "review_MaAATF": {
+          "type": "review",
+          "settings": {
+            "avatar_alt": "Avatar",
+            "name": "Ana Garrido",
+            "rating": 5,
+            "text": "A Yara le encanta la comida cocinada de Wild Balance.\nAcabamos de probar las nuevas recetas de Comida Cocinada, concretamente la de Pollo y la de Salmón. Ambas le han encantado!!!\nVienen ya preparadas y congeladas para ir sacando a diario y me parece súper práctico.\nQue lleve la verdura incluida es un punto muy positivo ya que con anteriores marcas teníamos que añadirlas y era peor!!\nSin duda nos quedamos con la #revolucionWildBalance\nGracias equipo!!!!\nAna y Yara 🐩"
+          }
+        },
+        "review_TAUb4T": {
+          "type": "review",
+          "settings": {
+            "avatar_alt": "Avatar",
+            "name": "Marta Calce",
+            "rating": 5,
+            "text": "Me encantó la dieta cocinada, desde la presentación súper cómoda, pasando por la palatabilidad, que a mis perros les encantó (incluso uno de mis gatos robó un trocito de comida y lo disfrutó un montón), hasta cómo les sentó. Cacas perfectas y muy buenas digestiones! Súper súper recomendable"
+          }
+        },
+        "review_gQgm8R": {
+          "type": "review",
+          "settings": {
+            "avatar_alt": "Avatar",
+            "name": "Beatriz González",
+            "rating": 5,
+            "text": "Hemos probado la comida cocinada natural y está de 10. El formato es ideal, el producto viene congelado y perfectamente empaquetado y aislado. A mi perrete le encanta y le sienta genial. No se puede pedir más. Estamos encantados."
+          }
+        },
+        "review_gAJnfy": {
+          "type": "review",
+          "settings": {
+            "avatar_alt": "Avatar",
+            "name": "Teddi",
+            "rating": 5,
+            "text": "Confío 100% en la calidad de la comida barf de Wild Balance. Hemos probado unas cuantas marcas de comida barf y este es el preferido de mis perros y el mío por sus ingredientes y por la porciones pequeños que son fáciles de administrar."
+          }
+        },
+        "review_48cgJy": {
+          "type": "review",
+          "settings": {
+            "avatar_alt": "Avatar",
+            "name": "César Nistal",
+            "rating": 5,
+            "text": "Desde que decidí pasar a dieta BARF les compro a ellos. El formato y la variedad son inmejorables. A Tristán le encanta y siempre que vamos a comprar nos atienden fenomenal. Estamos encantados."
+          }
+        },
+        "review_AYB7aq": {
+          "type": "review",
+          "settings": {
+            "avatar_alt": "Avatar",
+            "name": "Alicia CB",
+            "rating": 5,
+            "text": "Excelente comida natural. Estamos encantados con lo bien que le sienta. Hemos probado ya la de pollo, pavo, conejo y salmón. Siempre hay comida natural en su dieta ya que es epiléptico. Gracias por hacer una comida competente. ❤️"
+          }
+        },
+        "review_HRPHhG": {
+          "type": "review",
+          "settings": {
+            "avatar_alt": "Avatar",
+            "name": "Ichi",
+            "rating": 5,
+            "text": "Mi opinión es sobre la comida enlatada: Composición perfecta, ingredientes de calidad, huele de maravilla, mi perro la devora, entregas rápidas y sin problemas,...¿Qué más se puede pedir?"
+          }
         }
       },
       "block_order": [
@@ -244,7 +325,16 @@
         "review_KU4hKC",
         "review_XhcFtX",
         "review_e7zBCr",
-        "review_afq7Jc"
+        "review_afq7Jc",
+        "review_3e33Fj",
+        "review_Nmki8J",
+        "review_MaAATF",
+        "review_TAUb4T",
+        "review_gQgm8R",
+        "review_gAJnfy",
+        "review_48cgJy",
+        "review_AYB7aq",
+        "review_HRPHhG"
       ],
       "name": "Migraciones reviews",
       "settings": {
