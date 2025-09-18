@@ -53,9 +53,37 @@
 
   <!-- REVIEWS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
-  <script defer src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.4/dist/js/splide-extension-auto-scroll.min.js"
+  ></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      new Splide('#reviews-splide', {
+        type: 'loop',
+        drag: 'free',
+        focus: 'left',
+        gap: '24px',
+        perPage: 1,
+        pagination: false,
+        arrows: false,
+        autoScroll: {
+          speed: 0.8,
+          pauseOnHover: true,
+          pauseOnFocus: true,
+        },
+        breakpoints: {
+          640: { perPage: 2 },
+          1024: { perPage: 3 },
+          1280: { perPage: 4 },
+        },
+      }).mount(window.splide.Extensions);
+    });
+  </script>
+
   <section class="relative py-10">
-    <!-- fades laterales -->
+    <!-- fades laterales opcionales -->
     <div
       class="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent z-10"
     ></div>
@@ -64,21 +92,8 @@
     ></div>
 
     <div class="mx-auto max-w-7xl px-4">
-      <div class="mb-6 flex items-center justify-between gap-4">
-        <h2 class="text-xl font-semibold">Qué dicen en Google</h2>
+      <h2 class="mb-6 text-xl font-semibold">Qué dicen en Google</h2>
 
-        <!-- Los botones los pone Splide; si quieres, puedes usar estos: -->
-        <div class="flex items-center gap-2">
-          <button
-            class="splide__arrow splide__arrow--prev !static !m-0 rounded-full border bg-white p-2 shadow-sm hover:bg-gray-50"
-          ></button>
-          <button
-            class="splide__arrow splide__arrow--next !static !m-0 rounded-full border bg-white p-2 shadow-sm hover:bg-gray-50"
-          ></button>
-        </div>
-      </div>
-
-      <!-- SPLIDE -->
       <div id="reviews-splide" class="splide">
         <div class="splide__track">
           <ul class="splide__list">
@@ -113,82 +128,16 @@
                     <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.5 29.3 36 24 36a12 12 0 110-24c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.5 6.1 29.5 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 19.5-8.9 19.5-20c0-1.3-.1-2.2-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 16.3 18.9 12 24 12c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.5 6.1 29.5 4 24 4 16.1 4 9.3 8.4 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 10.1-2 13.6-5.4l-6.3-5.2C29.2 35.7 26.8 36 24 36c-5.2 0-9.6-3.5-11.2-8.2l-6.6 5.1C9.2 39.6 16 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-1.3 3.9-5.4 6.5-11.3 6.5-5.2 0-9.6-3.5-11.2-8.2l-6.6 5.1C9.2 39.6 16 44 24 44c11.1 0 19.5-8.9 19.5-20 0-1.3-.1-2.2-.4-3.5z"/>
                   </svg>
                 </header>
-                <p class="text-sm leading-6 text-gray-700">
-                  Lorem ipsum dolor sit amet consectetur. Quis nisl fermentum id vulputate nullam ut non mattis nibh.
-                  Tellus.
-                </p>
+                <p class="text-sm leading-6 text-gray-700">Lorem ipsum dolor sit amet consectetur…</p>
               </article>
             </li>
 
-            <!-- Duplica más slides -->
-            <li class="splide__slide">
-              <article class="h-full rounded-2xl border bg-white p-5 shadow-sm">
-                <header class="mb-3 flex items-center justify-between">
-                  <div class="flex items-center gap-3">
-                    <img src="https://i.pravatar.cc/64?img=12" class="h-9 w-9 rounded-full" alt="">
-                    <div>
-                      <p class="text-sm font-medium leading-none">Dolor sit</p>
-                      <div class="mt-1 flex items-center gap-1" aria-label="5 de 5">
-                        <svg class="h-4 w-4 fill-yellow-400" viewBox="0 0 20 20">
-                          <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.562-.953L10 0l2.95 5.957 6.562.953-4.756 4.635 1.122 6.545z"/>
-                        </svg>
-                        <svg class="h-4 w-4 fill-yellow-400" viewBox="0 0 20 20">
-                          <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.562-.953L10 0l2.95 5.957 6.562.953-4.756 4.635 1.122 6.545z"/>
-                        </svg>
-                        <svg class="h-4 w-4 fill-yellow-400" viewBox="0 0 20 20">
-                          <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.562-.953L10 0l2.95 5.957 6.562.953-4.756 4.635 1.122 6.545z"/>
-                        </svg>
-                        <svg class="h-4 w-4 fill-yellow-400" viewBox="0 0 20 20">
-                          <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.562-.953L10 0l2.95 5.957 6.562.953-4.756 4.635 1.122 6.545z"/>
-                        </svg>
-                        <svg class="h-4 w-4 fill-yellow-400" viewBox="0 0 20 20">
-                          <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.562-.953L10 0l2.95 5.957 6.562.953-4.756 4.635 1.122 6.545z"/>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <img
-                    src="https://www.gstatic.com/images/branding/product/1x/gsa_64dp.png"
-                    class="h-5 w-5"
-                    alt="Google"
-                  >
-                </header>
-                <p class="text-sm leading-6 text-gray-700">Massa sed dui urna dis nam a eget faucibus dictum.</p>
-              </article>
-            </li>
-
-            <!-- Añade 4–8 reviews más... -->
+            <!-- duplica más <li class="splide__slide">… -->
           </ul>
         </div>
-
-        <!-- Paginación -->
-        <div class="splide__pagination !static mt-6"></div>
       </div>
     </div>
   </section>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      new Splide('#reviews-splide', {
-        type: 'loop',
-        autoplay: true,
-        interval: 2500, // velocidad del autoscroll
-        pauseOnHover: true,
-        pauseOnFocus: true,
-        arrows: true,
-        pagination: true,
-        perMove: 1,
-        gap: '24px',
-        speed: 600,
-        // **Breakpoints sólidos** (evita el bug de widths raros)
-        perPage: 1,
-        breakpoints: {
-          640: { perPage: 2 },
-          1024: { perPage: 3 },
-          1280: { perPage: 4 },
-        },
-      }).mount();
-    });
-  </script>
 
   <!-- Botón -->
   {% if section.settings.btn_label != blank and section.settings.btn_link != blank %}
