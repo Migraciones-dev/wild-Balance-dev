@@ -227,13 +227,24 @@
             "rating": 5,
             "text": "Super Recomendable\nTenía muchísimas dudas antes de hacer el pedido y me las resolvieron todas con muchísima paciencia y amabilidad. Así da gusto!\nEl pedido me llegó a las 10:30h de la mañana súper fresquito. Todo de 10. Sin duda volveré a comprar"
           }
+        },
+        "review_afq7Jc": {
+          "type": "review",
+          "settings": {
+            "avatar": "shopify://shop_images/pexels-annakester-10376429_1.jpg",
+            "avatar_alt": "Avatar",
+            "name": "Teresa Cantero",
+            "rating": 5,
+            "text": "Hemos probado la nueva variedad de snacks\ny nos han gustado muchísimo. Bolsa en formato cómodo de llevar, chuches de tamaño de bocadito que me parecen muy prácticos. Por otra parte, la variedad está muy bien y más si tienes mascota con algún tipo de alergia. La composición muy bien descrita y para que mentir, una pasada. La verdad es que estamos muy contentos."
+          }
         }
       },
       "block_order": [
         "review_zk7DpC",
         "review_KU4hKC",
         "review_XhcFtX",
-        "review_e7zBCr"
+        "review_e7zBCr",
+        "review_afq7Jc"
       ],
       "name": "Migraciones reviews",
       "settings": {
