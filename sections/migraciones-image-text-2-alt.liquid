@@ -73,24 +73,6 @@
             </svg>
           </a>
         {% endif %}
-
-        <div class="flex items-center gap-2 mt-2">
-          <!-- Icono fijo (no editable) -->
-          <svg
-            width="16"
-            height="17"
-            viewBox="0 0 16 17"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-            focusable="false"
-          >
-            <path d="M8 5.43709V8.10376L10 10.1038M14 8.10376C14 8.89169 13.8448 9.67191 13.5433 10.3999C13.2417 11.1278 12.7998 11.7892 12.2426 12.3464C11.6855 12.9036 11.0241 13.3455 10.2961 13.647C9.56815 13.9486 8.78793 14.1038 8 14.1038C7.21207 14.1038 6.43185 13.9486 5.7039 13.647C4.97595 13.3455 4.31451 12.9036 3.75736 12.3464C3.20021 11.7892 2.75825 11.1278 2.45672 10.3999C2.15519 9.67191 2 8.89169 2 8.10376C2 6.51246 2.63214 4.98634 3.75736 3.86112C4.88258 2.7359 6.4087 2.10376 8 2.10376C9.5913 2.10376 11.1174 2.7359 12.2426 3.86112C13.3679 4.98634 14 6.51246 14 8.10376Z" stroke="#004623" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <div class="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[13.2px] tracking-[0] leading-[18.9px] text-[#004623] mt-1">
-            {{ section.settings.time_text }}
-          </div>
-        </div>
       </div>
     </div>
 
@@ -225,12 +207,7 @@
       "id": "button_link",
       "label": "Enlace del botón"
     },
-    {
-      "type": "text",
-      "id": "time_text",
-      "label": "Texto de tiempo (junto al icono)",
-      "default": "3 minutos"
-    },
+
     {
       "type": "image_picker",
       "id": "desktop_fallback",
