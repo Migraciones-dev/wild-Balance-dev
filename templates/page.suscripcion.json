@@ -105,10 +105,12 @@
         "heading_highlight": "costarte más",
         "heading_after": "",
         "body_text": "<p>Con nuestra suscripción olvídate de pedir a última hora, de quedarte sin stock o de pagar de más. Tú eliges cuándo y cómo recibir sus pedidos. Para que tu mascota tenga siempre su comida a tiempo… y tú vivas más tranquilo y feliz.</p>",
+        "mobile_image": "shopify://shop_images/3c2ec2c5b61c9ebd5d5ced3acd9ab2adf12595d6_1_b9e697f0-bec3-4922-90ee-37af790967a5.jpg",
         "mobile_image_alt": "Imagen móvil",
         "button_label": "Calcular mi plan",
         "button_link": "shopify://pages/crea-su-menu",
         "time_text": "",
+        "desktop_fallback": "shopify://shop_images/3c2ec2c5b61c9ebd5d5ced3acd9ab2adf12595d6_1.jpg",
         "desktop_fallback_alt": "Imagen escritorio"
       }
     },
