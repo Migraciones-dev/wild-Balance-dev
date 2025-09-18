@@ -53,27 +53,16 @@
 
   <!-- REVIEWS -->
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scroll-carousel@1.2.7/dist/scroll.carousel.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/scroll-carousel@1.2.7/dist/scroll.carousel.min.js"></script>
+  <div class="my-carousel">
+    <div class="my-slide"></div>
+    <div class="my-slide"></div>
+    <div class="my-slide"></div>
+  </div>
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      new Splide('#reviews-splide', {
-        type: 'loop',
-        drag: 'free',
-        focus: 'left',
-        gap: '24px',
-        perPage: 1,
-        pagination: false,
-        arrows: false,
-        autoScroll: {
-          speed: 0.8,
-          pauseOnHover: true,
-          pauseOnFocus: true,
-        },
-        breakpoints: {
-          640: { perPage: 2 },
-          1024: { perPage: 3 },
-          1280: { perPage: 4 },
-        },
-      }).mount(window.splide.Extensions);
+    new ScrollCarousel('.my-carousel', {
+      autoplay: true,
     });
   </script>
 
