@@ -195,7 +195,7 @@
     }
 
     @media screen and (max-width: 768px) {
-      .slide-track { width: calc(80px * {{ slides_count | times: 2 | default: 2 }}); }
+      .slide-track { width: calc(280px * {{ slides_count | times: 2 | default: 2 }}); }
       @keyframes scroll {
         0%   { transform: translateX(0px); }
         100% { transform: translateX(calc(-80px * {{ slides_count | default: 1 }})); }
