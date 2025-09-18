@@ -217,12 +217,23 @@
             "rating": 5,
             "text": "Agradecer la atención recibida por parte de Almudena en su asesoramiento nutricional, con una información muy clara, precisa, ágil y dándonos respuesta a todo lo que hemos necesitado. Gracias!.\nLos productos son de muy buena calidad, la atención al cliente inmejorable."
           }
+        },
+        "review_e7zBCr": {
+          "type": "review",
+          "settings": {
+            "avatar": "shopify://shop_images/pexels-annakester-10376429_1.jpg",
+            "avatar_alt": "Avatar",
+            "name": "Lorena",
+            "rating": 5,
+            "text": "Super Recomendable\nTenía muchísimas dudas antes de hacer el pedido y me las resolvieron todas con muchísima paciencia y amabilidad. Así da gusto!\nEl pedido me llegó a las 10:30h de la mañana súper fresquito. Todo de 10. Sin duda volveré a comprar"
+          }
         }
       },
       "block_order": [
         "review_zk7DpC",
         "review_KU4hKC",
-        "review_XhcFtX"
+        "review_XhcFtX",
+        "review_e7zBCr"
       ],
       "name": "Migraciones reviews",
       "settings": {
