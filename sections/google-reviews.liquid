@@ -55,7 +55,15 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scroll-carousel@1.2.7/dist/scroll.carousel.min.css">
   <script src="https://cdn.jsdelivr.net/npm/scroll-carousel@1.2.7/dist/scroll.carousel.min.js"></script>
+
+  <style>
+    /* Oculta la scrollbar y evita saltos */
+    .my-carousel { scrollbar-width: none; -ms-overflow-style: none; }
+    .my-carousel::-webkit-scrollbar { display: none; }
+  </style>
+
   <div class="my-carousel">
+    <!-- Slides originales -->
     <div class="my-slide">
       <article class="h-full rounded-2xl border bg-white p-5 shadow-sm">
         <header class="mb-3 flex items-center justify-between">
@@ -83,83 +91,53 @@
             </div>
           </div>
           <svg class="h-5 w-5" viewBox="0 0 48 48">
-            <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.5 29.3 36 24 36a12 12 0 110-24c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.5 6.1 29.5 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 19.5-8.9 19.5-20c0-1.3-.1-2.2-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 16.3 18.9 12 24 12c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.5 6.1 29.5 4 24 4 16.1 4 9.3 8.4 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 10.1-2 13.6-5.4l-6.3-5.2C29.2 35.7 26.8 36 24 36c-5.2 0-9.6-3.5-11.2-8.2l-6.6 5.1C9.2 39.6 16 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-1.3 3.9-5.4 6.5-11.3 6.5-5.2 0-9.6-3.5-11.2-8.2l-6.6 5.1C9.2 39.6 16 44 24 44c11.1 0 19.5-8.9 19.5-20 0-1.3-.1-2.2-.4-3.5z"/>
+            <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.5 29.3 36 24 36a12 12 0 110-24c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.5 6.1 29.5 4 24 4 16.1 4 9.3 8.4 6.3 14.7z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 16.3 18.9 12 24 12c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.5 6.1 29.5 4 24 4 16.1 4 9.3 8.4 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 10.1-2 13.6-5.4l-6.3-5.2C29.2 35.7 26.8 36 24 36c-5.2 0-9.6-3.5-11.2-8.2l-6.6 5.1C9.2 39.6 16 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-1.3 3.9-5.4 6.5-11.3 6.5-5.2 0-9.6-3.5-11.2-8.2l-6.6 5.1C9.2 39.6 16 44 24 44c11.1 0 19.5-8.9 19.5-20 0-1.3-.1-2.2-.4-3.5z"/>
           </svg>
         </header>
         <p class="text-sm leading-6 text-gray-700">Lorem ipsum dolor sit amet consectetur…</p>
       </article>
     </div>
-    <div class="my-slide">
-      <article class="h-full rounded-2xl border bg-white p-5 shadow-sm">
-        <header class="mb-3 flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <img src="https://i.pravatar.cc/64?img=1" class="h-9 w-9 rounded-full" alt="">
-            <div>
-              <p class="text-sm font-medium leading-none">Lorem ipsum</p>
-              <div class="mt-1 flex items-center gap-1" aria-label="5 de 5">
-                <svg class="h-4 w-4 fill-yellow-400" viewBox="0 0 20 20">
-                  <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.562-.953L10 0l2.95 5.957 6.562.953-4.756 4.635 1.122 6.545z"/>
-                </svg>
-                <svg class="h-4 w-4 fill-yellow-400" viewBox="0 0 20 20">
-                  <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.562-.953L10 0l2.95 5.957 6.562.953-4.756 4.635 1.122 6.545z"/>
-                </svg>
-                <svg class="h-4 w-4 fill-yellow-400" viewBox="0 0 20 20">
-                  <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.562-.953L10 0l2.95 5.957 6.562.953-4.756 4.635 1.122 6.545z"/>
-                </svg>
-                <svg class="h-4 w-4 fill-yellow-400" viewBox="0 0 20 20">
-                  <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.562-.953L10 0l2.95 5.957 6.562.953-4.756 4.635 1.122 6.545z"/>
-                </svg>
-                <svg class="h-4 w-4 fill-yellow-400" viewBox="0 0 20 20">
-                  <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.562-.953L10 0l2.95 5.957 6.562.953-4.756 4.635 1.122 6.545z"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-          <svg class="h-5 w-5" viewBox="0 0 48 48">
-            <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.5 29.3 36 24 36a12 12 0 110-24c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.5 6.1 29.5 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 19.5-8.9 19.5-20c0-1.3-.1-2.2-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 16.3 18.9 12 24 12c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.5 6.1 29.5 4 24 4 16.1 4 9.3 8.4 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 10.1-2 13.6-5.4l-6.3-5.2C29.2 35.7 26.8 36 24 36c-5.2 0-9.6-3.5-11.2-8.2l-6.6 5.1C9.2 39.6 16 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-1.3 3.9-5.4 6.5-11.3 6.5-5.2 0-9.6-3.5-11.2-8.2l-6.6 5.1C9.2 39.6 16 44 24 44c11.1 0 19.5-8.9 19.5-20 0-1.3-.1-2.2-.4-3.5z"/>
-          </svg>
-        </header>
-        <p class="text-sm leading-6 text-gray-700">Lorem ipsum dolor sit amet consectetur…</p>
-      </article>
-    </div>
-    <div class="my-slide">
-      <article class="h-full rounded-2xl border bg-white p-5 shadow-sm">
-        <header class="mb-3 flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <img src="https://i.pravatar.cc/64?img=1" class="h-9 w-9 rounded-full" alt="">
-            <div>
-              <p class="text-sm font-medium leading-none">Lorem ipsum</p>
-              <div class="mt-1 flex items-center gap-1" aria-label="5 de 5">
-                <svg class="h-4 w-4 fill-yellow-400" viewBox="0 0 20 20">
-                  <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.562-.953L10 0l2.95 5.957 6.562.953-4.756 4.635 1.122 6.545z"/>
-                </svg>
-                <svg class="h-4 w-4 fill-yellow-400" viewBox="0 0 20 20">
-                  <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.562-.953L10 0l2.95 5.957 6.562.953-4.756 4.635 1.122 6.545z"/>
-                </svg>
-                <svg class="h-4 w-4 fill-yellow-400" viewBox="0 0 20 20">
-                  <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.562-.953L10 0l2.95 5.957 6.562.953-4.756 4.635 1.122 6.545z"/>
-                </svg>
-                <svg class="h-4 w-4 fill-yellow-400" viewBox="0 0 20 20">
-                  <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.562-.953L10 0l2.95 5.957 6.562.953-4.756 4.635 1.122 6.545z"/>
-                </svg>
-                <svg class="h-4 w-4 fill-yellow-400" viewBox="0 0 20 20">
-                  <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.562-.953L10 0l2.95 5.957 6.562.953-4.756 4.635 1.122 6.545z"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-          <svg class="h-5 w-5" viewBox="0 0 48 48">
-            <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.5 29.3 36 24 36a12 12 0 110-24c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.5 6.1 29.5 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 19.5-8.9 19.5-20c0-1.3-.1-2.2-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 16.3 18.9 12 24 12c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.5 6.1 29.5 4 24 4 16.1 4 9.3 8.4 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 10.1-2 13.6-5.4l-6.3-5.2C29.2 35.7 26.8 36 24 36c-5.2 0-9.6-3.5-11.2-8.2l-6.6 5.1C9.2 39.6 16 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-1.3 3.9-5.4 6.5-11.3 6.5-5.2 0-9.6-3.5-11.2-8.2l-6.6 5.1C9.2 39.6 16 44 24 44c11.1 0 19.5-8.9 19.5-20 0-1.3-.1-2.2-.4-3.5z"/>
-          </svg>
-        </header>
-        <p class="text-sm leading-6 text-gray-700">Lorem ipsum dolor sit amet consectetur…</p>
-      </article>
-    </div>
+
+    <!-- ...duplica más .my-slide con tus reviews... -->
   </div>
+
   <script>
-    new ScrollCarousel('.my-carousel', {
-      autoplay: true,
+    // 1) Inicializa ScrollCarousel (sin autoplay para no pelearse con nuestro loop)
+    const sc = new ScrollCarousel('.my-carousel', {
+      autoplay: false, // lo controlamos nosotros
+      smartSpeed: true, // opcional si quieres aceleración suave
     });
+
+    // 2) Duplicamos las slides para crear un buffer y que el loop sea perfecto
+    const container = document.querySelector('.my-carousel');
+    const originalSlides = Array.from(container.children);
+    const frag = document.createDocumentFragment();
+    originalSlides.forEach((slide) => frag.appendChild(slide.cloneNode(true)));
+    container.appendChild(frag);
+
+    // 3) Autoscroll infinito suave
+    let speed = 0.6; // px por frame aprox (sube/baja a gusto)
+    let running = true;
+
+    function tick() {
+      if (running) {
+        container.scrollLeft += speed;
+        const half = container.scrollWidth / 2;
+        // cuando pasamos la mitad (contenido clonado), reseteamos
+        if (container.scrollLeft >= half) {
+          container.scrollLeft -= half;
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+
+    // 4) Pausa al pasar el ratón (UX)
+    container.addEventListener('mouseenter', () => (running = false));
+    container.addEventListener('mouseleave', () => (running = true));
+
+    // (Opcional) Soporte RTL/izquierda
+    // speed = -Math.abs(speed);  // para ir hacia la izquierda, por ejemplo
   </script>
 
   <!-- Botón -->
