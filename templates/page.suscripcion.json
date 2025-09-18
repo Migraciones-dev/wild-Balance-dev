@@ -217,6 +217,57 @@
         "title_color": "#004623",
         "highlight_color": "#004623",
         "text_color": "#004623",
+        "accent_color": "#ffcd00"
+      }
+    },
+    "migraciones_video_JUymTh": {
+      "type": "migraciones-video",
+      "blocks": {
+        "card_Cp7nX7": {
+          "type": "card",
+          "settings": {
+            "image_alt": "Imagen card",
+            "step_number": "",
+            "card_title": "Crea tu plan",
+            "card_text": "Cuéntanos un poco sobre tu peludo en menos de 2 min."
+          }
+        },
+        "card_AF8pJQ": {
+          "type": "card",
+          "settings": {
+            "image_alt": "Imagen card",
+            "step_number": "",
+            "card_title": "Pruébalo con un 10%",
+            "card_text": "Te enviaremos una caja con un descuento especial para que pruebes comida de la mejor calidad."
+          }
+        },
+        "card_NxMpBw": {
+          "type": "card",
+          "settings": {
+            "image_alt": "Imagen card",
+            "step_number": "",
+            "card_title": "Enamórate",
+            "card_text": "Si os encanta, solo elige la frecuencia de entrega. Sin permanencia, 100% flexible."
+          }
+        }
+      },
+      "block_order": [
+        "card_Cp7nX7",
+        "card_AF8pJQ",
+        "card_NxMpBw"
+      ],
+      "name": "Migraciones video",
+      "settings": {
+        "title_prefix": "Cómo funciona",
+        "title_highlight": "nuestra suscripción",
+        "decor_image_alt": "Decorativo",
+        "cards_link": "",
+        "btn_label": "Empezar mi plan con un -10%",
+        "btn_link": "",
+        "bg_color": "#ffffff",
+        "title_color": "#004623",
+        "highlight_color": "#004623",
+        "text_color": "#004623",
         "accent_color": "#FFCD00"
       }
     }
@@ -227,6 +278,7 @@
     "migraciones_columns_qzCUjK",
     "migraciones_image_text_2_bDe394",
     "migraciones_image_width_text_YALaJJ",
-    "google_reviews_b7bFMC"
+    "google_reviews_b7bFMC",
+    "migraciones_video_JUymTh"
   ]
 }
