@@ -191,6 +191,7 @@
         "review_6yn84k": {
           "type": "review",
           "settings": {
+            "avatar": "shopify://shop_images/pexels-yaroslav-shuraev-9632107.jpg",
             "avatar_alt": "Avatar",
             "name": "Regina",
             "rating": 5,
@@ -200,6 +201,7 @@
         "review_aKUL9r": {
           "type": "review",
           "settings": {
+            "avatar": "shopify://shop_images/pexels-karolina-grabowska-5426874.jpg",
             "avatar_alt": "Avatar",
             "name": "Natividad",
             "rating": 5,
@@ -209,6 +211,7 @@
         "review_48cgJy": {
           "type": "review",
           "settings": {
+            "avatar": "shopify://shop_images/pexels-samson-katt-5257628.jpg",
             "avatar_alt": "Avatar",
             "name": "César Nistal",
             "rating": 5,
@@ -218,6 +221,7 @@
         "review_69iVLR": {
           "type": "review",
           "settings": {
+            "avatar": "shopify://shop_images/pexels-goodcitizen-1612846.jpg",
             "avatar_alt": "Avatar",
             "name": "Lydia",
             "rating": 5,
@@ -227,6 +231,7 @@
         "review_MaAATF": {
           "type": "review",
           "settings": {
+            "avatar": "shopify://shop_images/pexels-annakester-10376429.jpg",
             "avatar_alt": "Avatar",
             "name": "Ana Garrido",
             "rating": 5,
@@ -236,6 +241,7 @@
         "review_HRPHhG": {
           "type": "review",
           "settings": {
+            "avatar": "shopify://shop_images/jay-wennington-CdK2eYhWfQ0-unsplash.jpg",
             "avatar_alt": "Avatar",
             "name": "Ichi",
             "rating": 5,
@@ -245,6 +251,7 @@
         "review_TAUb4T": {
           "type": "review",
           "settings": {
+            "avatar": "shopify://shop_images/pexels-david-kanigan-239927285-28182823.jpg",
             "avatar_alt": "Avatar",
             "name": "Marta Calce",
             "rating": 5,
@@ -254,6 +261,7 @@
         "review_Jm8APF": {
           "type": "review",
           "settings": {
+            "avatar": "shopify://shop_images/pexels-tony-jimenez-238544431-12244300.jpg",
             "avatar_alt": "Avatar",
             "name": "Lorena",
             "rating": 5,
@@ -263,6 +271,7 @@
         "review_gQgm8R": {
           "type": "review",
           "settings": {
+            "avatar": "shopify://shop_images/pexels-helenalopes-7932711_2e3b5308-98cb-4b04-8e3e-73e7e3a17373.jpg",
             "avatar_alt": "Avatar",
             "name": "Beatriz González",
             "rating": 5,
@@ -272,6 +281,7 @@
         "review_gAJnfy": {
           "type": "review",
           "settings": {
+            "avatar": "shopify://shop_images/pexels-thirdman-9313625.jpg",
             "avatar_alt": "Avatar",
             "name": "Teddi",
             "rating": 5,
@@ -281,6 +291,7 @@
         "review_AYB7aq": {
           "type": "review",
           "settings": {
+            "avatar": "shopify://shop_images/pexels-polina-tankilevitch-5540165_3d032efe-4808-473a-b2f4-83abac53ad8d.jpg",
             "avatar_alt": "Avatar",
             "name": "Alicia CB",
             "rating": 5,
