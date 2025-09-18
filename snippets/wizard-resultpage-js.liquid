@@ -1,28 +1,24 @@
 <script>
-
-function prqQuizCallback(quizResponse){
-  console.error("quizcallback");
-  console.error(quizResponse);
-  let searchParams = new URLSearchParams(window.location.search);
-  let retake = searchParams.get('retake');
-  localStorage.setItem('response', JSON.stringify(quizResponse));
-  console.log('response', JSON.stringify(quizResponse))
-  let url = "https://wildbalance-app-rocket.fly.dev/insert-data";
-  $.ajax({
-    url: url,
-    type: "POST",
-    dataType: "json",
-    data: JSON.stringify(quizResponse),
-    contentType: 'application/json; charset=UTF-8',
-    success: function(data) {
-      window.location.href = "https://wildbalance.es/pages/wizard-result/" + data['quizId'];
-    },
-    error: function(jqXHR, textStatus, errorThrown) {
-      console.error('errorThrown',errorThrown); 
-    }
-  });
-
-}
-
-
+  function prqQuizCallback(quizResponse) {
+    console.error('quizcallback');
+    console.error(quizResponse);
+    let searchParams = new URLSearchParams(window.location.search);
+    let retake = searchParams.get('retake');
+    localStorage.setItem('response', JSON.stringify(quizResponse));
+    console.log('response', JSON.stringify(quizResponse));
+    let url = 'https://wildbalance-wizard.fly.dev/insert-data';
+    $.ajax({
+      url: url,
+      type: 'POST',
+      dataType: 'json',
+      data: JSON.stringify(quizResponse),
+      contentType: 'application/json; charset=UTF-8',
+      success: function (data) {
+        window.location.href = 'https://wildbalance.es/pages/wizard-result/' + data['quizId'];
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        console.error('errorThrown', errorThrown);
+      },
+    });
+  }
 </script>
