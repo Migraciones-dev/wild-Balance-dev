@@ -6,7 +6,7 @@
     let retake = searchParams.get('retake');
     localStorage.setItem('response', JSON.stringify(quizResponse));
     console.log('response', JSON.stringify(quizResponse));
-    let url = 'https://wildbalance-wizard.fly.dev/insert-data';
+    let url = 'https://wildbalance-app-rocket.fly.dev/insert-data';
     $.ajax({
       url: url,
       type: 'POST',
