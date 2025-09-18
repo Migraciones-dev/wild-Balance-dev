@@ -207,11 +207,22 @@
             "rating": 5,
             "text": "Servicio fantastico\nServicio fantastico, y calidad excepcional. Desde que hemos dejado los piensos industriales, nuestra perrita no ha tenido mas diarreas ni infecciones de orina. Pensamos mucho en nuestra salud pero no lo suficiente en la de nuestras mascotas. Todo un acierto y totalmente recomendado!"
           }
+        },
+        "review_XhcFtX": {
+          "type": "review",
+          "settings": {
+            "avatar": "shopify://shop_images/pexels-annakester-10376429_1.jpg",
+            "avatar_alt": "Avatar",
+            "name": "Natividad",
+            "rating": 5,
+            "text": "Agradecer la atención recibida por parte de Almudena en su asesoramiento nutricional, con una información muy clara, precisa, ágil y dándonos respuesta a todo lo que hemos necesitado. Gracias!.\nLos productos son de muy buena calidad, la atención al cliente inmejorable."
+          }
         }
       },
       "block_order": [
         "review_zk7DpC",
-        "review_KU4hKC"
+        "review_KU4hKC",
+        "review_XhcFtX"
       ],
       "name": "Migraciones reviews",
       "settings": {
