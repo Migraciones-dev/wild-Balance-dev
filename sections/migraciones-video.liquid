@@ -52,44 +52,50 @@
   </div>
 
   <!-- VIDEO -->
-  <!-- Contenedor del vídeo con portada -->
-  <div class="relative mx-auto w-full max-w-4xl aspect-[16/9] overflow-hidden rounded-2xl shadow-lg">
-    <!-- Vídeo -->
-    <video
-      id="promoVideo"
-      class="absolute inset-0 hidden h-full w-full object-cover"
-      src="https://cdn.shopify.com/videos/c/o/v/e440e75b45204310b41ceda30d55e10b.mp4"
-      poster="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/62b2a2a6db269adea37b2750fce5109601c3721b.jpg?v=1758187087"
-      preload="metadata"
-      playsinline
-    ></video>
+  <!-- Contenedor -->
+  <div class="relative mx-auto w-full max-w-4xl bg-black rounded-2xl overflow-hidden shadow-lg">
+    <!-- Mantén la altura con ratio 16:9 (puedes ajustarlo si tu vídeo tiene otro ratio) -->
+    <div class="relative w-full aspect-[16/9]">
+      <!-- Vídeo -->
+      <video
+        id="promoVideo"
+        class="absolute inset-0 hidden h-full w-full object-contain"
+        src="https://cdn.shopify.com/videos/c/o/v/e440e75b45204310b41ceda30d55e10b.mp4"
+        poster="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/62b2a2a6db269adea37b2750fce5109601c3721b.jpg?v=1758187087"
+        preload="metadata"
+        playsinline
+        controls
+      ></video>
 
-    <!-- Portada -->
-    <div id="videoCover" class="absolute inset-0">
-      <img
-        src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/62b2a2a6db269adea37b2750fce5109601c3721b.jpg?v=1758187087"
-        alt="Portada del vídeo"
-        class="h-full w-full object-cover"
-        loading="lazy"
-      >
-      <!-- Botón Play centrado -->
-      <button
-        id="playButton"
-        type="button"
-        aria-label="Reproducir vídeo"
-        class="absolute inset-0 grid place-items-center focus:outline-none"
-      >
-        <svg
-          width="85"
-          height="99"
-          viewBox="0 0 85 99"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
+      <!-- Portada -->
+      <div id="videoCover" class="absolute inset-0">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/62b2a2a6db269adea37b2750fce5109601c3721b.jpg?v=1758187087"
+          alt="Portada del vídeo"
+          class="h-full w-full object-contain pointer-events-none select-none"
+          loading="lazy"
         >
-          <path d="M10 10.25L75 49.5L10 88.75V10.25Z" fill="#FFCD00" stroke="#FFCD00" stroke-width="19.0486" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
+        <!-- Botón Play centrado, 100% transparente en cualquier estado -->
+        <button
+          id="playButton"
+          type="button"
+          aria-label="Reproducir vídeo"
+          class="absolute inset-0 grid place-items-center outline-none ring-0 border-0 m-0 p-0 bg-transparent hover:bg-transparent active:bg-transparent focus:bg-transparent"
+          style="appearance:none;background:transparent;"
+        >
+          <svg
+            width="85"
+            height="99"
+            viewBox="0 0 85 99"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            class="pointer-events-none"
+          >
+            <path d="M10 10.25L75 49.5L10 88.75V10.25Z" fill="#FFCD00" stroke="#FFCD00" stroke-width="19.0486" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 
@@ -114,22 +120,28 @@
       playBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         showVideo();
-        video.muted = false; // sonido ON
+        video.muted = false;
         const p = video.play();
-        // Fallback si el navegador exige interacción adicional
         if (p && typeof p.catch === 'function') {
           p.catch(() => {
-            video.setAttribute('controls', 'controls');
-            video.play();
+            // Si el navegador bloquea autoplay con sonido, ya están visibles los controles
+            // y el usuario podrá darle a play manualmente o poner fullscreen.
           });
         }
       });
 
-      // Click en el vídeo: pausar y volver a la portada
-      video.addEventListener('click', showCover);
+      // Click en el vídeo: pausar y volver a portada
+      video.addEventListener('click', () => {
+        // Evita que un click en los controles (play/pause, fullscreen) dispare esto en la mayoría de navegadores
+        // Si el navegador propagase el evento igualmente, simplemente volverá a portada al pausar.
+        showCover();
+      });
 
       // Al terminar el vídeo: volver a la portada
       video.addEventListener('ended', showCover);
+
+      // (Opcional) Si también quieres que al pausar desde los controles vuelva a portada, descomenta:
+      // video.addEventListener('pause', () => { if (!video.ended) showCover(); });
     })();
   </script>
 
