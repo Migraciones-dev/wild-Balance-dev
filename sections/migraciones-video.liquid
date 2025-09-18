@@ -52,7 +52,87 @@
   </div>
 
   <!-- VIDEO -->
-  VIDEO
+  <!-- Contenedor del vídeo con portada -->
+  <div class="relative mx-auto w-full max-w-4xl aspect-[16/9] overflow-hidden rounded-2xl shadow-lg">
+    <!-- Vídeo -->
+    <video
+      id="promoVideo"
+      class="absolute inset-0 hidden h-full w-full object-cover"
+      src="https://cdn.shopify.com/videos/c/o/v/e440e75b45204310b41ceda30d55e10b.mp4"
+      poster="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/62b2a2a6db269adea37b2750fce5109601c3721b.jpg?v=1758187087"
+      preload="metadata"
+      playsinline
+    ></video>
+
+    <!-- Portada -->
+    <div id="videoCover" class="absolute inset-0">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/62b2a2a6db269adea37b2750fce5109601c3721b.jpg?v=1758187087"
+        alt="Portada del vídeo"
+        class="h-full w-full object-cover"
+        loading="lazy"
+      >
+      <!-- Botón Play centrado -->
+      <button
+        id="playButton"
+        type="button"
+        aria-label="Reproducir vídeo"
+        class="absolute inset-0 grid place-items-center focus:outline-none"
+      >
+        <svg
+          width="85"
+          height="99"
+          viewBox="0 0 85 99"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path d="M10 10.25L75 49.5L10 88.75V10.25Z" fill="#FFCD00" stroke="#FFCD00" stroke-width="19.0486" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const video = document.getElementById('promoVideo');
+      const cover = document.getElementById('videoCover');
+      const playBtn = document.getElementById('playButton');
+
+      const showVideo = () => {
+        cover.classList.add('hidden');
+        video.classList.remove('hidden');
+      };
+
+      const showCover = () => {
+        video.pause();
+        video.classList.add('hidden');
+        cover.classList.remove('hidden');
+      };
+
+      // Reproducir con sonido al pulsar el botón
+      playBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showVideo();
+        video.muted = false; // sonido ON
+        const p = video.play();
+        // Fallback si el navegador exige interacción adicional
+        if (p && typeof p.catch === 'function') {
+          p.catch(() => {
+            video.setAttribute('controls', 'controls');
+            video.play();
+          });
+        }
+      });
+
+      // Click en el vídeo: pausar y volver a la portada
+      video.addEventListener('click', showCover);
+
+      // Al terminar el vídeo: volver a la portada
+      video.addEventListener('ended', showCover);
+    })();
+  </script>
+
   <!-- Botón -->
   {% if section.settings.btn_label != blank and section.settings.btn_link != blank %}
     <a
