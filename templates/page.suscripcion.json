@@ -85,6 +85,33 @@
         "pd_mb": ""
       }
     },
+    "migraciones_image_text_2_alt_mNDeaz": {
+      "type": "migraciones-image-text-2-alt",
+      "blocks": {
+        "slide_LbXhgy": {
+          "type": "slide",
+          "settings": {
+            "slide_image_alt": "Slide desktop"
+          }
+        }
+      },
+      "block_order": [
+        "slide_LbXhgy"
+      ],
+      "name": "Migraciones imagen+text 3",
+      "settings": {
+        "brand_mark": "shopify://shop_images/Capa_1_28.png",
+        "heading_before": "Cuidar a tu peludo no debería",
+        "heading_highlight": "costarte más",
+        "heading_after": "",
+        "body_text": "<p>Con nuestra suscripción olvídate de pedir a última hora, de quedarte sin stock o de pagar de más. Tú eliges cuándo y cómo recibir sus pedidos. Para que tu mascota tenga siempre su comida a tiempo… y tú vivas más tranquilo y feliz.</p>",
+        "mobile_image_alt": "Imagen móvil",
+        "button_label": "Calcular mi plan",
+        "button_link": "shopify://pages/crea-su-menu",
+        "time_text": "",
+        "desktop_fallback_alt": "Imagen escritorio"
+      }
+    },
     "migraciones_columns_qzCUjK": {
       "type": "migraciones-columns",
       "blocks": {
@@ -280,6 +307,7 @@
   "order": [
     "heading",
     "main",
+    "migraciones_image_text_2_alt_mNDeaz",
     "migraciones_columns_qzCUjK",
     "migraciones_image_text_2_bDe394",
     "migraciones_image_width_text_YALaJJ",
