@@ -33,9 +33,9 @@
       </div>
 
       <!-- Imagen móvil (carrusel simple 1 imagen) -->
-      <div class="lg:hidden mb-12">
-        <div id="drag-scroll-todos" class="cards-container flex space-x-4 overflow-x-auto pb-4">
-          <div class="rounded-lg px-4">
+      <div class="lg:hidden mb-12 !rounded-lg">
+        <div id="drag-scroll-todos" class="cards-container flex space-x-4 overflow-x-auto pb-4 !rounded-lg">
+          <div class="!rounded-lg px-4">
             {% if section.settings.mobile_image %}
               {{
                 section.settings.mobile_image
