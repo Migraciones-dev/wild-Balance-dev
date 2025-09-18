@@ -197,10 +197,21 @@
             "rating": 5,
             "text": "Genial con la suscripción y los envíos\nLlevamos casi 2 años con la suscripción de comida para nuestra perrita y gatito y todo genial. Han mejorado un montón el tema de los envíos y llegan siempre en tiempo y forma. Lorena, de atención al cliente, siempre nos atiende muy bien y resuelve cualquier incidencia o petición"
           }
+        },
+        "review_KU4hKC": {
+          "type": "review",
+          "settings": {
+            "avatar": "shopify://shop_images/pexels-annakester-10376429_1.jpg",
+            "avatar_alt": "Avatar",
+            "name": "Lydia",
+            "rating": 5,
+            "text": "Servicio fantastico\nServicio fantastico, y calidad excepcional. Desde que hemos dejado los piensos industriales, nuestra perrita no ha tenido mas diarreas ni infecciones de orina. Pensamos mucho en nuestra salud pero no lo suficiente en la de nuestras mascotas. Todo un acierto y totalmente recomendado!"
+          }
         }
       },
       "block_order": [
-        "review_zk7DpC"
+        "review_zk7DpC",
+        "review_KU4hKC"
       ],
       "name": "Migraciones reviews",
       "settings": {
