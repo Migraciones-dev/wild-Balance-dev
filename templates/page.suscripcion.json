@@ -126,14 +126,12 @@
       ],
       "custom_css": [
         ".mig-section {margin-top: 0; margin-bottom: 0;}",
-        ".gap-\\[13px\\].\\[\\@media\\(max-width\\:1024px\\)\\]\\:px-6 {display: none;}",
         ".t4s-custom-liquid {background: #f4f0e2;}"
       ],
       "name": "Migraciones columnas",
       "settings": {
         "title_prefix": "Cómo funciona",
         "title_highlight": "nuestra suscripción",
-        "decor_image": "shopify://shop_images/Capa_1_21.png",
         "decor_image_alt": "Decorativo",
         "cards_link": "",
         "btn_label": "Empezar mi plan con un -10%",
