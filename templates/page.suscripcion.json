@@ -188,38 +188,19 @@
     "google_reviews_b7bFMC": {
       "type": "google-reviews",
       "blocks": {
-        "card_Qxrr73": {
-          "type": "card",
+        "review_zk7DpC": {
+          "type": "review",
           "settings": {
-            "image_alt": "Imagen card",
-            "step_number": "",
-            "card_title": "Crea tu plan",
-            "card_text": "Cuéntanos un poco sobre tu peludo en menos de 2 min."
-          }
-        },
-        "card_6hpqGw": {
-          "type": "card",
-          "settings": {
-            "image_alt": "Imagen card",
-            "step_number": "",
-            "card_title": "Pruébalo con un 10%",
-            "card_text": "Te enviaremos una caja con un descuento especial para que pruebes comida de la mejor calidad."
-          }
-        },
-        "card_n4cnwQ": {
-          "type": "card",
-          "settings": {
-            "image_alt": "Imagen card",
-            "step_number": "",
-            "card_title": "Enamórate",
-            "card_text": "Si os encanta, solo elige la frecuencia de entrega. Sin permanencia, 100% flexible."
+            "avatar": "shopify://shop_images/jay-wennington-CdK2eYhWfQ0-unsplash_1.jpg",
+            "avatar_alt": "Avatar",
+            "name": "Regina",
+            "rating": 5,
+            "text": "Genial con la suscripción y los envíos\nLlevamos casi 2 años con la suscripción de comida para nuestra perrita y gatito y todo genial. Han mejorado un montón el tema de los envíos y llegan siempre en tiempo y forma. Lorena, de atención al cliente, siempre nos atiende muy bien y resuelve cualquier incidencia o petición"
           }
         }
       },
       "block_order": [
-        "card_Qxrr73",
-        "card_6hpqGw",
-        "card_n4cnwQ"
+        "review_zk7DpC"
       ],
       "name": "Migraciones reviews",
       "settings": {
