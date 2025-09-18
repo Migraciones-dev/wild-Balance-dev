@@ -52,35 +52,6 @@
   </div>
 
   <!-- REVIEWS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.4/dist/js/splide-extension-auto-scroll.min.js"
-  ></script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      new Splide('#reviews-splide', {
-        type: 'loop',
-        drag: 'free',
-        focus: 'left',
-        gap: '24px',
-        perPage: 1,
-        pagination: false,
-        arrows: false,
-        autoScroll: {
-          speed: 0.8,
-          pauseOnHover: true,
-          pauseOnFocus: true,
-        },
-        breakpoints: {
-          640: { perPage: 2 },
-          1024: { perPage: 3 },
-          1280: { perPage: 4 },
-        },
-      }).mount(window.splide.Extensions);
-    });
-  </script>
 
   <section class="relative py-10">
     <!-- fades laterales opcionales -->
@@ -138,6 +109,35 @@
       </div>
     </div>
   </section>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.4/dist/js/splide-extension-auto-scroll.min.js"
+  ></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      new Splide('#reviews-splide', {
+        type: 'loop',
+        drag: 'free',
+        focus: 'left',
+        gap: '24px',
+        perPage: 1,
+        pagination: false,
+        arrows: false,
+        autoScroll: {
+          speed: 0.8,
+          pauseOnHover: true,
+          pauseOnFocus: true,
+        },
+        breakpoints: {
+          640: { perPage: 2 },
+          1024: { perPage: 3 },
+          1280: { perPage: 4 },
+        },
+      }).mount(window.splide.Extensions);
+    });
+  </script>
 
   <!-- Botón -->
   {% if section.settings.btn_label != blank and section.settings.btn_link != blank %}
