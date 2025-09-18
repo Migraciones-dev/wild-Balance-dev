@@ -208,16 +208,6 @@
             "text": "Servicio fantastico\nServicio fantastico, y calidad excepcional. Desde que hemos dejado los piensos industriales, nuestra perrita no ha tenido mas diarreas ni infecciones de orina. Pensamos mucho en nuestra salud pero no lo suficiente en la de nuestras mascotas. Todo un acierto y totalmente recomendado!"
           }
         },
-        "review_XhcFtX": {
-          "type": "review",
-          "settings": {
-            "avatar": "shopify://shop_images/pexels-polina-tankilevitch-5540165.jpg",
-            "avatar_alt": "Avatar",
-            "name": "Natividad",
-            "rating": 5,
-            "text": "Agradecer la atención recibida por parte de Almudena en su asesoramiento nutricional, con una información muy clara, precisa, ágil y dándonos respuesta a todo lo que hemos necesitado. Gracias!.\nLos productos son de muy buena calidad, la atención al cliente inmejorable."
-          }
-        },
         "review_e7zBCr": {
           "type": "review",
           "settings": {
@@ -236,6 +226,15 @@
             "name": "Teresa Cantero",
             "rating": 5,
             "text": "Hemos probado la nueva variedad de snacks\ny nos han gustado muchísimo. Bolsa en formato cómodo de llevar, chuches de tamaño de bocadito que me parecen muy prácticos. Por otra parte, la variedad está muy bien y más si tienes mascota con algún tipo de alergia. La composición muy bien descrita y para que mentir, una pasada. La verdad es que estamos muy contentos."
+          }
+        },
+        "review_XhcFtX": {
+          "type": "review",
+          "settings": {
+            "avatar_alt": "Avatar",
+            "name": "Natividad",
+            "rating": 5,
+            "text": "Agradecer la atención recibida por parte de Almudena en su asesoramiento nutricional, con una información muy clara, precisa, ágil y dándonos respuesta a todo lo que hemos necesitado. Gracias!.\nLos productos son de muy buena calidad, la atención al cliente inmejorable."
           }
         },
         "review_3e33Fj": {
@@ -323,9 +322,9 @@
       "block_order": [
         "review_zk7DpC",
         "review_KU4hKC",
-        "review_XhcFtX",
         "review_e7zBCr",
         "review_afq7Jc",
+        "review_XhcFtX",
         "review_3e33Fj",
         "review_Nmki8J",
         "review_MaAATF",
@@ -338,13 +337,13 @@
       ],
       "name": "Migraciones reviews",
       "settings": {
-        "title_prefix": "Cómo funciona",
-        "title_highlight": "nuestra suscripción",
+        "title_prefix": "Qué dicen",
+        "title_highlight": "nuestros clientes",
         "decor_image": "shopify://shop_images/Capa_1_24.png",
         "decor_image_alt": "Decorativo",
         "cards_link": "",
         "btn_label": "Unirme a la Wild Family",
-        "btn_link": "/",
+        "btn_link": "shopify://pages/crea-su-menu",
         "bg_color": "#ffffff",
         "title_color": "#004623",
         "highlight_color": "#004623",
