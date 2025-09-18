@@ -262,8 +262,8 @@
       ],
       "name": "Migraciones video",
       "settings": {
-        "title_prefix": "Cómo funciona",
-        "title_highlight": "nuestra suscripción",
+        "title_prefix": "Te ayudamos",
+        "title_highlight": "en todo",
         "decor_image_alt": "Decorativo",
         "cards_link": "",
         "btn_label": "Calcular mi plan",
