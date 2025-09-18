@@ -1,0 +1,155 @@
+{% comment %}
+  Sección: Cómo funciona nuestra suscripción (editable desde el editor de temas)
+  - Fondo, colores y assets configurables en "Ajustes"
+  - Título dividido en prefijo + highlight
+  - Cada card es un bloque con imagen, número, título y texto
+  - Grid en escritorio / slider horizontal en móvil sin JS
+{% endcomment %}
+
+<section
+  id="mig-suscripcion-{{ section.id }}"
+  class="flex flex-col items-center gap-20 max-w-[1600px] mx-auto mig-section py-16 md:py-24"
+  style="background-color: {{ section.settings.bg_color }};"
+>
+  <style>
+    #mig-suscripcion-{{ section.id }}{
+      --title-color: {{ section.settings.title_color }};
+      --highlight-color: {{ section.settings.highlight_color }};
+      --text-color: {{ section.settings.text_color }};
+      --accent-color: {{ section.settings.accent_color }};
+    }
+    #mig-suscripcion-{{ section.id }} .mig-title{color:var(--title-color)}
+    #mig-suscripcion-{{ section.id }} .mig-text{color:var(--text-color)}
+    #mig-suscripcion-{{ section.id }} .highlight{color:var(--highlight-color)}
+    #mig-suscripcion-{{ section.id }} .step-badge{background:var(--accent-color)}
+    #mig-suscripcion-{{ section.id }} .btn-primary{background:var(--accent-color);color:var(--title-color)}
+    #mig-suscripcion-{{ section.id }} .btn-primary:hover{opacity:.9}
+    #mig-suscripcion-{{ section.id }} .no-scrollbar{scrollbar-width:none}
+    #mig-suscripcion-{{ section.id }} .no-scrollbar::-webkit-scrollbar{display:none}
+  </style>
+
+  <!-- Título -->
+  <div class="flex flex-col items-center gap-[13px] [@media(max-width:1024px)]:px-6">
+    {% if section.settings.decor_image != blank %}
+      <div class="flex flex-col items-center gap-2.5 relative overflow-hidden">
+        <img
+          class="relative h-[27px] sm:h-[37px] lg:h-[47px]"
+          alt="{{ section.settings.decor_image_alt | escape }}"
+          src="{{ section.settings.decor_image | image_url }}"
+          loading="lazy"
+        >
+      </div>
+    {% endif %}
+
+    {% if section.settings.title_prefix %}
+      <div class="relative w-full text-center [@media(max-width:1024px)]:px-6">
+        <h2 class="mig-title [font-family:'Barlow',Helvetica] font-extrabold max-w-[1600px] text-[30px] lg:text-[64px] lg:text-center leading-[1]">
+          {{ section.settings.title_prefix }}
+          <span class="highlight">{{ section.settings.title_highlight }}</span>
+        </h2>
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- REVIEWS -->
+  REVIEWS
+
+  <!-- Botón -->
+  {% if section.settings.btn_label != blank and section.settings.btn_link != blank %}
+    <a
+      href="{{ section.settings.btn_link }}"
+      class="shadow h-9 inline-flex items-center justify-center gap-2.5 py-8 px-12 rounded-[50px] btn-primary max-sm:w-[91%] md:w-1/2 lg:w-auto text-[18px] [@media(max-width:1024px)]:mx-6"
+    >
+      <span class="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[18px]">
+        {{- section.settings.btn_label -}}
+      </span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-[15px] h-[15px] ml-2"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+        aria-hidden="true"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+      </svg>
+    </a>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Migraciones columnas",
+  "tag": "section",
+  "class": "t4s-section t4s-section-all t4s-custom-liquid",
+  "settings": [
+    { "type": "header", "content": "Contenido" },
+    { "type": "text", "id": "title_prefix", "label": "Título – prefijo", "default": "Cómo funciona" },
+    { "type": "text", "id": "title_highlight", "label": "Título – highlight", "default": "nuestra suscripción" },
+
+    { "type": "image_picker", "id": "decor_image", "label": "Imagen decorativa (opcional)" },
+    { "type": "text", "id": "decor_image_alt", "label": "Alt imagen decorativa", "default": "Decorativo" },
+
+    { "type": "url", "id": "cards_link", "label": "Enlace de las cards (opcional)" },
+
+    { "type": "header", "content": "Botón" },
+    { "type": "text", "id": "btn_label", "label": "Texto del botón", "default": "Empezar mi plan con un -10%" },
+    { "type": "url", "id": "btn_link", "label": "Enlace del botón" },
+
+    { "type": "header", "content": "Colores" },
+    { "type": "color", "id": "bg_color", "label": "Fondo de la sección", "default": "#ffffff" },
+    { "type": "color", "id": "title_color", "label": "Color del título y números", "default": "#004623" },
+    { "type": "color", "id": "highlight_color", "label": "Color del highlight", "default": "#004623" },
+    { "type": "color", "id": "text_color", "label": "Color de textos", "default": "#004623" },
+    { "type": "color", "id": "accent_color", "label": "Color acento (badge/botón)", "default": "#FFCD00" }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Imagen" },
+        { "type": "text", "id": "image_alt", "label": "Alt de la imagen", "default": "Imagen card" },
+        {
+          "type": "text",
+          "id": "step_number",
+          "label": "Número del paso (opcional)",
+          "info": "Si se deja vacío, usa el índice (1,2,3...)"
+        },
+        { "type": "text", "id": "card_title", "label": "Título", "default": "Título de la card" },
+        { "type": "textarea", "id": "card_text", "label": "Texto", "default": "Descripción breve del paso." }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Migraciones columnas",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "card_title": "Crea tu plan",
+            "card_text": "Cuéntanos un poco sobre tu peludo en menos de 2 min."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "card_title": "Pruébalo con un 10%",
+            "card_text": "Te enviaremos una caja con un descuento especial para que pruebes comida de la mejor calidad."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "card_title": "Enamórate",
+            "card_text": "Si os encanta, solo elige la frecuencia de entrega. Sin permanencia, 100% flexible."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
