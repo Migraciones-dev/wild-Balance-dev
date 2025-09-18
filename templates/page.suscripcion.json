@@ -87,17 +87,6 @@
     },
     "migraciones_image_text_2_alt_mNDeaz": {
       "type": "migraciones-image-text-2-alt",
-      "blocks": {
-        "slide_LbXhgy": {
-          "type": "slide",
-          "settings": {
-            "slide_image_alt": "Slide desktop"
-          }
-        }
-      },
-      "block_order": [
-        "slide_LbXhgy"
-      ],
       "name": "Migraciones imagen+text 3",
       "settings": {
         "brand_mark": "shopify://shop_images/Capa_1_28.png",
@@ -105,11 +94,10 @@
         "heading_highlight": "costarte más",
         "heading_after": "",
         "body_text": "<p>Con nuestra suscripción olvídate de pedir a última hora, de quedarte sin stock o de pagar de más. Tú eliges cuándo y cómo recibir sus pedidos. Para que tu mascota tenga siempre su comida a tiempo… y tú vivas más tranquilo y feliz.</p>",
-        "mobile_image": "shopify://shop_images/3c2ec2c5b61c9ebd5d5ced3acd9ab2adf12595d6_1_b9e697f0-bec3-4922-90ee-37af790967a5.jpg",
+        "mobile_image": "shopify://shop_images/3c2ec2c5b61c9ebd5d5ced3acd9ab2adf12595d6_1_b9e697f0-bec3-4922-90ee-37af790967a5.png",
         "mobile_image_alt": "Imagen móvil",
         "button_label": "Calcular mi plan",
         "button_link": "shopify://pages/crea-su-menu",
-        "time_text": "fdsfsd",
         "desktop_fallback": "shopify://shop_images/3c2ec2c5b61c9ebd5d5ced3acd9ab2adf12595d6_1.jpg",
         "desktop_fallback_alt": "Imagen escritorio"
       }
