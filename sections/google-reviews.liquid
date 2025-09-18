@@ -67,14 +67,14 @@
               {% if block.settings.avatar != blank %}
                 <img
                   src="{{ block.settings.avatar | image_url: width: 128 }}"
-                  class="h-14 w-14 rounded-full"
+                  class="h-14 w-14 rounded-full object-cover"
                   alt="{{ block.settings.avatar_alt | escape }}"
                   loading="lazy"
                 >
               {% else %}
                 <img
                   src="https://i.pravatar.cc/64?u={{ block.id }}"
-                  class="h-14 w-14 rounded-full"
+                  class="h-14 w-14 rounded-full object-cover"
                   alt=""
                   loading="lazy"
                 >
@@ -122,14 +122,14 @@
               {% if block.settings.avatar != blank %}
                 <img
                   src="{{ block.settings.avatar | image_url: width: 128 }}"
-                  class="h-14 w-14 rounded-full"
+                  class="h-14 w-14 rounded-full object-cover"
                   alt=""
                   loading="lazy"
                 >
               {% else %}
                 <img
                   src="https://i.pravatar.cc/64?u={{ block.id }}"
-                  class="h-14 w-14 rounded-full"
+                  class="h-14 w-14 rounded-full object-cover"
                   alt=""
                   loading="lazy"
                 >
