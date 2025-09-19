@@ -80,7 +80,7 @@
     "custom_liquid_ibzxRE": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "{% render 'wizard-resultpage-js' %}"
+        "custom_liquid": "{% render 'wizard-resultpage-js-test' %}"
       }
     },
     "17007363095c6db749": {
