@@ -74,13 +74,13 @@
     "2fa35883-7762-4b11-9a64-3e08390ea41e": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<div class=\"headerWizard\">\n<section class=\"logo\">\n<a href=\"https://wildbalance.es/\">\n<img src=\"https://cdn.shopify.com/s/files/1/0713/9898/1933/files/LOGO_1_1.png?v=1699453886\"/>\n</a>\n</section>\n\n<section class=\"wizardBubbleDiscount\">\n<div>\n<p>10% DESCUENTO</p>\n</div>\n</section>\n</div>"
+        "custom_liquid": "<div class=\"\">\n<section class=\"!h-[120px]\">\n<div\nclass=\"text-center bg-[#5BC180] h-[45px] flex items-center justify-center text-[#FFFFFF] text-[15px] lg:text-[16px] font-bold\"\n>¡10% DE DESCUENTO!</div>\n<a href=\"https://wildbalance.es/\">\n<img \nclass=\"mx-auto w-[200px] mt-4 mb-4 mx-auto\"\nsrc=\"https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_28.png?v=1753620078\"/>\n</a>\n</section>"
       }
     },
     "custom_liquid_ibzxRE": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "{% render 'wizard-resultpage-js' %}"
+        "custom_liquid": "{% render 'wizard-resultpage-js-test' %}"
       }
     },
     "17007363095c6db749": {
@@ -118,7 +118,7 @@
     "custom_liquid_HBy9ba": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<style>\ndiv.rh-fullwidth .rh-widget.rh-inline.rh-quiz-GrHkMm{\n  height: 100vh !important;\n}\n</style>"
+        "custom_liquid": "<style>\n.rh-widget {    height: calc(100vh - 125px)!important;}\n.t4s-main-page {display:none;}\n</style>"
       }
     }
   },
