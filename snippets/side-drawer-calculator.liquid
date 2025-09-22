@@ -231,8 +231,11 @@
               class="!max-w-[100px]"
               src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Vector_5.png?v=1757946976"
             >
-            <div class="font-bold text-[#004623] text-[16.5px] text-center mt-6"><span id="res-grams">—</span> g</div>
-            <p class="text-[13px] text-[#7F7D7B]"><span id="res-foodtype">—</span> / día</p>
+            <div class="font-bold text-[#004623] text-[16.5px] text-center mt-6"><span id="res-grams">—</span> g <span id="res-foodtype">—</span> / día</div>
+            <div class="flex mt-2 flex-col gap-2">
+       <div class="text-[13px] flex gap-0 text-[#7f7d7b] "> <span id="res-weightkg">—</span> <span> kg / mes</span></div>
+         <div class="text-[13px] flex gap-0 text-[#7f7d7b]"><span id="res-day">—</span> <span> € / día</span></div>
+            </div>
           </div>
         </div>
       </div>
@@ -1292,7 +1295,7 @@
       const el = document.querySelector(`input[name="${name}"][value="${value}"]`);
       if (el) el.checked = true;
     };
-    const getFoodLabel = (foodType) => (foodType === 'burgers' ? 'Comida BARF' : 'Comida cocinada');
+    const getFoodLabel = (foodType) => (foodType === 'burgers' ? 'BARF' : 'Comida cocinada');
 
     /* =========================
      VALIDACIÓN POR PASO
@@ -1362,6 +1365,7 @@
      CÁLCULO
   ========================== */
     function computeResultFromInputs() {
+      
       const animal = getCheckedValue('animal') || 'perro';
       const especie = animal === 'gato' ? 'gato' : 'perro';
       const ageUI = document.querySelector('select[name="edad"]')?.value || 'adulto'; // cachorro|adulto|senior
@@ -1419,6 +1423,7 @@
 
     function renderResult({ grams, units, dailyEuros, monthEuros, foodType }) {
       setText('res-grams', grams);
+      setText('res-weightkg', grams * 30 / 1000);
       setText('res-units', units);
       setText('res-day', dailyEuros.toFixed(2));
       setText('res-month', monthEuros.toFixed(2));
