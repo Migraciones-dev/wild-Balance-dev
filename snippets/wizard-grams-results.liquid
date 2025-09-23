@@ -208,7 +208,7 @@
                   >
                 </div>
                 <p class="!font-bold">
-                  <span id="quiz-petBurgers" class="!font-bold">{{ result.burgers }}</span>
+                  <span id="quiz-petBurgers" class="!font-bold">{{ result.burgers | round: 0 }}</span>
                   hamburguesitas
                 </p>
                 {%- comment -%} Coste/día (burgers): result.burgers * price_per_unit {%- endcomment -%}
