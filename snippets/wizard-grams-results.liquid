@@ -1,3 +1,12 @@
+{% assign comida = 'burgers' %}
+
+{% for variant in result.product_recommendation_variants.value %}
+  {% if variant.product.title contains 'Comida Cocinada' %}
+    {% assign comida = 'cooked' %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
 <!-- Primer bloque de resultados en GRAMOS Result Page Wizard -->
 
 <!--
@@ -31,7 +40,7 @@
             </div>
 
             <div class="containerPicture">
-              {% if result.food_type == 'cooked' %}
+              {% if comida == 'cooked' %}
                 {% assign units = result.burgers | floor %}
                 {% assign decimals = result.burgers | minus: units | times: 3 | round %}
 
@@ -85,7 +94,7 @@
               {% if result.half_menu %}
                 <p>+ 50% de su dieta habitual</p>
               {% endif %}
-              {% if result.food_type == 'cooked' %}
+              {% if comida == 'cooked' %}
                 <p>¡No te preocupes, dura hasta 2 días abierta en la nevera!</p>
               {% endif %}
             </div>
@@ -103,7 +112,7 @@
   </section>
 {% endcomment %}
 
-{% if result.food_type == 'burgers' %}
+{% if comida == 'burgers' %}
   {% assign hero_img_top = 'https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Image_66.png?v=1757606670' %}
 {% else %}
   {% assign hero_img_top = 'https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Image_69_0657303f-3fa5-4155-a8ab-718de2f993b3.png?v=1758297354' %}
@@ -138,7 +147,7 @@
             </div>
 
             <div class="containerPicture">
-              {% if result.food_type == 'cooked' %}
+              {% if comida == 'cooked' %}
                 {% assign units = result.burgers | floor %}
                 {% assign decimals = result.burgers | minus: units | times: 3 | round %}
 
@@ -219,7 +228,7 @@
                 <p>+ 50% de su dieta habitual</p>
               {% endif %}
               {% comment %}
-                {% if result.food_type == 'cooked' %}
+                {% if comida == 'cooked' %}
                   <p>¡No te preocupes, dura hasta 2 días abierta en la nevera!</p>
                 {% endif %}
               {% endcomment %}
