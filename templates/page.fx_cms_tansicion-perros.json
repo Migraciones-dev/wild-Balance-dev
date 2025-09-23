@@ -375,7 +375,7 @@
           "type": "custom_button",
           "settings": {
             "button_text": "Crea su menú",
-            "button_link": "shopify://pages/crea-su-menu-old",
+            "button_link": "shopify://pages/crea-su-menu",
             "target_link": "_self",
             "fontf": "1",
             "button_icon_w": 0,

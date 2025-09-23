@@ -651,7 +651,7 @@
         "mobile_image": "shopify://shop_images/Diseno_sin_titulo_59.webp",
         "mobile_image_alt": "Imagen móvil",
         "button_label": "Haz el test",
-        "button_link": "shopify://pages/crea-su-menu-old",
+        "button_link": "shopify://pages/crea-su-menu",
         "time_text": "3 minutos",
         "desktop_fallback": "shopify://shop_images/Diseno_sin_titulo_59.webp",
         "desktop_fallback_alt": "Imagen escritorio"
@@ -711,7 +711,7 @@
         "decor_image_alt": "Decorativo",
         "cards_link": "",
         "btn_label": "Empezar mi plan con un -10%",
-        "btn_link": "shopify://pages/crea-su-menu-old",
+        "btn_link": "shopify://pages/crea-su-menu",
         "bg_color": "#ffffff",
         "title_color": "#004623",
         "highlight_color": "#004623",
