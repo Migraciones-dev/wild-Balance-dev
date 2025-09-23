@@ -23,6 +23,7 @@
     },
     "image_with_text_FNFnVH": {
       "type": "image-with-text",
+      "disabled": true,
       "settings": {
         "design_heading": "1",
         "heading_center": true,
