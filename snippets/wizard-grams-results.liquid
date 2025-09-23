@@ -1,93 +1,267 @@
 <!-- Primer bloque de resultados en GRAMOS Result Page Wizard -->
 
-<!-- <div class="grams-results">
-<span>Mascota -> {{ result.pet_name }}</span> <br/> X
-<span>Tipo -> {{ result.pet }}</span><br/>
-<span>Peso del bichito -> {{ result.weight }}</span> <br/>
-<span>Gramos de comida -> {{ result.grams }}</span> <br/> X
-<span>Hamburguesitas -> {{ result.burgers }}</span> <br/> X
-</div>
+<!--
+  <div class="grams-results">
+  <span>Mascota -> {{ result.pet_name }}</span> <br/> X
+  <span>Tipo -> {{ result.pet }}</span><br/>
+  <span>Peso del bichito -> {{ result.weight }}</span> <br/>
+  <span>Gramos de comida -> {{ result.grams }}</span> <br/> X
+  <span>Hamburguesitas -> {{ result.burgers }}</span> <br/> X
+  </div>
 -->
 
+{% comment %}
+  <section class="containerQuantity">
+    <div id="quiz-results">
+      <span class="deliveryDate"
+        >Pedidos antes de las 14:00h, <br>
+        entregas en 48h*</span
+      >
+      <div id="quiz-result" class="quiz-result">
+        <div class="quiz-result">
+          <p>{{ result.pet_name }} tiene que comer</p>
 
-<section class="containerQuantity">
-  <div id="quiz-results">
-    <span class="deliveryDate">Pedidos antes de las 14:00h, <br> entregas en 48h*</span>
-    <div id="quiz-result" class="quiz-result">
-      <div class="quiz-result">
-        <p>{{ result.pet_name }} tiene que comer</p>
-
-        <div class="gramsDay">
-          <div class="containerGrams">
-            <p class="resultQuantity">
-              <span id="quiz-petGrams" class="quantity">
-                {{ result.grams | round }}g
-              </span>
-              <span class="frequendly"> AL DÍA</span>
-            </p>
-            <p>o lo que es lo mismo</p>
-          </div>
-
-          <div class="containerPicture">
-
-            
-
-            {% if result.food_type == "cooked" %}
-              {% assign units = result.burgers |floor %}
-              {% assign decimals = result.burgers | minus: units | times: 3 | round %}
-
-              {% if decimals == 3 %}
-                {% assign units = units | plus: 1 %}
-                {% assign decimals = 0 %}
-              {% endif %}
-
-              <div class="imgCookedFood">
-                {% for i in (1..units) %}
-                  <img src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/bufitarrita.svg" alt="cookedFoodImg"
-                    style="width: 50px !important" />
-                {% endfor %}
-                {% if decimals > 0 %}
-                <img src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/bufitarrita-{{ decimals }}tercios.svg" alt="cookedFoodImg"
-                    style="width: 50px !important" />
-                {% endif %}
-              </div>
-              <p>
-                <span id="quiz-petBurgers"> 
-
-                  {% if units > 0 %}{{ units }} {{ units | pluralize: "unidad", "unidades" }} {% endif %} 
-                  {% if units > 0 and decimals > 0 %} + {% endif %}
-                  {% if decimals > 0 %} {{ decimals }} / 3 de porción {% endif %}
-                </span>
-                de <br/> comida cocinada al día
+          <div class="gramsDay">
+            <div class="containerGrams">
+              <p class="resultQuantity">
+                <span id="quiz-petGrams" class="quantity"> {{ result.grams | round }}g </span>
+                <span class="frequendly"> AL DÍA</span>
               </p>
-            {% else %}
-              <div class="imgBurger">
-                <img
+              <p>o lo que es lo mismo</p>
+            </div>
+
+            <div class="containerPicture">
+              {% if result.food_type == 'cooked' %}
+                {% assign units = result.burgers | floor %}
+                {% assign decimals = result.burgers | minus: units | times: 3 | round %}
+
+                {% if decimals == 3 %}
+                  {% assign units = units | plus: 1 %}
+                  {% assign decimals = 0 %}
+                {% endif %}
+
+                <div class="imgCookedFood">
+                  {% for i in (1..units) %}
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/bufitarrita.svg"
+                      alt="cookedFoodImg"
+                      style="width: 50px !important"
+                    >
+                  {% endfor %}
+                  {% if decimals > 0 %}
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/bufitarrita-{{ decimals }}tercios.svg"
+                      alt="cookedFoodImg"
+                      style="width: 50px !important"
+                    >
+                  {% endif %}
+                </div>
+                <p>
+                  <span id="quiz-petBurgers">
+                    {% if units > 0 -%}
+                      {{- units }}
+                      {{ units | pluralize: 'unidad', 'unidades' }}
+                    {% endif %}
+                    {% if units > 0 and decimals > 0 %} + {% endif %}
+                    {% if decimals > 0 %} {{ decimals }} / 3 de porción {% endif %}
+                  </span>
+                  de <br>
+                  comida cocinada al día
+                </p>
+              {% else %}
+                <div class="imgBurger">
+                  <img
                     src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/burger.png?v=1689843416"
                     alt="burgerImg"
                     height="100px"
-                  />
-                        </div>
-                        <p>
-                          <span id="quiz-petBurgers">{{ result.burgers }}</span>
-                          hamburguesitas
-                        </p>
-          {% endif %}
-            
-            {% if result.half_menu %}
-            <p>+ 50% de su dieta habitual</p>
-            {% endif %}
-            {% if result.food_type == "cooked" %}
-              <p>¡No te preocupes, dura hasta 2 días abierta en la nevera!</p>
-            {% endif %}
+                  >
+                </div>
+                <p>
+                  <span id="quiz-petBurgers">{{ result.burgers }}</span>
+                  hamburguesitas
+                </p>
+              {% endif %}
+
+              {% if result.half_menu %}
+                <p>+ 50% de su dieta habitual</p>
+              {% endif %}
+              {% if result.food_type == 'cooked' %}
+                <p>¡No te preocupes, dura hasta 2 días abierta en la nevera!</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="recomendationText">
+      <p>
+        Las cantidades recomendadas son orientativas, cada animal tiene unas necesidades de alimentación diferentes. En
+        caso de duda, consúltanos.
+      </p>
+    </div>
+  </section>
+{% endcomment %}
+
+{% if result.food_type == 'burgers' %}
+  {% assign hero_img_top = 'https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Image_66.png?v=1757606670' %}
+{% else %}
+  {% assign hero_img_top = 'https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Image_69_0657303f-3fa5-4155-a8ab-718de2f993b3.png?v=1758297354' %}
+{% endif %}
+
+<section class="bg-[#F4F0E2]">
+  <div
+    class="lg:flex justify-between gap-[29px] max-w-[1600px] pb-20 lg:py-[10rem] mx-auto lg:px-10 bg-[#F4F0E2]"
+  >
+    <div class="flex flex-col lg:w-1/2 items-start text-left [@media(max-width:1024px)]:px-6">
+      <span
+        class="!bg-[#004623] !text-[12px] lg:!text-[14px] !w-fit py-4 !font-semibold lg:!px-10 px-6 text-[white] rounded-full mb-3 lg:mb-6 [@media(max-width:1024px)]:mx-auto [@media(max-width:1024px)]:mt-6"
+        >Pedidos antes de las 14:00h, entregas en 48h*</span
+      >
+      <h2 class="mx-auto relative [font-family:'Barlow',Helvetica] font-extrabold text-[#004623] max-w-[1600px] text-[30px] lg:text-[60px] leading-[1] mb-10 !lg:mb-16 [@media(max-width:1024px)]:text-center ">
+        El plan personalizado de {{ result.pet_name }}
+      </h2>
+      <div
+        id="quiz-result"
+        class=" flex lg:!flex-row  p-6 lg:!py-10 lg:!px-16 gap-6 lg:gap-[60px] !ml-0 lg:!max-w-[700px] text-card-foreground shadow bg-white border border-solid border-[#d9d9c8] rounded-[10px] [@media(max-width:1024px)]:flex-col [@media(max-width:1024px)]:w-full"
+      >
+        <div class="my-auto text-[18px] lg:text-[20px]">
+          <p class="[@media(max-width:1024px)]:text-center mb-2">{{ result.pet_name }} tiene que comer</p>
+
+          <div class="gramsDay">
+            <div class="containerGrams">
+              <p class="resultQuantity">
+                <span id="quiz-petGrams" class="quantity !bg-[#004623]"> {{ result.grams | round }}g </span>
+                <span class="frequendly"> al día</span>
+              </p>
+              <p>o lo que es lo mismo</p>
+            </div>
+
+            <div class="containerPicture">
+              {% if result.food_type == 'cooked' %}
+                {% assign units = result.burgers | floor %}
+                {% assign decimals = result.burgers | minus: units | times: 3 | round %}
+
+                {% if decimals == 3 %}
+                  {% assign units = units | plus: 1 %}
+                  {% assign decimals = 0 %}
+                {% endif %}
+
+                <div class="imgCookedFood">
+                  {% for i in (1..units) %}
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/bufitarrita.svg"
+                      alt="cookedFoodImg"
+                      style="width: 50px !important"
+                    >
+                  {% endfor %}
+                  {% if decimals > 0 %}
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/bufitarrita-{{ decimals }}tercios.svg"
+                      alt="cookedFoodImg"
+                      style="width: 50px !important"
+                    >
+                  {% endif %}
+                </div>
+                <p>
+                  <span id="quiz-petBurgers">
+                    {% if units > 0 -%}
+                      {{- units }}
+                      {{ units | pluralize: 'unidad', 'unidades' }}
+                    {% endif %}
+                    {% if units > 0 and decimals > 0 %} + {% endif %}
+                    {% if decimals > 0 %} {{ decimals }} / 3 de porción {% endif %}
+                  </span>
+                  de <br>
+                  comida cocinada al día
+                </p>
+              {% else %}
+                <div class="imgBurger ">
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/burger.png?v=1689843416"
+                    alt="burgerImg"
+                    height="100px"
+                  >
+                </div>
+                <p class="!font-bold">
+                  <span id="quiz-petBurgers" class="!font-bold">{{ result.burgers }}</span>
+                  hamburguesitas
+                </p>
+              {% endif %}
+
+              {% if result.half_menu %}
+                <p>+ 50% de su dieta habitual</p>
+              {% endif %}
+              {% if result.food_type == 'cooked' %}
+                <p>¡No te preocupes, dura hasta 2 días abierta en la nevera!</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <img
+          class="!max-w-[150px] lg:!max-w-[250px] lg:p-6 [@media(max-width:1024px)]:m-auto"
+          src="{{hero_img_top}}"
+        >
+      </div>
+      <p class="mt-10 text-[#222222] [@media(max-width:1024px)]:text-center text-[14px] lg-[20px]">
+        Las cantidades recomendadas son orientativas, cada animal tiene unas necesidades de alimentación diferentes. En
+        caso de duda, consúltanos.
+      </p>
+      <a
+        href="/pages/crea-su-menu"
+        class="mt-10 text-[#222222] [@media(max-width:1024px)]:text-center text-[14px] lg-[20px] flex gap-2 items-center [@media(max-width:1024px)]:mx-auto"
+      >
+        <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2502 7.51026C10.0503 8.25622 9.65758 8.93643 9.11149 9.48252C8.56541 10.0286 7.88521 10.4214 7.13925 10.6213C6.39329 10.8212 5.60785 10.8213 4.86186 10.6215C4.11586 10.4217 3.4356 10.0291 2.88942 9.48306L2.63982 9.23426H4.58622C4.74535 9.23426 4.89796 9.17104 5.01048 9.05852C5.123 8.946 5.18622 8.79339 5.18622 8.63426C5.18622 8.47513 5.123 8.32252 5.01048 8.20999C4.89796 8.09747 4.74535 8.03426 4.58622 8.03426H1.19182C1.03269 8.03426 0.880076 8.09747 0.767554 8.20999C0.655032 8.32252 0.591818 8.47513 0.591818 8.63426V12.0279C0.591818 12.187 0.655032 12.3396 0.767554 12.4521C0.880076 12.5646 1.03269 12.6279 1.19182 12.6279C1.35095 12.6279 1.50356 12.5646 1.61608 12.4521C1.7286 12.3396 1.79182 12.187 1.79182 12.0279V10.0839L2.03982 10.3319C2.73489 11.0271 3.60075 11.5271 4.55034 11.7816C5.49993 12.0361 6.49978 12.0362 7.4494 11.7818C8.39901 11.5273 9.26491 11.0274 9.96004 10.3322C10.6552 9.63702 11.1551 8.77109 11.4094 7.82146C11.4508 7.66774 11.4294 7.50388 11.35 7.36593C11.2705 7.22798 11.1395 7.12723 10.9858 7.08586C10.8321 7.04448 10.6682 7.06587 10.5303 7.14531C10.3923 7.22475 10.2916 7.35654 10.2502 7.51026ZM11.2342 4.53186C11.3465 4.41931 11.4095 4.26682 11.4094 4.10786V0.714258C11.4094 0.555128 11.3462 0.402516 11.2337 0.289994C11.1212 0.177472 10.9685 0.114258 10.8094 0.114258C10.6503 0.114258 10.4977 0.177472 10.3852 0.289994C10.2726 0.402516 10.2094 0.555128 10.2094 0.714258V2.65906L9.96142 2.41106C9.26634 1.71581 8.40049 1.2158 7.4509 0.961284C6.50131 0.706771 5.50145 0.706726 4.55184 0.961156C3.60223 1.21559 2.73633 1.71552 2.04119 2.41071C1.34606 3.10589 0.846181 3.97183 0.591818 4.92146C0.568699 4.99835 0.561247 5.07909 0.569904 5.15892C0.57856 5.23874 0.603149 5.31601 0.642214 5.38615C0.681278 5.4563 0.734024 5.51789 0.797325 5.56728C0.860627 5.61667 0.933198 5.65285 1.01074 5.67368C1.08828 5.69451 1.16921 5.69957 1.24874 5.68855C1.32827 5.67753 1.40478 5.65066 1.47374 5.60954C1.54269 5.56841 1.6027 5.51387 1.65019 5.44913C1.69768 5.38439 1.73169 5.31078 1.75022 5.23266C1.94987 4.48632 2.34253 3.8057 2.88868 3.25926C3.43484 2.71282 4.11526 2.31982 4.86149 2.11978C5.60773 1.91974 6.39348 1.91972 7.13973 2.11971C7.88599 2.3197 8.56642 2.71265 9.11262 3.25906L9.36142 3.50706H7.41582C7.25669 3.50706 7.10408 3.57027 6.99155 3.68279C6.87903 3.79532 6.81582 3.94793 6.81582 4.10706C6.81582 4.26619 6.87903 4.4188 6.99155 4.53132C7.10408 4.64384 7.25669 4.70706 7.41582 4.70706H10.8102C10.9692 4.70713 11.1217 4.64412 11.2342 4.53186Z" fill="#004623"/>
+        </svg>
+        <span class="text-[#004623]">Vuelve a realizar el cuestionario</span>
+      </a>
+    </div>
+
+    <div class="relative max-w-5xl mx-auto object-cover object-center lg:w-1/2 hidden lg:block rounded-lg">
+      <div class="swiper-container-img-text overflow-hidden rounded-lg swiper-initialized swiper-horizontal swiper-backface-hidden">
+        <div class="swiper-wrapper rounded-lg" id="swiper-wrapper-df10cfeee157d17b2" aria-live="polite">
+          <div
+            class="swiper-slide flex justify-center swiper-slide-active swiper-slide-next"
+            role="group"
+            aria-label="1 / 1"
+            data-swiper-slide-index="0"
+          >
+            <img
+              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_1545.png?v=1757599783"
+              alt="Imagen escritorio"
+              width="2000"
+              height="2213"
+              loading="lazy"
+              class="w-full object-cover"
+            >
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="recomendationText">
-   <p>Las cantidades recomendadas son orientativas, cada animal tiene unas necesidades de alimentación diferentes. En caso de duda, consúltanos.</p>
-  </div>
-  
 </section>
+
+<div class="bg-[#F4F0E2] pt-12 [@media(max-width:1024px)]:px-6">
+  <h2 class="mx-auto relative [font-family:'Barlow',Helvetica] font-extrabold text-[#004623] max-w-[1600px] text-[30px] lg:text-[60px] text-center leading-[1] mb-10 !lg:mb-16">
+    Nuestra recomendación
+  </h2>
+  <p class="mx-auto max-w-[733px] pb-10 lg:pb-16 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#222222] text-center tracking-[0] leading-[1.5]  text-[14px] lg:text-[20px] mt-6 ">
+    En Wild Balance ofrecemos comida natural de verdad: sin rellenos, sin engaños sin concesiones. Crudo, cocinado o en
+    lata. Tú eliges. Nosotros cuidamos.
+  </p>
+</div>
+
+<style>
+  .variant-result {
+    background-color: white;
+    opacity: 0.75;
+  }
+  .variant-result.active {
+      background-color: #D9D9C8;
+      opacity: 1;
+  }
+  #wizard-variant-results {
+    background:#F4F0E2;
+  }
+</style>
