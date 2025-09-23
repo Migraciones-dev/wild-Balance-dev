@@ -1,100 +1,17 @@
 <script>
-  // Helpers
-  function normalizeText(s) {
-    return (s || '').replace(/\s+/g, ' ').trim();
-  }
-  function stripHtmlTitle(html) {
-    if (!html || html.indexOf('<') === -1) return normalizeText(html || '');
-    try {
-      const doc = new DOMParser().parseFromString(html, 'text/html');
-      const h3 = doc.querySelector('h3');
-      const text = h3 ? h3.textContent : doc.body.textContent || '';
-      return normalizeText(text);
-    } catch (e) {
-      const m = /<h3[^>]*>([\s\S]*?)<\/h3>/i.exec(html);
-      return normalizeText(m ? m[1].replace(/<[^>]*>/g, '') : html.replace(/<[^>]*>/g, ''));
-    }
-  }
-
-  // Extrae la Q21 del JSON del quiz (preferido)
-  function getQ21FromQuizJson(qr) {
-    try {
-      const slides = qr?.quiz?.attributes?.slides?.data || [];
-      // ID observado en tu HTML: "question-72i3l1e" -> slide id "72i3l1e"
-      const candidateIds = ['72i3l1e', '72i3l1E']; // por si acaso cambia el caso
-      let slide = slides.find((s) => candidateIds.includes(s.id));
-      if (!slide) {
-        // Fallback: por índice o por título
-        slide = slides.find(
-          (s) => s?.attributes?.index === 21 || /selecciona el plan/i.test(s?.attributes?.title || '')
-        );
-      }
-      if (!slide) return null;
-
-      const selectedChoiceId = slide.attributes?.values?.[0];
-      if (!selectedChoiceId) return null;
-
-      const choice = (slide.attributes?.choices?.data || []).find((c) => c.id === selectedChoiceId);
-      const label = choice?.attributes?.label || '';
-      return normalizeText(label);
-    } catch (e) {
-      return null;
-    }
-  }
-
-  // Captura preventiva por si quieres guardar cuando eligen en la slide (opcional)
-  (function bindQ21RuntimeCapture() {
-    document.addEventListener(
-      'click',
-      function (e) {
-        const li = e.target.closest('section.question-21 .lq-choice');
-        if (!li) return;
-        const h3 = li.querySelector('.quiz21 h3');
-        if (h3) window.__q21Label = normalizeText(h3.textContent);
-      },
-      true
-    );
-  })();
-
   function prqQuizCallback(quizResponse) {
-    // 1) Intenta obtener el texto limpio desde el JSON del quiz
-    let q21Label = getQ21FromQuizJson(quizResponse);
-
-    // 2) Si no, usa lo que venga en quizAnswers (limpiando HTML)
-    if (!q21Label && quizResponse?.quizAnswers?.['__prq_21_selecciona_el']) {
-      q21Label = stripHtmlTitle(quizResponse.quizAnswers['__prq_21_selecciona_el']);
-    }
-
-    // 3) Si aún no hay, usa lo que capturamos del DOM en runtime como último recurso
-    if (!q21Label && window.__q21Label) {
-      q21Label = window.__q21Label;
-    }
-
-    // 4) Construye un payload CLON (no mutamos el objeto original por si viene congelado)
-    const payload = {
-      ...quizResponse,
-      quizAnswers: {
-        ...(quizResponse.quizAnswers || {}),
-        __prq_21_selecciona_el: q21Label || '',
-      },
-    };
-
-    // Logs útiles para verificar
-    console.log('[Q21] label resuelto ->', q21Label);
-    console.log('[payload.quizAnswers.__prq_21_selecciona_el] ->', payload.quizAnswers['__prq_21_selecciona_el']);
-
-    // 5) Envía el CLON
+    console.error('quizcallback');
+    console.error(quizResponse);
     let searchParams = new URLSearchParams(window.location.search);
     let retake = searchParams.get('retake');
-    localStorage.setItem('response', JSON.stringify(payload)); // guarda el payload final para inspección
-    console.log('response (final)', JSON.stringify(payload));
-
+    localStorage.setItem('response', JSON.stringify(quizResponse));
+    console.log('response', JSON.stringify(quizResponse));
     let url = 'https://wildbalance-wizard.fly.dev/insert-data';
     $.ajax({
       url: url,
       type: 'POST',
       dataType: 'json',
-      data: JSON.stringify(payload),
+      data: JSON.stringify(quizResponse),
       contentType: 'application/json; charset=UTF-8',
       success: function (data) {
         window.location.href = 'https://wildbalance.es/pages/wizard-result/' + data['quizId'];
