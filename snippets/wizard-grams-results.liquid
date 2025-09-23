@@ -202,6 +202,17 @@
                   <span id="quiz-petBurgers" class="!font-bold">{{ result.burgers }}</span>
                   hamburguesitas
                 </p>
+                {%- comment -%} Coste/día (burgers): result.burgers * price_per_unit {%- endcomment -%}
+                {%- if result.pet == 'GATO' -%}
+                  {%- assign price_per_unit = 0.42 -%}
+                {%- else -%}
+                  {%- assign price_per_unit = 0.33 -%}
+                {%- endif -%}
+
+                {%- assign daily_cost = result.burgers | times: price_per_unit -%}
+                <p class="!mt-2 !font-semibold  text-[#b5b5b5]">
+                  Desde {{ daily_cost | round: 2 | replace: '.', ',' }}€ / día
+                </p>
               {% endif %}
 
               {% if result.half_menu %}
@@ -211,19 +222,6 @@
                 {% if result.food_type == 'cooked' %}
                   <p>¡No te preocupes, dura hasta 2 días abierta en la nevera!</p>
                 {% endif %}
-              {% endcomment %}
-              {%- comment -%} Coste/día (burgers): result.burgers * price_per_unit {%- endcomment -%}
-              {%- if result.pet == 'GATO' -%}
-                {%- assign price_per_unit = 0.42 -%}
-              {%- else -%}
-                {%- assign price_per_unit = 0.33 -%}
-              {%- endif -%}
-
-              {% comment %}
-                {%- assign daily_cost = result.burgers | times: price_per_unit -%}
-                <p class="!mt-2 !font-semibold  text-[#b5b5b5]">
-                  Desde {{ daily_cost | round: 2 | replace: '.', ',' }}€ / día
-                </p>
               {% endcomment %}
             </div>
           </div>
