@@ -1,12 +1,19 @@
 <!-- Suscripciones personalizadas Result Page Wizard -->
+{% assign comida = 'burgers' %}
 
+{% for variant in result.product_recommendation_variants.value %}
+  {% if variant.product.title contains 'Comida Cocinada' %}
+    {% assign comida = 'cooked' %}
+    {% break %}
+  {% endif %}
+{% endfor %}
 <section
   class="    frequently !bg-white mb-20 lg:!pb-12"
 >
   <div class="pt-12 [@media(max-width:1024px)]:px-6">
     <h2
       class="
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        mx-auto relative [font-family:'Barlow',Helvetica] font-extrabold text-[#004623] max-w-[1600px] text-[30px] lg:text-[60px] text-center leading-[1] mb-10 !lg:mb-16 max-w-[650px]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                mx-auto relative [font-family:'Barlow',Helvetica] font-extrabold text-[#004623] max-w-[1600px] text-[30px] lg:text-[60px] text-center leading-[1] mb-10 !lg:mb-16 max-w-[650px]
       "
     >
       ¿Cada cuanto tiempo te lo enviamos a casa?
@@ -19,7 +26,7 @@
 
   <section class="freezerSpace">
     <div class="contentFreezerSpace">
-      {% if result.food_type == 'cooked' %}
+      {% if comida == 'cooked' %}
         {% assign small = 3.9 %}
         {% assign medium = 7.8 %}
         {% assign big = 11.7 %}
@@ -335,7 +342,7 @@
         </div>
       </div>
 
-      {% if result.food_type == 'burgers' %}
+      {% if comida == 'burgers' %}
         {% assign hero_img = 'https://cdn.shopify.com/s/files/1/0713/9898/1933/files/671c00bd2859323adf7b737163fcc53c8567f50f_1_1.jpg?v=1758294727' %}
       {% else %}
         {% assign hero_img = 'https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Background_3.png?v=1757590892' %}
@@ -500,7 +507,7 @@
     let recalculateData = {
       pet: "{{result.pet}}",
       grams: {{result.grams}},
-      foodType: "{{result.food_type}}",
+      foodType: "{{comida}}",
       newWithBarf: {{result.is_new_with_barf | default: false}},
       selectedFreezer: selectedFreezerKey,
       selectedProteins: selectedProteinsValues,
