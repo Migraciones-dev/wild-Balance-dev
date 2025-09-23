@@ -212,7 +212,11 @@
                   >
                 </div>
                 <p class="!font-bold">
-                  <span id="quiz-petBurgers" class="!font-bold">{{ result.burgers | round: 0 }}</span>
+                  {% comment %}RESULTADO CALCULADO DESDE AQUÍ. CÓDIGO ANTERIOR:<span id="quiz-petBurgers" class="!font-bold">{{ result.burgers | round: 0 }}</span>{% endcomment %}
+                  <span id="quiz-petBurgers" class="!font-bold">
+                    {{ result.burgers | round: 0 }}
+                    {{ result.grams | divided_by: 50 | round: 0 }}
+                  </span>
                   hamburguesitas
                 </p>
                 {%- comment -%} Coste/día (burgers): result.burgers * price_per_unit {%- endcomment -%}
