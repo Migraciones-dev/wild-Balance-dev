@@ -1,11 +1,110 @@
 <script>
+  // Normaliza espacios
+  function normalizeText(s) {
+    return (s || '').replace(/\s+/g, ' ').trim();
+  }
+
+  // 1) Captura en tiempo real la selección de la pregunta 21
+  (function bindQ21Capture() {
+    const root = document; // del quiz
+    root.addEventListener(
+      'click',
+      function (e) {
+        const li = e.target.closest('section.question-21 .lq-choice');
+        if (!li) return;
+        const h3 = li.querySelector('.quiz21 h3');
+        if (h3) {
+          window.__q21Label = normalizeText(h3.textContent);
+        }
+      },
+      true
+    );
+
+    // Por si se navega con teclado/enter/space:
+    root.addEventListener(
+      'keydown',
+      function (e) {
+        if (e.key !== 'Enter' && e.key !== ' ') return;
+        const li = e.target.closest('section.question-21 .lq-choice');
+        if (!li) return;
+        const h3 = li.querySelector('.quiz21 h3');
+        if (h3) {
+          window.__q21Label = normalizeText(h3.textContent);
+        }
+      },
+      true
+    );
+  })();
+
+  // 2) Si por lo que sea no capturamos en el click, intenta leer el DOM al final
+  function getQ21FromDOMFallback() {
+    // Busca la slide 21 (puede no ser "current" al finalizar)
+    const section = document.querySelector('section.question-21');
+    if (!section) return null;
+
+    // Busca la opción marcada
+    const selected =
+      section.querySelector(
+        '.lq-choice.selected, .lq-choice.is-selected, .lq-choice[aria-checked="true"], .lq-choice[aria-pressed="true"]'
+      ) || section.querySelector('.lq-choice'); // fallback: primera
+
+    if (!selected) return null;
+
+    const h3 = selected.querySelector('.quiz21 h3');
+    return h3 ? normalizeText(h3.textContent) : null;
+  }
+
+  // 3) Limpia si vino HTML (por si RevenueHunt mete markup)
+  function stripHtmlTitle(html) {
+    if (!html || html.indexOf('<') === -1) return normalizeText(html || '');
+    try {
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const h3 = doc.querySelector('h3');
+      const text = h3 ? h3.textContent : doc.body.textContent || '';
+      return normalizeText(text);
+    } catch (e) {
+      const m = /<h3[^>]*>([\s\S]*?)<\/h3>/i.exec(html);
+      return normalizeText(m ? m[1].replace(/<[^>]*>/g, '') : html.replace(/<[^>]*>/g, ''));
+    }
+  }
+
+  // 4) Asegura el campo en quizResponse
+  function ensureQ21Answer(quizResponse) {
+    quizResponse.quizAnswers = quizResponse.quizAnswers || {};
+
+    // Si ya viene, límpialo por si trae HTML
+    if (quizResponse.quizAnswers['__prq_21_selecciona_el']) {
+      quizResponse.quizAnswers['__prq_21_selecciona_el'] = stripHtmlTitle(
+        quizResponse.quizAnswers['__prq_21_selecciona_el']
+      );
+      return;
+    }
+
+    // Prioriza lo que capturamos en runtime
+    if (window.__q21Label && window.__q21Label.length) {
+      quizResponse.quizAnswers['__prq_21_selecciona_el'] = window.__q21Label;
+      return;
+    }
+
+    // Último recurso: leer del DOM al final
+    const fallback = getQ21FromDOMFallback();
+    if (fallback) {
+      quizResponse.quizAnswers['__prq_21_selecciona_el'] = fallback;
+    }
+  }
+
+  // === Tu callback (con inyección del campo) ===
   function prqQuizCallback(quizResponse) {
+    ensureQ21Answer(quizResponse);
+
     console.error('quizcallback');
     console.error(quizResponse);
+
     let searchParams = new URLSearchParams(window.location.search);
     let retake = searchParams.get('retake');
     localStorage.setItem('response', JSON.stringify(quizResponse));
     console.log('response', JSON.stringify(quizResponse));
+
     let url = 'https://wildbalance-wizard.fly.dev/insert-data';
     $.ajax({
       url: url,
