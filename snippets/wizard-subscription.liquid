@@ -1,16 +1,23 @@
 <!-- Suscripciones personalizadas Result Page Wizard -->
 
-<section class="frequently">
-  <h2 class="t4s-section-title t4s-title">
-    <span>¿Cada cuánto tiempo te lo enviamos a casa?</span>
-  </h2>
+<section
+  class="    frequently !bg-white mb-20 lg:!pb-12"
+>
+  <div class="pt-12 [@media(max-width:1024px)]:px-6">
+    <h2
+      class="
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        mx-auto relative [font-family:'Barlow',Helvetica] font-extrabold text-[#004623] max-w-[1600px] text-[30px] lg:text-[60px] text-center leading-[1] mb-10 !lg:mb-16 max-w-[650px]
+      "
+    >
+      ¿Cada cuanto tiempo te lo enviamos a casa?
+    </h2>
+    <p class="mx-auto max-w-[733px] pb-10 lg:pb-16 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#222222] text-center tracking-[0] leading-[1.5]  text-[14px] lg:text-[20px] mt-6 ">
+      Deja espacio para tus heladitos, selecciona la capacidad que te queda disponible y el resto de lo llenamos entre
+      la selección de menús que has hecho en el paso anterior.
+    </p>
+  </div>
 
   <section class="freezerSpace">
-    <p class="freezerSpaceSubtitle">
-      Deja espacio para tus heladitos, selecciona la capacidad que te queda disponible y el resto te lo llenamos entre
-      la selección de menús que has hecho en el paso anterior
-    </p>
-
     <div class="contentFreezerSpace">
       {% if result.food_type == 'cooked' %}
         {% assign small = 3.9 %}
@@ -48,8 +55,20 @@
           </div>
           <div class="textInfo">
             <span class="label infoSpace">{{ big }}kg/comida</span>
-            <span class="label select">Seleccionar</span>
-            <span class="label selected" style="display:none">Seleccionado</span>
+            <span class="label select !px-10">Seleccionar</span>
+            <span class="label selected !px-10" style="display:none">
+              <svg
+                class="mr-4"
+                width="13"
+                height="10"
+                viewBox="0 0 13 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9534 0.349028C11.0825 0.271337 11.2368 0.246697 11.3837 0.280278C11.5306 0.313859 11.6588 0.403051 11.7414 0.529133L12.3185 1.40926C12.3937 1.52423 12.4259 1.66209 12.4093 1.79849C12.3928 1.93488 12.3286 2.06106 12.2281 2.15474L12.2264 2.15707L12.2182 2.16465L12.185 2.19554L12.0538 2.32086C11.3282 3.02476 10.6245 3.75096 9.94387 4.49843C8.66332 5.90663 7.14263 7.74965 6.11912 9.53787C5.83352 10.0368 5.13583 10.1441 4.722 9.71332L0.942127 5.78598C0.887959 5.72968 0.845663 5.66306 0.817753 5.59008C0.789844 5.51711 0.776891 5.43927 0.779664 5.36119C0.782437 5.28311 0.80088 5.20638 0.833896 5.13557C0.866912 5.06476 0.913827 5.00131 0.971853 4.94899L2.11427 3.91848C2.21466 3.82797 2.34339 3.77517 2.47843 3.76911C2.61346 3.76304 2.7464 3.80411 2.8545 3.88526L4.7832 5.33135C7.79602 2.36049 9.50439 1.22041 10.9534 0.349028Z" fill="#004623"/>
+              </svg>
+              <span>Seleccionado</span></span
+            >
           </div>
         </article>
       </label>
@@ -76,8 +95,20 @@
           </div>
           <div class="textInfo">
             <span class="label infoSpace">{{ medium }}kg/comida</span>
-            <span class="label select" style="display:none">Seleccionar</span>
-            <span class="label selected">Seleccionado</span>
+            <span class="label select !px-10" style="display:none">Seleccionar</span>
+            <span class="label selected !px-10">
+              <svg
+                class="mr-4"
+                width="13"
+                height="10"
+                viewBox="0 0 13 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9534 0.349028C11.0825 0.271337 11.2368 0.246697 11.3837 0.280278C11.5306 0.313859 11.6588 0.403051 11.7414 0.529133L12.3185 1.40926C12.3937 1.52423 12.4259 1.66209 12.4093 1.79849C12.3928 1.93488 12.3286 2.06106 12.2281 2.15474L12.2264 2.15707L12.2182 2.16465L12.185 2.19554L12.0538 2.32086C11.3282 3.02476 10.6245 3.75096 9.94387 4.49843C8.66332 5.90663 7.14263 7.74965 6.11912 9.53787C5.83352 10.0368 5.13583 10.1441 4.722 9.71332L0.942127 5.78598C0.887959 5.72968 0.845663 5.66306 0.817753 5.59008C0.789844 5.51711 0.776891 5.43927 0.779664 5.36119C0.782437 5.28311 0.80088 5.20638 0.833896 5.13557C0.866912 5.06476 0.913827 5.00131 0.971853 4.94899L2.11427 3.91848C2.21466 3.82797 2.34339 3.77517 2.47843 3.76911C2.61346 3.76304 2.7464 3.80411 2.8545 3.88526L4.7832 5.33135C7.79602 2.36049 9.50439 1.22041 10.9534 0.349028Z" fill="#004623"/>
+              </svg>
+              <span>Seleccionado</span></span
+            >
           </div>
         </article>
       </label>
@@ -102,75 +133,277 @@
           </div>
           <div class="textInfo">
             <span class="label infoSpace">{{ small }}kg/comida</span>
-            <span class="label select">Seleccionar</span>
-            <span class="label selected" style="display:none">Seleccionado</span>
+            <span class="label select !px-10">Seleccionar</span>
+            <span class="label selected !px-10" style="display:none">
+              <svg
+                class="mr-4"
+                width="13"
+                height="10"
+                viewBox="0 0 13 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9534 0.349028C11.0825 0.271337 11.2368 0.246697 11.3837 0.280278C11.5306 0.313859 11.6588 0.403051 11.7414 0.529133L12.3185 1.40926C12.3937 1.52423 12.4259 1.66209 12.4093 1.79849C12.3928 1.93488 12.3286 2.06106 12.2281 2.15474L12.2264 2.15707L12.2182 2.16465L12.185 2.19554L12.0538 2.32086C11.3282 3.02476 10.6245 3.75096 9.94387 4.49843C8.66332 5.90663 7.14263 7.74965 6.11912 9.53787C5.83352 10.0368 5.13583 10.1441 4.722 9.71332L0.942127 5.78598C0.887959 5.72968 0.845663 5.66306 0.817753 5.59008C0.789844 5.51711 0.776891 5.43927 0.779664 5.36119C0.782437 5.28311 0.80088 5.20638 0.833896 5.13557C0.866912 5.06476 0.913827 5.00131 0.971853 4.94899L2.11427 3.91848C2.21466 3.82797 2.34339 3.77517 2.47843 3.76911C2.61346 3.76304 2.7464 3.80411 2.8545 3.88526L4.7832 5.33135C7.79602 2.36049 9.50439 1.22041 10.9534 0.349028Z" fill="#004623"/>
+              </svg>
+              <span>Seleccionado</span></span
+            >
           </div>
         </article>
       </label>
     </div>
   </section>
 
-  <section class="freezerSpace planContains">
-    <h2 class="t4s-section-title t4s-title"><span>Tu plan de suscripción incluiría</span></h2>
-    <div class="containerChecks">
-      <p>Asesoramiento nutricional</p>
-      <p>Prueba 14 días</p>
-      <p>Ventajas exclusivas</p>
-      <p>Cancela cuando quieras</p>
-    </div>
+  {% comment %}
+    <section class="freezerSpace planContains">
+      <h2 class="t4s-section-title t4s-title"><span>Tu plan de suscripción incluiría</span></h2>
+      <div class="containerChecks">
+        <p>Asesoramiento nutricional</p>
+        <p>Prueba 14 días</p>
+        <p>Ventajas exclusivas</p>
+        <p>Cancela cuando quieras</p>
+      </div>
 
-    {% if result.is_new_with_barf and result.pet == 'PERRO' %}
-      <article class="containerInfoFrequently">
-        <div class="headingPackName">
-          <h3>Pack de iniciación al BARF</h3>
-          <span class="label discountLabel">10% DESCUENTO*</span>
-        </div>
-        <div class="label frequentlyLabel">PRIMER ENVÍO</div>
-        <div class="infoContainerPack">
-          <ul>
-            <li>Menú de iniciación para los primeros días para una buena transición</li>
-            <li>Asesoramiento nutricional gratuito</li>
-            <li>Guía de iniciación</li>
-            <li>Ventajas exclusivas</li>
-            <li>Modifica, cancela o pausa tu plan desde “Mi cuenta” en cualquier momento</li>
-          </ul>
-          <span style="font-size: smaller"
-            ><i>*Descuento no aplicable en periodos especiales como Black Friday o Rebajas </i></span
-          >
-        </div>
-      </article>
-    {% else %}
-      <article class="containerInfoFrequently">
-        <div class="label frequentlyLabel">
-          <h3>PRIMER ENVÍO</h3>
-          <span class="label discountLabel">10% DESCUENTO*</span>
-        </div>
-        <div class="infoContainerPack">
-          <ul>
-            <li>Oferta especial en el primer envío</li>
-            <li>Asesoramiento nutricional gratuito</li>
-            <li>Ventajas exclusivas</li>
-            <li>Modifica, cancela o pausa tu plan desde “Mi cuenta” en cualquier momento</li>
-          </ul>
-          <span style="font-size: smaller"
-            ><i>*Descuento no aplicable en periodos especiales como Black Friday o Rebajas </i></span
-          >
-        </div>
-      </article>
-    {% endif %}
-  </section>
+      {% if result.is_new_with_barf and result.pet == 'PERRO' %}
+        <article class="containerInfoFrequently">
+          <div class="headingPackName">
+            <h3>Pack de iniciación al BARF</h3>
+            <span class="label discountLabel">10% DESCUENTO*</span>
+          </div>
+          <div class="label frequentlyLabel">PRIMER ENVÍO</div>
+          <div class="infoContainerPack">
+            <ul>
+              <li>Menú de iniciación para los primeros días para una buena transición</li>
+              <li>Asesoramiento nutricional gratuito</li>
+              <li>Guía de iniciación</li>
+              <li>Ventajas exclusivas</li>
+              <li>Modifica, cancela o pausa tu plan desde “Mi cuenta” en cualquier momento</li>
+            </ul>
+            <span style="font-size: smaller"
+              ><i>*Descuento no aplicable en periodos especiales como Black Friday o Rebajas </i></span
+            >
+          </div>
+        </article>
+      {% else %}
+        <article class="containerInfoFrequently">
+          <div class="label frequentlyLabel">
+            <h3>PRIMER ENVÍO</h3>
+            <span class="label discountLabel">10% DESCUENTO*</span>
+          </div>
+          <div class="infoContainerPack">
+            <ul>
+              <li>Oferta especial en el primer envío</li>
+              <li>Asesoramiento nutricional gratuito</li>
+              <li>Ventajas exclusivas</li>
+              <li>Modifica, cancela o pausa tu plan desde “Mi cuenta” en cualquier momento</li>
+            </ul>
+            <span style="font-size: smaller"
+              ><i>*Descuento no aplicable en periodos especiales como Black Friday o Rebajas </i></span
+            >
+          </div>
+        </article>
+      {% endif %}
+    </section>
+  {% endcomment %}
 </section>
 
-<section class="xselling frequently completePack">
+<section class="bg-[#F4F0E2]">
+  <div class="lg:flex justify-between gap-[29px] max-w-[1600px] py-20 lg:py-[10rem] mx-auto lg:px-10 bg-[#F4F0E2]">
+    <div class="flex flex-col lg:w-1/2 items-start justify-center text-left [@media(max-width:1024px)]:px-6">
+      <div
+        class="text-card-foreground shadow bg-white border border-solid border-[#d9d9c8] rounded-[10px] w-full lg:h-[90%] flex"
+      >
+        <div class="px-8 py-8 lg:px-20 flex">
+          <div class="flex flex-col items-start gap-10 w-full m-auto">
+            <div class="flex flex-col items-start gap-[17px]">
+              <div class="inline-flex items-center border text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent gap-[9.86px] px-[31.56px] py-[6.9px] bg-[#ffcd00] rounded-[49.32px] text-[#004623] hover:bg-[#ffcd00]">
+                <span class="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[15px] tracking-[0] leading-[25.6px]"
+                  >10% de descuento</span
+                >
+              </div>
+              <div class="flex items-center gap-2 w-full">
+                <h2 class="[font-family:'Barlow',Helvetica] font-extrabold text-[#004623] text-[30px] lg:text-[30px] !p-0 !m-0">
+                  Tu plan de suscripción incluye
+                </h2>
+              </div>
+            </div>
+            <div class="flex flex-col items-start gap-[62px] w-full">
+              <div class="flex flex-col items-start gap-1.5">
+                <div class="flex flex-col items-start gap-4 w-full">
+                  <div class="flex items-center gap-2.5 w-full">
+                    <svg
+                      class="min-w-[12px]"
+                      width="12"
+                      height="11"
+                      viewBox="0 0 12 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1741 0.64395C10.3033 0.566259 10.4575 0.541619 10.6044 0.5752C10.7513 0.608781 10.8795 0.697972 10.9621 0.824054L11.5392 1.70418C11.6144 1.81916 11.6466 1.95701 11.63 2.09341C11.6135 2.22981 11.5493 2.35598 11.4488 2.44966L11.4471 2.45199L11.4389 2.45957L11.4057 2.49046L11.2745 2.61578C10.5489 3.31968 9.84525 4.04589 9.16458 4.79336C7.88403 6.20155 6.36333 8.04457 5.33983 9.8328C5.05422 10.3317 4.35653 10.439 3.9427 10.0082L0.16283 6.0809C0.108662 6.0246 0.066366 5.95798 0.0384566 5.885C0.0105473 5.81203 -0.00240579 5.73419 0.000367269 5.65611C0.00314033 5.57803 0.0215829 5.5013 0.0545988 5.43049C0.0876148 5.35968 0.13453 5.29623 0.192556 5.24391L1.33497 4.21341C1.43536 4.12289 1.56409 4.07009 1.69913 4.06403C1.83416 4.05797 1.96711 4.09903 2.07521 4.18018L4.0039 5.62627C7.01672 2.65541 8.7251 1.51533 10.1741 0.64395Z" fill="#004623"/>
+                    </svg>
+
+                    <span class="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#004623] text-[16px] text-[20px]"
+                      >Guía de iniciación</span
+                    >
+                  </div>
+                  <div class="flex items-center gap-2.5 w-full">
+                    <svg
+                      class="min-w-[12px]"
+                      width="12"
+                      height="11"
+                      viewBox="0 0 12 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1741 0.64395C10.3033 0.566259 10.4575 0.541619 10.6044 0.5752C10.7513 0.608781 10.8795 0.697972 10.9621 0.824054L11.5392 1.70418C11.6144 1.81916 11.6466 1.95701 11.63 2.09341C11.6135 2.22981 11.5493 2.35598 11.4488 2.44966L11.4471 2.45199L11.4389 2.45957L11.4057 2.49046L11.2745 2.61578C10.5489 3.31968 9.84525 4.04589 9.16458 4.79336C7.88403 6.20155 6.36333 8.04457 5.33983 9.8328C5.05422 10.3317 4.35653 10.439 3.9427 10.0082L0.16283 6.0809C0.108662 6.0246 0.066366 5.95798 0.0384566 5.885C0.0105473 5.81203 -0.00240579 5.73419 0.000367269 5.65611C0.00314033 5.57803 0.0215829 5.5013 0.0545988 5.43049C0.0876148 5.35968 0.13453 5.29623 0.192556 5.24391L1.33497 4.21341C1.43536 4.12289 1.56409 4.07009 1.69913 4.06403C1.83416 4.05797 1.96711 4.09903 2.07521 4.18018L4.0039 5.62627C7.01672 2.65541 8.7251 1.51533 10.1741 0.64395Z" fill="#004623"/>
+                    </svg>
+
+                    <span class="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#004623] text-[16px] text-[20px]"
+                      >Envío con precio especial</span
+                    >
+                  </div>
+                  <div class="flex items-center gap-2.5 w-full">
+                    <svg
+                      class="min-w-[12px]"
+                      width="12"
+                      height="11"
+                      viewBox="0 0 12 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1741 0.64395C10.3033 0.566259 10.4575 0.541619 10.6044 0.5752C10.7513 0.608781 10.8795 0.697972 10.9621 0.824054L11.5392 1.70418C11.6144 1.81916 11.6466 1.95701 11.63 2.09341C11.6135 2.22981 11.5493 2.35598 11.4488 2.44966L11.4471 2.45199L11.4389 2.45957L11.4057 2.49046L11.2745 2.61578C10.5489 3.31968 9.84525 4.04589 9.16458 4.79336C7.88403 6.20155 6.36333 8.04457 5.33983 9.8328C5.05422 10.3317 4.35653 10.439 3.9427 10.0082L0.16283 6.0809C0.108662 6.0246 0.066366 5.95798 0.0384566 5.885C0.0105473 5.81203 -0.00240579 5.73419 0.000367269 5.65611C0.00314033 5.57803 0.0215829 5.5013 0.0545988 5.43049C0.0876148 5.35968 0.13453 5.29623 0.192556 5.24391L1.33497 4.21341C1.43536 4.12289 1.56409 4.07009 1.69913 4.06403C1.83416 4.05797 1.96711 4.09903 2.07521 4.18018L4.0039 5.62627C7.01672 2.65541 8.7251 1.51533 10.1741 0.64395Z" fill="#004623"/>
+                    </svg>
+
+                    <span class="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#004623] text-[16px] text-[20px]"
+                      >Regalo de cumplemés</span
+                    >
+                  </div>
+                  <div class="flex items-center gap-2.5 w-full">
+                    <svg
+                      class="min-w-[12px]"
+                      width="12"
+                      height="11"
+                      viewBox="0 0 12 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1741 0.64395C10.3033 0.566259 10.4575 0.541619 10.6044 0.5752C10.7513 0.608781 10.8795 0.697972 10.9621 0.824054L11.5392 1.70418C11.6144 1.81916 11.6466 1.95701 11.63 2.09341C11.6135 2.22981 11.5493 2.35598 11.4488 2.44966L11.4471 2.45199L11.4389 2.45957L11.4057 2.49046L11.2745 2.61578C10.5489 3.31968 9.84525 4.04589 9.16458 4.79336C7.88403 6.20155 6.36333 8.04457 5.33983 9.8328C5.05422 10.3317 4.35653 10.439 3.9427 10.0082L0.16283 6.0809C0.108662 6.0246 0.066366 5.95798 0.0384566 5.885C0.0105473 5.81203 -0.00240579 5.73419 0.000367269 5.65611C0.00314033 5.57803 0.0215829 5.5013 0.0545988 5.43049C0.0876148 5.35968 0.13453 5.29623 0.192556 5.24391L1.33497 4.21341C1.43536 4.12289 1.56409 4.07009 1.69913 4.06403C1.83416 4.05797 1.96711 4.09903 2.07521 4.18018L4.0039 5.62627C7.01672 2.65541 8.7251 1.51533 10.1741 0.64395Z" fill="#004623"/>
+                    </svg>
+
+                    <span class="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#004623] text-[16px] text-[20px]"
+                      >Productos sorpresa en pedidos</span
+                    >
+                  </div>
+                  <div class="flex items-center gap-2.5 w-full">
+                    <svg
+                      class="min-w-[12px]"
+                      width="12"
+                      height="11"
+                      viewBox="0 0 12 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1741 0.64395C10.3033 0.566259 10.4575 0.541619 10.6044 0.5752C10.7513 0.608781 10.8795 0.697972 10.9621 0.824054L11.5392 1.70418C11.6144 1.81916 11.6466 1.95701 11.63 2.09341C11.6135 2.22981 11.5493 2.35598 11.4488 2.44966L11.4471 2.45199L11.4389 2.45957L11.4057 2.49046L11.2745 2.61578C10.5489 3.31968 9.84525 4.04589 9.16458 4.79336C7.88403 6.20155 6.36333 8.04457 5.33983 9.8328C5.05422 10.3317 4.35653 10.439 3.9427 10.0082L0.16283 6.0809C0.108662 6.0246 0.066366 5.95798 0.0384566 5.885C0.0105473 5.81203 -0.00240579 5.73419 0.000367269 5.65611C0.00314033 5.57803 0.0215829 5.5013 0.0545988 5.43049C0.0876148 5.35968 0.13453 5.29623 0.192556 5.24391L1.33497 4.21341C1.43536 4.12289 1.56409 4.07009 1.69913 4.06403C1.83416 4.05797 1.96711 4.09903 2.07521 4.18018L4.0039 5.62627C7.01672 2.65541 8.7251 1.51533 10.1741 0.64395Z" fill="#004623"/>
+                    </svg>
+
+                    <span class="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#004623] text-[16px] text-[20px]"
+                      >Acceso anticipado a lanzamientos y campañas VIP</span
+                    >
+                  </div>
+                  <div class="flex items-center gap-2.5 w-full">
+                    <svg
+                      class="min-w-[12px]"
+                      width="12"
+                      height="11"
+                      viewBox="0 0 12 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1741 0.64395C10.3033 0.566259 10.4575 0.541619 10.6044 0.5752C10.7513 0.608781 10.8795 0.697972 10.9621 0.824054L11.5392 1.70418C11.6144 1.81916 11.6466 1.95701 11.63 2.09341C11.6135 2.22981 11.5493 2.35598 11.4488 2.44966L11.4471 2.45199L11.4389 2.45957L11.4057 2.49046L11.2745 2.61578C10.5489 3.31968 9.84525 4.04589 9.16458 4.79336C7.88403 6.20155 6.36333 8.04457 5.33983 9.8328C5.05422 10.3317 4.35653 10.439 3.9427 10.0082L0.16283 6.0809C0.108662 6.0246 0.066366 5.95798 0.0384566 5.885C0.0105473 5.81203 -0.00240579 5.73419 0.000367269 5.65611C0.00314033 5.57803 0.0215829 5.5013 0.0545988 5.43049C0.0876148 5.35968 0.13453 5.29623 0.192556 5.24391L1.33497 4.21341C1.43536 4.12289 1.56409 4.07009 1.69913 4.06403C1.83416 4.05797 1.96711 4.09903 2.07521 4.18018L4.0039 5.62627C7.01672 2.65541 8.7251 1.51533 10.1741 0.64395Z" fill="#004623"/>
+                    </svg>
+
+                    <span class="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#004623] text-[16px] text-[20px]"
+                      >Asesoramiento nutricional gratuito</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="w-full [font-family:'DM_Sans',Helvetica] font-normal italic text-[#004623] text-[13.3px] tracking-[0] leading-5">
+              *Descuento no aplicable en periodos especiales como Black Friday o Rebajas
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {% if result.food_type == 'burgers' %}
+        {% assign hero_img = 'https://cdn.shopify.com/s/files/1/0713/9898/1933/files/671c00bd2859323adf7b737163fcc53c8567f50f_1_1.jpg?v=1758294727' %}
+      {% else %}
+        {% assign hero_img = 'https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Background_3.png?v=1757590892' %}
+      {% endif %}
+      <!-- Imagen móvil (carrusel simple 1 imagen) -->
+      <div class="lg:hidden mb-12 sshadow">
+        <div id="drag-scroll-todos" class="cards-container flex space-x-4 overflow-x-auto pb-4">
+          <div class="rounded-lg [@media(max-width:1024px)]:!mt-6">
+            <img
+              src="{{hero_img }}"
+              alt="Imagen móvil"
+              width="1600"
+              height="1770"
+              loading="lazy"
+              class="w-full object-cover"
+              draggable="false"
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- image desktop -->
+    <div class="relative max-w-5xl mx-auto object-cover object-center lg:w-1/2 hidden lg:block rounded-lg">
+      <div class="swiper-container-img-text overflow-hidden rounded-lg swiper-initialized swiper-horizontal swiper-backface-hidden">
+        <div class="swiper-wrapper rounded-lg" id="swiper-wrapper-df10cfeee157d17b2" aria-live="polite">
+          <div
+            class="swiper-slide flex justify-center swiper-slide-active swiper-slide-next"
+            role="group"
+            aria-label="1 / 1"
+            data-swiper-slide-index="0"
+          >
+            <img
+              src="{{hero_img }}"
+              alt="Imagen escritorio"
+              width="2000"
+              height="2213"
+              loading="lazy"
+              class="w-full object-cover"
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="py-10 lg:!py-16 bg-[#F4F0E2] lg-!pt-20 ">
+  <h2
+    class="mx-auto relative [font-family:'Barlow',Helvetica] font-extrabold text-[#004623] max-w-[1600px] text-[30px] lg:text-[60px] text-center leading-[1]"
+  >
+    Completa tu pack
+  </h2>
+</div>
+<section class="xselling frequently completePack  !bg-[#F4F0E2] [@media(max-width:1024px)]:!items-start">
   {% render 'wizard-xselling', result: result %}
 </section>
 
-<section class="calculate frequently">
+<section class="calculate frequently  !bg-[#F4F0E2]">
   <button
+    class="!shadow h-9 inline-flex items-center justify-center gap-2.5 !py-10 !px-24 [@media(min-width:1280px)]:!px-[90px] bg-[#ffcd00] rounded-[50px] text-[#004623] hover:bg-[#ffcd00]/90 max-sm:w-full md:w-auto !text-[18px]  py-18 lg:!my-20 mx-auto"
     type="button"
     onclick="recalculate()"
   >
-    Calcular mi pack
+    Calcular precio
+    <svg class="min-w-[12px]" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7.14511 0.958984L11.1576 5.88734M11.1576 5.88734L7.14511 10.8157M11.1576 5.88734L0.839844 5.88734" stroke="#004623" stroke-width="1.5403" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
   </button>
   <br>
 
@@ -229,11 +462,11 @@
       let article = freezer.closest(".articleInfoFrequently");
       article.classList.remove("active");
       article.querySelector(".selected").style.display = "none";
-      article.querySelector(".select").style.display = "block";
+      article.querySelector(".select").style.display = "flex";
     });
     let thisarticle = thisfreezer.closest(".articleInfoFrequently");
     thisarticle.classList.add("active");
-    thisarticle.querySelector(".selected").style.display = "block";
+    thisarticle.querySelector(".selected").style.display = "flex";
     thisarticle.querySelector(".select").style.display = "none";
 
     let results = document.querySelectorAll('._wizard-result-freezer');
@@ -316,3 +549,38 @@
     });
   }
 </script>
+
+<style>
+              .contentFreezerSpace .articleInfoFrequently:active, .contentFreezerSpace .articleInfoFrequently.active, .contentFreezerSpace .articleInfoFrequently:visited {
+                background-color: #D9D9C8;
+                border: 2px solid var(--WildBalanceGreen-css);
+            }
+            .label.recomended {
+              background: var(--WildBalanceGreen-css)
+            }
+            .articleInfoFrequently.active .label.selected {
+              background-color: #FFCD00;
+              color: var(--WildBalanceGreen-css)
+          }
+          .contentFreezerSpace .articleInfoFrequently {
+            opacity: 0.75;
+            background-color: #fff;
+            border-radius: 20px;
+            border: 2px solid var(--lightGreen-css);
+        }
+        .contentFreezerSpace .articleInfoFrequently:active, .contentFreezerSpace .articleInfoFrequently.active, .contentFreezerSpace .articleInfoFrequently:visited {
+            opacity: 1;
+      }
+      .label.select {
+        background: white!important;
+        border: 2px solid #FFCD00;
+      }
+      .contentFreezerSpace .articleInfoFrequently:hover {
+        background-color: #D9D9C8!important;
+    }
+    @media (max-width: 765px) {
+      .textInfo .label.select, .textInfo .label.selected {
+          color: #004623;
+      }
+  }
+</style>
