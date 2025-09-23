@@ -148,13 +148,17 @@
 
             <div class="containerPicture">
               {% if comida == 'cooked' %}
-                {% assign units = result.burgers | floor %}
-                {% assign decimals = result.burgers | minus: units | times: 3 | round %}
+                {%- assign cooked_unit_g = 300 -%}
 
-                {% if decimals == 3 %}
-                  {% assign units = units | plus: 1 %}
-                  {% assign decimals = 0 %}
-                {% endif %}
+                {%- assign grams = result.grams | replace: ',', '.' | times: 1.0 -%}
+                {%- assign cooked_total = grams | divided_by: cooked_unit_g | times: 1.0 -%}
+
+                {%- assign units = cooked_total | floor -%}
+                {%- assign decimals = cooked_total | minus: units | times: 3 | round -%}
+                {%- if decimals == 3 -%}
+                  {% assign units = units | plus: 1 -%}
+                  {%- assign decimals = 0 -%}
+                {%- endif -%}
 
                 <div class="imgCookedFood flex justify-center">
                   {% for i in (1..units) %}
@@ -172,6 +176,7 @@
                     >
                   {% endif %}
                 </div>
+
                 <p>
                   <span id="quiz-petBurgers">
                     {% if units > 0 -%}
@@ -180,25 +185,24 @@
                     {% endif %}
                     {% if units > 0 and decimals > 0 %} + {% endif %}
                     {% if decimals > 0 %} {{ decimals }} / 3 de porción {% endif %}
+                    {% if units == 0 and decimals == 0 %}0 unidades{% endif %}
                   </span>
                   de <br>
                   comida cocinada al día
                 </p>
+
                 {%- comment -%} Coste/día (cooked): (units + decimals/3) * price_per_unit {%- endcomment -%}
                 {%- if result.pet == 'GATO' -%}
                   {%- assign price_per_unit = 0.95 -%}
                 {%- else -%}
                   {%- assign price_per_unit = 1.80 -%}
                 {%- endif -%}
-
                 {%- assign fraction = decimals | times: 1.0 | divided_by: 3 -%}
                 {%- assign total_units = units | plus: fraction -%}
                 {%- assign daily_cost = total_units | times: price_per_unit -%}
-
                 <p class="!mt-2 !font-semibold text-[#b5b5b5]">
                   Desde {{ daily_cost | round: 2 | replace: '.', ',' }}€ / día
                 </p>
-
               {% else %}
                 <div class="imgBurger text-center">
                   <img
