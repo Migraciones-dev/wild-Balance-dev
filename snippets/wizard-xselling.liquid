@@ -1,50 +1,56 @@
 <!-- Upselling de resultados Result Page Wizard -->
 
-{% if result.pet == "GATO" %}
-  {% assign xsellingProducts = collections["wizard-xselling-gatitos"].products %}
+{% if result.pet == 'GATO' %}
+  {% assign xsellingProducts = collections['wizard-xselling-gatitos'].products %}
 {% else %}
-  {% assign xsellingProducts = collections["wizard-xselling-perritos"].products %}
+  {% assign xsellingProducts = collections['wizard-xselling-perritos'].products %}
 {% endif %}
 
 <h2 class="t4s-section-title t4s-title">
   <span>Completa tu pack</span>
 </h2>
-<div class="wizard-variant-results">
-
-  {% for product in xsellingProducts limit:4 %}
+<div class="wizard-variant-results !bg-[#F4F0E2]">
+  {% for product in xsellingProducts limit: 4 %}
     <label for="xselling_{{ product.variants[0].id }}">
-        <div class="variant-result">
-          {{ product.featured_image | image_url: width: 300 | image_tag}}
-          <h2><input type="checkbox" id="xselling_{{ product.variants[0].id }}" name="xselling" value="{{ product.variants[0].id }}"/> {{product.title}}</h2>
-          
-         {{product.variants[0].price | money_with_currency }} <br/><br>
-          <span class="label select ">Seleccionar</span>
-          <span class="label selected hidden" >Seleccionado</span>
-        </div>
-      </label>
+      <div class="variant-result">
+        {{ product.featured_image | image_url: width: 300 | image_tag }}
+        <h2>
+          <input
+            type="checkbox"
+            id="xselling_{{ product.variants[0].id }}"
+            name="xselling"
+            value="{{ product.variants[0].id }}"
+          >
+          {{ product.title }}
+        </h2>
+
+        {{ product.variants[0].price | money_with_currency }}
+        <br>
+        <br>
+        <span class="label select ">Seleccionar</span>
+        <span class="label selected hidden">Seleccionado</span>
+      </div>
+    </label>
   {% endfor %}
 </div>
 
-
 <script>
-
   // click events for selected things
-    
-    let xsellingContainers = document.querySelectorAll('input[name="xselling"]');
-    
-    Array.from(xsellingContainers).forEach(function(xselling) {
-      xselling.addEventListener('click', function(event){ activateXselling(xselling, xsellingContainers); });
+
+  let xsellingContainers = document.querySelectorAll('input[name="xselling"]');
+
+  Array.from(xsellingContainers).forEach(function (xselling) {
+    xselling.addEventListener('click', function (event) {
+      activateXselling(xselling, xsellingContainers);
     });
-  
-  function activateXselling(xselling,xsellingContainers) {
+  });
 
-      //select current xselling
-      
-      let thisarticle = xselling.closest(".variant-result");
-      thisarticle.classList.toggle("active");
-      thisarticle.querySelector(".selected").classList.toggle("hidden");
-      thisarticle.querySelector(".select").classList.toggle("hidden");
+  function activateXselling(xselling, xsellingContainers) {
+    //select current xselling
 
-    }
-  
+    let thisarticle = xselling.closest('.variant-result');
+    thisarticle.classList.toggle('active');
+    thisarticle.querySelector('.selected').classList.toggle('hidden');
+    thisarticle.querySelector('.select').classList.toggle('hidden');
+  }
 </script>
