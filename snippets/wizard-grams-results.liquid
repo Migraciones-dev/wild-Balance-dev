@@ -208,6 +208,7 @@
                 <p>+ 50% de su dieta habitual</p>
               {% endif %}
               {% if result.food_type == 'cooked' %}
+                {{ result.food_type }}
                 <p>¡No te preocupes, dura hasta 2 días abierta en la nevera!</p>
               {% endif %}
               {%- comment -%} Coste/día (burgers): result.burgers * price_per_unit {%- endcomment -%}
