@@ -175,6 +175,21 @@
                   de <br>
                   comida cocinada al día
                 </p>
+                {%- comment -%} Coste/día (cooked): (units + decimals/3) * price_per_unit {%- endcomment -%}
+                {%- if result.pet == 'GATO' -%}
+                  {%- assign price_per_unit = 0.95 -%}
+                {%- else -%}
+                  {%- assign price_per_unit = 1.80 -%}
+                {%- endif -%}
+
+                {%- assign fraction = decimals | times: 1.0 | divided_by: 3 -%}
+                {%- assign total_units = units | plus: fraction -%}
+                {%- assign daily_cost = total_units | times: price_per_unit -%}
+
+                <p class="!mt-2 !font-semibold text-[#b5b5b5]">
+                  Desde {{ daily_cost | round: 2 | replace: '.', ',' }}€ / día
+                </p>
+
               {% else %}
                 <div class="imgBurger ">
                   <img
@@ -195,6 +210,17 @@
               {% if result.food_type == 'cooked' %}
                 <p>¡No te preocupes, dura hasta 2 días abierta en la nevera!</p>
               {% endif %}
+              {%- comment -%} Coste/día (burgers): result.burgers * price_per_unit {%- endcomment -%}
+              {%- if result.pet == 'GATO' -%}
+                {%- assign price_per_unit = 0.42 -%}
+              {%- else -%}
+                {%- assign price_per_unit = 0.33 -%}
+              {%- endif -%}
+
+              {%- assign daily_cost = result.burgers | times: price_per_unit -%}
+              <p class="!mt-2 !font-semibold  text-[#b5b5b5]">
+                Desde {{ daily_cost | round: 2 | replace: '.', ',' }}€ / día
+              </p>
             </div>
           </div>
         </div>
