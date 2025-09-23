@@ -31,7 +31,7 @@
             </div>
 
             <div class="containerPicture">
-              {% if result.food_type == 'cooked' %}
+              {% if food_type == 'cooked' %}
                 {% assign units = result.burgers | floor %}
                 {% assign decimals = result.burgers | minus: units | times: 3 | round %}
 
@@ -85,7 +85,7 @@
               {% if result.half_menu %}
                 <p>+ 50% de su dieta habitual</p>
               {% endif %}
-              {% if result.food_type == 'cooked' %}
+              {% if food_type == 'cooked' %}
                 <p>¡No te preocupes, dura hasta 2 días abierta en la nevera!</p>
               {% endif %}
             </div>
@@ -103,7 +103,7 @@
   </section>
 {% endcomment %}
 
-{% if result.food_type == 'burgers' %}
+{% if food_type == 'burgers' %}
   {% assign hero_img_top = 'https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Image_66.png?v=1757606670' %}
 {% else %}
   {% assign hero_img_top = 'https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Image_69_0657303f-3fa5-4155-a8ab-718de2f993b3.png?v=1758297354' %}
@@ -138,7 +138,7 @@
             </div>
 
             <div class="containerPicture">
-              {% if result.food_type == 'cooked' %}
+              {% if food_type == 'cooked' %}
                 {% assign units = result.burgers | floor %}
                 {% assign decimals = result.burgers | minus: units | times: 3 | round %}
 
@@ -147,7 +147,7 @@
                   {% assign decimals = 0 %}
                 {% endif %}
 
-                <div class="imgCookedFood flex justify-center">
+                <div class="imgCookedFood">
                   {% for i in (1..units) %}
                     <img
                       src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/bufitarrita.svg"
@@ -202,27 +202,25 @@
                   <span id="quiz-petBurgers" class="!font-bold">{{ result.burgers }}</span>
                   hamburguesitas
                 </p>
-                {%- comment -%} Coste/día (burgers): result.burgers * price_per_unit {%- endcomment -%}
-                {%- if result.pet == 'GATO' -%}
-                  {%- assign price_per_unit = 0.42 -%}
-                {%- else -%}
-                  {%- assign price_per_unit = 0.33 -%}
-                {%- endif -%}
-
-                {%- assign daily_cost = result.burgers | times: price_per_unit -%}
-                <p class="!mt-2 !font-semibold  text-[#b5b5b5]">
-                  Desde {{ daily_cost | round: 2 | replace: '.', ',' }}€ / día
-                </p>
               {% endif %}
 
               {% if result.half_menu %}
                 <p>+ 50% de su dieta habitual</p>
               {% endif %}
-              {% comment %}
-                {% if result.food_type == 'cooked' %}
-                  <p>¡No te preocupes, dura hasta 2 días abierta en la nevera!</p>
-                {% endif %}
-              {% endcomment %}
+              {% if food_type == 'cooked' %}
+                <p>¡No te preocupes, dura hasta 2 días abierta en la nevera!</p>
+              {% endif %}
+              {%- comment -%} Coste/día (burgers): result.burgers * price_per_unit {%- endcomment -%}
+              {%- if result.pet == 'GATO' -%}
+                {%- assign price_per_unit = 0.42 -%}
+              {%- else -%}
+                {%- assign price_per_unit = 0.33 -%}
+              {%- endif -%}
+
+              {%- assign daily_cost = result.burgers | times: price_per_unit -%}
+              <p class="!mt-2 !font-semibold  text-[#b5b5b5]">
+                Desde {{ daily_cost | round: 2 | replace: '.', ',' }}€ / día
+              </p>
             </div>
           </div>
         </div>
