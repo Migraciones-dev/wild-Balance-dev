@@ -228,7 +228,7 @@
                 {%- assign daily_cost = result.burgers | times: price_per_unit -%}
                 <p class="!mt-2 !font-semibold  text-[#b5b5b5]">
                   {% assign burger_number = result.grams | divided_by: 50 | round: 0 %}
-                  Desde {{ daily_cost | times: burger_number | round: 2 | replace: '.', ',' }}€ / día
+                  Desde {{ daily_cost | round: 2 | replace: '.', ',' }}€ / día
                 </p>
               {% endif %}
 
