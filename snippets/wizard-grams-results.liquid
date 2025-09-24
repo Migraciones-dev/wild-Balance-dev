@@ -201,7 +201,7 @@
                 {%- assign total_units = units | plus: fraction -%}
                 {%- assign daily_cost = total_units | times: price_per_unit -%}
                 <p class="!mt-2 !font-semibold text-[#b5b5b5]">
-                  {% comment %} Desde {{ daily_cost | round: 2 | replace: '.', ',' }}€ / día {% endcomment %}
+                  Desde {{ daily_cost | round: 2 | replace: '.', ',' }}€ / día
                 </p>
               {% else %}
                 <div class="imgBurger text-center">
