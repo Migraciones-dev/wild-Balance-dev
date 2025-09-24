@@ -154,6 +154,49 @@
         "image_jqVpaL": {
           "type": "image",
           "settings": {
+            "image_child": "shopify://shop_images/9a06f0bdf871e72330cdf29371017a6946daea85.jpg",
+            "img_link": "",
+            "open_link": "_self",
+            "img_width": 800,
+            "img_width_tb": 0,
+            "img_width_mb": 200,
+            "img_align": "center",
+            "img_align_tb": "center",
+            "img_align_mobile": "center",
+            "b_effect": "none",
+            "hidden_mobile": false,
+            "mgb": 20,
+            "mgb_tb": 20,
+            "mgb_mb": 20,
+            "animation": "none"
+          }
+        },
+        "bl_col_tTJxjB": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "12",
+            "col_dk_w": "33.33333",
+            "col_tb": "12",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": true,
+            "content_align": "start",
+            "content_align_tablet": "start",
+            "content_align_mobile": "start",
+            "padding_inner": "30px,30px,10px,30px",
+            "padding_inner_tb": "30px,30px,10px,30px",
+            "padding_inner_mb": "20px,20px,0px,20px",
+            "round_inner": "",
+            "round_tb_inner": "",
+            "round_mb_inner": "",
+            "bg_cl": "#faf5e7",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "image_4e6XNq": {
+          "type": "image",
+          "settings": {
             "image_child": "shopify://shop_images/placas.png",
             "img_link": "",
             "open_link": "_self",
@@ -290,6 +333,8 @@
         "custom_text_XqGgXn",
         "bl_col_QUXaB6",
         "image_jqVpaL",
+        "bl_col_tTJxjB",
+        "image_4e6XNq",
         "bl_col_aqcWxq",
         "image_3hpHW6",
         "image_Vm8GdX",
@@ -297,6 +342,7 @@
         "custom_text_dtMejp"
       ],
       "settings": {
+        "block_custom_class": "",
         "space_h_item": "30",
         "space_v_item": "30",
         "space_h_item_tb": "10",
