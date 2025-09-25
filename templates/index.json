@@ -19,7 +19,7 @@
             "image_mb": "shopify://shop_images/BANNER_MOBILE_SEMANA_DEL_PERRO_2025_1_79e17b8e-77e3-4ee5-80ad-c9e05ccbb68e.png",
             "image_position": "8",
             "cl_img": "",
-            "link_img1": "shopify://collections/comida",
+            "link_img1": "https://wildbalance.es/pages/crea-su-menu",
             "open_link": "_self",
             "animate_slide": "none",
             "text_align": "center",
@@ -716,7 +716,7 @@
         "title_color": "#004623",
         "highlight_color": "#004623",
         "text_color": "#004623",
-        "accent_color": "#FFCD00"
+        "accent_color": "#ffcd00"
       }
     },
     "migraciones_rich_text_AFedhg": {
