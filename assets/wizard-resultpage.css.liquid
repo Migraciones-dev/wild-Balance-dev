@@ -206,8 +206,32 @@ section > h3 {
     display: none;
   }
 
-  label {
-    display: contents !important;
+  .wizard-variant-results > label,
+  .contentFreezerSpace > label {
+    display: flex;
+  }
+
+  .wizard-variant-results > label {
+    cursor: pointer;
+    flex: 1 1 clamp(134px, 46%, 330px);
+    min-width: 134px;
+    max-width: 330px;
+  }
+
+  .wizard-variant-results > label > .variant-result {
+    width: 100%;
+  }
+
+  .contentFreezerSpace > label {
+    cursor: pointer;
+    flex: 1 1 clamp(130px, 46%, 400px);
+    min-width: 130px;
+    max-width: 400px;
+  }
+
+  .contentFreezerSpace > label > .articleInfoFrequently {
+    width: 100%;
+
   }
 
   .variant-result {
