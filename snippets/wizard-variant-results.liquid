@@ -3,20 +3,20 @@
 <div id="wizard-variant-results" class="wizard-variant-results !pb-6">
   {% for variant in result.product_recommendation_variants.value %}
     <label for="protein_{{ variant.id }}">
+      <input
+        type="checkbox"
+        id="protein_{{ variant.id }}"
+        name="protein"
+        value="{{ variant.id }}"
+
+        {% if forloop.index <= 4 %}
+          checked
+        {% endif %}
+      >
       <div class="variant-result  {% if forloop.index <=4 %}active{% endif %} bg-[#D9D9C8] !items-start !mb-0">
         <div class="mainResults">
           {{ variant.product.featured_image | image_url: width: 300 | image_tag }}
           <h2 class="!text-[18px] lg:!text-[30px] leading-[1] !font-semibold font-[Barlow] mb-4">
-            <input
-              type="checkbox"
-              id="protein_{{ variant.id }}"
-              name="protein"
-              value="{{ variant.id }}"
-
-              {% if forloop.index <= 4 %}
-                checked
-              {% endif %}
-            >
             {% if variant.product.metafields.custom.short_title_result_page.value %}
               {{ variant.product.metafields.custom.short_title_result_page }}
             {% else %}
