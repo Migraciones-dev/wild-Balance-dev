@@ -13,7 +13,7 @@
   <div class="pt-12 [@media(max-width:1024px)]:px-6">
     <h2
       class="
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        mx-auto relative [font-family:'Barlow',Helvetica] font-extrabold text-[#004623] max-w-[1600px] text-[30px] lg:text-[60px] text-center leading-[1] mb-10 !lg:mb-16 max-w-[650px]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                mx-auto relative [font-family:'Barlow',Helvetica] font-extrabold text-[#004623] max-w-[1600px] text-[30px] lg:text-[60px] text-center leading-[1] mb-10 !lg:mb-16 max-w-[650px]
       "
     >
       ¿Cada cuanto tiempo te lo enviamos a casa?
@@ -158,6 +158,23 @@
         </article>
       </label>
     </div>
+    <button
+      class="!shadow h-9 inline-flex items-center justify-center gap-2.5 !py-10 !px-24 [@media(min-width:1280px)]:!px-[90px] bg-[#ffcd00] rounded-[50px] text-[#004623] hover:bg-[#ffcd00]/90 max-sm:w-full md:w-auto !text-[18px]  py-18 lg:!my-20 mx-auto"
+      type="button"
+      onclick="recalculate()"
+    >
+      Calcular precio
+      <svg
+        class="min-w-[12px]"
+        width="12"
+        height="12"
+        viewBox="0 0 12 12"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M7.14511 0.958984L11.1576 5.88734M11.1576 5.88734L7.14511 10.8157M11.1576 5.88734L0.839844 5.88734" stroke="#004623" stroke-width="1.5403" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
   </section>
 
   {% comment %}
