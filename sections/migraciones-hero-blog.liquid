@@ -1,0 +1,142 @@
+{% comment %}
+  Section: Featured Article Card (responsive, Tailwind)
+  Destaca un artículo concreto (blog + handle). Si no se encuentra, usa el último del blog.
+{% endcomment %}
+
+{%- liquid
+  assign selected_blog = section.settings.blog
+  assign article_handle = section.settings.article_handle | strip
+  assign show_date = section.settings.show_date
+  assign date_fmt = section.settings.date_fmt | default: '%d %b %Y'
+  assign button_label = section.settings.button_label | default: 'Continuar leyendo'
+  assign heading = section.settings.heading | default: ''
+  assign featured_article = null
+
+  if selected_blog
+    if article_handle != blank
+      for a in blogs[selected_blog].articles
+        if a.handle == article_handle
+          assign featured_article = a
+          break
+        endif
+      endfor
+    endif
+
+    if featured_article == null
+      assign featured_article = blogs[selected_blog].articles | first
+    endif
+  endif
+
+  if featured_article
+    assign categoria = featured_article.tags | first | default: blogs[selected_blog].title
+  endif
+-%}
+
+<section class="w-full pt-8 lg:pt-14 lg:pt-[7rem]  !bg-[#F4F0E2] ">
+  <div class=" mt-0 lg:mt-20 !rounded-xl t4s-container">
+    {%- assign blog_handles = 'blog,noticias,recetas' | split: ',' -%}
+    {%- assign total_articles = 0 -%}
+    {%- for h in blog_handles -%}
+      {%- assign b = blogs[h] -%}
+      {%- if b -%}
+        {%- assign total_articles = total_articles | plus: b.articles_count -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    <p class="[@media(max-width:1024px)]:mb-8 text-[14px] lg:!hidden">{{ total_articles }} Resultados</p>
+    {%- if heading != blank -%}
+      <h2 class="mb-8 lg:mb-12 [font-family:'Barlow',Helvetica] font-bold lg:font-extrabold text-[#004623] text-[28px] lg:text-[48px]">
+        {{ heading }}
+      </h2>
+    {%- endif -%}
+
+    {%- if featured_article -%}
+      {%- comment -%}
+        MÓVIL: stack (imagen arriba + card blanca)
+        DESKTOP (≥md): dos columnas (texto | imagen)
+      {%- endcomment -%}
+      <article class="grid grid-cols-1 md:grid-cols-5 rounded-xl overflow-hidden border border-gray-200 bg-white">
+        <a
+          href="/blogs/blog/alimentacion-natural-para-maine-coon-guia-completa-de-wild-balance"
+          class="block w-full order-1 md:order-2 md:col-span-3 md:h-full"
+        >
+          <img
+            src="{{ featured_article.image | image_url: width: 1600 }}"
+            alt="{{ featured_article.title | escape }}"
+            loading="lazy"
+            class="w-full h-full object-cover aspect-[16/10] md:aspect-[16/9]"
+          >
+        </a>
+
+        {%- comment -%} CARD BLANCA {%- endcomment -%}
+        <div class="order-2 md:order-1 bg-white border border-gray-200 p-10 sm:p-16 lg:p-24 md:col-span-2">
+          <div class="flex items-center justify-between gap-4 flex-wrap">
+            <span class="inline-flex items-center px-4 py-2 rounded-full bg-[#004623] text-white font-semibold text-sm leading-none">
+              {{ categoria }}
+            </span>
+            {%- if show_date -%}
+              <time class="text-sm text-[#7f7d7b]">
+                {{ featured_article.published_at | date: date_fmt }}
+              </time>
+            {%- endif -%}
+          </div>
+
+          <h3 class="[font-family:'Barlow',Helvetica] font-extrabold text-[#004623] mt-10 text-2xl leading-snug md:text-[30px] [@media(max-width:1024px)]:text-[29px] [@media(max-width:1024px)]:py-0">
+            <a href="{{ featured_article.url }}" class="hover:underline">
+              {{- featured_article.title -}}
+            </a>
+          </h3>
+
+          {%- comment -%} Oculto en móvil para clavar el diseño; visible desde md+ {%- endcomment -%}
+          <p class="hidden md:block text-[#004623] mt-4 leading-relaxed">
+            {{ featured_article.excerpt_or_content | strip_html | truncate: 180 }}
+          </p>
+
+          <a
+            href="{{ featured_article.url }}"
+            class="inline-flex items-center justify-center mt-10 md:mt-8 px-8 py-3 rounded-full bg-[#ffcd00] text-[#004623] font-semibold hover:opacity-90"
+          >
+            {{ button_label }}
+          </a>
+        </div>
+      </article>
+    {%- else -%}
+      <p class="text-sm text-gray-600">Configura un blog y un handle de artículo válidos.</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Artículo destacado (card)",
+  "tag": "section",
+  "class": "section-featured-article",
+  "settings": [
+    { "type": "header", "content": "Contenido" },
+    { "type": "blog", "id": "blog", "label": "Selecciona el blog" },
+    {
+      "type": "text",
+      "id": "article_handle",
+      "label": "Handle del artículo",
+      "info": "Ej.: alimentacion-barf-prevenir-y-mejorar-enfermedades"
+    },
+    { "type": "text", "id": "heading", "label": "Título opcional", "default": "Título" },
+    { "type": "text", "id": "button_label", "label": "Texto del botón", "default": "Continuar leyendo" },
+    { "type": "checkbox", "id": "show_date", "label": "Mostrar fecha", "default": true },
+    {
+      "type": "select",
+      "id": "date_fmt",
+      "label": "Formato de fecha",
+      "default": "%d %b %Y",
+      "options": [
+        { "value": "%d %b %Y", "label": "25 Sep 2025" },
+        { "value": "abbreviated_date", "label": "Abr 19, 1994" },
+        { "value": "basic", "label": "4/19/1994" },
+        { "value": "date", "label": "April 19, 1994" },
+        { "value": "%b %d", "label": "Apr 19" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Artículo destacado (card)" }]
+}
+{% endschema %}
