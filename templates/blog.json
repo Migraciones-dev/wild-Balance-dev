@@ -1,14 +1,26 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
+    "migraciones_hero_blog_rNURC7": {
+      "type": "migraciones-hero-blog",
+      "name": "Artículo destacado (card)",
+      "settings": {
+        "blog": "blog",
+        "article_handle": "",
+        "heading": "",
+        "button_label": "Continuar leyendo",
+        "show_date": true,
+        "date_fmt": "%d %b %Y"
+      }
+    },
     "heading": {
       "type": "heading-template",
       "blocks": {
@@ -41,6 +53,7 @@
       "block_order": [
         "90fe4528-eab1-488c-942e-d8ffac4dea73"
       ],
+      "disabled": true,
       "settings": {
         "parallax": false,
         "color": "#000000",
@@ -134,6 +147,7 @@
     }
   },
   "order": [
+    "migraciones_hero_blog_rNURC7",
     "heading",
     "top_tags",
     "main",
