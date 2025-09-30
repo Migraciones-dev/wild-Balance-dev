@@ -144,6 +144,22 @@
         "sidebar_bdr": 5,
         "sidebar_pd": 10
       }
+    },
+    "migraciones_image_YJBtm3": {
+      "type": "migraciones-image",
+      "name": "Migraciones imagen banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/BANNER_Horizontal.png",
+        "mobile_image": "shopify://shop_images/Link.png",
+        "image_link": "",
+        "pt_mobile": 32,
+        "pb_mobile": 48,
+        "pt_desktop": 60,
+        "pb_desktop": 86,
+        "image_radius": 10,
+        "bg_color": "#f4f0e2",
+        "boxed": true
+      }
     }
   },
   "order": [
@@ -151,6 +167,7 @@
     "heading",
     "top_tags",
     "main",
-    "sidebar"
+    "sidebar",
+    "migraciones_image_YJBtm3"
   ]
 }
