@@ -1,18 +1,17 @@
 <!-- Variantes de resultados Result Page Wizard -->
-
 <div id="wizard-variant-results" class="wizard-variant-results !pb-6">
   {% for variant in result.product_recommendation_variants.value %}
-    <label for="protein_{{ variant.id }}">
-      <div class="variant-result  {% if forloop.index <=4 %}active{% endif %} bg-[#D9D9C8] !items-start !mb-0">
+    <!-- sin atributo `for` porque el input está DENTRO -->
+    <label class="protein-card">
+      <div class="variant-result {% if forloop.index <=4 %}active{% endif %} bg-[#D9D9C8] !items-start !mb-0">
         <div class="mainResults">
           {{ variant.product.featured_image | image_url: width: 300 | image_tag }}
-          <h2 class="!text-[18px] lg:!text-[30px] leading-[1] !font-semibold font-[Barlow] mb-4">
+          <h2 class="!text-[18px] lg:!text-[30px] leading-[1] !font-semibold font-[Barlow] mb-4 mt-4">
             <input
               type="checkbox"
               id="protein_{{ variant.id }}"
               name="protein"
               value="{{ variant.id }}"
-
               {% if forloop.index <= 4 %}
                 checked
               {% endif %}
@@ -24,19 +23,18 @@
             {% endif %}
           </h2>
 
-          <!-- {{variant.price | money_with_currency }} <br/><br> -->
           <p>{{ variant.product.metafields.custom.short_description_result_page }}</p>
         </div>
 
         <div class="ctaResults">
           <span
-            class="label select {% if forloop.index <= 4 %} hidden{% endif %} "
-            style="font-size: 12px!important; font-weight: 600;"
+            class="label select {% if forloop.index <= 4 %}hidden{% endif %}"
+            style="font-size:12px!important;font-weight:600;"
             >Seleccionar</span
           >
           <span
-            class="label selected {% if forloop.index > 4 %} hidden{% endif %}"
-            style="font-size: 12px!important; font-weight: 600;"
+            class="label selected {% if forloop.index > 4 %}hidden{% endif %}"
+            style="font-size:12px!important;font-weight:600;"
             >Seleccionado</span
           >
         </div>
@@ -47,82 +45,148 @@
   <div class="needHelpContainer [@media(max-width:1024px)]:!mx-6 [@media(max-width:1024px)]:!mb-12 [@media(max-width:1024px)]:!mt-10">
     <a
       href="/pages/crea-su-menu"
-      class="shadow h-9 inline-flex items-center justify-center gap-2.5 py-10 px-12 bg-[#ffcd00] rounded-[50px] text-[#004623] hover:bg-[#ffcd00]/90 max-sm:w-full md:w-auto text-[18px]  py-18 lg:!my-20 mx-auto"
+      class="shadow h-9 inline-flex items-center justify-center gap-2.5 py-10 px-12 bg-[#ffcd00] rounded-[50px] text-[#004623] hover:bg-[#ffcd00]/90 max-sm:w-full md:w-auto text-[18px] py-18 lg:!my-20 mx-auto"
     >
       <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M17.5508 3.68544C16.6338 2.75955 15.5418 2.02541 14.3383 1.52581C13.1348 1.0262 11.8439 0.771127 10.5408 0.775445C5.08078 0.775445 0.630781 5.22544 0.630781 10.6854C0.630781 12.4354 1.09078 14.1354 1.95078 15.6354L0.550781 20.7754L5.80078 19.3954C7.25078 20.1854 8.88078 20.6054 10.5408 20.6054C16.0008 20.6054 20.4508 16.1554 20.4508 10.6954C20.4508 8.04544 19.4208 5.55544 17.5508 3.68544ZM10.5408 18.9254C9.06078 18.9254 7.61078 18.5254 6.34078 17.7754L6.04078 17.5954L2.92078 18.4154L3.75078 15.3754L3.55078 15.0654C2.72833 13.7525 2.29171 12.2347 2.29078 10.6854C2.29078 6.14544 5.99078 2.44544 10.5308 2.44544C12.7308 2.44544 14.8008 3.30544 16.3508 4.86544C17.1184 5.62931 17.7267 6.53799 18.1404 7.53877C18.5541 8.53956 18.765 9.61253 18.7608 10.6954C18.7808 15.2354 15.0808 18.9254 10.5408 18.9254ZM15.0608 12.7654C14.8108 12.6454 13.5908 12.0454 13.3708 11.9554C13.1408 11.8754 12.9808 11.8354 12.8108 12.0754C12.6408 12.3254 12.1708 12.8854 12.0308 13.0454C11.8908 13.2154 11.7408 13.2354 11.4908 13.1054C11.2408 12.9854 10.4408 12.7154 9.50078 11.8754C8.76078 11.2154 8.27078 10.4054 8.12078 10.1554C7.98078 9.90545 8.10078 9.77544 8.23078 9.64544C8.34078 9.53545 8.48078 9.35544 8.60078 9.21544C8.72078 9.07544 8.77078 8.96544 8.85078 8.80544C8.93078 8.63544 8.89078 8.49544 8.83078 8.37544C8.77078 8.25545 8.27078 7.03544 8.07078 6.53544C7.87078 6.05544 7.66078 6.11544 7.51078 6.10544H7.03078C6.86078 6.10544 6.60078 6.16544 6.37078 6.41544C6.15078 6.66544 5.51078 7.26544 5.51078 8.48544C5.51078 9.70544 6.40078 10.8854 6.52078 11.0454C6.64078 11.2154 8.27078 13.7154 10.7508 14.7854C11.3408 15.0454 11.8008 15.1954 12.1608 15.3054C12.7508 15.4954 13.2908 15.4654 13.7208 15.4054C14.2008 15.3354 15.1908 14.8054 15.3908 14.2254C15.6008 13.6454 15.6008 13.1554 15.5308 13.0454C15.4608 12.9354 15.3108 12.8854 15.0608 12.7654Z" fill="#004623"/>
       </svg>
-
-      <span class="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#004623] tracking-[0] leading-[26px] text-[18px]">
-        Haz click si necesitas ayuda
-      </span>
+      <span class="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#004623] tracking-[0] leading-[26px] text-[18px]"
+        >Haz click si necesitas ayuda</span
+      >
     </a>
   </div>
 </div>
 
 <script>
-  // click events for selected things
-
-  let proteinContainers = document.querySelectorAll('input[name="protein"]');
-
-  Array.from(proteinContainers).forEach(function (protein) {
-    protein.addEventListener('click', function (event) {
-      activateProtein(protein, proteinContainers);
-    });
-  });
-
-  function activateProtein(thisProtein, proteinContainers) {
-    //select current protein
-
-    let thisarticle = thisProtein.closest('.variant-result');
-    thisarticle.classList.toggle('active');
-    thisarticle.querySelector('.selected').classList.toggle('hidden');
-    thisarticle.querySelector('.select').classList.toggle('hidden');
-  }
-
   (function () {
-    const form = document.querySelector('#wizard-variant-results');
-    const checkboxes = form.querySelectorAll('input[name=protein]');
-    const checkboxLength = checkboxes.length;
-    const firstCheckbox = checkboxLength > 0 ? checkboxes[0] : null;
+    const wrap = document.querySelector('#wizard-variant-results');
+    if (!wrap || wrap.dataset.init === '1') return; // evita doble binding
+    wrap.dataset.init = '1';
 
-    function init() {
-      if (firstCheckbox) {
-        for (let i = 0; i < checkboxLength; i++) {
-          checkboxes[i].addEventListener('change', checkValidity);
+    // 1) Parche: quitar `for` si el input está dentro (defensivo)
+    wrap.querySelectorAll('label[for]').forEach((lbl) => {
+      const id = lbl.getAttribute('for');
+      if (id && lbl.querySelector('#' + CSS.escape(id))) lbl.removeAttribute('for');
+    });
+
+    // Utilidad: refrescar UI
+    function refreshCardFromInput(input) {
+      const card = input.closest('.variant-result');
+      if (!card) return;
+      const on = input.checked;
+      card.classList.toggle('active', on);
+      card.querySelector('.selected')?.classList.toggle('hidden', !on);
+      card.querySelector('.select')?.classList.toggle('hidden', on);
+    }
+
+    // 2) Delegación PRINCIPAL en pointerup
+    wrap.addEventListener(
+      'pointerup',
+      function (e) {
+        const label = e.target.closest('label.protein-card');
+        if (!label || !wrap.contains(label)) return;
+
+        // Si es un gesto con más de un dedo o botón distinto al primario, ignorar
+        if (e.pointerType && e.pointerType !== 'mouse' && e.isPrimary === false) return;
+
+        // Evitar que el click nativo posterior haga un segundo toggle
+        e.preventDefault();
+        e.stopPropagation();
+
+        const input = label.querySelector('input[name="protein"]');
+        if (!input) return;
+
+        // Toggle manual
+        input.checked = !input.checked;
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+
+        // Bandera para cancelar el "ghost click" posterior
+        label.dataset.justToggledAt = String(Date.now());
+      },
+      { capture: true }
+    );
+
+    // 3) Cancelar el ghost click que llega después del pointerup en móviles
+    wrap.addEventListener(
+      'click',
+      function (e) {
+        const label = e.target.closest('label.protein-card');
+        if (!label) return;
+
+        const t = Number(label.dataset.justToggledAt || 0);
+        // si el click llega muy pronto tras nuestro pointerup, lo anulamos
+        if (Date.now() - t < 350) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          return false;
         }
-        checkValidity();
-      }
-    }
+      },
+      true
+    );
 
-    function isChecked() {
-      for (let i = 0; i < checkboxLength; i++) {
-        if (checkboxes[i].checked) return true;
-      }
-      return false;
-    }
+    // 4) Teclado (accesibilidad): Space/Enter
+    wrap.addEventListener('keydown', function (e) {
+      const label = e.target.closest('label.protein-card');
+      if (!label) return;
+      if (e.key !== ' ' && e.key !== 'Enter') return;
 
-    function checkValidity() {
-      const errorMessage = !isChecked() ? 'Al menos una proteína debe estar seleccionada' : '';
-      firstCheckbox.setCustomValidity(errorMessage);
-    }
+      e.preventDefault();
+      const input = label.querySelector('input[name="protein"]');
+      if (!input) return;
 
-    init();
+      input.checked = !input.checked;
+      input.dispatchEvent(new Event('change', { bubbles: true }));
+      refreshCardFromInput(input);
+    });
+
+    // 5) Refresco UI al cambiar (única fuente de verdad: input.checked)
+    wrap.addEventListener(
+      'change',
+      function (e) {
+        if (e.target?.name === 'protein') refreshCardFromInput(e.target);
+      },
+      true
+    );
+
+    // 6) Validación “al menos una”
+    const cbs = wrap.querySelectorAll('input[name="protein"]');
+    const first = cbs[0];
+    const anyChecked = () => Array.from(cbs).some((cb) => cb.checked);
+    const applyValidity = () =>
+      first && first.setCustomValidity(anyChecked() ? '' : 'Al menos una proteína debe estar seleccionada');
+    cbs.forEach((cb) => cb.addEventListener('change', applyValidity));
+    applyValidity();
+
+    // 7) Refrescar estado visual inicial (por si hay checked server-side)
+    cbs.forEach(refreshCardFromInput);
   })();
 </script>
 
 <style>
-  .variant-result .label.selected, .variant-result .label.select {
-  position: static!important;
-  margin-top: 1rem!important;
-  margin-bottom: 1rem!important;
+  /* Área táctil fiable */
+  #wizard-variant-results label.protein-card {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    cursor: pointer;
+    display: block;
   }
-  .wizard-variant-results {
-    padding: unset!important;
+  /* Input fuera de juego para evitar toggles nativos */
+  #wizard-variant-results label.protein-card input[name="protein"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
   }
+
+  .variant-result .label.selected,
+  .variant-result .label.select {
+    position: static !important;
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .wizard-variant-results { padding: unset !important; }
   @media (max-width: 1000px) {
-      .wizard-variant-results {
-    gap: 8px!important;
-  }
+    .wizard-variant-results { gap: 8px !important; }
   }
 </style>
