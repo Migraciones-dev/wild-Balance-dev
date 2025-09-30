@@ -160,6 +160,70 @@
         "bg_color": "#f4f0e2",
         "boxed": true
       }
+    },
+    "migraciones_blog_posts_YePNLh": {
+      "type": "migraciones-blog-posts",
+      "blocks": {
+        "post_cp6rj8": {
+          "type": "post",
+          "settings": {
+            "article": "blog/diferencias-entre-barf-perros-y-barf-gatos"
+          }
+        },
+        "post_BWia49": {
+          "type": "post",
+          "settings": {
+            "article": "blog/como-afecta-una-mala-alimentacion-a-la-salud-de-tu-mascota-descubre-los-beneficios-de-la-dieta-barf"
+          }
+        },
+        "post_MVMaNU": {
+          "type": "post",
+          "settings": {
+            "article": "blog/visceras-de-la-alimentacion-de-perros-y-gatos-descubre-sus-beneficios"
+          }
+        },
+        "post_HPAmJ8": {
+          "type": "post",
+          "settings": {
+            "article": "blog/premios-y-sticks-dentales-para-perros-naturales-y-funcionales"
+          }
+        },
+        "post_MCTWVc": {
+          "type": "post",
+          "settings": {
+            "article": "blog/mordedores-naturales-para-perros-sus-beneficios-y-ventajas"
+          }
+        },
+        "post_UGhLhc": {
+          "type": "post",
+          "settings": {
+            "article": "blog/ocho-beneficios-alimentacion-barf-wild-balance"
+          }
+        }
+      },
+      "block_order": [
+        "post_cp6rj8",
+        "post_BWia49",
+        "post_MVMaNU",
+        "post_HPAmJ8",
+        "post_MCTWVc",
+        "post_UGhLhc"
+      ],
+      "name": "Posts manuales",
+      "settings": {
+        "heading": "Más populares",
+        "bg_color": "#F4F0E2",
+        "boxed": true,
+        "pt_mobile": 0,
+        "pb_mobile": 0,
+        "pt_desktop": 0,
+        "pb_desktop": 0,
+        "image_radius": 0,
+        "gap": "md",
+        "show_date": true,
+        "show_excerpt": true,
+        "button_label": "Continuar leyendo"
+      }
     }
   },
   "order": [
@@ -168,6 +232,7 @@
     "top_tags",
     "main",
     "sidebar",
-    "migraciones_image_YJBtm3"
+    "migraciones_image_YJBtm3",
+    "migraciones_blog_posts_YePNLh"
   ]
 }
