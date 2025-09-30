@@ -1,5 +1,5 @@
 .t4s-pagination-wrapper {
-    margin-bottom: 60px;
+    padding-bottom: 60px;
 }
 .t4s-has-btn-load-more .t4s-pagination-wrapper,
 .t4s-has-btn-infinite .t4s-pagination-wrapper {
