@@ -108,17 +108,30 @@
         <!-- Móvil: 2 columnas (texto|imagen). Desktop: imagen arriba -->
         <div class="grid grid-cols-[1fr_45%] md:grid-cols-1">
           {%- if article.image -%}
-            <a href="{{ article.url }}" class="order-2 md:order-1 relative block w-full h-full overflow-hidden">
-              <img
-                src="{{ article.image | image_url: width: 1400 }}"
-                alt="{{ article.title | escape }}"
-                loading="lazy"
-                class="w-full h-full object-cover lg:aspect-[3/2]"
-              >
-            </a>
-          {%- else -%}
-            <a href="{{ article.url }}" class="order-2 md:order-1 relative block w-full h-full bg-gray-100 md:aspect-[16/9]"></a>
-          {%- endif -%}
+  <a href="{{ article.url }}" class="order-2 md:order-1 relative block w-full h-full overflow-hidden">
+    {% liquid
+      assign mobile_img = article.metafields.custom.imagen_vertical_para_movil
+    %}
+    <picture>
+      {%- if mobile_img and mobile_img != blank -%}
+        <!-- Móvil: usa la imagen vertical del metafield si existe -->
+        <source
+          media="(max-width: 767px)"
+          srcset="{{ mobile_img | image_url: width: 800 }}">
+      {%- endif -%}
+
+      <!-- Desktop (y móvil si no hay metafield): imagen actual del artículo -->
+      <img
+        src="{{ article.image | image_url: width: 1400 }}"
+        alt="{{ article.title | escape }}"
+        loading="lazy"
+        class="w-full h-full object-cover lg:aspect-[3/2]"
+        sizes="(max-width: 767px) 45vw, 100vw">
+    </picture>
+  </a>
+{%- else -%}
+  <a href="{{ article.url }}" class="order-2 md:order-1 relative block w-full h-full bg-gray-100 md:aspect-[16/9]"></a>
+{%- endif -%}
 
           <!-- Body -->
           <div class="order-1 md:order-2 flex flex-col gap-6 p-5 sm:p-6 lg:gap-16 lg:py-10">
