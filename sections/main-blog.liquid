@@ -104,50 +104,32 @@
       {%- assign categoria = article.tags | first | default: blog.title -%}
 
       <!-- CARD -->
-      <article class="border border-gray-200 relative bg-white rounded-[10px] overflow-hidden">
-        <!-- Móvil: 2 columnas (texto|imagen). Desktop: imagen arriba -->
-        <div class="grid grid-cols-[1fr_45%] md:grid-cols-1">
-          {%- if article.image -%}
-            <a href="{{ article.url }}" class="order-2 md:order-1 relative block w-full h-full overflow-hidden">
-              <img
-                src="{{ article.image | image_url: width: 1400 }}"
-                alt="{{ article.title | escape }}"
-                loading="lazy"
-                class="w-full h-full object-cover lg:aspect-[3/2]"
-              >
-            </a>
-          {%- else -%}
-            <a href="{{ article.url }}" class="order-2 md:order-1 relative block w-full h-full bg-gray-100 md:aspect-[16/9]"></a>
-          {%- endif -%}
+     {%- if article.image -%}
+  <a href="{{ article.url }}" class="order-2 md:order-1 relative block w-full h-full overflow-hidden">
+    {% liquid
+      assign mobile_img = article.metafields.custom.imagen_vertical_para_movil
+    %}
+    <picture>
+      {%- if mobile_img and mobile_img != blank -%}
+        <!-- Móvil: usa la imagen vertical del metafield si existe -->
+        <source
+          media="(max-width: 767px)"
+          srcset="{{ mobile_img | image_url: width: 800 }}">
+      {%- endif -%}
 
-          <!-- Body -->
-          <div class="order-1 md:order-2 flex flex-col gap-6 p-5 sm:p-6 lg:gap-16 lg:py-10">
-            <div class="flex items-center justify-between [@media(max-width:1024px)]:flex-wrap [@media(max-width:1024px)]:gap-10">
-              <span class="inline-flex items-center px-6 py-2 rounded-full bg-[#004623] text-white font-semibold text-[14px] lg:text-[18px] leading-[1]">
-                {{ categoria }}
-              </span>
-                <time class="text-sm text-[#7f7d7b] [@media(max-width:1024px)]:w-full [@media(max-width:1024px)]:-mb-4">
-                  {{ article.published_at | date: '%d %b %Y' }}
-                </time>
-            </div>
+      <!-- Desktop (y móvil si no hay metafield): imagen actual del artículo -->
+      <img
+        src="{{ article.image | image_url: width: 1400 }}"
+        alt="{{ article.title | escape }}"
+        loading="lazy"
+        class="w-full h-full object-cover lg:aspect-[3/2]"
+        sizes="(max-width: 767px) 45vw, 100vw">
+    </picture>
+  </a>
+{%- else -%}
+  <a href="{{ article.url }}" class="order-2 md:order-1 relative block w-full h-full bg-gray-100 md:aspect-[16/9]"></a>
+{%- endif -%}
 
-            <div class="flex flex-col gap-4">
-              <h3 class="!font-bold text-[#004623] [font-family:'Barlow',Helvetica] text-[1.125rem] leading-tight">
-                <a href="{{ article.url }}" class="hover:underline !font-bold text-[16px] lg:text-[22px]">
-                  {{- article.title -}}
-                </a>
-              </h3>
-              <p class="text-[#004623] leading-relaxed [@media(max-width:1024px)]:hidden">
-                {{ article.excerpt_or_content | strip_html | truncate: 150 }}
-              </p>
-            </div>
-
-            <a href="{{ article.url }}" class="inline-flex w-max items-center justify-center px-8 py-3 rounded-full bg-[#ffcd00] text-[#004623] text-[15px] font-semibold hover:opacity-90 [@media(max-width:1024px)]:mt-8">
-              Continuar leyendo
-            </a>
-          </div>
-        </div>
-      </article>
       <!-- /CARD -->
     {%- endfor -%}
   </div>
