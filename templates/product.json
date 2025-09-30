@@ -523,7 +523,7 @@
           "type": "video",
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/1a371b412b1a42d09a0e7ea44f543aeb.mp4",
-            "poster_url": "shopify://shop_images/T3_-_IMG_Stories_1.jpg",
+            "poster_url": "shopify://shop_images/IMG_5702.jpg",
             "caption": ""
           }
         },
@@ -559,7 +559,7 @@
     "migraciones_feafured_collection_XyhqUe": {
       "type": "migraciones-feafured-collection",
       "custom_css": [
-        ".feat-col-section {display:none!important;}"
+        ".feat-col-section {display: none !important;}"
       ],
       "name": "Migraciones collection",
       "settings": {
