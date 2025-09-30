@@ -57,7 +57,7 @@
 }
 @media (max-width: 767px) {
     .t4s-pagination-wrapper {
-        margin-bottom: 40px;
+        padding-bottom: 40px;
         margin-top: 20px;
     }
 }
