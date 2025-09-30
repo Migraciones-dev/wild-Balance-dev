@@ -1,34 +1,54 @@
-<section id="section-{{ section.id }}" class="w-full">
+<section
+  id="section-{{ section.id }}"
+  class="w-full"
+  style="
+    background-color: {{ section.settings.bg_color }};
+    padding-top: {{ section.settings.pt_mobile }}px;
+    padding-bottom: {{ section.settings.pb_mobile }}px;
+  "
+>
+  <style>
+    @media (min-width: 768px) {
+      #section-{{ section.id }} {
+        padding-top: {{ section.settings.pt_desktop }}px !important;
+        padding-bottom: {{ section.settings.pb_desktop }}px !important;
+      }
+    }
+  </style>
+
+  {%- assign boxed_class = section.settings.boxed | default: false -%}
+  {%- if boxed_class -%}
+    <div class="t4s-container">
+  {%- endif -%}
+
   {%- if section.settings.desktop_image or section.settings.mobile_image -%}
-    <!-- Imagen de escritorio en pantallas md (768px) en adelante -->
+    {%- comment -%} Imagen escritorio {%- endcomment -%}
     {% if section.settings.desktop_image %}
-      {% if section.settings.image_link != blank %}
-        <a href="{{ section.settings.image_link }}">
-      {% endif %}
+      {% if section.settings.image_link != blank %}<a href="{{ section.settings.image_link }}">{% endif %}
       <img
         src="{{ section.settings.desktop_image | img_url: '2048x' }}"
         class="hidden md:block w-full h-auto object-cover"
         alt="{{ section.settings.desktop_image.alt | escape }}"
+        style="border-radius: {{ section.settings.image_radius }}px;"
       >
-      {% if section.settings.image_link != blank %}
-        </a>
-      {% endif %}
+      {% if section.settings.image_link != blank %}</a>{% endif %}
     {% endif %}
 
-    <!-- Imagen de móvil en pantallas menores a md -->
+    {%- comment -%} Imagen móvil {%- endcomment -%}
     {% if section.settings.mobile_image %}
-      {% if section.settings.image_link != blank %}
-        <a href="{{ section.settings.image_link }}">
-      {% endif %}
+      {% if section.settings.image_link != blank %}<a href="{{ section.settings.image_link }}">{% endif %}
       <img
         src="{{ section.settings.mobile_image | img_url: '768x' }}"
         class="block md:hidden w-full h-auto object-cover"
         alt="{{ section.settings.mobile_image.alt | escape }}"
+        style="border-radius: {{ section.settings.image_radius }}px;"
       >
-      {% if section.settings.image_link != blank %}
-        </a>
-      {% endif %}
+      {% if section.settings.image_link != blank %}</a>{% endif %}
     {% endif %}
+  {%- endif -%}
+
+  {%- if boxed_class -%}
+    </div>
   {%- endif -%}
 </section>
 
@@ -50,6 +70,68 @@
       "type": "url",
       "id": "image_link",
       "label": "Enlace de la imagen"
+    },
+    {
+      "type": "range",
+      "id": "pt_mobile",
+      "label": "Padding superior (móvil)",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "pb_mobile",
+      "label": "Padding inferior (móvil)",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "pt_desktop",
+      "label": "Padding superior (desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "pb_desktop",
+      "label": "Padding inferior (desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Radio de borde de la imagen",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Color de fondo de la sección",
+      "default": "#ffffff"
+    },
+    {
+      "type": "checkbox",
+      "id": "boxed",
+      "label": "Usar contenedor boxed (t4s-container)",
+      "default": false
     }
   ],
   "presets": [
