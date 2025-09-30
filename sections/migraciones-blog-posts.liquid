@@ -113,9 +113,11 @@
 
             <div class="flex flex-col gap-5 p-5 sm:p-6">
               <div class="flex items-center justify-between flex-wrap gap-4">
-                <span class="inline-flex items-center px-4 py-2 rounded-full bg-[#004623] text-white font-semibold text-[13px] lg:text-[14px] leading-[1]">
-                  {{ a.tags | first | default: a.blog.title }}
-                </span>
+                {% if a.tags %}
+                  <span class="inline-flex items-center px-4 py-2 rounded-full bg-[#004623] text-white font-semibold text-[13px] lg:text-[14px] leading-[1]">
+                    {{ a.tags | first | default: a.blog.title }}
+                  </span>
+                {% endif %}
                 {%- if section.settings.show_date -%}
                   <time class="text-sm text-[#7f7d7b]">
                     {{ a.published_at | date: '%d %b %Y' }}
