@@ -160,6 +160,13 @@
       "settings": {
         "custom_liquid": "{% render 'wizard-subscription' result:metaobject %}"
       }
+    },
+    "custom_liquid_tWCQKi": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
+      "settings": {
+        "custom_liquid": "<script>\ndocument.addEventListener('DOMContentLoaded', () => {\n  // 1) Evita doble activación: si el label contiene al input referenciado por 'for', quita 'for'\n  document.querySelectorAll('label[for]').forEach(lbl => {\n    const id = lbl.getAttribute('for');\n    if (!id) return;\n    const inside = lbl.querySelector('#' + CSS.escape(id));\n    if (inside) lbl.removeAttribute('for');\n  });\n\n  // 2) Endurece el tap en iOS (evita selección de texto/ghost click)\n  const clickables = document.querySelectorAll(\n    '.wizard-variant-results label, .articleInfoFrequently'\n  );\n  clickables.forEach(el => {\n    el.style.webkitUserSelect = 'none';\n    el.style.userSelect = 'none';\n    el.style.touchAction = 'manipulation';\n    el.style.cursor = 'pointer';\n  });\n\n  // 3) Delegación robusta: un solo handler que alterna checked y sincroniza clases\n  function toggleCardState(input) {\n    // Para checkboxes: alternar. Para radios: marcar y desmarcar hermanos\n    if (input.type === 'radio') {\n      // nativo ya desmarca el resto del grupo, pero forzamos la UI\n      input.checked = true;\n      document.querySelectorAll(`input[type=\"radio\"][name=\"${input.name}\"]`).forEach(r => {\n        const card = r.closest('.variant-result, .articleInfoFrequently');\n        if (!card) return;\n        const sel = card.querySelector('.label.selected');\n        const selOff = card.querySelector('.label.select');\n        card.classList.toggle('active', r.checked);\n        if (sel) sel.style.display = r.checked ? '' : 'none';\n        if (selOff) selOff.style.display = r.checked ? 'none' : '';\n      });\n    } else {\n      input.checked = !input.checked;\n      const card = input.closest('.variant-result, .articleInfoFrequently');\n      if (card) {\n        card.classList.toggle('active', input.checked);\n        const sel = card.querySelector('.label.selected');\n        const selOff = card.querySelector('.label.select');\n        if (sel) sel.classList.toggle('hidden', !input.checked);\n        if (selOff) selOff.classList.toggle('hidden', input.checked);\n      }\n    }\n    // Dispara 'change' para tu lógica/validaciones\n    input.dispatchEvent(new Event('change', { bubbles: true }));\n  }\n\n  document.addEventListener('pointerup', (e) => {\n    const label = e.target.closest('label');\n    if (!label) return;\n\n    const input = label.querySelector('input[type=\"checkbox\"], input[type=\"radio\"]');\n    if (!input) return;\n\n    // Evita que Safari procese más cosas raras del label\n    e.preventDefault();\n    toggleCardState(input);\n  }, { passive: false });\n});\n</script>\n<style>\n.wizard-variant-results label,\n.articleInfoFrequently {\n  -webkit-user-select: none;\n  user-select: none;\n  touch-action: manipulation;\n  cursor: pointer;\n}\n</style>"
+      }
     }
   },
   "order": [
@@ -168,6 +175,7 @@
     "image_with_text_FNFnVH",
     "shipping_8zD8H7",
     "custom_liquid_VHjrRy",
-    "custom_liquid_6tLgXA"
+    "custom_liquid_6tLgXA",
+    "custom_liquid_tWCQKi"
   ]
 }
