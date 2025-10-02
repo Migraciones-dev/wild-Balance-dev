@@ -885,3 +885,79 @@
     #t4s-callBackVariant{{ product_form_id }} .shopify-payment-button { display: none;}
   </style>
 {% endif -%}
+
+<script>
+  (function () {
+    const mq = window.matchMedia('(min-width: 1024px)');
+
+    function enhance(container) {
+      if (!mq.matches) return false;
+
+      const label = container.querySelector('.loop-widget-purchase-options-label');
+      if (!label || label.dataset.enhanced === '1') return false;
+
+      const calc = document.getElementById('abrir-calculadora');
+      if (!calc) return false;
+
+      // Si ya está dentro, no repetir
+      if (label.contains(calc)) {
+        label.dataset.enhanced = '1';
+        return true;
+      }
+
+      // Capturamos el texto actual del label (fallback por si viene vacío)
+      const text = (label.textContent || 'Frecuencia de entrega').trim();
+
+      // Limpiamos el contenido y construimos la estructura
+      label.textContent = '';
+      label.style.display = 'flex';
+      label.style.justifyContent = 'space-between';
+      label.style.alignItems = 'center';
+      label.style.gap = '12px';
+
+      const p = document.createElement('p');
+      p.textContent = text;
+
+      label.appendChild(p);
+      label.appendChild(calc);
+
+      label.dataset.enhanced = '1';
+      return true;
+    }
+
+    function runOnce() {
+      // Permite múltiples widgets en la página
+      const containers = document.querySelectorAll('.loop-widget-container');
+      let changed = false;
+      containers.forEach((c) => {
+        changed = enhance(c) || changed;
+      });
+      return changed;
+    }
+
+    // Intentos progresivos por si el widget carga tarde
+    function bootstrap() {
+      if (runOnce()) return;
+      let tries = 0;
+      const MAX_TRIES = 40; // ~6s si INTERVAL=150
+      const INTERVAL = 150;
+
+      const iv = setInterval(() => {
+        tries++;
+        if (runOnce() || tries >= MAX_TRIES) clearInterval(iv);
+      }, INTERVAL);
+    }
+
+    // Reaplicar si cambia el viewport (opcional)
+    mq.addEventListener('change', () => {
+      if (mq.matches) runOnce();
+    });
+
+    // DOM listo
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', bootstrap);
+    } else {
+      bootstrap();
+    }
+  })();
+</script>
