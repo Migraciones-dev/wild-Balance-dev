@@ -644,6 +644,13 @@
         "mg_mb": ",,30px,",
         "pd_mb": ""
       }
+    },
+    "custom_liquid_wi8QaJ": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
+      "settings": {
+        "custom_liquid": "<script>\n(function(){\n  window.dataLayer = window.dataLayer || [];\n\n  var PRODUCT_TITLE = {{ product.title | json }};\n  var PRODUCT_TYPE  = {{ product.type | json }};\n  var VARIANTS = [\n    {% for v in product.variants %}\n    { id: {{ v.id }}, price: {{ v.price | divided_by: 100.0 }} }{% unless forloop.last %},{% endunless %}\n    {% endfor %}\n  ];\n  function getSelectedVariantId(){\n    var input = document.querySelector('form[action*=\"/cart/add\"] [name=\"id\"]');\n    return input ? input.value : null;\n  }\n  function getVariantPriceById(variantId){\n    if (!variantId) return null;\n    for (var i=0;i<VARIANTS.length;i++){\n      if (String(VARIANTS[i].id) === String(variantId)) return VARIANTS[i].price;\n    }\n    return null;\n  }\n  function parseCardData(btn){\n    var card = btn.closest('.t4s-product');\n    if (!card) return null;\n    var raw = card.getAttribute('data-product-options'), opts=null;\n    try{ opts = raw ? JSON.parse(raw) : null; }catch(e){}\n    var nameEl = card.querySelector('.t4s-product-title a');\n    var name = nameEl ? nameEl.textContent.trim() : (opts && opts.alt) || null;\n    var price = (opts && typeof opts.price === 'number') ? (opts.price/100) : null;\n    var variantId = opts && (opts.VariantFirstID || opts.variantFirstID || opts.variant_id);\n    return {\n      item_id: variantId ? String(variantId) : null,\n      item_name: name || null,\n      item_category: null, // puedes mapear el handle si quieres categoría más fina\n      price: price\n    };\n  }\n\n  var lastClickCtx = null;\n\n  document.addEventListener('click', function(e){\n    var btn = e.target.closest('.add-to-cart-pdp');\n    if (!btn) return;\n    var isMain = !!btn.closest('.t4s-product-form__controls');\n    if (isMain){\n      var vid = getSelectedVariantId();\n      lastClickCtx = {\n        item_id: vid ? String(vid) : null,\n        item_name: PRODUCT_TITLE || null,\n        item_category: PRODUCT_TYPE || null,\n        price: getVariantPriceById(vid)\n      };\n    } else {\n      lastClickCtx = parseCardData(btn);\n    }\n  }, true);\n\n  var _fetch = window.fetch;\n  window.fetch = function(input, init){\n    var isAdd = (typeof input === 'string' && input.indexOf('/cart/add')>-1)\n             || (input && input.url && input.url.indexOf('/cart/add')>-1);\n\n    return _fetch.apply(this, arguments).then(function(res){\n      try{\n        if (isAdd && res.ok && lastClickCtx){\n          res.clone().json().then(function(item){\n            var priceCents = (typeof item.final_price === 'number' ? item.final_price : item.price);\n            var price = (typeof priceCents === 'number') ? (priceCents/100) : lastClickCtx.price;\n\n            var payload = {\n              event: 'add_to_cart',\n              item_id: lastClickCtx.item_id || String(item.variant_id || item.id || ''),\n              item_name: lastClickCtx.item_name || item.product_title || null,\n              item_category: lastClickCtx.item_category || null,\n              price: (typeof price === 'number' && !isNaN(price)) ? price : null\n            };\n\n            console.log('add_to_cart enviado:', payload);\n            window.dataLayer.push(payload);\n\n            lastClickCtx = null;\n          }).catch(function(){ lastClickCtx = null; });\n        }\n      }catch(e){}\n      return res;\n    });\n  };\n})();\n</script>"
+      }
     }
   },
   "order": [
@@ -656,6 +663,7 @@
     "product-related-recent",
     "migraciones_faq_jPHr6f",
     "migraciones_ugc_JwCMTN",
-    "migraciones_feafured_collection_XyhqUe"
+    "migraciones_feafured_collection_XyhqUe",
+    "custom_liquid_wi8QaJ"
   ]
 }
