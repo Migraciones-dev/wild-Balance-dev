@@ -404,6 +404,72 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
           window.addEventListener('resize', moveWidget);
         });
       </script>
+      <script>
+        (function(){
+          window.dataLayer = window.dataLayer || [];
+
+          // ---- Helpers ----
+          // Contexto de página desde Shopify
+          var PAGE_TYPE = {{ request.page_type | json }}; // 'index','product','collection','cart','search','page','blog','article'
+          function getPageContext(){
+            switch (PAGE_TYPE) {
+              case 'index':      return 'home';
+              case 'product':    return 'pdp';
+              case 'collection': return 'plp';
+              case 'cart':       return 'cart';
+              case 'search':     return 'search';
+              case 'blog':       return 'blog';
+              case 'article':    return 'article';
+              case 'page':       return 'page';
+              default:           return (window.location.pathname || '/');
+            }
+          }
+
+          function getImageNameFrom(img){
+            if (!img) return null;
+            var src = img.currentSrc || img.src || '';
+            if (!src && img.dataset && img.dataset.src) src = img.dataset.src;
+            if (!src && img.srcset) {
+              // toma el primer src del srcset
+              src = (img.srcset.split(',')[0] || '').trim().split(' ')[0];
+            }
+            src = src.split('?')[0];
+            return src.substring(src.lastIndexOf('/') + 1) || null;
+          }
+
+          function getBannerImage(el){
+            // prioriza la imagen clicada; si no, la primera del banner
+            var img = el.closest('img') || el.querySelector('img');
+            if (!img) {
+              // algunos banners son background-image: intenta encontrar <img> interno alternativo
+              img = el.querySelector('picture img, [data-img], [data-src], [data-bg]');
+            }
+            return img && img.tagName ? img : el.querySelector('img');
+          }
+
+          // ---- Click listener ----
+          document.addEventListener('click', function(e){
+            // cta del banner o el propio banner (evita doble disparo)
+            var banner = e.target.closest('.banner_promo');
+            if (!banner) return;
+
+            // imagen del banner
+            var img = getBannerImage(e.target) || getBannerImage(banner);
+            var bannerName = getImageNameFrom(img);
+            var bannerCampaign = (img && img.alt && img.alt.trim()) ? img.alt.trim() : null;
+
+            var payload = {
+              event: 'banners',
+              banner_name: bannerName,
+              banner_position: getPageContext(),
+              banner_campaign: bannerCampaign
+            };
+
+            console.log('banners enviado:', payload);
+            window.dataLayer.push(payload);
+          }, true);
+        })();
+      </script>
     </body>
   </html>
 
