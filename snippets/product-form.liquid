@@ -289,27 +289,22 @@
                       {%- if isProductDefault -%}
                         <script>
                           (function () {
-                            const mq = window.matchMedia('(min-width: 1024px)');
-
                             function enhance(container) {
-                              if (!mq.matches) return false;
-
                               const label = container.querySelector('.loop-widget-purchase-options-label');
                               if (!label || label.dataset.enhanced === '1') return false;
 
                               const calc = document.getElementById('abrir-calculadora');
                               if (!calc) return false;
 
-                              // Si ya está dentro, no repetir
                               if (label.contains(calc)) {
+                                // ya reubicado
                                 label.dataset.enhanced = '1';
                                 return true;
                               }
 
-                              // Capturamos el texto actual del label (fallback por si viene vacío)
                               const text = (label.textContent || 'Frecuencia de entrega').trim();
 
-                              // Limpiamos el contenido y construimos la estructura
+                              // Convertimos el label en un flex con justify-between
                               label.textContent = '';
                               label.style.display = 'flex';
                               label.style.justifyContent = 'space-between';
@@ -327,16 +322,13 @@
                             }
 
                             function runOnce() {
-                              // Permite múltiples widgets en la página
-                              const containers = document.querySelectorAll('.loop-widget-container');
                               let changed = false;
-                              containers.forEach((c) => {
+                              document.querySelectorAll('.loop-widget-container').forEach((c) => {
                                 changed = enhance(c) || changed;
                               });
                               return changed;
                             }
 
-                            // Intentos progresivos por si el widget carga tarde
                             function bootstrap() {
                               if (runOnce()) return;
                               let tries = 0;
@@ -349,12 +341,6 @@
                               }, INTERVAL);
                             }
 
-                            // Reaplicar si cambia el viewport (opcional)
-                            mq.addEventListener('change', () => {
-                              if (mq.matches) runOnce();
-                            });
-
-                            // DOM listo
                             if (document.readyState === 'loading') {
                               document.addEventListener('DOMContentLoaded', bootstrap);
                             } else {
