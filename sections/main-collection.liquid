@@ -219,7 +219,7 @@
     
     <div class="flex flex-col items-start lg:gap-8 w-full mb-6 lg:mb-0">
       {% if collection.metafields.custom.banner_superior %}
-        {% if collection.metafields.custom.enlace_del_banner_superior %}<a href="{{collection.metafields.custom.enlace_del_banner_superior}}">{% endif %}<img class="w-full hidden lg:block rounded-[8px] banner_promo" alt="{{collection.metafields.custom.banner_superior | json }}" src="{{ collection.metafields.custom.banner_superior | file_url }}">{% if collection.metafields.custom.enlace_del_banner_superior %}</a>{% endif %} 
+        {% if collection.metafields.custom.enlace_del_banner_superior %}<a href="{{collection.metafields.custom.enlace_del_banner_superior}}">{% endif %}<img class="w-full hidden lg:block rounded-[8px] banner_promo" alt="{{ collection.metafields.custom.banner_superior.alt }}" src="{{ collection.metafields.custom.banner_superior | file_url }}">{% if collection.metafields.custom.enlace_del_banner_superior %}</a>{% endif %} 
       
       {% endif %}
        
