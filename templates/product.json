@@ -27,6 +27,22 @@
         "custom_liquid": "<div class=\"titulo-precio-pdp-mb\">\n    <div class=\"nombre-producto-mb\">{{ product.title }}</div>\n    <div class=\"bloque-precio-badges\">\n    <div class=\"precio-producto-mb\" >\n        {%- render 'product-price-single', variant: current_variant, product: product, PR_no_pick: PR_no_pick, type_sale: bk_stts.type_sale, price_varies_style: bk_stts.price -%}\n    </div>\n    <div class=\"containerLabelsPDP\">\n        {% render 'custom-badges' %}\n    </div>\n</div>\n</div>"
       }
     },
+    "17596081391e9931d1": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_C6Pqip": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_C6Pqip"
+      ],
+      "settings": {}
+    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -666,6 +682,7 @@
     "migraciones_test_xfPWb9",
     "shipping_9n8YjA",
     "product-related-recent",
+    "17596081391e9931d1",
     "migraciones_faq_jPHr6f",
     "migraciones_ugc_JwCMTN",
     "migraciones_feafured_collection_XyhqUe",
