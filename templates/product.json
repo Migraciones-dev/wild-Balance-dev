@@ -56,6 +56,10 @@
             "custom_liquid": "{% render 'bloque-iconos-info-producto', product:product %}"
           }
         },
+        "judge_me_reviews_preview_badge_fdpDgQ": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
         "custom_liquid_fKF4xR": {
           "type": "custom_liquid",
           "settings": {
@@ -183,6 +187,7 @@
         "3eaacecf-c956-46e5-84ef-40474509a065",
         "review_6J6LGh",
         "custom_liquid_HeetbV",
+        "judge_me_reviews_preview_badge_fdpDgQ",
         "custom_liquid_fKF4xR",
         "18a8b200-4f94-4b72-b0eb-01abf185ecb3",
         "custom_liquid_PkGhkJ",
