@@ -1,0 +1,886 @@
+
+
+
+
+
+
+.t4s-product__description .aporteImg{display: none;}
+.t4s-page_cart__edit{display: none;}
+/* cookiebot */ 
+
+/* FIN cookiebot */
+/* Loyaltylion */
+
+/* FIN Loyaltylion */
+/* Selector fecha */
+/* Selector fecha */
+/* -- POPup regalos TELEPIZZA--*/
+
+/* -- FIN POPup regalos TELEPIZZA --*/
+.t4s-btn-base, .t4s-btn-base.t4s-btn-style-outline:before, .t4s-btn-base.t4s-btn-style-outline:after, .t4s-btn-base.t4s-btn-effect-rectangle-out:hover:before {
+    border-radius: 50px;
+}
+.t4s-product-form__buttons .t4s-quantity-wrapper, .t4s-product-form__buttons .t4s-product-form__submit, .t4s-product-form__buttons .t4s-pr__notify-stock, .t4s-product-form__buttons .t4s-btn-style-outline:after {
+    border-radius: 50px !important;
+}
+.t4s-btn-base {
+    font-size: 16px;
+}
+/*--- PDP basica ---*/
+/* sticky add to cart */
+.t4s-sticky-atc__title {
+    font-size: 16px;
+    font-family: 'Barlow';
+    font-weight: 900;
+    white-space: normal;
+}
+.t4s-sticky-atc__price {
+    color: #004623;
+}
+/* btn menu pdp */
+/* Inicio CSS del bloque de logos que contiene el tab "Ingredientes" en la PDP */
+/* Fin CSS del bloque de logos que contiene el tab "Ingredientes" en la PDP */
+/* variante con selector de cantidad */
+ .t4s-swatch__item {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px;
+    border-bottom: 1px solid #CAE6C8;
+    border-radius: 0 !important;
+}
+ .t4s-swatch__list{
+  margin-bottom: 20px;
+}
+ .t4s-swatch__item div:first-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-size: 20px;
+   gap:20px;
+}
+ .t4s-form__product{
+  display: flex;
+    flex-wrap: wrap;
+  justify-content: space-between;
+    align-items: center;
+}
+ .t4s-form__product .t4s-swatch {
+  width: 100%;
+}
+
+.t4s-form__product .t4s-product-form__buttons button.t4s-product-form__submit{
+    width: 100%;
+    min-width: 200px;
+    margin: 0;
+}
+
+ .t4s-form__product .t4s-product-form__qty{
+  border: 1px solid #CAE6C8;
+    border-radius: 50px;
+   display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+
+}
+.t4s-form__product .t4s-product-form__qty .t4s-quantity-input{
+  border: none;
+  font-size: 16px;
+    text-align: center;
+   font-weight: 700;
+  padding: 10px 5px;
+}
+ .t4s-form__product .t4s-swatch__item div:first-child span{
+    font-family: Barlow;
+    font-weight: 800;
+    font-size: 16px;
+}
+
+ .t4s-form__product .t4s-product-form__buttons{
+    width: 65%;
+    align-items: flex-end;
+ }
+
+  .t4s-form__product .t4s-product-form__buttons .t4s-pr__qty_cart{justify-content: flex-end; width:100%;}
+
+  
+ .t4s-product-form__qty button.t4s-quantity-selector {
+    background-color: #fff;
+    padding: 5px 10px;
+    font-size: 25px;
+    margin: 0px 5px;
+    line-height: 15px;
+    color: #004623;
+  height: 80%;
+  border-radius: 50px;
+}
+
+/* Fin variante con selector de cantidad */
+/* Selector de cantidad producto sin variante */
+.t4s-product-form__buttons .t4s-quantity-wrapper .is--minus, .t4s-product-form__buttons .t4s-quantity-wrapper .is--plus {
+    top: 5px;
+}
+.t4s-product-form__buttons button.t4s-quantity-selector.is--minus:after, .t4s-product-form__buttons button.t4s-quantity-selector.is--plus:before, .t4s-product-form__buttons button.t4s-quantity-selector.is--plus:after{
+   background-color: #004623;
+}
+/*--- FIN PDP basica ---*/
+/*--- PDP Iniciacion ---*/
+/*--- FIN PDP Iniciacion ---*/
+/*--- BADGES ---*/
+/* 1.CSS Labels General */
+span._fx-badge{
+    width:auto;
+    font-size: 14px;
+    padding: 1px 15px;
+    border-radius: 20px !important;
+    font-weight: 900;
+}
+span._fx-badge.discount{
+  background-color: #FFCD00;
+}
+span._fx-badge.last-units{
+  background-color: #FFCD00;
+}
+/* 1.CSS Labels General PDC */
+.containerLabelsPDC span._fx-badge{
+    margin: 0px 1rem 0px 0px;
+}
+
+/* CSS labels theme (Arrasando) PDC */
+.t4s-product .t4s-product-badge {
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+span.t4s-badge-item.t4s-badge-soldout {
+    width: 100%;
+    border-radius: 0px;
+    background-color: #CAE6C8;
+    color: #004623;
+    font-weight: 500;
+    font-size: 14px;
+}
+/* CSS labels theme (Arrasando) PDP */
+/*--- Product card ---*/
+
+ .t4s-product-img.t4s_ratio.is-show-img2 {
+    background-color: #faf5e8;
+    border-radius: 2%;
+}
+ 
+
+
+ .t4s-product .t4s-product-price del {
+    font-size: 16px;
+    color: #CAE6C8;
+}
+
+.t4s-product .t4s-product-btns2 {
+    right: 5px;
+    top: 5px;
+}
+ .t4s-product a.t4s-pr-wishlist {
+    color: #004623;
+  
+}
+
+
+.t4s-pr-style1 .t4s-product-btns>* {
+    transition: none;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+}
+ .t4s-product .t4s-pr-addtocart {
+    color: #fff;
+    background-color: #004623;
+}
+
+/*--- FIN Product card ---*/
+/*--- PDC ---*/
+.t4s-desc-collection h2 {
+    font-size: 24px;
+    line-height: 0.8;
+    margin-bottom: 15px;
+}
+.t4s-desc-collection h2 strong, .t4s-desc-collection h2 span{
+    font-weight: 900;
+}
+/* Filtros */
+.t4s-btn-filter-wrapper .t4s-btn-filter {
+    text-transform: none;
+    font-size: 16px;
+    font-weight: 800;
+    background-color: #ffce00 !important;
+    padding: 8px 15px !important;
+    height: 40px;
+    border-radius: 50px !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+button.t4s-btn-filter:after{
+  content: url('https://cdn.shopify.com/s/files/1/0713/9898/1933/files/right-arrow.png?v=1704799918');
+  margin-left: 6px;
+  margin-top: 6px;
+}
+.t4s-btn-filter svg{display: none;}
+.t4s-facets__form .t4s-facet-title {
+    font-size: 16px;
+    font-weight: 900;
+    text-transform: none;
+    margin-bottom: 10px;
+}
+.t4s-facets__form .t4s-facet ul li a {
+    font-size: 16px;
+}
+.t4s-facets__form .t4s-facet .t4s-facet-content .t4s-current-scrollbar {
+    max-height: 100%;
+    column-count: 2;
+}
+.t4s-checkbox-wrapper {
+    border-radius: 50px;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+}
+.t4s-filter-hidden{
+  background-color: #FAF5E7;
+}
+.t4s-filter-hidden  .t4s-drawer__header {
+    border-bottom: none;
+}
+button.t4s-drawer__close {
+  color: #004623;
+  }
+.t4s-iconsvg-close {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2px;
+  }
+/* pagination */
+ .t4s-pagination__list .pagination__item--current {
+    color: var(--t4s-light-color);
+    background-color: #004623;
+    border-color: #004623;
+}
+ .t4s-pagination__item {
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 50px;
+}
+
+
+/* popup compra rápida */
+.t4s-product-quick-shop .t4s-widget__pr .t4s-widget__pr-title {
+    font-size: 16px;
+    font-weight: 900;
+    font-family: 'Barlow';
+}
+.t4s-product-quick-shop .t4s-widget__pr .t4s-widget__pr-price {
+    color: #004623;
+    font-size: 16px;
+}
+.t4s-product-quick-shop .t4s-widget__pr .t4s-widget_img_pr {
+    max-width: 150px;
+    background-color: #FAF5E7;
+    border-radius: 2%;
+}
+/* mini cart */
+.t4s-mini_cart__title {
+    font-size: 14px;
+    font-family: 'Barlow';
+    font-weight: 900;
+}
+.t4s-mini_cart__title.t4s-truncate {
+    overflow: visible;
+    white-space: normal;
+}
+.t4s-mini_cart__meta .t4s-cart_meta_price .t4s-cart_price {
+    font-size: 14px;
+}
+#t4s-mini_cart .t4s-drawer__header span {
+    font-weight: 900;
+    font-size: 20px;
+    text-transform: none;
+    font-family: 'Barlow';
+    color: #004623;
+}
+form#t4s-tab-minicart {
+    background-color: #ffffff;
+}
+#t4s-mini_cart .t4s-drawer__bottom {
+    background-color: #FAF5E7;
+}
+#t4s-mini_cart .t4s-cart-total strong {
+    font-weight: 900;
+    font-family: 'Barlow';
+    font-size: 16px;
+}
+#t4s-mini_cart img.lazyautosizes.ls-is-cached.lazyloadt4sed {
+    background-color: #FAF5E7;
+    border-radius: 2%;
+}
+/*--- cart ---*/
+.t4s-cart_page_heading {
+    font-size: 36px;
+    font-weight: 900;
+}
+.t4s-table-main-cart th {
+    font-size: 16px;
+    font-weight: 900;
+    font-family: 'Barlow';
+    text-transform: none;
+}
+.t4s-main-cart .t4s-page_cart__title {
+        font-size: 16px;
+        font-weight: 900;
+        font-family: 'Barlow';
+}
+.t4s-page_cart__item .t4s-page_cart__total_price {
+    font-size: 16px;
+    font-weight: 400;
+}
+.t4s-cartPage__items table,.t4s-cartPage__items td,.t4s-cartPage__items th{
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+}
+.t4s-page_cart__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.t4s-page_cart__item  img.lazyautosizes.ls-is-cached.lazyloadt4sed {
+    background-color: #FAF5E7;
+    border-radius: 2%;
+}
+.t4s-table-main-cart .t4s-page_cart__remove {
+    width: 10px;
+}
+
+.t4s-page_cart__tools{
+  vertical-align: middle;
+}
+.t4s-page_cart__tools .t4s-page_cart__edit {
+    margin-right: 30px;
+}
+.t4s-cart-total {
+    text-transform: none;
+    font-size: 20px;
+    font-weight: 900;
+    font-family: 'Barlow';
+}
+.t4s-cart__totalPrice {
+    font-weight: 400;
+    font-family: 'DM Sans';
+}
+.t4s-main-cart span.t4s-txt_add_note {
+    text-transform: none;
+    font-size: 16px;
+    font-weight: 900;
+    font-family: 'Barlow';
+  margin-left: 25px;
+}
+.t4s-main-cart textarea {
+    font-size: 16px;
+    border-radius: 20px;
+    background-color: #D9D9C8;
+  border: none;
+}
+.t4s-main-cart textarea::placeholder{
+  color: #CAE6C8;
+}
+.t4s-main-cart span.t4s-txt_add_note svg{
+    display: none;
+}
+/* --- HOME --- */
+body.template-index h3.t4s-section-title.t4s-title {
+    font-weight: 900;
+    color: #004623;
+}
+
+body.template-index .t4s-counter h3.t4s-section-title.t4s-title {
+    font-weight: 900;
+    color: #fcf5e8;
+}
+
+body.template-index .t4s-counter .t4s-counter-list{
+    width: 60%;
+  margin: 0 auto;
+}
+
+body.template-index .t4s-counter h3.t4s-counter-number{
+      font-size: 50px;
+    line-height: 40px;
+    font-weight: 900;
+}
+
+body.template-index .t4s-section-des.t4s-subtitle {
+    font-size: 16px;
+    color: #004623;
+    font-family: 'DM Sans';
+    margin-top: 10px;
+}
+/* ocultar top bar tiendas */
+
+
+/* bloque iconos shipping */
+body.template-index .t4s-shipping-list.t4s-text-center .t4s-shipping-icon {
+    margin-bottom: 10px;
+}
+/* bloque faqs */
+body.template-index .t4s-block-accordion .t4s-accor-title .t4s-accor-text {
+    font-size: 16px;
+    line-height: 30px;
+}
+/* bloque Almudena */
+/* bloque testimonios */
+body.template-index .t4s-testimonials-slider .t4s-testimonial-wrap .t4s-testimonial-content {
+    font-size: 16px;
+    line-height: 30px;
+  margin-bottom: 5px;
+}
+body.template-index .t4s-testimonials-slider .t4s-testimonial-wrap .t4s-testimonial-heading {
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+body.template-index .t4s-testimonials-slider .t4s-testimonial-wrap .t4s-testimonial-name {
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+}
+body.template-index .t4s-testimonial-wrap{
+  padding: 30px;
+}
+body.template-index .t4s-flickity-slider .flickityt4s-page-dots {
+    margin-top: 40px;
+}
+/* bloque recetas */
+body.template-index .t4s-feature-columns__title {
+  margin-top: 10px;
+    font-weight: 900;
+}
+body.template-index .t4s-feature-columns .t4s-eff {
+    z-index: 6;
+    width: 80%;
+    margin: 0px auto 10px;
+}
+/* FIN HOME */
+/* CMS GENERAL*/
+/* bloque iconos custom */
+/* text with image - pasos */
+
+/* bloque iconos shipping */
+/* cms historia */
+/* MI CUENTA inicio de sesión */
+input.t4s_frm_input::placeholder{
+  font-size: 16px;
+}
+/* buscador */
+#t4s-search-hidden select.t4s-truncate {
+    font-size: 16px;
+}
+.t4s-mini-search__title {
+    font-weight: 900;
+    font-size: 20px;
+    font-family: 'Barlow';
+    border-top: none;
+    box-shadow: none;
+}
+#t4s-search-hidden img.lazyautosizes.lazyloadt4sed {
+    background-color: #FAF5E7;
+  border-radius: 5px;
+}
+#t4s-search-hidden .t4s-widget__pr .t4s-widget__pr-title {
+    font-weight: 900;
+  font-family: 'Barlow';
+    font-size: 16px;
+    text-align: left;
+}
+#t4s-search-hidden .t4s-widget__pr .t4s-widget__pr-price, .t4s-skeleton_txt2 {
+    color: #004623;
+    font-size: 16px;
+    font-family: 'DM Sans';
+    font-weight: 400;
+    text-align: left;
+}
+#t4s-search-hidden .t4s-mini-search__viewAll {
+    font-size: 16px;
+    font-weight: 500;
+}
+#t4s-search-hidden .t4s-mini-search__input::placeholder{
+  color:#CAE6C8;
+}
+/* --- BLOG ---*/
+/*---------------- Custom CSS for only desktop -------------------*/
+
+
+/*---------------- Custom CSS for tablet, mobile -------------------*/
+
+
+/*---------------- Custom CSS for only tablet -------------------*/
+
+/*---------------- Custom CSS for only mobile -------------------*/
+@media (max-width:767px){/* cms historia */
+  .t4s-timeline-item {
+        margin: 50px 0;
+    }
+ /* cart */
+/* Inicio código para el store locator */
+
+/* Fin código para el store locator */ 
+
+/* Inicio código Whatsapp BTN darle altura */
+/* Fin código Whatsapp BTN darle altura */
+  
+} /* --> OJITO, este es el cierre del @media de ONLY MOBILE */
+
+
+/* Para quitar la "X" del pop up wizard - incrustado mediante Automatic */
+
+/* CALENDARIO CARRITO */
+
+/* Inicio CSS App Suscripción - Páginas de suscripción suples*/
+
+
+/* CSS Mini-cart Appstle App*/
+/* FIN CSS Mini-cart Appstle App*/
+
+/* FIN CSS App Suscripción - Páginas de suscripción suples*/
+
+/*Cambio de menú con CTA*/
+
+#shopify-section-header-inline .t4s-header__wrapper .ctaCreaSuMenu{
+  display:none;
+}
+/* Fin cambio de menú con CTA*/
+/* menu mobile */
+
+.t4s-item-level-1 .t4s-sub-sub-menu{display: block !important;}
+
+#t4s-backToTop{
+  display:none !important;
+}
+
+/*
+#item_menu_kLMD4e{
+      padding: 0px 20px;
+}
+*/
+#menu-mb__ul li:nth-of-type(5) p.menu_infos_title{
+  display:none !important;
+}
+#menu-mb__ul li:nth-of-type(11) p.menu_infos_title{
+  display:none !important;
+}
+
+/*
+body.template-product ._fx-badge.discount.blackFriday{
+  display:none !important;
+}
+*/
+
+.shopify-section.t4-section.t4-section-announcement-bar{
+      z-index: 90;
+    position: fixed;
+    width: 100vw;
+    top: 0%;
+}
+
+.shopify-section.t4-section.t4-section-announcement-bar .t4s-col-item.t4s-col-auto{
+      display:none;
+}
+
+.shopify-section.t4s-section.t4s-section-header.calc-pos-submenu{
+    position: sticky;
+   /* top: 40px; */
+    z-index: 460;
+}
+
+.t4s-form__product .t4s-product-form__qty{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  width:auto;
+}
+
+/*
+body.template-product .t4s-price__sale{
+  color:#004623;
+}
+
+
+del {
+  text-decoration:none;
+}
+ins{
+  color:#004623 !important;
+}
+*/
+
+
+.floatingWhatsapp{
+    bottom: 1.25rem;
+    position: fixed;
+    right: 1.25rem;
+    z-index: 79;
+      align-items: center;
+    background-color: #fff;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    box-shadow: 0 4px 12px #0006;
+    cursor: pointer;
+    display: flex;
+    height: 64px;
+    justify-content: center;
+    width: 64px;
+}
+
+.floatingWhatsapp img{
+  width:40px;
+}
+
+
+
+
+.messageWhatsapp {
+    position: fixed;
+    bottom: 85px;
+    right: 1.25rem;
+    width: 314px;
+    border-radius: 13px;
+    display: none;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-between;
+    background-image: url('https://cdn.shopify.com/s/files/1/0713/9898/1933/files/whatsapp_bg.png?v=1736438403');
+
+      background-color: #eae6df;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px #0006;
+  z-index:999;
+}
+
+        
+.messageWhatsapp .close-btn {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.whatsapp-link {
+    font-size: 17.15px;
+      align-items: center;
+    background-color: #25d366;
+    border: 1px solid transparent;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    font-family: Manrope, sans-serif;
+    font-size: 17.15px;
+    font-weight: 500;
+    gap: .5rem;
+    justify-content: center;
+    line-height: 1.35;
+    padding: .75rem 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    transition: color .2s, background-color .2s;
+  margin:0 1rem 1rem;
+  cursor:pointer;
+
+}
+.whatsapp-link:hover{
+  background-color:#00784f;
+}
+
+.messageWhatsapp .header {
+    align-items: center;
+    background-color: #25d366;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+    width: 100%;
+}
+
+.messageWhatsapp .header .logoAndHeading{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.messageWhatsapp .header h4{
+      font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.messageBox{
+    align-self: flex-start;
+    background: #fff;
+    border-radius: 16px;
+    color: #767676;
+    font-size: 17.15px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-right: 2rem;
+    padding: 1rem;
+    position: relative;
+    margin: 1rem 2rem 1rem 2rem;
+}
+.messageBox:before{
+      background: #fff;
+    -webkit-clip-path: polygon(100% 50%, 0 50%, 50% 100%);
+    clip-path: polygon(100% 50%, 0 50%, 50% 100%);
+    content: "";
+    height: 32px;
+    left: -12px;
+    position: absolute;
+    top: -16px;
+    width: 32px;
+}
+html:has(body.template-customers-account) .floatingWhatsapp{
+  display:none;
+}
+
+@keyframes slideDown {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+  100% {
+    max-height: 1000px; /* Ajusta este valor según el contenido máximo */
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    max-height: 1000px; /* Ajusta este valor según el contenido máximo */
+    opacity: 1;
+  }
+  100% {
+    max-height: 0;
+    opacity: 0;
+  }
+}
+
+
+/*MIGRACIONES*/
+.highlight {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.highlight::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;        /* asegura full‑width incluso si quitas width */
+  top: 90%;
+  height: .6em;    /* altura deseada */
+  max-height: ;
+  background: url(/cdn/shop/files/Clip_path_group.png?v=1752516896) no-repeat center top;
+  background-size: 100% 14px;  /* ← fuerza 100% de ancho */
+  z-index: -1;
+}
+.mig-section {
+  margin: 12rem auto;
+}
+.text-sm {
+font-size: clamp(1.5625rem, 1.5625rem + 0vw, 1.5625rem);
+line-height: 140%;
+}
+@media (max-width: 768px) {
+  .highlight::before {
+  bottom: -8px;
+}
+}
+
+
+
+  .text-center {
+    text-align: center !important;
+  }
+  @media (min-width: 1024px) {
+    .text-left {
+      text-align: left !important;
+    }
+  }
+
+  ::selection {
+  background-color: #004623; 
+  color: #ffffff;            
+}
+
+
+  @media (max-width: 767px) {
+    span.t4s-count-box, .t4s-site-nav__cart .t4s-count-box {
+        right: -6px;
+    }
+}
+
+
+.collection-page {
+  padding-top: 2rem;
+  background: #F4F0E2;
+}
+@media (max-width:1024px) {
+ .collection-page {
+ padding-top: 0rem;
+ background: #F4F0E2;
+}
+}
+
+.collection-page .t4s-product-img {
+  background: white!important;
+}
+
+.t4s-sidebar-inner .t4s-widget:not(:last-child), .t4s-sidebar-inner .t4s-facets__form > div:not(:last-child) {
+    margin-bottom: 0px;
+}
+
+.t4s-sidebar-inner .t4s-facets__form>div:not(:last-child) {
+    padding-bottom: 0px;
+    border-bottom: 0;
+}
+
+
+ @media (max-width:1024px) {
+   .t4s-main-collection-page {
+    padding-right: 0; 
+    padding-left: 0; 
+    }
+  }
+
+  .t4s-drawer__content {
+  background: #F4F0E2;
+  }
+
+  .t4s-active-filters {
+    margin-bottom: 0px;
+}
+
+.t4s-main-product__content {
+  max-width: 1600px!important;
+          margin-bottom: 0;
+}
+.t4s-section-main-product {
+  background: #F4F0E2;
+
+}
