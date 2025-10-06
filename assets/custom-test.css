@@ -884,3 +884,16 @@ line-height: 140%;
   background: #F4F0E2;
 
 }
+
+.flickityt4s-button-icon {
+  margin:auto;
+}
+
+@media (max-width: 768px) {
+.offer-tag-1 {
+    font-size: 0.6rem!important;
+}
+.offer-tag-2 {
+  font-size: 1.6rem!important;
+}
+}
