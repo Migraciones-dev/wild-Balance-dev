@@ -2546,28 +2546,6 @@
         "disabled": false,
         "settings": {}
       },
-      "9144908965052497053": {
-        "type": "shopify://apps/glo-related-products-upsell/blocks/app-embed/75cf2d86-3988-45e7-8f28-ada23c99704f",
-        "disabled": false,
-        "settings": {}
-      },
-      "5439026248262864547": {
-        "type": "shopify://apps/preorder-globo/blocks/app-embed/e547a0ad-8212-4bcc-b02f-761faa9b8af2",
-        "disabled": false,
-        "settings": {}
-      },
-      "320593021044489861": {
-        "type": "shopify://apps/sales-discounts/blocks/countdown/29205fb1-2e68-4d81-a905-d828a51c8413",
-        "disabled": false,
-        "settings": {}
-      },
-      "10605408327587305396": {
-        "type": "shopify://apps/eg-auto-add-to-cart/blocks/app-embed/0f7d4f74-1e89-4820-aec4-6564d7e535d2",
-        "disabled": false,
-        "settings": {
-          "version": "v3"
-        }
-      },
       "855628211100114053": {
         "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
@@ -2586,37 +2564,6 @@
         "type": "shopify://apps/powerful-form-builder/blocks/app-embed/e4bcb1eb-35b2-42e6-bc37-bfe0e1542c9d",
         "disabled": false,
         "settings": {}
-      },
-      "2209279550302034861": {
-        "type": "shopify://apps/shop-quiz-product-recommender/blocks/link-popup/672f3d48-fd3b-4227-8778-c6e58c4f8a98",
-        "disabled": false,
-        "settings": {
-          "show_list": true
-        }
-      },
-      "2993056048391974366": {
-        "type": "shopify://apps/shop-quiz-product-recommender/blocks/chat-button/672f3d48-fd3b-4227-8778-c6e58c4f8a98",
-        "disabled": false,
-        "settings": {
-          "quiz_id": "",
-          "chat_color": "#1878B9",
-          "chat_hide": false,
-          "chat_dot": true,
-          "chat_greeting": "",
-          "quiz_width": "100",
-          "quiz_height": "100"
-        }
-      },
-      "6441254115607727225": {
-        "type": "shopify://apps/shop-quiz-product-recommender/blocks/automatic-popup/672f3d48-fd3b-4227-8778-c6e58c4f8a98",
-        "disabled": false,
-        "settings": {
-          "quiz_id": "",
-          "quiz_timeout": 20,
-          "quiz_width": "100",
-          "quiz_height": "100",
-          "quiz_exit_intent": false
-        }
       },
       "2567389343055140935": {
         "type": "shopify://apps/microsoft-clarity/blocks/clarity_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea",
@@ -2641,6 +2588,59 @@
         "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": false,
         "settings": {}
+      },
+      "5439026248262864547": {
+        "type": "shopify://apps/preorder-globo/blocks/app-embed/e547a0ad-8212-4bcc-b02f-761faa9b8af2",
+        "disabled": true,
+        "settings": {}
+      },
+      "9144908965052497053": {
+        "type": "shopify://apps/glo-related-products/blocks/app-embed/75cf2d86-3988-45e7-8f28-ada23c99704f",
+        "disabled": true,
+        "settings": {}
+      },
+      "10605408327587305396": {
+        "type": "shopify://apps/eg-auto-add-to-cart/blocks/app-embed/0f7d4f74-1e89-4820-aec4-6564d7e535d2",
+        "disabled": false,
+        "settings": {
+          "version": "v3"
+        }
+      },
+      "320593021044489861": {
+        "type": "shopify://apps/sales-discounts/blocks/countdown/29205fb1-2e68-4d81-a905-d828a51c8413",
+        "disabled": true,
+        "settings": {}
+      },
+      "6441254115607727225": {
+        "type": "shopify://apps/revenuehunt-recommender-quiz/blocks/automatic-popup/672f3d48-fd3b-4227-8778-c6e58c4f8a98",
+        "disabled": true,
+        "settings": {
+          "quiz_id": "",
+          "quiz_timeout": 20,
+          "quiz_width": "100",
+          "quiz_height": "100",
+          "quiz_exit_intent": false
+        }
+      },
+      "2209279550302034861": {
+        "type": "shopify://apps/revenuehunt-recommender-quiz/blocks/link-popup/672f3d48-fd3b-4227-8778-c6e58c4f8a98",
+        "disabled": true,
+        "settings": {
+          "show_list": true
+        }
+      },
+      "2993056048391974366": {
+        "type": "shopify://apps/revenuehunt-recommender-quiz/blocks/chat-button/672f3d48-fd3b-4227-8778-c6e58c4f8a98",
+        "disabled": true,
+        "settings": {
+          "quiz_id": "",
+          "chat_color": "#1878b9",
+          "chat_hide": false,
+          "chat_dot": true,
+          "chat_greeting": "",
+          "quiz_width": "100",
+          "quiz_height": "100"
+        }
       }
     }
   },
