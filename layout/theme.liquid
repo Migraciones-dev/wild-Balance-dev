@@ -178,7 +178,6 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
           };
         </script>
       {% endcomment %}
-      {%- if settings.custom_css_t4s %}{{- 'custom.css' | asset_url | stylesheet_tag: preload: true -}}{% endif -%}
     </head>
 
     <body
@@ -566,6 +565,7 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
           }, false); // bubbling (no captura) para reducir duplicados
         })();
       </script>
+      {%- if settings.custom_css_t4s %}{{- 'custom.css' | asset_url | stylesheet_tag: preload: true -}}{% endif -%}
     </body>
   </html>
 
