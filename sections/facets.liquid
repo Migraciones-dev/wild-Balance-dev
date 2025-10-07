@@ -393,6 +393,121 @@
   </div>
 </div>
 
+<script>
+  (function () {
+    window.dataLayer = window.dataLayer || [];
+
+    var pendingEvent = null;
+    var observer = null;
+    var observerTarget = null;
+    var FALLBACK_DELAY = 1500;
+
+    function sanitizeLabel(text) {
+      if (!text) return null;
+      var cleaned = text
+        .replace(/\(\s*\d+\s*\)/g, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+      return cleaned || null;
+    }
+
+    function getFilterType(element) {
+      if (!element) return null;
+      var facet = element.closest('.t4s-facet') || element.closest('[id^="blockid_"]') || element.closest('details');
+      if (facet) {
+        var titleEl = facet.querySelector('.t4s-facet-title');
+        if (titleEl && titleEl.textContent) {
+          return titleEl.textContent.trim();
+        }
+      }
+      var activeFilters = element.closest('.t4s-active-filters');
+      if (activeFilters) {
+        return 'Active filters';
+      }
+      return null;
+    }
+
+    function parseResultsCountFromText(text) {
+      if (!text) return null;
+      var matches = text.match(/\d+/g);
+      if (!matches || !matches.length) return null;
+      var last = matches[matches.length - 1];
+      var number = parseInt(last, 10);
+      return Number.isNaN(number) ? null : number;
+    }
+
+    function getResultsCount() {
+      var countEl = document.querySelector('.t4s-active-filters__count');
+      if (countEl && countEl.textContent) {
+        var parsed = parseResultsCountFromText(countEl.textContent);
+        if (parsed !== null) return parsed;
+      }
+      var datasetEl = document.querySelector('[data-results-count]');
+      if (datasetEl && datasetEl.dataset.resultsCount) {
+        var value = parseInt(datasetEl.dataset.resultsCount, 10);
+        if (!Number.isNaN(value)) return value;
+      }
+      return null;
+    }
+
+    function dispatchPendingEvent() {
+      if (!pendingEvent) return;
+      var totalResults = getResultsCount();
+      var payload = {
+        event: 'filter_applied',
+        filter_applied: pendingEvent.filter_applied,
+        filter_type: pendingEvent.filter_type,
+        total_results: totalResults,
+      };
+      console.log('filter_applied enviado:', payload);
+      window.dataLayer.push(payload);
+      pendingEvent = null;
+    }
+
+    function ensureObserver() {
+      if (observer) return;
+      observerTarget = document.querySelector('[data-ntajax-container]') || document.querySelector('#MainContent');
+      if (!observerTarget) return;
+      observer = new MutationObserver(function () {
+        if (!pendingEvent) return;
+        dispatchPendingEvent();
+      });
+      observer.observe(observerTarget, { childList: true, subtree: true });
+    }
+
+    function scheduleFallbackDispatch() {
+      if (!pendingEvent) return;
+      window.setTimeout(function () {
+        if (!pendingEvent) return;
+        dispatchPendingEvent();
+      }, FALLBACK_DELAY);
+    }
+
+    function handleFilterInteraction(target) {
+      if (!target) return;
+      var label = sanitizeLabel(target.textContent || '') || sanitizeLabel(target.getAttribute('aria-label'));
+      var type = getFilterType(target);
+      if (!label && !type) return;
+      pendingEvent = {
+        filter_applied: label,
+        filter_type: type,
+      };
+      ensureObserver();
+      scheduleFallbackDispatch();
+    }
+
+    document.addEventListener(
+      'click',
+      function (event) {
+        var link = event.target.closest('#t4s-filter-hidden a, .t4s-active-filters a');
+        if (!link) return;
+        handleFilterInteraction(link);
+      },
+      true
+    );
+  })();
+</script>
+
 {% schema %}
 {
   "name": "Filter products",
