@@ -571,22 +571,58 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
         (function () {
           window.dataLayer = window.dataLayer || [];
 
-          window.addEventListener('klaviyoForms', function (e) {
-            if (!e.detail) return;
-            const { type, formId, formVariant, formName, source } = e.detail;
+          // Opcional: mapea form_id -> nombre legible (rellena con tus IDs reales)
+          const FORM_NAMES = {
+            // 'Q8x1yZ': 'Newsletter Popup Home',
+            // 'AbC123': 'Footer Newsletter Embed'
+          };
 
-            // Solo al enviarse correctamente el formulario
+          // Recordaremos el tipo detectado cuando se abre
+          const leadTypeByForm = {}; // { [formId]: 'popup' | 'embed' }
+
+          window.addEventListener('klaviyoForms', function (e) {
+            const d = e && e.detail;
+            if (!d) return;
+
+            const { type, formId } = d;
+
+            // DEBUG (activarlo si necesitas ver qué llega):
+            // console.log('Klaviyo event:', type, JSON.parse(JSON.stringify(d)));
+
+            // 1) Detecta y guarda el lead_type en el "open"
+            if (type === 'open' || type === 'flyoutOpen' || type === 'modalOpen') {
+              leadTypeByForm[formId] = 'popup';
+            }
+            if (type === 'embedOpen') {
+              leadTypeByForm[formId] = 'embed';
+            }
+
+            // 2) Solo medimos envío real
             if (type === 'submit' || type === 'stepSubmit') {
-              const eventData = {
+              // Inferir form_name con múltiples fuentes + fallback al mapa manual
+              const form_name =
+                d.formName ||
+                d.formTitle ||
+                (d.metaData && (d.metaData.form_name || d.metaData.formTitle)) ||
+                FORM_NAMES[formId] ||
+                'Klaviyo Form ' + (formId || '');
+
+              // Inferir lead_type con prioridad: source → lo que guardamos en open → heurística por tipo
+              const lead_type = d.source || leadTypeByForm[formId] || (type.includes('embed') ? 'embed' : 'popup');
+
+              const payload = {
                 event: 'klaviyo_form_submit',
-                form_id: formId,
-                form_name: formName || 'Klaviyo Form',
+                form_id: formId || null,
+                form_name,
                 step: 'success',
-                lead_type: source || 'popup',
+                lead_type,
               };
 
-              window.dataLayer.push(eventData);
-              console.log('✅ Klaviyo form submit detectado:', eventData);
+              window.dataLayer.push(payload);
+              if (window.gtag) gtag('event', 'klaviyo_form_submit', payload);
+              // if (window.fbq) fbq('trackCustom', 'KlaviyoFormSubmit', payload);
+
+              console.info('✅ Enviado lead Klaviyo:', payload);
             }
           });
         })();
