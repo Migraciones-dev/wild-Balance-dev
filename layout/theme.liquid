@@ -568,35 +568,37 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
       </script>
       {%- if settings.custom_css_t4s %}{{- 'custom.css' | asset_url | stylesheet_tag: preload: true -}}{% endif -%}
       <script>
-        window.klaviyoForms = window.klaviyoForms || [];
-        window.dataLayer = window.dataLayer || [];
-
-        klaviyoForms.on('submit_success', function (form) {
-          // Intenta detectar nombre del formulario
-          const formName =
-            form.$source?.getAttribute('data-form-name') ||
-            form.$source?.querySelector('h2,h3')?.innerText?.trim() ||
-            'Klaviyo Form';
-
-          // Define los parámetros del evento
-          const eventData = {
-            event: 'klaviyo_form_submit',
-            form_id: form.id || null,
-            form_name: formName,
-            step: 'success',
-            lead_type: form.source || 'popup',
-          };
-
-          // Envía al dataLayer (para GTM)
-          window.dataLayer.push(eventData);
-
-          // Si usas GA4 directamente
-          if (window.gtag) {
-            gtag('event', 'klaviyo_form_submit', eventData);
+        (function waitForKlaviyo() {
+          if (typeof window.klaviyoForms === 'undefined' || typeof klaviyoForms.on !== 'function') {
+            return setTimeout(waitForKlaviyo, 500);
           }
 
-          console.log('✅ Evento de Klaviyo enviado:', eventData);
-        });
+          // Ahora sí: Klaviyo está cargado
+          console.log('✅ Klaviyo Forms detectado');
+
+          klaviyoForms.on('submit_success', function (form) {
+            const formName =
+              form.$source?.getAttribute('data-form-name') ||
+              form.$source?.querySelector('h2,h3')?.innerText?.trim() ||
+              'Klaviyo Form';
+
+            const eventData = {
+              event: 'klaviyo_form_submit',
+              form_id: form.id || null,
+              form_name: formName,
+              step: 'success',
+              lead_type: form.source || 'popup',
+            };
+
+            console.log('🔥 Klaviyo submit detectado:', eventData);
+
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push(eventData);
+
+            if (window.gtag) gtag('event', 'klaviyo_form_submit', eventData);
+            if (window.fbq) fbq('trackCustom', 'KlaviyoFormSubmit', eventData);
+          });
+        })();
       </script>
     </body>
   </html>
