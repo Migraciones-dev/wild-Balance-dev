@@ -567,6 +567,37 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
         })();
       </script>
       {%- if settings.custom_css_t4s %}{{- 'custom.css' | asset_url | stylesheet_tag: preload: true -}}{% endif -%}
+      <script>
+        window.klaviyoForms = window.klaviyoForms || [];
+        window.dataLayer = window.dataLayer || [];
+
+        klaviyoForms.on('submit_success', function (form) {
+          // Intenta detectar nombre del formulario
+          const formName =
+            form.$source?.getAttribute('data-form-name') ||
+            form.$source?.querySelector('h2,h3')?.innerText?.trim() ||
+            'Klaviyo Form';
+
+          // Define los parámetros del evento
+          const eventData = {
+            event: 'klaviyo_form_submit',
+            form_id: form.id || null,
+            form_name: formName,
+            step: 'success',
+            lead_type: form.source || 'popup',
+          };
+
+          // Envía al dataLayer (para GTM)
+          window.dataLayer.push(eventData);
+
+          // Si usas GA4 directamente
+          if (window.gtag) {
+            gtag('event', 'klaviyo_form_submit', eventData);
+          }
+
+          console.log('✅ Evento de Klaviyo enviado:', eventData);
+        });
+      </script>
     </body>
   </html>
 
