@@ -309,7 +309,7 @@
     
     {%- assign total_active_values = 0 -%}
      {%- capture filters__active -%}
-          <div class="t4s-active-filters__count t4s-d-inline-block">{{ 'products.facets.results_with_count_html' | t: count: collection.products_count }}</div>
+          <div id="id="plp-total-count"" class="t4s-active-filters__count t4s-d-inline-block">{{ 'products.facets.results_with_count_html' | t: count: collection.products_count }}</div>
           {%- for filter in collection.filters -%}
             {%- if filter.type == "price_range" -%}
               {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
