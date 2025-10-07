@@ -571,14 +571,12 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
         (function () {
           window.dataLayer = window.dataLayer || [];
 
-          // Opcional: mapea form_id -> nombre legible (rellena con tus IDs reales)
           const FORM_NAMES = {
-            // 'Q8x1yZ': 'Newsletter Popup Home',
-            // 'AbC123': 'Footer Newsletter Embed'
+            // 'Yk6iWq': 'Popup Newsletter Mascotas',
+            // 'AbC123': 'Footer Newsletter'
           };
 
-          // Recordaremos el tipo detectado cuando se abre
-          const leadTypeByForm = {}; // { [formId]: 'popup' | 'embed' }
+          const leadTypeByForm = {}; // guardamos si es popup o embed
 
           window.addEventListener('klaviyoForms', function (e) {
             const d = e && e.detail;
@@ -586,10 +584,7 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
 
             const { type, formId } = d;
 
-            // DEBUG (activarlo si necesitas ver qué llega):
-            // console.log('Klaviyo event:', type, JSON.parse(JSON.stringify(d)));
-
-            // 1) Detecta y guarda el lead_type en el "open"
+            // Guarda tipo de formulario cuando se abre
             if (type === 'open' || type === 'flyoutOpen' || type === 'modalOpen') {
               leadTypeByForm[formId] = 'popup';
             }
@@ -597,9 +592,8 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
               leadTypeByForm[formId] = 'embed';
             }
 
-            // 2) Solo medimos envío real
+            // Solo actuar en envíos exitosos
             if (type === 'submit' || type === 'stepSubmit') {
-              // Inferir form_name con múltiples fuentes + fallback al mapa manual
               const form_name =
                 d.formName ||
                 d.formTitle ||
@@ -607,8 +601,34 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
                 FORM_NAMES[formId] ||
                 'Klaviyo Form ' + (formId || '');
 
-              // Inferir lead_type con prioridad: source → lo que guardamos en open → heurística por tipo
               const lead_type = d.source || leadTypeByForm[formId] || (type.includes('embed') ? 'embed' : 'popup');
+
+              // --- EXTRA: capturamos inputs visibles dentro del form ---
+              let inputsData = {};
+              try {
+                const formSelector = `[data-testid="klaviyo-form-${formId}"]`;
+                const formEl = document.querySelector(formSelector);
+
+                if (formEl) {
+                  const inputs = formEl.querySelectorAll('input, select, textarea');
+                  inputs.forEach((el) => {
+                    const name = el.name || el.id || el.getAttribute('aria-label');
+                    if (!name) return;
+
+                    // manejamos distintos tipos de input
+                    if (el.type === 'radio') {
+                      if (el.checked) inputsData[name] = el.getAttribute('aria-label') || el.value || 'checked';
+                    } else if (el.type === 'checkbox') {
+                      inputsData[name] = el.checked;
+                    } else {
+                      const value = el.value?.trim();
+                      if (value) inputsData[name] = value;
+                    }
+                  });
+                }
+              } catch (err) {
+                console.warn('No se pudieron leer los inputs de Klaviyo:', err);
+              }
 
               const payload = {
                 event: 'klaviyo_form_submit',
@@ -616,11 +636,11 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
                 form_name,
                 step: 'success',
                 lead_type,
+                form_inputs: inputsData,
               };
 
               window.dataLayer.push(payload);
               if (window.gtag) gtag('event', 'klaviyo_form_submit', payload);
-              // if (window.fbq) fbq('trackCustom', 'KlaviyoFormSubmit', payload);
 
               console.info('✅ Enviado lead Klaviyo:', payload);
             }
