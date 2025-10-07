@@ -568,35 +568,26 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
       </script>
       {%- if settings.custom_css_t4s %}{{- 'custom.css' | asset_url | stylesheet_tag: preload: true -}}{% endif -%}
       <script>
-        (function waitForKlaviyo() {
-          if (typeof window.klaviyoForms === 'undefined' || typeof klaviyoForms.on !== 'function') {
-            return setTimeout(waitForKlaviyo, 500);
-          }
+        (function () {
+          window.dataLayer = window.dataLayer || [];
 
-          // Ahora sí: Klaviyo está cargado
-          console.log('✅ Klaviyo Forms detectado');
+          window.addEventListener('klaviyoForms', function (e) {
+            if (!e.detail) return;
+            const { type, formId, formVariant, formName, source } = e.detail;
 
-          klaviyoForms.on('submit_success', function (form) {
-            const formName =
-              form.$source?.getAttribute('data-form-name') ||
-              form.$source?.querySelector('h2,h3')?.innerText?.trim() ||
-              'Klaviyo Form';
+            // Solo al enviarse correctamente el formulario
+            if (type === 'submit' || type === 'stepSubmit') {
+              const eventData = {
+                event: 'klaviyo_form_submit',
+                form_id: formId,
+                form_name: formName || 'Klaviyo Form',
+                step: 'success',
+                lead_type: source || 'popup',
+              };
 
-            const eventData = {
-              event: 'klaviyo_form_submit',
-              form_id: form.id || null,
-              form_name: formName,
-              step: 'success',
-              lead_type: form.source || 'popup',
-            };
-
-            console.log('🔥 Klaviyo submit detectado:', eventData);
-
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push(eventData);
-
-            if (window.gtag) gtag('event', 'klaviyo_form_submit', eventData);
-            if (window.fbq) fbq('trackCustom', 'KlaviyoFormSubmit', eventData);
+              window.dataLayer.push(eventData);
+              console.log('✅ Klaviyo form submit detectado:', eventData);
+            }
           });
         })();
       </script>
