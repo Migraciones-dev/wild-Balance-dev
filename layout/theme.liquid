@@ -601,7 +601,7 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
                 FORM_NAMES[formId] ||
                 'Klaviyo Form ' + (formId || '');
 
-              const lead_type = d.source || leadTypeByForm[formId] || (type.includes('embed') ? 'embed' : 'popup');
+              const form_type = d.source || leadTypeByForm[formId] || (type.includes('embed') ? 'embed' : 'popup');
 
               // --- EXTRA: capturamos inputs visibles dentro del form ---
               let inputsData = {};
@@ -635,7 +635,7 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
                 form_id: formId || null,
                 form_name,
                 step: 'success',
-                lead_type,
+                form_type,
                 form_inputs: inputsData,
               };
 
