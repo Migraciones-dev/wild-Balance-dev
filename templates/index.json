@@ -864,6 +864,19 @@
       "settings": {
         "custom_liquid": ""
       }
+    },
+    "1760292679b5c6369d": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_all_reviews_text_iieDD7": {
+          "type": "shopify://apps/judge-me-reviews/blocks/all_reviews_text/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_all_reviews_text_iieDD7"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -883,6 +896,7 @@
     "migraciones_ugc_UrjgJT",
     "migraciones_faq_tUMPqn",
     "migraciones_reviews_x9hAB4",
-    "migraciones_newsletter_qXCxVc"
+    "migraciones_newsletter_qXCxVc",
+    "1760292679b5c6369d"
   ]
 }
