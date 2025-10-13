@@ -540,18 +540,21 @@
                                             <p class=" leading-6  flex-grow items-center font-[700] font-[14.5px]">
                                               {{- value -}}
                                             </p>
-                                            {% if variant.compare_at_price > variant.price %}
-                                              <p class="font-medium leading-6 shrink-0 text-gray-500 line-through">
-                                                {{ variant.compare_at_price | money_with_currency }}
-                                              </p>
-                                              <p class="font-medium leading-6 shrink-0">
-                                                {{ variant.price | money_with_currency }}
-                                              </p>
-                                            {% else %}
-                                              <p class="font-medium leading-6 shrink-0">
-                                                {{ variant.price | money_with_currency }}
-                                              </p>
-                                            {% endif %}
+                                            <div class="flex gap-2">
+                                              {% if variant.compare_at_price > variant.price %}
+                                                <p class="font-medium leading-6 shrink-0 text-gray-500 line-through">
+                                                  {{ variant.compare_at_price | money_with_currency }}
+                                                </p>
+                                                <p class="font-medium leading-6 shrink-0">
+                                                  {{ variant.price | money_with_currency }}
+                                                </p>
+                                              {% else %}
+                                                <p class="font-medium leading-6 shrink-0">
+                                                  {{ variant.price | money_with_currency }}
+                                                </p>
+                                              {% endif %}
+                                            </div>
+                                            >
                                           </div>
                                           {% comment %}
                                             <div class="flex flex-wrap gap-1">
