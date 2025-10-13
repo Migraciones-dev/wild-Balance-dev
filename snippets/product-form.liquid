@@ -540,9 +540,18 @@
                                             <p class=" leading-6  flex-grow items-center font-[700] font-[14.5px]">
                                               {{- value -}}
                                             </p>
-                                            <p class=" font-medium leading-6  shrink-0 font-[14.5px]">
-                                              {{- variant.price | money_with_currency -}}
-                                            </p>
+                                            {% if variant.compare_at_price > variant.price %}
+                                              <p class="font-medium leading-6 shrink-0 text-gray-500 line-through">
+                                                {{ variant.compare_at_price | money_with_currency }}
+                                              </p>
+                                              <p class="font-medium leading-6 shrink-0 text-red-600">
+                                                {{ variant.price | money_with_currency }}
+                                              </p>
+                                            {% else %}
+                                              <p class="font-medium leading-6 shrink-0">
+                                                {{ variant.price | money_with_currency }}
+                                              </p>
+                                            {% endif %}
                                           </div>
                                           {% comment %}
                                             <div class="flex flex-wrap gap-1">
