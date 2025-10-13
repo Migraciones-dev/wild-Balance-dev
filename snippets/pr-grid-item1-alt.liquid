@@ -161,9 +161,11 @@
   {% endif %}
 
   <div class="t4s-product-wrapper relative">
-    <div class="containerLabelsPDC absolute z-[1] top-4 lg:top-8 right-1">
-      {% render 'custom-badges', product: product %}
-    </div>
+    {% comment %}
+      <div class="containerLabelsPDC absolute z-[1] top-4 lg:top-8 right-1">
+        {% render 'custom-badges', product: product %}
+      </div>
+    {% endcomment %}
     <div data-cacl-slide class="t4s-product-inner t4s-pr t4s-oh" timeline hdt-reveal="slide-in">
       {%- if image != blank %}{% render 'product-img', image: image, imgatt: imgatt -%}{%- endif -%}
       <div data-product-badge data-sort="sale,new,soldout,preOrder,custom" class="t4s-product-badge"></div>
