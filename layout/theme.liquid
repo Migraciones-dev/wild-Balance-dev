@@ -569,18 +569,13 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
       {%- if settings.custom_css_t4s %}{{- 'custom.css' | asset_url | stylesheet_tag: preload: true -}}{% endif -%}
       <script>
         (function () {
-          if (window.__klaviyoFormsHooked) return; // evita múltiples listeners
+          if (window.__klaviyoFormsHooked) return;
           window.__klaviyoFormsHooked = true;
 
           window.dataLayer = window.dataLayer || [];
 
-          const FORM_NAMES = {
-            // 'Yk6iWq': 'Popup Newsletter Mascotas',
-            // 'AbC123': 'Footer Newsletter'
-          };
-
           const leadTypeByForm = {};
-          const sentCache = new Set(); // dedupe simple por ventana corta
+          const sentCache = new Set();
 
           window.addEventListener('klaviyoForms', function (e) {
             const d = e && e.detail;
@@ -588,34 +583,17 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
 
             const { type, formId } = d;
 
-            // Guardar tipo de formulario cuando se abre
-            if (type === 'open' || type === 'flyoutOpen' || type === 'modalOpen') {
-              leadTypeByForm[formId] = 'popup';
-            }
-            if (type === 'embedOpen') {
-              leadTypeByForm[formId] = 'embed';
-            }
+            if (['open', 'flyoutOpen', 'modalOpen'].includes(type)) leadTypeByForm[formId] = 'popup';
+            if (type === 'embedOpen') leadTypeByForm[formId] = 'embed';
 
-            // --- Solo actuar en el envío final ---
-            if (type !== 'submit') return; // Ignora stepSubmit para no duplicar
+            if (type !== 'submit') return; // solo envío final
 
-            const form_name =
-              d.formName ||
-              d.formTitle ||
-              (d.metaData && (d.metaData.form_name || d.metaData.formTitle)) ||
-              FORM_NAMES[formId] ||
-              'Klaviyo Form ' + (formId || '');
-
-            const form_type = d.source || leadTypeByForm[formId] || 'popup';
-
-            // Captura inputs visibles (best effort)
+            // ---- capturamos inputs ----
             let inputsData = {};
             try {
-              const formSelector = `[data-testid="klaviyo-form-${formId}"]`;
-              const formEl = document.querySelector(formSelector);
+              const formEl = document.querySelector(`[data-testid="klaviyo-form-${formId}"]`);
               if (formEl) {
-                const inputs = formEl.querySelectorAll('input, select, textarea');
-                inputs.forEach((el) => {
+                formEl.querySelectorAll('input, select, textarea').forEach((el) => {
                   const name = el.name || el.id || el.getAttribute('aria-label');
                   if (!name) return;
                   if (el.type === 'radio') {
@@ -632,27 +610,48 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
               console.warn('No se pudieron leer los inputs de Klaviyo:', err);
             }
 
-            // --- Dedupe en ventana corta (formId + email si existe) ---
-            const dedupeKey = formId + '|' + (inputsData.email || inputsData.Email || '');
-            if (sentCache.has(dedupeKey)) {
-              return;
-            }
+            // ---- dedupe básico ----
+            const email = inputsData.email || inputsData.Email || '';
+            const dedupeKey = formId + '|' + email;
+            if (sentCache.has(dedupeKey)) return;
             sentCache.add(dedupeKey);
-            setTimeout(() => sentCache.delete(dedupeKey), 5000); // 5s de ventana
+            setTimeout(() => sentCache.delete(dedupeKey), 5000);
 
-            const payload = {
+            const payloadBase = {
               event: 'klaviyo_form_submit',
               form_id: formId || null,
-              form_name,
+              form_name:
+                d.formName ||
+                d.formTitle ||
+                (d.metaData && (d.metaData.form_name || d.metaData.formTitle)) ||
+                'Klaviyo Form ' + (formId || ''),
               step: 'success',
-              form_type,
+              form_type: d.source || leadTypeByForm[formId] || 'popup',
               form_inputs: inputsData,
             };
 
-            // SOLO dataLayer.push; elimina el gtag directo para evitar duplicados
-            window.dataLayer.push(payload);
+            // ---- Si hay email, hasheamos SHA-256 ----
+            if (email) {
+              const normalized = email.trim().toLowerCase();
+              crypto.subtle
+                .digest('SHA-256', new TextEncoder().encode(normalized))
+                .then((hashBuffer) => {
+                  const hashArray = Array.from(new Uint8Array(hashBuffer));
+                  const hashHex = hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
 
-            console.info('✅ Enviado lead Klaviyo (único):', payload);
+                  payloadBase.hashed_email = hashHex;
+
+                  window.dataLayer.push(payloadBase);
+                  console.info('✅ Enviado lead Klaviyo con hash:', payloadBase);
+                })
+                .catch((err) => {
+                  console.warn('Error generando hash:', err);
+                  window.dataLayer.push(payloadBase); // fallback
+                });
+            } else {
+              window.dataLayer.push(payloadBase);
+              console.info('✅ Enviado lead Klaviyo (sin email):', payloadBase);
+            }
           });
         })();
       </script>
