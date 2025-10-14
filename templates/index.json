@@ -14,7 +14,6 @@
       "blocks": {
         "image_parent_7HhBqi": {
           "type": "image_parent",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/BANNER_SUSCRIPCION_1.png",
             "image_mb": "shopify://shop_images/BANNER_MOBILE_SEMANA_DEL_PERRO_2025_1_79e17b8e-77e3-4ee5-80ad-c9e05ccbb68e.png",
@@ -57,6 +56,7 @@
         },
         "image_parent_Cq79Fr": {
           "type": "image_parent",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/BANNER_FLASH_PROMO_1.png",
             "image_mb": "shopify://shop_images/ofertas-flash-hasta-25_2.png",
