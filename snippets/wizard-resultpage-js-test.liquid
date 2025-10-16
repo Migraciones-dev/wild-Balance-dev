@@ -18,6 +18,7 @@
       },
       error: function (jqXHR, textStatus, errorThrown) {
         console.error('errorThrown', errorThrown, jqXHR, textStatus, errorThrown);
+        window.location.href = 'https://wildbalance.es/pages/wizard-result/' + data['quizId'];
       },
     });
   }
