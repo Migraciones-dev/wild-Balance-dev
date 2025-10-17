@@ -6,7 +6,7 @@
     let retake = searchParams.get('retake');
     localStorage.setItem('response', JSON.stringify(quizResponse));
     console.log('response', JSON.stringify(quizResponse));
-    let url = 'https://shopify-quiz-server-rlkou55kn-migraciones-devs-projects.vercel.app/insert-data';
+    let url = 'https://shopify-quiz-server.vercel.app/insert-data';
     $.ajax({
       url: url,
       type: 'POST',
