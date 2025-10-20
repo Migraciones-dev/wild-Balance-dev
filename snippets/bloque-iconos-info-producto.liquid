@@ -43,13 +43,19 @@
 
   <div class="cajaIngrediente">
     <div class="aporteImg">
-      {% if product.tags contains 'congelado' and product.tags contains 'comida cocinada' %}
+    {% if product.tags contains 'congelado' and product.tags contains 'barf_grande' %}
+        <img
+          class="mx-auto my-2"
+          src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/wib-porcion-cocinado.svg?v=1727775092"
+          alt="Barf grande"
+        >
+        {% elsif product.tags contains 'congelado' and product.tags contains 'comida cocinada' %}
         <img
           class="mx-auto my-2"
           src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/wib-porcion-cocinado.svg?v=1727775092"
           alt="porción cocinado"
         >
-      {% elsif product.tags contains 'congelado' and product.tags contains 'comida cruda' %}
+      {% elsif product.tags contains 'congelado' and product.tags contains 'barf_burger' %}
         <img
           class="mx-auto my-2"
           src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Vector_1.svg?v=1753719546"
@@ -78,8 +84,10 @@
           <p>
             {% if animal == 'gato' %}10x120gr{% else %}4x325gr{% endif %}
           </p>
-        {% elsif product.tags contains 'congelado' and product.tags contains 'comida cruda' %}
+        {% elsif product.tags contains 'congelado' and product.tags contains 'barf_burger' %}
           <p>Burger 50gr</p>
+        {% elsif product.tags contains 'congelado' and product.tags contains 'barf_grande' %}
+          <p>0,5kg</p>
         {% elsif product.tags contains 'lata' %}
           <p>
             Lata de
