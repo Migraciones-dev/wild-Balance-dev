@@ -97,15 +97,14 @@
             "animation_delay": 40
           }
         },
-        "image_parent_X4Gdti": {
+        "image_parent_dbwjJU": {
           "type": "image_parent",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/8.png",
-            "image_mb": "shopify://shop_images/7.png",
+            "image": "shopify://shop_images/Home_HeroBanner_LanzamientoBarfGrande_General_20251021_3.png",
+            "image_mb": "shopify://shop_images/Home_HeroBanner_LanzamientoBarfGrande_General_20251021_3.png",
             "image_position": "8",
             "cl_img": "",
-            "link_img1": "shopify://collections/comida",
+            "link_img1": "shopify://products/pack-barf-grande-dieta-equilibrada",
             "open_link": "_self",
             "animate_slide": "none",
             "text_align": "center",
@@ -230,7 +229,7 @@
       "block_order": [
         "image_parent_7HhBqi",
         "image_parent_Cq79Fr",
-        "image_parent_X4Gdti",
+        "image_parent_dbwjJU",
         "image_parent_jyHWtH",
         "image_parent_3WhkXJ"
       ],
