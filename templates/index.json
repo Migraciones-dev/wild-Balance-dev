@@ -246,7 +246,7 @@
         "custom_mb": false,
         "height_mb": 250,
         "autoplay": true,
-        "speed": 2,
+        "speed": 3,
         "button_play": false,
         "cl_btn_play_pause": "#ffffff",
         "cl_btn_nav": "#ffffff",
