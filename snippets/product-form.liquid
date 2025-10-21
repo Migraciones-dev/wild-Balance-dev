@@ -73,7 +73,7 @@
       {{- form | payment_terms -}}
 
       {%- if false -%}
-        <input name="id" value="{{ pr_variants.first.id }}" type="hidden">
+        <input name="id" value="{{ pr_variants[1]].id }}" type="hidden">
         {%- if advance_pr_type != blank -%}
           {%- render 'choose_style', advance_pr_type: advance_pr_type, title: advance_label, pid: product.id -%}
         {%- endif -%}
