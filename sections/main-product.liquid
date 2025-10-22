@@ -317,7 +317,8 @@ t4option0_0 | alt text
                 <div data-product-single-media-group class="{{ class_main }}t4s-col-12 t4s-col-item t4s-pr">
                       {% assign v = product.selected_or_first_available_variant %}
   {% assign d = v.compare_at_price | minus: v.price | times: 100 | divided_by: v.compare_at_price | round %}
-  {% if v.compare_at_price > v.price %}
+{% if v.compare_at_price > v.price %}
+  {% unless product.tags contains 'sin-descuento' %}
     <div
       class="offer-tag"
       style="
@@ -330,13 +331,15 @@ t4option0_0 | alt text
         padding: 0.5rem 0.2rem;
         right: 10%;
         font-weight: 900;
-        z-index:2
+        z-index: 2;
       "
     >
       <p class="offer-tag-1 text-center" style="font-size: 0.8rem;">OFERTA</p>
-      <p class="offer-tag-2 text-center" style="font-size: 2rem;    margin: -5px 0;">{{ d }}%</p>
+      <p class="offer-tag-2 text-center" style="font-size: 2rem; margin: -5px 0;">{{ d }}%</p>
     </div>
-  {% endif %}
+  {% endunless %}
+{% endif %}
+
                   <div data-t4s-gallery data-main-media data-t4s-thumb-true class="t4s-row t4s-g-0{{ class_gx_lg_main }}{% unless isSliderCenter %} t4s-slide-eff-{{ se_stts.eff }}{% endunless %} flickityt4s t4s_{{ image_ratio }} t4s_position_{{ se_stts.image_position }} t4s_{{ se_stts.image_size }} t4s-flickity-slider {% if se_stts.nav_btn %}  t4s-slider-btn-{{ se_stts.nav_btn }} t4s-slider-btn-style-{{ se_stts.btn_owl }} t4s-slider-btn-{{ se_stts.btn_shape }}  t4s-slider-btn-{{ se_stts.btn_size }} t4s-slider-btn-cl-{{ se_stts.btn_cl }} t4s-slider-btn-vi-{{ se_stts.btn_vi }} t4s-slider-btn-hidden-mobile-{{ se_stts.btn_hidden_mobile }} {% endif %}{% if se_stts.nav_dot %} t4s-dots-style-{{ se_stts.dot_owl }} t4s-dots-cl-{{ se_stts.dots_cl }} t4s-dots-round-{{ se_stts.dots_round }} t4s-dots-hidden-mobile-{{ se_stts.dots_hidden_mobile }} {% endif %}" data-flickityt4s-js='{"t4sid": "{{ sid }}", "status": true, "cellSelector": "[data-main-slide]:not(.is--media-hide)","isFilter": {{ canMedia_group }}, "checkVisibility": false,"imagesLoaded": 0,"adaptiveHeight": 1, "contain": 1, "groupCells": "100%", "dragThreshold" : {% if se_stts.eff == 'fade' %}6{% else %}5{% endif %}, "cellAlign": "{% if isSliderCenter %}center{% else %}left{% endif %}","wrapAround": true,"prevNextButtons": {{ se_stts.nav_btn }},"percentPosition": 1,"pageDots": {{ se_stts.nav_dot }}, "autoPlay" : 0, "pauseAutoPlayOnHover" : true ,  "thumbNav": {% if media_layout != 'without_thumbnails' and isSliderCenter == false %}true{% else %}false{% endif %}, "thumbVertical": {% if media_layout != 'thumbnails_bottom' and isSliderCenter == false %}true{% else %}false{% endif %}, "isMedia": true }' style="--space-dots: {{ se_stts.dots_space }}px;">
                     {%- liquid 
                     for media in product_media 
