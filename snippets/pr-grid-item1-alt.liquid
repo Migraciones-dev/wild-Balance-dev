@@ -140,7 +140,8 @@
   {%- endif -%}
   {% assign v = product.selected_or_first_available_variant %}
   {% assign d = v.compare_at_price | minus: v.price | times: 100 | divided_by: v.compare_at_price | round %}
-  {% if v.compare_at_price > v.price %}
+
+  {% if v.compare_at_price > v.price and product.tags contains 'sin-descuento' == false %}
     <div
       class="offer-tag"
       style="
@@ -157,7 +158,7 @@
       "
     >
       <p class="offer-tag-1 text-center" style="font-size: 0.8rem;">OFERTA</p>
-      <p class="offer-tag-2 text-center" style="font-size: 2rem;    margin: -5px 0;">{{ d }}%</p>
+      <p class="offer-tag-2 text-center" style="font-size: 2rem; margin: -5px 0;">{{ d }}%</p>
     </div>
   {% endif %}
 
