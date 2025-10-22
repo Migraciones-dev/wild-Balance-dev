@@ -142,24 +142,26 @@
   {% assign d = v.compare_at_price | minus: v.price | times: 100 | divided_by: v.compare_at_price | round %}
 
   {% if v.compare_at_price > v.price %}
-    <div
-      class="offer-tag"
-      style="
-        background: #f0807b;
-        color: #faf5e7;
-        position: absolute;
-        z-index: 1;
-        font-size: 1.2rem;
-        border-radius: 0 0 10px 10px;
-        padding: 0.5rem 0.2rem;
-        right: 10%;
-        font-weight: 900;
-        z-index: 2;
-      "
-    >
-      <p class="offer-tag-1 text-center" style="font-size: 0.8rem;">OFERTA</p>
-      <p class="offer-tag-2 text-center" style="font-size: 2rem;    margin: -5px 0;">{{ d }}%</p>
-    </div>
+    {% unless product.tags contains 'sin-descuento' %}
+      <div
+        class="offer-tag"
+        style="
+          background: #f0807b;
+          color: #faf5e7;
+          position: absolute;
+          z-index: 1;
+          font-size: 1.2rem;
+          border-radius: 0 0 10px 10px;
+          padding: 0.5rem 0.2rem;
+          right: 10%;
+          font-weight: 900;
+          z-index: 2;
+        "
+      >
+        <p class="offer-tag-1 text-center" style="font-size: 0.8rem;">OFERTA</p>
+        <p class="offer-tag-2 text-center" style="font-size: 2rem; margin: -5px 0;">{{ d }}%</p>
+      </div>
+    {% endunless %}
   {% endif %}
 
   <div class="t4s-product-wrapper relative">
