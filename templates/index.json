@@ -97,6 +97,48 @@
             "animation_delay": 40
           }
         },
+        "image_parent_DrfWkp": {
+          "type": "image_parent",
+          "settings": {
+            "image": "shopify://shop_images/Home_HeroBanner_LanzamientoLatasPavoCordero_5x4_20251023_desk.jpg",
+            "image_mb": "shopify://shop_images/Home_HeroBanner_LanzamientoLatasPavoCordero_5x4_20251023_mobile.jpg",
+            "image_position": "8",
+            "cl_img": "",
+            "link_img1": "shopify://collections/latas-filosofia-barf",
+            "open_link": "_self",
+            "animate_slide": "none",
+            "text_align": "center",
+            "text_align_tb": "center",
+            "text_align_mb": "center",
+            "content_width": "container",
+            "cv_pos": 50,
+            "ch_pos": 50,
+            "cv_pos_tb": 50,
+            "ch_pos_tb": 50,
+            "cv_pos_mb": 50,
+            "ch_pos_mb": 50,
+            "bg_overlay": "#000000",
+            "bg_opacity": 0,
+            "bg_content_cl": "#ffffff",
+            "bg_content_op": 0,
+            "content_pd_tb": 15,
+            "content_pd_lr": 15,
+            "content_pd_tb_tb": 15,
+            "content_pd_lr_tb": 15,
+            "content_pd_tb_mb": 10,
+            "content_pd_lr_mb": 10,
+            "border_bl": false,
+            "br_color": "#222222",
+            "br_bg": "#ffffff",
+            "br_opacity": 50,
+            "br_style": "solid",
+            "br_pd": 20,
+            "br_pd_mb": 10,
+            "label_nav": "Extended",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
         "image_parent_dbwjJU": {
           "type": "image_parent",
           "settings": {
@@ -181,57 +223,14 @@
             "time_animation": 1,
             "animation_delay": 40
           }
-        },
-        "image_parent_3WhkXJ": {
-          "type": "image_parent",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/11_55c865f2-3ec6-40ec-8a70-0a61a65ca6f4.png",
-            "image_mb": "shopify://shop_images/9.png",
-            "image_position": "8",
-            "cl_img": "",
-            "link_img1": "shopify://collections/comida",
-            "open_link": "_self",
-            "animate_slide": "none",
-            "text_align": "center",
-            "text_align_tb": "center",
-            "text_align_mb": "center",
-            "content_width": "container",
-            "cv_pos": 50,
-            "ch_pos": 50,
-            "cv_pos_tb": 50,
-            "ch_pos_tb": 50,
-            "cv_pos_mb": 50,
-            "ch_pos_mb": 50,
-            "bg_overlay": "#000000",
-            "bg_opacity": 0,
-            "bg_content_cl": "#ffffff",
-            "bg_content_op": 0,
-            "content_pd_tb": 15,
-            "content_pd_lr": 15,
-            "content_pd_tb_tb": 15,
-            "content_pd_lr_tb": 15,
-            "content_pd_tb_mb": 10,
-            "content_pd_lr_mb": 10,
-            "border_bl": false,
-            "br_color": "#222222",
-            "br_bg": "#ffffff",
-            "br_opacity": 50,
-            "br_style": "solid",
-            "br_pd": 20,
-            "br_pd_mb": 10,
-            "label_nav": "Extended",
-            "time_animation": 1,
-            "animation_delay": 40
-          }
         }
       },
       "block_order": [
         "image_parent_7HhBqi",
         "image_parent_Cq79Fr",
+        "image_parent_DrfWkp",
         "image_parent_dbwjJU",
-        "image_parent_jyHWtH",
-        "image_parent_3WhkXJ"
+        "image_parent_jyHWtH"
       ],
       "custom_css": [
         ".t4s-carousel--range {display: none !important;}"
