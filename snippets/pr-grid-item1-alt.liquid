@@ -163,7 +163,43 @@
       </div>
     {% endunless %}
   {% endif %}
+  {% comment %}
+    ✅ ETIQUETA PERSONALIZADA POR TAG
+    Se muestra si el producto tiene una tag tipo: oferta_TEXTO_4X3
+    Ejemplo:
+      - Tag: oferta_2X1_NAVIDAD → mostrará "2X1" y "NAVIDAD"
+  {% endcomment %}
+  {% assign oferta_tag = '' %}
+  {% for t in product.tags %}
+    {% if t contains 'oferta_' %}
+      {% assign oferta_tag = t %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
 
+  {% unless oferta_tag == '' or product.tags contains 'sin-descuento' %}
+    {% assign parts = oferta_tag | split: '_' %}
+    {% assign oferta_texto = parts[1] | upcase %}
+    {% assign oferta_promo = parts[2] | upcase %}
+
+    <div
+      class="offer-tag"
+      style="
+        background: #e89a47;
+        color: #fff9ed;
+        position: absolute;
+        z-index: 3;
+        font-size: 1.2rem;
+        border-radius: 0 0 10px 10px;
+        padding: 0.5rem 0.2rem;
+        left: 10%;
+        font-weight: 900;
+      "
+    >
+      <p class="offer-tag-1 text-center" style="font-size: 0.8rem;">{{ oferta_texto }}</p>
+      <p class="offer-tag-2 text-center" style="font-size: 2rem; margin: -5px 0;">{{ oferta_promo }}</p>
+    </div>
+  {% endunless %}
   <div class="t4s-product-wrapper relative">
     {% comment %}
       <div class="containerLabelsPDC absolute z-[1] top-4 lg:top-8 right-1">
