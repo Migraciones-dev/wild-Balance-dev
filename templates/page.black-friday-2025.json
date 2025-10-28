@@ -135,11 +135,65 @@
         "pb_mobile": 0,
         "bg_color": "#1f1f1f"
       }
+    },
+    "migraciones_banners_cuenta_atras_Ph34WB": {
+      "type": "migraciones-banners-cuenta-atras",
+      "blocks": {
+        "banner_9KVPxw": {
+          "type": "banner",
+          "settings": {
+            "image_link": "",
+            "enable_schedule": false,
+            "start_date": "",
+            "end_date": "",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_fippFK": {
+          "type": "banner",
+          "settings": {
+            "image_link": "",
+            "enable_schedule": false,
+            "start_date": "",
+            "end_date": "",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        }
+      },
+      "block_order": [
+        "banner_9KVPxw",
+        "banner_fippFK"
+      ],
+      "name": "Banners Grid 2 columnas",
+      "settings": {
+        "heading_before": "Descubre nuestras",
+        "heading_highlight": "ofertas especiales",
+        "heading_after": "",
+        "title_color": "#fff",
+        "highlight_bg_color": "#FFCD00",
+        "highlight_text_color": "#fff",
+        "pt_desktop": 40,
+        "pb_desktop": 40,
+        "pt_mobile": 20,
+        "pb_mobile": 20,
+        "bg_color": "#1f1f1f"
+      }
     }
   },
   "order": [
     "heading",
     "main",
-    "migraciones_banner_responsive_d6hJg8"
+    "migraciones_banner_responsive_d6hJg8",
+    "migraciones_banners_cuenta_atras_Ph34WB"
   ]
 }
