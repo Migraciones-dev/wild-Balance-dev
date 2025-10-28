@@ -26,31 +26,33 @@
     }
   </style>
 
-  {%- if section.settings.desktop_image or section.settings.mobile_image -%}
-    {%- comment -%} Imagen escritorio {%- endcomment -%}
-    {% if section.settings.desktop_image %}
-      {% if section.settings.image_link != blank %}<a href="{{ section.settings.image_link }}">{% endif %}
-      <img
-        src="{{ section.settings.desktop_image | img_url: '2048x' }}"
-        class="banner-image hidden md:block w-full h-auto object-cover"
-        alt="{{ section.settings.desktop_image.alt | escape }}"
-        loading="lazy"
-      >
-      {% if section.settings.image_link != blank %}</a>{% endif %}
-    {% endif %}
+  <div class="max-w-[1600px] mx-auto px-6 lg:px-10">
+    {%- if section.settings.desktop_image or section.settings.mobile_image -%}
+      {%- comment -%} Imagen escritorio {%- endcomment -%}
+      {% if section.settings.desktop_image %}
+        {% if section.settings.image_link != blank %}<a href="{{ section.settings.image_link }}">{% endif %}
+        <img
+          src="{{ section.settings.desktop_image | img_url: '2048x' }}"
+          class="banner-image hidden md:block w-full h-auto object-cover"
+          alt="{{ section.settings.desktop_image.alt | escape }}"
+          loading="lazy"
+        >
+        {% if section.settings.image_link != blank %}</a>{% endif %}
+      {% endif %}
 
-    {%- comment -%} Imagen móvil {%- endcomment -%}
-    {% if section.settings.mobile_image %}
-      {% if section.settings.image_link != blank %}<a href="{{ section.settings.image_link }}">{% endif %}
-      <img
-        src="{{ section.settings.mobile_image | img_url: '1024x' }}"
-        class="banner-image block md:hidden w-full h-auto object-cover"
-        alt="{{ section.settings.mobile_image.alt | escape }}"
-        loading="lazy"
-      >
-      {% if section.settings.image_link != blank %}</a>{% endif %}
-    {% endif %}
-  {%- endif -%}
+      {%- comment -%} Imagen móvil {%- endcomment -%}
+      {% if section.settings.mobile_image %}
+        {% if section.settings.image_link != blank %}<a href="{{ section.settings.image_link }}">{% endif %}
+        <img
+          src="{{ section.settings.mobile_image | img_url: '1024x' }}"
+          class="banner-image block md:hidden w-full h-auto object-cover"
+          alt="{{ section.settings.mobile_image.alt | escape }}"
+          loading="lazy"
+        >
+        {% if section.settings.image_link != blank %}</a>{% endif %}
+      {% endif %}
+    {%- endif -%}
+  </div>
 </section>
 
 {% schema %}
