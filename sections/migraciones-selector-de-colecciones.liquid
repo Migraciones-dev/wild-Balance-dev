@@ -18,22 +18,28 @@
     /* Estilos para botones de tabs */
     .pet-tab-button {
       transition: all 0.3s ease;
+      min-width: 160px;
+      justify-content: center;
     }
 
     .pet-tab-button.active {
-      background-color: {{ section.settings.accent_color }};
+      background-color: #5CCC84;
       color: white;
+      border-color: #5CCC84;
     }
 
     .pet-tab-button:not(.active) {
       background-color: white;
-      color: {{ section.settings.accent_color }};
+      color: #5CCC84;
+      border-color: #5CCC84;
     }
 
     /* Estilos para categorías */
     .category-button {
       transition: all 0.3s ease;
       cursor: pointer;
+      text-align: center;
+      justify-content: center;
     }
 
     .category-button.active {
@@ -70,6 +76,13 @@
         gap: 24px;
       }
     }
+
+    /* Ancho máximo del título en desktop */
+    @media (min-width: 1024px) {
+      .title-container {
+        max-width: 400px;
+      }
+    }
   </style>
 
   <div class="max-w-[1600px] mx-auto px-6 lg:px-10">
@@ -87,9 +100,8 @@
     {%- comment -%} MÓVIL: Botones Perro/Gato {%- endcomment -%}
     <div class="lg:hidden flex gap-2 justify-center mb-6">
       <button
-        class="pet-tab-button active px-6 py-3 rounded-full border-2 flex items-center gap-2"
+        class="pet-tab-button active px-8 py-3 rounded-full border-2 flex items-center gap-2"
         data-pet="dog"
-        style="border-color: {{ section.settings.accent_color }};"
       >
         <svg
           width="24"
@@ -105,9 +117,8 @@
       </button>
 
       <button
-        class="pet-tab-button px-6 py-3 rounded-full border-2 flex items-center gap-2"
+        class="pet-tab-button px-8 py-3 rounded-full border-2 flex items-center gap-2"
         data-pet="cat"
-        style="border-color: {{ section.settings.accent_color }};"
       >
         <svg
           width="25"
@@ -125,22 +136,23 @@
 
     {%- comment -%} DESKTOP: Header con título y botones {%- endcomment -%}
     <div class="hidden lg:flex lg:items-center lg:justify-between mb-12">
-      <h2
-        class="[font-family:'Barlow',Helvetica] font-extrabold text-[57px] xl:text-[64px] leading-[1]"
-        style="color: {{ section.settings.title_color }};"
-      >
-        {{ section.settings.heading_before }}
-        {% if section.settings.heading_highlight != blank %}
-          <span class="highlight">{{ section.settings.heading_highlight }}</span>
-        {% endif %}
-        {{ section.settings.heading_after }}
-      </h2>
+      <div class="title-container">
+        <h2
+          class="[font-family:'Barlow',Helvetica] font-extrabold text-[57px] xl:text-[64px] leading-[1]"
+          style="color: {{ section.settings.title_color }};"
+        >
+          {{ section.settings.heading_before }}
+          {% if section.settings.heading_highlight != blank %}
+            <span class="highlight">{{ section.settings.heading_highlight }}</span>
+          {% endif %}
+          {{ section.settings.heading_after }}
+        </h2>
+      </div>
 
       <div class="flex gap-3">
         <button
-          class="pet-tab-button active px-10 py-4 rounded-full border-2 flex items-center gap-4 font-semibold"
+          class="pet-tab-button active px-12 py-4 rounded-full border-2 flex items-center gap-4 font-semibold"
           data-pet="dog"
-          style="border-color: {{ section.settings.accent_color }};"
         >
           <svg
             width="24"
@@ -156,9 +168,8 @@
         </button>
 
         <button
-          class="pet-tab-button px-10 py-4 rounded-full border-2 flex items-center gap-4 font-semibold"
+          class="pet-tab-button px-12 py-4 rounded-full border-2 flex items-center gap-4 font-semibold"
           data-pet="cat"
-          style="border-color: {{ section.settings.accent_color }};"
         >
           <svg
             width="25"
@@ -176,14 +187,14 @@
     </div>
 
     {%- comment -%} Container principal con sidebar y contenido {%- endcomment -%}
-    <div class="lg:flex lg:gap-8">
-      {%- comment -%} DESKTOP: Sidebar de categorías {%- endcomment -%}
+    <div class="lg:flex lg:gap-12">
+      {%- comment -%} DESKTOP: Sidebar de categorías - GAP aumentado a 12 {%- endcomment -%}
       <div class="hidden lg:block lg:w-64 flex-shrink-0">
         <div class="sticky top-4 space-y-3">
           {% for block in section.blocks %}
             {% if block.type == 'collection' %}
               <button
-                class="category-button w-full text-left px-6 py-4 rounded-full border-2 font-semibold transition-all"
+                class="category-button w-full px-6 py-4 rounded-full border-2 font-semibold transition-all"
                 style="border-color: {{ section.settings.accent_color }};"
                 data-pet-type="{{ block.settings.pet_type }}"
                 data-collection="{{ block.settings.collection.handle }}"
@@ -373,7 +384,7 @@
     {
       "type": "color",
       "id": "accent_color",
-      "label": "Color accent",
+      "label": "Color accent (categorías)",
       "default": "#004622"
     },
     {
