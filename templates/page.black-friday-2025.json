@@ -290,6 +290,106 @@
       "settings": {
         "custom_liquid": ""
       }
+    },
+    "shipping_7KqxwA": {
+      "type": "shipping",
+      "blocks": {
+        "shipping_BXMPFn": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "box1",
+            "image_icon": "shopify://shop_images/cora.svg",
+            "icon": "las la-truck",
+            "title": "",
+            "text": "<p>+ Esperanza de vida</p>"
+          }
+        },
+        "shipping_7xCgmW": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "box2",
+            "image_icon": "shopify://shop_images/dog-3-1.svg",
+            "icon": "las la-redo-alt",
+            "title": "",
+            "text": "<p>Previene la obesidad</p>"
+          }
+        },
+        "shipping_ggQXnd": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "car",
+            "image_icon": "shopify://shop_images/Group-795.svg",
+            "icon": "las la-headphones",
+            "title": "",
+            "text": "<p>Previene el sarro</p>"
+          }
+        },
+        "shipping_EnBQPV": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "shield1",
+            "image_icon": "shopify://shop_images/Group-4.svg",
+            "icon": "las la-shield-alt",
+            "title": "",
+            "text": "<p>Pelo más brillante</p>"
+          }
+        }
+      },
+      "block_order": [
+        "shipping_BXMPFn",
+        "shipping_7xCgmW",
+        "shipping_ggQXnd",
+        "shipping_EnBQPV"
+      ],
+      "settings": {
+        "design_heading": "1",
+        "block_custom_class": "probando",
+        "heading_center": true,
+        "top_heading": "",
+        "top_subheading": "",
+        "tophead_mb": 10,
+        "tophead_mb_tb": 10,
+        "tophead_mb_mb": 10,
+        "content_align": "text-start",
+        "align_vertical": true,
+        "align_horizontal": false,
+        "divided": false,
+        "src_icon": "get_image",
+        "icon_size": "medium",
+        "icon_effect": "none",
+        "col_dk": "4",
+        "col_tb": "3",
+        "col_mb": "2",
+        "icon_cl": "#ffffff",
+        "hd_cl": "#ffffff",
+        "content_cl": "#ffffff",
+        "bg_wrap_cl": "",
+        "hd_fs": 16,
+        "hd_fw": 500,
+        "txt_fs": 16,
+        "space_h_item": "10",
+        "space_v_item": "15",
+        "space_h_item_tb": "10",
+        "space_v_item_tb": "15",
+        "space_h_item_mb": "10",
+        "space_v_item_mb": "10",
+        "padding_inner": "",
+        "padding_inner_tb": "",
+        "padding_inner_mb": "",
+        "carousel_mobile": false,
+        "dots_cl": "dark",
+        "dots_round": true,
+        "layout": "t4s-container-fluid",
+        "custom_width": 1000,
+        "cl_bg": "#d9d9c8",
+        "cl_bg_gradient": "",
+        "mg": ",,0px,",
+        "pd": "20px,200px,20px,200px",
+        "mg_tb": ",,0px,",
+        "pd_tb": "20px,20px,20px,20px",
+        "mg_mb": ",,0px,",
+        "pd_mb": "20px,20px,20px,20px"
+      }
     }
   },
   "order": [
@@ -298,6 +398,7 @@
     "migraciones_banner_responsive_d6hJg8",
     "migraciones_banners_cuenta_atras_Ph34WB",
     "migraciones_selector_de_colecciones_YEcF6e",
-    "migraciones_image_width_text_JLdjiB"
+    "migraciones_image_width_text_JLdjiB",
+    "shipping_7KqxwA"
   ]
 }
