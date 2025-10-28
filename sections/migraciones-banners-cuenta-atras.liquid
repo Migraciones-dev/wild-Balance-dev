@@ -279,7 +279,7 @@
           return;
         }
 
-        // Crear FormData como lo hace el tema
+        // Usar el formato que espera el tema
         const formData = {
           items: [
             {
@@ -289,7 +289,7 @@
           ],
         };
 
-        // Usar fetch para añadir al carrito (método estándar de Shopify)
+        // Añadir al carrito
         fetch(window.Shopify.routes.root + 'cart/add.js', {
           method: 'POST',
           headers: {
@@ -302,33 +302,38 @@
           .then((data) => {
             console.log('Producto añadido:', data);
 
-            // Refrescar el carrito del tema
+            // Disparar el evento que el tema escucha para actualizar el carrito
+            document.dispatchEvent(new CustomEvent('cart:refresh'));
+
+            // También disparar el evento product:added que muchos temas usan
+            document.dispatchEvent(
+              new CustomEvent('product:added-to-cart', {
+                detail: {
+                  product: data,
+                },
+              })
+            );
+
+            // Abrir el drawer del carrito
+            const cartDrawer = document.querySelector('[data-cart-wrapper]');
+            if (cartDrawer) {
+              cartDrawer.classList.remove('t4s-dn');
+              cartDrawer.setAttribute('aria-hidden', 'false');
+              document.body.classList.add('t4s-overflow-hidden');
+            }
+
+            // Actualizar contador del carrito
             fetch(window.Shopify.routes.root + 'cart.js')
               .then((res) => res.json())
               .then((cart) => {
-                // Actualizar contador del carrito si existe
-                const cartCounts = document.querySelectorAll('[data-cart-count], .cart-count, #CartCount');
+                // Actualizar contadores del carrito
+                const cartCounts = document.querySelectorAll('[data-cart-count]');
                 cartCounts.forEach((count) => {
                   count.textContent = cart.item_count;
+                  if (cart.item_count > 0) {
+                    count.classList.remove('t4s-d-none');
+                  }
                 });
-
-                // Disparar evento personalizado que el tema pueda escuchar
-                document.dispatchEvent(
-                  new CustomEvent('cart:updated', {
-                    detail: { cart: cart, item: data },
-                  })
-                );
-
-                // Intentar abrir el drawer del carrito si el tema lo tiene
-                const cartDrawer = document.querySelector('[data-cart-drawer]');
-                if (cartDrawer) {
-                  cartDrawer.classList.add('is-open', 'active');
-                }
-
-                // Alternativa: si el tema usa otro método
-                if (typeof theme !== 'undefined' && theme.Cart && typeof theme.Cart.openDrawer === 'function') {
-                  theme.Cart.openDrawer();
-                }
               });
           })
           .catch((error) => {
