@@ -407,6 +407,13 @@
       "settings": {
         "custom_liquid": ""
       }
+    },
+    "custom_liquid_WAfnkt": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
+      "settings": {
+        "custom_liquid": "<style>\n\n.t4s-header__wrapper {background: #222222;color:white;}\n\n.t4s-menu-item a, .t4s-menu-item a:hover {color:white!important;}\n\n.t4s-sub-menu {background:#222222!important;}\n\n.flex.items-center.bg-white.shadow.border p {color:#222222!important;}\n\n.t4s-site-nav__icon a .t4s-site-nav__icon a svg, .t4s-site-nav__icon a:hover {color:white!important;}\n\n.t4s-top-bar, .t4s-top-bar button {background:#F0807B!important;color:white;}\n\n</style>"
+      }
     }
   },
   "order": [
@@ -417,6 +424,7 @@
     "migraciones_selector_de_colecciones_YEcF6e",
     "migraciones_image_width_text_JLdjiB",
     "shipping_7KqxwA",
-    "migraciones_faq_XTWFkL"
+    "migraciones_faq_XTWFkL",
+    "custom_liquid_WAfnkt"
   ]
 }
