@@ -55,7 +55,7 @@
         {% if isDefault %}
           {%- comment -%} Producto sin variantes - añadir directamente {%- endcomment -%}
           <button
-            class="add-to-cart-btn absolute bottom-4 left-1/2 -translate-x-1/2 px-6 bg-[#FFC107] hover:bg-[#FFB300] text-[#004622] font-bold py-2.5 rounded-full transition-colors text-[10px] lg:text-[12px] whitespace-nowrap"
+            class="add-to-cart-btn absolute bottom-4 left-1/2 -translate-x-1/2 px-6 bg-[#FFC107] text-[#004622] font-bold py-2.5 rounded-full transition-colors text-[10px] lg:text-[12px] whitespace-nowrap"
             data-variant-id="{{ current_variant.id }}"
             data-product-id="{{ pid }}"
             data-product-available="true"
@@ -66,7 +66,7 @@
         {% else %}
           {%- comment -%} Producto con variantes - abrir quick view {%- endcomment -%}
           <button
-            class="add-to-cart-btn absolute bottom-4 left-1/2 -translate-x-1/2 px-6 bg-[#FFC107] hover:bg-[#FFB300] text-[#004622] font-bold py-2.5 rounded-full transition-colors text-[10px] lg:text-[12px] whitespace-nowrap"
+            class="add-to-cart-btn absolute bottom-4 left-1/2 -translate-x-1/2 px-6 bg-[#FFC107] text-[#004622] font-bold py-2.5 rounded-full transition-colors text-[10px] lg:text-[12px] whitespace-nowrap"
             data-product-id="{{ pid }}"
             data-product-url="{{ product.url }}"
             data-has-variants="true"
