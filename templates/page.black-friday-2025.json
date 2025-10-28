@@ -341,6 +341,9 @@
         "shipping_ggQXnd",
         "shipping_EnBQPV"
       ],
+      "custom_css": [
+        "* {color: #004623!important;}"
+      ],
       "settings": {
         "design_heading": "1",
         "block_custom_class": "probando",
