@@ -176,8 +176,8 @@
       ],
       "name": "Banners Grid 2 columnas",
       "settings": {
-        "heading_before": "Descubre nuestras",
-        "heading_highlight": "ofertas especiales",
+        "heading_before": "Ofertas",
+        "heading_highlight": "flash",
         "heading_after": "",
         "title_color": "#fff",
         "highlight_bg_color": "#FFCD00",
