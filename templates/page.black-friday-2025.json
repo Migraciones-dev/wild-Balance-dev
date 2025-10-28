@@ -144,6 +144,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/Link_1.jpg",
             "image_link": "",
+            "product": "aceite-de-salmon",
             "enable_countdown": true,
             "countdown_date": "2025-10-30 14:00",
             "enable_schedule": false,
@@ -162,6 +163,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/Link.jpg",
             "image_link": "",
+            "product": "",
             "enable_countdown": false,
             "countdown_date": "",
             "enable_schedule": false,
