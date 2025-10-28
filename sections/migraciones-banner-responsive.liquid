@@ -13,98 +13,77 @@
         padding-top: {{ section.settings.pt_desktop }}px !important;
         padding-bottom: {{ section.settings.pb_desktop }}px !important;
       }
-
-      #section-{{ section.id }} .banner-image {
-        border-radius: {{ section.settings.border_radius_desktop }}px !important;
-      }
     }
 
-    @media (max-width: 767px) {
-      #section-{{ section.id }} .banner-image {
-        border-radius: {{ section.settings.border_radius_mobile }}px !important;
+    {% for block in section.blocks %}
+      @media (min-width: 768px) {
+        #banner-{{ block.id }} .banner-image {
+          border-radius: {{ block.settings.border_radius_desktop }}px !important;
+        }
       }
-    }
+
+      @media (max-width: 767px) {
+        #banner-{{ block.id }} .banner-image {
+          border-radius: {{ block.settings.border_radius_mobile }}px !important;
+        }
+      }
+
+      #banner-{{ block.id }} {
+        margin-top: {{ block.settings.mt_mobile }}px;
+        margin-bottom: {{ block.settings.mb_mobile }}px;
+      }
+
+      @media (min-width: 768px) {
+        #banner-{{ block.id }} {
+          margin-top: {{ block.settings.mt_desktop }}px !important;
+          margin-bottom: {{ block.settings.mb_desktop }}px !important;
+        }
+      }
+    {% endfor %}
   </style>
 
   <div class="max-w-[1600px] mx-auto px-6 lg:px-10">
-    {%- if section.settings.desktop_image or section.settings.mobile_image -%}
-      {%- comment -%} Imagen escritorio {%- endcomment -%}
-      {% if section.settings.desktop_image %}
-        {% if section.settings.image_link != blank %}<a href="{{ section.settings.image_link }}">{% endif %}
-        <img
-          src="{{ section.settings.desktop_image | img_url: '2048x' }}"
-          class="banner-image hidden md:block w-full h-auto object-cover"
-          alt="{{ section.settings.desktop_image.alt | escape }}"
-          loading="lazy"
-        >
-        {% if section.settings.image_link != blank %}</a>{% endif %}
-      {% endif %}
+    {% for block in section.blocks %}
+      {% if block.type == 'banner' %}
+        <div id="banner-{{ block.id }}" {{ block.shopify_attributes }}>
+          {%- if block.settings.desktop_image or block.settings.mobile_image -%}
+            {%- comment -%} Imagen escritorio {%- endcomment -%}
+            {% if block.settings.desktop_image %}
+              {% if block.settings.image_link != blank %}<a href="{{ block.settings.image_link }}">{% endif %}
+              <img
+                src="{{ block.settings.desktop_image | img_url: '2048x' }}"
+                class="banner-image hidden md:block w-full h-auto object-cover"
+                alt="{{ block.settings.desktop_image.alt | escape }}"
+                loading="lazy"
+              >
+              {% if block.settings.image_link != blank %}</a>{% endif %}
+            {% endif %}
 
-      {%- comment -%} Imagen móvil {%- endcomment -%}
-      {% if section.settings.mobile_image %}
-        {% if section.settings.image_link != blank %}<a href="{{ section.settings.image_link }}">{% endif %}
-        <img
-          src="{{ section.settings.mobile_image | img_url: '1024x' }}"
-          class="banner-image block md:hidden w-full h-auto object-cover"
-          alt="{{ section.settings.mobile_image.alt | escape }}"
-          loading="lazy"
-        >
-        {% if section.settings.image_link != blank %}</a>{% endif %}
+            {%- comment -%} Imagen móvil {%- endcomment -%}
+            {% if block.settings.mobile_image %}
+              {% if block.settings.image_link != blank %}<a href="{{ block.settings.image_link }}">{% endif %}
+              <img
+                src="{{ block.settings.mobile_image | img_url: '1024x' }}"
+                class="banner-image block md:hidden w-full h-auto object-cover"
+                alt="{{ block.settings.mobile_image.alt | escape }}"
+                loading="lazy"
+              >
+              {% if block.settings.image_link != blank %}</a>{% endif %}
+            {% endif %}
+          {%- endif -%}
+        </div>
       {% endif %}
-    {%- endif -%}
+    {% endfor %}
   </div>
 </section>
 
 {% schema %}
 {
-  "name": "Banner imagen responsivo",
+  "name": "Banners responsivos",
   "settings": [
     {
       "type": "header",
-      "content": "Imágenes"
-    },
-    {
-      "type": "image_picker",
-      "id": "desktop_image",
-      "label": "Imagen escritorio"
-    },
-    {
-      "type": "image_picker",
-      "id": "mobile_image",
-      "label": "Imagen móvil"
-    },
-    {
-      "type": "url",
-      "id": "image_link",
-      "label": "Enlace de la imagen"
-    },
-    {
-      "type": "header",
-      "content": "Border Radius"
-    },
-    {
-      "type": "range",
-      "id": "border_radius_desktop",
-      "label": "Border radius (Desktop)",
-      "min": 0,
-      "max": 50,
-      "step": 2,
-      "unit": "px",
-      "default": 30
-    },
-    {
-      "type": "range",
-      "id": "border_radius_mobile",
-      "label": "Border radius (Móvil)",
-      "min": 0,
-      "max": 50,
-      "step": 2,
-      "unit": "px",
-      "default": 12
-    },
-    {
-      "type": "header",
-      "content": "Espaciado - Desktop"
+      "content": "Espaciado de sección - Desktop"
     },
     {
       "type": "range",
@@ -114,7 +93,7 @@
       "max": 200,
       "step": 4,
       "unit": "px",
-      "default": 0
+      "default": 40
     },
     {
       "type": "range",
@@ -124,11 +103,11 @@
       "max": 200,
       "step": 4,
       "unit": "px",
-      "default": 0
+      "default": 40
     },
     {
       "type": "header",
-      "content": "Espaciado - Móvil"
+      "content": "Espaciado de sección - Móvil"
     },
     {
       "type": "range",
@@ -138,7 +117,7 @@
       "max": 200,
       "step": 4,
       "unit": "px",
-      "default": 0
+      "default": 20
     },
     {
       "type": "range",
@@ -148,7 +127,7 @@
       "max": 200,
       "step": 4,
       "unit": "px",
-      "default": 0
+      "default": 20
     },
     {
       "type": "header",
@@ -161,9 +140,113 @@
       "default": "#FBF5E7"
     }
   ],
+  "blocks": [
+    {
+      "type": "banner",
+      "name": "Banner",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Imágenes"
+        },
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "Imagen escritorio"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Imagen móvil"
+        },
+        {
+          "type": "url",
+          "id": "image_link",
+          "label": "Enlace de la imagen"
+        },
+        {
+          "type": "header",
+          "content": "Border Radius"
+        },
+        {
+          "type": "range",
+          "id": "border_radius_desktop",
+          "label": "Border radius (Desktop)",
+          "min": 0,
+          "max": 50,
+          "step": 2,
+          "unit": "px",
+          "default": 30
+        },
+        {
+          "type": "range",
+          "id": "border_radius_mobile",
+          "label": "Border radius (Móvil)",
+          "min": 0,
+          "max": 50,
+          "step": 2,
+          "unit": "px",
+          "default": 12
+        },
+        {
+          "type": "header",
+          "content": "Espaciado - Desktop"
+        },
+        {
+          "type": "range",
+          "id": "mt_desktop",
+          "label": "Margen superior (Desktop)",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "mb_desktop",
+          "label": "Margen inferior (Desktop)",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "header",
+          "content": "Espaciado - Móvil"
+        },
+        {
+          "type": "range",
+          "id": "mt_mobile",
+          "label": "Margen superior (Móvil)",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "mb_mobile",
+          "label": "Margen inferior (Móvil)",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 0
+        }
+      ]
+    }
+  ],
   "presets": [
     {
-      "name": "Banner imagen responsivo"
+      "name": "Banners responsivos",
+      "blocks": [
+        {
+          "type": "banner"
+        }
+      ]
     }
   ]
 }
