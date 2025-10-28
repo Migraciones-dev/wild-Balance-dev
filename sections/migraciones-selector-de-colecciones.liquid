@@ -509,6 +509,43 @@
           "type": "collection",
           "id": "collection",
           "label": "Colección"
+        },
+        {
+          "type": "header",
+          "content": "Banner promocional (opcional)"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_image",
+          "label": "Imagen del banner"
+        },
+        {
+          "type": "select",
+          "id": "banner_action_type",
+          "label": "Tipo de acción del banner",
+          "options": [
+            {
+              "value": "link",
+              "label": "Enlace"
+            },
+            {
+              "value": "product",
+              "label": "Añadir producto al carrito"
+            }
+          ],
+          "default": "link"
+        },
+        {
+          "type": "url",
+          "id": "banner_link_url",
+          "label": "URL del enlace",
+          "info": "Solo si seleccionaste 'Enlace'"
+        },
+        {
+          "type": "product",
+          "id": "banner_product",
+          "label": "Producto del banner",
+          "info": "Solo si seleccionaste 'Añadir producto al carrito'"
         }
       ]
     }
