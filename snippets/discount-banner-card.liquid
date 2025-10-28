@@ -1,6 +1,5 @@
 {%- comment -%}
   Snippet: discount-banner-card.liquid
-  Uso: {% render 'discount-banner-card', banner_image: image, action_type: type, link_url: url, banner_product: product %}
 {%- endcomment -%}
 
 <div class="discount-banner-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow relative h-full">
@@ -11,7 +10,8 @@
           <img
             src="{{ banner_image | img_url: '1200x' }}"
             alt="{{ banner_image.alt | escape }}"
-            class="w-full h-full object-cover rounded-2xl"
+            class="w-full h-full object-cover rounded-2xl lg:object-center object-center"
+            style="object-position: center 40%;"
             loading="lazy"
           >
         </a>
@@ -19,7 +19,8 @@
         <img
           src="{{ banner_image | img_url: '1200x' }}"
           alt="{{ banner_image.alt | escape }}"
-          class="w-full h-full object-cover rounded-2xl"
+          class="w-full h-full object-cover rounded-2xl lg:object-center object-center"
+          style="object-position: center 40%;"
           loading="lazy"
         >
 
@@ -29,11 +30,10 @@
           assign pid = banner_product.id
         -%}
 
-        {%- comment -%} Botón añadir al carrito dentro de la imagen {%- endcomment -%}
         {% if banner_product.available %}
           {% if isDefault %}
             <button
-              class="add-to-cart-btn absolute bottom-4 left-1/2 -translate-x-1/2 px-6 bg-[#FFC107] text-[#004622] font-bold py-2.5 rounded-full transition-colors text-[10px] lg:text-[12px] whitespace-nowrap"
+              class="add-to-cart-btn absolute bottom-4 left-1/2 -translate-x-1/2 px-6 bg-[#FFC107] text-[#004622] font-bold py-2.5 rounded-full transition-colors text-[10px] lg:text-[12px] whitespace-nowrap z-10"
               data-variant-id="{{ current_variant.id }}"
               data-product-id="{{ pid }}"
               data-product-available="true"
@@ -43,7 +43,7 @@
             </button>
           {% else %}
             <button
-              class="add-to-cart-btn absolute bottom-4 left-1/2 -translate-x-1/2 px-6 bg-[#FFC107] text-[#004622] font-bold py-2.5 rounded-full transition-colors text-[10px] lg:text-[12px] whitespace-nowrap"
+              class="add-to-cart-btn absolute bottom-4 left-1/2 -translate-x-1/2 px-6 bg-[#FFC107] text-[#004622] font-bold py-2.5 rounded-full transition-colors text-[10px] lg:text-[12px] whitespace-nowrap z-10"
               data-product-id="{{ pid }}"
               data-product-url="{{ banner_product.url }}"
               data-has-variants="true"
@@ -54,7 +54,7 @@
           {% endif %}
         {% else %}
           <button
-            class="absolute bottom-4 left-1/2 -translate-x-1/2 px-6 bg-gray-300 text-gray-600 font-bold py-2.5 rounded-full cursor-not-allowed text-[10px] lg:text-[12px] whitespace-nowrap"
+            class="absolute bottom-4 left-1/2 -translate-x-1/2 px-6 bg-gray-300 text-gray-600 font-bold py-2.5 rounded-full cursor-not-allowed text-[10px] lg:text-[12px] whitespace-nowrap z-10"
             disabled
           >
             Agotado
@@ -64,14 +64,11 @@
         <img
           src="{{ banner_image | img_url: '1200x' }}"
           alt="{{ banner_image.alt | escape }}"
-          class="w-full h-full object-cover rounded-2xl"
+          class="w-full h-full object-cover rounded-2xl lg:object-center object-center"
+          style="object-position: center 40%;"
           loading="lazy"
         >
       {% endif %}
-    {% else %}
-      <div class="w-full h-full flex items-center justify-center bg-gray-100 rounded-2xl">
-        <span class="text-gray-400">Sin imagen de banner</span>
-      </div>
     {% endif %}
   </div>
 </div>
