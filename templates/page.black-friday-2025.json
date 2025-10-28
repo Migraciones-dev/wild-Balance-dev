@@ -393,6 +393,13 @@
         "mg_mb": ",,0px,",
         "pd_mb": "20px,20px,20px,20px"
       }
+    },
+    "migraciones_faq_XTWFkL": {
+      "type": "migraciones-faq",
+      "name": "Migraciones faq",
+      "settings": {
+        "custom_liquid": ""
+      }
     }
   },
   "order": [
@@ -402,6 +409,7 @@
     "migraciones_banners_cuenta_atras_Ph34WB",
     "migraciones_selector_de_colecciones_YEcF6e",
     "migraciones_image_width_text_JLdjiB",
-    "shipping_7KqxwA"
+    "shipping_7KqxwA",
+    "migraciones_faq_XTWFkL"
   ]
 }
