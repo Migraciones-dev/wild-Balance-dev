@@ -207,30 +207,48 @@
           "settings": {
             "pet_type": "dog",
             "collection_name": "Dieta BARF",
-            "collection": "best-sellers-comida-natural-perro"
-          }
-        },
-        "collection_pB836N": {
-          "type": "collection",
-          "settings": {
-            "pet_type": "dog",
-            "collection_name": "Comida Cocinada",
-            "collection": ""
+            "collection": "barf-perros"
           }
         },
         "collection_mgCBbt": {
           "type": "collection",
           "settings": {
             "pet_type": "cat",
+            "collection_name": "Comida cocinada",
+            "collection": "comida-cocinada-para-perros"
+          }
+        },
+        "collection_hDjBCz": {
+          "type": "collection",
+          "settings": {
+            "pet_type": "dog",
+            "collection_name": "Snacks",
+            "collection": "snacks-y-mordedores-perros"
+          }
+        },
+        "collection_9na79a": {
+          "type": "collection",
+          "settings": {
+            "pet_type": "cat",
             "collection_name": "Dieta BARF",
-            "collection": ""
+            "collection": "barf-gatos"
+          }
+        },
+        "collection_DVXpBQ": {
+          "type": "collection",
+          "settings": {
+            "pet_type": "cat",
+            "collection_name": "Dieta BARF",
+            "collection": "latas-gatos"
           }
         }
       },
       "block_order": [
         "collection_wLtpT3",
-        "collection_pB836N",
-        "collection_mgCBbt"
+        "collection_mgCBbt",
+        "collection_hDjBCz",
+        "collection_9na79a",
+        "collection_DVXpBQ"
       ],
       "name": "Descuentos Especiales",
       "settings": {
