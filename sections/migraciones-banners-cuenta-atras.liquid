@@ -151,20 +151,21 @@
               {% endif %}
 
               {%- if block.settings.desktop_image or block.settings.mobile_image -%}
-                {%- comment -%} Imagen escritorio {%- endcomment -%}
-                {% if block.settings.desktop_image %}
-                  {% if block.settings.image_link != blank %}<a href="{{ block.settings.image_link }}">{% endif %}
-                  <img
-                    src="{{ block.settings.desktop_image | img_url: '2048x' }}"
-                    class="banner-image hidden md:block w-full h-auto object-cover"
-                    alt="{{ block.settings.desktop_image.alt | escape }}"
-                    loading="lazy"
-                  >
-                  {% if block.settings.image_link != blank %}</a>{% endif %}
-                {% endif %}
-
-                {%- comment -%} Imagen móvil {%- endcomment -%}
+                {%- comment -%} Si hay imagen de móvil, usar responsive, si no, mostrar la de desktop en todos lados {%- endcomment -%}
                 {% if block.settings.mobile_image %}
+                  {%- comment -%} Imagen escritorio {%- endcomment -%}
+                  {% if block.settings.desktop_image %}
+                    {% if block.settings.image_link != blank %}<a href="{{ block.settings.image_link }}">{% endif %}
+                    <img
+                      src="{{ block.settings.desktop_image | img_url: '2048x' }}"
+                      class="banner-image hidden md:block w-full h-auto object-cover"
+                      alt="{{ block.settings.desktop_image.alt | escape }}"
+                      loading="lazy"
+                    >
+                    {% if block.settings.image_link != blank %}</a>{% endif %}
+                  {% endif %}
+
+                  {%- comment -%} Imagen móvil {%- endcomment -%}
                   {% if block.settings.image_link != blank %}<a href="{{ block.settings.image_link }}">{% endif %}
                   <img
                     src="{{ block.settings.mobile_image | img_url: '1024x' }}"
@@ -173,6 +174,18 @@
                     loading="lazy"
                   >
                   {% if block.settings.image_link != blank %}</a>{% endif %}
+                {% else %}
+                  {%- comment -%} Solo hay imagen desktop, mostrarla en todos los dispositivos {%- endcomment -%}
+                  {% if block.settings.desktop_image %}
+                    {% if block.settings.image_link != blank %}<a href="{{ block.settings.image_link }}">{% endif %}
+                    <img
+                      src="{{ block.settings.desktop_image | img_url: '2048x' }}"
+                      class="banner-image w-full h-auto object-cover"
+                      alt="{{ block.settings.desktop_image.alt | escape }}"
+                      loading="lazy"
+                    >
+                    {% if block.settings.image_link != blank %}</a>{% endif %}
+                  {% endif %}
                 {% endif %}
               {%- endif -%}
             </div>
