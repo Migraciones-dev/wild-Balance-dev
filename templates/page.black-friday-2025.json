@@ -298,7 +298,7 @@
           "type": "shipping",
           "settings": {
             "icon_themes": "box1",
-            "image_icon": "shopify://shop_images/cora.svg",
+            "image_icon": "shopify://shop_images/Image_72.png",
             "icon": "las la-truck",
             "title": "",
             "text": "<p>+ Esperanza de vida</p>"
@@ -308,7 +308,7 @@
           "type": "shipping",
           "settings": {
             "icon_themes": "box2",
-            "image_icon": "shopify://shop_images/dog-3-1.svg",
+            "image_icon": "shopify://shop_images/Image_71.png",
             "icon": "las la-redo-alt",
             "title": "",
             "text": "<p>Previene la obesidad</p>"
@@ -318,7 +318,7 @@
           "type": "shipping",
           "settings": {
             "icon_themes": "car",
-            "image_icon": "shopify://shop_images/Group-795.svg",
+            "image_icon": "shopify://shop_images/Image_73_8b5f7fa0-13dc-4d49-8518-18d44def9b37.png",
             "icon": "las la-headphones",
             "title": "",
             "text": "<p>Previene el sarro</p>"
@@ -328,7 +328,7 @@
           "type": "shipping",
           "settings": {
             "icon_themes": "shield1",
-            "image_icon": "shopify://shop_images/Group-4.svg",
+            "image_icon": "shopify://shop_images/Image_74_540c5490-5fcd-4c52-9405-b63417804798.png",
             "icon": "las la-shield-alt",
             "title": "",
             "text": "<p>Pelo más brillante</p>"
@@ -342,7 +342,7 @@
         "shipping_EnBQPV"
       ],
       "custom_css": [
-        "*, p {color: #004623 !important;}"
+        "*,p {color: #004623 !important;}"
       ],
       "settings": {
         "design_heading": "1",
