@@ -2,15 +2,16 @@
   Snippet: discount-banner-card.liquid
 {%- endcomment -%}
 
-<div class="discount-banner-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow relative">
-  <div class="relative w-full aspect-square">
+<div class="discount-banner-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow relative h-full">
+  <div class="relative w-full h-full">
     {% if banner_image %}
       {% if action_type == 'link' and link_url != blank %}
         <a href="{{ link_url }}" class="block w-full h-full">
           <img
             src="{{ banner_image | img_url: '1200x' }}"
             alt="{{ banner_image.alt | escape }}"
-            class="w-full h-full object-cover rounded-2xl"
+            class="w-full h-full object-cover rounded-2xl lg:object-center object-center"
+            style="object-position: center 40%;"
             loading="lazy"
           >
         </a>
@@ -18,7 +19,8 @@
         <img
           src="{{ banner_image | img_url: '1200x' }}"
           alt="{{ banner_image.alt | escape }}"
-          class="w-full h-full object-cover rounded-2xl"
+          class="w-full h-full object-cover rounded-2xl lg:object-center object-center"
+          style="object-position: center 40%;"
           loading="lazy"
         >
 
@@ -62,7 +64,8 @@
         <img
           src="{{ banner_image | img_url: '1200x' }}"
           alt="{{ banner_image.alt | escape }}"
-          class="w-full h-full object-cover rounded-2xl"
+          class="w-full h-full object-cover rounded-2xl lg:object-center object-center"
+          style="object-position: center 40%;"
           loading="lazy"
         >
       {% endif %}
