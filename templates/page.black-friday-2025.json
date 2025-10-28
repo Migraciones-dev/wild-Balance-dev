@@ -17,7 +17,7 @@
           "settings": {
             "heading": "Page Heading",
             "fontf": "inherit",
-            "text_cl": "#000",
+            "text_cl": "#000000",
             "text_fs": 40,
             "text_lh": 56,
             "text_fw": 300,
@@ -41,7 +41,7 @@
           "type": "3",
           "settings": {
             "breadcrumb_color": "#868686",
-            "breadcrumb_color_link": "#000",
+            "breadcrumb_color_link": "#000000",
             "brc_mgb": 0
           }
         }
@@ -50,9 +50,10 @@
         "b49343f1-a16f-4a0c-834a-46b77fe777da",
         "46ff9c32-9810-4c24-b2bd-9c6e38cc2ea8"
       ],
+      "disabled": true,
       "settings": {
         "parallax": false,
-        "color": "#000",
+        "color": "#000000",
         "overlay": 0,
         "padding_top": 50,
         "padding_bottom": 50,
@@ -71,6 +72,7 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "layout": "t4s-container-wrap",
         "cl_bg": "",
