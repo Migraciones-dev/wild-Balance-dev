@@ -38,6 +38,7 @@
       font-size: 14px;
       display: inline-block;
       position: absolute;
+      z-index: 2;
     }
 
     /* Posición en móvil: esquina superior derecha */
@@ -54,6 +55,12 @@
         right: auto;
         transform: translateX(-50%);
       }
+    }
+
+    .banner-clickable {
+      cursor: pointer;
+      position: relative;
+      display: block;
     }
 
     {% for block in section.blocks %}
@@ -144,10 +151,32 @@
           {%- endif -%}
 
           {%- if show_banner -%}
+            {%- comment -%} Obtener producto si está asignado {%- endcomment -%}
+            {%- assign banner_product = null -%}
+            {%- if block.settings.product != blank -%}
+              {%- assign banner_product = all_products[block.settings.product] -%}
+            {%- endif -%}
+
             <div id="banner-{{ block.id }}" class="relative" {{ block.shopify_attributes }}>
               {%- comment -%} Cuenta atrás {%- endcomment -%}
               {% if block.settings.enable_countdown and block.settings.countdown_date != blank %}
                 <div class="countdown-timer" data-countdown-date="{{ block.settings.countdown_date }}">00:00:00</div>
+              {% endif %}
+
+              {%- comment -%} Determinar si es link o añadir al carrito {%- endcomment -%}
+              {% if banner_product %}
+                {%- assign current_variant = banner_product.selected_or_first_available_variant -%}
+                <div
+                  class="banner-clickable"
+                  data-banner-product
+                  data-variant-id="{{ current_variant.id }}"
+                  data-product-id="{{ banner_product.id }}"
+                  data-product-available="{{ banner_product.available }}"
+                >
+              {% elsif block.settings.image_link != blank %}
+                <a href="{{ block.settings.image_link }}" class="banner-clickable">
+              {% else %}
+                <div class="banner-clickable" style="cursor: default;">
               {% endif %}
 
               {%- if block.settings.desktop_image or block.settings.mobile_image -%}
@@ -155,39 +184,41 @@
                 {% if block.settings.mobile_image %}
                   {%- comment -%} Imagen escritorio {%- endcomment -%}
                   {% if block.settings.desktop_image %}
-                    {% if block.settings.image_link != blank %}<a href="{{ block.settings.image_link }}">{% endif %}
                     <img
                       src="{{ block.settings.desktop_image | img_url: '2048x' }}"
                       class="banner-image hidden md:block w-full h-auto object-cover"
                       alt="{{ block.settings.desktop_image.alt | escape }}"
                       loading="lazy"
                     >
-                    {% if block.settings.image_link != blank %}</a>{% endif %}
                   {% endif %}
 
                   {%- comment -%} Imagen móvil {%- endcomment -%}
-                  {% if block.settings.image_link != blank %}<a href="{{ block.settings.image_link }}">{% endif %}
                   <img
                     src="{{ block.settings.mobile_image | img_url: '1024x' }}"
                     class="banner-image block md:hidden w-full h-auto object-cover"
                     alt="{{ block.settings.mobile_image.alt | escape }}"
                     loading="lazy"
                   >
-                  {% if block.settings.image_link != blank %}</a>{% endif %}
                 {% else %}
                   {%- comment -%} Solo hay imagen desktop, mostrarla en todos los dispositivos {%- endcomment -%}
                   {% if block.settings.desktop_image %}
-                    {% if block.settings.image_link != blank %}<a href="{{ block.settings.image_link }}">{% endif %}
                     <img
                       src="{{ block.settings.desktop_image | img_url: '2048x' }}"
                       class="banner-image w-full h-auto object-cover"
                       alt="{{ block.settings.desktop_image.alt | escape }}"
                       loading="lazy"
                     >
-                    {% if block.settings.image_link != blank %}</a>{% endif %}
                   {% endif %}
                 {% endif %}
               {%- endif -%}
+
+              {% if banner_product %}
+                </div>
+              {% elsif block.settings.image_link != blank %}
+                </a>
+              {% else %}
+                </div>
+              {% endif %}
             </div>
           {%- endif -%}
         {% endif %}
@@ -198,13 +229,13 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    // Countdown timers
     const countdownTimers = document.querySelectorAll('.countdown-timer');
 
     countdownTimers.forEach((timer) => {
       const endDateStr = timer.getAttribute('data-countdown-date');
       if (!endDateStr) return;
 
-      // Añadir segundos si no están presentes
       const endDate = new Date(endDateStr + ':00').getTime();
 
       function updateCountdown() {
@@ -212,18 +243,15 @@
         const distance = endDate - now;
 
         if (distance < 0) {
-          // Cuando termine, mostrar 00:00:00
           timer.textContent = '00:00:00';
           clearInterval(interval);
           return;
         }
 
-        // Calcular horas totales (incluyendo días convertidos a horas)
         const totalHours = Math.floor(distance / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Formatear con ceros a la izquierda
         const hoursStr = totalHours.toString().padStart(2, '0');
         const minutesStr = minutes.toString().padStart(2, '0');
         const secondsStr = seconds.toString().padStart(2, '0');
@@ -233,6 +261,63 @@
 
       updateCountdown();
       const interval = setInterval(updateCountdown, 1000);
+    });
+
+    // Add to cart functionality
+    const productBanners = document.querySelectorAll('[data-banner-product]');
+
+    productBanners.forEach((banner) => {
+      banner.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const variantId = this.getAttribute('data-variant-id');
+        const productAvailable = this.getAttribute('data-product-available') === 'true';
+
+        if (!productAvailable) {
+          console.log('Producto no disponible');
+          return;
+        }
+
+        // Usar el sistema de carrito del tema
+        if (typeof t4s !== 'undefined' && t4s.Cart) {
+          const formData = {
+            items: [
+              {
+                id: variantId,
+                quantity: 1,
+              },
+            ],
+          };
+
+          fetch('/cart/add.js', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              // Actualizar el carrito del tema
+              if (typeof t4s.Cart !== 'undefined' && typeof t4s.Cart.updateCart === 'function') {
+                t4s.Cart.updateCart();
+              }
+              // Abrir el drawer del carrito si existe
+              if (typeof t4s.Cart !== 'undefined' && typeof t4s.Cart.openCartDrawer === 'function') {
+                t4s.Cart.openCartDrawer();
+              }
+              // Disparar evento personalizado para que el tema lo maneje
+              document.dispatchEvent(
+                new CustomEvent('cart:item-added', {
+                  detail: { items: [data] },
+                })
+              );
+            })
+            .catch((error) => {
+              console.error('Error:', error);
+            });
+        }
+      });
     });
   });
 </script>
@@ -396,12 +481,20 @@
         {
           "type": "image_picker",
           "id": "mobile_image",
-          "label": "Imagen móvil"
+          "label": "Imagen móvil (opcional)",
+          "info": "Si no se añade, se mostrará la imagen de escritorio en móvil"
         },
         {
           "type": "url",
           "id": "image_link",
-          "label": "Enlace de la imagen"
+          "label": "Enlace de la imagen (solo si no hay producto)",
+          "info": "Este enlace solo funciona si NO hay producto seleccionado"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Producto (añadir al carrito)",
+          "info": "Si seleccionas un producto, al hacer click se añadirá al carrito. Si no, usa el enlace normal."
         },
         {
           "type": "header",
