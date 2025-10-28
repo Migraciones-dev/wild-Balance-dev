@@ -403,7 +403,7 @@
         ".mig-section {margin: 0 0rem; padding-top: 10rem; padding-bottom: 10rem; background: #1f1f1f;}",
         "h2 {color: white;}",
         "button {background: #222222; color: white;}",
-        ".border-b {border: 1px solid white;}"
+        ".border-b {border: 1px solid white; background: transparent;}"
       ],
       "name": "Migraciones faq",
       "settings": {
