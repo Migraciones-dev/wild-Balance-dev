@@ -1,0 +1,21 @@
+{%- comment -%}
+  Snippet simple de product card - mostrar solo imagen
+  Uso: {% render 'discount-product-card', product: product %}
+{%- endcomment -%}
+
+<div class="product-card">
+  <a href="{{ product.url }}">
+    {% if product.featured_image %}
+      <img
+        src="{{ product.featured_image | img_url: '600x' }}"
+        alt="{{ product.featured_image.alt | escape }}"
+        class="w-full h-auto object-cover rounded-lg"
+        loading="lazy"
+      >
+    {% else %}
+      <div class="w-full aspect-square bg-gray-200 rounded-lg flex items-center justify-center">
+        <span class="text-gray-400">Sin imagen</span>
+      </div>
+    {% endif %}
+  </a>
+</div>
