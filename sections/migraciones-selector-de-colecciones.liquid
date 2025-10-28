@@ -622,129 +622,212 @@
 {% endschema %}
 
 <script>
-  // Countdown timers para product cards
-  function initProductCountdowns() {
-    const countdownBadges = document.querySelectorAll('[data-countdown-end]');
+  document.addEventListener('DOMContentLoaded', function () {
+    // Countdown timers para product cards y banners
+    function initProductCountdowns() {
+      const countdownBadges = document.querySelectorAll('[data-countdown-end]');
 
-    countdownBadges.forEach((badge) => {
-      const endDateStr = badge.getAttribute('data-countdown-end');
-      if (!endDateStr) return;
+      countdownBadges.forEach((badge) => {
+        const endDateStr = badge.getAttribute('data-countdown-end');
+        if (!endDateStr) return;
 
-      const endDate = new Date(endDateStr + ':00').getTime();
+        const endDate = new Date(endDateStr + ':00').getTime();
 
-      function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = endDate - now;
+        function updateCountdown() {
+          const now = new Date().getTime();
+          const distance = endDate - now;
 
-        if (distance < 0) {
-          badge.textContent = '00:00:00';
-          return;
+          if (distance < 0) {
+            badge.textContent = '00:00:00';
+            return;
+          }
+
+          const totalHours = Math.floor(distance / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          const hoursStr = totalHours.toString().padStart(2, '0');
+          const minutesStr = minutes.toString().padStart(2, '0');
+          const secondsStr = seconds.toString().padStart(2, '0');
+
+          badge.textContent = `${hoursStr}:${minutesStr}:${secondsStr}`;
         }
 
-        const totalHours = Math.floor(distance / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+      });
+    }
 
-        const hoursStr = totalHours.toString().padStart(2, '0');
-        const minutesStr = minutes.toString().padStart(2, '0');
-        const secondsStr = seconds.toString().padStart(2, '0');
+    // Add to cart functionality para productos Y banners
+    function initAddToCart() {
+      // Seleccionar TODOS los botones con clase add-to-cart-btn
+      const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
 
-        badge.textContent = `${hoursStr}:${minutesStr}:${secondsStr}`;
-      }
+      addToCartButtons.forEach((button) => {
+        // Eliminar el listener previo clonando el botón
+        const newButton = button.cloneNode(true);
+        button.parentNode.replaceChild(newButton, button);
+      });
 
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-    });
-  }
+      // Volver a seleccionar después de clonar
+      document.querySelectorAll('.add-to-cart-btn').forEach((button) => {
+        button.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
 
-  // Add to cart functionality
-  function initAddToCart() {
-    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+          const hasVariants = this.getAttribute('data-has-variants') === 'true';
 
-    addToCartButtons.forEach((button) => {
-      button.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
+          if (hasVariants) {
+            // Producto con variantes - el data-action-quickview abrirá el modal del tema
+            return;
+          }
 
-        const hasVariants = this.getAttribute('data-has-variants') === 'true';
+          // Producto sin variantes - añadir directamente al carrito
+          const variantId = this.getAttribute('data-variant-id');
+          const productAvailable = this.getAttribute('data-product-available') === 'true';
 
-        if (hasVariants) {
-          // Producto con variantes - el data-action-quickview abrirá el modal del tema
-          return;
-        }
+          if (!productAvailable) {
+            console.log('Producto no disponible');
+            return;
+          }
 
-        // Producto sin variantes - añadir directamente al carrito
-        const variantId = this.getAttribute('data-variant-id');
-        const productAvailable = this.getAttribute('data-product-available') === 'true';
+          const formData = {
+            items: [
+              {
+                id: variantId,
+                quantity: 1,
+              },
+            ],
+          };
 
-        if (!productAvailable) {
-          console.log('Producto no disponible');
-          return;
-        }
-
-        const formData = {
-          items: [
-            {
-              id: variantId,
-              quantity: 1,
+          // Añadir al carrito
+          fetch(window.Shopify.routes.root + 'cart/add.js', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json',
             },
-          ],
-        };
-
-        // Añadir al carrito
-        fetch(window.Shopify.routes.root + 'cart/add.js', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-          },
-          body: JSON.stringify(formData),
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            console.log('Producto añadido:', data);
-
-            // Disparar evento de actualización
-            document.dispatchEvent(new CustomEvent('cart:refresh'));
-
-            // Abrir el drawer del carrito
-            setTimeout(() => {
-              const cartButton = document.querySelector('[data-drawer-options*="t4s-mini_cart"]');
-              if (cartButton) {
-                cartButton.click();
-              }
-            }, 100);
+            body: JSON.stringify(formData),
           })
-          .catch((error) => {
-            console.error('Error añadiendo al carrito:', error);
-          });
+            .then((response) => response.json())
+            .then((data) => {
+              console.log('Producto añadido:', data);
+
+              // Disparar evento de actualización
+              document.dispatchEvent(new CustomEvent('cart:refresh'));
+
+              // Abrir el drawer del carrito
+              setTimeout(() => {
+                const cartButton = document.querySelector('[data-drawer-options*="t4s-mini_cart"]');
+                if (cartButton) {
+                  cartButton.click();
+                }
+              }, 100);
+            })
+            .catch((error) => {
+              console.error('Error añadiendo al carrito:', error);
+            });
+        });
+      });
+    }
+
+    const petButtons = document.querySelectorAll('[data-pet]');
+    const categoryButtons = document.querySelectorAll('[data-collection]');
+    const productPanels = document.querySelectorAll('[data-collection-panel]');
+
+    let currentPet = 'dog';
+    let currentCollection = null;
+
+    // Función para actualizar tabs de mascotas
+    function switchPet(petType) {
+      currentPet = petType;
+
+      // Actualizar botones de mascotas
+      petButtons.forEach((btn) => {
+        if (btn.getAttribute('data-pet') === petType) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      // Filtrar y mostrar categorías según mascota
+      const visibleCategories = [];
+      categoryButtons.forEach((btn) => {
+        if (btn.getAttribute('data-pet-type') === petType) {
+          btn.style.display = '';
+          btn.classList.remove('hidden');
+          visibleCategories.push(btn);
+        } else {
+          btn.style.display = 'none';
+          btn.classList.add('hidden');
+        }
+      });
+
+      // Activar la primera categoría visible
+      if (visibleCategories.length > 0) {
+        const firstCategory = visibleCategories[0];
+        const collectionHandle = firstCategory.getAttribute('data-collection');
+        switchCollection(collectionHandle);
+      }
+    }
+
+    // Función para cambiar de colección
+    function switchCollection(collectionHandle) {
+      currentCollection = collectionHandle;
+
+      // Actualizar botones de categorías
+      categoryButtons.forEach((btn) => {
+        if (
+          btn.getAttribute('data-collection') === collectionHandle &&
+          btn.getAttribute('data-pet-type') === currentPet
+        ) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      // Mostrar panel de productos correspondiente
+      productPanels.forEach((panel) => {
+        if (
+          panel.getAttribute('data-collection-panel') === collectionHandle &&
+          panel.getAttribute('data-pet-type') === currentPet
+        ) {
+          panel.classList.remove('hidden');
+        } else {
+          panel.classList.add('hidden');
+        }
+      });
+
+      // Reinicializar add to cart después de cambiar de panel
+      setTimeout(() => {
+        initProductCountdowns();
+        initAddToCart();
+      }, 100);
+    }
+
+    // Event listeners para botones de mascotas
+    petButtons.forEach((btn) => {
+      btn.addEventListener('click', function () {
+        const petType = this.getAttribute('data-pet');
+        switchPet(petType);
       });
     });
-  }
 
-  // Reinicializar cuando cambian de tab
-  const petButtons = document.querySelectorAll('[data-pet]');
-  const categoryButtons = document.querySelectorAll('[data-collection]');
-
-  petButtons.forEach((btn) => {
-    btn.addEventListener('click', function () {
-      setTimeout(() => {
-        initProductCountdowns();
-        initAddToCart();
-      }, 100);
+    // Event listeners para botones de categorías
+    categoryButtons.forEach((btn) => {
+      btn.addEventListener('click', function () {
+        const collectionHandle = this.getAttribute('data-collection');
+        switchCollection(collectionHandle);
+      });
     });
-  });
 
-  categoryButtons.forEach((btn) => {
-    btn.addEventListener('click', function () {
-      setTimeout(() => {
-        initProductCountdowns();
-        initAddToCart();
-      }, 100);
-    });
-  });
+    // Inicializar con perros
+    switchPet('dog');
 
-  // Inicializar al cargar
-  initProductCountdowns();
-  initAddToCart();
+    // Inicializar countdowns y add to cart
+    initProductCountdowns();
+    initAddToCart();
+  });
 </script>
