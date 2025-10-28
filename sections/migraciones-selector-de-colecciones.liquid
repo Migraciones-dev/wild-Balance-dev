@@ -517,3 +517,131 @@
   ]
 }
 {% endschema %}
+
+<script>
+  // Countdown timers para product cards
+  function initProductCountdowns() {
+    const countdownBadges = document.querySelectorAll('[data-countdown-end]');
+
+    countdownBadges.forEach((badge) => {
+      const endDateStr = badge.getAttribute('data-countdown-end');
+      if (!endDateStr) return;
+
+      const endDate = new Date(endDateStr + ':00').getTime();
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = endDate - now;
+
+        if (distance < 0) {
+          badge.textContent = '00:00:00';
+          return;
+        }
+
+        const totalHours = Math.floor(distance / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        const hoursStr = totalHours.toString().padStart(2, '0');
+        const minutesStr = minutes.toString().padStart(2, '0');
+        const secondsStr = seconds.toString().padStart(2, '0');
+
+        badge.textContent = `${hoursStr}:${minutesStr}:${secondsStr}`;
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    });
+  }
+
+  // Add to cart functionality
+  function initAddToCart() {
+    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+
+    addToCartButtons.forEach((button) => {
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const hasVariants = this.getAttribute('data-has-variants') === 'true';
+
+        if (hasVariants) {
+          // Producto con variantes - el data-action-quickview abrirá el modal del tema
+          return;
+        }
+
+        // Producto sin variantes - añadir directamente al carrito
+        const variantId = this.getAttribute('data-variant-id');
+        const productAvailable = this.getAttribute('data-product-available') === 'true';
+
+        if (!productAvailable) {
+          console.log('Producto no disponible');
+          return;
+        }
+
+        const formData = {
+          items: [
+            {
+              id: variantId,
+              quantity: 1,
+            },
+          ],
+        };
+
+        // Añadir al carrito
+        fetch(window.Shopify.routes.root + 'cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify(formData),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log('Producto añadido:', data);
+
+            // Disparar evento de actualización
+            document.dispatchEvent(new CustomEvent('cart:refresh'));
+
+            // Abrir el drawer del carrito
+            setTimeout(() => {
+              const cartButton = document.querySelector('[data-drawer-options*="t4s-mini_cart"]');
+              if (cartButton) {
+                cartButton.click();
+              }
+            }, 100);
+          })
+          .catch((error) => {
+            console.error('Error añadiendo al carrito:', error);
+          });
+      });
+    });
+  }
+
+  // Reinicializar cuando cambian de tab
+  const petButtons = document.querySelectorAll('[data-pet]');
+  const categoryButtons = document.querySelectorAll('[data-collection]');
+
+  petButtons.forEach((btn) => {
+    btn.addEventListener('click', function () {
+      setTimeout(() => {
+        initProductCountdowns();
+        initAddToCart();
+      }, 100);
+    });
+  });
+
+  categoryButtons.forEach((btn) => {
+    btn.addEventListener('click', function () {
+      setTimeout(() => {
+        initProductCountdowns();
+        initAddToCart();
+      }, 100);
+    });
+  });
+
+  // Inicializar al cargar
+  initProductCountdowns();
+  initAddToCart();
+</script>
