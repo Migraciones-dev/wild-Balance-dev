@@ -205,13 +205,13 @@
           return;
         }
 
-        // Calcular horas, minutos y segundos
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        // Calcular horas totales (incluyendo días convertidos a horas)
+        const totalHours = Math.floor(distance / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         // Formatear con ceros a la izquierda
-        const hoursStr = hours.toString().padStart(2, '0');
+        const hoursStr = totalHours.toString().padStart(2, '0');
         const minutesStr = minutes.toString().padStart(2, '0');
         const secondsStr = seconds.toString().padStart(2, '0');
 
