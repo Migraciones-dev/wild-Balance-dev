@@ -87,30 +87,43 @@
     },
     "migraciones_banner_responsive_d6hJg8": {
       "type": "migraciones-banner-responsive",
+      "blocks": {
+        "banner_4nDMtb": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/jpeg-optimizer_BANNER_1x1_64ae2652-4010-49cf-b836-6e5108f97db2.jpg",
+            "mobile_image": "shopify://shop_images/jpeg-optimizer_BANNER_1x1_1.jpg",
+            "image_link": "",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_LJFEdc": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/jpeg-optimizer_Group_1542.jpg",
+            "mobile_image": "shopify://shop_images/jpeg-optimizer_Frame_853.jpg",
+            "image_link": "",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 40,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        }
+      },
+      "block_order": [
+        "banner_4nDMtb",
+        "banner_LJFEdc"
+      ],
       "name": "Banner imagen responsivo",
       "settings": {
-        "desktop_image": "shopify://shop_images/jpeg-optimizer_BANNER_1x1_64ae2652-4010-49cf-b836-6e5108f97db2.jpg",
-        "mobile_image": "shopify://shop_images/jpeg-optimizer_BANNER_1x1_1.jpg",
-        "image_link": "shopify://collections",
-        "border_radius_desktop": 30,
-        "border_radius_mobile": 12,
         "pt_desktop": 60,
-        "pb_desktop": 28,
-        "pt_mobile": 0,
-        "pb_mobile": 0,
-        "bg_color": "#1f1f1f"
-      }
-    },
-    "migraciones_banner_responsive_dXzTDp": {
-      "type": "migraciones-banner-responsive",
-      "name": "Banner imagen responsivo",
-      "settings": {
-        "desktop_image": "shopify://shop_images/jpeg-optimizer_Group_1542.jpg",
-        "mobile_image": "shopify://shop_images/jpeg-optimizer_Frame_853.jpg",
-        "image_link": "shopify://collections",
-        "border_radius_desktop": 30,
-        "border_radius_mobile": 12,
-        "pt_desktop": 0,
         "pb_desktop": 28,
         "pt_mobile": 0,
         "pb_mobile": 0,
@@ -121,7 +134,6 @@
   "order": [
     "heading",
     "main",
-    "migraciones_banner_responsive_d6hJg8",
-    "migraciones_banner_responsive_dXzTDp"
+    "migraciones_banner_responsive_d6hJg8"
   ]
 }
