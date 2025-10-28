@@ -94,7 +94,7 @@
             "desktop_image": "shopify://shop_images/jpeg-optimizer_BANNER_1x1_64ae2652-4010-49cf-b836-6e5108f97db2.jpg",
             "mobile_image": "shopify://shop_images/jpeg-optimizer_BANNER_1x1_1.jpg",
             "image_link": "",
-            "enable_schedule": true,
+            "enable_schedule": false,
             "start_date": "2025-10-28 12:00",
             "end_date": "2025-10-28 12:03",
             "border_radius_desktop": 30,
