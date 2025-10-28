@@ -412,7 +412,7 @@
       "type": "custom-liquid",
       "name": "Custom Liquid",
       "settings": {
-        "custom_liquid": "<style>\n\n.t4s-header__wrapper {background: #222222;color:white;}\n\n.t4s-menu-item a, .t4s-menu-item a:hover {color:white!important;}\n\n.t4s-sub-menu {background:#222222!important;}\n\n.flex.items-center.bg-white.shadow.border p {color:#222222!important;}\n\n.t4s-site-nav__icon a .t4s-site-nav__icon a svg, .t4s-site-nav__icon a:hover {color:white!important;}\n\n.t4s-top-bar, .t4s-top-bar button {background:#F0807B!important;color:white;}\n\n</style>"
+        "custom_liquid": "<style>\n\n.t4s-header__wrapper {background: #222222;color:white;}\n\n.t4s-menu-item a, .t4s-menu-item a:hover {color:white!important;}\n\n.t4s-sub-menu {background:#222222!important;}\n\n.flex.items-center.bg-white.shadow.border p {color:#222222!important;}\n\n.t4s-site-nav__icon a .t4s-site-nav__icon a svg, .t4s-site-nav__icon a:hover {color:white!important;}\n\n.t4s-top-bar, .t4s-top-bar button {background:#F0807B!important;color:white;}\n\n.header__normal-logo, .header__sticky-logo {filter: brightness(0) invert(1)!important;}\n\n</style>"
       }
     }
   },
