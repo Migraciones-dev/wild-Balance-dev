@@ -229,7 +229,7 @@
         "collection_9na79a": {
           "type": "collection",
           "settings": {
-            "pet_type": "cat",
+            "pet_type": "dog",
             "collection_name": "Dieta BARF",
             "collection": "barf-gatos"
           }
@@ -255,7 +255,7 @@
         "heading_before": "Descuentos",
         "heading_highlight": "especiales",
         "heading_after": "",
-        "title_color": "#fff",
+        "title_color": "#ffffff",
         "accent_color": "#004622",
         "bg_color": "#1f1f1f",
         "pt_desktop": 80,
