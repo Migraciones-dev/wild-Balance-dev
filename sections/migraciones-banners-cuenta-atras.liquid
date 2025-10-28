@@ -305,36 +305,13 @@
             // Disparar el evento que el tema escucha para actualizar el carrito
             document.dispatchEvent(new CustomEvent('cart:refresh'));
 
-            // También disparar el evento product:added que muchos temas usan
-            document.dispatchEvent(
-              new CustomEvent('product:added-to-cart', {
-                detail: {
-                  product: data,
-                },
-              })
-            );
-
-            // Abrir el drawer del carrito
-            const cartDrawer = document.querySelector('[data-cart-wrapper]');
-            if (cartDrawer) {
-              cartDrawer.classList.remove('t4s-dn');
-              cartDrawer.setAttribute('aria-hidden', 'false');
-              document.body.classList.add('t4s-overflow-hidden');
-            }
-
-            // Actualizar contador del carrito
-            fetch(window.Shopify.routes.root + 'cart.js')
-              .then((res) => res.json())
-              .then((cart) => {
-                // Actualizar contadores del carrito
-                const cartCounts = document.querySelectorAll('[data-cart-count]');
-                cartCounts.forEach((count) => {
-                  count.textContent = cart.item_count;
-                  if (cart.item_count > 0) {
-                    count.classList.remove('t4s-d-none');
-                  }
-                });
-              });
+            // Simular click en el botón del carrito para abrir el drawer correctamente
+            setTimeout(() => {
+              const cartButton = document.querySelector('[data-drawer-options*="t4s-mini_cart"]');
+              if (cartButton) {
+                cartButton.click();
+              }
+            }, 100);
           })
           .catch((error) => {
             console.error('Error añadiendo al carrito:', error);
