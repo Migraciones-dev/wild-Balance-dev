@@ -663,16 +663,7 @@
       // Seleccionar TODOS los botones con clase add-to-cart-btn
       const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
 
-      console.log('🔍 Total botones encontrados:', addToCartButtons.length);
-
-      addToCartButtons.forEach((button, index) => {
-        console.log(`Botón ${index}:`, {
-          hasVariants: button.getAttribute('data-has-variants'),
-          variantId: button.getAttribute('data-variant-id'),
-          productId: button.getAttribute('data-product-id'),
-          isVisible: button.offsetParent !== null,
-        });
-
+      addToCartButtons.forEach((button) => {
         // Eliminar el listener previo clonando el botón
         const newButton = button.cloneNode(true);
         button.parentNode.replaceChild(newButton, button);
@@ -681,28 +672,22 @@
       // Volver a seleccionar después de clonar
       document.querySelectorAll('.add-to-cart-btn').forEach((button) => {
         button.addEventListener('click', function (e) {
-          console.log('🖱️ CLICK en botón!', {
-            hasVariants: this.getAttribute('data-has-variants'),
-            variantId: this.getAttribute('data-variant-id'),
-          });
-
           e.preventDefault();
           e.stopPropagation();
 
           const hasVariants = this.getAttribute('data-has-variants') === 'true';
 
           if (hasVariants) {
-            console.log('⚠️ Producto con variantes - abrir quickview');
+            // Producto con variantes - el data-action-quickview abrirá el modal del tema
             return;
           }
 
+          // Producto sin variantes - añadir directamente al carrito
           const variantId = this.getAttribute('data-variant-id');
           const productAvailable = this.getAttribute('data-product-available') === 'true';
 
-          console.log('📦 Añadiendo al carrito:', { variantId, productAvailable });
-
           if (!productAvailable) {
-            console.log('❌ Producto no disponible');
+            console.log('Producto no disponible');
             return;
           }
 
@@ -726,7 +711,7 @@
           })
             .then((response) => response.json())
             .then((data) => {
-              console.log('✅ Producto añadido:', data);
+              console.log('Producto añadido:', data);
 
               // Disparar evento de actualización
               document.dispatchEvent(new CustomEvent('cart:refresh'));
@@ -740,7 +725,7 @@
               }, 100);
             })
             .catch((error) => {
-              console.error('❌ Error añadiendo al carrito:', error);
+              console.error('Error añadiendo al carrito:', error);
             });
         });
       });
