@@ -286,6 +286,9 @@
     },
     "migraciones_image_width_text_JLdjiB": {
       "type": "migraciones-image-width-text",
+      "custom_css": [
+        ".py-20 {margin: 0;}"
+      ],
       "name": "Migraciones image+text",
       "settings": {
         "custom_liquid": ""
@@ -396,6 +399,9 @@
     },
     "migraciones_faq_XTWFkL": {
       "type": "migraciones-faq",
+      "custom_css": [
+        ".mig-section {margin: 10rem 0rem; background: #1f1f1f;}"
+      ],
       "name": "Migraciones faq",
       "settings": {
         "custom_liquid": ""
