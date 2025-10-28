@@ -342,7 +342,7 @@
         "shipping_EnBQPV"
       ],
       "custom_css": [
-        "* {color: #004623!important;}"
+        "*, p {color: #004623 !important;}"
       ],
       "settings": {
         "design_heading": "1",
