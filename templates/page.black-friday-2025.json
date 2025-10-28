@@ -399,9 +399,11 @@
     },
     "migraciones_faq_XTWFkL": {
       "type": "migraciones-faq",
-      "disabled": true,
       "custom_css": [
-        ".mig-section {margin: 10rem 0rem; background: #1f1f1f;}"
+        ".mig-section {margin: 0 0rem; padding-top: 10rem; padding-bottom: 10rem; background: #1f1f1f;}",
+        "h2 {color: white;}",
+        "button {background: #222222; color: white;}",
+        ".border-b {border: 1px solid white;}"
       ],
       "name": "Migraciones faq",
       "settings": {
