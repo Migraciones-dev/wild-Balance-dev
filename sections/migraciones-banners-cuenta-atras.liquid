@@ -1,0 +1,393 @@
+<section
+  id="section-{{ section.id }}"
+  class="w-full"
+  style="
+    background-color: {{ section.settings.bg_color }};
+    padding-top: {{ section.settings.pt_mobile }}px;
+    padding-bottom: {{ section.settings.pb_mobile }}px;
+  "
+>
+  <style>
+    @media (min-width: 768px) {
+      #section-{{ section.id }} {
+        padding-top: {{ section.settings.pt_desktop }}px !important;
+        padding-bottom: {{ section.settings.pb_desktop }}px !important;
+      }
+    }
+
+    #section-{{ section.id }} h2 {
+      color: {{ section.settings.title_color }};
+    }
+
+    #section-{{ section.id }} .highlight {
+      background-color: {{ section.settings.highlight_bg_color }};
+      color: {{ section.settings.highlight_text_color }};
+    }
+
+    {% for block in section.blocks %}
+      @media (min-width: 768px) {
+        #banner-{{ block.id }} .banner-image {
+          border-radius: {{ block.settings.border_radius_desktop }}px !important;
+        }
+      }
+
+      @media (max-width: 767px) {
+        #banner-{{ block.id }} .banner-image {
+          border-radius: {{ block.settings.border_radius_mobile }}px !important;
+        }
+      }
+
+      #banner-{{ block.id }} {
+        margin-top: {{ block.settings.mt_mobile }}px;
+        margin-bottom: {{ block.settings.mb_mobile }}px;
+      }
+
+      @media (min-width: 768px) {
+        #banner-{{ block.id }} {
+          margin-top: {{ block.settings.mt_desktop }}px !important;
+          margin-bottom: {{ block.settings.mb_desktop }}px !important;
+        }
+      }
+    {% endfor %}
+  </style>
+
+  <div class="max-w-[1600px] mx-auto px-6 lg:px-10">
+    {%- comment -%} Título con highlight {%- endcomment -%}
+    {% if section.settings.heading_before != blank
+      or section.settings.heading_highlight != blank
+      or section.settings.heading_after != blank
+    %}
+      <div class="mb-8 lg:mb-12 text-center">
+        <h2 class="[font-family:'Barlow',Helvetica] font-extrabold text-[30px] sm:text-[38px] md:text-[44px] lg:text-[57px] xl:text-[64px] leading-[1]">
+          {{ section.settings.heading_before }}
+          {% if section.settings.heading_highlight != blank %}
+            <span class="highlight">{{ section.settings.heading_highlight }}</span>
+          {% endif %}
+          {{ section.settings.heading_after }}
+        </h2>
+      </div>
+    {% endif %}
+
+    {%- comment -%} Grid de banners {%- endcomment -%}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+      {% for block in section.blocks %}
+        {% if block.type == 'banner' %}
+          {%- comment -%} Convertir fechas a timestamp Unix para comparación {%- endcomment -%}
+          {%- assign current_time = 'now' | date: '%s' | plus: 0 -%}
+
+          {%- comment -%} Procesar fechas ingresadas {%- endcomment -%}
+          {%- assign show_banner = false -%}
+
+          {%- if block.settings.enable_schedule == false -%}
+            {%- assign show_banner = true -%}
+          {%- else -%}
+            {%- assign has_start = false -%}
+            {%- assign has_end = false -%}
+
+            {%- if block.settings.start_date != blank -%}
+              {%- assign has_start = true -%}
+              {%- assign start_time = block.settings.start_date | append: ':00' | date: '%s' | plus: 0 -%}
+            {%- endif -%}
+
+            {%- if block.settings.end_date != blank -%}
+              {%- assign has_end = true -%}
+              {%- assign end_time = block.settings.end_date | append: ':00' | date: '%s' | plus: 0 -%}
+            {%- endif -%}
+
+            {%- if has_start and has_end -%}
+              {%- if current_time >= start_time and current_time <= end_time -%}
+                {%- assign show_banner = true -%}
+              {%- endif -%}
+            {%- elsif has_start and has_end == false -%}
+              {%- if current_time >= start_time -%}
+                {%- assign show_banner = true -%}
+              {%- endif -%}
+            {%- elsif has_start == false and has_end -%}
+              {%- if current_time <= end_time -%}
+                {%- assign show_banner = true -%}
+              {%- endif -%}
+            {%- else -%}
+              {%- assign show_banner = true -%}
+            {%- endif -%}
+          {%- endif -%}
+
+          {%- if show_banner -%}
+            <div id="banner-{{ block.id }}" {{ block.shopify_attributes }}>
+              {%- if block.settings.desktop_image or block.settings.mobile_image -%}
+                {%- comment -%} Imagen escritorio {%- endcomment -%}
+                {% if block.settings.desktop_image %}
+                  {% if block.settings.image_link != blank %}<a href="{{ block.settings.image_link }}">{% endif %}
+                  <img
+                    src="{{ block.settings.desktop_image | img_url: '2048x' }}"
+                    class="banner-image hidden md:block w-full h-auto object-cover"
+                    alt="{{ block.settings.desktop_image.alt | escape }}"
+                    loading="lazy"
+                  >
+                  {% if block.settings.image_link != blank %}</a>{% endif %}
+                {% endif %}
+
+                {%- comment -%} Imagen móvil {%- endcomment -%}
+                {% if block.settings.mobile_image %}
+                  {% if block.settings.image_link != blank %}<a href="{{ block.settings.image_link }}">{% endif %}
+                  <img
+                    src="{{ block.settings.mobile_image | img_url: '1024x' }}"
+                    class="banner-image block md:hidden w-full h-auto object-cover"
+                    alt="{{ block.settings.mobile_image.alt | escape }}"
+                    loading="lazy"
+                  >
+                  {% if block.settings.image_link != blank %}</a>{% endif %}
+                {% endif %}
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Banners Grid 2 columnas",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "⚠️ IMPORTANTE: Asegúrate de que la zona horaria de tu tienda esté configurada en 'Madrid' o '(GMT+01:00) Europe/Madrid' en Configuración > General > Estándares y formatos"
+    },
+    {
+      "type": "header",
+      "content": "Título"
+    },
+    {
+      "type": "text",
+      "id": "heading_before",
+      "label": "Título (antes del resaltado)",
+      "default": "Descubre nuestras"
+    },
+    {
+      "type": "text",
+      "id": "heading_highlight",
+      "label": "Texto resaltado",
+      "default": "ofertas especiales"
+    },
+    {
+      "type": "text",
+      "id": "heading_after",
+      "label": "Título (después del resaltado)"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Color del título",
+      "default": "#004622"
+    },
+    {
+      "type": "color",
+      "id": "highlight_bg_color",
+      "label": "Color de fondo del highlight",
+      "default": "#FFCD00"
+    },
+    {
+      "type": "color",
+      "id": "highlight_text_color",
+      "label": "Color del texto del highlight",
+      "default": "#004622"
+    },
+    {
+      "type": "header",
+      "content": "Espaciado de sección - Desktop"
+    },
+    {
+      "type": "range",
+      "id": "pt_desktop",
+      "label": "Padding superior (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "pb_desktop",
+      "label": "Padding inferior (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Espaciado de sección - Móvil"
+    },
+    {
+      "type": "range",
+      "id": "pt_mobile",
+      "label": "Padding superior (Móvil)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "pb_mobile",
+      "label": "Padding inferior (Móvil)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Estilo"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Color de fondo de la sección",
+      "default": "#FBF5E7"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "banner",
+      "name": "Banner",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Imágenes"
+        },
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "Imagen escritorio"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Imagen móvil"
+        },
+        {
+          "type": "url",
+          "id": "image_link",
+          "label": "Enlace de la imagen"
+        },
+        {
+          "type": "header",
+          "content": "⏰ Programación de visualización (Hora de España)"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_schedule",
+          "label": "Activar programación de fechas",
+          "default": false,
+          "info": "Activa para programar cuándo se mostrará este banner"
+        },
+        {
+          "type": "text",
+          "id": "start_date",
+          "label": "📅 Fecha y hora de INICIO (España)",
+          "placeholder": "2025-11-29 10:30",
+          "info": "Formato: YYYY-MM-DD HH:MM (ejemplo: 2025-11-29 10:30). Hora de España (CET/CEST). Dejar vacío = desde siempre"
+        },
+        {
+          "type": "text",
+          "id": "end_date",
+          "label": "📅 Fecha y hora de FIN (España)",
+          "placeholder": "2025-12-20 23:00",
+          "info": "Formato: YYYY-MM-DD HH:MM (ejemplo: 2025-12-20 23:00). Hora de España (CET/CEST). Dejar vacío = sin límite"
+        },
+        {
+          "type": "header",
+          "content": "Border Radius"
+        },
+        {
+          "type": "range",
+          "id": "border_radius_desktop",
+          "label": "Border radius (Desktop)",
+          "min": 0,
+          "max": 50,
+          "step": 2,
+          "unit": "px",
+          "default": 30
+        },
+        {
+          "type": "range",
+          "id": "border_radius_mobile",
+          "label": "Border radius (Móvil)",
+          "min": 0,
+          "max": 50,
+          "step": 2,
+          "unit": "px",
+          "default": 12
+        },
+        {
+          "type": "header",
+          "content": "Espaciado - Desktop"
+        },
+        {
+          "type": "range",
+          "id": "mt_desktop",
+          "label": "Margen superior (Desktop)",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "mb_desktop",
+          "label": "Margen inferior (Desktop)",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "header",
+          "content": "Espaciado - Móvil"
+        },
+        {
+          "type": "range",
+          "id": "mt_mobile",
+          "label": "Margen superior (Móvil)",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "mb_mobile",
+          "label": "Margen inferior (Móvil)",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 0
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banners Grid 2 columnas",
+      "blocks": [
+        {
+          "type": "banner"
+        },
+        {
+          "type": "banner"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
