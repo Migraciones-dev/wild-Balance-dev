@@ -280,8 +280,8 @@
                     {% endif %}
 
                     {% for product in products_array limit: 8 %}
-                      {%- comment -%} En móvil: después del producto 1 (index 1) - posiciones 2 y 3 {%- endcomment -%}
-                      {% if has_banner and forloop.index == 2 %}
+                      {%- comment -%} En móvil: después del producto 2 (index 2) - posiciones 3 y 4 {%- endcomment -%}
+                      {% if has_banner and forloop.index == 3 %}
                         <div class="banner-wide lg:hidden">
                           {% render 'discount-banner-card',
                             banner_image: block.settings.banner_image,
