@@ -31,7 +31,7 @@
     {% if section.settings.desktop_image %}
       {% if section.settings.image_link != blank %}<a href="{{ section.settings.image_link }}">{% endif %}
       <img
-        src="{{ section.settings.desktop_image | image_url: '2048x' }}"
+        src="{{ section.settings.desktop_image | img_url: '2048x' }}"
         class="banner-image hidden md:block w-full h-auto object-cover"
         alt="{{ section.settings.desktop_image.alt | escape }}"
         loading="lazy"
@@ -43,7 +43,7 @@
     {% if section.settings.mobile_image %}
       {% if section.settings.image_link != blank %}<a href="{{ section.settings.image_link }}">{% endif %}
       <img
-        src="{{ section.settings.mobile_image | image_url: '1024x' }}"
+        src="{{ section.settings.mobile_image | img_url: '1024x' }}"
         class="banner-image block md:hidden w-full h-auto object-cover"
         alt="{{ section.settings.mobile_image.alt | escape }}"
         loading="lazy"
