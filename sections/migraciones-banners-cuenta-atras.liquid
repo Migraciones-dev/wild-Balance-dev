@@ -17,11 +17,43 @@
 
     #section-{{ section.id }} h2 {
       color: {{ section.settings.title_color }};
+      padding-top: {{ section.settings.title_pt_mobile }}px;
+      padding-bottom: {{ section.settings.title_pb_mobile }}px;
     }
 
-    #section-{{ section.id }} .highlight {
-      background-color: {{ section.settings.highlight_bg_color }};
-      color: {{ section.settings.highlight_text_color }};
+    @media (min-width: 768px) {
+      #section-{{ section.id }} h2 {
+        padding-top: {{ section.settings.title_pt_desktop }}px !important;
+        padding-bottom: {{ section.settings.title_pb_desktop }}px !important;
+      }
+    }
+
+    .countdown-timer {
+      background-color: #F0807B;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-family: 'Arial', sans-serif;
+      font-weight: bold;
+      font-size: 14px;
+      display: inline-block;
+      position: absolute;
+    }
+
+    /* Posición en móvil: esquina superior derecha */
+    .countdown-timer {
+      top: 12px;
+      right: 12px;
+    }
+
+    /* Posición en desktop: centro superior */
+    @media (min-width: 768px) {
+      .countdown-timer {
+        top: 16px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+      }
     }
 
     {% for block in section.blocks %}
@@ -57,7 +89,7 @@
       or section.settings.heading_highlight != blank
       or section.settings.heading_after != blank
     %}
-      <div class="mb-8 lg:mb-12 text-center">
+      <div class="text-center">
         <h2 class="[font-family:'Barlow',Helvetica] font-extrabold text-[30px] sm:text-[38px] md:text-[44px] lg:text-[57px] xl:text-[64px] leading-[1]">
           {{ section.settings.heading_before }}
           {% if section.settings.heading_highlight != blank %}
@@ -112,7 +144,12 @@
           {%- endif -%}
 
           {%- if show_banner -%}
-            <div id="banner-{{ block.id }}" {{ block.shopify_attributes }}>
+            <div id="banner-{{ block.id }}" class="relative" {{ block.shopify_attributes }}>
+              {%- comment -%} Cuenta atrás {%- endcomment -%}
+              {% if block.settings.enable_countdown and block.settings.countdown_date != blank %}
+                <div class="countdown-timer" data-countdown-date="{{ block.settings.countdown_date }}">00:00:00</div>
+              {% endif %}
+
               {%- if block.settings.desktop_image or block.settings.mobile_image -%}
                 {%- comment -%} Imagen escritorio {%- endcomment -%}
                 {% if block.settings.desktop_image %}
@@ -145,6 +182,47 @@
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const countdownTimers = document.querySelectorAll('.countdown-timer');
+
+    countdownTimers.forEach((timer) => {
+      const endDateStr = timer.getAttribute('data-countdown-date');
+      if (!endDateStr) return;
+
+      // Añadir segundos si no están presentes
+      const endDate = new Date(endDateStr + ':00').getTime();
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = endDate - now;
+
+        if (distance < 0) {
+          // Cuando termine, mostrar 00:00:00
+          timer.textContent = '00:00:00';
+          clearInterval(interval);
+          return;
+        }
+
+        // Calcular horas, minutos y segundos
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Formatear con ceros a la izquierda
+        const hoursStr = hours.toString().padStart(2, '0');
+        const minutesStr = minutes.toString().padStart(2, '0');
+        const secondsStr = seconds.toString().padStart(2, '0');
+
+        timer.textContent = `${hoursStr}:${minutesStr}:${secondsStr}`;
+      }
+
+      updateCountdown();
+      const interval = setInterval(updateCountdown, 1000);
+    });
+  });
+</script>
 
 {% schema %}
 {
@@ -182,16 +260,52 @@
       "default": "#004622"
     },
     {
-      "type": "color",
-      "id": "highlight_bg_color",
-      "label": "Color de fondo del highlight",
-      "default": "#FFCD00"
+      "type": "header",
+      "content": "Espaciado del título - Desktop"
     },
     {
-      "type": "color",
-      "id": "highlight_text_color",
-      "label": "Color del texto del highlight",
-      "default": "#004622"
+      "type": "range",
+      "id": "title_pt_desktop",
+      "label": "Padding superior del título (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "title_pb_desktop",
+      "label": "Padding inferior del título (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Espaciado del título - Móvil"
+    },
+    {
+      "type": "range",
+      "id": "title_pt_mobile",
+      "label": "Padding superior del título (Móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "title_pb_mobile",
+      "label": "Padding inferior del título (Móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 32
     },
     {
       "type": "header",
@@ -275,6 +389,24 @@
           "type": "url",
           "id": "image_link",
           "label": "Enlace de la imagen"
+        },
+        {
+          "type": "header",
+          "content": "⏰ Cuenta atrás"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_countdown",
+          "label": "Activar cuenta atrás",
+          "default": false,
+          "info": "Muestra una cuenta atrás en formato HH:MM:SS"
+        },
+        {
+          "type": "text",
+          "id": "countdown_date",
+          "label": "⏱️ Fecha y hora final de cuenta atrás",
+          "placeholder": "2025-12-20 23:00",
+          "info": "Formato: YYYY-MM-DD HH:MM (ejemplo: 2025-12-20 23:00). Al terminar mostrará 00:00:00"
         },
         {
           "type": "header",
