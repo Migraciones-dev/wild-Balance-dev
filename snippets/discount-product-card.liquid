@@ -1,77 +1,119 @@
 {%- comment -%}
-  Snippet: discount-banner-card.liquid
-  Uso: {% render 'discount-banner-card', banner_image: image, action_type: type, link_url: url, banner_product: product %}
+  Snippet: discount-product-card.liquid
+  Uso: {% render 'discount-product-card', product: product, countdown_date: block.settings.countdown_date %}
 {%- endcomment -%}
 
-<div class="discount-banner-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow relative h-full">
-  <div class="relative w-full h-full">
-    {% if banner_image %}
-      {% if action_type == 'link' and link_url != blank %}
-        <a href="{{ link_url }}" class="block w-full h-full">
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign isDefault = product.has_only_default_variant
+  assign pid = product.id
+-%}
+
+<div class="discount-product-card">
+  {%- comment -%} Card con fondo blanco y bordes redondeados {%- endcomment -%}
+  <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow relative">
+    {%- comment -%} Cuenta atrás {%- endcomment -%}
+    {% if countdown_date and countdown_date != blank %}
+      <div
+        class="countdown-badge absolute top-3 right-3 z-10 bg-[#F0807B] text-white px-4 py-2 rounded-full font-bold text-[8px] lg:text-[11px]"
+        data-countdown-end="{{ countdown_date }}"
+      >
+        00:00:00
+      </div>
+    {% endif %}
+
+    {%- comment -%} Badge de descuento {%- endcomment -%}
+    {% if current_variant.compare_at_price > current_variant.price %}
+      {% assign discount = current_variant.compare_at_price
+        | minus: current_variant.price
+        | times: 100
+        | divided_by: current_variant.compare_at_price
+        | round
+      %}
+      <div class="absolute top-3 left-3 z-10 bg-[#F0807B] text-white px-3 py-1 rounded-full font-bold text-xs">
+        OFERTA
+      </div>
+    {% endif %}
+
+    {%- comment -%} Imagen del producto con botón dentro {%- endcomment -%}
+    <div class="relative aspect-square bg-gray-100">
+      {% if product.featured_image %}
+        <a href="{{ product.url }}">
           <img
-            src="{{ banner_image | img_url: '1200x' }}"
-            alt="{{ banner_image.alt | escape }}"
-            class="w-full h-full object-cover rounded-2xl"
+            src="{{ product.featured_image | img_url: '600x' }}"
+            alt="{{ product.featured_image.alt | escape }}"
+            class="w-full h-full object-cover"
             loading="lazy"
           >
         </a>
-      {% elsif action_type == 'product' and banner_product %}
-        <img
-          src="{{ banner_image | img_url: '1200x' }}"
-          alt="{{ banner_image.alt | escape }}"
-          class="w-full h-full object-cover rounded-2xl"
-          loading="lazy"
-        >
+      {% else %}
+        <div class="w-full h-full flex items-center justify-center text-gray-400">Sin imagen</div>
+      {% endif %}
 
-        {%- liquid
-          assign current_variant = banner_product.selected_or_first_available_variant
-          assign isDefault = banner_product.has_only_default_variant
-          assign pid = banner_product.id
-        -%}
-
-        {%- comment -%} Botón añadir al carrito dentro de la imagen {%- endcomment -%}
-        {% if banner_product.available %}
-          {% if isDefault %}
-            <button
-              class="add-to-cart-btn absolute bottom-4 left-1/2 -translate-x-1/2 px-6 bg-[#FFC107] text-[#004622] font-bold py-2.5 rounded-full transition-colors text-[10px] lg:text-[12px] whitespace-nowrap"
-              data-variant-id="{{ current_variant.id }}"
-              data-product-id="{{ pid }}"
-              data-product-available="true"
-              data-has-variants="false"
-            >
-              Añadir al carrito
-            </button>
-          {% else %}
-            <button
-              class="add-to-cart-btn absolute bottom-4 left-1/2 -translate-x-1/2 px-6 bg-[#FFC107] text-[#004622] font-bold py-2.5 rounded-full transition-colors text-[10px] lg:text-[12px] whitespace-nowrap"
-              data-product-id="{{ pid }}"
-              data-product-url="{{ banner_product.url }}"
-              data-has-variants="true"
-              data-action-quickview
-            >
-              Añadir al carrito
-            </button>
-          {% endif %}
-        {% else %}
+      {%- comment -%} Botón añadir al carrito dentro de la imagen {%- endcomment -%}
+      {% if product.available %}
+        {% if isDefault %}
+          {%- comment -%} Producto sin variantes - añadir directamente {%- endcomment -%}
           <button
-            class="absolute bottom-4 left-1/2 -translate-x-1/2 px-6 bg-gray-300 text-gray-600 font-bold py-2.5 rounded-full cursor-not-allowed text-[10px] lg:text-[12px] whitespace-nowrap"
-            disabled
+            class="add-to-cart-btn absolute bottom-4 left-1/2 -translate-x-1/2 px-6 bg-[#FFC107] text-[#004622] font-bold py-2.5 rounded-full transition-colors text-[10px] lg:text-[12px] whitespace-nowrap"
+            data-variant-id="{{ current_variant.id }}"
+            data-product-id="{{ pid }}"
+            data-product-available="true"
+            data-has-variants="false"
           >
-            Agotado
+            Añadir al carrito
+          </button>
+        {% else %}
+          {%- comment -%} Producto con variantes - abrir quick view {%- endcomment -%}
+          <button
+            class="add-to-cart-btn absolute bottom-4 left-1/2 -translate-x-1/2 px-6 bg-[#FFC107] text-[#004622] font-bold py-2.5 rounded-full transition-colors text-[10px] lg:text-[12px] whitespace-nowrap"
+            data-product-id="{{ pid }}"
+            data-product-url="{{ product.url }}"
+            data-has-variants="true"
+            data-action-quickview
+          >
+            Añadir al carrito
           </button>
         {% endif %}
       {% else %}
-        <img
-          src="{{ banner_image | img_url: '1200x' }}"
-          alt="{{ banner_image.alt | escape }}"
-          class="w-full h-full object-cover rounded-2xl"
-          loading="lazy"
+        <button
+          class="absolute bottom-4 left-1/2 -translate-x-1/2 px-6 bg-gray-300 text-gray-600 font-bold py-2.5 rounded-full cursor-not-allowed text-[10px] lg:text-[12px] whitespace-nowrap"
+          disabled
         >
+          Agotado
+        </button>
       {% endif %}
-    {% else %}
-      <div class="w-full h-full flex items-center justify-center bg-gray-100 rounded-2xl">
-        <span class="text-gray-400">Sin imagen de banner</span>
-      </div>
-    {% endif %}
+    </div>
+  </div>
+
+  {%- comment -%} Información del producto FUERA del fondo blanco {%- endcomment -%}
+  <div class="pt-3 pb-1">
+    {%- comment -%} Título {%- endcomment -%}
+    <h3 class="text-[13px] font-semibold mb-2 line-clamp-2 min-h-[2.5rem] text-white">
+      <a href="{{ product.url }}" class="hover:opacity-80">
+        {{ product.title }}
+      </a>
+    </h3>
+
+    {%- comment -%} Precio {%- endcomment -%}
+    <div class="flex items-center gap-2">
+      <span class="text-[14px] font-bold text-white">
+        {{ current_variant.price | money }}
+      </span>
+      {% if current_variant.compare_at_price > current_variant.price %}
+        <span class="text-[12px] text-gray-300 line-through">
+          {{ current_variant.compare_at_price | money }}
+        </span>
+      {% endif %}
+    </div>
   </div>
 </div>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
