@@ -399,6 +399,7 @@
     },
     "migraciones_faq_XTWFkL": {
       "type": "migraciones-faq",
+      "disabled": true,
       "custom_css": [
         ".mig-section {margin: 10rem 0rem; background: #1f1f1f;}"
       ],
