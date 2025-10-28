@@ -1,21 +1,130 @@
-{%- comment -%}
-  Snippet simple de product card - mostrar solo imagen
-  Uso: {% render 'discount-product-card', product: product %}
-{%- endcomment -%}
+{ "type": "collection", "name": "Colección", "settings": [ { "type": "select", "id": "pet_type", "label": "Tipo de
+mascota", "options": [ { "value": "dog", "label": "Perro" }, { "value": "cat", "label": "Gato" } ], "default": "dog" },
+{ "type": "text", "id": "collection_name", "label": "Nombre de la categoría", "default": "Dieta BARF" }, { "type":
+"collection", "id": "collection", "label": "Colección" }, { "type": "text", "id": "countdown_date", "label": "⏱️ Fecha y
+hora de fin de cuenta atrás", "placeholder": "2025-12-20 23:00", "info": "Formato: YYYY-MM-DD HH:MM. Se aplicará a todos
+los productos de esta colección" } ] }
 
-<div class="product-card">
-  <a href="{{ product.url }}">
-    {% if product.featured_image %}
-      <img
-        src="{{ product.featured_image | img_url: '600x' }}"
-        alt="{{ product.featured_image.alt | escape }}"
-        class="w-full h-auto object-cover rounded-lg"
-        loading="lazy"
-      >
-    {% else %}
-      <div class="w-full aspect-square bg-gray-200 rounded-lg flex items-center justify-center">
-        <span class="text-gray-400">Sin imagen</span>
-      </div>
-    {% endif %}
-  </a>
-</div>
+<script>
+  // ... (mantén el script existente de tabs)
+
+  // Countdown timers para product cards
+  function initProductCountdowns() {
+    const countdownBadges = document.querySelectorAll('[data-countdown-end]');
+
+    countdownBadges.forEach((badge) => {
+      const endDateStr = badge.getAttribute('data-countdown-end');
+      if (!endDateStr) return;
+
+      const endDate = new Date(endDateStr + ':00').getTime();
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = endDate - now;
+
+        if (distance < 0) {
+          badge.textContent = '00:00:00';
+          return;
+        }
+
+        const totalHours = Math.floor(distance / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        const hoursStr = totalHours.toString().padStart(2, '0');
+        const minutesStr = minutes.toString().padStart(2, '0');
+        const secondsStr = seconds.toString().padStart(2, '0');
+
+        badge.textContent = `${hoursStr}:${minutesStr}:${secondsStr}`;
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    });
+  }
+
+  // Add to cart functionality
+  function initAddToCart() {
+    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+
+    addToCartButtons.forEach((button) => {
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const hasVariants = this.getAttribute('data-has-variants') === 'true';
+
+        if (hasVariants) {
+          // Producto con variantes - el data-action-quickview abrirá el modal del tema
+          // No hacemos nada aquí, el tema se encarga
+          return;
+        }
+
+        // Producto sin variantes - añadir directamente al carrito
+        const variantId = this.getAttribute('data-variant-id');
+        const productAvailable = this.getAttribute('data-product-available') === 'true';
+
+        if (!productAvailable) {
+          console.log('Producto no disponible');
+          return;
+        }
+
+        const formData = {
+          items: [
+            {
+              id: variantId,
+              quantity: 1,
+            },
+          ],
+        };
+
+        // Añadir al carrito
+        fetch(window.Shopify.routes.root + 'cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify(formData),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log('Producto añadido:', data);
+
+            // Disparar evento de actualización
+            document.dispatchEvent(new CustomEvent('cart:refresh'));
+
+            // Abrir el drawer del carrito
+            setTimeout(() => {
+              const cartButton = document.querySelector('[data-drawer-options*="t4s-mini_cart"]');
+              if (cartButton) {
+                cartButton.click();
+              }
+            }, 100);
+          })
+          .catch((error) => {
+            console.error('Error añadiendo al carrito:', error);
+          });
+      });
+    });
+  }
+
+  // Inicializar cuando se carga la página
+  document.addEventListener('DOMContentLoaded', function () {
+    initProductCountdowns();
+    initAddToCart();
+  });
+
+  // Reinicializar cuando cambian de tab (para nuevos productos que aparecen)
+  document.addEventListener('DOMContentLoaded', function () {
+    const categoryButtons = document.querySelectorAll('[data-collection]');
+    categoryButtons.forEach((btn) => {
+      btn.addEventListener('click', function () {
+        setTimeout(() => {
+          initProductCountdowns();
+          initAddToCart();
+        }, 100);
+      });
+    });
+  });
+</script>
