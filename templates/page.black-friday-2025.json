@@ -98,13 +98,30 @@
         "pb_desktop": 28,
         "pt_mobile": 0,
         "pb_mobile": 0,
-        "bg_color": "#fbf5e7"
+        "bg_color": "#1f1f1f"
+      }
+    },
+    "migraciones_banner_responsive_dXzTDp": {
+      "type": "migraciones-banner-responsive",
+      "name": "Banner imagen responsivo",
+      "settings": {
+        "desktop_image": "shopify://shop_images/jpeg-optimizer_Group_1542.jpg",
+        "mobile_image": "shopify://shop_images/jpeg-optimizer_Frame_853.jpg",
+        "image_link": "shopify://collections",
+        "border_radius_desktop": 30,
+        "border_radius_mobile": 12,
+        "pt_desktop": 0,
+        "pb_desktop": 28,
+        "pt_mobile": 0,
+        "pb_mobile": 0,
+        "bg_color": "#1f1f1f"
       }
     }
   },
   "order": [
     "heading",
     "main",
-    "migraciones_banner_responsive_d6hJg8"
+    "migraciones_banner_responsive_d6hJg8",
+    "migraciones_banner_responsive_dXzTDp"
   ]
 }
