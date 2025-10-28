@@ -516,7 +516,7 @@
 
                                     <div class="flex items-center gap-x-2 px-2 py-2 min-h-[80px] bg-white rounded-[8px] cursor-pointer">
                                       <picture class="flex items-center justify-center bg-[#D9D9C8] rounded-md w-1/4">
-                                        {% assign featured = product.featured_image | default: product.images.first %}
+                                        {% assign featured = variant.featured_image | default: product.images.first %}
 
                                         <img
                                           src="{{ featured | img_url: '112x112' }}?q=80"
