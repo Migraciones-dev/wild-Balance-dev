@@ -208,7 +208,11 @@
             "countdown_date": "2025-10-28 23:59",
             "pet_type": "dog",
             "collection_name": "Dieta BARF",
-            "collection": "barf-perros"
+            "collection": "barf-perros",
+            "banner_image": "shopify://shop_images/Link_1.jpg",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": ""
           }
         },
         "collection_mgCBbt": {
@@ -217,7 +221,10 @@
             "countdown_date": "",
             "pet_type": "cat",
             "collection_name": "Comida cocinada",
-            "collection": "comida-cocinada-para-perros"
+            "collection": "comida-cocinada-para-perros",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": ""
           }
         },
         "collection_hDjBCz": {
@@ -226,7 +233,10 @@
             "countdown_date": "",
             "pet_type": "dog",
             "collection_name": "Snacks",
-            "collection": "snacks-y-mordedores-perros"
+            "collection": "snacks-y-mordedores-perros",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": ""
           }
         },
         "collection_9na79a": {
@@ -235,7 +245,10 @@
             "countdown_date": "",
             "pet_type": "dog",
             "collection_name": "Dieta BARF",
-            "collection": "barf-gatos"
+            "collection": "barf-gatos",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": ""
           }
         },
         "collection_DVXpBQ": {
@@ -244,7 +257,10 @@
             "countdown_date": "",
             "pet_type": "cat",
             "collection_name": "Dieta BARF",
-            "collection": "latas-gatos"
+            "collection": "latas-gatos",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": ""
           }
         }
       },
