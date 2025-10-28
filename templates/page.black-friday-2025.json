@@ -198,12 +198,60 @@
         "pb_mobile": 20,
         "bg_color": "#1f1f1f"
       }
+    },
+    "migraciones_selector_de_colecciones_YEcF6e": {
+      "type": "migraciones-selector-de-colecciones",
+      "blocks": {
+        "collection_wLtpT3": {
+          "type": "collection",
+          "settings": {
+            "pet_type": "dog",
+            "collection_name": "Dieta BARF",
+            "collection": "best-sellers-comida-natural-perro"
+          }
+        },
+        "collection_pB836N": {
+          "type": "collection",
+          "settings": {
+            "pet_type": "dog",
+            "collection_name": "Comida Cocinada",
+            "collection": ""
+          }
+        },
+        "collection_mgCBbt": {
+          "type": "collection",
+          "settings": {
+            "pet_type": "cat",
+            "collection_name": "Dieta BARF",
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_wLtpT3",
+        "collection_pB836N",
+        "collection_mgCBbt"
+      ],
+      "name": "Descuentos Especiales",
+      "settings": {
+        "heading_before": "Descuentos",
+        "heading_highlight": "especiales",
+        "heading_after": "",
+        "title_color": "#000000",
+        "accent_color": "#004622",
+        "bg_color": "#FBF5E7",
+        "pt_desktop": 80,
+        "pb_desktop": 80,
+        "pt_mobile": 40,
+        "pb_mobile": 40
+      }
     }
   },
   "order": [
     "heading",
     "main",
     "migraciones_banner_responsive_d6hJg8",
-    "migraciones_banners_cuenta_atras_Ph34WB"
+    "migraciones_banners_cuenta_atras_Ph34WB",
+    "migraciones_selector_de_colecciones_YEcF6e"
   ]
 }
