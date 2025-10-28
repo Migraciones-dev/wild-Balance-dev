@@ -8,12 +8,12 @@
   "
 >
   <style>
-    @media (min-width: 1024px) {
-      #section-{{ section.id }} {
-        padding-top: {{ section.settings.pt_desktop }}px !important;
-        padding-bottom: {{ section.settings.pb_desktop }}px !important;
-      }
-    }
+        @media (min-width: 1024px) {
+          #section-{{ section.id }} {
+            padding-top: {{ section.settings.pt_desktop }}px !important;
+            padding-bottom: {{ section.settings.pb_desktop }}px !important;
+          }
+        }
 
     /* Estilos para botones de tabs */
     .pet-tab-button {
@@ -35,19 +35,12 @@
       border-color: #5CCC84;
     }
 
-    .pet-tab-button.active svg {
-      fill: white;
-    }
-
     .pet-tab-button:not(.active) {
       background-color: transparent;
       color: #5CCC84;
       border-color: #5CCC84;
       border-width: 1px;
-    }
-
-    .pet-tab-button:not(.active) svg {
-      fill: #5CCC84;
+      border: 1px solid;
     }
 
     /* Estilos para categorías */
@@ -57,7 +50,6 @@
       text-align: center;
       justify-content: center;
       font-size: 11px;
-      font-weight: 600;
     }
 
     @media (min-width: 1024px) {
@@ -67,54 +59,56 @@
     }
 
     .category-button.active {
-      background-color: #5CCC84;
+      background-color: {{ section.settings.accent_color }};
       color: white;
-      border-color: #5CCC84;
+      border-color: {{ section.settings.accent_color }};
     }
 
     .category-button:not(.active) {
       background-color: transparent;
       color: #5CCC84;
-      border-color: #5CCC84;
+      border-color: #5CCC84!important;
       border-width: 1px;
+      border: 1px solid;
     }
 
-    /* Carrusel horizontal en móvil */
-    .categories-scroll::-webkit-scrollbar {
-      display: none;
-    }
 
-    .categories-scroll {
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
+        /* Carrusel horizontal en móvil */
+        .categories-scroll::-webkit-scrollbar {
+          display: none;
+        }
 
-    /* Grid de productos */
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
+        .categories-scroll {
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+        }
 
-    @media (min-width: 640px) {
-      .products-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
+        /* Grid de productos */
+        .products-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 16px;
+        }
 
-    @media (min-width: 1024px) {
-      .products-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 24px;
-      }
-    }
+        @media (min-width: 640px) {
+          .products-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
 
-    /* Ancho máximo del título en desktop */
-    @media (min-width: 1024px) {
-      .title-container {
-        max-width: 400px;
-      }
-    }
+        @media (min-width: 1024px) {
+          .products-grid {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+          }
+        }
+
+        /* Ancho máximo del título en desktop */
+        @media (min-width: 1024px) {
+          .title-container {
+            max-width: 400px;
+          }
+        }
   </style>
 
   <div class="max-w-[1600px] mx-auto px-6 lg:px-10">
