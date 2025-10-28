@@ -84,10 +84,27 @@
         "mg_mb": ",,30px,",
         "pd_mb": ""
       }
+    },
+    "migraciones_banner_responsive_d6hJg8": {
+      "type": "migraciones-banner-responsive",
+      "name": "Banner imagen responsivo",
+      "settings": {
+        "desktop_image": "shopify://shop_images/jpeg-optimizer_BANNER_1x1_64ae2652-4010-49cf-b836-6e5108f97db2.jpg",
+        "mobile_image": "shopify://shop_images/jpeg-optimizer_BANNER_1x1_1.jpg",
+        "image_link": "shopify://collections",
+        "border_radius_desktop": 30,
+        "border_radius_mobile": 12,
+        "mt_desktop": 0,
+        "mb_desktop": 0,
+        "mt_mobile": 0,
+        "mb_mobile": 0,
+        "bg_color": "#FBF5E7"
+      }
     }
   },
   "order": [
     "heading",
-    "main"
+    "main",
+    "migraciones_banner_responsive_d6hJg8"
   ]
 }
