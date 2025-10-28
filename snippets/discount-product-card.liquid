@@ -9,102 +9,103 @@
   assign pid = product.id
 -%}
 
-<div class="discount-product-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow relative">
-  {%- comment -%} Cuenta atrás {%- endcomment -%}
-  {% if countdown_date and countdown_date != blank %}
-    <div
-      class="countdown-badge absolute top-3 right-3 z-10 bg-[#F0807B] text-white px-4 py-2 rounded-full font-bold text-sm"
-      data-countdown-end="{{ countdown_date }}"
-    >
-      00:00:00
-    </div>
-  {% endif %}
+<div class="discount-product-card">
+  {%- comment -%} Card con fondo blanco y bordes redondeados {%- endcomment -%}
+  <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow relative">
+    {%- comment -%} Cuenta atrás {%- endcomment -%}
+    {% if countdown_date and countdown_date != blank %}
+      <div
+        class="countdown-badge absolute top-3 right-3 z-10 bg-[#F0807B] text-white px-4 py-2 rounded-full font-bold text-sm"
+        data-countdown-end="{{ countdown_date }}"
+      >
+        00:00:00
+      </div>
+    {% endif %}
 
-  {%- comment -%} Badge de descuento {%- endcomment -%}
-  {% if current_variant.compare_at_price > current_variant.price %}
-    {% assign discount = current_variant.compare_at_price
-      | minus: current_variant.price
-      | times: 100
-      | divided_by: current_variant.compare_at_price
-      | round
-    %}
-    {% comment %}
+    {%- comment -%} Badge de descuento {%- endcomment -%}
+    {% if current_variant.compare_at_price > current_variant.price %}
+      {% assign discount = current_variant.compare_at_price
+        | minus: current_variant.price
+        | times: 100
+        | divided_by: current_variant.compare_at_price
+        | round
+      %}
       <div class="absolute top-3 left-3 z-10 bg-[#F0807B] text-white px-3 py-1 rounded-full font-bold text-xs">
         OFERTA
       </div>
-    {% endcomment %}
-  {% endif %}
-
-  {%- comment -%} Imagen del producto {%- endcomment -%}
-  <div class="relative aspect-square bg-gray-100">
-    {% if product.featured_image %}
-      <a href="{{ product.url }}">
-        <img
-          src="{{ product.featured_image | img_url: '600x' }}"
-          alt="{{ product.featured_image.alt | escape }}"
-          class="w-full h-full object-cover"
-          loading="lazy"
-        >
-      </a>
-    {% else %}
-      <div class="w-full h-full flex items-center justify-center text-gray-400">Sin imagen</div>
     {% endif %}
+
+    {%- comment -%} Imagen del producto con botón dentro {%- endcomment -%}
+    <div class="relative aspect-square bg-gray-100">
+      {% if product.featured_image %}
+        <a href="{{ product.url }}">
+          <img
+            src="{{ product.featured_image | img_url: '600x' }}"
+            alt="{{ product.featured_image.alt | escape }}"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          >
+        </a>
+      {% else %}
+        <div class="w-full h-full flex items-center justify-center text-gray-400">Sin imagen</div>
+      {% endif %}
+
+      {%- comment -%} Botón añadir al carrito dentro de la imagen {%- endcomment -%}
+      {% if product.available %}
+        {% if isDefault %}
+          {%- comment -%} Producto sin variantes - añadir directamente {%- endcomment -%}
+          <button
+            class="add-to-cart-btn absolute bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] bg-[#FFC107] hover:bg-[#FFB300] text-black font-bold py-3 px-4 rounded-full transition-colors"
+            data-variant-id="{{ current_variant.id }}"
+            data-product-id="{{ pid }}"
+            data-product-available="true"
+            data-has-variants="false"
+          >
+            Añadir al carrito
+          </button>
+        {% else %}
+          {%- comment -%} Producto con variantes - abrir quick view {%- endcomment -%}
+          <button
+            class="add-to-cart-btn absolute bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] bg-[#FFC107] hover:bg-[#FFB300] text-black font-bold py-3 px-4 rounded-full transition-colors"
+            data-product-id="{{ pid }}"
+            data-product-url="{{ product.url }}"
+            data-has-variants="true"
+            data-action-quickview
+          >
+            Añadir al carrito
+          </button>
+        {% endif %}
+      {% else %}
+        <button
+          class="absolute bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] bg-gray-300 text-gray-600 font-bold py-3 px-4 rounded-full cursor-not-allowed"
+          disabled
+        >
+          Agotado
+        </button>
+      {% endif %}
+    </div>
   </div>
 
-  {%- comment -%} Información del producto {%- endcomment -%}
-  <div class="p-4">
+  {%- comment -%} Información del producto FUERA del fondo blanco {%- endcomment -%}
+  <div class="pt-3 pb-1">
     {%- comment -%} Título {%- endcomment -%}
-    <h3 class="text-sm lg:text-base font-semibold mb-2 line-clamp-2 min-h-[2.5rem]">
-      <a href="{{ product.url }}" class="hover:text-[#004622]">
+    <h3 class="text-sm lg:text-base font-semibold mb-2 line-clamp-2 min-h-[2.5rem] text-white">
+      <a href="{{ product.url }}" class="hover:opacity-80">
         {{ product.title }}
       </a>
     </h3>
 
     {%- comment -%} Precio {%- endcomment -%}
-    <div class="flex items-center gap-2 mb-4">
-      <span class="text-lg lg:text-xl font-bold text-[#004622]">
+    <div class="flex items-center gap-2">
+      <span class="text-lg lg:text-xl font-bold text-white">
         {{ current_variant.price | money }}
       </span>
       {% if current_variant.compare_at_price > current_variant.price %}
-        <span class="text-sm text-gray-400 line-through">
+        <span class="text-sm text-gray-300 line-through">
           {{ current_variant.compare_at_price | money }}
         </span>
       {% endif %}
     </div>
-
-    {%- comment -%} Botón añadir al carrito {%- endcomment -%}
-    {% if product.available %}
-      {% if isDefault %}
-        {%- comment -%} Producto sin variantes - añadir directamente {%- endcomment -%}
-        <button
-          class="add-to-cart-btn w-full bg-[#FFC107] hover:bg-[#FFB300] text-black font-bold py-3 px-4 rounded-full transition-colors"
-          data-variant-id="{{ current_variant.id }}"
-          data-product-id="{{ pid }}"
-          data-product-available="true"
-          data-has-variants="false"
-        >
-          Añadir al carrito
-        </button>
-      {% else %}
-        {%- comment -%} Producto con variantes - abrir quick view {%- endcomment -%}
-        <button
-          class="add-to-cart-btn w-full bg-[#FFC107] hover:bg-[#FFB300] text-black font-bold py-3 px-4 rounded-full transition-colors"
-          data-product-id="{{ pid }}"
-          data-product-url="{{ product.url }}"
-          data-has-variants="true"
-          data-action-quickview
-        >
-          Añadir al carrito
-        </button>
-      {% endif %}
-    {% else %}
-      <button
-        class="w-full bg-gray-300 text-gray-600 font-bold py-3 px-4 rounded-full cursor-not-allowed"
-        disabled
-      >
-        Agotado
-      </button>
-    {% endif %}
   </div>
 </div>
 
