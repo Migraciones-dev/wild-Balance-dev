@@ -45,33 +45,83 @@
   <div class="max-w-[1600px] mx-auto px-6 lg:px-10">
     {% for block in section.blocks %}
       {% if block.type == 'banner' %}
-        <div id="banner-{{ block.id }}" {{ block.shopify_attributes }}>
-          {%- if block.settings.desktop_image or block.settings.mobile_image -%}
-            {%- comment -%} Imagen escritorio {%- endcomment -%}
-            {% if block.settings.desktop_image %}
-              {% if block.settings.image_link != blank %}<a href="{{ block.settings.image_link }}">{% endif %}
-              <img
-                src="{{ block.settings.desktop_image | img_url: '2048x' }}"
-                class="banner-image hidden md:block w-full h-auto object-cover"
-                alt="{{ block.settings.desktop_image.alt | escape }}"
-                loading="lazy"
-              >
-              {% if block.settings.image_link != blank %}</a>{% endif %}
-            {% endif %}
+        {%- comment -%} Obtener la hora actual del servidor Shopify {%- endcomment -%}
+        {%- assign current_time = 'now' | date: '%s' | plus: 0 -%}
 
-            {%- comment -%} Imagen móvil {%- endcomment -%}
-            {% if block.settings.mobile_image %}
-              {% if block.settings.image_link != blank %}<a href="{{ block.settings.image_link }}">{% endif %}
-              <img
-                src="{{ block.settings.mobile_image | img_url: '1024x' }}"
-                class="banner-image block md:hidden w-full h-auto object-cover"
-                alt="{{ block.settings.mobile_image.alt | escape }}"
-                loading="lazy"
-              >
-              {% if block.settings.image_link != blank %}</a>{% endif %}
-            {% endif %}
+        {%- comment -%} Procesar fechas ingresadas (formato: 2025-11-29 10:30) {%- endcomment -%}
+        {%- assign show_banner = false -%}
+
+        {%- if block.settings.enable_schedule == false -%}
+          {%- comment -%} Si no está programado, siempre mostrar {%- endcomment -%}
+          {%- assign show_banner = true -%}
+        {%- else -%}
+          {%- comment -%} Verificar si hay fechas configuradas {%- endcomment -%}
+          {%- assign has_start = false -%}
+          {%- assign has_end = false -%}
+
+          {%- if block.settings.start_date != blank -%}
+            {%- assign has_start = true -%}
+            {%- comment -%} Convertir fecha de inicio a timestamp (formato: 2025-11-29 10:30) {%- endcomment -%}
+            {%- assign start_time = block.settings.start_date | append: ':00' | date: '%s' | plus: 0 -%}
           {%- endif -%}
-        </div>
+
+          {%- if block.settings.end_date != blank -%}
+            {%- assign has_end = true -%}
+            {%- comment -%} Convertir fecha de fin a timestamp (formato: 2025-12-20 23:00) {%- endcomment -%}
+            {%- assign end_time = block.settings.end_date | append: ':00' | date: '%s' | plus: 0 -%}
+          {%- endif -%}
+
+          {%- comment -%} Lógica de visualización basada en fechas {%- endcomment -%}
+          {%- if has_start and has_end -%}
+            {%- comment -%} Ambas fechas definidas: verificar que esté en el rango {%- endcomment -%}
+            {%- if current_time >= start_time and current_time <= end_time -%}
+              {%- assign show_banner = true -%}
+            {%- endif -%}
+          {%- elsif has_start and has_end == false -%}
+            {%- comment -%} Solo inicio: mostrar desde la fecha de inicio en adelante {%- endcomment -%}
+            {%- if current_time >= start_time -%}
+              {%- assign show_banner = true -%}
+            {%- endif -%}
+          {%- elsif has_start == false and has_end -%}
+            {%- comment -%} Solo fin: mostrar hasta la fecha de fin {%- endcomment -%}
+            {%- if current_time <= end_time -%}
+              {%- assign show_banner = true -%}
+            {%- endif -%}
+          {%- else -%}
+            {%- comment -%} Sin fechas: mostrar siempre {%- endcomment -%}
+            {%- assign show_banner = true -%}
+          {%- endif -%}
+        {%- endif -%}
+
+        {%- if show_banner -%}
+          <div id="banner-{{ block.id }}" {{ block.shopify_attributes }}>
+            {%- if block.settings.desktop_image or block.settings.mobile_image -%}
+              {%- comment -%} Imagen escritorio {%- endcomment -%}
+              {% if block.settings.desktop_image %}
+                {% if block.settings.image_link != blank %}<a href="{{ block.settings.image_link }}">{% endif %}
+                <img
+                  src="{{ block.settings.desktop_image | img_url: '2048x' }}"
+                  class="banner-image hidden md:block w-full h-auto object-cover"
+                  alt="{{ block.settings.desktop_image.alt | escape }}"
+                  loading="lazy"
+                >
+                {% if block.settings.image_link != blank %}</a>{% endif %}
+              {% endif %}
+
+              {%- comment -%} Imagen móvil {%- endcomment -%}
+              {% if block.settings.mobile_image %}
+                {% if block.settings.image_link != blank %}<a href="{{ block.settings.image_link }}">{% endif %}
+                <img
+                  src="{{ block.settings.mobile_image | img_url: '1024x' }}"
+                  class="banner-image block md:hidden w-full h-auto object-cover"
+                  alt="{{ block.settings.mobile_image.alt | escape }}"
+                  loading="lazy"
+                >
+                {% if block.settings.image_link != blank %}</a>{% endif %}
+              {% endif %}
+            {%- endif -%}
+          </div>
+        {%- endif -%}
       {% endif %}
     {% endfor %}
   </div>
@@ -81,6 +131,10 @@
 {
   "name": "Banners responsivos",
   "settings": [
+    {
+      "type": "paragraph",
+      "content": "⚠️ IMPORTANTE: Asegúrate de que la zona horaria de tu tienda esté configurada en 'Madrid' o '(GMT+01:00) Europe/Madrid' en Configuración > General > Estándares y formatos"
+    },
     {
       "type": "header",
       "content": "Espaciado de sección - Desktop"
@@ -163,6 +217,31 @@
           "type": "url",
           "id": "image_link",
           "label": "Enlace de la imagen"
+        },
+        {
+          "type": "header",
+          "content": "⏰ Programación de visualización (Hora de España)"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_schedule",
+          "label": "Activar programación de fechas",
+          "default": false,
+          "info": "Activa para programar cuándo se mostrará este banner"
+        },
+        {
+          "type": "text",
+          "id": "start_date",
+          "label": "📅 Fecha y hora de INICIO (España)",
+          "placeholder": "2025-11-29 10:30",
+          "info": "Formato: YYYY-MM-DD HH:MM (ejemplo: 2025-11-29 10:30). Hora de España (CET/CEST). Dejar vacío = desde siempre"
+        },
+        {
+          "type": "text",
+          "id": "end_date",
+          "label": "📅 Fecha y hora de FIN (España)",
+          "placeholder": "2025-12-20 23:00",
+          "info": "Formato: YYYY-MM-DD HH:MM (ejemplo: 2025-12-20 23:00). Hora de España (CET/CEST). Dejar vacío = sin límite"
         },
         {
           "type": "header",
