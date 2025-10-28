@@ -269,6 +269,7 @@
     productBanners.forEach((banner) => {
       banner.addEventListener('click', function (e) {
         e.preventDefault();
+        e.stopPropagation();
 
         const variantId = this.getAttribute('data-variant-id');
         const productAvailable = this.getAttribute('data-product-available') === 'true';
@@ -278,45 +279,61 @@
           return;
         }
 
-        // Usar el sistema de carrito del tema
-        if (typeof t4s !== 'undefined' && t4s.Cart) {
-          const formData = {
-            items: [
-              {
-                id: variantId,
-                quantity: 1,
-              },
-            ],
-          };
-
-          fetch('/cart/add.js', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
+        // Crear FormData como lo hace el tema
+        const formData = {
+          items: [
+            {
+              id: variantId,
+              quantity: 1,
             },
-            body: JSON.stringify(formData),
+          ],
+        };
+
+        // Usar fetch para añadir al carrito (método estándar de Shopify)
+        fetch(window.Shopify.routes.root + 'cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify(formData),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log('Producto añadido:', data);
+
+            // Refrescar el carrito del tema
+            fetch(window.Shopify.routes.root + 'cart.js')
+              .then((res) => res.json())
+              .then((cart) => {
+                // Actualizar contador del carrito si existe
+                const cartCounts = document.querySelectorAll('[data-cart-count], .cart-count, #CartCount');
+                cartCounts.forEach((count) => {
+                  count.textContent = cart.item_count;
+                });
+
+                // Disparar evento personalizado que el tema pueda escuchar
+                document.dispatchEvent(
+                  new CustomEvent('cart:updated', {
+                    detail: { cart: cart, item: data },
+                  })
+                );
+
+                // Intentar abrir el drawer del carrito si el tema lo tiene
+                const cartDrawer = document.querySelector('[data-cart-drawer]');
+                if (cartDrawer) {
+                  cartDrawer.classList.add('is-open', 'active');
+                }
+
+                // Alternativa: si el tema usa otro método
+                if (typeof theme !== 'undefined' && theme.Cart && typeof theme.Cart.openDrawer === 'function') {
+                  theme.Cart.openDrawer();
+                }
+              });
           })
-            .then((response) => response.json())
-            .then((data) => {
-              // Actualizar el carrito del tema
-              if (typeof t4s.Cart !== 'undefined' && typeof t4s.Cart.updateCart === 'function') {
-                t4s.Cart.updateCart();
-              }
-              // Abrir el drawer del carrito si existe
-              if (typeof t4s.Cart !== 'undefined' && typeof t4s.Cart.openCartDrawer === 'function') {
-                t4s.Cart.openCartDrawer();
-              }
-              // Disparar evento personalizado para que el tema lo maneje
-              document.dispatchEvent(
-                new CustomEvent('cart:item-added', {
-                  detail: { items: [data] },
-                })
-              );
-            })
-            .catch((error) => {
-              console.error('Error:', error);
-            });
-        }
+          .catch((error) => {
+            console.error('Error añadiendo al carrito:', error);
+          });
       });
     });
   });
