@@ -263,7 +263,6 @@
         </div>
 
         {%- comment -%} Grid de productos {%- endcomment -%}
-        {%- comment -%} Grid de productos {%- endcomment -%}
         <div id="products-container">
           {% for block in section.blocks %}
             {% if block.type == 'collection' %}
@@ -281,8 +280,7 @@
                     {% endif %}
 
                     {% for product in products_array limit: 8 %}
-                      {%- comment -%} En móvil: después del producto 1 (index 1) {%- endcomment -%}
-                      {%- comment -%} En desktop: después del producto 7 (index 7) {%- endcomment -%}
+                      {%- comment -%} En móvil: después del producto 1 (index 1) - posiciones 2 y 3 {%- endcomment -%}
                       {% if has_banner and forloop.index == 2 %}
                         <div class="banner-wide lg:hidden">
                           {% render 'discount-banner-card',
@@ -294,7 +292,8 @@
                         </div>
                       {% endif %}
 
-                      {% if has_banner and forloop.index == 8 %}
+                      {%- comment -%} En desktop: después del producto 6 (index 6) - posiciones 7 y 8 {%- endcomment -%}
+                      {% if has_banner and forloop.index == 7 %}
                         <div class="banner-wide hidden lg:block">
                           {% render 'discount-banner-card',
                             banner_image: block.settings.banner_image,
