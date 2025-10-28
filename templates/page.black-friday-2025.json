@@ -205,6 +205,7 @@
         "collection_wLtpT3": {
           "type": "collection",
           "settings": {
+            "countdown_date": "2025-10-28 23:59",
             "pet_type": "dog",
             "collection_name": "Dieta BARF",
             "collection": "barf-perros"
@@ -213,6 +214,7 @@
         "collection_mgCBbt": {
           "type": "collection",
           "settings": {
+            "countdown_date": "",
             "pet_type": "cat",
             "collection_name": "Comida cocinada",
             "collection": "comida-cocinada-para-perros"
@@ -221,6 +223,7 @@
         "collection_hDjBCz": {
           "type": "collection",
           "settings": {
+            "countdown_date": "",
             "pet_type": "dog",
             "collection_name": "Snacks",
             "collection": "snacks-y-mordedores-perros"
@@ -229,6 +232,7 @@
         "collection_9na79a": {
           "type": "collection",
           "settings": {
+            "countdown_date": "",
             "pet_type": "dog",
             "collection_name": "Dieta BARF",
             "collection": "barf-gatos"
@@ -237,6 +241,7 @@
         "collection_DVXpBQ": {
           "type": "collection",
           "settings": {
+            "countdown_date": "",
             "pet_type": "cat",
             "collection_name": "Dieta BARF",
             "collection": "latas-gatos"
