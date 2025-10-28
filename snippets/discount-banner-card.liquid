@@ -33,7 +33,8 @@
         {% if banner_product.available %}
           {% if isDefault %}
             <button
-              class="add-to-cart-btn absolute bottom-4 left-1/2 -translate-x-1/2 px-6 bg-[#FFC107] text-[#004622] font-bold py-2.5 rounded-full transition-colors text-[10px] lg:text-[12px] whitespace-nowrap z-10"
+              class="add-to-cart-btn absolute bottom-4 left-1/2 -translate-x-1/2 px-6 bg-[#FFC107] text-[#004622] font-bold py-2.5 rounded-full transition-colors text-[10px] lg:text-[12px] whitespace-nowrap cursor-pointer"
+              style="z-index: 20;"
               data-variant-id="{{ current_variant.id }}"
               data-product-id="{{ pid }}"
               data-product-available="true"
@@ -43,7 +44,8 @@
             </button>
           {% else %}
             <button
-              class="add-to-cart-btn absolute bottom-4 left-1/2 -translate-x-1/2 px-6 bg-[#FFC107] text-[#004622] font-bold py-2.5 rounded-full transition-colors text-[10px] lg:text-[12px] whitespace-nowrap z-10"
+              class="add-to-cart-btn absolute bottom-4 left-1/2 -translate-x-1/2 px-6 bg-[#FFC107] text-[#004622] font-bold py-2.5 rounded-full transition-colors text-[10px] lg:text-[12px] whitespace-nowrap cursor-pointer"
+              style="z-index: 20;"
               data-product-id="{{ pid }}"
               data-product-url="{{ banner_product.url }}"
               data-has-variants="true"
@@ -54,7 +56,8 @@
           {% endif %}
         {% else %}
           <button
-            class="absolute bottom-4 left-1/2 -translate-x-1/2 px-6 bg-gray-300 text-gray-600 font-bold py-2.5 rounded-full cursor-not-allowed text-[10px] lg:text-[12px] whitespace-nowrap z-10"
+            class="absolute bottom-4 left-1/2 -translate-x-1/2 px-6 bg-gray-300 text-gray-600 font-bold py-2.5 rounded-full cursor-not-allowed text-[10px] lg:text-[12px] whitespace-nowrap"
+            style="z-index: 20;"
             disabled
           >
             Agotado
