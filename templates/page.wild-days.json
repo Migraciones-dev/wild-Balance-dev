@@ -187,7 +187,7 @@
         "heading_before": "Ofertas",
         "heading_highlight": "flash",
         "heading_after": "",
-        "title_color": "#ffffff",
+        "title_color": "#004623",
         "title_pt_desktop": 0,
         "title_pb_desktop": 48,
         "title_pt_mobile": 0,
@@ -196,7 +196,7 @@
         "pb_desktop": 40,
         "pt_mobile": 20,
         "pb_mobile": 20,
-        "bg_color": "#1f1f1f"
+        "bg_color": "#f4f0e2"
       }
     },
     "migraciones_cuenta_atras_UCakWN": {
@@ -210,7 +210,7 @@
         "label_hours": "horas",
         "label_minutes": "minutos",
         "label_seconds": "segundos",
-        "bg_color": "#FBF5E7",
+        "bg_color": "#f4f0e2",
         "title_color": "#004622",
         "number_color": "#004622",
         "label_color": "#004622",
