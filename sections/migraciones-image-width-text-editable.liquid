@@ -40,13 +40,12 @@
   <div class="flex items-center justify-center gap-[29px] mx-auto px-6 lg:px-10">
     <div class="flex items-center gap-[66px] mx-auto flex-col lg:flex-row max-w-[1600px] lg:gap-[66px] gap-12">
       <!-- Imagen -->
-      <!-- Imagen -->
       {% if section.settings.image != blank %}
         <div class="relative w-full lg:w-2/5 rounded-[10px] overflow-hidden {% if section.settings.image_position == 'right' %}lg:order-2{% endif %}">
-          <!-- Imagen desktop (ajusta automáticamente su altura) -->
+          <!-- Imagen desktop (background) -->
           <div
-            class="hidden lg:flex w-full bg-cover bg-center bg-no-repeat items-center justify-center rounded-[10px]"
-            style="background-image: url('{{ section.settings.image | img_url: '800x' }}'); aspect-ratio: 3/4;"
+            class="hidden lg:block w-full h-[539px] bg-cover bg-center rounded-[10px]"
+            style="background-image: url('{{ section.settings.image | img_url: '800x' }}');"
           ></div>
 
           <!-- Imagen móvil -->
