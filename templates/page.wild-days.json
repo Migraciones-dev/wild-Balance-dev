@@ -199,6 +199,29 @@
         "bg_color": "#1f1f1f"
       }
     },
+    "migraciones_cuenta_atras_UCakWN": {
+      "type": "migraciones-cuenta-atras",
+      "name": "Ofertas Flash - Countdown",
+      "settings": {
+        "heading_before": "Ofertas",
+        "heading_highlight": "flash",
+        "heading_after": "",
+        "countdown_date": "2025-12-20 23:00",
+        "label_hours": "horas",
+        "label_minutes": "minutos",
+        "label_seconds": "segundos",
+        "bg_color": "#FBF5E7",
+        "title_color": "#004622",
+        "number_color": "#004622",
+        "label_color": "#004622",
+        "pt_desktop": 80,
+        "pb_desktop": 80,
+        "countdown_mt_desktop": 48,
+        "pt_mobile": 40,
+        "pb_mobile": 40,
+        "countdown_mt_mobile": 32
+      }
+    },
     "migraciones_selector_de_colecciones_YEcF6e": {
       "type": "migraciones-selector-de-colecciones",
       "blocks": {
@@ -482,6 +505,7 @@
     "main",
     "migraciones_banner_responsive_d6hJg8",
     "migraciones_banners_cuenta_atras_Ph34WB",
+    "migraciones_cuenta_atras_UCakWN",
     "migraciones_selector_de_colecciones_YEcF6e",
     "migraciones_image_width_text_editable_aeixFi",
     "shipping_7KqxwA",
