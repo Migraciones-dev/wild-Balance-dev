@@ -1,6 +1,6 @@
 {%- comment -%}
   Snippet: discount-product-card.liquid
-  Uso: {% render 'discount-product-card', product: product, countdown_date: block.settings.countdown_date, section_id: section.id %}
+  Uso: {% render 'discount-product-card', product: product, countdown_date: block.settings.countdown_date, section_id: section.id, countdown_bg_color: section.settings.countdown_bg_color, countdown_text_color: section.settings.countdown_text_color %}
 {%- endcomment -%}
 
 {%- liquid
@@ -15,8 +15,9 @@
     {%- comment -%} Cuenta atrás {%- endcomment -%}
     {% if countdown_date and countdown_date != blank %}
       <div
-        class="countdown-badge absolute top-3 right-3 z-10 bg-[#F0807B] text-white px-4 py-2 rounded-full font-bold text-[8px] lg:text-[11px]"
+        class="countdown-badge absolute top-3 right-3 z-10 px-4 py-2 rounded-full font-bold text-[8px] lg:text-[11px]"
         data-countdown-end="{{ countdown_date }}"
+        style="background-color: {{ countdown_bg_color | default: '#F0807B' }}; color: {{ countdown_text_color | default: '#ffffff' }};"
       >
         00:00:00
       </div>
