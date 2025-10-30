@@ -1,0 +1,324 @@
+<section
+  id="section-{{ section.id }}"
+  class="flex items-center gap-[29px] max-w-[1600px] mx-auto px-6 lg:px-10"
+  style="
+    background-color: {{ section.settings.bg_color }};
+    padding-top: {{ section.settings.pt_mobile }}px;
+    padding-bottom: {{ section.settings.pb_mobile }}px;
+  "
+>
+  <style>
+    @media (min-width: 1024px) {
+      #section-{{ section.id }} {
+        padding-top: {{ section.settings.pt_desktop }}px !important;
+        padding-bottom: {{ section.settings.pb_desktop }}px !important;
+      }
+    }
+
+    #section-{{ section.id }} h2 {
+      color: {{ section.settings.title_color }};
+    }
+
+    #section-{{ section.id }} .faq-button {
+      background: {{ section.settings.button_bg_color }};
+      color: {{ section.settings.button_text_color }};
+    }
+
+    #section-{{ section.id }} .faq-item {
+      border: 1px solid {{ section.settings.border_color }};
+      background: {{ section.settings.item_bg_color }};
+    }
+
+    #section-{{ section.id }} .faq-answer {
+      color: {{ section.settings.answer_text_color }};
+    }
+
+    #section-{{ section.id }} .faq-icon {
+      color: {{ section.settings.button_text_color }};
+    }
+  </style>
+
+  <!-- Imagen fija -->
+  {% if section.settings.show_image and section.settings.sidebar_image != blank %}
+    <img
+      class="lg:w-2/5 h-full rounded-[14px] hidden lg:block object-cover"
+      alt="{{ section.settings.sidebar_image.alt | escape }}"
+      src="{{ section.settings.sidebar_image | img_url: '800x' }}"
+      loading="lazy"
+    >
+  {% endif %}
+
+  <div class="flex flex-col w-full {% if section.settings.show_image %}lg:w-3/5{% endif %} items-start gap-[47px]">
+    <!-- Cabecera -->
+    <div class="relative w-full">
+      <div class="w-full flex flex-col gap-5">
+        {% if section.settings.brand_logo != blank %}
+          <div class="flex flex-col w-[242px] items-center gap-2.5 mx-auto lg:mx-0">
+            <img
+              class="h-[27px] sm:h-[37px] lg:h-[47px]"
+              alt="{{ section.settings.brand_logo.alt | escape }}"
+              src="{{ section.settings.brand_logo | img_url: '300x' }}"
+              loading="lazy"
+            >
+          </div>
+        {% endif %}
+
+        <h2 class="[font-family:'Barlow',Helvetica] font-extrabold text-[30px] sm:text-[38px] md:text-[44px] lg:text-[57px] xl:text-[64px] text-center lg:text-left leading-[1]">
+          {{ section.settings.heading_before }}
+          {% if section.settings.heading_highlight != blank %}
+            <span class="highlight">{{ section.settings.heading_highlight }}</span>
+          {% endif %}
+          {{ section.settings.heading_after }}
+        </h2>
+      </div>
+    </div>
+
+    <!-- FAQs -->
+    <div class="w-full" data-orientation="vertical">
+      {% for block in section.blocks %}
+        {% if block.type == 'faq' %}
+          <div
+            class="faq-item border-b mb-[14px] rounded-[10px] overflow-hidden"
+            data-state="closed"
+            {{ block.shopify_attributes }}
+          >
+            <h3 class="flex">
+              <button
+                type="button"
+                aria-controls="faq-{{ block.id }}"
+                aria-expanded="false"
+                class="faq-button flex flex-1 items-center justify-between py-6 px-8 font-medium transition-all [&[aria-expanded=true]>svg]:rotate-180 text-[14px] sm:text-[16px] lg:text-[18px] text-left"
+              >
+                {{ block.settings.question }}
+                <svg
+                  class="faq-icon h-7 w-7 flex-shrink-0 ml-4 transition-transform"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
+                </svg>
+              </button>
+            </h3>
+            <div
+              id="faq-{{ block.id }}"
+              role="region"
+              hidden
+              class="faq-answer px-8 pb-6 text-sm sm:text-base"
+            >
+              {{ block.settings.answer }}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('#section-{{ section.id }} button[aria-controls]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const panel = document.getElementById(btn.getAttribute('aria-controls'));
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+        // Invertir estado
+        btn.setAttribute('aria-expanded', String(!isOpen));
+        panel.hidden = isOpen;
+        panel.parentElement.setAttribute('data-state', isOpen ? 'closed' : 'open');
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "FAQ Personalizable",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Imagen lateral"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "label": "Mostrar imagen lateral",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "sidebar_image",
+      "label": "Imagen lateral (solo desktop)"
+    },
+    {
+      "type": "header",
+      "content": "Encabezado"
+    },
+    {
+      "type": "image_picker",
+      "id": "brand_logo",
+      "label": "Logo de marca (opcional)"
+    },
+    {
+      "type": "text",
+      "id": "heading_before",
+      "label": "Título (antes del resaltado)",
+      "default": "Te ayudamos"
+    },
+    {
+      "type": "text",
+      "id": "heading_highlight",
+      "label": "Texto resaltado",
+      "default": "en todo"
+    },
+    {
+      "type": "text",
+      "id": "heading_after",
+      "label": "Título (después del resaltado)"
+    },
+    {
+      "type": "header",
+      "content": "Colores"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Color de fondo",
+      "default": "#004623"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Color del título",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Color de fondo del botón FAQ",
+      "default": "#222222"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Color del texto del botón",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "item_bg_color",
+      "label": "Color de fondo del item FAQ",
+      "default": "transparent"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Color del borde",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "answer_text_color",
+      "label": "Color del texto de respuesta",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Espaciado - Desktop"
+    },
+    {
+      "type": "range",
+      "id": "pt_desktop",
+      "label": "Padding superior",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "pb_desktop",
+      "label": "Padding inferior",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Espaciado - Móvil"
+    },
+    {
+      "type": "range",
+      "id": "pt_mobile",
+      "label": "Padding superior",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "pb_mobile",
+      "label": "Padding inferior",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "Pregunta FAQ",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Pregunta",
+          "default": "¿Cuál es tu pregunta?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Respuesta",
+          "default": "<p>Escribe aquí la respuesta a la pregunta.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Personalizable",
+      "blocks": [
+        {
+          "type": "faq",
+          "settings": {
+            "question": "¿Qué tipo de comida es?",
+            "answer": "<p>En Wild Balance elaboramos, con mucho amor, menús completos BARF triturados para perros y gatos.</p>"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "¿Qué beneficios tiene alimentar con comida natural?",
+            "answer": "<p>Una alimentación natural mejora el sistema digestivo, fortalece el sistema inmune y reduce alergias.</p>"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "¿Hacéis envíos a toda España?",
+            "answer": "<p>Sí, enviamos a toda la península y Baleares con cadena de frío garantizada.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
