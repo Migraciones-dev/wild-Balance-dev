@@ -220,7 +220,7 @@
         "countdown_bg_color": "#1f1f1f",
         "countdown_text_color": "#ffffff",
         "pt_desktop": 12,
-        "pb_desktop": 100,
+        "pb_desktop": 80,
         "pt_mobile": 20,
         "pb_mobile": 20,
         "bg_color": "#f4f0e2"
