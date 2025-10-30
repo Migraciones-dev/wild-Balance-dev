@@ -8,108 +8,108 @@
   "
 >
   <style>
-            @media (min-width: 1024px) {
-              #section-{{ section.id }} {
-                padding-top: {{ section.settings.pt_desktop }}px !important;
-                padding-bottom: {{ section.settings.pb_desktop }}px !important;
-              }
-            }
+    @media (min-width: 1024px) {
+      #section-{{ section.id }} {
+        padding-top: {{ section.settings.pt_desktop }}px !important;
+        padding-bottom: {{ section.settings.pb_desktop }}px !important;
+      }
+    }
 
-        /* Estilos para botones de tabs */
-        .pet-tab-button {
-          transition: all 0.3s ease;
-          min-width: 100px;
-          justify-content: center;
-          font-size: 11px;
-        }
+    /* Estilos para botones de tabs */
+    .pet-tab-button {
+      transition: all 0.3s ease;
+      min-width: 100px;
+      justify-content: center;
+      font-size: 11px;
+    }
 
-        @media (min-width: 1024px) {
-          .pet-tab-button {
-            font-size: 17px;
-          }
-        }
+    @media (min-width: 1024px) {
+      .pet-tab-button {
+        font-size: 17px;
+      }
+    }
 
-        .pet-tab-button.active {
-          background-color: #5CCC84;
-          color: white;
-          border-color: #5CCC84;
-        }
+    .pet-tab-button.active {
+      background-color: #5CCC84;
+      color: white;
+      border-color: #5CCC84;
+    }
 
-        .pet-tab-button:not(.active) {
-          background-color: transparent;
-          color: #5CCC84;
-          border-color: #5CCC84;
-          border-width: 1px;
-          border: 1px solid;
-        }
+    .pet-tab-button:not(.active) {
+      background-color: transparent;
+      color: #5CCC84;
+      border-color: #5CCC84;
+      border-width: 1px;
+      border: 1px solid;
+    }
 
-        /* Estilos para categorías */
-        .category-button {
-          transition: all 0.3s ease;
-          cursor: pointer;
-          text-align: center;
-          justify-content: center;
-          font-size: 11px;
-        }
+    /* Estilos para categorías */
+    .category-button {
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-align: center;
+      justify-content: center;
+      font-size: 11px;
+    }
 
-        @media (min-width: 1024px) {
-          .category-button {
-            font-size: 17px;
-          }
-        }
+    @media (min-width: 1024px) {
+      .category-button {
+        font-size: 17px;
+      }
+    }
 
-        .category-button.active {
-          background-color: {{ section.settings.accent_color }};
-          color: white;
-          border-color: {{ section.settings.accent_color }};
-        }
+    .category-button.active {
+      background-color: {{ section.settings.accent_color }};
+      color: white;
+      border-color: {{ section.settings.accent_color }};
+    }
 
-        .category-button:not(.active) {
-          background-color: transparent;
-          color: #5CCC84;
-          border-color: #5CCC84!important;
-          border-width: 1px;
-          border: 1px solid;
-        }
+    .category-button:not(.active) {
+      background-color: transparent;
+      color: #5CCC84;
+      border-color: #5CCC84!important;
+      border-width: 1px;
+      border: 1px solid;
+    }
 
+    /* Carrusel horizontal en móvil */
+    .categories-scroll::-webkit-scrollbar {
+      display: none;
+    }
 
-            /* Carrusel horizontal en móvil */
-            .categories-scroll::-webkit-scrollbar {
-              display: none;
-            }
+    .categories-scroll {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
 
-            .categories-scroll {
-              scrollbar-width: none;
-              -ms-overflow-style: none;
-            }
+    /* Grid de productos */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
 
-            /* Grid de productos */
-            .products-grid {
-              display: grid;
-              grid-template-columns: repeat(2, 1fr);
-              gap: 16px;
-            }
+    @media (min-width: 640px) {
+      .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
 
-            @media (min-width: 640px) {
-              .products-grid {
-                grid-template-columns: repeat(3, 1fr);
-              }
-            }
+    @media (min-width: 1024px) {
+      .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+    }
 
-            @media (min-width: 1024px) {
-              .products-grid {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 24px;
-              }
-            }
+    /* Ancho máximo del título en desktop */
+    @media (min-width: 1024px) {
+      .title-container {
+        max-width: 400px;
+      }
+    }
 
-            /* Ancho máximo del título en desktop */
-            @media (min-width: 1024px) {
-              .title-container {
-                max-width: 400px;
-              }
-            }
-            /* Banner de 2 columnas */
+    /* Banner de 2 columnas */
     .banner-wide {
       grid-column: span 2;
     }
@@ -118,6 +118,16 @@
       .banner-wide {
         grid-column: span 2;
       }
+    }
+
+    /* Colores de precios */
+    #section-{{ section.id }} .product-price {
+      color: {{ section.settings.price_color }};
+    }
+
+    #section-{{ section.id }} .product-compare-price {
+      color: {{ section.settings.compare_price_color }};
+      text-decoration: line-through;
     }
   </style>
 
@@ -224,7 +234,7 @@
 
     {%- comment -%} Container principal con sidebar y contenido {%- endcomment -%}
     <div class="lg:flex lg:gap-48">
-      {%- comment -%} DESKTOP: Sidebar de categorías - GAP aumentado a 12 {%- endcomment -%}
+      {%- comment -%} DESKTOP: Sidebar de categorías {%- endcomment -%}
       <div class="hidden lg:block lg:w-96 flex-shrink-0">
         <div class="sticky top-4 space-y-3">
           {% for block in section.blocks %}
@@ -306,7 +316,8 @@
 
                       {% render 'discount-product-card',
                         product: product,
-                        countdown_date: block.settings.countdown_date
+                        countdown_date: block.settings.countdown_date,
+                        section_id: section.id
                       %}
                     {% endfor %}
                   {% else %}
@@ -392,6 +403,12 @@
           panel.classList.add('hidden');
         }
       });
+
+      // Reinicializar add to cart después de cambiar de panel
+      setTimeout(() => {
+        initProductCountdowns();
+        initAddToCart();
+      }, 100);
     }
 
     // Event listeners para botones de mascotas
@@ -410,8 +427,120 @@
       });
     });
 
+    // Countdown timers para product cards y banners
+    function initProductCountdowns() {
+      const countdownBadges = document.querySelectorAll('[data-countdown-end]');
+
+      countdownBadges.forEach((badge) => {
+        const endDateStr = badge.getAttribute('data-countdown-end');
+        if (!endDateStr) return;
+
+        const endDate = new Date(endDateStr + ':00').getTime();
+
+        function updateCountdown() {
+          const now = new Date().getTime();
+          const distance = endDate - now;
+
+          if (distance < 0) {
+            badge.textContent = '00:00:00';
+            return;
+          }
+
+          const totalHours = Math.floor(distance / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          const hoursStr = totalHours.toString().padStart(2, '0');
+          const minutesStr = minutes.toString().padStart(2, '0');
+          const secondsStr = seconds.toString().padStart(2, '0');
+
+          badge.textContent = `${hoursStr}:${minutesStr}:${secondsStr}`;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+      });
+    }
+
+    // Add to cart functionality para productos Y banners
+    function initAddToCart() {
+      // Seleccionar TODOS los botones con clase add-to-cart-btn
+      const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+
+      addToCartButtons.forEach((button) => {
+        // Eliminar el listener previo clonando el botón
+        const newButton = button.cloneNode(true);
+        button.parentNode.replaceChild(newButton, button);
+      });
+
+      // Volver a seleccionar después de clonar
+      document.querySelectorAll('.add-to-cart-btn').forEach((button) => {
+        button.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          const hasVariants = this.getAttribute('data-has-variants') === 'true';
+
+          if (hasVariants) {
+            // Producto con variantes - el data-action-quickview abrirá el modal del tema
+            return;
+          }
+
+          // Producto sin variantes - añadir directamente al carrito
+          const variantId = this.getAttribute('data-variant-id');
+          const productAvailable = this.getAttribute('data-product-available') === 'true';
+
+          if (!productAvailable) {
+            console.log('Producto no disponible');
+            return;
+          }
+
+          const formData = {
+            items: [
+              {
+                id: variantId,
+                quantity: 1,
+              },
+            ],
+          };
+
+          // Añadir al carrito
+          fetch(window.Shopify.routes.root + 'cart/add.js', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json',
+            },
+            body: JSON.stringify(formData),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              console.log('Producto añadido:', data);
+
+              // Disparar evento de actualización
+              document.dispatchEvent(new CustomEvent('cart:refresh'));
+
+              // Abrir el drawer del carrito
+              setTimeout(() => {
+                const cartButton = document.querySelector('[data-drawer-options*="t4s-mini_cart"]');
+                if (cartButton) {
+                  cartButton.click();
+                }
+              }, 100);
+            })
+            .catch((error) => {
+              console.error('Error añadiendo al carrito:', error);
+            });
+        });
+      });
+    }
+
     // Inicializar con perros
     switchPet('dog');
+
+    // Inicializar countdowns y add to cart
+    initProductCountdowns();
+    initAddToCart();
   });
 </script>
 
@@ -448,7 +577,7 @@
     },
     {
       "type": "header",
-      "content": "Colores"
+      "content": "🎨 Colores"
     },
     {
       "type": "color",
@@ -464,7 +593,23 @@
     },
     {
       "type": "header",
-      "content": "Espaciado - Desktop"
+      "content": "🎨 Colores - Precios"
+    },
+    {
+      "type": "color",
+      "id": "price_color",
+      "label": "Color del precio",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "compare_price_color",
+      "label": "Color del precio tachado (Compare at Price)",
+      "default": "#999999"
+    },
+    {
+      "type": "header",
+      "content": "📏 Espaciado - Desktop"
     },
     {
       "type": "range",
@@ -488,7 +633,7 @@
     },
     {
       "type": "header",
-      "content": "Espaciado - Móvil"
+      "content": "📏 Espaciado - Móvil"
     },
     {
       "type": "range",
@@ -620,214 +765,3 @@
   ]
 }
 {% endschema %}
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Countdown timers para product cards y banners
-    function initProductCountdowns() {
-      const countdownBadges = document.querySelectorAll('[data-countdown-end]');
-
-      countdownBadges.forEach((badge) => {
-        const endDateStr = badge.getAttribute('data-countdown-end');
-        if (!endDateStr) return;
-
-        const endDate = new Date(endDateStr + ':00').getTime();
-
-        function updateCountdown() {
-          const now = new Date().getTime();
-          const distance = endDate - now;
-
-          if (distance < 0) {
-            badge.textContent = '00:00:00';
-            return;
-          }
-
-          const totalHours = Math.floor(distance / (1000 * 60 * 60));
-          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-          const hoursStr = totalHours.toString().padStart(2, '0');
-          const minutesStr = minutes.toString().padStart(2, '0');
-          const secondsStr = seconds.toString().padStart(2, '0');
-
-          badge.textContent = `${hoursStr}:${minutesStr}:${secondsStr}`;
-        }
-
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-      });
-    }
-
-    // Add to cart functionality para productos Y banners
-    function initAddToCart() {
-      // Seleccionar TODOS los botones con clase add-to-cart-btn
-      const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-
-      addToCartButtons.forEach((button) => {
-        // Eliminar el listener previo clonando el botón
-        const newButton = button.cloneNode(true);
-        button.parentNode.replaceChild(newButton, button);
-      });
-
-      // Volver a seleccionar después de clonar
-      document.querySelectorAll('.add-to-cart-btn').forEach((button) => {
-        button.addEventListener('click', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-
-          const hasVariants = this.getAttribute('data-has-variants') === 'true';
-
-          if (hasVariants) {
-            // Producto con variantes - el data-action-quickview abrirá el modal del tema
-            return;
-          }
-
-          // Producto sin variantes - añadir directamente al carrito
-          const variantId = this.getAttribute('data-variant-id');
-          const productAvailable = this.getAttribute('data-product-available') === 'true';
-
-          if (!productAvailable) {
-            console.log('Producto no disponible');
-            return;
-          }
-
-          const formData = {
-            items: [
-              {
-                id: variantId,
-                quantity: 1,
-              },
-            ],
-          };
-
-          // Añadir al carrito
-          fetch(window.Shopify.routes.root + 'cart/add.js', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              Accept: 'application/json',
-            },
-            body: JSON.stringify(formData),
-          })
-            .then((response) => response.json())
-            .then((data) => {
-              console.log('Producto añadido:', data);
-
-              // Disparar evento de actualización
-              document.dispatchEvent(new CustomEvent('cart:refresh'));
-
-              // Abrir el drawer del carrito
-              setTimeout(() => {
-                const cartButton = document.querySelector('[data-drawer-options*="t4s-mini_cart"]');
-                if (cartButton) {
-                  cartButton.click();
-                }
-              }, 100);
-            })
-            .catch((error) => {
-              console.error('Error añadiendo al carrito:', error);
-            });
-        });
-      });
-    }
-
-    const petButtons = document.querySelectorAll('[data-pet]');
-    const categoryButtons = document.querySelectorAll('[data-collection]');
-    const productPanels = document.querySelectorAll('[data-collection-panel]');
-
-    let currentPet = 'dog';
-    let currentCollection = null;
-
-    // Función para actualizar tabs de mascotas
-    function switchPet(petType) {
-      currentPet = petType;
-
-      // Actualizar botones de mascotas
-      petButtons.forEach((btn) => {
-        if (btn.getAttribute('data-pet') === petType) {
-          btn.classList.add('active');
-        } else {
-          btn.classList.remove('active');
-        }
-      });
-
-      // Filtrar y mostrar categorías según mascota
-      const visibleCategories = [];
-      categoryButtons.forEach((btn) => {
-        if (btn.getAttribute('data-pet-type') === petType) {
-          btn.style.display = '';
-          btn.classList.remove('hidden');
-          visibleCategories.push(btn);
-        } else {
-          btn.style.display = 'none';
-          btn.classList.add('hidden');
-        }
-      });
-
-      // Activar la primera categoría visible
-      if (visibleCategories.length > 0) {
-        const firstCategory = visibleCategories[0];
-        const collectionHandle = firstCategory.getAttribute('data-collection');
-        switchCollection(collectionHandle);
-      }
-    }
-
-    // Función para cambiar de colección
-    function switchCollection(collectionHandle) {
-      currentCollection = collectionHandle;
-
-      // Actualizar botones de categorías
-      categoryButtons.forEach((btn) => {
-        if (
-          btn.getAttribute('data-collection') === collectionHandle &&
-          btn.getAttribute('data-pet-type') === currentPet
-        ) {
-          btn.classList.add('active');
-        } else {
-          btn.classList.remove('active');
-        }
-      });
-
-      // Mostrar panel de productos correspondiente
-      productPanels.forEach((panel) => {
-        if (
-          panel.getAttribute('data-collection-panel') === collectionHandle &&
-          panel.getAttribute('data-pet-type') === currentPet
-        ) {
-          panel.classList.remove('hidden');
-        } else {
-          panel.classList.add('hidden');
-        }
-      });
-
-      // Reinicializar add to cart después de cambiar de panel
-      setTimeout(() => {
-        initProductCountdowns();
-        initAddToCart();
-      }, 100);
-    }
-
-    // Event listeners para botones de mascotas
-    petButtons.forEach((btn) => {
-      btn.addEventListener('click', function () {
-        const petType = this.getAttribute('data-pet');
-        switchPet(petType);
-      });
-    });
-
-    // Event listeners para botones de categorías
-    categoryButtons.forEach((btn) => {
-      btn.addEventListener('click', function () {
-        const collectionHandle = this.getAttribute('data-collection');
-        switchCollection(collectionHandle);
-      });
-    });
-
-    // Inicializar con perros
-    switchPet('dog');
-
-    // Inicializar countdowns y add to cart
-    initProductCountdowns();
-    initAddToCart();
-  });
-</script>

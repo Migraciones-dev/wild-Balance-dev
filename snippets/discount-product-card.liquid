@@ -1,6 +1,6 @@
 {%- comment -%}
   Snippet: discount-product-card.liquid
-  Uso: {% render 'discount-product-card', product: product, countdown_date: block.settings.countdown_date %}
+  Uso: {% render 'discount-product-card', product: product, countdown_date: block.settings.countdown_date, section_id: section.id %}
 {%- endcomment -%}
 
 {%- liquid
@@ -97,11 +97,11 @@
 
     {%- comment -%} Precio {%- endcomment -%}
     <div class="flex items-center gap-2">
-      <span class="text-[14px] font-bold text-white">
+      <span class="product-price text-[14px] font-bold">
         {{ current_variant.price | money }}
       </span>
       {% if current_variant.compare_at_price > current_variant.price %}
-        <span class="text-[12px] text-gray-300 line-through">
+        <span class="product-compare-price text-[12px]">
           {{ current_variant.compare_at_price | money }}
         </span>
       {% endif %}
