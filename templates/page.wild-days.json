@@ -129,7 +129,7 @@
       ],
       "name": "Banner imagen responsivo",
       "settings": {
-        "pt_desktop": 60,
+        "pt_desktop": 24,
         "pb_desktop": 60,
         "pt_mobile": 20,
         "pb_mobile": 32,
