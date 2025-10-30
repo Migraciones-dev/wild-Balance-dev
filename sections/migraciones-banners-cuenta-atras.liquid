@@ -29,8 +29,8 @@
     }
 
     .countdown-timer {
-      background-color: #F0807B;
-      color: white;
+      background-color: {{ section.settings.countdown_bg_color }};
+      color: {{ section.settings.countdown_text_color }};
       padding: 8px 16px;
       border-radius: 50px;
       font-family: 'Arial', sans-serif;
@@ -152,10 +152,7 @@
 
           {%- if show_banner -%}
             {%- comment -%} Obtener producto si está asignado {%- endcomment -%}
-            {%- assign banner_product = null -%}
-            {%- if block.settings.product != blank -%}
-              {%- assign banner_product = all_products[block.settings.product] -%}
-            {%- endif -%}
+            {%- assign banner_product = block.settings.product -%}
 
             <div id="banner-{{ block.id }}" class="relative" {{ block.shopify_attributes }}>
               {%- comment -%} Cuenta atrás {%- endcomment -%}
@@ -164,7 +161,7 @@
               {% endif %}
 
               {%- comment -%} Determinar si es link o añadir al carrito {%- endcomment -%}
-              {% if banner_product %}
+              {% if banner_product and banner_product != blank %}
                 {%- assign current_variant = banner_product.selected_or_first_available_variant -%}
                 <div
                   class="banner-clickable"
@@ -212,7 +209,7 @@
                 {% endif %}
               {%- endif -%}
 
-              {% if banner_product %}
+              {% if banner_product and banner_product != blank %}
                 </div>
               {% elsif block.settings.image_link != blank %}
                 </a>
@@ -403,6 +400,22 @@
       "step": 4,
       "unit": "px",
       "default": 32
+    },
+    {
+      "type": "header",
+      "content": "🎨 Colores - Countdown Badge"
+    },
+    {
+      "type": "color",
+      "id": "countdown_bg_color",
+      "label": "Color de fondo del countdown",
+      "default": "#F0807B"
+    },
+    {
+      "type": "color",
+      "id": "countdown_text_color",
+      "label": "Color del texto del countdown",
+      "default": "#ffffff"
     },
     {
       "type": "header",
