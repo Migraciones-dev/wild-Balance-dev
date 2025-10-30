@@ -154,7 +154,7 @@
         "pt_desktop": 60,
         "pb_desktop": 80,
         "countdown_mt_desktop": 48,
-        "pt_mobile": 40,
+        "pt_mobile": 24,
         "pb_mobile": 40,
         "countdown_mt_mobile": 32
       }
@@ -301,6 +301,8 @@
         "title_color": "#ffffff",
         "accent_color": "#5ccc84",
         "bg_color": "#1f1f1f",
+        "price_color": "#5ccc84",
+        "compare_price_color": "#999999",
         "pt_desktop": 80,
         "pb_desktop": 80,
         "pt_mobile": 40,
