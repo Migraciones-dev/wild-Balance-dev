@@ -417,6 +417,57 @@
       "settings": {
         "custom_liquid": "<style>\n\n.t4s-header__wrapper {background: #222222;color:white;}\n\n.t4s-menu-item a, .t4s-menu-item a:hover {color:white!important;}\n\n.t4s-sub-menu {background:#222222!important;}\n\n.flex.items-center.bg-white.shadow.border p {color:#222222!important;}\n\n.t4s-site-nav__icon a .t4s-site-nav__icon a svg, .t4s-site-nav__icon a:hover {color:white!important;}\n\n.t4s-top-bar, .t4s-top-bar button {background:#F0807B!important;color:white;}\n\n.header__normal-logo, .header__sticky-logo {filter: brightness(0) invert(1)!important;}\n\n.t4s-site-nav__icon a,  .t4s-d-lg-none {filter: brightness(0) invert(1);}\n\n.t4s-nav__ul>li> a:hover {color:white!important;}\n\n.t4s-lh-1.t4s-d-flex svg {display:none;}\n\n#shopify-section-footer, .t4s_se_footer, .t4s_se_footer-bottom {background:#222222!important}\n</style>"
       }
+    },
+    "migraciones_faq_2_4d9LGa": {
+      "type": "migraciones-faq-2",
+      "blocks": {
+        "faq_zpMxf7": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Qué tipo de comida es?",
+            "answer": "<p>En Wild Balance elaboramos, con mucho amor, menús completos BARF triturados para perros y gatos.</p>"
+          }
+        },
+        "faq_MFF6kj": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Qué beneficios tiene alimentar con comida natural?",
+            "answer": "<p>Una alimentación natural mejora el sistema digestivo, fortalece el sistema inmune y reduce alergias.</p>"
+          }
+        },
+        "faq_GCBxeq": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Hacéis envíos a toda España?",
+            "answer": "<p>Sí, enviamos a toda la península y Baleares con cadena de frío garantizada.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_zpMxf7",
+        "faq_MFF6kj",
+        "faq_GCBxeq"
+      ],
+      "name": "Migraciones FAQ",
+      "settings": {
+        "show_image": true,
+        "sidebar_image": "shopify://shop_images/7deadb414f511cd5c3c8ee8266284f065cab2480_1.webp",
+        "brand_logo": "shopify://shop_images/Capa_1_23.png",
+        "heading_before": "Te ayudamos",
+        "heading_highlight": "en todo",
+        "heading_after": "",
+        "bg_color": "#1f1f1f",
+        "title_color": "#ffffff",
+        "button_bg_color": "#222222",
+        "button_text_color": "#ffffff",
+        "item_bg_color": "transparent",
+        "border_color": "#ffffff",
+        "answer_text_color": "#ffffff",
+        "pt_desktop": 80,
+        "pb_desktop": 80,
+        "pt_mobile": 40,
+        "pb_mobile": 40
+      }
     }
   },
   "order": [
@@ -428,6 +479,7 @@
     "migraciones_image_width_text_JLdjiB",
     "shipping_7KqxwA",
     "migraciones_faq_XTWFkL",
-    "custom_liquid_WAfnkt"
+    "custom_liquid_WAfnkt",
+    "migraciones_faq_2_4d9LGa"
   ]
 }
