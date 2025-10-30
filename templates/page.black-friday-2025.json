@@ -284,14 +284,6 @@
         "pb_mobile": 40
       }
     },
-    "migraciones_image_width_text_JLdjiB": {
-      "type": "migraciones-image-width-text",
-      "disabled": true,
-      "name": "Migraciones image+text",
-      "settings": {
-        "custom_liquid": ""
-      }
-    },
     "migraciones_image_width_text_editable_aeixFi": {
       "type": "migraciones-image-width-text-editable",
       "name": "Imagen + Texto",
@@ -426,13 +418,6 @@
         "pd_mb": "20px,20px,20px,20px"
       }
     },
-    "custom_liquid_WAfnkt": {
-      "type": "custom-liquid",
-      "name": "Custom Liquid",
-      "settings": {
-        "custom_liquid": "<style>\n\n.t4s-header__wrapper {background: #222222;color:white;}\n\n.t4s-menu-item a, .t4s-menu-item a:hover {color:white!important;}\n\n.t4s-sub-menu {background:#222222!important;}\n\n.flex.items-center.bg-white.shadow.border p {color:#222222!important;}\n\n.t4s-site-nav__icon a .t4s-site-nav__icon a svg, .t4s-site-nav__icon a:hover {color:white!important;}\n\n.t4s-top-bar, .t4s-top-bar button {background:#F0807B!important;color:white;}\n\n.header__normal-logo, .header__sticky-logo {filter: brightness(0) invert(1)!important;}\n\n.t4s-site-nav__icon a,  .t4s-d-lg-none {filter: brightness(0) invert(1);}\n\n.t4s-nav__ul>li> a:hover {color:white!important;}\n\n.t4s-lh-1.t4s-d-flex svg {display:none;}\n\n#shopify-section-footer, .t4s_se_footer, .t4s_se_footer-bottom {background:#222222!important}\n</style>"
-      }
-    },
     "migraciones_faq_2_4d9LGa": {
       "type": "migraciones-faq-2",
       "blocks": {
@@ -483,6 +468,13 @@
         "pt_mobile": 40,
         "pb_mobile": 40
       }
+    },
+    "custom_liquid_WAfnkt": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
+      "settings": {
+        "custom_liquid": "<style>\n\n.t4s-header__wrapper {background: #222222;color:white;}\n\n.t4s-menu-item a, .t4s-menu-item a:hover {color:white!important;}\n\n.t4s-sub-menu {background:#222222!important;}\n\n.flex.items-center.bg-white.shadow.border p {color:#222222!important;}\n\n.t4s-site-nav__icon a .t4s-site-nav__icon a svg, .t4s-site-nav__icon a:hover {color:white!important;}\n\n.t4s-top-bar, .t4s-top-bar button {background:#F0807B!important;color:white;}\n\n.header__normal-logo, .header__sticky-logo {filter: brightness(0) invert(1)!important;}\n\n.t4s-site-nav__icon a,  .t4s-d-lg-none {filter: brightness(0) invert(1);}\n\n.t4s-nav__ul>li> a:hover {color:white!important;}\n\n.t4s-lh-1.t4s-d-flex svg {display:none;}\n\n#shopify-section-footer, .t4s_se_footer, .t4s_se_footer-bottom {background:#222222!important}\n</style>"
+      }
     }
   },
   "order": [
@@ -491,10 +483,9 @@
     "migraciones_banner_responsive_d6hJg8",
     "migraciones_banners_cuenta_atras_Ph34WB",
     "migraciones_selector_de_colecciones_YEcF6e",
-    "migraciones_image_width_text_JLdjiB",
     "migraciones_image_width_text_editable_aeixFi",
     "shipping_7KqxwA",
-    "custom_liquid_WAfnkt",
-    "migraciones_faq_2_4d9LGa"
+    "migraciones_faq_2_4d9LGa",
+    "custom_liquid_WAfnkt"
   ]
 }
