@@ -397,20 +397,6 @@
         "pd_mb": "20px,20px,20px,20px"
       }
     },
-    "migraciones_faq_XTWFkL": {
-      "type": "migraciones-faq",
-      "custom_css": [
-        ".mig-section {margin: 0 0rem; padding-top: 10rem; padding-bottom: 10rem; background: #1f1f1f;}",
-        "h2 {color: white;}",
-        "button {background: #222222; color: white;}",
-        ".border-b {border: 1px solid white; background: transparent;}",
-        "p {color: white;}"
-      ],
-      "name": "Migraciones faq",
-      "settings": {
-        "custom_liquid": ""
-      }
-    },
     "custom_liquid_WAfnkt": {
       "type": "custom-liquid",
       "name": "Custom Liquid",
@@ -478,7 +464,6 @@
     "migraciones_selector_de_colecciones_YEcF6e",
     "migraciones_image_width_text_JLdjiB",
     "shipping_7KqxwA",
-    "migraciones_faq_XTWFkL",
     "custom_liquid_WAfnkt",
     "migraciones_faq_2_4d9LGa"
   ]
