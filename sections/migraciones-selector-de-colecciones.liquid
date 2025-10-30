@@ -119,6 +119,14 @@
         grid-column: span 2;
       }
     }
+        #section-{{ section.id }} .product-price {
+      color: {{ section.settings.price_color }};
+    }
+
+    #section-{{ section.id }} .product-compare-price {
+      color: {{ section.settings.compare_price_color }};
+      text-decoration: line-through;
+    }
   </style>
 
   <div class="max-w-[1600px] mx-auto px-6 lg:px-10">
