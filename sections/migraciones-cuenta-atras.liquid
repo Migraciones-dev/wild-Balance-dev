@@ -1,0 +1,334 @@
+<section
+  id="section-{{ section.id }}"
+  class="w-full"
+  style="
+    background-color: {{ section.settings.bg_color }};
+    padding-top: {{ section.settings.pt_mobile }}px;
+    padding-bottom: {{ section.settings.pb_mobile }}px;
+  "
+>
+  <style>
+    @media (min-width: 1024px) {
+      #section-{{ section.id }} {
+        padding-top: {{ section.settings.pt_desktop }}px !important;
+        padding-bottom: {{ section.settings.pb_desktop }}px !important;
+      }
+    }
+
+    #section-{{ section.id }} .title {
+      color: {{ section.settings.title_color }};
+      font-size: 30px;
+    }
+
+    @media (min-width: 1024px) {
+      #section-{{ section.id }} .title {
+        font-size: 50px !important;
+      }
+    }
+
+    #section-{{ section.id }} .countdown-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: {{ section.settings.countdown_mt_mobile }}px;
+    }
+
+    #section-{{ section.id }} .countdown-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    #section-{{ section.id }} .countdown-number {
+      font-size: 43px;
+      font-weight: bold;
+      color: {{ section.settings.number_color }};
+      line-height: 1;
+      font-family: 'Barlow', Helvetica;
+    }
+
+    #section-{{ section.id }} .countdown-label {
+      font-size: 18px;
+      color: {{ section.settings.label_color }};
+      margin-top: 4px;
+      font-family: 'DM_Sans_18pt-Regular', Helvetica;
+    }
+
+    #section-{{ section.id }} .countdown-separator {
+      font-size: 18px;
+      font-weight: bold;
+      color: {{ section.settings.number_color }};
+      line-height: 1;
+      margin-bottom: 20px;
+      font-family: 'Barlow', Helvetica;
+    }
+
+    @media (min-width: 1024px) {
+      #section-{{ section.id }} .countdown-number {
+        font-size: 80px !important;
+      }
+
+      #section-{{ section.id }} .countdown-label {
+        font-size: 35px !important;
+      }
+
+      #section-{{ section.id }} .countdown-separator {
+        font-size: 35px !important;
+        margin-bottom: 40px;
+      }
+
+      #section-{{ section.id }} .countdown-container {
+        margin-top: {{ section.settings.countdown_mt_desktop }}px !important;
+      }
+    }
+  </style>
+
+  <div class="max-w-[1600px] mx-auto px-6 lg:px-10">
+    <!-- Título con highlight -->
+    {% if section.settings.heading_before != blank
+      or section.settings.heading_highlight != blank
+      or section.settings.heading_after != blank
+    %}
+      <div class="text-center">
+        <h2 class="title [font-family:'Barlow',Helvetica] font-extrabold leading-[1]">
+          {{ section.settings.heading_before }}
+          {% if section.settings.heading_highlight != blank %}
+            <span class="highlight">{{ section.settings.heading_highlight }}</span>
+          {% endif %}
+          {{ section.settings.heading_after }}
+        </h2>
+      </div>
+    {% endif %}
+
+    <!-- Cuenta atrás -->
+    <div class="countdown-container">
+      <!-- Horas -->
+      <div class="countdown-item">
+        <div class="countdown-number" data-countdown-hours>00</div>
+        <div class="countdown-label">{{ section.settings.label_hours }}</div>
+      </div>
+
+      <!-- Separador : -->
+      <div class="countdown-separator">:</div>
+
+      <!-- Minutos -->
+      <div class="countdown-item">
+        <div class="countdown-number" data-countdown-minutes>00</div>
+        <div class="countdown-label">{{ section.settings.label_minutes }}</div>
+      </div>
+
+      <!-- Separador : -->
+      <div class="countdown-separator">:</div>
+
+      <!-- Segundos -->
+      <div class="countdown-item">
+        <div class="countdown-number" data-countdown-seconds>00</div>
+        <div class="countdown-label">{{ section.settings.label_seconds }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const hoursElement = document.querySelector('[data-countdown-hours]');
+    const minutesElement = document.querySelector('[data-countdown-minutes]');
+    const secondsElement = document.querySelector('[data-countdown-seconds]');
+
+    // Obtener fecha de finalización desde el atributo data
+    const endDateStr = '{{ section.settings.countdown_date }}';
+    if (!endDateStr) return;
+
+    const endDate = new Date(endDateStr + ':00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = endDate - now;
+
+      if (distance < 0) {
+        hoursElement.textContent = '00';
+        minutesElement.textContent = '00';
+        secondsElement.textContent = '00';
+        return;
+      }
+
+      const totalHours = Math.floor(distance / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      hoursElement.textContent = totalHours.toString().padStart(2, '0');
+      minutesElement.textContent = minutes.toString().padStart(2, '0');
+      secondsElement.textContent = seconds.toString().padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Ofertas Flash - Countdown",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Título"
+    },
+    {
+      "type": "text",
+      "id": "heading_before",
+      "label": "Título (antes del resaltado)",
+      "default": "Ofertas"
+    },
+    {
+      "type": "text",
+      "id": "heading_highlight",
+      "label": "Texto resaltado",
+      "default": "flash"
+    },
+    {
+      "type": "text",
+      "id": "heading_after",
+      "label": "Título (después del resaltado)"
+    },
+    {
+      "type": "header",
+      "content": "⏰ Cuenta atrás"
+    },
+    {
+      "type": "text",
+      "id": "countdown_date",
+      "label": "Fecha y hora final de cuenta atrás",
+      "placeholder": "2025-12-20 23:00",
+      "info": "Formato: YYYY-MM-DD HH:MM (ejemplo: 2025-12-20 23:00)"
+    },
+    {
+      "type": "text",
+      "id": "label_hours",
+      "label": "Etiqueta para horas",
+      "default": "horas"
+    },
+    {
+      "type": "text",
+      "id": "label_minutes",
+      "label": "Etiqueta para minutos",
+      "default": "minutos"
+    },
+    {
+      "type": "text",
+      "id": "label_seconds",
+      "label": "Etiqueta para segundos",
+      "default": "segundos"
+    },
+    {
+      "type": "header",
+      "content": "Colores"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Color de fondo",
+      "default": "#FBF5E7"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Color del título",
+      "default": "#004622"
+    },
+    {
+      "type": "color",
+      "id": "number_color",
+      "label": "Color de los números",
+      "default": "#004622"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Color de las etiquetas",
+      "default": "#004622"
+    },
+    {
+      "type": "header",
+      "content": "Espaciado - Desktop"
+    },
+    {
+      "type": "range",
+      "id": "pt_desktop",
+      "label": "Padding superior",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "pb_desktop",
+      "label": "Padding inferior",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "countdown_mt_desktop",
+      "label": "Margen superior cuenta atrás",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Espaciado - Móvil"
+    },
+    {
+      "type": "range",
+      "id": "pt_mobile",
+      "label": "Padding superior",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "pb_mobile",
+      "label": "Padding inferior",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "countdown_mt_mobile",
+      "label": "Margen superior cuenta atrás",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ofertas Flash - Countdown",
+      "settings": {
+        "heading_before": "Ofertas",
+        "heading_highlight": "flash",
+        "countdown_date": "2025-12-20 23:00"
+      }
+    }
+  ]
+}
+{% endschema %}
