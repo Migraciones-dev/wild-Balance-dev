@@ -1,9 +1,20 @@
 <section
   id="section-{{ section.id }}"
   class="w-full"
-  style="background-color: {{ section.settings.bg_color }};"
+  style="
+    background-color: {{ section.settings.bg_color }};
+    padding-top: {{ section.settings.pt_mobile }}px;
+    padding-bottom: {{ section.settings.pb_mobile }}px;
+  "
 >
   <style>
+    @media (min-width: 1024px) {
+      #section-{{ section.id }} {
+        padding-top: {{ section.settings.pt_desktop }}px !important;
+        padding-bottom: {{ section.settings.pb_desktop }}px !important;
+      }
+    }
+
     #section-{{ section.id }} h2 {
       color: {{ section.settings.title_color }};
     }
@@ -28,22 +39,7 @@
     }
   </style>
 
-  <div
-    class="flex flex-col lg:flex-row items-center gap-[29px] max-w-[1600px] mx-auto px-6 lg:px-10"
-    style="
-      padding-top: {{ section.settings.pt_mobile }}px;
-      padding-bottom: {{ section.settings.pb_mobile }}px;
-    "
-  >
-    <style>
-      @media (min-width: 1024px) {
-        #section-{{ section.id }} .inner-container {
-          padding-top: {{ section.settings.pt_desktop }}px !important;
-          padding-bottom: {{ section.settings.pb_desktop }}px !important;
-        }
-      }
-    </style>
-
+  <div class="flex flex-col lg:flex-row items-center gap-[29px] max-w-[1600px] mx-auto px-6 lg:px-10">
     <!-- Imagen fija -->
     {% if section.settings.show_image and section.settings.sidebar_image != blank %}
       <img
@@ -54,7 +50,7 @@
       >
     {% endif %}
 
-    <div class="flex flex-col w-full {% if section.settings.show_image %}lg:w-3/5{% endif %} items-start gap-[47px] inner-container">
+    <div class="flex flex-col w-full {% if section.settings.show_image %}lg:w-3/5{% endif %} items-start gap-[47px]">
       <!-- Cabecera -->
       <div class="relative w-full">
         <div class="w-full flex flex-col gap-5">
@@ -111,7 +107,7 @@
                 id="faq-{{ block.id }}"
                 role="region"
                 hidden
-                class="faq-answer px-8 mt-4 pb-6 text-sm sm:text-base"
+                class="faq-answer px-8 pb-6 text-sm sm:text-base"
               >
                 {{ block.settings.answer }}
               </div>
