@@ -37,20 +37,13 @@
     }
   </style>
 
-  <div class="flex items-center justify-center gap-[29px] mx-auto px-6 lg:px-10">
-    <div class="flex items-center gap-[66px] mx-auto flex-col lg:flex-row max-w-[1600px] lg:gap-[66px] gap-12">
+  <div class="flex items-center justify-center mx-auto px-6 lg:px-10">
+    <div class="flex items-center gap-12 lg:gap-[66px] flex-col lg:flex-row max-w-[1600px] w-full">
       <!-- Imagen -->
       {% if section.settings.image != blank %}
-        <div class="relative w-full lg:w-2/5 rounded-[10px] overflow-hidden {% if section.settings.image_position == 'right' %}lg:order-2{% endif %}">
-          <!-- Imagen desktop (background) -->
-          <div
-            class="hidden lg:block w-full h-[539px] bg-cover bg-center rounded-[10px]"
-            style="background-image: url('{{ section.settings.image | img_url: '800x' }}');"
-          ></div>
-
-          <!-- Imagen móvil -->
+        <div class="w-full lg:w-2/5 rounded-[10px] overflow-hidden {% if section.settings.image_position == 'right' %}lg:order-2{% endif %}">
           <img
-            class="lg:hidden w-full rounded-[10px]"
+            class="w-full h-auto block"
             alt="{{ section.settings.image.alt | escape }}"
             src="{{ section.settings.image | img_url: '800x' }}"
             loading="lazy"
