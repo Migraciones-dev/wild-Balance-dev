@@ -91,8 +91,8 @@
         "banner_4nDMtb": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/jpeg-optimizer_BANNER_1x1_64ae2652-4010-49cf-b836-6e5108f97db2.jpg",
-            "mobile_image": "shopify://shop_images/jpeg-optimizer_BANNER_1x1_1.jpg",
+            "desktop_image": "shopify://shop_images/BANNER-BLACK-FRIDAY-_3_-1.webp",
+            "mobile_image": "shopify://shop_images/BANNER-BLACK-FRIDAY-_5_-1.webp",
             "image_link": "",
             "enable_schedule": false,
             "start_date": "2025-10-28 12:00",
@@ -108,8 +108,8 @@
         "banner_LJFEdc": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/jpeg-optimizer_Group_1542.jpg",
-            "mobile_image": "shopify://shop_images/jpeg-optimizer_Frame_853.jpg",
+            "desktop_image": "shopify://shop_images/BANNER-BLACK-FRIDAY-_15_-1.webp",
+            "mobile_image": "shopify://shop_images/BANNER-BLACK-FRIDAY-_10_-1_1.webp",
             "image_link": "",
             "enable_schedule": false,
             "start_date": "",
@@ -130,10 +130,10 @@
       "name": "Banner imagen responsivo",
       "settings": {
         "pt_desktop": 60,
-        "pb_desktop": 28,
+        "pb_desktop": 60,
         "pt_mobile": 20,
         "pb_mobile": 32,
-        "bg_color": "#1f1f1f"
+        "bg_color": "#f4f0e2"
       }
     },
     "migraciones_banners_cuenta_atras_Ph34WB": {
