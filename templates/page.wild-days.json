@@ -165,7 +165,8 @@
         "banner_9KVPxw": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/Link_1.jpg",
+            "desktop_image": "shopify://shop_images/Background_8.jpg",
+            "mobile_image": "shopify://shop_images/Link_3.jpg",
             "image_link": "",
             "product": "tapa-lata",
             "enable_countdown": true,
@@ -184,7 +185,8 @@
         "banner_fippFK": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/Link.jpg",
+            "desktop_image": "shopify://shop_images/Link_2.jpg",
+            "mobile_image": "shopify://shop_images/Link_4.jpg",
             "image_link": "",
             "product": "",
             "enable_countdown": false,
