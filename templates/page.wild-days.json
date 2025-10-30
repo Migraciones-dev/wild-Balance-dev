@@ -345,9 +345,9 @@
         "pb_desktop": 80,
         "mt_desktop": 0,
         "mb_desktop": 0,
-        "pt_mobile": 40,
+        "pt_mobile": 0,
         "pb_mobile": 40,
-        "mt_mobile": 40,
+        "mt_mobile": 0,
         "mb_mobile": 40
       }
     },
