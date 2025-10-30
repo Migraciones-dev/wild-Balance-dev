@@ -315,7 +315,7 @@
         "price_color": "#5ccc84",
         "compare_price_color": "#f4f0e2",
         "pt_desktop": 0,
-        "pb_desktop": 80,
+        "pb_desktop": 24,
         "pt_mobile": 40,
         "pb_mobile": 40
       }
