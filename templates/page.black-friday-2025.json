@@ -294,6 +294,36 @@
         "custom_liquid": ""
       }
     },
+    "migraciones_image_width_text_editable_aeixFi": {
+      "type": "migraciones-image-width-text-editable",
+      "name": "Imagen + Texto",
+      "settings": {
+        "image_position": "left",
+        "brand_logo": "shopify://shop_images/Equipo_de_expertos.png",
+        "title": "Asesoramiento nutricional experto",
+        "description": "<p>En Wild Balance te ofrecemos asesoramiento nutricional personalizado para mejorar la salud y bienestar de tu mascota.</p>",
+        "show_badge": true,
+        "badge_image": "shopify://shop_images/Group_1538.png",
+        "badge_title": "+100.000 Mascotas contentas",
+        "badge_subtitle": "Para perros y gatos",
+        "button_text": "Escríbenos",
+        "button_link": "https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0&_kx=_V3Qt6MyBasq1R9MaiJGmqCJaXgPZI4XMm1kP-MvGoCJ2YvBXCDqhjZk3RLlmfVw.YsKiw5",
+        "button_new_tab": true,
+        "bg_color": "#F4F0E2",
+        "title_color": "#004623",
+        "text_color": "#222222",
+        "button_bg_color": "#ffcd00",
+        "button_text_color": "#004623",
+        "pt_desktop": 80,
+        "pb_desktop": 80,
+        "mt_desktop": 0,
+        "mb_desktop": 0,
+        "pt_mobile": 40,
+        "pb_mobile": 40,
+        "mt_mobile": 40,
+        "mb_mobile": 40
+      }
+    },
     "shipping_7KqxwA": {
       "type": "shipping",
       "blocks": {
@@ -463,6 +493,7 @@
     "migraciones_banners_cuenta_atras_Ph34WB",
     "migraciones_selector_de_colecciones_YEcF6e",
     "migraciones_image_width_text_JLdjiB",
+    "migraciones_image_width_text_editable_aeixFi",
     "shipping_7KqxwA",
     "custom_liquid_WAfnkt",
     "migraciones_faq_2_4d9LGa"
