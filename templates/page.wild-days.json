@@ -215,8 +215,8 @@
         "title_pb_desktop": 48,
         "title_pt_mobile": 0,
         "title_pb_mobile": 32,
-        "pt_desktop": 0,
-        "pb_desktop": 40,
+        "pt_desktop": 12,
+        "pb_desktop": 100,
         "pt_mobile": 20,
         "pb_mobile": 20,
         "bg_color": "#f4f0e2"
