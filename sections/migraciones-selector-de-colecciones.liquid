@@ -317,7 +317,9 @@
                       {% render 'discount-product-card',
                         product: product,
                         countdown_date: block.settings.countdown_date,
-                        section_id: section.id
+                        section_id: section.id,
+                        countdown_bg_color: section.settings.countdown_bg_color,
+                        countdown_text_color: section.settings.countdown_text_color
                       %}
                     {% endfor %}
                   {% else %}
