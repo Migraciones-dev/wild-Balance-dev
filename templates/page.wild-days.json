@@ -1,0 +1,491 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "heading": {
+      "type": "heading-template",
+      "blocks": {
+        "b49343f1-a16f-4a0c-834a-46b77fe777da": {
+          "type": "1",
+          "settings": {
+            "heading": "Page Heading",
+            "fontf": "inherit",
+            "text_cl": "#000000",
+            "text_fs": 40,
+            "text_lh": 56,
+            "text_fw": 300,
+            "text_ls": 0,
+            "font_italic": false,
+            "font_uppercase": false,
+            "text_shadow": false,
+            "mgb": 0,
+            "text_fs_tb": 35,
+            "text_lh_tb": 46,
+            "text_ls_tb": 0,
+            "mgb_tb": 0,
+            "hidden_mobile": false,
+            "text_fs_mb": 35,
+            "text_lh_mb": 46,
+            "text_ls_mb": 0,
+            "mgb_mb": 0
+          }
+        },
+        "46ff9c32-9810-4c24-b2bd-9c6e38cc2ea8": {
+          "type": "3",
+          "settings": {
+            "breadcrumb_color": "#868686",
+            "breadcrumb_color_link": "#000000",
+            "brc_mgb": 0
+          }
+        }
+      },
+      "block_order": [
+        "b49343f1-a16f-4a0c-834a-46b77fe777da",
+        "46ff9c32-9810-4c24-b2bd-9c6e38cc2ea8"
+      ],
+      "disabled": true,
+      "settings": {
+        "parallax": false,
+        "color": "#000000",
+        "overlay": 0,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "mg_b": 50,
+        "padding_top_tb": 50,
+        "padding_bottom_tb": 50,
+        "mg_btb": 50,
+        "padding_top_mb": 50,
+        "padding_bottom_mb": 50,
+        "mg_bmb": 50,
+        "box_border": "top_bottom",
+        "bg_pos": "center center",
+        "bg_repeat": "no-repeat",
+        "bg_size": "cover"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": "60px,,60px,",
+        "pd": "",
+        "mg_tb": ",,50px,",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": ""
+      }
+    },
+    "migraciones_banner_responsive_d6hJg8": {
+      "type": "migraciones-banner-responsive",
+      "blocks": {
+        "banner_4nDMtb": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/jpeg-optimizer_BANNER_1x1_64ae2652-4010-49cf-b836-6e5108f97db2.jpg",
+            "mobile_image": "shopify://shop_images/jpeg-optimizer_BANNER_1x1_1.jpg",
+            "image_link": "",
+            "enable_schedule": false,
+            "start_date": "2025-10-28 12:00",
+            "end_date": "2025-10-28 12:03",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 16
+          }
+        },
+        "banner_LJFEdc": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/jpeg-optimizer_Group_1542.jpg",
+            "mobile_image": "shopify://shop_images/jpeg-optimizer_Frame_853.jpg",
+            "image_link": "",
+            "enable_schedule": false,
+            "start_date": "",
+            "end_date": "",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 40,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        }
+      },
+      "block_order": [
+        "banner_4nDMtb",
+        "banner_LJFEdc"
+      ],
+      "name": "Banner imagen responsivo",
+      "settings": {
+        "pt_desktop": 60,
+        "pb_desktop": 28,
+        "pt_mobile": 20,
+        "pb_mobile": 32,
+        "bg_color": "#1f1f1f"
+      }
+    },
+    "migraciones_banners_cuenta_atras_Ph34WB": {
+      "type": "migraciones-banners-cuenta-atras",
+      "blocks": {
+        "banner_9KVPxw": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Link_1.jpg",
+            "image_link": "",
+            "product": "tapa-lata",
+            "enable_countdown": true,
+            "countdown_date": "2025-10-30 14:00",
+            "enable_schedule": false,
+            "start_date": "",
+            "end_date": "",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_fippFK": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Link.jpg",
+            "image_link": "",
+            "product": "",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "enable_schedule": false,
+            "start_date": "",
+            "end_date": "",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        }
+      },
+      "block_order": [
+        "banner_9KVPxw",
+        "banner_fippFK"
+      ],
+      "name": "Banners Grid 2 columnas",
+      "settings": {
+        "heading_before": "Ofertas",
+        "heading_highlight": "flash",
+        "heading_after": "",
+        "title_color": "#ffffff",
+        "title_pt_desktop": 0,
+        "title_pb_desktop": 48,
+        "title_pt_mobile": 0,
+        "title_pb_mobile": 32,
+        "pt_desktop": 40,
+        "pb_desktop": 40,
+        "pt_mobile": 20,
+        "pb_mobile": 20,
+        "bg_color": "#1f1f1f"
+      }
+    },
+    "migraciones_selector_de_colecciones_YEcF6e": {
+      "type": "migraciones-selector-de-colecciones",
+      "blocks": {
+        "collection_wLtpT3": {
+          "type": "collection",
+          "settings": {
+            "countdown_date": "2025-10-28 23:59",
+            "pet_type": "dog",
+            "collection_name": "Dieta BARF",
+            "collection": "barf-perros",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": "tapa-lata"
+          }
+        },
+        "collection_mgCBbt": {
+          "type": "collection",
+          "settings": {
+            "countdown_date": "",
+            "pet_type": "cat",
+            "collection_name": "Comida cocinada",
+            "collection": "comida-cocinada-para-perros",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": ""
+          }
+        },
+        "collection_hDjBCz": {
+          "type": "collection",
+          "settings": {
+            "countdown_date": "",
+            "pet_type": "dog",
+            "collection_name": "Snacks",
+            "collection": "snacks-y-mordedores-perros",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": ""
+          }
+        },
+        "collection_9na79a": {
+          "type": "collection",
+          "settings": {
+            "countdown_date": "",
+            "pet_type": "dog",
+            "collection_name": "Dieta BARF",
+            "collection": "barf-gatos",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": ""
+          }
+        },
+        "collection_DVXpBQ": {
+          "type": "collection",
+          "settings": {
+            "countdown_date": "",
+            "pet_type": "cat",
+            "collection_name": "Dieta BARF",
+            "collection": "latas-gatos",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_wLtpT3",
+        "collection_mgCBbt",
+        "collection_hDjBCz",
+        "collection_9na79a",
+        "collection_DVXpBQ"
+      ],
+      "name": "Descuentos Especiales",
+      "settings": {
+        "heading_before": "Descuentos",
+        "heading_highlight": "especiales",
+        "heading_after": "",
+        "title_color": "#ffffff",
+        "accent_color": "#5ccc84",
+        "bg_color": "#1f1f1f",
+        "pt_desktop": 80,
+        "pb_desktop": 80,
+        "pt_mobile": 40,
+        "pb_mobile": 40
+      }
+    },
+    "migraciones_image_width_text_editable_aeixFi": {
+      "type": "migraciones-image-width-text-editable",
+      "name": "Imagen + Texto",
+      "settings": {
+        "image": "shopify://shop_images/353b4457832967a1e491b564db7028d037415663_1.png",
+        "image_position": "left",
+        "brand_logo": "shopify://shop_images/Equipo_de_expertos.png",
+        "title": "Asesoramiento nutricional experto",
+        "description": "<p>En Wild Balance te ofrecemos asesoramiento nutricional personalizado para mejorar la salud y bienestar de tu mascota. Nuestro equipo te ayuda a elegir la mejor dieta natural y equilibrada, adaptada a sus necesidades. ¡Alimenta con conciencia y nota la diferencia!</p>",
+        "show_badge": true,
+        "badge_image": "shopify://shop_images/Group_1538.png",
+        "badge_title": "+100.000 Mascotas contentas",
+        "badge_subtitle": "Para perros y gatos",
+        "button_text": "Escríbenos",
+        "button_link": "https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0&_kx=_V3Qt6MyBasq1R9MaiJGmqCJaXgPZI4XMm1kP-MvGoCJ2YvBXCDqhjZk3RLlmfVw.YsKiw5",
+        "button_new_tab": true,
+        "bg_color": "#f4f0e2",
+        "title_color": "#004623",
+        "text_color": "#222222",
+        "button_bg_color": "#ffcd00",
+        "button_text_color": "#004623",
+        "pt_desktop": 80,
+        "pb_desktop": 80,
+        "mt_desktop": 0,
+        "mb_desktop": 0,
+        "pt_mobile": 40,
+        "pb_mobile": 40,
+        "mt_mobile": 40,
+        "mb_mobile": 40
+      }
+    },
+    "shipping_7KqxwA": {
+      "type": "shipping",
+      "blocks": {
+        "shipping_BXMPFn": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "box1",
+            "image_icon": "shopify://shop_images/Image_72.png",
+            "icon": "las la-truck",
+            "title": "",
+            "text": "<p>+ Esperanza de vida</p>"
+          }
+        },
+        "shipping_7xCgmW": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "box2",
+            "image_icon": "shopify://shop_images/Image_71.png",
+            "icon": "las la-redo-alt",
+            "title": "",
+            "text": "<p>Previene la obesidad</p>"
+          }
+        },
+        "shipping_ggQXnd": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "car",
+            "image_icon": "shopify://shop_images/Image_73_8b5f7fa0-13dc-4d49-8518-18d44def9b37.png",
+            "icon": "las la-headphones",
+            "title": "",
+            "text": "<p>Previene el sarro</p>"
+          }
+        },
+        "shipping_EnBQPV": {
+          "type": "shipping",
+          "settings": {
+            "icon_themes": "shield1",
+            "image_icon": "shopify://shop_images/Image_74_540c5490-5fcd-4c52-9405-b63417804798.png",
+            "icon": "las la-shield-alt",
+            "title": "",
+            "text": "<p>Pelo más brillante</p>"
+          }
+        }
+      },
+      "block_order": [
+        "shipping_BXMPFn",
+        "shipping_7xCgmW",
+        "shipping_ggQXnd",
+        "shipping_EnBQPV"
+      ],
+      "custom_css": [
+        "*,p {color: #004623 !important;}"
+      ],
+      "settings": {
+        "design_heading": "1",
+        "block_custom_class": "probando",
+        "heading_center": true,
+        "top_heading": "",
+        "top_subheading": "",
+        "tophead_mb": 10,
+        "tophead_mb_tb": 10,
+        "tophead_mb_mb": 10,
+        "content_align": "text-start",
+        "align_vertical": true,
+        "align_horizontal": false,
+        "divided": false,
+        "src_icon": "get_image",
+        "icon_size": "medium",
+        "icon_effect": "none",
+        "col_dk": "4",
+        "col_tb": "3",
+        "col_mb": "2",
+        "icon_cl": "#ffffff",
+        "hd_cl": "#ffffff",
+        "content_cl": "#ffffff",
+        "bg_wrap_cl": "",
+        "hd_fs": 16,
+        "hd_fw": 500,
+        "txt_fs": 16,
+        "space_h_item": "10",
+        "space_v_item": "15",
+        "space_h_item_tb": "10",
+        "space_v_item_tb": "15",
+        "space_h_item_mb": "10",
+        "space_v_item_mb": "10",
+        "padding_inner": "",
+        "padding_inner_tb": "",
+        "padding_inner_mb": "",
+        "carousel_mobile": false,
+        "dots_cl": "dark",
+        "dots_round": true,
+        "layout": "t4s-container-fluid",
+        "custom_width": 1000,
+        "cl_bg": "#d9d9c8",
+        "cl_bg_gradient": "",
+        "mg": ",,0px,",
+        "pd": "20px,200px,20px,200px",
+        "mg_tb": ",,0px,",
+        "pd_tb": "20px,20px,20px,20px",
+        "mg_mb": ",,0px,",
+        "pd_mb": "20px,20px,20px,20px"
+      }
+    },
+    "migraciones_faq_2_4d9LGa": {
+      "type": "migraciones-faq-2",
+      "blocks": {
+        "faq_zpMxf7": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Qué tipo de comida es?",
+            "answer": "<p>En Wild Balance elaboramos, con mucho amor, menús completos BARF triturados para perros y gatos.</p>"
+          }
+        },
+        "faq_MFF6kj": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Qué beneficios tiene alimentar con comida natural?",
+            "answer": "<p>Una alimentación natural mejora el sistema digestivo, fortalece el sistema inmune y reduce alergias.</p>"
+          }
+        },
+        "faq_GCBxeq": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Hacéis envíos a toda España?",
+            "answer": "<p>Sí, enviamos a toda la península y Baleares con cadena de frío garantizada.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_zpMxf7",
+        "faq_MFF6kj",
+        "faq_GCBxeq"
+      ],
+      "name": "Migraciones FAQ",
+      "settings": {
+        "show_image": true,
+        "sidebar_image": "shopify://shop_images/7deadb414f511cd5c3c8ee8266284f065cab2480_1.webp",
+        "brand_logo": "shopify://shop_images/Capa_1_23.png",
+        "heading_before": "Te ayudamos",
+        "heading_highlight": "en todo",
+        "heading_after": "",
+        "bg_color": "#1f1f1f",
+        "title_color": "#ffffff",
+        "button_bg_color": "#222222",
+        "button_text_color": "#ffffff",
+        "item_bg_color": "rgba(0,0,0,0)",
+        "border_color": "#ffffff",
+        "answer_text_color": "#ffffff",
+        "pt_desktop": 100,
+        "pb_desktop": 100,
+        "pt_mobile": 40,
+        "pb_mobile": 40
+      }
+    },
+    "custom_liquid_WAfnkt": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
+      "settings": {
+        "custom_liquid": "<style>\n\n.t4s-header__wrapper {background: #222222;color:white;}\n\n.t4s-menu-item a, .t4s-menu-item a:hover {color:white!important;}\n\n.t4s-sub-menu {background:#222222!important;}\n\n.flex.items-center.bg-white.shadow.border p {color:#222222!important;}\n\n.t4s-site-nav__icon a .t4s-site-nav__icon a svg, .t4s-site-nav__icon a:hover {color:white!important;}\n\n.t4s-top-bar, .t4s-top-bar button {background:#F0807B!important;color:white;}\n\n.header__normal-logo, .header__sticky-logo {filter: brightness(0) invert(1)!important;}\n\n.t4s-site-nav__icon a,  .t4s-d-lg-none {filter: brightness(0) invert(1);}\n\n.t4s-nav__ul>li> a:hover {color:white!important;}\n\n.t4s-lh-1.t4s-d-flex svg {display:none;}\n\n#shopify-section-footer, .t4s_se_footer, .t4s_se_footer-bottom {background:#222222!important}\n</style>"
+      }
+    }
+  },
+  "order": [
+    "heading",
+    "main",
+    "migraciones_banner_responsive_d6hJg8",
+    "migraciones_banners_cuenta_atras_Ph34WB",
+    "migraciones_selector_de_colecciones_YEcF6e",
+    "migraciones_image_width_text_editable_aeixFi",
+    "shipping_7KqxwA",
+    "migraciones_faq_2_4d9LGa",
+    "custom_liquid_WAfnkt"
+  ]
+}
