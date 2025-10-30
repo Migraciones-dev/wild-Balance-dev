@@ -446,11 +446,11 @@
         "title_color": "#ffffff",
         "button_bg_color": "#222222",
         "button_text_color": "#ffffff",
-        "item_bg_color": "transparent",
+        "item_bg_color": "rgba(0,0,0,0)",
         "border_color": "#ffffff",
         "answer_text_color": "#ffffff",
-        "pt_desktop": 80,
-        "pb_desktop": 80,
+        "pt_desktop": 100,
+        "pb_desktop": 100,
         "pt_mobile": 40,
         "pb_mobile": 40
       }
