@@ -284,16 +284,6 @@
         "pb_mobile": 40
       }
     },
-    "migraciones_image_width_text_JLdjiB": {
-      "type": "migraciones-image-width-text",
-      "custom_css": [
-        ".py-20 {margin: 0;}"
-      ],
-      "name": "Migraciones image+text",
-      "settings": {
-        "custom_liquid": ""
-      }
-    },
     "migraciones_image_width_text_editable_aeixFi": {
       "type": "migraciones-image-width-text-editable",
       "name": "Imagen + Texto",
@@ -302,7 +292,7 @@
         "image_position": "left",
         "brand_logo": "shopify://shop_images/Equipo_de_expertos.png",
         "title": "Asesoramiento nutricional experto",
-        "description": "<p>En Wild Balance te ofrecemos asesoramiento nutricional personalizado para mejorar la salud y bienestar de tu mascota.</p>",
+        "description": "<p>En Wild Balance te ofrecemos asesoramiento nutricional personalizado para mejorar la salud y bienestar de tu mascota. Nuestro equipo te ayuda a elegir la mejor dieta natural y equilibrada, adaptada a sus necesidades. ¡Alimenta con conciencia y nota la diferencia!</p>",
         "show_badge": true,
         "badge_image": "shopify://shop_images/Group_1538.png",
         "badge_title": "+100.000 Mascotas contentas",
@@ -310,7 +300,7 @@
         "button_text": "Escríbenos",
         "button_link": "https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0&_kx=_V3Qt6MyBasq1R9MaiJGmqCJaXgPZI4XMm1kP-MvGoCJ2YvBXCDqhjZk3RLlmfVw.YsKiw5",
         "button_new_tab": true,
-        "bg_color": "#F4F0E2",
+        "bg_color": "#f4f0e2",
         "title_color": "#004623",
         "text_color": "#222222",
         "button_bg_color": "#ffcd00",
@@ -493,7 +483,6 @@
     "migraciones_banner_responsive_d6hJg8",
     "migraciones_banners_cuenta_atras_Ph34WB",
     "migraciones_selector_de_colecciones_YEcF6e",
-    "migraciones_image_width_text_JLdjiB",
     "migraciones_image_width_text_editable_aeixFi",
     "shipping_7KqxwA",
     "custom_liquid_WAfnkt",
