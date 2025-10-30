@@ -1,20 +1,9 @@
 <section
   id="section-{{ section.id }}"
-  class="flex items-center gap-[29px] max-w-[1600px] mx-auto px-6 lg:px-10"
-  style="
-    background-color: {{ section.settings.bg_color }};
-    padding-top: {{ section.settings.pt_mobile }}px;
-    padding-bottom: {{ section.settings.pb_mobile }}px;
-  "
+  class="w-full"
+  style="background-color: {{ section.settings.bg_color }};"
 >
   <style>
-    @media (min-width: 1024px) {
-      #section-{{ section.id }} {
-        padding-top: {{ section.settings.pt_desktop }}px !important;
-        padding-bottom: {{ section.settings.pb_desktop }}px !important;
-      }
-    }
-
     #section-{{ section.id }} h2 {
       color: {{ section.settings.title_color }};
     }
@@ -22,6 +11,7 @@
     #section-{{ section.id }} .faq-button {
       background: {{ section.settings.button_bg_color }};
       color: {{ section.settings.button_text_color }};
+      border: 1px solid {{ section.settings.border_color }};
     }
 
     #section-{{ section.id }} .faq-item {
@@ -38,80 +28,97 @@
     }
   </style>
 
-  <!-- Imagen fija -->
-  {% if section.settings.show_image and section.settings.sidebar_image != blank %}
-    <img
-      class="lg:w-2/5 h-full rounded-[14px] hidden lg:block object-cover"
-      alt="{{ section.settings.sidebar_image.alt | escape }}"
-      src="{{ section.settings.sidebar_image | img_url: '800x' }}"
-      loading="lazy"
-    >
-  {% endif %}
+  <div
+    class="flex flex-col lg:flex-row items-center gap-[29px] max-w-[1600px] mx-auto px-6 lg:px-10"
+    style="
+      padding-top: {{ section.settings.pt_mobile }}px;
+      padding-bottom: {{ section.settings.pb_mobile }}px;
+    "
+  >
+    <style>
+      @media (min-width: 1024px) {
+        #section-{{ section.id }} .inner-container {
+          padding-top: {{ section.settings.pt_desktop }}px !important;
+          padding-bottom: {{ section.settings.pb_desktop }}px !important;
+        }
+      }
+    </style>
 
-  <div class="flex flex-col w-full {% if section.settings.show_image %}lg:w-3/5{% endif %} items-start gap-[47px]">
-    <!-- Cabecera -->
-    <div class="relative w-full">
-      <div class="w-full flex flex-col gap-5">
-        {% if section.settings.brand_logo != blank %}
-          <div class="flex flex-col w-[242px] items-center gap-2.5 mx-auto lg:mx-0">
-            <img
-              class="h-[27px] sm:h-[37px] lg:h-[47px]"
-              alt="{{ section.settings.brand_logo.alt | escape }}"
-              src="{{ section.settings.brand_logo | img_url: '300x' }}"
-              loading="lazy"
-            >
-          </div>
-        {% endif %}
+    <!-- Imagen fija -->
+    {% if section.settings.show_image and section.settings.sidebar_image != blank %}
+      <img
+        class="lg:w-2/5 h-full rounded-[14px] hidden lg:block object-cover"
+        alt="{{ section.settings.sidebar_image.alt | escape }}"
+        src="{{ section.settings.sidebar_image | img_url: '800x' }}"
+        loading="lazy"
+      >
+    {% endif %}
 
-        <h2 class="[font-family:'Barlow',Helvetica] font-extrabold text-[30px] sm:text-[38px] md:text-[44px] lg:text-[57px] xl:text-[64px] text-center lg:text-left leading-[1]">
-          {{ section.settings.heading_before }}
-          {% if section.settings.heading_highlight != blank %}
-            <span class="highlight">{{ section.settings.heading_highlight }}</span>
-          {% endif %}
-          {{ section.settings.heading_after }}
-        </h2>
-      </div>
-    </div>
-
-    <!-- FAQs -->
-    <div class="w-full" data-orientation="vertical">
-      {% for block in section.blocks %}
-        {% if block.type == 'faq' %}
-          <div
-            class="faq-item border-b mb-[14px] rounded-[10px] overflow-hidden"
-            data-state="closed"
-            {{ block.shopify_attributes }}
-          >
-            <h3 class="flex">
-              <button
-                type="button"
-                aria-controls="faq-{{ block.id }}"
-                aria-expanded="false"
-                class="faq-button flex flex-1 items-center justify-between py-6 px-8 font-medium transition-all [&[aria-expanded=true]>svg]:rotate-180 text-[14px] sm:text-[16px] lg:text-[18px] text-left"
+    <div class="flex flex-col w-full {% if section.settings.show_image %}lg:w-3/5{% endif %} items-start gap-[47px] inner-container">
+      <!-- Cabecera -->
+      <div class="relative w-full">
+        <div class="w-full flex flex-col gap-5">
+          {% if section.settings.brand_logo != blank %}
+            <div class="flex flex-col w-[242px] items-center gap-2.5 mx-auto lg:mx-0">
+              <img
+                class="h-[27px] sm:h-[37px] lg:h-[47px]"
+                alt="{{ section.settings.brand_logo.alt | escape }}"
+                src="{{ section.settings.brand_logo | img_url: '300x' }}"
+                loading="lazy"
               >
-                {{ block.settings.question }}
-                <svg
-                  class="faq-icon h-7 w-7 flex-shrink-0 ml-4 transition-transform"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
-                </svg>
-              </button>
-            </h3>
-            <div
-              id="faq-{{ block.id }}"
-              role="region"
-              hidden
-              class="faq-answer px-8 pb-6 text-sm sm:text-base"
-            >
-              {{ block.settings.answer }}
             </div>
-          </div>
-        {% endif %}
-      {% endfor %}
+          {% endif %}
+
+          <h2 class="[font-family:'Barlow',Helvetica] font-extrabold text-[30px] sm:text-[38px] md:text-[44px] lg:text-[57px] xl:text-[64px] text-center lg:text-left leading-[1]">
+            {{ section.settings.heading_before }}
+            {% if section.settings.heading_highlight != blank %}
+              <span class="highlight">{{ section.settings.heading_highlight }}</span>
+            {% endif %}
+            {{ section.settings.heading_after }}
+          </h2>
+        </div>
+      </div>
+
+      <!-- FAQs -->
+      <div class="w-full" data-orientation="vertical">
+        {% for block in section.blocks %}
+          {% if block.type == 'faq' %}
+            <div
+              class="faq-item mb-[14px] rounded-[10px] overflow-hidden"
+              data-state="closed"
+              {{ block.shopify_attributes }}
+            >
+              <h3 class="flex">
+                <button
+                  type="button"
+                  aria-controls="faq-{{ block.id }}"
+                  aria-expanded="false"
+                  class="faq-button flex flex-1 items-center justify-between py-6 px-8 font-medium transition-all [&[aria-expanded=true]>svg]:rotate-180 text-[14px] sm:text-[16px] lg:text-[18px] text-left rounded-[10px]"
+                >
+                  {{ block.settings.question }}
+                  <svg
+                    class="faq-icon h-7 w-7 flex-shrink-0 ml-4 transition-transform"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
+                  </svg>
+                </button>
+              </h3>
+              <div
+                id="faq-{{ block.id }}"
+                role="region"
+                hidden
+                class="faq-answer px-8 pb-6 text-sm sm:text-base"
+              >
+                {{ block.settings.answer }}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
     </div>
   </div>
 </section>
@@ -134,7 +141,7 @@
 
 {% schema %}
 {
-  "name": "Migraciones FAQ",
+  "name": "FAQ Personalizable",
   "settings": [
     {
       "type": "header",
@@ -185,7 +192,7 @@
       "type": "color",
       "id": "bg_color",
       "label": "Color de fondo",
-      "default": "#004623"
+      "default": "#2C2C2C"
     },
     {
       "type": "color",
@@ -215,7 +222,7 @@
       "type": "color",
       "id": "border_color",
       "label": "Color del borde",
-      "default": "#ffffff"
+      "default": "#000000"
     },
     {
       "type": "color",
@@ -294,7 +301,7 @@
   ],
   "presets": [
     {
-      "name": "Migraciones FAQ",
+      "name": "FAQ Personalizable",
       "blocks": [
         {
           "type": "faq",
