@@ -298,6 +298,7 @@
       "type": "migraciones-image-width-text-editable",
       "name": "Imagen + Texto",
       "settings": {
+        "image": "shopify://shop_images/353b4457832967a1e491b564db7028d037415663_1.png",
         "image_position": "left",
         "brand_logo": "shopify://shop_images/Equipo_de_expertos.png",
         "title": "Asesoramiento nutricional experto",
