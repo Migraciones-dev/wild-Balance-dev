@@ -301,6 +301,8 @@
         "title_color": "#ffffff",
         "accent_color": "#5ccc84",
         "bg_color": "#1f1f1f",
+        "countdown_bg_color": "#1f1f1f",
+        "countdown_text_color": "#ffffff",
         "price_color": "#5ccc84",
         "compare_price_color": "#f4f0e2",
         "pt_desktop": 80,
