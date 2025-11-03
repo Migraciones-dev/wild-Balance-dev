@@ -1,0 +1,342 @@
+<section
+  id="section-{{ section.id }}"
+  class="w-full"
+  style="
+    background-color: {{ section.settings.bg_color }};
+    padding-top: {{ section.settings.pt_mobile }}px;
+    padding-bottom: {{ section.settings.pb_mobile }}px;
+  "
+>
+  <style>
+    @media (min-width: 768px) {
+      #section-{{ section.id }} {
+        padding-top: {{ section.settings.pt_desktop }}px !important;
+        padding-bottom: {{ section.settings.pb_desktop }}px !important;
+      }
+    }
+
+    /* Grid dinámico según configuración */
+    .benefits-grid {
+      display: grid;
+      gap: {{ section.settings.gap_mobile }}px;
+      grid-template-columns: repeat({{ section.settings.columns_mobile }}, 1fr);
+    }
+
+    @media (min-width: 640px) {
+      .benefits-grid {
+        gap: {{ section.settings.gap_tablet }}px;
+        grid-template-columns: repeat({{ section.settings.columns_tablet }}, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .benefits-grid {
+        gap: {{ section.settings.gap_desktop }}px;
+        grid-template-columns: repeat({{ section.settings.columns_desktop }}, 1fr);
+      }
+    }
+
+    /* Estilos de cada item */
+    .benefit-item {
+      display: flex;
+      align-items: center;
+      gap: {{ section.settings.item_gap_mobile }}px;
+      /* Móvil: columna (icono arriba, texto abajo) */
+      flex-direction: column;
+      text-align: center;
+    }
+
+    /* Desktop: fila (icono izquierda, texto derecha) */
+    @media (min-width: 1024px) {
+      .benefit-item {
+        flex-direction: row;
+        gap: {{ section.settings.item_gap_desktop }}px;
+        text-align: left;
+      }
+    }
+
+    .benefit-item img {
+      width: {{ section.settings.icon_size }}px;
+      height: {{ section.settings.icon_size }}px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .benefit-item .benefit-text {
+      color: {{ section.settings.text_color }};
+      font-size: {{ section.settings.text_size_mobile }}px;
+      line-height: 1.4;
+    }
+
+    @media (min-width: 1024px) {
+      .benefit-item .benefit-text {
+        font-size: {{ section.settings.text_size_desktop }}px;
+      }
+    }
+  </style>
+
+  <div class="max-w-[1600px] mx-auto px-6 lg:px-10">
+    <div class="benefits-grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'benefit' %}
+          <div class="benefit-item" {{ block.shopify_attributes }}>
+            {% if block.settings.icon %}
+              <img
+                src="{{ block.settings.icon | img_url: '200x' }}"
+                alt="{{ block.settings.text | escape }}"
+                loading="lazy"
+              >
+            {% endif %}
+            <span class="benefit-text">{{ block.settings.text }}</span>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Beneficios con Iconos",
+  "settings": [
+    {
+      "type": "header",
+      "content": "🎨 Colores"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Color de fondo",
+      "default": "#E8E4D4"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color del texto",
+      "default": "#004622"
+    },
+    {
+      "type": "header",
+      "content": "📐 Columnas"
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "label": "Columnas en móvil",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "columns_tablet",
+      "label": "Columnas en tablet",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Columnas en desktop",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "📏 Espaciado entre bloques (GAP del grid)"
+    },
+    {
+      "type": "range",
+      "id": "gap_mobile",
+      "label": "Espacio entre bloques (Móvil)",
+      "min": 8,
+      "max": 64,
+      "step": 4,
+      "unit": "px",
+      "default": 24,
+      "info": "Separación entre cada bloque en móvil"
+    },
+    {
+      "type": "range",
+      "id": "gap_tablet",
+      "label": "Espacio entre bloques (Tablet)",
+      "min": 8,
+      "max": 64,
+      "step": 4,
+      "unit": "px",
+      "default": 32,
+      "info": "Separación entre cada bloque en tablet"
+    },
+    {
+      "type": "range",
+      "id": "gap_desktop",
+      "label": "Espacio entre bloques (Desktop)",
+      "min": 8,
+      "max": 64,
+      "step": 4,
+      "unit": "px",
+      "default": 40,
+      "info": "Separación entre cada bloque en desktop"
+    },
+    {
+      "type": "header",
+      "content": "🎯 Tamaño de iconos y texto"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Tamaño de icono",
+      "min": 24,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "item_gap_mobile",
+      "label": "Espacio entre icono y texto (Móvil)",
+      "min": 4,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 8,
+      "info": "Espaciado vertical entre el icono y el texto en móvil"
+    },
+    {
+      "type": "range",
+      "id": "item_gap_desktop",
+      "label": "Espacio entre icono y texto (Desktop)",
+      "min": 4,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 12,
+      "info": "Espaciado horizontal entre el icono y el texto en desktop"
+    },
+    {
+      "type": "range",
+      "id": "text_size_mobile",
+      "label": "Tamaño de texto (Móvil)",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "text_size_desktop",
+      "label": "Tamaño de texto (Desktop)",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "📏 Espaciado de sección - Desktop"
+    },
+    {
+      "type": "range",
+      "id": "pt_desktop",
+      "label": "Padding superior (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "pb_desktop",
+      "label": "Padding inferior (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "📏 Espaciado de sección - Móvil"
+    },
+    {
+      "type": "range",
+      "id": "pt_mobile",
+      "label": "Padding superior (Móvil)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "pb_mobile",
+      "label": "Padding inferior (Móvil)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Beneficio",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icono"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texto",
+          "default": "+ Esperanza de vida"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Beneficios con Iconos",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "text": "+ Esperanza de vida"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "text": "Previene el sarro"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "text": "Previene la obesidad"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "text": "Pelo más brillante"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
