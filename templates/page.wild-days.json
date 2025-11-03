@@ -151,9 +151,9 @@
         "title_color": "#004622",
         "number_color": "#004622",
         "label_color": "#004622",
-        "pt_desktop": 36,
-        "pb_desktop": 40,
-        "countdown_mt_desktop": 28,
+        "pt_desktop": 20,
+        "pb_desktop": 20,
+        "countdown_mt_desktop": 12,
         "pt_mobile": 0,
         "pb_mobile": 0,
         "countdown_mt_mobile": 32
