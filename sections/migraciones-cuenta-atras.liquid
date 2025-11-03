@@ -152,9 +152,28 @@
 
     // Obtener fecha de finalización desde el atributo data
     const endDateStr = '{{ section.settings.countdown_date }}';
-    if (!endDateStr) return;
+    if (!endDateStr) {
+      console.log('❌ No hay fecha configurada');
+      return;
+    }
 
-    const endDate = new Date(endDateStr + ':00').getTime();
+    // FIX PARA SAFARI/iOS: Convertir formato YYYY-MM-DD HH:MM a ISO 8601
+    const parts = endDateStr.split(' ');
+    const datePart = parts[0]; // YYYY-MM-DD
+    const timePart = parts[1] || '00:00'; // HH:MM
+
+    // Convertir a formato ISO 8601: YYYY-MM-DDTHH:MM:00
+    const isoDate = `${datePart}T${timePart}:00`;
+    const endDate = new Date(isoDate).getTime();
+
+    console.log('📅 Fecha original:', endDateStr);
+    console.log('📅 Fecha ISO:', isoDate);
+    console.log('📅 Timestamp:', endDate);
+
+    if (isNaN(endDate)) {
+      console.error('❌ Error al parsear la fecha. Verifica el formato: YYYY-MM-DD HH:MM');
+      return;
+    }
 
     function updateCountdown() {
       const now = new Date().getTime();
@@ -176,7 +195,9 @@
       secondsElement.textContent = seconds.toString().padStart(2, '0');
     }
 
+    // Primera actualización
     updateCountdown();
+    // Actualizar cada segundo
     setInterval(updateCountdown, 1000);
   });
 </script>
