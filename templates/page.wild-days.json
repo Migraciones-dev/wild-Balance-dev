@@ -186,6 +186,8 @@
           "type": "banner",
           "disabled": true,
           "settings": {
+            "desktop_image": "shopify://shop_images/ofertas-flash-lata-pescado-perro.png",
+            "mobile_image": "shopify://shop_images/ofertas-flash-lata-pescado-perro.png",
             "image_link": "",
             "product": "lata-comida-cocinada-para-perro-pescado",
             "enable_countdown": false,
@@ -255,7 +257,6 @@
             "pet_type": "dog",
             "collection_name": "Dieta BARF",
             "collection": "barf-perros",
-            "products_limit": 8,
             "banner_action_type": "link",
             "banner_link_url": "",
             "banner_product": ""
@@ -268,7 +269,6 @@
             "pet_type": "dog",
             "collection_name": "Comida Cocinada",
             "collection": "comida-cocinada-para-perros",
-            "products_limit": 8,
             "banner_action_type": "link",
             "banner_link_url": "",
             "banner_product": ""
@@ -281,7 +281,6 @@
             "pet_type": "dog",
             "collection_name": "Latas Comida Húmeda",
             "collection": "latas-perros",
-            "products_limit": 8,
             "banner_action_type": "link",
             "banner_link_url": "",
             "banner_product": ""
@@ -294,7 +293,6 @@
             "pet_type": "dog",
             "collection_name": "Snacks y mordedores",
             "collection": "snacks-y-mordedores-perros",
-            "products_limit": 8,
             "banner_action_type": "link",
             "banner_link_url": "",
             "banner_product": ""
@@ -307,7 +305,6 @@
             "pet_type": "cat",
             "collection_name": "Dieta BARF",
             "collection": "barf-gatos",
-            "products_limit": 8,
             "banner_action_type": "link",
             "banner_link_url": "",
             "banner_product": ""
@@ -320,7 +317,6 @@
             "pet_type": "cat",
             "collection_name": "Comida Cocinada",
             "collection": "comida-cocinada-para-gatos",
-            "products_limit": 8,
             "banner_action_type": "link",
             "banner_link_url": "",
             "banner_product": ""
@@ -333,7 +329,6 @@
             "pet_type": "cat",
             "collection_name": "Latas Comida Húmeda",
             "collection": "latas-gatos",
-            "products_limit": 8,
             "banner_action_type": "link",
             "banner_link_url": "",
             "banner_product": ""
@@ -346,7 +341,6 @@
             "pet_type": "cat",
             "collection_name": "Snacks",
             "collection": "snacks-y-mordedores-gatos",
-            "products_limit": 8,
             "banner_action_type": "link",
             "banner_link_url": "",
             "banner_product": ""
