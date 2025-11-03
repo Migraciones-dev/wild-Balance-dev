@@ -305,7 +305,7 @@
                         {% assign has_banner = true %}
                       {% endif %}
 
-                      {% for product in products_array limit: 8 %}
+                      {% for product in products_array limit: block.settings.products_limit %}
                         {%- comment -%} En móvil: después del producto 2 (index 2) - posiciones 3 y 4 {%- endcomment -%}
                         {% if has_banner and forloop.index == 3 %}
                           <div class="banner-wide lg:hidden">
@@ -779,6 +779,16 @@
           "type": "collection",
           "id": "collection",
           "label": "Colección"
+        },
+        {
+          "type": "range",
+          "id": "products_limit",
+          "label": "Número máximo de productos a mostrar",
+          "min": 4,
+          "max": 50,
+          "step": 2,
+          "default": 8,
+          "info": "Máximo de productos que se mostrarán de esta colección"
         },
         {
           "type": "header",
