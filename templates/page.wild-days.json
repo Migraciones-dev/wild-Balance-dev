@@ -257,7 +257,7 @@
           "type": "collection",
           "settings": {
             "countdown_date": "",
-            "pet_type": "cat",
+            "pet_type": "dog",
             "collection_name": "Latas Comida Húmeda",
             "collection": "latas-perros",
             "banner_action_type": "link",
