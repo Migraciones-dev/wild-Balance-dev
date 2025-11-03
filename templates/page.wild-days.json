@@ -241,19 +241,19 @@
             "banner_product": "tapa-lata"
           }
         },
-        "collection_mgCBbt": {
+        "collection_DVXpBQ": {
           "type": "collection",
           "settings": {
             "countdown_date": "",
-            "pet_type": "cat",
-            "collection_name": "Comida cocinada",
+            "pet_type": "dog",
+            "collection_name": "Comida Cocinada",
             "collection": "comida-cocinada-para-perros",
             "banner_action_type": "link",
             "banner_link_url": "",
             "banner_product": ""
           }
         },
-        "collection_DVXpBQ": {
+        "collection_qr47Xg": {
           "type": "collection",
           "settings": {
             "countdown_date": "",
@@ -265,13 +265,13 @@
             "banner_product": ""
           }
         },
-        "collection_hDjBCz": {
+        "collection_mgCBbt": {
           "type": "collection",
           "settings": {
             "countdown_date": "",
-            "pet_type": "dog",
-            "collection_name": "Snacks",
-            "collection": "snacks-y-mordedores-perros",
+            "pet_type": "cat",
+            "collection_name": "Comida cocinada",
+            "collection": "comida-cocinada-para-perros",
             "banner_action_type": "link",
             "banner_link_url": "",
             "banner_product": ""
@@ -288,14 +288,27 @@
             "banner_link_url": "",
             "banner_product": ""
           }
+        },
+        "collection_hDjBCz": {
+          "type": "collection",
+          "settings": {
+            "countdown_date": "",
+            "pet_type": "dog",
+            "collection_name": "Snacks",
+            "collection": "snacks-y-mordedores-perros",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": ""
+          }
         }
       },
       "block_order": [
         "collection_wLtpT3",
-        "collection_mgCBbt",
         "collection_DVXpBQ",
-        "collection_hDjBCz",
-        "collection_9na79a"
+        "collection_qr47Xg",
+        "collection_mgCBbt",
+        "collection_9na79a",
+        "collection_hDjBCz"
       ],
       "name": "Descuentos Especiales",
       "settings": {
