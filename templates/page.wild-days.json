@@ -165,8 +165,8 @@
         "banner_9KVPxw": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/oferta-flash-articulaciones-acero.png",
-            "mobile_image": "shopify://shop_images/oferta-flash-articulaciones-acero.png",
+            "desktop_image": "shopify://shop_images/ofertas-flash-articulaciones-acero.png",
+            "mobile_image": "shopify://shop_images/ofertas-flash-articulaciones-acero.png",
             "image_link": "",
             "product": "condroprotector-perros-articulaciones-acero",
             "enable_countdown": true,
@@ -186,8 +186,6 @@
           "type": "banner",
           "disabled": true,
           "settings": {
-            "desktop_image": "shopify://shop_images/Background_8.jpg",
-            "mobile_image": "shopify://shop_images/Link_3.jpg",
             "image_link": "",
             "product": "lata-comida-cocinada-para-perro-pescado",
             "enable_countdown": false,
@@ -207,8 +205,6 @@
           "type": "banner",
           "disabled": true,
           "settings": {
-            "desktop_image": "shopify://shop_images/Link_2.jpg",
-            "mobile_image": "shopify://shop_images/Link_4.jpg",
             "image_link": "",
             "product": "lata-comida-cocinada-para-gato-pescado",
             "enable_countdown": false,
