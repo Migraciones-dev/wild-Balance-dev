@@ -402,11 +402,9 @@
       }
     }
 
-    // Función para cambiar de colección
     function switchCollection(collectionHandle) {
       currentCollection = collectionHandle;
 
-      // Actualizar botones de categorías
       categoryButtons.forEach((btn) => {
         if (
           btn.getAttribute('data-collection') === collectionHandle &&
@@ -418,7 +416,6 @@
         }
       });
 
-      // Mostrar panel de productos correspondiente
       productPanels.forEach((panel) => {
         if (
           panel.getAttribute('data-collection-panel') === collectionHandle &&
@@ -430,21 +427,6 @@
         }
       });
 
-      // Scroll suave al inicio de la sección con offset de -50px (solo en desktop lg: 1024px+)
-      if (window.innerWidth >= 1024) {
-        const section = document.getElementById('section-{{ section.id }}');
-        if (section) {
-          const elementPosition = section.getBoundingClientRect().top + window.scrollY;
-          const offsetPosition = elementPosition - 100;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth',
-          });
-        }
-      }
-
-      // Reinicializar después de cambiar de panel
       setTimeout(() => {
         initProductCountdowns();
         initAddToCart();
