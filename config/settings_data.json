@@ -202,6 +202,7 @@
           },
           "html_D94WcX": {
             "type": "html",
+            "disabled": true,
             "settings": {
               "html": "<!-- Suscripción mobile -->\n<div class=\"suscripcion-mobile\">\n  <span>🔥 Ofertas FLASH diarias → </span>\n  <a href=\"https://chat.whatsapp.com/KggSebElcla8IyIae6G0JN?mode=wwt&amp;utm_source=Klaviyo&amp;utm_medium=campaign&amp;utm_campaign=B2C%20%C3%9ALTIMAS%20HORAS%20-%20No%20Compradores&amp;utm_id=01K8NWFRGXBH7N6Y9M2J0PQR7S&amp;_kx=NA7iRrCxS5NS5o6lXTA8PkCg1X4wTdmvz3A495tUNgZPw5okmAEcKifBcOzNO9fN.YsKiw5\" style=\"color:#ffce00; text-decoration:underline; font-weight:bold; margin-left:5px;\" target=\"_blank\" rel=\"noopener noreferrer\">\n    ÚNETE AHORA  </a>\n</div>\n\n<style>\n.suscripcion-mobile {\n  padding-top: 0px;\n  padding-bottom: 0px;\n}\n\n.suscripcion-mobile span {\n  font-size: 15px;\n}\n</style>",
               "hide": false,
@@ -211,9 +212,8 @@
           },
           "html_VkEmKE": {
             "type": "html",
-            "disabled": true,
             "settings": {
-              "html": "<a href=\"https://wildbalance.es/collections/latas-de-comida-para-mascotas\"> ¡REGALITO! 🎁 En pedidos +59€, nuestra tapa para tus latas GRATIS⚡ </a>",
+              "html": "<!-- Suscripción mobile --> <div class=\"suscripcion-mobile\"> <span>Inscríbete ¡-10% en tu primer pedido! </span><button class=\"klaviyo_form_trigger_mob\">RECOGER CUPÓN</button> </div> <style> .klaviyo_form_trigger_mob{ color:#ffce00; text-decoration:underline; } .klaviyo_form_trigger_mob:hover{ color:#ffce00; } .suscripcion-mobile span{ font-size:15px; } button { padding: 0px; } </style> <script type=\"text/javascript\"> document.querySelector('.klaviyo_form_trigger_mob').addEventListener('click', function (){ window._klOnsite = window._klOnsite || []; window._klOnsite.push(['openForm', 'QYueub']); }); </script>",
               "hide": false,
               "text_align": "center",
               "col": "12"
