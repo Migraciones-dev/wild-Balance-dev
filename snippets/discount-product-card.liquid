@@ -1,30 +1,39 @@
 {%- comment -%}
   Snippet: discount-product-card.liquid
+  Uso: {% render 'discount-product-card', product: product, countdown_date: block.settings.countdown_date, show_discount_badge: block.settings.show_discount_badge %}
 {%- endcomment -%}
 
 {%- liquid
   assign current_variant = product.selected_or_first_available_variant
   assign isDefault = product.has_only_default_variant
   assign pid = product.id
+
+  assign discount_percentage = 0
+  if current_variant.compare_at_price > current_variant.price
+    assign discount_percentage = current_variant.compare_at_price | minus: current_variant.price | times: 100 | divided_by: current_variant.compare_at_price | round: 0
+  endif
 -%}
 
 <div class="discount-product-card">
   <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow relative">
-    {%- comment -%} Cuenta atrás {%- endcomment -%}
-    {% if countdown_date and countdown_date != blank %}
+    {%- comment -%} Badge circular solo si show_discount_badge == 'discount' {%- endcomment -%}
+    {% if show_discount_badge == 'discount' and current_variant.compare_at_price > current_variant.price %}
       <div
-        class="countdown-badge absolute top-3 right-3 z-10 px-4 py-2 rounded-full font-bold text-[8px] lg:text-[11px]"
+        class="discount-circle absolute top-4 right-4 z-10 w-16 h-16 lg:w-20 lg:h-20 rounded-full flex items-center justify-center font-bold text-center flex-col"
+        style="background-color: {{ countdown_bg_color | default: '#000000' }}; color: {{ countdown_text_color | default: '#ffffff' }};"
+      >
+        <span class="text-xl lg:text-2xl font-black">-{{ discount_percentage }}%</span>
+      </div>
+    {% endif %}
+
+    {%- comment -%} Cuenta atrás si está configurada y seleccionada {%- endcomment -%}
+    {% if show_discount_badge == 'countdown' and countdown_date and countdown_date != blank %}
+      <div
+        class="countdown-badge absolute top-3 right-3 z-20 px-4 py-2 rounded-full font-bold text-[8px] lg:text-[11px]"
         data-countdown-end="{{ countdown_date }}"
         style="background-color: {{ countdown_bg_color | default: '#F0807B' }}; color: {{ countdown_text_color | default: '#ffffff' }};"
       >
         00:00:00
-      </div>
-    {% endif %}
-
-    {%- comment -%} Badge de descuento {%- endcomment -%}
-    {% if current_variant.compare_at_price > current_variant.price %}
-      <div class="absolute top-3 left-3 z-10 bg-[#F0807B] text-white px-3 py-1 rounded-full font-bold text-xs">
-        OFERTA
       </div>
     {% endif %}
 
@@ -107,3 +116,52 @@
     overflow: hidden;
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Countdown timers - CON FIX PARA SAFARI/iOS
+    const countdownBadges = document.querySelectorAll('[data-countdown-end]');
+
+    countdownBadges.forEach((badge) => {
+      const endDateStr = badge.getAttribute('data-countdown-end');
+      if (!endDateStr) return;
+
+      // FIX PARA SAFARI/iOS: Convertir formato YYYY-MM-DD HH:MM a ISO 8601
+      const parts = endDateStr.split(' ');
+      const datePart = parts[0]; // YYYY-MM-DD
+      const timePart = parts[1] || '00:00'; // HH:MM
+
+      // Convertir a formato ISO 8601: YYYY-MM-DDTHH:MM:00
+      const isoDate = `${datePart}T${timePart}:00`;
+      const endDate = new Date(isoDate).getTime();
+
+      if (isNaN(endDate)) {
+        console.error('❌ Error al parsear la fecha. Verifica el formato: YYYY-MM-DD HH:MM');
+        return;
+      }
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = endDate - now;
+
+        if (distance < 0) {
+          badge.textContent = '00:00:00';
+          return;
+        }
+
+        const totalHours = Math.floor(distance / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        const hoursStr = totalHours.toString().padStart(2, '0');
+        const minutesStr = minutes.toString().padStart(2, '0');
+        const secondsStr = seconds.toString().padStart(2, '0');
+
+        badge.textContent = `${hoursStr}:${minutesStr}:${secondsStr}`;
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    });
+  });
+</script>

@@ -373,7 +373,8 @@
                           countdown_date: block.settings.countdown_date,
                           section_id: section.id,
                           countdown_bg_color: section.settings.countdown_bg_color,
-                          countdown_text_color: section.settings.countdown_text_color
+                          countdown_text_color: section.settings.countdown_text_color,
+                          show_discount_badge: block.settings.show_discount_badge
                         %}
                       {% endfor %}
                     {% else %}
@@ -520,11 +521,9 @@
     }
 
     // Add to cart SOLO para productos SIN variantes
-    // Add to cart SOLO para productos SIN variantes
     function initAddToCart() {
       console.log('🔍 Buscando botones add-to-cart...');
 
-      // Buscar de forma más específica
       const allButtons = document.querySelectorAll('[data-product-id]');
       console.log('Total de botones encontrados:', allButtons.length);
 
@@ -539,11 +538,9 @@
         if (hasVariants === 'false') {
           console.log('✅ Añadiendo listener a botón sin variantes');
 
-          // Remover listener anterior
           const newButton = button.cloneNode(true);
           button.parentNode.replaceChild(newButton, button);
 
-          // Añadir nuevo listener
           newButton.addEventListener('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
@@ -808,6 +805,27 @@
         },
         {
           "type": "select",
+          "id": "show_discount_badge",
+          "label": "Mostrar badge superior",
+          "options": [
+            {
+              "value": "countdown",
+              "label": "Cuenta atrás (HH:MM:SS)"
+            },
+            {
+              "value": "discount",
+              "label": "Porcentaje de descuento (-X%)"
+            },
+            {
+              "value": "none",
+              "label": "Ninguno"
+            }
+          ],
+          "default": "countdown",
+          "info": "Elige qué mostrar en la esquina superior derecha"
+        },
+        {
+          "type": "select",
           "id": "pet_type",
           "label": "Tipo de mascota",
           "options": [
@@ -928,7 +946,7 @@
 </style>
 
 <style>
-    /* FIX PARA MODAL - VERSIÓN MEJORADA */
+  /* FIX PARA MODAL - VERSIÓN MEJORADA */
   .t4s-modal.t4s-modal--is-active {
     visibility: visible !important;
     opacity: 1 !important;
