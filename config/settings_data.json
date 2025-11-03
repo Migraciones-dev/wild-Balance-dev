@@ -194,7 +194,7 @@
           "ed1245c2-90d5-4e45-985b-c841c911e75a": {
             "type": "html",
             "settings": {
-              "html": "<!-- Suscripción desktop -->\n<div class=\"suscripcion-desk\">\n  <span>Ofertas FLASH diarias →  </span>\n  <a href=\"https://wildbalance.es/\" class=\"klaviyo_form_trigger_desk\" target=\"_blank\">Únete al grupo y entérate el primero</a>\n</div>\n\n<style>\n.klaviyo_form_trigger_desk {\n  color: #ffce00;\n  text-decoration: underline;\n  font-weight: bold;\n}\n.klaviyo_form_trigger_desk:hover {\n  color: #ffce00;\n}\n.suscripcion-desk span {\n  font-size: 13px;\n}\n.suscripcion-desk {\n  padding-top: 8px;\n  padding-bottom: 8px;\n}\n</style>",
+              "html": "<!-- Suscripción desktop -->\n<div class=\"suscripcion-desk\">\n  <span>Ofertas FLASH diarias →  </span>\n  <a href=\"https://chat.whatsapp.com/KggSebElcla8IyIae6G0JN?mode=wwt&amp;utm_source=Klaviyo&amp;utm_medium=campaign&amp;utm_campaign=B2C%20%C3%9ALTIMAS%20HORAS%20-%20No%20Compradores&amp;utm_id=01K8NWFRGXBH7N6Y9M2J0PQR7S&amp;_kx=NA7iRrCxS5NS5o6lXTA8PkCg1X4wTdmvz3A495tUNgZPw5okmAEcKifBcOzNO9fN.YsKiw5\" class=\"klaviyo_form_trigger_desk\" target=\"_blank\">Únete al grupo y entérate el primero</a>\n</div>\n\n<style>\n.klaviyo_form_trigger_desk {\n  color: #ffce00;\n  text-decoration: underline;\n  font-weight: bold;\n}\n.klaviyo_form_trigger_desk:hover {\n  color: #ffce00;\n}\n.suscripcion-desk span {\n  font-size: 13px;\n}\n.suscripcion-desk {\n  padding-top: 8px;\n  padding-bottom: 8px;\n}\n</style>",
               "hide": false,
               "text_align": "center",
               "col": "12"
