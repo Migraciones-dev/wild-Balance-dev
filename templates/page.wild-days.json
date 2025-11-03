@@ -93,7 +93,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/BANNER-BLACK-FRIDAY-_3_-1.webp",
             "mobile_image": "shopify://shop_images/BANNER-BLACK-FRIDAY-_5_-1.webp",
-            "image_link": "",
+            "image_link": "https://wildbalance.es/collections/black-friday",
             "enable_schedule": false,
             "start_date": "2025-10-28 12:00",
             "end_date": "2025-10-28 12:03",
