@@ -81,6 +81,26 @@
       display: block;
     }
 
+    /* Grid dinámico: si hay solo 1 banner visible, se centra */
+    .banners-grid {
+      display: grid;
+      gap: 6px;
+      gap: 24px;
+    }
+
+    @media (min-width: 768px) {
+      .banners-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      /* Solo 1 banner visible */
+      .banners-grid.has-one-banner {
+        grid-template-columns: 1fr;
+        max-width: 50%;
+        margin: 0 auto;
+      }
+    }
+
     {% for block in section.blocks %}
       @media (min-width: 768px) {
         #banner-{{ block.id }} .banner-image {
@@ -125,8 +145,54 @@
       </div>
     {% endif %}
 
+    {%- comment -%} Contar banners visibles {%- endcomment -%}
+    {%- assign visible_banners = 0 -%}
+    {% for block in section.blocks %}
+      {% if block.type == 'banner' %}
+        {%- assign current_time = 'now' | date: '%s' | plus: 0 -%}
+        {%- assign show_banner = false -%}
+
+        {%- if block.settings.enable_schedule == false -%}
+          {%- assign show_banner = true -%}
+        {%- else -%}
+          {%- assign has_start = false -%}
+          {%- assign has_end = false -%}
+
+          {%- if block.settings.start_date != blank -%}
+            {%- assign has_start = true -%}
+            {%- assign start_time = block.settings.start_date | append: ':00' | date: '%s' | plus: 0 -%}
+          {%- endif -%}
+
+          {%- if block.settings.end_date != blank -%}
+            {%- assign has_end = true -%}
+            {%- assign end_time = block.settings.end_date | append: ':00' | date: '%s' | plus: 0 -%}
+          {%- endif -%}
+
+          {%- if has_start and has_end -%}
+            {%- if current_time >= start_time and current_time <= end_time -%}
+              {%- assign show_banner = true -%}
+            {%- endif -%}
+          {%- elsif has_start and has_end == false -%}
+            {%- if current_time >= start_time -%}
+              {%- assign show_banner = true -%}
+            {%- endif -%}
+          {%- elsif has_start == false and has_end -%}
+            {%- if current_time <= end_time -%}
+              {%- assign show_banner = true -%}
+            {%- endif -%}
+          {%- else -%}
+            {%- assign show_banner = true -%}
+          {%- endif -%}
+        {%- endif -%}
+
+        {% if show_banner %}
+          {%- assign visible_banners = visible_banners | plus: 1 -%}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
     {%- comment -%} Grid de banners {%- endcomment -%}
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+    <div class="banners-grid {% if visible_banners == 1 %}has-one-banner{% endif %}">
       {% for block in section.blocks %}
         {% if block.type == 'banner' %}
           {%- comment -%} Convertir fechas a timestamp Unix para comparación {%- endcomment -%}
