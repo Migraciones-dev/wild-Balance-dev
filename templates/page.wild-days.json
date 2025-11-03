@@ -165,6 +165,27 @@
         "banner_9KVPxw": {
           "type": "banner",
           "settings": {
+            "desktop_image": "shopify://shop_images/oferta-flash-articulaciones-acero.jpg",
+            "mobile_image": "shopify://shop_images/oferta-flash-articulaciones-acero.jpg",
+            "image_link": "",
+            "product": "condroprotector-perros-articulaciones-acero",
+            "enable_countdown": true,
+            "countdown_date": "2025-11-05 9:00",
+            "enable_schedule": true,
+            "start_date": "2025-11-03 9:00",
+            "end_date": "2025-11-06 9:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_wwYhKr": {
+          "type": "banner",
+          "disabled": true,
+          "settings": {
             "desktop_image": "shopify://shop_images/Background_8.jpg",
             "mobile_image": "shopify://shop_images/Link_3.jpg",
             "image_link": "",
@@ -184,6 +205,7 @@
         },
         "banner_fippFK": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/Link_2.jpg",
             "mobile_image": "shopify://shop_images/Link_4.jpg",
@@ -205,6 +227,7 @@
       },
       "block_order": [
         "banner_9KVPxw",
+        "banner_wwYhKr",
         "banner_fippFK"
       ],
       "name": "Banners Grid 2 columnas",
