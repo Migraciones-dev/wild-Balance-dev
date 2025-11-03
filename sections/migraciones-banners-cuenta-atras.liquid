@@ -108,119 +108,178 @@
     {% endif %}
 
     {%- comment -%} Grid de banners {%- endcomment -%}
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-      {% for block in section.blocks %}
-        {% if block.type == 'banner' %}
-          {%- comment -%} Convertir fechas a timestamp Unix para comparación {%- endcomment -%}
-          {%- assign current_time = 'now' | date: '%s' | plus: 0 -%}
+    {%- comment -%} Contar bloques visibles {%- endcomment -%}
+    {%- assign visible_blocks = 0 -%}
+    {% for block in section.blocks %}
+      {% if block.type == 'banner' %}
+        {%- assign current_time = 'now' | date: '%s' | plus: 0 -%}
+        {%- assign show_banner = false -%}
 
-          {%- comment -%} Procesar fechas ingresadas {%- endcomment -%}
-          {%- assign show_banner = false -%}
+        {%- if block.settings.enable_schedule == false -%}
+          {%- assign show_banner = true -%}
+        {%- else -%}
+          {%- assign has_start = false -%}
+          {%- assign has_end = false -%}
 
-          {%- if block.settings.enable_schedule == false -%}
-            {%- assign show_banner = true -%}
-          {%- else -%}
-            {%- assign has_start = false -%}
-            {%- assign has_end = false -%}
+          {%- if block.settings.start_date != blank -%}
+            {%- assign has_start = true -%}
+            {%- assign start_time = block.settings.start_date | append: ':00' | date: '%s' | plus: 0 -%}
+          {%- endif -%}
 
-            {%- if block.settings.start_date != blank -%}
-              {%- assign has_start = true -%}
-              {%- assign start_time = block.settings.start_date | append: ':00' | date: '%s' | plus: 0 -%}
-            {%- endif -%}
+          {%- if block.settings.end_date != blank -%}
+            {%- assign has_end = true -%}
+            {%- assign end_time = block.settings.end_date | append: ':00' | date: '%s' | plus: 0 -%}
+          {%- endif -%}
 
-            {%- if block.settings.end_date != blank -%}
-              {%- assign has_end = true -%}
-              {%- assign end_time = block.settings.end_date | append: ':00' | date: '%s' | plus: 0 -%}
-            {%- endif -%}
-
-            {%- if has_start and has_end -%}
-              {%- if current_time >= start_time and current_time <= end_time -%}
-                {%- assign show_banner = true -%}
-              {%- endif -%}
-            {%- elsif has_start and has_end == false -%}
-              {%- if current_time >= start_time -%}
-                {%- assign show_banner = true -%}
-              {%- endif -%}
-            {%- elsif has_start == false and has_end -%}
-              {%- if current_time <= end_time -%}
-                {%- assign show_banner = true -%}
-              {%- endif -%}
-            {%- else -%}
+          {%- if has_start and has_end -%}
+            {%- if current_time >= start_time and current_time <= end_time -%}
               {%- assign show_banner = true -%}
             {%- endif -%}
+          {%- elsif has_start and has_end == false -%}
+            {%- if current_time >= start_time -%}
+              {%- assign show_banner = true -%}
+            {%- endif -%}
+          {%- elsif has_start == false and has_end -%}
+            {%- if current_time <= end_time -%}
+              {%- assign show_banner = true -%}
+            {%- endif -%}
+          {%- else -%}
+            {%- assign show_banner = true -%}
+          {%- endif -%}
+        {%- endif -%}
+
+        {%- if show_banner -%}
+          {%- assign visible_blocks = visible_blocks | plus: 1 -%}
+        {%- endif -%}
+      {% endif %}
+    {% endfor %}
+
+    {%- comment -%} Grid de banners - centrado si solo hay 1 {%- endcomment -%}
+    {% if visible_blocks == 1 %}
+      <div class="flex justify-center">
+        <div class="w-full md:w-1/2">
+    {% else %}
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+    {% endif %}
+
+    {% for block in section.blocks %}
+      {% if block.type == 'banner' %}
+        {%- comment -%} Convertir fechas a timestamp Unix para comparación {%- endcomment -%}
+        {%- assign current_time = 'now' | date: '%s' | plus: 0 -%}
+
+        {%- comment -%} Procesar fechas ingresadas {%- endcomment -%}
+        {%- assign show_banner = false -%}
+
+        {%- if block.settings.enable_schedule == false -%}
+          {%- assign show_banner = true -%}
+        {%- else -%}
+          {%- assign has_start = false -%}
+          {%- assign has_end = false -%}
+
+          {%- if block.settings.start_date != blank -%}
+            {%- assign has_start = true -%}
+            {%- assign start_time = block.settings.start_date | append: ':00' | date: '%s' | plus: 0 -%}
           {%- endif -%}
 
-          {%- if show_banner -%}
-            {%- comment -%} Obtener producto si está asignado {%- endcomment -%}
-            {%- assign banner_product = block.settings.product -%}
+          {%- if block.settings.end_date != blank -%}
+            {%- assign has_end = true -%}
+            {%- assign end_time = block.settings.end_date | append: ':00' | date: '%s' | plus: 0 -%}
+          {%- endif -%}
 
-            <div id="banner-{{ block.id }}" class="relative" {{ block.shopify_attributes }}>
-              {%- comment -%} Cuenta atrás {%- endcomment -%}
-              {% if block.settings.enable_countdown and block.settings.countdown_date != blank %}
-                <div class="countdown-timer" data-countdown-date="{{ block.settings.countdown_date }}">00:00:00</div>
-              {% endif %}
+          {%- if has_start and has_end -%}
+            {%- if current_time >= start_time and current_time <= end_time -%}
+              {%- assign show_banner = true -%}
+            {%- endif -%}
+          {%- elsif has_start and has_end == false -%}
+            {%- if current_time >= start_time -%}
+              {%- assign show_banner = true -%}
+            {%- endif -%}
+          {%- elsif has_start == false and has_end -%}
+            {%- if current_time <= end_time -%}
+              {%- assign show_banner = true -%}
+            {%- endif -%}
+          {%- else -%}
+            {%- assign show_banner = true -%}
+          {%- endif -%}
+        {%- endif -%}
 
-              {%- comment -%} Determinar si es link o añadir al carrito {%- endcomment -%}
-              {% if banner_product and banner_product != blank %}
-                {%- assign current_variant = banner_product.selected_or_first_available_variant -%}
-                <div
-                  class="banner-clickable"
-                  data-banner-product
-                  data-variant-id="{{ current_variant.id }}"
-                  data-product-id="{{ banner_product.id }}"
-                  data-product-available="{{ banner_product.available }}"
-                >
-              {% elsif block.settings.image_link != blank %}
-                <a href="{{ block.settings.image_link }}" class="banner-clickable">
-              {% else %}
-                <div class="banner-clickable" style="cursor: default;">
-              {% endif %}
+        {%- if show_banner -%}
+          {%- comment -%} Obtener producto si está asignado {%- endcomment -%}
+          {%- assign banner_product = block.settings.product -%}
 
-              {%- if block.settings.desktop_image or block.settings.mobile_image -%}
-                {%- comment -%} Si hay imagen de móvil, usar responsive, si no, mostrar la de desktop en todos lados {%- endcomment -%}
-                {% if block.settings.mobile_image %}
-                  {%- comment -%} Imagen escritorio {%- endcomment -%}
-                  {% if block.settings.desktop_image %}
-                    <img
-                      src="{{ block.settings.desktop_image | img_url: '2048x' }}"
-                      class="banner-image hidden md:block w-full h-auto object-cover"
-                      alt="{{ block.settings.desktop_image.alt | escape }}"
-                      loading="lazy"
-                    >
-                  {% endif %}
+          <div id="banner-{{ block.id }}" class="relative" {{ block.shopify_attributes }}>
+            {%- comment -%} Cuenta atrás {%- endcomment -%}
+            {% if block.settings.enable_countdown and block.settings.countdown_date != blank %}
+              <div class="countdown-timer" data-countdown-date="{{ block.settings.countdown_date }}">00:00:00</div>
+            {% endif %}
 
-                  {%- comment -%} Imagen móvil {%- endcomment -%}
+            {%- comment -%} Determinar si es link o añadir al carrito {%- endcomment -%}
+            {% if banner_product and banner_product != blank %}
+              {%- assign current_variant = banner_product.selected_or_first_available_variant -%}
+              <div
+                class="banner-clickable"
+                data-banner-product
+                data-variant-id="{{ current_variant.id }}"
+                data-product-id="{{ banner_product.id }}"
+                data-product-available="{{ banner_product.available }}"
+              >
+            {% elsif block.settings.image_link != blank %}
+              <a href="{{ block.settings.image_link }}" class="banner-clickable">
+            {% else %}
+              <div class="banner-clickable" style="cursor: default;">
+            {% endif %}
+
+            {%- if block.settings.desktop_image or block.settings.mobile_image -%}
+              {%- comment -%} Si hay imagen de móvil, usar responsive, si no, mostrar la de desktop en todos lados {%- endcomment -%}
+              {% if block.settings.mobile_image %}
+                {%- comment -%} Imagen escritorio {%- endcomment -%}
+                {% if block.settings.desktop_image %}
                   <img
-                    src="{{ block.settings.mobile_image | img_url: '1024x' }}"
-                    class="banner-image block md:hidden w-full h-auto object-cover"
-                    alt="{{ block.settings.mobile_image.alt | escape }}"
+                    src="{{ block.settings.desktop_image | img_url: '2048x' }}"
+                    class="banner-image hidden md:block w-full h-auto object-cover"
+                    alt="{{ block.settings.desktop_image.alt | escape }}"
                     loading="lazy"
                   >
-                {% else %}
-                  {%- comment -%} Solo hay imagen desktop, mostrarla en todos los dispositivos {%- endcomment -%}
-                  {% if block.settings.desktop_image %}
-                    <img
-                      src="{{ block.settings.desktop_image | img_url: '2048x' }}"
-                      class="banner-image w-full h-auto object-cover"
-                      alt="{{ block.settings.desktop_image.alt | escape }}"
-                      loading="lazy"
-                    >
-                  {% endif %}
                 {% endif %}
-              {%- endif -%}
 
-              {% if banner_product and banner_product != blank %}
-                </div>
-              {% elsif block.settings.image_link != blank %}
-                </a>
+                {%- comment -%} Imagen móvil {%- endcomment -%}
+                <img
+                  src="{{ block.settings.mobile_image | img_url: '1024x' }}"
+                  class="banner-image block md:hidden w-full h-auto object-cover"
+                  alt="{{ block.settings.mobile_image.alt | escape }}"
+                  loading="lazy"
+                >
               {% else %}
-                </div>
+                {%- comment -%} Solo hay imagen desktop, mostrarla en todos los dispositivos {%- endcomment -%}
+                {% if block.settings.desktop_image %}
+                  <img
+                    src="{{ block.settings.desktop_image | img_url: '2048x' }}"
+                    class="banner-image w-full h-auto object-cover"
+                    alt="{{ block.settings.desktop_image.alt | escape }}"
+                    loading="lazy"
+                  >
+                {% endif %}
               {% endif %}
-            </div>
-          {%- endif -%}
-        {% endif %}
-      {% endfor %}
-    </div>
+            {%- endif -%}
+
+            {% if banner_product and banner_product != blank %}
+              </div>
+            {% elsif block.settings.image_link != blank %}
+              </a>
+            {% else %}
+              </div>
+            {% endif %}
+          </div>
+        {%- endif -%}
+      {% endif %}
+    {% endfor %}
+
+    {% if visible_blocks == 1 %}
+      </div>
+      </div>
+    {% else %}
+      </div>
+    {% endif %}
   </div>
 </section>
 
