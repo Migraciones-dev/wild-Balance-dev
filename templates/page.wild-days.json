@@ -140,7 +140,7 @@
       "type": "migraciones-cuenta-atras",
       "name": "Ofertas Flash - Countdown",
       "settings": {
-        "heading_before": "Ofertas",
+        "heading_before": "Oferta",
         "heading_highlight": "flash",
         "heading_after": "",
         "countdown_date": "2025-11-06 9:00",
@@ -169,7 +169,7 @@
             "mobile_image": "shopify://shop_images/ofertas-flash-articulaciones-acero.png",
             "image_link": "",
             "product": "condroprotector-perros-articulaciones-acero",
-            "enable_countdown": true,
+            "enable_countdown": false,
             "countdown_date": "2025-11-05 9:00",
             "enable_schedule": true,
             "start_date": "2025-11-03 9:00",
