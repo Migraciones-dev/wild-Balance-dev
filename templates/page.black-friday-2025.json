@@ -142,7 +142,7 @@
         "banner_9KVPxw": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/Link_1.jpg",
+            "desktop_image": "shopify://shop_images/ofertas-flash-lata-pescado-perro.png",
             "image_link": "",
             "product": "tapa-lata",
             "enable_countdown": true,
@@ -162,7 +162,7 @@
         "banner_fippFK": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/Link.jpg",
+            "desktop_image": "shopify://shop_images/ofertas-flash-lata-pescado-gato.png",
             "image_link": "",
             "product": "",
             "enable_countdown": false,
