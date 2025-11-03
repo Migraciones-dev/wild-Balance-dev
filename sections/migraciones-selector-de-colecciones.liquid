@@ -143,6 +143,44 @@
       color: {{ section.settings.compare_price_color }};
       text-decoration: line-through;
     }
+
+    /* FIX PARA MODAL */
+    .t4s-modal.t4s-modal--is-active {
+      visibility: visible !important;
+      opacity: 1 !important;
+      z-index: 9999 !important;
+    }
+
+    .t4s-modal.t4s-modal--is-active .t4s-modal__inner {
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+
+    .t4s-modal.t4s-modal--is-active .t4s-modal__content {
+      visibility: visible !important;
+      opacity: 1 !important;
+      z-index: 10000 !important;
+    }
+
+    /* Fix para el contenedor del slider Flickity que tiene height: 0 */
+    .t4s-modal--is-active .flickityt4s-viewport {
+      height: auto !important;
+      min-height: 500px !important;
+    }
+
+    .t4s-modal--is-active .flickityt4s-carousel {
+      height: auto !important;
+    }
+
+    /* Asegurar que todo dentro del modal es visible */
+    .t4s-modal--is-active [style*="height: 0"] {
+      height: auto !important;
+    }
+
+    /* Fix para overlay */
+    .t4s-modal__overlay {
+      z-index: 9998 !important;
+    }
   </style>
 
   <!-- Contenedor exterior con fondo de contraste -->
@@ -305,7 +343,7 @@
                         {% assign has_banner = true %}
                       {% endif %}
 
-                      {% for product in products_array limit: block.settings.products_limit %}
+                      {% for product in products_array limit: 50 %}
                         {%- comment -%} En móvil: después del producto 2 (index 2) - posiciones 3 y 4 {%- endcomment -%}
                         {% if has_banner and forloop.index == 3 %}
                           <div class="banner-wide lg:hidden">
@@ -423,7 +461,7 @@
         }
       });
 
-      // Reinicializar add to cart después de cambiar de panel
+      // Reinicializar después de cambiar de panel
       setTimeout(() => {
         initProductCountdowns();
         initAddToCart();
@@ -446,7 +484,7 @@
       });
     });
 
-    // Countdown timers para product cards y banners
+    // Countdown timers
     function initProductCountdowns() {
       const countdownBadges = document.querySelectorAll('[data-countdown-end]');
 
@@ -481,83 +519,98 @@
       });
     }
 
-    // Add to cart functionality para productos Y banners
+    // Add to cart SOLO para productos SIN variantes
+    // Add to cart SOLO para productos SIN variantes
     function initAddToCart() {
-      // Seleccionar TODOS los botones con clase add-to-cart-btn
-      const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+      console.log('🔍 Buscando botones add-to-cart...');
 
-      addToCartButtons.forEach((button) => {
-        // Eliminar el listener previo clonando el botón
-        const newButton = button.cloneNode(true);
-        button.parentNode.replaceChild(newButton, button);
-      });
+      // Buscar de forma más específica
+      const allButtons = document.querySelectorAll('[data-product-id]');
+      console.log('Total de botones encontrados:', allButtons.length);
 
-      // Volver a seleccionar después de clonar
-      document.querySelectorAll('.add-to-cart-btn').forEach((button) => {
-        button.addEventListener('click', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-
-          const hasVariants = this.getAttribute('data-has-variants') === 'true';
-
-          if (hasVariants) {
-            // Producto con variantes - el data-action-quickview abrirá el modal del tema
-            return;
-          }
-
-          // Producto sin variantes - añadir directamente al carrito
-          const variantId = this.getAttribute('data-variant-id');
-          const productAvailable = this.getAttribute('data-product-available') === 'true';
-
-          if (!productAvailable) {
-            console.log('Producto no disponible');
-            return;
-          }
-
-          const formData = {
-            items: [
-              {
-                id: variantId,
-                quantity: 1,
-              },
-            ],
-          };
-
-          // Añadir al carrito
-          fetch(window.Shopify.routes.root + 'cart/add.js', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              Accept: 'application/json',
-            },
-            body: JSON.stringify(formData),
-          })
-            .then((response) => response.json())
-            .then((data) => {
-              console.log('Producto añadido:', data);
-
-              // Disparar evento de actualización
-              document.dispatchEvent(new CustomEvent('cart:refresh'));
-
-              // Abrir el drawer del carrito
-              setTimeout(() => {
-                const cartButton = document.querySelector('[data-drawer-options*="t4s-mini_cart"]');
-                if (cartButton) {
-                  cartButton.click();
-                }
-              }, 100);
-            })
-            .catch((error) => {
-              console.error('Error añadiendo al carrito:', error);
-            });
+      allButtons.forEach((button) => {
+        const hasVariants = button.getAttribute('data-has-variants');
+        console.log('Botón encontrado:', {
+          productId: button.getAttribute('data-product-id'),
+          hasVariants: hasVariants,
+          variantId: button.getAttribute('data-variant-id'),
         });
+
+        if (hasVariants === 'false') {
+          console.log('✅ Añadiendo listener a botón sin variantes');
+
+          // Remover listener anterior
+          const newButton = button.cloneNode(true);
+          button.parentNode.replaceChild(newButton, button);
+
+          // Añadir nuevo listener
+          newButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('🛒 Click en botón add-to-cart');
+
+            const variantId = this.getAttribute('data-variant-id');
+            const productAvailable = this.getAttribute('data-product-available') === 'true';
+
+            console.log('Detalles del clic:', { variantId, productAvailable });
+
+            if (!productAvailable) {
+              console.log('❌ Producto no disponible');
+              return;
+            }
+
+            if (!variantId) {
+              console.log('❌ No hay variant ID');
+              return;
+            }
+
+            const formData = {
+              items: [
+                {
+                  id: parseInt(variantId, 10),
+                  quantity: 1,
+                },
+              ],
+            };
+
+            console.log('📤 Enviando al carrito:', formData);
+
+            fetch(window.Shopify.routes.root + 'cart/add.js', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+              },
+              body: JSON.stringify(formData),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                console.log('✅ Producto añadido:', data);
+
+                document.dispatchEvent(new CustomEvent('cart:refresh'));
+
+                setTimeout(() => {
+                  const cartButton = document.querySelector('[data-drawer-options*="t4s-mini_cart"]');
+                  if (cartButton) {
+                    console.log('🎯 Abriendo carrito');
+                    cartButton.click();
+                  } else {
+                    console.log('⚠️ No se encontró el botón del carrito');
+                  }
+                }, 100);
+              })
+              .catch((error) => {
+                console.error('❌ Error:', error);
+              });
+          });
+        }
       });
     }
 
     // Inicializar con perros
     switchPet('dog');
 
-    // Inicializar countdowns y add to cart
+    // Inicializar todo
     initProductCountdowns();
     initAddToCart();
   });
@@ -781,16 +834,6 @@
           "label": "Colección"
         },
         {
-          "type": "range",
-          "id": "products_limit",
-          "label": "Número máximo de productos a mostrar",
-          "min": 4,
-          "max": 50,
-          "step": 2,
-          "default": 8,
-          "info": "Máximo de productos que se mostrarán de esta colección"
-        },
-        {
           "type": "header",
           "content": "Banner promocional (opcional)"
         },
@@ -860,3 +903,73 @@
   ]
 }
 {% endschema %}
+
+<style>
+  @media (max-width: 800px) {
+    .t4s-product-quick-view .t4s-product__media-wrapper,
+    .t4s-product-quick-view .t4s-product__review,
+    .t4s-product-quick-view .t4s-product__title,
+    .t4s-product-quick-view .t4s-product__price,
+    .t4s-product-quick-view .t4s-product__line,
+    .t4s-product-quick-view .t4s-product__description {
+      display:none!important;
+    }
+
+    .t4s-product-quick-view .t4s-swatch__list {
+      margin: unset;
+    }
+    .t4s-product-quick-view .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+      margin-left: 0;
+    }
+  }
+  .t4s-product__description {
+  display:none;
+  }
+</style>
+
+<style>
+    /* FIX PARA MODAL - VERSIÓN MEJORADA */
+  .t4s-modal.t4s-modal--is-active {
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 9999 !important;
+  }
+
+  .t4s-modal.t4s-modal--is-active .t4s-modal__inner {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .t4s-modal.t4s-modal--is-active .t4s-modal__content {
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 10000 !important;
+    height: auto !important;
+  }
+
+  /* Fix para el contenedor del slider Flickity que tiene height: 0 */
+  .t4s-modal--is-active .flickityt4s-viewport {
+    height: auto !important;
+    min-height: 500px !important;
+  }
+
+  .t4s-modal--is-active .flickityt4s-carousel {
+    height: auto !important;
+  }
+
+  /* Fix para overlay */
+  .t4s-modal__overlay {
+    z-index: 9998 !important;
+  }
+
+  /* Permitir que el botón cerrar funcione */
+  .t4s-modal__content .t4s-close-trigger,
+  .t4s-modal__content [data-close],
+  .t4s-modal [class*="close"],
+  .t4s-modal [aria-label="Close"] {
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    z-index: 10001 !important;
+  }
+</style>
