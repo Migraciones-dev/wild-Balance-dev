@@ -143,7 +143,7 @@
         "heading_before": "Ofertas",
         "heading_highlight": "flash",
         "heading_after": "",
-        "countdown_date": "2025-11-03 23:00",
+        "countdown_date": "2025-11-06 9:00",
         "label_hours": "horas",
         "label_minutes": "minutos",
         "label_seconds": "segundos",
@@ -259,6 +259,7 @@
             "pet_type": "dog",
             "collection_name": "Dieta BARF",
             "collection": "barf-perros",
+            "products_limit": 8,
             "banner_action_type": "link",
             "banner_link_url": "",
             "banner_product": ""
@@ -271,6 +272,7 @@
             "pet_type": "dog",
             "collection_name": "Comida Cocinada",
             "collection": "comida-cocinada-para-perros",
+            "products_limit": 8,
             "banner_action_type": "link",
             "banner_link_url": "",
             "banner_product": ""
@@ -283,6 +285,7 @@
             "pet_type": "dog",
             "collection_name": "Latas Comida Húmeda",
             "collection": "latas-perros",
+            "products_limit": 8,
             "banner_action_type": "link",
             "banner_link_url": "",
             "banner_product": ""
@@ -295,6 +298,7 @@
             "pet_type": "dog",
             "collection_name": "Snacks y mordedores",
             "collection": "snacks-y-mordedores-perros",
+            "products_limit": 8,
             "banner_action_type": "link",
             "banner_link_url": "",
             "banner_product": ""
@@ -307,6 +311,7 @@
             "pet_type": "cat",
             "collection_name": "Dieta BARF",
             "collection": "barf-gatos",
+            "products_limit": 8,
             "banner_action_type": "link",
             "banner_link_url": "",
             "banner_product": ""
@@ -319,6 +324,7 @@
             "pet_type": "cat",
             "collection_name": "Comida Cocinada",
             "collection": "comida-cocinada-para-gatos",
+            "products_limit": 8,
             "banner_action_type": "link",
             "banner_link_url": "",
             "banner_product": ""
@@ -331,6 +337,7 @@
             "pet_type": "cat",
             "collection_name": "Latas Comida Húmeda",
             "collection": "latas-gatos",
+            "products_limit": 8,
             "banner_action_type": "link",
             "banner_link_url": "",
             "banner_product": ""
@@ -343,6 +350,7 @@
             "pet_type": "cat",
             "collection_name": "Snacks",
             "collection": "snacks-y-mordedores-gatos",
+            "products_limit": 8,
             "banner_action_type": "link",
             "banner_link_url": "",
             "banner_product": ""
