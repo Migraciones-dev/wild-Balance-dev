@@ -152,7 +152,7 @@
             "height_tb": 400,
             "custom_mb": false,
             "height_mb": 300,
-            "image": "shopify://shop_images/FASE_2_1_77ba1691-d87b-43dd-9b6c-e725c44e1908.png",
+            "image": "shopify://shop_images/BANNER_BLACK_FRIDAY_22.png",
             "image_mb": "shopify://shop_images/FASE_1_10_7bba6fd2-0228-4940-b445-4b4b98802ea0.png",
             "image_size": "contain",
             "image_position": "cener",
@@ -222,6 +222,7 @@
     },
     "featured_collection_GTtNdn": {
       "type": "featured-collection",
+      "disabled": true,
       "custom_css": [
         "h3 {color: #faf5e7 !important;}",
         "h2 {font-size: 40px; color: #faf5e7 !important;}",
@@ -380,7 +381,9 @@
         "bl_col_ciGRHH",
         "custom_button_bNAc99"
       ],
+      "disabled": true,
       "settings": {
+        "block_custom_class": "",
         "space_h_item": "0",
         "space_v_item": "0",
         "space_h_item_tb": "0",
@@ -400,6 +403,7 @@
     },
     "featured_collection_adarzc": {
       "type": "featured-collection",
+      "disabled": true,
       "custom_css": [
         "h3 {color: #faf5e7 !important;}",
         "h2 {font-size: 40px; color: #faf5e7 !important;}",
@@ -558,7 +562,9 @@
         "bl_col_btzBBQ",
         "custom_button_N4TAw6"
       ],
+      "disabled": true,
       "settings": {
+        "block_custom_class": "",
         "space_h_item": "0",
         "space_v_item": "0",
         "space_h_item_tb": "0",
@@ -578,6 +584,7 @@
     },
     "featured_collection_TBygwM": {
       "type": "featured-collection",
+      "disabled": true,
       "custom_css": [
         "h3 {color: #faf5e7 !important;}",
         "h2 {font-size: 40px; color: #faf5e7 !important;}",
@@ -736,7 +743,9 @@
         "bl_col_h6Bzb6",
         "custom_button_tgT7dL"
       ],
+      "disabled": true,
       "settings": {
+        "block_custom_class": "",
         "space_h_item": "0",
         "space_v_item": "0",
         "space_h_item_tb": "0",
@@ -756,6 +765,7 @@
     },
     "featured_collection_RpYdqp": {
       "type": "featured-collection",
+      "disabled": true,
       "custom_css": [
         "h3 {color: #faf5e7 !important;}",
         "h2 {font-size: 40px; color: #faf5e7 !important;}",
@@ -913,7 +923,9 @@
         "bl_col_PFELxC",
         "custom_button_tHXXTp"
       ],
+      "disabled": true,
       "settings": {
+        "block_custom_class": "",
         "space_h_item": "0",
         "space_v_item": "0",
         "space_h_item_tb": "0",
@@ -940,8 +952,8 @@
       "settings": {
         "design_heading": "1",
         "heading_center": true,
-        "top_heading": "",
-        "top_subheading": "<h2>Snacks y mordedores</h2>",
+        "top_heading": "Snacks y mordedores",
+        "top_subheading": "",
         "head_bigger": false,
         "tophead_mb": 30,
         "tophead_mb_tb": 30,
@@ -957,7 +969,7 @@
         "image_size": "cover",
         "image_position": "8",
         "content_align": "default",
-        "limit": 5,
+        "limit": 40,
         "col_dk": "5",
         "col_tb": "4",
         "col_mb": "2",
@@ -1010,7 +1022,7 @@
         "hidden_btn_mb": false,
         "head_slide_btn": false,
         "layout": "t4s-container-wrap",
-        "cl_bg": "#212121",
+        "cl_bg": "#000000",
         "cl_bg_gradient": "",
         "mg": ",,0px,",
         "pd": "",
@@ -1090,6 +1102,7 @@
         "custom_button_B8Knrd"
       ],
       "settings": {
+        "block_custom_class": "",
         "space_h_item": "0",
         "space_v_item": "0",
         "space_h_item_tb": "0",
@@ -1446,6 +1459,7 @@
         "custom_text_qeBJ9Q"
       ],
       "settings": {
+        "block_custom_class": "",
         "space_h_item": "0",
         "space_v_item": "0",
         "space_h_item_tb": "0",
