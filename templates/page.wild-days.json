@@ -165,8 +165,8 @@
         "banner_9KVPxw": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/oferta-flash-articulaciones-acero.jpg",
-            "mobile_image": "shopify://shop_images/oferta-flash-articulaciones-acero.jpg",
+            "desktop_image": "shopify://shop_images/oferta-flash-articulaciones-acero.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-articulaciones-acero.png",
             "image_link": "",
             "product": "condroprotector-perros-articulaciones-acero",
             "enable_countdown": true,
