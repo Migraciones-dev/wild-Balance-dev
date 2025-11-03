@@ -430,12 +430,15 @@
         }
       });
 
-      // Scroll suave al inicio de la sección
+      // Scroll suave al inicio de la sección con offset de -50px
       const section = document.getElementById('section-{{ section.id }}');
       if (section) {
-        section.scrollIntoView({
+        const elementPosition = section.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - 50;
+
+        window.scrollTo({
+          top: offsetPosition,
           behavior: 'smooth',
-          block: 'start',
         });
       }
 
