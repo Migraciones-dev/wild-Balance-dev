@@ -279,7 +279,6 @@
         },
         "collection_9na79a": {
           "type": "collection",
-          "disabled": true,
           "settings": {
             "countdown_date": "",
             "pet_type": "cat",
