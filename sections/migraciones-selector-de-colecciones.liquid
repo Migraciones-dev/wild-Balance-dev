@@ -371,8 +371,9 @@
 
     let currentPet = 'dog';
     let currentCollection = null;
+    let isUserInitiated = false; // 👈 FLAG para detectar si el usuario hizo click
 
-    function switchPet(petType) {
+    function switchPet(petType, userTriggered = false) {
       currentPet = petType;
 
       petButtons.forEach((btn) => {
@@ -398,12 +399,12 @@
       if (visibleCategories.length > 0) {
         const firstCategory = visibleCategories[0];
         const collectionHandle = firstCategory.getAttribute('data-collection');
-        switchCollection(collectionHandle);
+        switchCollection(collectionHandle, userTriggered); // 👈 Pasar el flag
       }
     }
 
     // Función para cambiar de colección
-    function switchCollection(collectionHandle) {
+    function switchCollection(collectionHandle, userTriggered = false) {
       currentCollection = collectionHandle;
 
       // Actualizar botones de categorías
@@ -430,16 +431,18 @@
         }
       });
 
-      // Scroll suave al inicio de la sección con offset de -50px
-      const section = document.getElementById('section-{{ section.id }}');
-      if (section) {
-        const elementPosition = section.getBoundingClientRect().top + window.scrollY;
-        const offsetPosition = elementPosition - 100;
+      // 👇 SOLO hacer scroll si el usuario hizo click
+      if (userTriggered) {
+        const section = document.getElementById('section-{{ section.id }}');
+        if (section) {
+          const elementPosition = section.getBoundingClientRect().top + window.scrollY;
+          const offsetPosition = elementPosition - 100;
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth',
-        });
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth',
+          });
+        }
       }
 
       // Reinicializar después de cambiar de panel
@@ -452,14 +455,14 @@
     petButtons.forEach((btn) => {
       btn.addEventListener('click', function () {
         const petType = this.getAttribute('data-pet');
-        switchPet(petType);
+        switchPet(petType, true); // 👈 true = usuario hizo click
       });
     });
 
     categoryButtons.forEach((btn) => {
       btn.addEventListener('click', function () {
         const collectionHandle = this.getAttribute('data-collection');
-        switchCollection(collectionHandle);
+        switchCollection(collectionHandle, true); // 👈 true = usuario hizo click
       });
     });
 
@@ -559,7 +562,8 @@
       });
     }
 
-    switchPet('dog');
+    // 👇 Inicializar SIN scroll (false)
+    switchPet('dog', false);
     initProductCountdowns();
     initAddToCart();
   });
