@@ -253,6 +253,18 @@
             "banner_product": ""
           }
         },
+        "collection_DVXpBQ": {
+          "type": "collection",
+          "settings": {
+            "countdown_date": "",
+            "pet_type": "cat",
+            "collection_name": "Latas Comida Húmeda",
+            "collection": "latas-gatos",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": ""
+          }
+        },
         "collection_hDjBCz": {
           "type": "collection",
           "settings": {
@@ -267,23 +279,12 @@
         },
         "collection_9na79a": {
           "type": "collection",
-          "settings": {
-            "countdown_date": "",
-            "pet_type": "dog",
-            "collection_name": "Dieta BARF",
-            "collection": "barf-gatos",
-            "banner_action_type": "link",
-            "banner_link_url": "",
-            "banner_product": ""
-          }
-        },
-        "collection_DVXpBQ": {
-          "type": "collection",
+          "disabled": true,
           "settings": {
             "countdown_date": "",
             "pet_type": "cat",
             "collection_name": "Dieta BARF",
-            "collection": "latas-gatos",
+            "collection": "barf-gatos",
             "banner_action_type": "link",
             "banner_link_url": "",
             "banner_product": ""
@@ -293,9 +294,9 @@
       "block_order": [
         "collection_wLtpT3",
         "collection_mgCBbt",
+        "collection_DVXpBQ",
         "collection_hDjBCz",
-        "collection_9na79a",
-        "collection_DVXpBQ"
+        "collection_9na79a"
       ],
       "name": "Descuentos Especiales",
       "settings": {
