@@ -171,6 +171,7 @@
             "product": "condroprotector-perros-articulaciones-acero",
             "enable_countdown": false,
             "countdown_date": "2025-11-05 9:00",
+            "countdown_position_desktop": "center",
             "enable_schedule": true,
             "start_date": "2025-11-03 9:00",
             "end_date": "2025-11-06 9:00",
@@ -192,6 +193,7 @@
             "product": "lata-comida-cocinada-para-perro-pescado",
             "enable_countdown": false,
             "countdown_date": "2025-10-30 14:00",
+            "countdown_position_desktop": "center",
             "enable_schedule": false,
             "start_date": "",
             "end_date": "",
@@ -213,6 +215,7 @@
             "product": "lata-comida-cocinada-para-gato-pescado",
             "enable_countdown": false,
             "countdown_date": "",
+            "countdown_position_desktop": "center",
             "enable_schedule": false,
             "start_date": "",
             "end_date": "",
@@ -256,6 +259,7 @@
           "type": "collection",
           "settings": {
             "countdown_date": "2025-10-28 23:59",
+            "show_discount_badge": "discount",
             "pet_type": "dog",
             "collection_name": "Dieta BARF",
             "collection": "barf-perros",
@@ -268,6 +272,7 @@
           "type": "collection",
           "settings": {
             "countdown_date": "",
+            "show_discount_badge": "countdown",
             "pet_type": "dog",
             "collection_name": "Comida Cocinada",
             "collection": "comida-cocinada-para-perros",
@@ -280,6 +285,7 @@
           "type": "collection",
           "settings": {
             "countdown_date": "",
+            "show_discount_badge": "countdown",
             "pet_type": "dog",
             "collection_name": "Latas Comida Húmeda",
             "collection": "latas-perros",
@@ -292,6 +298,7 @@
           "type": "collection",
           "settings": {
             "countdown_date": "",
+            "show_discount_badge": "countdown",
             "pet_type": "dog",
             "collection_name": "Snacks y mordedores",
             "collection": "snacks-y-mordedores-perros",
@@ -304,6 +311,7 @@
           "type": "collection",
           "settings": {
             "countdown_date": "",
+            "show_discount_badge": "countdown",
             "pet_type": "cat",
             "collection_name": "Dieta BARF",
             "collection": "barf-gatos",
@@ -316,6 +324,7 @@
           "type": "collection",
           "settings": {
             "countdown_date": "",
+            "show_discount_badge": "countdown",
             "pet_type": "cat",
             "collection_name": "Comida Cocinada",
             "collection": "comida-cocinada-para-gatos",
@@ -328,6 +337,7 @@
           "type": "collection",
           "settings": {
             "countdown_date": "",
+            "show_discount_badge": "countdown",
             "pet_type": "cat",
             "collection_name": "Latas Comida Húmeda",
             "collection": "latas-gatos",
@@ -340,6 +350,7 @@
           "type": "collection",
           "settings": {
             "countdown_date": "",
+            "show_discount_badge": "countdown",
             "pet_type": "cat",
             "collection_name": "Snacks",
             "collection": "snacks-y-mordedores-gatos",
