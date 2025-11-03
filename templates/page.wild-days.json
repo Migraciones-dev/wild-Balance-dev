@@ -253,13 +253,13 @@
             "banner_product": ""
           }
         },
-        "collection_H9Gfem": {
+        "collection_qr47Xg": {
           "type": "collection",
           "settings": {
             "countdown_date": "",
-            "pet_type": "dog",
+            "pet_type": "cat",
             "collection_name": "Latas Comida Húmeda",
-            "collection": "latas-gatos",
+            "collection": "latas-perros",
             "banner_action_type": "link",
             "banner_link_url": "",
             "banner_product": ""
@@ -301,11 +301,11 @@
             "banner_product": ""
           }
         },
-        "collection_qr47Xg": {
+        "collection_H9Gfem": {
           "type": "collection",
           "settings": {
             "countdown_date": "",
-            "pet_type": "cat",
+            "pet_type": "dog",
             "collection_name": "Latas Comida Húmeda",
             "collection": "latas-gatos",
             "banner_action_type": "link",
@@ -329,11 +329,11 @@
       "block_order": [
         "collection_wLtpT3",
         "collection_DVXpBQ",
-        "collection_H9Gfem",
+        "collection_qr47Xg",
         "collection_hDjBCz",
         "collection_9na79a",
         "collection_mgCBbt",
-        "collection_qr47Xg",
+        "collection_H9Gfem",
         "collection_JqLpXU"
       ],
       "name": "Descuentos Especiales",
