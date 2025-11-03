@@ -253,11 +253,11 @@
             "banner_product": ""
           }
         },
-        "collection_qr47Xg": {
+        "collection_H9Gfem": {
           "type": "collection",
           "settings": {
             "countdown_date": "",
-            "pet_type": "cat",
+            "pet_type": "dog",
             "collection_name": "Latas Comida Húmeda",
             "collection": "latas-gatos",
             "banner_action_type": "link",
@@ -265,13 +265,13 @@
             "banner_product": ""
           }
         },
-        "collection_mgCBbt": {
+        "collection_hDjBCz": {
           "type": "collection",
           "settings": {
             "countdown_date": "",
-            "pet_type": "cat",
-            "collection_name": "Comida cocinada",
-            "collection": "comida-cocinada-para-perros",
+            "pet_type": "dog",
+            "collection_name": "Snacks y mordedores",
+            "collection": "snacks-y-mordedores-perros",
             "banner_action_type": "link",
             "banner_link_url": "",
             "banner_product": ""
@@ -289,13 +289,37 @@
             "banner_product": ""
           }
         },
-        "collection_hDjBCz": {
+        "collection_mgCBbt": {
           "type": "collection",
           "settings": {
             "countdown_date": "",
-            "pet_type": "dog",
+            "pet_type": "cat",
+            "collection_name": "Comida Cocinada",
+            "collection": "comida-cocinada-para-perros",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": ""
+          }
+        },
+        "collection_qr47Xg": {
+          "type": "collection",
+          "settings": {
+            "countdown_date": "",
+            "pet_type": "cat",
+            "collection_name": "Latas Comida Húmeda",
+            "collection": "latas-gatos",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": ""
+          }
+        },
+        "collection_JqLpXU": {
+          "type": "collection",
+          "settings": {
+            "countdown_date": "",
+            "pet_type": "cat",
             "collection_name": "Snacks",
-            "collection": "snacks-y-mordedores-perros",
+            "collection": "snacks-y-mordedores-gatos",
             "banner_action_type": "link",
             "banner_link_url": "",
             "banner_product": ""
@@ -305,10 +329,12 @@
       "block_order": [
         "collection_wLtpT3",
         "collection_DVXpBQ",
-        "collection_qr47Xg",
-        "collection_mgCBbt",
+        "collection_H9Gfem",
+        "collection_hDjBCz",
         "collection_9na79a",
-        "collection_hDjBCz"
+        "collection_mgCBbt",
+        "collection_qr47Xg",
+        "collection_JqLpXU"
       ],
       "name": "Descuentos Especiales",
       "settings": {
