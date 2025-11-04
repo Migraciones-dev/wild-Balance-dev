@@ -506,12 +506,20 @@
             "question": "¿Es segura la alimentación natural?",
             "answer": "<p>¡Sí, totalmente!<br/><br/>Nuestros menús están <strong>formulados por profesionales</strong> para ser completos y equilibrados, siguiendo estándares veterinarios.<br/><br/>Usamos solo <strong>materias primas de calidad</strong>, y mantenemos <strong>la cadena de frío</strong> para garantizar la máxima seguridad alimentaria desde nuestra cocina hasta tu casa.<br/></p>"
           }
+        },
+        "faq_xMxEq9": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Cómo puedo empezar?",
+            "answer": "<p>¡Muy fácil!<br/><br/>Puedes hacerlo de dos maneras, según el tipo de menú que elijas:</p><ul><li><strong>Si optas por BARF</strong>: empieza directamente con nuestro pack de iniciación o haz la transición poco a poco, sustituyendo una de sus comidas por BARF cada día.<br/></li><li><strong>Si prefieres comida cocinada</strong>: comienza con menús suaves, como el de pollo, e incorpora el resto de manera progresiva.</li></ul><p>Y si te surgen dudas, <strong>nuestro equipo te acompaña en todo el proceso</strong> para que la transición sea sencilla y segura. </p><p>👉🏻 <a href=\"https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0\" target=\"_blank\" title=\"https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0\">Habla con nosotros</a></p>"
+          }
         }
       },
       "block_order": [
         "faq_zpMxf7",
         "faq_MFF6kj",
-        "faq_GCBxeq"
+        "faq_GCBxeq",
+        "faq_xMxEq9"
       ],
       "name": "Migraciones FAQ",
       "settings": {
