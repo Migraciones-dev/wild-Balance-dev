@@ -513,13 +513,21 @@
             "question": "¿Cómo puedo empezar?",
             "answer": "<p>¡Muy fácil!<br/><br/>Puedes hacerlo de dos maneras, según el tipo de menú que elijas:</p><ul><li><strong>Si optas por BARF</strong>: empieza directamente con nuestro pack de iniciación o haz la transición poco a poco, sustituyendo una de sus comidas por BARF cada día.<br/></li><li><strong>Si prefieres comida cocinada</strong>: comienza con menús suaves, como el de pollo, e incorpora el resto de manera progresiva.</li></ul><p>Y si te surgen dudas, <strong>nuestro equipo te acompaña en todo el proceso</strong> para que la transición sea sencilla y segura. </p><p>👉🏻 <a href=\"https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0\" target=\"_blank\" title=\"https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0\">Habla con nosotros</a></p>"
           }
+        },
+        "faq_m6NQ9b": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Qué cantidad tengo que darle?",
+            "answer": "<p>La ración ideal depende de su <strong>edad, peso y nivel de actividad</strong>.<br/><br/>En cachorros o perros mayores ajustamos las cantidades según sus necesidades.<br/><br/>No te preocupes, si nos das esos datos, <strong>te ayudamos encantados a preparar su plan de alimentación personalizado</strong>.</p><p>👉🏻 <a href=\"https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0\" target=\"_blank\" title=\"https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0\">Habla con nosotros</a></p><p>Y si prefieres hacerlo tú mismo, puedes usar <a href=\"https://wildbalance.es/pages/calculadora-raciones\" target=\"_blank\" title=\"https://wildbalance.es/pages/calculadora-raciones\"><strong>nuestra calculadora online</strong></a> para conocer la cantidad exacta que necesita tu peludo cada día. <br/><br/></p>"
+          }
         }
       },
       "block_order": [
         "faq_zpMxf7",
         "faq_MFF6kj",
         "faq_GCBxeq",
-        "faq_xMxEq9"
+        "faq_xMxEq9",
+        "faq_m6NQ9b"
       ],
       "name": "Migraciones FAQ",
       "settings": {
