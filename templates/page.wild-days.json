@@ -185,7 +185,6 @@
         },
         "banner_wwYhKr": {
           "type": "banner",
-          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/ofertas-flash-lata-pescado-perro.png",
             "mobile_image": "shopify://shop_images/ofertas-flash-lata-pescado-perro.png",
@@ -207,7 +206,6 @@
         },
         "banner_fippFK": {
           "type": "banner",
-          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/ofertas-flash-lata-pescado-gato.png",
             "mobile_image": "shopify://shop_images/ofertas-flash-lata-pescado-gato.png",
@@ -217,8 +215,8 @@
             "countdown_date": "",
             "countdown_position_desktop": "center",
             "enable_schedule": false,
-            "start_date": "",
-            "end_date": "",
+            "start_date": "2025-11-06 09:00",
+            "end_date": "2025-11-07 09:00",
             "border_radius_desktop": 30,
             "border_radius_mobile": 12,
             "mt_desktop": 0,
