@@ -343,6 +343,7 @@
       "blocks": {
         "collection_wLtpT3": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "countdown_date": "2025-10-28 23:59",
             "show_discount_badge": "discount",
@@ -356,6 +357,7 @@
         },
         "collection_DVXpBQ": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "countdown_date": "",
             "show_discount_badge": "discount",
@@ -369,6 +371,7 @@
         },
         "collection_qr47Xg": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "countdown_date": "",
             "show_discount_badge": "discount",
@@ -382,6 +385,7 @@
         },
         "collection_hDjBCz": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "countdown_date": "",
             "show_discount_badge": "discount",
@@ -395,6 +399,7 @@
         },
         "collection_9na79a": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "countdown_date": "",
             "show_discount_badge": "discount",
@@ -408,6 +413,7 @@
         },
         "collection_mgCBbt": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "countdown_date": "",
             "show_discount_badge": "discount",
@@ -421,6 +427,7 @@
         },
         "collection_H9Gfem": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "countdown_date": "",
             "show_discount_badge": "discount",
