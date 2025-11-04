@@ -527,6 +527,13 @@
             "question": "¿Tengo que usar suplementos con este tipo de dieta?",
             "answer": "<p>Si tu peludo es joven y está sano, <strong>no es necesario añadir suplementos</strong>.<br/><br/>Nuestros menús son <strong>completos y equilibrados</strong>, así que solo necesitarás <strong>un buen aceite de salmón o sardina</strong> los días que no coma pescado, para mantener su aporte de Omega 3.<br/><br/>Si ya es abuelito o quieres ayudar a mejorar alguna patología, puedes valorar incluir <strong>suplementos específicos según sus necesidades</strong>.<br/><br/>👉🏻<a href=\"/collections/suplementos-y-aceites\" target=\"_blank\" title=\"Suplementos y aceites\"> Ver todos los suplementos</a><br/><br/></p>"
           }
+        },
+        "faq_EDb9Gm": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Cuál es la diferencia entre las latas y la comida cocinada?",
+            "answer": "<p>En <strong>calidad y valor nutricional</strong>, no hay diferencia: ambas opciones son igual de sanas y completas.<br/><br/>La diferencia está en el <strong>proceso</strong>:</p><ul><li>Las <strong>latas</strong> se cocinan a alta temperatura para su conservación.<br/></li><li>La <strong>cocinada</strong> se elabora de forma más casera y se congela para mantener intactas sus propiedades.</li></ul><p>La cocinada suele tener una <strong>textura más suave y casera</strong>, mientras que las latas ofrecen un poco más de variedad.<br/><br/>Lo ideal es <strong>combinar ambas opciones</strong> según lo que mejor se adapte a tu peludo.<br/></p>"
+          }
         }
       },
       "block_order": [
@@ -535,7 +542,8 @@
         "faq_GCBxeq",
         "faq_xMxEq9",
         "faq_m6NQ9b",
-        "faq_iWFdJa"
+        "faq_iWFdJa",
+        "faq_EDb9Gm"
       ],
       "name": "Migraciones FAQ",
       "settings": {
