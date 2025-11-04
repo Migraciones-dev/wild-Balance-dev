@@ -520,6 +520,13 @@
             "question": "¿Qué cantidad tengo que darle?",
             "answer": "<p>La ración ideal depende de su <strong>edad, peso y nivel de actividad</strong>.<br/><br/>En cachorros o perros mayores ajustamos las cantidades según sus necesidades.<br/><br/>No te preocupes, si nos das esos datos, <strong>te ayudamos encantados a preparar su plan de alimentación personalizado</strong>.</p><p>👉🏻 <a href=\"https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0\" target=\"_blank\" title=\"https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0\">Habla con nosotros</a></p><p>Y si prefieres hacerlo tú mismo, puedes usar <a href=\"https://wildbalance.es/pages/calculadora-raciones\" target=\"_blank\" title=\"https://wildbalance.es/pages/calculadora-raciones\"><strong>nuestra calculadora online</strong></a> para conocer la cantidad exacta que necesita tu peludo cada día. <br/><br/></p>"
           }
+        },
+        "faq_iWFdJa": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Tengo que usar suplementos con este tipo de dieta?",
+            "answer": "<p>Si tu peludo es joven y está sano, <strong>no es necesario añadir suplementos</strong>.<br/><br/>Nuestros menús son <strong>completos y equilibrados</strong>, así que solo necesitarás <strong>un buen aceite de salmón o sardina</strong> los días que no coma pescado, para mantener su aporte de Omega 3.<br/><br/>Si ya es abuelito o quieres ayudar a mejorar alguna patología, puedes valorar incluir <strong>suplementos específicos según sus necesidades</strong>.<br/><br/>👉🏻<a href=\"/collections/suplementos-y-aceites\" target=\"_blank\" title=\"Suplementos y aceites\"> Ver todos los suplementos</a><br/><br/></p>"
+          }
         }
       },
       "block_order": [
@@ -527,7 +534,8 @@
         "faq_MFF6kj",
         "faq_GCBxeq",
         "faq_xMxEq9",
-        "faq_m6NQ9b"
+        "faq_m6NQ9b",
+        "faq_iWFdJa"
       ],
       "name": "Migraciones FAQ",
       "settings": {
