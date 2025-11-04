@@ -224,12 +224,34 @@
             "mt_mobile": 0,
             "mb_mobile": 0
           }
+        },
+        "banner_hJ6B8t": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/oferta-flash-digestiones-firmes.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-digestiones-firmes.png",
+            "image_link": "",
+            "product": "suplemento-salud-intestinal-perro-digestiones-firmes",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-07 09:00",
+            "end_date": "2025-11-08 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
         }
       },
       "block_order": [
         "banner_9KVPxw",
         "banner_wwYhKr",
-        "banner_fippFK"
+        "banner_fippFK",
+        "banner_hJ6B8t"
       ],
       "name": "Banners Grid 2 columnas",
       "settings": {
