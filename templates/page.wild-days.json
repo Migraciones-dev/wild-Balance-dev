@@ -521,6 +521,13 @@
             "answer": "<p>La ración ideal depende de su <strong>edad, peso y nivel de actividad</strong>.<br/><br/>En cachorros o perros mayores ajustamos las cantidades según sus necesidades.<br/><br/>No te preocupes, si nos das esos datos, <strong>te ayudamos encantados a preparar su plan de alimentación personalizado</strong>.</p><p>👉🏻 <a href=\"https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0\" target=\"_blank\" title=\"https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0\">Habla con nosotros</a></p><p>Y si prefieres hacerlo tú mismo, puedes usar <a href=\"https://wildbalance.es/pages/calculadora-raciones\" target=\"_blank\" title=\"https://wildbalance.es/pages/calculadora-raciones\"><strong>nuestra calculadora online</strong></a> para conocer la cantidad exacta que necesita tu peludo cada día. <br/><br/></p>"
           }
         },
+        "faq_URcdwr": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Cuál es tu pregunta?",
+            "answer": "<p>Escribe aquí la respuesta a la pregunta.</p>"
+          }
+        },
         "faq_iWFdJa": {
           "type": "faq",
           "settings": {
@@ -534,6 +541,20 @@
             "question": "¿Cuál es la diferencia entre las latas y la comida cocinada?",
             "answer": "<p>En <strong>calidad y valor nutricional</strong>, no hay diferencia: ambas opciones son igual de sanas y completas.<br/><br/>La diferencia está en el <strong>proceso</strong>:</p><ul><li>Las <strong>latas</strong> se cocinan a alta temperatura para su conservación.<br/></li><li>La <strong>cocinada</strong> se elabora de forma más casera y se congela para mantener intactas sus propiedades.</li></ul><p>La cocinada suele tener una <strong>textura más suave y casera</strong>, mientras que las latas ofrecen un poco más de variedad.<br/><br/>Lo ideal es <strong>combinar ambas opciones</strong> según lo que mejor se adapte a tu peludo.<br/></p>"
           }
+        },
+        "faq_G7DwfX": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Puedo cocinar las hamburguesas BARF y cómo debo conservarlas?",
+            "answer": "<p>Lo ideal es <strong>no cocinarlas</strong>, ya que al hacerlo perderían parte de sus nutrientes y el hueso carnoso podría alterarse, lo que no sería seguro.</p><p>Si prefieres comida cocinada, puedes optar por nuestros <a href=\"/collections/comida-cocinada\" target=\"_blank\" title=\"Comida cocinada\"><strong>menús cocinados</strong></a>, pensados para mantener toda la calidad del producto sin riesgos.<br/><br/>Para conservar los menús, <strong>mantenlos congelados hasta el momento de uso</strong> y <strong>descongélalos siempre en la nevera</strong>, nunca a temperatura ambiente.<br/><br/>Una vez abiertos, <strong>guárdalos refrigerados y consúmelos en 24–48 h</strong> para conservar toda su frescura y sabor.</p>"
+          }
+        },
+        "faq_VpUJmT": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Puedo combinar comida natural con pienso?",
+            "answer": "<p>Sí, aunque <strong>lo ideal es hacer la transición completa</strong> a comida natural.<br/><br/>Si quieres hacerlo poco a poco, puedes <strong>alternar las tomas</strong> (una de pienso y otra de natural) y observar cómo responde su digestión.<br/><br/>Nuestro equipo está aquí para ayudarte a que el cambio sea gradual, equilibrado y sin complicaciones.<br/><br/>👉🏻 <a href=\"https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0\" target=\"_blank\" title=\"https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0\">Habla con nosotros</a></p>"
+          }
         }
       },
       "block_order": [
@@ -542,8 +563,11 @@
         "faq_GCBxeq",
         "faq_xMxEq9",
         "faq_m6NQ9b",
+        "faq_URcdwr",
         "faq_iWFdJa",
-        "faq_EDb9Gm"
+        "faq_EDb9Gm",
+        "faq_G7DwfX",
+        "faq_VpUJmT"
       ],
       "name": "Migraciones FAQ",
       "settings": {
