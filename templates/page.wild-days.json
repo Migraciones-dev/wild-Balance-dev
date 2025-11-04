@@ -214,7 +214,7 @@
             "enable_countdown": false,
             "countdown_date": "",
             "countdown_position_desktop": "center",
-            "enable_schedule": false,
+            "enable_schedule": true,
             "start_date": "2025-11-06 09:00",
             "end_date": "2025-11-07 09:00",
             "border_radius_desktop": 30,
