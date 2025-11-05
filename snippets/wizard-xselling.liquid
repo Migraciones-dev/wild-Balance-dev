@@ -10,15 +10,12 @@
   class="wizard-variant-results mt:10 lg:mt-20 !bg-[#F4F0E2] [@media(max-width:1024px)]:!flex-nowrap [@media(max-width:1024px)]:!justify-start"
 >
   {% for product in xsellingProducts limit: 4 %}
-    {%- comment -%}
-      Mantenemos el label como antes (para que el CSS de la plantilla no se rompa)
-    {%- endcomment -%}
     <label
-      for="xselling_{{ product.variants[0].id }}"
       class="xselling-card"
       style="user-select:none; touch-action:manipulation; cursor:pointer;"
+      data-variant-id="{{ product.variants[0].id }}"
     >
-      <div class="variant-result  [@media(max-width:1024px)]:!w-[80vw] !text-left !items-start">
+      <div class="variant-result [@media(max-width:1024px)]:!w-[80vw] !text-left !items-start">
         {{ product.featured_image | image_url: width: 300 | image_tag }}
 
         <h2 class="my-0 !text-[18px] lg:!text-[28px] leading-[1] !font-semibold font-[Barlow] mb-4 !mt-0 !pb-2">
@@ -27,6 +24,7 @@
             id="xselling_{{ product.variants[0].id }}"
             name="xselling"
             value="{{ product.variants[0].id }}"
+            style="position: absolute; opacity: 0; pointer-events: none;"
           >
           {{ product.title }}
         </h2>
@@ -46,38 +44,47 @@
     const container = document.querySelector('.wizard-variant-results');
     if (!container) return;
 
-    const inputs = container.querySelectorAll('input[name="xselling"]');
-    if (!inputs.length) return;
+    const labels = container.querySelectorAll('.xselling-card');
+    if (!labels.length) return;
 
-    function refreshCard(input) {
-      const card = input.closest('.variant-result');
-      if (!card) return;
+    function refreshCard(card) {
+      const input = card.querySelector('input[name="xselling"]');
+      if (!input) return;
 
       const on = input.checked;
+      const variantResult = card.querySelector('.variant-result');
       const sel = card.querySelector('.selected');
       const pick = card.querySelector('.select');
 
-      card.classList.toggle('active', on);
+      if (variantResult) variantResult.classList.toggle('active', on);
       if (sel) sel.classList.toggle('hidden', !on);
       if (pick) pick.classList.toggle('hidden', on);
     }
 
-    // Sólo reaccionamos a 'change' → evitamos líos de dobles clicks/taps
-    inputs.forEach((input) => {
-      input.addEventListener('change', function () {
-        refreshCard(input);
+    labels.forEach((label) => {
+      const input = label.querySelector('input[name="xselling"]');
+      if (!input) return;
+
+      // Manejar el click en el label
+      label.addEventListener('click', function (e) {
+        // Prevenir el doble toggle
+        e.preventDefault();
+
+        // Toggle manual del checkbox
+        input.checked = !input.checked;
+
+        // Actualizar la UI
+        refreshCard(label);
       });
 
-      // Estado inicial por si algún día vienen marcados desde backend
-      if (input.checked) {
-        refreshCard(input);
-      }
+      // Estado inicial
+      refreshCard(label);
     });
   })();
 </script>
 
 <style>
   .wizard-variant-results {
-    /* lo dejas vacío como ya lo tenías, o lo que tengas en tu theme */
+    /* Tus estilos aquí */
   }
 </style>
