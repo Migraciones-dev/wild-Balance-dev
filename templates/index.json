@@ -882,13 +882,6 @@
       ],
       "disabled": true,
       "settings": {}
-    },
-    "custom_liquid_ppDY9t": {
-      "type": "custom-liquid",
-      "name": "Custom Liquid",
-      "settings": {
-        "custom_liquid": ""
-      }
     }
   },
   "order": [
@@ -910,7 +903,6 @@
     "migraciones_reviews_x9hAB4",
     "migraciones_newsletter_qXCxVc",
     "1760292679b5c6369d",
-    "17602927814de94466",
-    "custom_liquid_ppDY9t"
+    "17602927814de94466"
   ]
 }
