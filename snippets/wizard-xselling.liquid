@@ -8,6 +8,7 @@
 
 <div
   class="wizard-variant-results mt:10 lg:mt-20 !bg-[#F4F0E2] [@media(max-width:1024px)]:!flex-nowrap [@media(max-width:1024px)]:!justify-start"
+  data-xselling-init="true"
 >
   {% for product in xsellingProducts limit: 4 %}
     <label
@@ -24,7 +25,7 @@
             id="xselling_{{ product.variants[0].id }}"
             name="xselling"
             value="{{ product.variants[0].id }}"
-            style="position: absolute; opacity: 0; pointer-events: none;"
+            data-xselling-input="true"
           >
           {{ product.title }}
         </h2>
@@ -39,91 +40,68 @@
   {% endfor %}
 </div>
 
-<script>
-  console.log('🔍 Script iniciado');
-
-  document.addEventListener('DOMContentLoaded', function () {
-    console.log('📍 DOMContentLoaded disparado');
-
-    const container = document.querySelector('.wizard-variant-results');
-    console.log('Container encontrado:', container ? '✅' : '❌');
+<script type="module">
+  (function initXselling() {
+    // Buscar el contenedor
+    const container = document.querySelector('[data-xselling-init="true"]');
 
     if (!container) {
-      console.error('❌ Container .wizard-variant-results no encontrado');
+      // Si no existe, esperar a que se cree
+      setTimeout(initXselling, 100);
       return;
     }
 
-    const labels = container.querySelectorAll('.xselling-card');
-    console.log('Labels encontrados:', labels.length);
+    const labels = Array.from(container.querySelectorAll('.xselling-card'));
 
-    if (!labels.length) {
-      console.error('❌ No hay labels con clase .xselling-card');
+    if (labels.length === 0) {
+      setTimeout(initXselling, 100);
       return;
     }
 
-    function refreshCard(card) {
-      const input = card.querySelector('input[name="xselling"]');
+    function updateCard(card) {
+      const input = card.querySelector('[data-xselling-input="true"]');
+      if (!input) return;
 
-      if (!input) {
-        console.error('❌ Input no encontrado en card');
-        return;
-      }
-
-      const on = input.checked;
+      const checked = input.checked;
       const variantResult = card.querySelector('.variant-result');
-      const sel = card.querySelector('.selected');
-      const pick = card.querySelector('.select');
-
-      console.log('  → Estado checkbox:', on ? '✅ CHECKED' : '❌ UNCHECKED');
+      const selectSpan = card.querySelector('.label.select');
+      const selectedSpan = card.querySelector('.label.selected');
 
       if (variantResult) {
-        variantResult.classList.toggle('active', on);
+        variantResult.classList.toggle('active', checked);
       }
 
-      if (sel) {
-        sel.classList.toggle('hidden', !on);
+      if (selectSpan) {
+        selectSpan.classList.toggle('hidden', checked);
       }
 
-      if (pick) {
-        pick.classList.toggle('hidden', on);
+      if (selectedSpan) {
+        selectedSpan.classList.toggle('hidden', !checked);
       }
     }
 
-    labels.forEach((label, index) => {
-      console.log(`\n🏷️ Inicializando label ${index}`);
+    labels.forEach((label) => {
+      const input = label.querySelector('[data-xselling-input="true"]');
 
-      const input = label.querySelector('input[name="xselling"]');
+      if (!input) return;
 
-      if (!input) {
-        console.error(`  ❌ Input no encontrado en label ${index}`);
-        return;
-      }
-
-      const variantId = label.getAttribute('data-variant-id');
-      console.log(`  Variant ID: ${variantId}`);
-
-      // Listener para click
-      label.addEventListener('click', function (e) {
-        console.log(`\n👆 CLICK en label ${index} (${variantId})`);
-        console.log(`  Estado ANTES: ${input.checked ? '✅ CHECKED' : '❌ UNCHECKED'}`);
-
+      // Event listener en el label
+      label.addEventListener('click', (e) => {
         e.preventDefault();
-
-        // Toggle
+        e.stopPropagation();
         input.checked = !input.checked;
-        console.log(`  Estado DESPUÉS: ${input.checked ? '✅ CHECKED' : '❌ UNCHECKED'}`);
+        updateCard(label);
+      });
 
-        // Actualizar UI
-        refreshCard(label);
+      // También agregar listener al input directamente por si acaso
+      input.addEventListener('change', () => {
+        updateCard(label);
       });
 
       // Estado inicial
-      console.log(`  Estado INICIAL: ${input.checked ? '✅ CHECKED' : '❌ UNCHECKED'}`);
-      refreshCard(label);
+      updateCard(label);
     });
-
-    console.log('\n✅ WIZARD XSELLING INICIALIZADO CORRECTAMENTE');
-  });
+  })();
 </script>
 
 <style>
