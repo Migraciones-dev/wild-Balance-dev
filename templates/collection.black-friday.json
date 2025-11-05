@@ -1,0 +1,200 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "heading_template": {
+      "type": "collection-heading-template",
+      "blocks": {
+        "07c155bb-29b8-4a2f-a7cf-bf0bd1099c54": {
+          "type": "1",
+          "settings": {
+            "fontf": "2",
+            "text_cl": "#004623",
+            "text_fs": 40,
+            "text_lh": 56,
+            "text_fw": 900,
+            "text_ls": 0,
+            "font_italic": false,
+            "font_uppercase": false,
+            "text_shadow": false,
+            "mgb": 0,
+            "text_fs_tb": 35,
+            "text_lh_tb": 46,
+            "text_ls_tb": 0,
+            "mgb_tb": 0,
+            "hidden_mobile": false,
+            "text_fs_mb": 24,
+            "text_lh_mb": 46,
+            "text_ls_mb": 0,
+            "mgb_mb": 0,
+            "text_cl_trans": "#ffffff"
+          }
+        },
+        "3_z3FfBM": {
+          "type": "3",
+          "settings": {
+            "breadcrumb_color": "#cae6c8",
+            "breadcrumb_color_link": "#cae6c8",
+            "brc_mgb": 5,
+            "breadcrumb_cl_trans": "#ffffff",
+            "breadcrumb_color_link_trans": "#cccccc"
+          }
+        }
+      },
+      "block_order": [
+        "07c155bb-29b8-4a2f-a7cf-bf0bd1099c54",
+        "3_z3FfBM"
+      ],
+      "disabled": true,
+      "settings": {
+        "use_specify_image": false,
+        "parallax": false,
+        "color": "rgba(0,0,0,0)",
+        "overlay": 0,
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "mg_b": 30,
+        "padding_top_tb": 30,
+        "padding_bottom_tb": 30,
+        "mg_btb": 30,
+        "padding_top_mb": 30,
+        "padding_bottom_mb": 30,
+        "mg_bmb": 30,
+        "box_border": "top_bottom",
+        "bg_pos": "center top",
+        "bg_repeat": "no-repeat",
+        "bg_size": "cover",
+        "show_border": true,
+        "cl_bd_trans": "#ffffff",
+        "border_cl_trans": 15,
+        "color_trans": "#000000",
+        "overlay_trans": 0,
+        "padding_top_trans": 150,
+        "padding_bottom_trans": 50,
+        "padding_top_tb_trans": 120,
+        "padding_bottom_tb_trans": 50,
+        "padding_top_mb_trans": 120,
+        "padding_bottom_mb_trans": 40
+      }
+    },
+    "sidebar": {
+      "type": "sidebar-collection",
+      "blocks": {
+        "7ac6f497-c7ca-4dac-8f59-0084f052835e": {
+          "type": "filter",
+          "settings": {}
+        },
+        "cd6064d5-464c-431c-b47b-e363158ab8bd": {
+          "type": "category",
+          "disabled": true,
+          "settings": {
+            "heading": "Product categories",
+            "cat_source": "1",
+            "cat_link_list": "",
+            "count": false
+          }
+        }
+      },
+      "block_order": [
+        "7ac6f497-c7ca-4dac-8f59-0084f052835e",
+        "cd6064d5-464c-431c-b47b-e363158ab8bd"
+      ],
+      "settings": {
+        "enable_drawer": false,
+        "space": 50,
+        "size": "medium",
+        "br_style": "none",
+        "brcolor": "#222222",
+        "sidebar_bdr": 5,
+        "sidebar_pd": 15
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "blocks": {
+        "layout_cyC4rp": {
+          "type": "layout",
+          "disabled": true,
+          "settings": {}
+        },
+        "61521bb9-8203-40bd-bb9d-874f11185c3e": {
+          "type": "filter",
+          "disabled": true,
+          "settings": {
+            "style_filters": "area"
+          }
+        }
+      },
+      "block_order": [
+        "layout_cyC4rp",
+        "61521bb9-8203-40bd-bb9d-874f11185c3e"
+      ],
+      "settings": {
+        "show_desc": true,
+        "position_desc": "2",
+        "product_des": "1",
+        "rating_pos": "1",
+        "list_color_pos": "1",
+        "list_size_pos": "1",
+        "show_vendor": false,
+        "use_cdt": false,
+        "image_ratio": "ratioadapt",
+        "image_size": "contain",
+        "image_position": "8",
+        "content_align": "default",
+        "limit": 24,
+        "enable_listing": false,
+        "enable_listing_default": false,
+        "col_dk": "3",
+        "col_tb": "2",
+        "col_mb": "2",
+        "space_h_item": "20",
+        "space_v_item": "30",
+        "space_h_item_tb": "10",
+        "space_v_item_tb": "20",
+        "space_h_item_mb": "10",
+        "space_v_item_mb": "20",
+        "layout_des": "1",
+        "use_pagination": "load-more",
+        "enable_bar_lm": true,
+        "btn_icon": false,
+        "btn_rounded": false,
+        "button_style": "default",
+        "btns_size": "large",
+        "btns_cl": "dark",
+        "button_effect": "default",
+        "btn_pos": "t4s-text-center",
+        "type_filters": "facets",
+        "layout": "t4s-se-container",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": "50px,50px,0px,50px",
+        "pd": "",
+        "mg_tb": "20px,20px,0px,20px",
+        "pd_tb": "",
+        "mg_mb": "10px,10px,0px,10px",
+        "pd_mb": ""
+      }
+    },
+    "custom_liquid_78Gin4": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
+      "settings": {
+        "custom_liquid": "<script>\n(function(){\n  if (window.__FILTERS_URL_TRACKER_INIT__) return;\n  window.__FILTERS_URL_TRACKER_INIT__ = true;\n\n  window.dataLayer = window.dataLayer || [];\n\n  // --- Utils URL / parsing ---\n  function decodePlus(s){ try{ return decodeURIComponent(String(s||'').replace(/\\+/g,' ')); }catch(e){ return s; } }\n  function lastSegment(name){ var p=String(name||'').split('.'); return p[p.length-1] || name; }\n  function parseFilterType(paramName){\n    var n = String(paramName||'');\n    if (n.indexOf('filter.v.price') === 0) return 'price';\n    if (n.indexOf('filter.v.option.') === 0) return 'option_' + n.replace('filter.v.option.','');\n    if (n.indexOf('filter.p.m.') === 0) return lastSegment(n);\n    if (n.indexOf('filter.p.') === 0) return n.replace('filter.p.','');\n    if (n.indexOf('filter.v.') === 0) return n.replace('filter.v.','');\n    return lastSegment(n);\n  }\n  function getFiltersFromURL(urlStr){\n    var url = new URL(urlStr || location.href), map = new Map();\n    url.searchParams.forEach(function(val, key){\n      if (!/^filter\\./.test(key)) return;\n      var type = parseFilterType(key);\n      var decodedVal = decodePlus(val);\n      if (!map.has(type)) map.set(type, new Set());\n      map.get(type).add(decodedVal);\n    });\n    return map;\n  }\n\n  // --- TOTAL correcto: lee #plp-total-count .cp ---\n  function readTotal(){\n    var el = document.querySelector('#plp-total-count .cp');\n    if (!el) return null;\n    var v = parseInt((el.textContent || '').replace(/\\D+/g,''), 10);\n    return isNaN(v) ? null : v;\n  }\n  function waitForTotalChange(prevTotal, done){\n    var maxMs = 4000, start = Date.now();\n    var target = document.querySelector('#plp-total-count') || document.body;\n    var observer = new MutationObserver(function(){\n      var curr = readTotal();\n      if (curr !== null && curr !== prevTotal) finish(curr);\n    });\n    observer.observe(target, { childList: true, subtree: true, characterData: true });\n    var poll = setInterval(function(){\n      var curr = readTotal();\n      if ((curr !== null && curr !== prevTotal) || (Date.now() - start > maxMs)) finish(curr);\n    }, 100);\n    function finish(val){ try{observer.disconnect();}catch(e){} clearInterval(poll); done(val); }\n  }\n\n  // Anti-dup\n  var lastKey=null, lastTs=0;\n  function makeKey(p){ return [p.filter_type, p.filter_applied, p.total_results].join('|'); }\n  function shouldSend(p){\n    var k = makeKey(p), now = Date.now();\n    if (k === lastKey && (now-lastTs) < 800) return false;\n    lastKey=k; lastTs=now; return true;\n  }\n\n  // Estado previo = URL al cargar página\n  var prevFilters = getFiltersFromURL(location.href);\n\n  function handleURLChange(){\n    var currFilters = getFiltersFromURL(location.href);\n\n    // diferencias -> añadidos (incluye el PRIMER cambio tras cargar)\n    var adds = [];\n    currFilters.forEach(function(setCurr, type){\n      var prevSet = prevFilters.get(type) || new Set();\n      setCurr.forEach(function(v){ if(!prevSet.has(v)) adds.push({ filter_type:type, filter_applied:v }); });\n    });\n    prevFilters = currFilters;\n    if (!adds.length) return;\n\n    var prevTotal = readTotal();\n    waitForTotalChange(prevTotal, function(newTotal){\n      adds.forEach(function(a){\n        var payload = {\n          event: 'filtros',\n          filter_applied: a.filter_applied,\n          filter_type: a.filter_type,\n          total_results: (typeof newTotal === 'number') ? newTotal : prevTotal\n        };\n        if (!shouldSend(payload)) return;\n        console.log('filtros enviado:', payload);\n        window.dataLayer.push(payload);\n      });\n    });\n  }\n\n  // Hook a cambios de URL\n  ['pushState','replaceState'].forEach(function(fn){\n    var orig = history[fn];\n    history[fn] = function(){ var ret = orig.apply(this, arguments); try{ handleURLChange(); }catch(e){} return ret; };\n  });\n  window.addEventListener('popstate', handleURLChange);\n\n  // Fallback por cambios directos de location.search\n  var lastHref = location.href;\n  setInterval(function(){\n    if (location.href !== lastHref){ lastHref = location.href; handleURLChange(); }\n  }, 400);\n})();\n</script>"
+      }
+    }
+  },
+  "order": [
+    "heading_template",
+    "sidebar",
+    "main",
+    "custom_liquid_78Gin4"
+  ]
+}
