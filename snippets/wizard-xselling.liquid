@@ -10,97 +10,51 @@
   class="wizard-variant-results mt:10 lg:mt-20 !bg-[#F4F0E2] [@media(max-width:1024px)]:!flex-nowrap [@media(max-width:1024px)]:!justify-start"
 >
   {% for product in xsellingProducts limit: 4 %}
-    <div class="xselling-card">
-      <div class="variant-result [@media(max-width:1024px)]:!w-[80vw] !text-left !items-start">
+    <label for="xselling_{{ product.variants[0].id }}">
+      <div class="variant-result  [@media(max-width:1024px)]:!w-[80vw] !text-left !items-start">
         {{ product.featured_image | image_url: width: 300 | image_tag }}
-
         <h2 class="my-0 !text-[18px] lg:!text-[28px] leading-[1] !font-semibold font-[Barlow] mb-4 !mt-0 !pb-2">
+          <input
+            type="checkbox"
+            id="xselling_{{ product.variants[0].id }}"
+            name="xselling"
+            value="{{ product.variants[0].id }}"
+          >
           {{ product.title }}
         </h2>
 
         {{ product.variants[0].price | money_with_currency }}
         <br>
         <br>
-
         <span class="label select !self-start">Seleccionar</span>
         <span class="label selected hidden !self-start">Seleccionado</span>
-
-        {%- comment -%}
-          Input oculto: lo usamos SOLO para la lógica (recalculate, etc.),
-          pero no participa en el click nativo del navegador.
-        {%- endcomment -%}
-        <input
-          type="checkbox"
-          class="xselling-input"
-          id="xselling_{{ product.variants[0].id }}"
-          name="xselling"
-          value="{{ product.variants[0].id }}"
-          style="position:absolute; opacity:0; pointer-events:none; width:0; height:0;"
-        >
       </div>
-    </div>
+    </label>
   {% endfor %}
 </div>
 
 <script>
-  (function () {
-    const cards = document.querySelectorAll('.xselling-card');
+  // click events for selected things
 
-    if (!cards.length) return;
+  let xsellingContainers = document.querySelectorAll('input[name="xselling"]');
 
-    function updateCardFromInput(input) {
-      const card = input.closest('.xselling-card');
-      if (!card) return;
-
-      const variant = card.querySelector('.variant-result');
-      const on = input.checked;
-
-      if (variant) {
-        variant.classList.toggle('active', on);
-      }
-
-      const sel = card.querySelector('.selected');
-      const pick = card.querySelector('.select');
-      if (sel) sel.classList.toggle('hidden', !on);
-      if (pick) pick.classList.toggle('hidden', on);
-    }
-
-    cards.forEach((card) => {
-      const input = card.querySelector('.xselling-input');
-      if (!input) return;
-
-      // Click en cualquier parte de la tarjeta
-      card.addEventListener('click', function (e) {
-        // Por si algún día cambias el estilo del input
-        if (e.target === input) return;
-
-        e.preventDefault();
-
-        input.checked = !input.checked;
-        input.dispatchEvent(new Event('change', { bubbles: true }));
-      });
-
-      // Cuando cambie el checkbox (por JS o lo que sea) → refrescamos UI
-      input.addEventListener('change', function () {
-        updateCardFromInput(input);
-      });
-
-      // Estado inicial (por si algún día marcas algo desde backend)
-      if (input.checked) {
-        updateCardFromInput(input);
-      }
+  Array.from(xsellingContainers).forEach(function (xselling) {
+    xselling.addEventListener('click', function (event) {
+      activateXselling(xselling, xsellingContainers);
     });
-  })();
+  });
+
+  function activateXselling(xselling, xsellingContainers) {
+    //select current xselling
+
+    let thisarticle = xselling.closest('.variant-result');
+    thisarticle.classList.toggle('active');
+    thisarticle.querySelector('.selected').classList.toggle('hidden');
+    thisarticle.querySelector('.select').classList.toggle('hidden');
+  }
 </script>
 
 <style>
-  /* Que la tarjeta se comporte visualmente como el antiguo <label> */
-  .wizard-variant-results .xselling-card {
-    display: block;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-user-select: none;
-    user-select: none;
-    touch-action: manipulation;
-    cursor: pointer;
+  .wizard-variant-results {
   }
 </style>
