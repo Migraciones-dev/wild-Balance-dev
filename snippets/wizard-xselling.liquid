@@ -7,8 +7,8 @@
 {% endif %}
 
 <div
+  id="wizard-xselling-results"
   class="wizard-variant-results mt:10 lg:mt-20 !bg-[#F4F0E2] [@media(max-width:1024px)]:!flex-nowrap [@media(max-width:1024px)]:!justify-start"
-  data-xselling-init="true"
 >
   {% for product in xsellingProducts limit: 4 %}
     <label
@@ -25,7 +25,7 @@
             id="xselling_{{ product.variants[0].id }}"
             name="xselling"
             value="{{ product.variants[0].id }}"
-            data-xselling-input="true"
+            style="position: absolute; opacity: 0; pointer-events: none;"
           >
           {{ product.title }}
         </h2>
@@ -41,60 +41,128 @@
 </div>
 
 <script>
-  window.xsellingInit = function () {
-    const container = document.querySelector('.wizard-variant-results');
-    if (!container) return;
+  (function () {
+    const wrap = document.querySelector('#wizard-xselling-results');
+    if (!wrap || wrap.dataset.init === '1') return; // evita doble binding
+    wrap.dataset.init = '1';
 
-    const labels = container.querySelectorAll('.xselling-card');
-    if (labels.length === 0) return;
-
-    function updateCard(card) {
-      const input = card.querySelector('input[type="checkbox"]');
-      if (!input) return;
-
-      const checked = input.checked;
-      const variantResult = card.querySelector('.variant-result');
-      const selectSpan = card.querySelector('.label.select');
-      const selectedSpan = card.querySelector('.label.selected');
-
-      variantResult?.classList.toggle('active', checked);
-      selectSpan?.classList.toggle('hidden', checked);
-      selectedSpan?.classList.toggle('hidden', !checked);
+    // Utilidad: refrescar UI
+    function refreshCardFromInput(input) {
+      const card = input.closest('.variant-result');
+      if (!card) return;
+      const on = input.checked;
+      card.classList.toggle('active', on);
+      card.querySelector('.selected')?.classList.toggle('hidden', !on);
+      card.querySelector('.select')?.classList.toggle('hidden', on);
     }
 
-    labels.forEach((label) => {
-      const input = label.querySelector('input[type="checkbox"]');
+    // PRINCIPAL: Delegación en pointerup (funciona en móvil y desktop)
+    wrap.addEventListener(
+      'pointerup',
+      function (e) {
+        const label = e.target.closest('label.xselling-card');
+        if (!label || !wrap.contains(label)) return;
+
+        // Si es un gesto con más de un dedo o botón distinto al primario, ignorar
+        if (e.pointerType && e.pointerType !== 'mouse' && e.isPrimary === false) return;
+
+        // Evitar que el click nativo posterior haga un segundo toggle
+        e.preventDefault();
+        e.stopPropagation();
+
+        const input = label.querySelector('input[name="xselling"]');
+        if (!input) return;
+
+        // Toggle manual
+        input.checked = !input.checked;
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+
+        // Bandera para cancelar el "ghost click" posterior
+        label.dataset.justToggledAt = String(Date.now());
+      },
+      { capture: true }
+    );
+
+    // Cancelar el ghost click que llega después del pointerup en móviles
+    wrap.addEventListener(
+      'click',
+      function (e) {
+        const label = e.target.closest('label.xselling-card');
+        if (!label) return;
+
+        const t = Number(label.dataset.justToggledAt || 0);
+        // si el click llega muy pronto tras nuestro pointerup, lo anulamos
+        if (Date.now() - t < 350) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          return false;
+        }
+      },
+      true
+    );
+
+    // Teclado (accesibilidad): Space/Enter
+    wrap.addEventListener('keydown', function (e) {
+      const label = e.target.closest('label.xselling-card');
+      if (!label) return;
+      if (e.key !== ' ' && e.key !== 'Enter') return;
+
+      e.preventDefault();
+      const input = label.querySelector('input[name="xselling"]');
       if (!input) return;
 
-      label.addEventListener('click', function (e) {
-        e.preventDefault();
-        input.checked = !input.checked;
-        updateCard(label);
-      });
-
-      updateCard(label);
+      input.checked = !input.checked;
+      input.dispatchEvent(new Event('change', { bubbles: true }));
+      refreshCardFromInput(input);
     });
-  };
 
-  // Intentar inmediatamente
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', window.xsellingInit);
-  } else {
-    window.xsellingInit();
-  }
+    // Refresco UI al cambiar (única fuente de verdad: input.checked)
+    wrap.addEventListener(
+      'change',
+      function (e) {
+        if (e.target?.name === 'xselling') refreshCardFromInput(e.target);
+      },
+      true
+    );
 
-  // También intenta cada 500ms durante 5 segundos
-  let attempts = 0;
-  const maxAttempts = 10;
-  const initInterval = setInterval(() => {
-    window.xsellingInit();
-    attempts++;
-    if (attempts >= maxAttempts) clearInterval(initInterval);
-  }, 500);
+    // Refrescar estado visual inicial
+    const inputs = wrap.querySelectorAll('input[name="xselling"]');
+    inputs.forEach(refreshCardFromInput);
+  })();
 </script>
 
 <style>
+  /* Área táctil fiable */
+  #wizard-xselling-results label.xselling-card {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    cursor: pointer;
+    display: block;
+  }
+
+  /* Input fuera de juego para evitar toggles nativos */
+  #wizard-xselling-results label.xselling-card input[name="xselling"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .variant-result .label.selected,
+  .variant-result .label.select {
+    position: static !important;
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
   .wizard-variant-results {
-    /* Tus estilos aquí */
+    padding: unset !important;
+  }
+
+  @media (max-width: 1000px) {
+    .wizard-variant-results {
+      gap: 8px !important;
+    }
   }
 </style>
