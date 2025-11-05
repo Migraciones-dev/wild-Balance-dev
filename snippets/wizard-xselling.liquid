@@ -40,98 +40,90 @@
 </div>
 
 <script>
-  (function () {
-    console.log('🚀 INICIANDO WIZARD XSELLING SCRIPT');
+  console.log('🔍 Script iniciado');
+
+  document.addEventListener('DOMContentLoaded', function () {
+    console.log('📍 DOMContentLoaded disparado');
 
     const container = document.querySelector('.wizard-variant-results');
-    console.log('📦 Container encontrado:', container);
+    console.log('Container encontrado:', container ? '✅' : '❌');
 
     if (!container) {
-      console.error('❌ Container no encontrado');
+      console.error('❌ Container .wizard-variant-results no encontrado');
       return;
     }
 
     const labels = container.querySelectorAll('.xselling-card');
-    console.log('🏷️ Labels encontrados:', labels.length);
+    console.log('Labels encontrados:', labels.length);
 
     if (!labels.length) {
-      console.error('❌ No se encontraron labels');
+      console.error('❌ No hay labels con clase .xselling-card');
       return;
     }
 
     function refreshCard(card) {
-      console.log('🔄 Refreshing card:', card);
-
       const input = card.querySelector('input[name="xselling"]');
-      console.log('  - Input encontrado:', input);
 
       if (!input) {
-        console.error('  - ❌ Input no encontrado en esta card');
+        console.error('❌ Input no encontrado en card');
         return;
       }
 
       const on = input.checked;
-      console.log('  - Estado del checkbox:', on ? '✅ CHECKED' : '❌ UNCHECKED');
-
       const variantResult = card.querySelector('.variant-result');
       const sel = card.querySelector('.selected');
       const pick = card.querySelector('.select');
 
-      console.log('  - variant-result:', variantResult ? '✓' : '✗');
-      console.log('  - .selected:', sel ? '✓' : '✗');
-      console.log('  - .select:', pick ? '✓' : '✗');
+      console.log('  → Estado checkbox:', on ? '✅ CHECKED' : '❌ UNCHECKED');
 
       if (variantResult) {
         variantResult.classList.toggle('active', on);
-        console.log('  - Toggle "active" en variant-result:', on ? 'AGREGADO' : 'REMOVIDO');
       }
 
       if (sel) {
         sel.classList.toggle('hidden', !on);
-        console.log('  - Toggle "hidden" en .selected:', !on ? 'AGREGADO' : 'REMOVIDO');
       }
 
       if (pick) {
         pick.classList.toggle('hidden', on);
-        console.log('  - Toggle "hidden" en .select:', on ? 'AGREGADO' : 'REMOVIDO');
       }
     }
 
     labels.forEach((label, index) => {
-      console.log(`\n📌 PROCESANDO LABEL ${index}`);
+      console.log(`\n🏷️ Inicializando label ${index}`);
 
       const input = label.querySelector('input[name="xselling"]');
+
       if (!input) {
-        console.error(`  - ❌ Input no encontrado en label ${index}`);
+        console.error(`  ❌ Input no encontrado en label ${index}`);
         return;
       }
 
       const variantId = label.getAttribute('data-variant-id');
-      console.log(`  - Variant ID: ${variantId}`);
+      console.log(`  Variant ID: ${variantId}`);
 
-      // Manejar el click en el label
+      // Listener para click
       label.addEventListener('click', function (e) {
-        console.log(`\n👆 CLICK en label ${index} (Variant ID: ${variantId})`);
-        console.log(`  - Estado ANTES: ${input.checked ? '✅ CHECKED' : '❌ UNCHECKED'}`);
+        console.log(`\n👆 CLICK en label ${index} (${variantId})`);
+        console.log(`  Estado ANTES: ${input.checked ? '✅ CHECKED' : '❌ UNCHECKED'}`);
 
         e.preventDefault();
-        console.log('  - preventDefault() ejecutado');
 
-        // Toggle manual del checkbox
+        // Toggle
         input.checked = !input.checked;
-        console.log(`  - Estado DESPUÉS: ${input.checked ? '✅ CHECKED' : '❌ UNCHECKED'}`);
+        console.log(`  Estado DESPUÉS: ${input.checked ? '✅ CHECKED' : '❌ UNCHECKED'}`);
 
-        // Actualizar la UI
+        // Actualizar UI
         refreshCard(label);
       });
 
       // Estado inicial
-      console.log(`  - Estado INICIAL: ${input.checked ? '✅ CHECKED' : '❌ UNCHECKED'}`);
+      console.log(`  Estado INICIAL: ${input.checked ? '✅ CHECKED' : '❌ UNCHECKED'}`);
       refreshCard(label);
     });
 
-    console.log('\n✅ SCRIPT COMPLETAMENTE INICIALIZADO');
-  })();
+    console.log('\n✅ WIZARD XSELLING INICIALIZADO CORRECTAMENTE');
+  });
 </script>
 
 <style>
