@@ -40,26 +40,16 @@
   {% endfor %}
 </div>
 
-<script type="module">
-  (function initXselling() {
-    // Buscar el contenedor
-    const container = document.querySelector('[data-xselling-init="true"]');
+<script>
+  window.xsellingInit = function () {
+    const container = document.querySelector('.wizard-variant-results');
+    if (!container) return;
 
-    if (!container) {
-      // Si no existe, esperar a que se cree
-      setTimeout(initXselling, 100);
-      return;
-    }
-
-    const labels = Array.from(container.querySelectorAll('.xselling-card'));
-
-    if (labels.length === 0) {
-      setTimeout(initXselling, 100);
-      return;
-    }
+    const labels = container.querySelectorAll('.xselling-card');
+    if (labels.length === 0) return;
 
     function updateCard(card) {
-      const input = card.querySelector('[data-xselling-input="true"]');
+      const input = card.querySelector('input[type="checkbox"]');
       if (!input) return;
 
       const checked = input.checked;
@@ -67,41 +57,40 @@
       const selectSpan = card.querySelector('.label.select');
       const selectedSpan = card.querySelector('.label.selected');
 
-      if (variantResult) {
-        variantResult.classList.toggle('active', checked);
-      }
-
-      if (selectSpan) {
-        selectSpan.classList.toggle('hidden', checked);
-      }
-
-      if (selectedSpan) {
-        selectedSpan.classList.toggle('hidden', !checked);
-      }
+      variantResult?.classList.toggle('active', checked);
+      selectSpan?.classList.toggle('hidden', checked);
+      selectedSpan?.classList.toggle('hidden', !checked);
     }
 
     labels.forEach((label) => {
-      const input = label.querySelector('[data-xselling-input="true"]');
-
+      const input = label.querySelector('input[type="checkbox"]');
       if (!input) return;
 
-      // Event listener en el label
-      label.addEventListener('click', (e) => {
+      label.addEventListener('click', function (e) {
         e.preventDefault();
-        e.stopPropagation();
         input.checked = !input.checked;
         updateCard(label);
       });
 
-      // También agregar listener al input directamente por si acaso
-      input.addEventListener('change', () => {
-        updateCard(label);
-      });
-
-      // Estado inicial
       updateCard(label);
     });
-  })();
+  };
+
+  // Intentar inmediatamente
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', window.xsellingInit);
+  } else {
+    window.xsellingInit();
+  }
+
+  // También intenta cada 500ms durante 5 segundos
+  let attempts = 0;
+  const maxAttempts = 10;
+  const initInterval = setInterval(() => {
+    window.xsellingInit();
+    attempts++;
+    if (attempts >= maxAttempts) clearInterval(initInterval);
+  }, 500);
 </script>
 
 <style>
