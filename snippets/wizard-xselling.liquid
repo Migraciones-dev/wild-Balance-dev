@@ -10,8 +10,13 @@
   class="wizard-variant-results mt:10 lg:mt-20 !bg-[#F4F0E2] [@media(max-width:1024px)]:!flex-nowrap [@media(max-width:1024px)]:!justify-start"
 >
   {% for product in xsellingProducts limit: 4 %}
-    <label for="xselling_{{ product.variants[0].id }}">
-      <div class="variant-result  [@media(max-width:1024px)]:!w-[80vw] !text-left !items-start">
+    {%- comment -%}
+      IMPORTANTE: quitamos el atributo `for` del label
+      y usamos solo que el input esté DENTRO del label.
+      Así evitamos el doble toggle raro en móviles/desktop.
+    {%- endcomment -%}
+    <label class="xselling-card" style="user-select: none; touch-action: manipulation; cursor: pointer;">
+      <div class="variant-result [@media(max-width:1024px)]:!w-[80vw] !text-left !items-start">
         {{ product.featured_image | image_url: width: 300 | image_tag }}
         <h2 class="my-0 !text-[18px] lg:!text-[28px] leading-[1] !font-semibold font-[Barlow] mb-4 !mt-0 !pb-2">
           <input
@@ -34,27 +39,54 @@
 </div>
 
 <script>
-  // click events for selected things
+  (function () {
+    // Todos los checkboxes de xselling dentro de sus labels
+    const inputs = document.querySelectorAll('.xselling-card input[name="xselling"]');
 
-  let xsellingContainers = document.querySelectorAll('input[name="xselling"]');
+    // Refresca el estado visual de UNA tarjeta según el checked del input
+    function refreshXselling(input) {
+      const card = input.closest('.variant-result');
+      if (!card) return;
+      const on = input.checked;
+      const sel = card.querySelector('.selected');
+      const pick = card.querySelector('.select');
 
-  Array.from(xsellingContainers).forEach(function (xselling) {
-    xselling.addEventListener('click', function (event) {
-      activateXselling(xselling, xsellingContainers);
+      card.classList.toggle('active', on);
+      if (sel) sel.classList.toggle('hidden', !on);
+      if (pick) pick.classList.toggle('hidden', on);
+    }
+
+    // 1) Cuando cambia el checkbox → actualizamos UI
+    inputs.forEach((input) => {
+      input.addEventListener('change', function () {
+        refreshXselling(input);
+      });
+      // estado inicial (por si algún día marcas alguno por backend)
+      if (input.checked) refreshXselling(input);
     });
-  });
 
-  function activateXselling(xselling, xsellingContainers) {
-    //select current xselling
+    // 2) Hacemos que al clicar en el LABEL se toggle-e UNA sola vez
+    document.querySelectorAll('.xselling-card').forEach((label) => {
+      label.addEventListener('click', function (e) {
+        const input = label.querySelector('input[name="xselling"]');
+        if (!input) return;
 
-    let thisarticle = xselling.closest('.variant-result');
-    thisarticle.classList.toggle('active');
-    thisarticle.querySelector('.selected').classList.toggle('hidden');
-    thisarticle.querySelector('.select').classList.toggle('hidden');
-  }
+        // Si el click ha sido directamente sobre el input,
+        // dejamos que el navegador haga su trabajo normal.
+        if (e.target === input) return;
+
+        // Si el click es en cualquier otra zona del label:
+        // evitamos la acción por defecto del label y toggleamos nosotros.
+        e.preventDefault();
+        input.checked = !input.checked;
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+      });
+    });
+  })();
 </script>
 
 <style>
   .wizard-variant-results {
+    /* aquí lo tenías vacío, lo dejo igual por si quieres añadir algo */
   }
 </style>
