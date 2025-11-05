@@ -83,10 +83,18 @@
         "mg_mb": ",,30px,",
         "pd_mb": ""
       }
+    },
+    "custom_liquid_naafgA": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
+      "settings": {
+        "custom_liquid": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Person\",\n  \"name\": \"María López Pérez\",\n  \"jobTitle\": \"Nutricionista Animal y Bióloga\",\n  \"description\": \"Especialista en nutrición, dietética y homeopatía veterinaria. Enfocada en la salud y bienestar de perros y gatos.\",\n  \"image\": \"https://tusitio.com/cdn/maria-lopez.jpg\",\n  \"url\": \"https://tusitio.com/pages/maria-lopez-nutricionista\",\n  \"alumniOf\": [\n    {\n      \"@type\": \"CollegeOrUniversity\",\n      \"name\": \"Universidad de Valencia\"\n    },\n    {\n      \"@type\": \"CollegeOrUniversity\",\n      \"name\": \"Universidad de Gerona\"\n    },\n    {\n      \"@type\": \"CollegeOrUniversity\",\n      \"name\": \"Instituto Europeo de Nutrición y Salud\"\n    }\n  ],\n  \"sameAs\": [\n    \"https://www.linkedin.com/in/marialopez\",\n    \"https://www.instagram.com/marialopeznutricion/\"\n  ],\n  \"worksFor\": {\n    \"@type\": \"Organization\",\n    \"name\": \"Tu marca o clínica de nutrición animal\",\n    \"url\": \"https://tusitio.com\"\n  }\n}\n</script>"
+      }
     }
   },
   "order": [
     "heading",
-    "main"
+    "main",
+    "custom_liquid_naafgA"
   ]
 }
