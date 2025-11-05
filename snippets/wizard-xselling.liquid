@@ -10,9 +10,17 @@
   class="wizard-variant-results mt:10 lg:mt-20 !bg-[#F4F0E2] [@media(max-width:1024px)]:!flex-nowrap [@media(max-width:1024px)]:!justify-start"
 >
   {% for product in xsellingProducts limit: 4 %}
-    <label for="xselling_{{ product.variants[0].id }}">
+    {%- comment -%}
+      Mantenemos el label como antes (para que el CSS de la plantilla no se rompa)
+    {%- endcomment -%}
+    <label
+      for="xselling_{{ product.variants[0].id }}"
+      class="xselling-card"
+      style="user-select:none; touch-action:manipulation; cursor:pointer;"
+    >
       <div class="variant-result  [@media(max-width:1024px)]:!w-[80vw] !text-left !items-start">
         {{ product.featured_image | image_url: width: 300 | image_tag }}
+
         <h2 class="my-0 !text-[18px] lg:!text-[28px] leading-[1] !font-semibold font-[Barlow] mb-4 !mt-0 !pb-2">
           <input
             type="checkbox"
@@ -34,27 +42,42 @@
 </div>
 
 <script>
-  // click events for selected things
+  (function () {
+    const container = document.querySelector('.wizard-variant-results');
+    if (!container) return;
 
-  let xsellingContainers = document.querySelectorAll('input[name="xselling"]');
+    const inputs = container.querySelectorAll('input[name="xselling"]');
+    if (!inputs.length) return;
 
-  Array.from(xsellingContainers).forEach(function (xselling) {
-    xselling.addEventListener('click', function (event) {
-      activateXselling(xselling, xsellingContainers);
+    function refreshCard(input) {
+      const card = input.closest('.variant-result');
+      if (!card) return;
+
+      const on = input.checked;
+      const sel = card.querySelector('.selected');
+      const pick = card.querySelector('.select');
+
+      card.classList.toggle('active', on);
+      if (sel) sel.classList.toggle('hidden', !on);
+      if (pick) pick.classList.toggle('hidden', on);
+    }
+
+    // Sólo reaccionamos a 'change' → evitamos líos de dobles clicks/taps
+    inputs.forEach((input) => {
+      input.addEventListener('change', function () {
+        refreshCard(input);
+      });
+
+      // Estado inicial por si algún día vienen marcados desde backend
+      if (input.checked) {
+        refreshCard(input);
+      }
     });
-  });
-
-  function activateXselling(xselling, xsellingContainers) {
-    //select current xselling
-
-    let thisarticle = xselling.closest('.variant-result');
-    thisarticle.classList.toggle('active');
-    thisarticle.querySelector('.selected').classList.toggle('hidden');
-    thisarticle.querySelector('.select').classList.toggle('hidden');
-  }
+  })();
 </script>
 
 <style>
   .wizard-variant-results {
+    /* lo dejas vacío como ya lo tenías, o lo que tengas en tu theme */
   }
 </style>
