@@ -6,25 +6,20 @@
   {% assign xsellingProducts = collections['wizard-xselling-perritos'].products %}
 {% endif %}
 
-<div
-  class="wizard-variant-results mt:10 lg:mt-20 !bg-[#F4F0E2] [@media(max-width:1024px)]:!flex-nowrap [@media(max-width:1024px)]:!justify-start"
->
+<h2 class="t4s-section-title t4s-title">
+  <span>Completa tu pack</span>
+</h2>
+<div class="wizard-variant-results !bg-[#F4F0E2]">
   {% for product in xsellingProducts limit: 4 %}
-    {%- comment -%}
-      Volvemos a usar <label> para no romper CSS del tema.
-            NO usamos atributo "for": el input está dentro del label.
-    {%- endcomment -%}
-    <label class="xselling-card" style="user-select: none; touch-action: manipulation; cursor: pointer;">
-      <div class="variant-result  [@media(max-width:1024px)]:!w-[80vw] !text-left !items-start">
+    <label for="xselling_{{ product.variants[0].id }}">
+      <div class="variant-result">
         {{ product.featured_image | image_url: width: 300 | image_tag }}
-        <h2 class="my-0 !text-[18px] lg:!text-[28px] leading-[1] !font-semibold font-[Barlow] mb-4 !mt-0 !pb-2">
+        <h2>
           <input
             type="checkbox"
-            class="xselling-input"
             id="xselling_{{ product.variants[0].id }}"
             name="xselling"
             value="{{ product.variants[0].id }}"
-            style="position:absolute; opacity:0; pointer-events:none;"
           >
           {{ product.title }}
         </h2>
@@ -32,65 +27,30 @@
         {{ product.variants[0].price | money_with_currency }}
         <br>
         <br>
-        <span class="label select !self-start">Seleccionar</span>
-        <span class="label selected hidden !self-start">Seleccionado</span>
+        <span class="label select ">Seleccionar</span>
+        <span class="label selected hidden">Seleccionado</span>
       </div>
     </label>
   {% endfor %}
 </div>
 
 <script>
-  (function () {
-    const cards = document.querySelectorAll('.xselling-card');
+  // click events for selected things
 
-    function refreshXsellingFromInput(input) {
-      const card = input.closest('.xselling-card');
-      if (!card) return;
-      const variant = card.querySelector('.variant-result');
-      const on = input.checked;
+  let xsellingContainers = document.querySelectorAll('input[name="xselling"]');
 
-      if (variant) {
-        variant.classList.toggle('active', on);
-      }
-
-      const sel = card.querySelector('.selected');
-      const pick = card.querySelector('.select');
-      if (sel) sel.classList.toggle('hidden', !on);
-      if (pick) pick.classList.toggle('hidden', on);
-    }
-
-    cards.forEach((card) => {
-      const input = card.querySelector('.xselling-input');
-      if (!input) return;
-
-      // Clic en cualquier parte del LABEL (tarjeta)
-      card.addEventListener('click', function (e) {
-        // El input está con pointer-events:none, así que en realidad
-        // nunca será e.target, pero dejamos el check por si en el futuro cambias el estilo.
-        if (e.target === input) return;
-
-        e.preventDefault(); // anulamos comportamiento nativo del label
-
-        input.checked = !input.checked;
-        input.dispatchEvent(new Event('change', { bubbles: true }));
-      });
-
-      // Cada vez que cambia el checkbox → refrescamos UI
-      input.addEventListener('change', function () {
-        refreshXsellingFromInput(input);
-      });
-
-      // Estado inicial (por si algún día marcas uno desde backend)
-      if (input.checked) {
-        refreshXsellingFromInput(input);
-      }
+  Array.from(xsellingContainers).forEach(function (xselling) {
+    xselling.addEventListener('click', function (event) {
+      activateXselling(xselling, xsellingContainers);
     });
-  })();
-</script>
+  });
 
-<style>
-  .wizard-variant-results {
-      /* lo dejo vacío como lo tenías, por si quieres añadir algo luego */
-        }
-</style>
->
+  function activateXselling(xselling, xsellingContainers) {
+    //select current xselling
+
+    let thisarticle = xselling.closest('.variant-result');
+    thisarticle.classList.toggle('active');
+    thisarticle.querySelector('.selected').classList.toggle('hidden');
+    thisarticle.querySelector('.select').classList.toggle('hidden');
+  }
+</script>
