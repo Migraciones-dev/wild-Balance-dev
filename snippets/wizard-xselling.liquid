@@ -43,8 +43,24 @@
 <script>
   (function () {
     const wrap = document.querySelector('#wizard-xselling-results');
-    if (!wrap || wrap.dataset.init === '1') return; // evita doble binding
+    if (!wrap || wrap.dataset.init === '1') return;
     wrap.dataset.init = '1';
+
+    // Objeto global para acceder a los valores
+    window.xsellingData = {
+      getSelectedVariants: function () {
+        const inputs = wrap.querySelectorAll('input[name="xselling"]:checked');
+        return Array.from(inputs).map((input) => ({
+          id: input.value,
+          variantId: input.value,
+          checked: true,
+        }));
+      },
+      getSelectedIds: function () {
+        const inputs = wrap.querySelectorAll('input[name="xselling"]:checked');
+        return Array.from(inputs).map((input) => input.value);
+      },
+    };
 
     // Utilidad: refrescar UI
     function refreshCardFromInput(input) {
@@ -56,17 +72,15 @@
       card.querySelector('.select')?.classList.toggle('hidden', on);
     }
 
-    // PRINCIPAL: Delegación en pointerup (funciona en móvil y desktop)
+    // PRINCIPAL: Delegación en pointerup
     wrap.addEventListener(
       'pointerup',
       function (e) {
         const label = e.target.closest('label.xselling-card');
         if (!label || !wrap.contains(label)) return;
 
-        // Si es un gesto con más de un dedo o botón distinto al primario, ignorar
         if (e.pointerType && e.pointerType !== 'mouse' && e.isPrimary === false) return;
 
-        // Evitar que el click nativo posterior haga un segundo toggle
         e.preventDefault();
         e.stopPropagation();
 
@@ -77,13 +91,13 @@
         input.checked = !input.checked;
         input.dispatchEvent(new Event('change', { bubbles: true }));
 
-        // Bandera para cancelar el "ghost click" posterior
+        // Bandera para cancelar el ghost click
         label.dataset.justToggledAt = String(Date.now());
       },
       { capture: true }
     );
 
-    // Cancelar el ghost click que llega después del pointerup en móviles
+    // Cancelar ghost click
     wrap.addEventListener(
       'click',
       function (e) {
@@ -91,7 +105,6 @@
         if (!label) return;
 
         const t = Number(label.dataset.justToggledAt || 0);
-        // si el click llega muy pronto tras nuestro pointerup, lo anulamos
         if (Date.now() - t < 350) {
           e.preventDefault();
           e.stopImmediatePropagation();
@@ -101,7 +114,7 @@
       true
     );
 
-    // Teclado (accesibilidad): Space/Enter
+    // Teclado
     wrap.addEventListener('keydown', function (e) {
       const label = e.target.closest('label.xselling-card');
       if (!label) return;
@@ -116,23 +129,27 @@
       refreshCardFromInput(input);
     });
 
-    // Refresco UI al cambiar (única fuente de verdad: input.checked)
+    // Refresco UI
     wrap.addEventListener(
       'change',
       function (e) {
-        if (e.target?.name === 'xselling') refreshCardFromInput(e.target);
+        if (e.target?.name === 'xselling') {
+          refreshCardFromInput(e.target);
+          console.log('✅ Xselling actualizado. Seleccionados:', window.xsellingData.getSelectedIds());
+        }
       },
       true
     );
 
-    // Refrescar estado visual inicial
+    // Estado inicial
     const inputs = wrap.querySelectorAll('input[name="xselling"]');
     inputs.forEach(refreshCardFromInput);
+
+    console.log('🚀 Xselling inicializado. Usa window.xsellingData.getSelectedIds()');
   })();
 </script>
 
 <style>
-  /* Área táctil fiable */
   #wizard-xselling-results label.xselling-card {
     -webkit-tap-highlight-color: transparent;
     -webkit-user-select: none;
@@ -142,7 +159,6 @@
     display: block;
   }
 
-  /* Input fuera de juego para evitar toggles nativos */
   #wizard-xselling-results label.xselling-card input[name="xselling"] {
     position: absolute;
     opacity: 0;
