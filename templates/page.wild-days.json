@@ -108,8 +108,8 @@
         "banner_LJFEdc": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/BANNER_BLACK_FRIDAY_15_1_7322391e-a2f9-46b4-bb1d-640d5a8937ba.png",
-            "mobile_image": "shopify://shop_images/Background_780675ec-8c7e-4118-bb3e-83d93da1b56d.png",
+            "desktop_image": "shopify://shop_images/BANNER_BLACK_FRIDAY_15_1_1.png",
+            "mobile_image": "shopify://shop_images/Background_faa49548-8b34-4a69-a85e-e8c3d7d0d983.png",
             "image_link": "",
             "enable_schedule": true,
             "start_date": "2025-11-03 9:00",
