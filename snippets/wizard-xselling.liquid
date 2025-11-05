@@ -7,27 +7,27 @@
 {% endif %}
 
 <div
-  id="wizard-xselling"
   class="wizard-variant-results mt:10 lg:mt-20 !bg-[#F4F0E2] [@media(max-width:1024px)]:!flex-nowrap [@media(max-width:1024px)]:!justify-start"
 >
   {% for product in xsellingProducts limit: 4 %}
     {%- comment -%}
-      Todo el <label> es la tarjeta clicable.
-      El input está al principio y se estira con CSS para cubrir la tarjeta.
+      Mantenemos el label como antes (para que el CSS de la plantilla no se rompa)
     {%- endcomment -%}
-    <label class="xselling-card">
-      <!-- Checkbox que ocupa toda la tarjeta (hit area), invisible -->
-      <input
-        type="checkbox"
-        id="xselling_{{ product.variants[0].id }}"
-        name="xselling"
-        value="{{ product.variants[0].id }}"
-      >
-
-      <div class="variant-result [@media(max-width:1024px)]:!w-[80vw] !text-left !items-start">
+    <label
+      for="xselling_{{ product.variants[0].id }}"
+      class="xselling-card"
+      style="user-select:none; touch-action:manipulation; cursor:pointer;"
+    >
+      <div class="variant-result  [@media(max-width:1024px)]:!w-[80vw] !text-left !items-start">
         {{ product.featured_image | image_url: width: 300 | image_tag }}
 
         <h2 class="my-0 !text-[18px] lg:!text-[28px] leading-[1] !font-semibold font-[Barlow] mb-4 !mt-0 !pb-2">
+          <input
+            type="checkbox"
+            id="xselling_{{ product.variants[0].id }}"
+            name="xselling"
+            value="{{ product.variants[0].id }}"
+          >
           {{ product.title }}
         </h2>
 
@@ -43,13 +43,14 @@
 
 <script>
   (function () {
-    const container = document.getElementById('wizard-xselling');
+    const container = document.querySelector('.wizard-variant-results');
     if (!container) return;
 
     const inputs = container.querySelectorAll('input[name="xselling"]');
+    if (!inputs.length) return;
 
-    function refreshXselling(input) {
-      const card = input.closest('.xselling-card')?.querySelector('.variant-result');
+    function refreshCard(input) {
+      const card = input.closest('.variant-result');
       if (!card) return;
 
       const on = input.checked;
@@ -61,38 +62,22 @@
       if (pick) pick.classList.toggle('hidden', on);
     }
 
+    // Sólo reaccionamos a 'change' → evitamos líos de dobles clicks/taps
     inputs.forEach((input) => {
-      // Estado inicial por si algún día vienen marcados desde backend
-      if (input.checked) refreshXselling(input);
-
-      // ÚNICA fuente de verdad: el change del checkbox
       input.addEventListener('change', function () {
-        refreshXselling(input);
+        refreshCard(input);
       });
+
+      // Estado inicial por si algún día vienen marcados desde backend
+      if (input.checked) {
+        refreshCard(input);
+      }
     });
   })();
 </script>
 
 <style>
-  /* Solo afecta al upsell porque va dentro de #wizard-xselling */
-
-  #wizard-xselling .xselling-card {
-    position: relative;
-    display: block;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-user-select: none;
-    user-select: none;
-    touch-action: manipulation;
-    cursor: pointer;
-  }
-
-  /* El checkbox ocupa toda la tarjeta, es invisible pero clicable */
-  #wizard-xselling .xselling-card input[name="xselling"] {
-    position: absolute;
-    inset: 0;              /* top/right/bottom/left: 0 */
-    margin: 0;
-    opacity: 0;
-    pointer-events: auto !important; /* por si el tema los desactiva */
-    cursor: pointer;
+  .wizard-variant-results {
+    /* lo dejas vacío como ya lo tenías, o lo que tengas en tu theme */
   }
 </style>
