@@ -7,25 +7,18 @@
 {% endif %}
 
 <div
-  id="wizard-xselling-results"
   class="wizard-variant-results mt:10 lg:mt-20 !bg-[#F4F0E2] [@media(max-width:1024px)]:!flex-nowrap [@media(max-width:1024px)]:!justify-start"
 >
   {% for product in xsellingProducts limit: 4 %}
-    <label
-      class="xselling-card"
-      style="user-select:none; touch-action:manipulation; cursor:pointer;"
-      data-variant-id="{{ product.variants[0].id }}"
-    >
-      <div class="variant-result [@media(max-width:1024px)]:!w-[80vw] !text-left !items-start">
+    <label for="xselling_{{ product.variants[0].id }}">
+      <div class="variant-result  [@media(max-width:1024px)]:!w-[80vw] !text-left !items-start">
         {{ product.featured_image | image_url: width: 300 | image_tag }}
-
         <h2 class="my-0 !text-[18px] lg:!text-[28px] leading-[1] !font-semibold font-[Barlow] mb-4 !mt-0 !pb-2">
           <input
             type="checkbox"
             id="xselling_{{ product.variants[0].id }}"
             name="xselling"
             value="{{ product.variants[0].id }}"
-            style="position: absolute; opacity: 0; pointer-events: none;"
           >
           {{ product.title }}
         </h2>
@@ -41,144 +34,27 @@
 </div>
 
 <script>
-  (function () {
-    const wrap = document.querySelector('#wizard-xselling-results');
-    if (!wrap || wrap.dataset.init === '1') return;
-    wrap.dataset.init = '1';
+  // click events for selected things
 
-    // Objeto global para acceder a los valores
-    window.xsellingData = {
-      getSelectedVariants: function () {
-        const inputs = wrap.querySelectorAll('input[name="xselling"]:checked');
-        return Array.from(inputs).map((input) => ({
-          id: input.value,
-          variantId: input.value,
-          checked: true,
-        }));
-      },
-      getSelectedIds: function () {
-        const inputs = wrap.querySelectorAll('input[name="xselling"]:checked');
-        return Array.from(inputs).map((input) => input.value);
-      },
-    };
+  let xsellingContainers = document.querySelectorAll('input[name="xselling"]');
 
-    // Utilidad: refrescar UI
-    function refreshCardFromInput(input) {
-      const card = input.closest('.variant-result');
-      if (!card) return;
-      const on = input.checked;
-      card.classList.toggle('active', on);
-      card.querySelector('.selected')?.classList.toggle('hidden', !on);
-      card.querySelector('.select')?.classList.toggle('hidden', on);
-    }
-
-    // PRINCIPAL: Delegación en pointerup
-    wrap.addEventListener(
-      'pointerup',
-      function (e) {
-        const label = e.target.closest('label.xselling-card');
-        if (!label || !wrap.contains(label)) return;
-
-        if (e.pointerType && e.pointerType !== 'mouse' && e.isPrimary === false) return;
-
-        e.preventDefault();
-        e.stopPropagation();
-
-        const input = label.querySelector('input[name="xselling"]');
-        if (!input) return;
-
-        // Toggle manual
-        input.checked = !input.checked;
-        input.dispatchEvent(new Event('change', { bubbles: true }));
-
-        // Bandera para cancelar el ghost click
-        label.dataset.justToggledAt = String(Date.now());
-      },
-      { capture: true }
-    );
-
-    // Cancelar ghost click
-    wrap.addEventListener(
-      'click',
-      function (e) {
-        const label = e.target.closest('label.xselling-card');
-        if (!label) return;
-
-        const t = Number(label.dataset.justToggledAt || 0);
-        if (Date.now() - t < 350) {
-          e.preventDefault();
-          e.stopImmediatePropagation();
-          return false;
-        }
-      },
-      true
-    );
-
-    // Teclado
-    wrap.addEventListener('keydown', function (e) {
-      const label = e.target.closest('label.xselling-card');
-      if (!label) return;
-      if (e.key !== ' ' && e.key !== 'Enter') return;
-
-      e.preventDefault();
-      const input = label.querySelector('input[name="xselling"]');
-      if (!input) return;
-
-      input.checked = !input.checked;
-      input.dispatchEvent(new Event('change', { bubbles: true }));
-      refreshCardFromInput(input);
+  Array.from(xsellingContainers).forEach(function (xselling) {
+    xselling.addEventListener('click', function (event) {
+      activateXselling(xselling, xsellingContainers);
     });
+  });
 
-    // Refresco UI
-    wrap.addEventListener(
-      'change',
-      function (e) {
-        if (e.target?.name === 'xselling') {
-          refreshCardFromInput(e.target);
-          console.log('✅ Xselling actualizado. Seleccionados:', window.xsellingData.getSelectedIds());
-        }
-      },
-      true
-    );
+  function activateXselling(xselling, xsellingContainers) {
+    //select current xselling
 
-    // Estado inicial
-    const inputs = wrap.querySelectorAll('input[name="xselling"]');
-    inputs.forEach(refreshCardFromInput);
-
-    console.log('🚀 Xselling inicializado. Usa window.xsellingData.getSelectedIds()');
-  })();
+    let thisarticle = xselling.closest('.variant-result');
+    thisarticle.classList.toggle('active');
+    thisarticle.querySelector('.selected').classList.toggle('hidden');
+    thisarticle.querySelector('.select').classList.toggle('hidden');
+  }
 </script>
 
 <style>
-  #wizard-xselling-results label.xselling-card {
-    -webkit-tap-highlight-color: transparent;
-    -webkit-user-select: none;
-    user-select: none;
-    touch-action: manipulation;
-    cursor: pointer;
-    display: block;
-  }
-
-  #wizard-xselling-results label.xselling-card input[name="xselling"] {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .variant-result .label.selected,
-  .variant-result .label.select {
-    position: static !important;
-    margin-top: 1rem !important;
-    margin-bottom: 1rem !important;
-  }
-
   .wizard-variant-results {
-    padding: unset !important;
-  }
-
-  @media (max-width: 1000px) {
-    .wizard-variant-results {
-      gap: 8px !important;
-    }
   }
 </style>
