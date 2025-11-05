@@ -13,7 +13,7 @@
   <div class="pt-12 [@media(max-width:1024px)]:px-6">
     <h2
       class="
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        mx-auto relative [font-family:'Barlow',Helvetica] font-extrabold text-[#004623] max-w-[1600px] text-[30px] lg:text-[60px] text-center leading-[1] mb-10 !lg:mb-16 max-w-[650px]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                mx-auto relative [font-family:'Barlow',Helvetica] font-extrabold text-[#004623] max-w-[1600px] text-[30px] lg:text-[60px] text-center leading-[1] mb-10 !lg:mb-16 max-w-[650px]
       "
     >
       ¿Cada cuanto tiempo te lo enviamos a casa?
@@ -454,7 +454,6 @@
 
 <script>
   // Mapa semanas -> selling_plan_id (Loop)
-  // IDs proporcionados por ti (vistos en el carrito / selector)
   window.planIdByWeeks = {
     1: 712729952640,
     2: 712729985408,
@@ -466,12 +465,128 @@
     8: 712753447296
   };
 
-  // Frecuencias por tamaño (nº de semanas) que ya vienen del backend
+  // Frecuencias por tamaño
   window.freezerFrequencies = {
     small: {{ result.small_freezer_frequency | json }},
     medium: {{ result.medium_freezer_frequency | json }},
     big: {{ result.big_freezer_frequency | json }}
   };
+</script>
+
+<script>
+  // --- UI: selección de freezer ---
+  let freezerContainers = document.querySelectorAll('input[name="freezer"]');
+  Array.from(freezerContainers).forEach(function(freezer) {
+    freezer.addEventListener('click', function(){ activateFreezer(freezer, freezerContainers); });
+  });
+
+  function activateFreezer(thisfreezer, freezerContainers) {
+    Array.from(freezerContainers).forEach(function(freezer){
+      let article = freezer.closest(".articleInfoFrequently");
+      article.classList.remove("active");
+      article.querySelector(".selected").style.display = "none";
+      article.querySelector(".select").style.display = "flex";
+    });
+    let thisarticle = thisfreezer.closest(".articleInfoFrequently");
+    thisarticle.classList.add("active");
+    thisarticle.querySelector(".selected").style.display = "flex";
+    thisarticle.querySelector(".select").style.display = "none";
+
+    let results = document.querySelectorAll('._wizard-result-freezer');
+    Array.from(results).forEach(function(result){ result.style.display = "none"; });
+  }
+
+  // --- Acción principal ---
+  function recalculate() {
+    // Recolectar proteínas seleccionadas
+    let selectedProteins = document.querySelectorAll('input[name="protein"]:checked');
+    let selectedProteinsValues = [];
+    Array.from(selectedProteins).forEach(function(protein){
+      selectedProteinsValues.push({ variantId: protein.value });
+    });
+
+    // ✅ NUEVO: Recolectar xselling seleccionados
+    let selectedXselling = document.querySelectorAll('input[name="xselling"]:checked');
+    let selectedXsellingValues = [];
+    Array.from(selectedXselling).forEach(function(xselling){
+      selectedXsellingValues.push({ variantId: xselling.value });
+    });
+
+    let selectedFreezerKey = document.querySelector('input[name="freezer"]:checked').value;
+    let targetWeeks = window.freezerFrequencies[selectedFreezerKey];
+
+    // Validar que existe plan para esas semanas
+    const planId = window.planIdByWeeks[targetWeeks];
+    if (!planId) {
+      alert(`No hay un plan configurado para ${targetWeeks} semana(s). Revisa el mapping semanas → selling_plan_id.`);
+      return;
+    }
+
+    let recalculateData = {
+      pet: "{{result.pet}}",
+      grams: {{result.grams}},
+      foodType: "{{comida}}",
+      newWithBarf: {{result.is_new_with_barf | default: false}},
+      selectedFreezer: selectedFreezerKey,
+      selectedProteins: selectedProteinsValues,
+      selectedXselling: selectedXsellingValues  // ✅ Enviar xselling al backend
+    };
+
+    console.log('📦 Datos enviados al backend:', recalculateData);
+
+    $.ajax({
+      url: "https://wildbalance-app-rocket.fly.dev/recalculate",
+      type: "POST",
+      contentType: "application/json",
+      dataType: "json",
+      data: JSON.stringify(recalculateData),
+      success: function(data) {
+        const freezerVariantsAndQtys = data.freezerVariantsAndQtys || [];
+
+        // Construimos items base con selling_plan
+        const items = freezerVariantsAndQtys.map(item => ({
+          id: item.variantId,
+          quantity: item.qty,
+          selling_plan: planId
+        }));
+
+        // ✅ NUEVO: Agregar items de xselling (sin selling_plan, son one-time)
+        Array.from(selectedXselling).forEach(function(xselling){
+          items.push({
+            id: xselling.value,
+            quantity: 1
+            // NO incluir selling_plan para xselling (son compras únicas)
+          });
+        });
+
+        console.log('🛒 Items finales a agregar al carrito:', items);
+
+        if (!items.length) {
+          alert('No hay items que añadir al carrito.');
+          return;
+        }
+
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ items })
+        })
+        .then(response => {
+          if (!response.ok) throw new Error('Error al agregar productos al carrito');
+          console.log('✅ Productos agregados correctamente');
+          window.location.href = '{{ shop.url }}/cart';
+        })
+        .catch(error => {
+          console.error('❌ Hubo un problema con el add to cart:', error);
+          alert('No se pudo añadir el pack al carrito. Inténtalo de nuevo.');
+        });
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.error('❌ Error en recalculate:', errorThrown);
+        alert('No se pudo recalcular el pack. Inténtalo de nuevo.');
+      }
+    });
+  }
 </script>
 
 <script>
