@@ -57,136 +57,138 @@
   </div>
 </div>
 
-<script>
-  (function () {
-    const wrap = document.querySelector('#wizard-variant-results');
-    if (!wrap || wrap.dataset.init === '1') return; // evita doble binding
-    wrap.dataset.init = '1';
+{% comment %}
+  <script>
+    (function () {
+      const wrap = document.querySelector('#wizard-variant-results');
+      if (!wrap || wrap.dataset.init === '1') return; // evita doble binding
+      wrap.dataset.init = '1';
 
-    // 1) Parche: quitar `for` si el input está dentro (defensivo)
-    wrap.querySelectorAll('label[for]').forEach((lbl) => {
-      const id = lbl.getAttribute('for');
-      if (id && lbl.querySelector('#' + CSS.escape(id))) lbl.removeAttribute('for');
-    });
+      // 1) Parche: quitar `for` si el input está dentro (defensivo)
+      wrap.querySelectorAll('label[for]').forEach((lbl) => {
+        const id = lbl.getAttribute('for');
+        if (id && lbl.querySelector('#' + CSS.escape(id))) lbl.removeAttribute('for');
+      });
 
-    // Utilidad: refrescar UI
-    function refreshCardFromInput(input) {
-      const card = input.closest('.variant-result');
-      if (!card) return;
-      const on = input.checked;
-      card.classList.toggle('active', on);
-      card.querySelector('.selected')?.classList.toggle('hidden', !on);
-      card.querySelector('.select')?.classList.toggle('hidden', on);
-    }
+      // Utilidad: refrescar UI
+      function refreshCardFromInput(input) {
+        const card = input.closest('.variant-result');
+        if (!card) return;
+        const on = input.checked;
+        card.classList.toggle('active', on);
+        card.querySelector('.selected')?.classList.toggle('hidden', !on);
+        card.querySelector('.select')?.classList.toggle('hidden', on);
+      }
 
-    // 2) Delegación PRINCIPAL en pointerup
-    wrap.addEventListener(
-      'pointerup',
-      function (e) {
+      // 2) Delegación PRINCIPAL en pointerup
+      wrap.addEventListener(
+        'pointerup',
+        function (e) {
+          const label = e.target.closest('label.protein-card');
+          if (!label || !wrap.contains(label)) return;
+
+          // Si es un gesto con más de un dedo o botón distinto al primario, ignorar
+          if (e.pointerType && e.pointerType !== 'mouse' && e.isPrimary === false) return;
+
+          // Evitar que el click nativo posterior haga un segundo toggle
+          e.preventDefault();
+          e.stopPropagation();
+
+          const input = label.querySelector('input[name="protein"]');
+          if (!input) return;
+
+          // Toggle manual
+          input.checked = !input.checked;
+          input.dispatchEvent(new Event('change', { bubbles: true }));
+
+          // Bandera para cancelar el "ghost click" posterior
+          label.dataset.justToggledAt = String(Date.now());
+        },
+        { capture: true }
+      );
+
+      // 3) Cancelar el ghost click que llega después del pointerup en móviles
+      wrap.addEventListener(
+        'click',
+        function (e) {
+          const label = e.target.closest('label.protein-card');
+          if (!label) return;
+
+          const t = Number(label.dataset.justToggledAt || 0);
+          // si el click llega muy pronto tras nuestro pointerup, lo anulamos
+          if (Date.now() - t < 350) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            return false;
+          }
+        },
+        true
+      );
+
+      // 4) Teclado (accesibilidad): Space/Enter
+      wrap.addEventListener('keydown', function (e) {
         const label = e.target.closest('label.protein-card');
-        if (!label || !wrap.contains(label)) return;
+        if (!label) return;
+        if (e.key !== ' ' && e.key !== 'Enter') return;
 
-        // Si es un gesto con más de un dedo o botón distinto al primario, ignorar
-        if (e.pointerType && e.pointerType !== 'mouse' && e.isPrimary === false) return;
-
-        // Evitar que el click nativo posterior haga un segundo toggle
         e.preventDefault();
-        e.stopPropagation();
-
         const input = label.querySelector('input[name="protein"]');
         if (!input) return;
 
-        // Toggle manual
         input.checked = !input.checked;
         input.dispatchEvent(new Event('change', { bubbles: true }));
+        refreshCardFromInput(input);
+      });
 
-        // Bandera para cancelar el "ghost click" posterior
-        label.dataset.justToggledAt = String(Date.now());
-      },
-      { capture: true }
-    );
+      // 5) Refresco UI al cambiar (única fuente de verdad: input.checked)
+      wrap.addEventListener(
+        'change',
+        function (e) {
+          if (e.target?.name === 'protein') refreshCardFromInput(e.target);
+        },
+        true
+      );
 
-    // 3) Cancelar el ghost click que llega después del pointerup en móviles
-    wrap.addEventListener(
-      'click',
-      function (e) {
-        const label = e.target.closest('label.protein-card');
-        if (!label) return;
+      // 6) Validación “al menos una”
+      const cbs = wrap.querySelectorAll('input[name="protein"]');
+      const first = cbs[0];
+      const anyChecked = () => Array.from(cbs).some((cb) => cb.checked);
+      const applyValidity = () =>
+        first && first.setCustomValidity(anyChecked() ? '' : 'Al menos una proteína debe estar seleccionada');
+      cbs.forEach((cb) => cb.addEventListener('change', applyValidity));
+      applyValidity();
 
-        const t = Number(label.dataset.justToggledAt || 0);
-        // si el click llega muy pronto tras nuestro pointerup, lo anulamos
-        if (Date.now() - t < 350) {
-          e.preventDefault();
-          e.stopImmediatePropagation();
-          return false;
-        }
-      },
-      true
-    );
+      // 7) Refrescar estado visual inicial (por si hay checked server-side)
+      cbs.forEach(refreshCardFromInput);
+    })();
+  </script>
 
-    // 4) Teclado (accesibilidad): Space/Enter
-    wrap.addEventListener('keydown', function (e) {
-      const label = e.target.closest('label.protein-card');
-      if (!label) return;
-      if (e.key !== ' ' && e.key !== 'Enter') return;
+  <style>
+    /* Área táctil fiable */
+    #wizard-variant-results label.protein-card {
+      -webkit-tap-highlight-color: transparent;
+      -webkit-user-select: none;
+      user-select: none;
+      touch-action: manipulation;
+      cursor: pointer;
+      display: block;
+    }
+    /* Input fuera de juego para evitar toggles nativos */
+    #wizard-variant-results label.protein-card input[name="protein"] {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
 
-      e.preventDefault();
-      const input = label.querySelector('input[name="protein"]');
-      if (!input) return;
-
-      input.checked = !input.checked;
-      input.dispatchEvent(new Event('change', { bubbles: true }));
-      refreshCardFromInput(input);
-    });
-
-    // 5) Refresco UI al cambiar (única fuente de verdad: input.checked)
-    wrap.addEventListener(
-      'change',
-      function (e) {
-        if (e.target?.name === 'protein') refreshCardFromInput(e.target);
-      },
-      true
-    );
-
-    // 6) Validación “al menos una”
-    const cbs = wrap.querySelectorAll('input[name="protein"]');
-    const first = cbs[0];
-    const anyChecked = () => Array.from(cbs).some((cb) => cb.checked);
-    const applyValidity = () =>
-      first && first.setCustomValidity(anyChecked() ? '' : 'Al menos una proteína debe estar seleccionada');
-    cbs.forEach((cb) => cb.addEventListener('change', applyValidity));
-    applyValidity();
-
-    // 7) Refrescar estado visual inicial (por si hay checked server-side)
-    cbs.forEach(refreshCardFromInput);
-  })();
-</script>
-
-<style>
-  /* Área táctil fiable */
-  #wizard-variant-results label.protein-card {
-    -webkit-tap-highlight-color: transparent;
-    -webkit-user-select: none;
-    user-select: none;
-    touch-action: manipulation;
-    cursor: pointer;
-    display: block;
-  }
-  /* Input fuera de juego para evitar toggles nativos */
-  #wizard-variant-results label.protein-card input[name="protein"] {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .variant-result .label.selected,
-  .variant-result .label.select {
-    position: static !important;
-    margin-top: 1rem !important;
-    margin-bottom: 1rem !important;
-  }
-  .wizard-variant-results { padding: unset !important; }
-  @media (max-width: 1000px) {
-    .wizard-variant-results { gap: 8px !important; }
-  }
-</style>
+    .variant-result .label.selected,
+    .variant-result .label.select {
+      position: static !important;
+      margin-top: 1rem !important;
+      margin-bottom: 1rem !important;
+    }
+    .wizard-variant-results { padding: unset !important; }
+    @media (max-width: 1000px) {
+      .wizard-variant-results { gap: 8px !important; }
+    }
+  </style>
+{% endcomment %}
