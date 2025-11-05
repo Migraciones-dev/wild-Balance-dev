@@ -7,17 +7,20 @@
 {% endif %}
 
 <div
-  id="wizard-xselling-variant-results"
   class="wizard-variant-results mt:10 lg:mt-20 !bg-[#F4F0E2] [@media(max-width:1024px)]:!flex-nowrap [@media(max-width:1024px)]:!justify-start"
 >
   {% for product in xsellingProducts limit: 4 %}
     {%- comment -%}
-      No usamos `for` en el label para evitar comportamiento raro
-      con el checkbox. Controlamos todo a mano con JS.
+      Mantenemos el label como antes (para que el CSS de la plantilla no se rompa)
     {%- endcomment -%}
-    <label class="xselling-card" style="user-select:none; touch-action:manipulation; cursor:pointer;">
-      <div class="variant-result [@media(max-width:1024px)]:!w-[80vw] !text-left !items-start">
+    <label
+      for="xselling_{{ product.variants[0].id }}"
+      class="xselling-card"
+      style="user-select:none; touch-action:manipulation; cursor:pointer;"
+    >
+      <div class="variant-result  [@media(max-width:1024px)]:!w-[80vw] !text-left !items-start">
         {{ product.featured_image | image_url: width: 300 | image_tag }}
+
         <h2 class="my-0 !text-[18px] lg:!text-[28px] leading-[1] !font-semibold font-[Barlow] mb-4 !mt-0 !pb-2">
           <input
             type="checkbox"
@@ -40,11 +43,13 @@
 
 <script>
   (function () {
-    const container = document.getElementById('wizard-xselling-variant-results');
+    const container = document.querySelector('.wizard-variant-results');
     if (!container) return;
 
-    // Refresca el estado visual de UNA tarjeta según el checked del input
-    function refreshXselling(input) {
+    const inputs = container.querySelectorAll('input[name="xselling"]');
+    if (!inputs.length) return;
+
+    function refreshCard(input) {
       const card = input.closest('.variant-result');
       if (!card) return;
 
@@ -57,40 +62,22 @@
       if (pick) pick.classList.toggle('hidden', on);
     }
 
-    // Para cada tarjeta de xselling…
-    container.querySelectorAll('label.xselling-card').forEach((label) => {
-      const input = label.querySelector('input[name="xselling"]');
-      if (!input) return;
-
-      // Estado inicial (por si algún día vienen marcados desde backend)
-      if (input.checked) refreshXselling(input);
-
-      // Click / tap en cualquier parte del label → togglear a mano
-      label.addEventListener('click', function (e) {
-        // siempre controlamos nosotros, así evitamos comportamientos raros
-        e.preventDefault();
-        e.stopPropagation();
-
-        input.checked = !input.checked; // toggle real
-        refreshXselling(input); // actualizar UI
-        input.dispatchEvent(
-          new Event('change', {
-            // por si otro script escucha
-            bubbles: true,
-          })
-        );
-      });
-
-      // Si alguien cambia el checked por JS externo, seguimos sincronizados
+    // Sólo reaccionamos a 'change' → evitamos líos de dobles clicks/taps
+    inputs.forEach((input) => {
       input.addEventListener('change', function () {
-        refreshXselling(input);
+        refreshCard(input);
       });
+
+      // Estado inicial por si algún día vienen marcados desde backend
+      if (input.checked) {
+        refreshCard(input);
+      }
     });
   })();
 </script>
 
 <style>
   .wizard-variant-results {
-    /* lo puedes dejar vacío o añadir lo que ya tuvieses aquí */
+    /* lo dejas vacío como ya lo tenías, o lo que tengas en tu theme */
   }
 </style>
