@@ -57,8 +57,8 @@
   assign countdown_bg_color = '#F0807B'
   assign is_countdown_active = false
 
-  assign col_countdown = collection.metafields.custom.cuenta_atras_en_productos
-  assign col_color = collection.metafields.custom.color_de_la_cuenta_atras
+  assign col_countdown = product.metafields.custom.fecha_de_la_cuenta_atras
+  assign col_color = product.metafields.custom.color_de_la_cuenta_atras
 
   if col_countdown != blank and col_countdown != empty
     assign countdown_formatted = col_countdown | date: '%Y-%m-%d %H:%M'
