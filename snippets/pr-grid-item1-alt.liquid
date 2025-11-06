@@ -52,6 +52,22 @@
   if use_countdown and countdown != blank
     assign use_pr_countdown = true
   endif
+
+  assign countdown_formatted = ''
+  assign countdown_bg_color = '#F0807B'
+  assign is_countdown_active = false
+
+  assign col_countdown = collection.metafields.custom.cuenta_atras_en_productos
+  assign col_color = collection.metafields.custom.color_de_la_cuenta_atras
+
+  if col_countdown != blank and col_countdown != empty
+    assign countdown_formatted = col_countdown | date: '%Y-%m-%d %H:%M'
+    if col_color != blank and col_color != empty
+      assign countdown_bg_color = col_color
+    endif
+    assign is_countdown_active = true
+  endif
+
   assign image = product.featured_media | default: placeholder_img
 
   assign color_count = 0
@@ -119,30 +135,8 @@
     {%- assign promo_product = card_product -%}
   {%- endif -%}
 
-  {%- if promo_product and promo_product.tags contains 'promo' -%}
-    <div
-      class="offer-tag"
-      style="
-        background: #f0807b;
-        color: #faf5e7;
-        position: absolute;
-        z-index: 1;
-        font-size: 1.2rem;
-        border-radius: 0 0 10px 10px;
-        padding: 0.5rem 0.2rem;
-        right: 10%;
-        font-weight: 900;
-      "
-    >
-      <p class="offer-tag-1" style="font-size: 0.8rem; margin: 0;">-SOLO HOY-</p>
-      <p class="offer-tag-2" style="font-size: 2rem; margin: -5px 0 0;">5X4</p>
-    </div>
-  {%- endif -%}
-  {% assign v = product.selected_or_first_available_variant %}
-  {% assign d = v.compare_at_price | minus: v.price | times: 100 | divided_by: v.compare_at_price | round %}
-
-  {% if v.compare_at_price > v.price %}
-    {% unless product.tags contains 'sin-descuento' %}
+  {% unless is_countdown_active %}
+    {%- if promo_product and promo_product.tags contains 'promo' -%}
       <div
         class="offer-tag"
         style="
@@ -155,57 +149,87 @@
           padding: 0.5rem 0.2rem;
           right: 10%;
           font-weight: 900;
-          z-index: 2;
         "
       >
-        <p class="offer-tag-1 text-center" style="font-size: 0.8rem;">OFERTA</p>
-        <p class="offer-tag-2 text-center" style="font-size: 2rem; margin: -5px 0;">{{ d }}%</p>
+        <p class="offer-tag-1" style="font-size: 0.8rem; margin: 0;">-SOLO HOY-</p>
+        <p class="offer-tag-2" style="font-size: 2rem; margin: -5px 0 0;">5X4</p>
+      </div>
+    {%- endif -%}
+  {% endunless %}
+
+  {% assign v = product.selected_or_first_available_variant %}
+  {% assign d = v.compare_at_price | minus: v.price | times: 100 | divided_by: v.compare_at_price | round %}
+
+  {% unless is_countdown_active %}
+    {% if v.compare_at_price > v.price %}
+      {% unless product.tags contains 'sin-descuento' %}
+        <div
+          class="offer-tag"
+          style="
+            background: #f0807b;
+            color: #faf5e7;
+            position: absolute;
+            z-index: 1;
+            font-size: 1.2rem;
+            border-radius: 0 0 10px 10px;
+            padding: 0.5rem 0.2rem;
+            right: 10%;
+            font-weight: 900;
+            z-index: 2;
+          "
+        >
+          <p class="offer-tag-1 text-center" style="font-size: 0.8rem;">OFERTA</p>
+          <p class="offer-tag-2 text-center" style="font-size: 2rem; margin: -5px 0;">{{ d }}%</p>
+        </div>
+      {% endunless %}
+    {% endif %}
+  {% endunless %}
+
+  {% unless is_countdown_active %}
+    {% assign oferta_tag = '' %}
+    {% for t in product.tags %}
+      {% if t contains 'oferta_' %}
+        {% assign oferta_tag = t %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+
+    {% unless oferta_tag == '' or product.tags contains 'sin-descuento' %}
+      {% assign parts = oferta_tag | split: '_' %}
+      {% assign oferta_texto = parts[1] | upcase %}
+      {% assign oferta_promo = parts[2] | upcase %}
+
+      <div
+        class="offer-tag"
+        style="
+          background: #f0807b;
+          color: #fff9ed;
+          position: absolute;
+          z-index: 3;
+          font-size: 1.2rem;
+          border-radius: 0 0 10px 10px;
+          padding: 0.5rem 0.2rem;
+          left: 10%;
+          font-weight: 900;
+        "
+      >
+        <p class="offer-tag-1 text-center" style="font-size: 0.8rem;">{{ oferta_texto }}</p>
+        <p class="offer-tag-2 text-center" style="font-size: 2rem; margin: -5px 0;">{{ oferta_promo }}</p>
       </div>
     {% endunless %}
-  {% endif %}
-  {% comment %}
-    ✅ ETIQUETA PERSONALIZADA POR TAG
-    Se muestra si el producto tiene una tag tipo: oferta_TEXTO_4X3
-    Ejemplo:
-      - Tag: oferta_2X1_NAVIDAD → mostrará "2X1" y "NAVIDAD"
-  {% endcomment %}
-  {% assign oferta_tag = '' %}
-  {% for t in product.tags %}
-    {% if t contains 'oferta_' %}
-      {% assign oferta_tag = t %}
-      {% break %}
-    {% endif %}
-  {% endfor %}
-
-  {% unless oferta_tag == '' or product.tags contains 'sin-descuento' %}
-    {% assign parts = oferta_tag | split: '_' %}
-    {% assign oferta_texto = parts[1] | upcase %}
-    {% assign oferta_promo = parts[2] | upcase %}
-
-    <div
-      class="offer-tag"
-      style="
-        background: #f0807b;
-        color: #fff9ed;
-        position: absolute;
-        z-index: 3;
-        font-size: 1.2rem;
-        border-radius: 0 0 10px 10px;
-        padding: 0.5rem 0.2rem;
-        left: 10%;
-        font-weight: 900;
-      "
-    >
-      <p class="offer-tag-1 text-center" style="font-size: 0.8rem;">{{ oferta_texto }}</p>
-      <p class="offer-tag-2 text-center" style="font-size: 2rem; margin: -5px 0;">{{ oferta_promo }}</p>
-    </div>
   {% endunless %}
+
+  {% if countdown_formatted != blank and countdown_formatted != empty %}
+    <div
+      class="countdown-badge absolute top-3 right-3 z-20 px-4 py-2 rounded-full font-bold text-[8px] lg:text-[11px] lg:mr-4"
+      data-countdown-end="{{ countdown_formatted }}"
+      style="background-color: {{ countdown_bg_color }}; color: #ffffff;"
+    >
+      00:00:00
+    </div>
+  {% endif %}
+
   <div class="t4s-product-wrapper relative">
-    {% comment %}
-      <div class="containerLabelsPDC absolute z-[1] top-4 lg:top-8 right-1">
-        {% render 'custom-badges', product: product %}
-      </div>
-    {% endcomment %}
     <div data-cacl-slide class="t4s-product-inner t4s-pr t4s-oh" timeline hdt-reveal="slide-in">
       {%- if image != blank %}{% render 'product-img', image: image, imgatt: imgatt -%}{%- endif -%}
       <div data-product-badge data-sort="sale,new,soldout,preOrder,custom" class="t4s-product-badge"></div>
