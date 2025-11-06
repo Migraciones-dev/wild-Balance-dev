@@ -207,8 +207,8 @@
         "banner_fippFK": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/ofertas-flash-lata-pescado-gato.png",
-            "mobile_image": "shopify://shop_images/ofertas-flash-lata-pescado-gato.png",
+            "desktop_image": "shopify://shop_images/oferta-flash-lata-pescado-gato.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-lata-pescado-gato.png",
             "image_link": "",
             "product": "lata-comida-cocinada-para-gato-pescado",
             "enable_countdown": false,
