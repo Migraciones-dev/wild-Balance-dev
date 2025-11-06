@@ -308,6 +308,27 @@
             "mt_mobile": 0,
             "mb_mobile": 0
           }
+        },
+        "banner_eAX8Ay": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/oferta-flash-lata-pavo.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-lata-pavo.png",
+            "image_link": "",
+            "product": "lata-de-pavo-para-perros-400g-filosofia-barf",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-10 09:00",
+            "end_date": "2025-11-11 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
         }
       },
       "block_order": [
@@ -317,7 +338,8 @@
         "banner_hJ6B8t",
         "banner_4Mgnx6",
         "banner_p4BdxH",
-        "banner_F7zcaB"
+        "banner_F7zcaB",
+        "banner_eAX8Ay"
       ],
       "name": "Banners Grid 2 columnas",
       "settings": {
