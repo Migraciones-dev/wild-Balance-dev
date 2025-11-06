@@ -471,6 +471,20 @@
             "banner_product": ""
           }
         },
+        "collection_3A4r3q": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "countdown_date": "",
+            "show_discount_badge": "discount",
+            "pet_type": "dog",
+            "collection_name": "Suplementos y Aceites",
+            "collection": "black-friday-suplementos-y-aceites-para-perros",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": ""
+          }
+        },
         "collection_hDjBCz": {
           "type": "collection",
           "disabled": true,
@@ -527,6 +541,20 @@
             "banner_product": ""
           }
         },
+        "collection_JThNQp": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "countdown_date": "",
+            "show_discount_badge": "discount",
+            "pet_type": "cat",
+            "collection_name": "Suplementos y Aceites",
+            "collection": "black-friday-suplementos-y-aceites-para-gatos",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": ""
+          }
+        },
         "collection_JqLpXU": {
           "type": "collection",
           "settings": {
@@ -558,10 +586,12 @@
         "collection_wLtpT3",
         "collection_DVXpBQ",
         "collection_qr47Xg",
+        "collection_3A4r3q",
         "collection_hDjBCz",
         "collection_9na79a",
         "collection_mgCBbt",
         "collection_H9Gfem",
+        "collection_JThNQp",
         "collection_JqLpXU",
         "collection_nDYQRz"
       ],
