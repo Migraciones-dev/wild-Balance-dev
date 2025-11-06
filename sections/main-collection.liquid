@@ -1554,3 +1554,56 @@
     }
   }
 {% endschema %}
+
+<script>
+  window.initCountdowns = function() {
+    const badges = document.querySelectorAll('[data-countdown-end]');
+    
+    if (badges.length === 0) return;
+
+    const updateAllCountdowns = () => {
+      badges.forEach((badge) => {
+        const endDateStr = badge.getAttribute('data-countdown-end');
+        if (!endDateStr) return;
+
+        const parts = endDateStr.split(' ');
+        const datePart = parts[0];
+        const timePart = parts[1] || '00:00';
+
+        const isoDate = `${datePart}T${timePart}:00`;
+        const endDate = new Date(isoDate).getTime();
+
+        if (isNaN(endDate)) return;
+
+        const now = new Date().getTime();
+        const distance = endDate - now;
+
+        if (distance < 0) {
+          badge.textContent = '00:00:00';
+          return;
+        }
+
+        const totalHours = Math.floor(distance / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        badge.textContent = `${totalHours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+      });
+    };
+
+    updateAllCountdowns();
+    setInterval(updateAllCountdowns, 1000);
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', window.initCountdowns);
+  } else {
+    window.initCountdowns();
+  }
+
+  const originalPushState = window.history.pushState;
+  window.history.pushState = function() {
+    originalPushState.apply(window.history, arguments);
+    window.initCountdowns();
+  };
+</script>
