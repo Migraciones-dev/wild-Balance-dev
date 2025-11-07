@@ -9,256 +9,75 @@
  */
 {
   "sections": {
-    "slideshow3_ArqNAC": {
-      "type": "slideshow3",
+    "heading": {
+      "type": "heading-template",
       "blocks": {
-        "image_parent_7HhBqi": {
-          "type": "image_parent",
+        "b49343f1-a16f-4a0c-834a-46b77fe777da": {
+          "type": "1",
           "settings": {
-            "image": "shopify://shop_images/BANNER_SUSCRIPCION_1.png",
-            "image_mb": "shopify://shop_images/BANNER_MOBILE_SEMANA_DEL_PERRO_2025_1_79e17b8e-77e3-4ee5-80ad-c9e05ccbb68e.png",
-            "image_position": "8",
-            "cl_img": "",
-            "link_img1": "https://wildbalance.es/pages/crea-su-menu",
-            "open_link": "_self",
-            "animate_slide": "none",
-            "text_align": "center",
-            "text_align_tb": "center",
-            "text_align_mb": "center",
-            "content_width": "container",
-            "cv_pos": 50,
-            "ch_pos": 50,
-            "cv_pos_tb": 50,
-            "ch_pos_tb": 50,
-            "cv_pos_mb": 50,
-            "ch_pos_mb": 50,
-            "bg_overlay": "#000000",
-            "bg_opacity": 0,
-            "bg_content_cl": "#ffffff",
-            "bg_content_op": 0,
-            "content_pd_tb": 15,
-            "content_pd_lr": 15,
-            "content_pd_tb_tb": 15,
-            "content_pd_lr_tb": 15,
-            "content_pd_tb_mb": 10,
-            "content_pd_lr_mb": 10,
-            "border_bl": false,
-            "br_color": "#222222",
-            "br_bg": "#ffffff",
-            "br_opacity": 50,
-            "br_style": "solid",
-            "br_pd": 20,
-            "br_pd_mb": 10,
-            "label_nav": "Extended",
-            "time_animation": 1,
-            "animation_delay": 40
+            "heading": "Page Heading",
+            "fontf": "inherit",
+            "text_cl": "#000000",
+            "text_fs": 40,
+            "text_lh": 56,
+            "text_fw": 300,
+            "text_ls": 0,
+            "font_italic": false,
+            "font_uppercase": false,
+            "text_shadow": false,
+            "mgb": 0,
+            "text_fs_tb": 35,
+            "text_lh_tb": 46,
+            "text_ls_tb": 0,
+            "mgb_tb": 0,
+            "hidden_mobile": false,
+            "text_fs_mb": 35,
+            "text_lh_mb": 46,
+            "text_ls_mb": 0,
+            "mgb_mb": 0
           }
         },
-        "image_parent_Cq79Fr": {
-          "type": "image_parent",
-          "disabled": true,
+        "46ff9c32-9810-4c24-b2bd-9c6e38cc2ea8": {
+          "type": "3",
           "settings": {
-            "image": "shopify://shop_images/Home_HeroBanner_LanzamientoBarfGrande_General_20251021_2.png",
-            "image_mb": "shopify://shop_images/Home_HeroBanner_LanzamientoBarfGrande_General_20251021_1.png",
-            "image_position": "8",
-            "cl_img": "",
-            "link_img1": "shopify://collections/barf-grande-perros",
-            "open_link": "_self",
-            "animate_slide": "none",
-            "text_align": "center",
-            "text_align_tb": "center",
-            "text_align_mb": "center",
-            "content_width": "container",
-            "cv_pos": 50,
-            "ch_pos": 50,
-            "cv_pos_tb": 50,
-            "ch_pos_tb": 50,
-            "cv_pos_mb": 50,
-            "ch_pos_mb": 50,
-            "bg_overlay": "#000000",
-            "bg_opacity": 0,
-            "bg_content_cl": "#ffffff",
-            "bg_content_op": 0,
-            "content_pd_tb": 15,
-            "content_pd_lr": 15,
-            "content_pd_tb_tb": 15,
-            "content_pd_lr_tb": 15,
-            "content_pd_tb_mb": 10,
-            "content_pd_lr_mb": 10,
-            "border_bl": false,
-            "br_color": "#222222",
-            "br_bg": "#ffffff",
-            "br_opacity": 50,
-            "br_style": "solid",
-            "br_pd": 20,
-            "br_pd_mb": 10,
-            "label_nav": "Extended",
-            "time_animation": 1,
-            "animation_delay": 40
-          }
-        },
-        "image_parent_DrfWkp": {
-          "type": "image_parent",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Home_HeroBanner_LanzamientoLatasPavoCordero_5x4_20251023_desk.jpg",
-            "image_mb": "shopify://shop_images/Home_HeroBanner_LanzamientoLatasPavoCordero_5x4_20251023_mobile.jpg",
-            "image_position": "8",
-            "cl_img": "",
-            "link_img1": "https://wildbalance.es/collections/latas-perros",
-            "open_link": "_self",
-            "animate_slide": "none",
-            "text_align": "center",
-            "text_align_tb": "center",
-            "text_align_mb": "center",
-            "content_width": "container",
-            "cv_pos": 50,
-            "ch_pos": 50,
-            "cv_pos_tb": 50,
-            "ch_pos_tb": 50,
-            "cv_pos_mb": 50,
-            "ch_pos_mb": 50,
-            "bg_overlay": "#000000",
-            "bg_opacity": 0,
-            "bg_content_cl": "#ffffff",
-            "bg_content_op": 0,
-            "content_pd_tb": 15,
-            "content_pd_lr": 15,
-            "content_pd_tb_tb": 15,
-            "content_pd_lr_tb": 15,
-            "content_pd_tb_mb": 10,
-            "content_pd_lr_mb": 10,
-            "border_bl": false,
-            "br_color": "#222222",
-            "br_bg": "#ffffff",
-            "br_opacity": 50,
-            "br_style": "solid",
-            "br_pd": 20,
-            "br_pd_mb": 10,
-            "label_nav": "Extended",
-            "time_animation": 1,
-            "animation_delay": 40
-          }
-        },
-        "image_parent_dbwjJU": {
-          "type": "image_parent",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Home_HeroBanner_LanzamientoBarfGrande_General_20251021_3.png",
-            "image_mb": "shopify://shop_images/Home_HeroBanner_LanzamientoBarfGrande_General_20251021_4.png",
-            "image_position": "8",
-            "cl_img": "",
-            "link_img1": "shopify://products/pack-barf-grande-dieta-equilibrada",
-            "open_link": "_self",
-            "animate_slide": "none",
-            "text_align": "center",
-            "text_align_tb": "center",
-            "text_align_mb": "center",
-            "content_width": "container",
-            "cv_pos": 50,
-            "ch_pos": 50,
-            "cv_pos_tb": 50,
-            "ch_pos_tb": 50,
-            "cv_pos_mb": 50,
-            "ch_pos_mb": 50,
-            "bg_overlay": "#000000",
-            "bg_opacity": 0,
-            "bg_content_cl": "#ffffff",
-            "bg_content_op": 0,
-            "content_pd_tb": 15,
-            "content_pd_lr": 15,
-            "content_pd_tb_tb": 15,
-            "content_pd_lr_tb": 15,
-            "content_pd_tb_mb": 10,
-            "content_pd_lr_mb": 10,
-            "border_bl": false,
-            "br_color": "#222222",
-            "br_bg": "#ffffff",
-            "br_opacity": 50,
-            "br_style": "solid",
-            "br_pd": 20,
-            "br_pd_mb": 10,
-            "label_nav": "Extended",
-            "time_animation": 1,
-            "animation_delay": 40
-          }
-        },
-        "image_parent_jyHWtH": {
-          "type": "image_parent",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/BANNER_SUSCRIPCION_1_f1d2fc7f-2b56-4b10-b2fb-b914c51a8f58.png",
-            "image_mb": "shopify://shop_images/10_0e428b7e-3756-4d54-87de-716d8b14a208.png",
-            "image_position": "8",
-            "cl_img": "",
-            "link_img1": "shopify://collections/comida",
-            "open_link": "_self",
-            "animate_slide": "none",
-            "text_align": "center",
-            "text_align_tb": "center",
-            "text_align_mb": "center",
-            "content_width": "container",
-            "cv_pos": 50,
-            "ch_pos": 50,
-            "cv_pos_tb": 50,
-            "ch_pos_tb": 50,
-            "cv_pos_mb": 50,
-            "ch_pos_mb": 50,
-            "bg_overlay": "#000000",
-            "bg_opacity": 0,
-            "bg_content_cl": "#ffffff",
-            "bg_content_op": 0,
-            "content_pd_tb": 15,
-            "content_pd_lr": 15,
-            "content_pd_tb_tb": 15,
-            "content_pd_lr_tb": 15,
-            "content_pd_tb_mb": 10,
-            "content_pd_lr_mb": 10,
-            "border_bl": false,
-            "br_color": "#222222",
-            "br_bg": "#ffffff",
-            "br_opacity": 50,
-            "br_style": "solid",
-            "br_pd": 20,
-            "br_pd_mb": 10,
-            "label_nav": "Extended",
-            "time_animation": 1,
-            "animation_delay": 40
+            "breadcrumb_color": "#868686",
+            "breadcrumb_color_link": "#000000",
+            "brc_mgb": 0
           }
         }
       },
       "block_order": [
-        "image_parent_7HhBqi",
-        "image_parent_Cq79Fr",
-        "image_parent_DrfWkp",
-        "image_parent_dbwjJU",
-        "image_parent_jyHWtH"
+        "b49343f1-a16f-4a0c-834a-46b77fe777da",
+        "46ff9c32-9810-4c24-b2bd-9c6e38cc2ea8"
       ],
-      "custom_css": [
-        ".t4s-carousel--range {display: none !important;}"
-      ],
-      "name": "Slideshow 3",
+      "disabled": true,
       "settings": {
-        "se_height": "t4s_ratioadapt_f_mix",
-        "custom_dk": false,
-        "height_dk": 600,
-        "custom_tb": false,
-        "height_tb": 400,
-        "custom_mb": false,
-        "height_mb": 250,
-        "autoplay": true,
-        "speed": 3,
-        "button_play": false,
-        "cl_btn_play_pause": "#ffffff",
-        "cl_btn_nav": "#ffffff",
-        "eff": "fade",
-        "btn_nav_width": "fullwidth",
-        "pos_btn_nav": "on_carousel",
-        "pos_btn_nav_mb": "on_carousel",
-        "layout": "t4s-container-fluid",
+        "parallax": false,
+        "color": "#000000",
+        "overlay": 0,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "mg_b": 50,
+        "padding_top_tb": 50,
+        "padding_bottom_tb": 50,
+        "mg_btb": 50,
+        "padding_top_mb": 50,
+        "padding_bottom_mb": 50,
+        "mg_bmb": 50,
+        "box_border": "top_bottom",
+        "bg_pos": "center center",
+        "bg_repeat": "no-repeat",
+        "bg_size": "cover"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "layout": "t4s-container-wrap",
         "cl_bg": "",
         "cl_bg_gradient": "",
-        "mg": ",,50px,",
+        "mg": "60px,,60px,",
         "pd": "",
         "mg_tb": ",,50px,",
         "pd_tb": "",
@@ -266,643 +85,746 @@
         "pd_mb": ""
       }
     },
-    "migraciones_image_LxHCKY": {
-      "type": "migraciones-image",
-      "disabled": true,
-      "name": "Migraciones imagen",
-      "settings": {
-        "desktop_image": "shopify://shop_images/BANNER_SUSCRIPCION_1.png",
-        "mobile_image": "shopify://shop_images/BANNER_MOBILE_SEMANA_DEL_PERRO_2025_1_79e17b8e-77e3-4ee5-80ad-c9e05ccbb68e.png",
-        "image_link": "shopify://collections/comida",
-        "pt_mobile": 0,
-        "pb_mobile": 0,
-        "pt_desktop": 0,
-        "pb_desktop": 0,
-        "image_radius": 0,
-        "bg_color": "#ffffff",
-        "boxed": false
-      }
-    },
-    "banner_home_tHiHUK": {
-      "type": "banner-home",
-      "disabled": true,
-      "custom_css": [],
-      "name": "Migraciones banner home",
-      "settings": {}
-    },
-    "migraciones_tabs_collections_BaRKMi": {
-      "type": "migraciones-tabs-collections",
+    "migraciones_banner_responsive_d6hJg8": {
+      "type": "migraciones-banner-responsive",
       "blocks": {
-        "tab_item_reC7wk": {
-          "type": "tab_item",
+        "banner_4nDMtb": {
+          "type": "banner",
           "settings": {
-            "title": "Tab title",
-            "icon_title": "",
-            "collection": "",
-            "multi_collections": [],
-            "product_des": "1",
-            "rating_pos": "1",
-            "list_color_pos": "1",
-            "list_size_pos": "1",
-            "show_vendor": false,
-            "use_cdt": false,
-            "featured_items": false,
-            "image_ratio": "rationt",
-            "image_size": "cover",
-            "image_position": "8",
-            "content_align": "start",
-            "limit": 8,
-            "col_dk": "4",
-            "col_tb": "3",
-            "col_mb": "2",
-            "space_h_item": "30",
-            "space_v_item": "30",
-            "space_h_item_tb": "30",
-            "space_v_item_tb": "30",
-            "space_h_item_mb": "10",
-            "space_v_item_mb": "10",
-            "layout_des": "2",
-            "border_pr": false,
-            "loop": true,
-            "au_time": 0,
-            "au_hover": true,
-            "nav_btn": false,
-            "btn_pos": "in",
-            "btn_distance": 15,
-            "btn_vi": "hover",
-            "btn_owl": "default",
-            "btn_shape": "none",
-            "btn_cl": "dark",
-            "btn_size": "small",
-            "btn_hidden_mobile": false,
-            "nav_dot": false,
-            "dot_owl": "default",
-            "dots_cl": "dark",
-            "dots_round": true,
-            "dots_space": 10,
-            "dots_bottom_pos": 20,
-            "dots_hidden_mobile": false,
-            "border_pr_img": false,
-            "use_pagination": "none",
-            "enable_bar_lm": true,
-            "text_view_all": "",
-            "btn_icon": false,
-            "btn_rounded": false,
-            "button_style": "default",
-            "btns_size": "default",
-            "btns_cl": "dark",
-            "button_effect": "default",
-            "btns_pos": "t4s-text-center"
+            "desktop_image": "shopify://shop_images/BANNER-BLACK-FRIDAY-_3_-1.webp",
+            "mobile_image": "shopify://shop_images/BANNER-BLACK-FRIDAY-_5_-1.webp",
+            "image_link": "https://wildbalance.es/collections/black-friday",
+            "enable_schedule": true,
+            "start_date": "2025-11-03 12:00",
+            "end_date": "2025-11-10 9:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 16
+          }
+        },
+        "banner_LJFEdc": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/BANNER_BLACK_FRIDAY_15_1_1.png",
+            "mobile_image": "shopify://shop_images/Background_faa49548-8b34-4a69-a85e-e8c3d7d0d983.png",
+            "image_link": "",
+            "enable_schedule": true,
+            "start_date": "2025-11-03 9:00",
+            "end_date": "2025-11-23 23:59",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 20,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
           }
         }
       },
       "block_order": [
-        "tab_item_reC7wk"
+        "banner_4nDMtb",
+        "banner_LJFEdc"
       ],
-      "name": "Migraciones col tabs",
+      "name": "Banner imagen responsivo",
       "settings": {
-        "design_heading": "1",
-        "heading_center": true,
-        "top_heading": "Trending Products",
-        "top_subheading": "",
-        "head_bigger": false,
-        "tophead_mb": 30,
-        "tophead_mb_tb": 30,
-        "tophead_mb_mb": 25,
-        "title_inline": false,
-        "tabs_des": "border",
-        "tabs_border": "dashed",
-        "tabs_list_border": false,
-        "tabs_pos": "center",
-        "tabslist_mb": 30,
-        "item_fs": 16,
-        "item_lh": 30,
-        "item_fw": 500,
-        "item_ls": 0,
-        "item_rounded": true,
-        "pri_cl": "#868686",
-        "secon_cl": "#868686",
-        "pri_active_cl": "#222222",
-        "secon_active_cl": "#868686",
-        "space_between": 5,
-        "space_between_tb": 5,
-        "space_between_mb": 5,
-        "head_btn_label": "Explore all products",
-        "head_btn_url": "",
-        "head_btn_icon": true,
-        "btn_rounded": false,
-        "head_button_style": "outline",
-        "head_btns_size": "default",
-        "head_btns_cl": "dark",
-        "head_button_effect": "default",
-        "hidden_btn_mb": false,
-        "head_slide_btn": false,
-        "layout": "t4s-container-wrap",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,50px,",
-        "pd": "",
-        "mg_tb": ",,30px,",
-        "pd_tb": "",
-        "mg_mb": ",,30px,",
-        "pd_mb": ""
+        "pt_desktop": 24,
+        "pb_desktop": 20,
+        "pt_mobile": 20,
+        "pb_mobile": 32,
+        "bg_color": "#f4f0e2"
       }
     },
-    "migraciones_feafured_collection_eMTCmk": {
-      "type": "migraciones-feafured-collection",
-      "name": "Migraciones collection",
+    "migraciones_cuenta_atras_UCakWN": {
+      "type": "migraciones-cuenta-atras",
+      "name": "Ofertas Flash - Countdown",
       "settings": {
-        "design_heading": "1",
-        "heading_center": true,
-        "top_heading": "",
-        "top_subheading": "",
-        "head_bigger": false,
-        "tophead_mb": 30,
-        "tophead_mb_tb": 30,
-        "tophead_mb_mb": 25,
-        "collection": "best-sellers-comida-natural-perro",
-        "product_des": "1",
-        "rating_pos": "1",
-        "list_color_pos": "1",
-        "list_size_pos": "1",
-        "show_vendor": false,
-        "use_cdt": false,
-        "image_ratio": "rationt",
-        "image_size": "cover",
-        "image_position": "8",
-        "content_align": "default",
-        "limit": 8,
-        "col_dk": "4",
-        "col_tb": "3",
-        "col_mb": "2",
-        "space_h_item": "30",
-        "space_v_item": "30",
-        "space_h_item_tb": "30",
-        "space_v_item_tb": "30",
-        "space_h_item_mb": "10",
-        "space_v_item_mb": "10",
-        "layout_des": "2",
-        "border_pr": false,
-        "loop": true,
-        "au_time": 0,
-        "au_hover": true,
-        "nav_btn": true,
-        "btn_pos": "out",
-        "btn_distance": 15,
-        "btn_vi": "always",
-        "btn_owl": "default",
-        "btn_shape": "none",
-        "btn_cl": "dark",
-        "btn_size": "small",
-        "btn_hidden_mobile": false,
-        "nav_dot": false,
-        "dot_owl": "default",
-        "dots_cl": "dark",
-        "dots_round": true,
-        "dots_space": 10,
-        "dots_bottom_pos": 20,
-        "dots_hidden_mobile": false,
-        "border_pr_img": false,
-        "use_pagination": "none",
-        "enable_bar_lm": true,
-        "text_view_all": "",
-        "btn_icon": false,
-        "btn_rounded": false,
-        "button_style": "default",
-        "btns_size": "default",
-        "btns_cl": "dark",
-        "button_effect": "default",
-        "btns_pos": "t4s-text-center",
-        "head_btn_label": "Shop All",
-        "head_btn_url": "",
-        "head_btn_icon": true,
-        "head_btn_rounded": false,
-        "head_button_style": "outline",
-        "head_btns_size": "default",
-        "head_btns_cl": "dark",
-        "head_button_effect": "default",
-        "hidden_btn_mb": false,
-        "head_slide_btn": false,
-        "layout": "t4s-container-wrap",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,50px,",
-        "pd": "",
-        "mg_tb": ",,30px,",
-        "pd_tb": "",
-        "mg_mb": ",,30px,",
-        "pd_mb": ""
-      }
-    },
-    "migraciones_featured_collection_2_f9XwGn": {
-      "type": "migraciones-featured-collection-2",
-      "name": "Migraciones collection 2",
-      "settings": {
-        "design_heading": "1",
-        "heading_center": true,
-        "top_heading": "",
-        "top_subheading": "",
-        "head_bigger": false,
-        "tophead_mb": 30,
-        "tophead_mb_tb": 30,
-        "tophead_mb_mb": 25,
-        "collection": "barf-gatos",
-        "product_des": "1",
-        "rating_pos": "1",
-        "list_color_pos": "1",
-        "list_size_pos": "1",
-        "show_vendor": false,
-        "use_cdt": false,
-        "image_ratio": "rationt",
-        "image_size": "cover",
-        "image_position": "8",
-        "content_align": "default",
-        "limit": 8,
-        "col_dk": "4",
-        "col_tb": "3",
-        "col_mb": "2",
-        "space_h_item": "30",
-        "space_v_item": "30",
-        "space_h_item_tb": "30",
-        "space_v_item_tb": "30",
-        "space_h_item_mb": "10",
-        "space_v_item_mb": "10",
-        "layout_des": "2",
-        "border_pr": false,
-        "loop": true,
-        "au_time": 0,
-        "au_hover": true,
-        "nav_btn": true,
-        "btn_pos": "out",
-        "btn_distance": 15,
-        "btn_vi": "hover",
-        "btn_owl": "default",
-        "btn_shape": "none",
-        "btn_cl": "dark",
-        "btn_size": "small",
-        "btn_hidden_mobile": false,
-        "nav_dot": false,
-        "dot_owl": "default",
-        "dots_cl": "dark",
-        "dots_round": true,
-        "dots_space": 10,
-        "dots_bottom_pos": 20,
-        "dots_hidden_mobile": false,
-        "border_pr_img": false,
-        "use_pagination": "none",
-        "enable_bar_lm": true,
-        "text_view_all": "",
-        "btn_icon": false,
-        "btn_rounded": false,
-        "button_style": "default",
-        "btns_size": "default",
-        "btns_cl": "dark",
-        "button_effect": "default",
-        "btns_pos": "t4s-text-center",
-        "head_btn_label": "Shop All",
-        "head_btn_url": "",
-        "head_btn_icon": true,
-        "head_btn_rounded": false,
-        "head_button_style": "outline",
-        "head_btns_size": "default",
-        "head_btns_cl": "dark",
-        "head_button_effect": "default",
-        "hidden_btn_mb": false,
-        "head_slide_btn": false,
-        "layout": "t4s-container-wrap",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,50px,",
-        "pd": "",
-        "mg_tb": ",,30px,",
-        "pd_tb": "",
-        "mg_mb": ",,30px,",
-        "pd_mb": ""
-      }
-    },
-    "migraciones_test_VNQXyJ": {
-      "type": "migraciones-test",
-      "name": "Migraciones",
-      "settings": {
-        "custom_liquid": ""
-      }
-    },
-    "shipping_N8EKqT": {
-      "type": "shipping",
-      "blocks": {
-        "shipping_FfnAjM": {
-          "type": "shipping",
-          "settings": {
-            "icon_themes": "box1",
-            "image_icon": "shopify://shop_images/cora.svg",
-            "icon": "las la-truck",
-            "title": "",
-            "text": "<p>+ Esperanza de vida</p>"
-          }
-        },
-        "shipping_9bJXRi": {
-          "type": "shipping",
-          "settings": {
-            "icon_themes": "box2",
-            "image_icon": "shopify://shop_images/dog-3-1.svg",
-            "icon": "las la-redo-alt",
-            "title": "",
-            "text": "<p>Previene la obesidad</p>"
-          }
-        },
-        "shipping_wWcCAP": {
-          "type": "shipping",
-          "settings": {
-            "icon_themes": "car",
-            "image_icon": "shopify://shop_images/Group-795.svg",
-            "icon": "las la-headphones",
-            "title": "",
-            "text": "<p>Previene el sarro</p>"
-          }
-        },
-        "shipping_wUEcP8": {
-          "type": "shipping",
-          "settings": {
-            "icon_themes": "shield1",
-            "image_icon": "shopify://shop_images/Group-4.svg",
-            "icon": "las la-shield-alt",
-            "title": "",
-            "text": "<p>Pelo más brillante</p>"
-          }
-        }
-      },
-      "block_order": [
-        "shipping_FfnAjM",
-        "shipping_9bJXRi",
-        "shipping_wWcCAP",
-        "shipping_wUEcP8"
-      ],
-      "custom_css": [
-        ".probando {border: 2px solid;}"
-      ],
-      "settings": {
-        "design_heading": "1",
-        "block_custom_class": "probando",
-        "heading_center": true,
-        "top_heading": "",
-        "top_subheading": "",
-        "tophead_mb": 10,
-        "tophead_mb_tb": 10,
-        "tophead_mb_mb": 10,
-        "content_align": "text-start",
-        "align_vertical": true,
-        "align_horizontal": false,
-        "divided": false,
-        "src_icon": "get_image",
-        "icon_size": "medium",
-        "icon_effect": "none",
-        "col_dk": "4",
-        "col_tb": "3",
-        "col_mb": "2",
-        "icon_cl": "#ffffff",
-        "hd_cl": "#ffffff",
-        "content_cl": "#ffffff",
-        "bg_wrap_cl": "",
-        "hd_fs": 16,
-        "hd_fw": 500,
-        "txt_fs": 16,
-        "space_h_item": "10",
-        "space_v_item": "15",
-        "space_h_item_tb": "10",
-        "space_v_item_tb": "15",
-        "space_h_item_mb": "10",
-        "space_v_item_mb": "10",
-        "padding_inner": "",
-        "padding_inner_tb": "",
-        "padding_inner_mb": "",
-        "carousel_mobile": false,
-        "dots_cl": "dark",
-        "dots_round": true,
-        "layout": "t4s-container-fluid",
-        "custom_width": 1000,
-        "cl_bg": "#004623",
-        "cl_bg_gradient": "",
-        "mg": ",,0px,",
-        "pd": "20px,200px,20px,200px",
-        "mg_tb": ",,0px,",
-        "pd_tb": "20px,20px,20px,20px",
-        "mg_mb": ",,0px,",
-        "pd_mb": "20px,20px,20px,20px"
-      }
-    },
-    "migraciones_image_text_2_yJ9bmh": {
-      "type": "migraciones-image-text-2",
-      "name": "Migraciones imagen+text 2",
-      "settings": {
-        "brand_mark": "shopify://shop_images/Capa_1_17.webp",
-        "heading_before": "Encuentra la comida adecuada para",
-        "heading_highlight": "tu mascota",
+        "heading_before": "Oferta",
+        "heading_highlight": "flash",
         "heading_after": "",
-        "body_text": "<p>¿Quieres saber el precio exacto de su plan personalizado? Responde un breve formulario con preguntas cortas sobre tu peludo.</p>",
-        "mobile_image": "shopify://shop_images/Diseno_sin_titulo_59.webp",
-        "mobile_image_alt": "Imagen móvil",
-        "button_label": "Haz el test",
-        "button_link": "shopify://pages/crea-su-menu",
-        "time_text": "3 minutos",
-        "desktop_fallback": "shopify://shop_images/Diseno_sin_titulo_59.webp",
-        "desktop_fallback_alt": "Imagen escritorio"
-      }
-    },
-    "migraciones_image_width_text_amVn3j": {
-      "type": "migraciones-image-width-text",
-      "name": "Migraciones image+text",
-      "settings": {
-        "custom_liquid": ""
-      }
-    },
-    "migraciones_columns_9qC3kz": {
-      "type": "migraciones-columns",
-      "blocks": {
-        "card_GzyeBx": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/suscripcion_2_1.jpg",
-            "image_alt": "Imagen card",
-            "step_number": "",
-            "card_title": "Crea tu plan",
-            "card_text": "Cuéntanos un poco sobre tu peludo en menos de 2 min."
-          }
-        },
-        "card_NDU9Ad": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/suscripcion_3_1.jpg",
-            "image_alt": "Imagen card",
-            "step_number": "",
-            "card_title": "Pruébalo con un 10%",
-            "card_text": "Te enviaremos una caja con un descuento especial para que pruebes comida de la mejor calidad."
-          }
-        },
-        "card_jMamWq": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/suscripcion_1_1.jpg",
-            "image_alt": "Imagen card",
-            "step_number": "",
-            "card_title": "Enamórate",
-            "card_text": "Si os encanta, solo elige la frecuencia de entrega. Sin permanencia, 100% flexible."
-          }
-        }
-      },
-      "block_order": [
-        "card_GzyeBx",
-        "card_NDU9Ad",
-        "card_jMamWq"
-      ],
-      "name": "Migraciones columnas",
-      "settings": {
-        "title_prefix": "Cómo funciona",
-        "title_highlight": "nuestra suscripción",
-        "decor_image": "shopify://shop_images/Capa_1_21.png",
-        "decor_image_alt": "Decorativo",
-        "cards_link": "",
-        "btn_label": "Empezar mi plan con un -10%",
-        "btn_link": "shopify://pages/crea-su-menu",
-        "bg_color": "#ffffff",
-        "title_color": "#004623",
-        "highlight_color": "#004623",
-        "text_color": "#004623",
-        "accent_color": "#ffcd00"
-      }
-    },
-    "migraciones_rich_text_AFedhg": {
-      "type": "migraciones-rich-text",
-      "disabled": true,
-      "name": "Migraciones rich text",
-      "settings": {
-        "custom_liquid": ""
-      }
-    },
-    "migraciones_image_Hth9r7": {
-      "type": "migraciones-image",
-      "disabled": true,
-      "name": "Migraciones imagen",
-      "settings": {
-        "desktop_image": "shopify://shop_images/5f90d44833e7340c78f621df_hero_2.jpg_2.jpg",
-        "mobile_image": "shopify://shop_images/5f90d44833e7340c78f621df_hero_2.jpg_2.jpg",
-        "image_link": "",
+        "countdown_date": "2025-11-08 09:00",
+        "label_hours": "horas",
+        "label_minutes": "minutos",
+        "label_seconds": "segundos",
+        "bg_color": "#f4f0e2",
+        "title_color": "#004622",
+        "number_color": "#004622",
+        "label_color": "#004622",
+        "pt_desktop": 20,
+        "pb_desktop": 20,
+        "countdown_mt_desktop": 12,
         "pt_mobile": 0,
         "pb_mobile": 0,
+        "countdown_mt_mobile": 12
+      }
+    },
+    "migraciones_banners_cuenta_atras_Ph34WB": {
+      "type": "migraciones-banners-cuenta-atras",
+      "blocks": {
+        "banner_9KVPxw": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Background_74893601-ee32-4afc-84ca-de257ae43b79.png",
+            "mobile_image": "shopify://shop_images/Background_74893601-ee32-4afc-84ca-de257ae43b79.png",
+            "image_link": "",
+            "product": "condroprotector-perros-articulaciones-acero",
+            "enable_countdown": false,
+            "countdown_date": "2025-11-05 9:00",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-03 9:00",
+            "end_date": "2025-11-06 9:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_wwYhKr": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/oferta-flash-lata-pescado-perro.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-lata-pescado-perro.png",
+            "image_link": "",
+            "product": "lata-comida-cocinada-para-perro-pescado",
+            "enable_countdown": false,
+            "countdown_date": "2025-10-30 14:00",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-06 09:00",
+            "end_date": "2025-11-07 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_fippFK": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/oferta-flash-lata-pescado-gato.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-lata-pescado-gato.png",
+            "image_link": "",
+            "product": "lata-comida-cocinada-para-gato-pescado",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-06 09:00",
+            "end_date": "2025-11-07 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_hJ6B8t": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/oferta-flash-digestiones-firmes.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-digestiones-firmes.png",
+            "image_link": "",
+            "product": "suplemento-salud-intestinal-perro-digestiones-firmes",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-07 09:00",
+            "end_date": "2025-11-08 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_4Mgnx6": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/oferta-flash-barf-pato-1kg.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-barf-pato-1kg.png",
+            "image_link": "",
+            "product": "menu-barf-pato-perros",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-08 09:00",
+            "end_date": "2025-11-09 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_p4BdxH": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/oferta-flash-lata-guiso-pescador-perro.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-lata-guiso-pescador-perro.png",
+            "image_link": "",
+            "product": "lata-guiso-pescador-con-salmon-cerdo-para-perros",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-09 09:00",
+            "end_date": "2025-11-10 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_F7zcaB": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/oferta-flash-lata-guiso-pescador-gato.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-lata-guiso-pescador-gato.png",
+            "image_link": "",
+            "product": "lata-guiso-del-pescador-con-salmon-y-cerdo-para-gatos",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-09 09:00",
+            "end_date": "2025-11-10 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_eAX8Ay": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/oferta-flash-lata-pavo.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-lata-pavo.png",
+            "image_link": "",
+            "product": "lata-de-pavo-para-perros-400g-filosofia-barf",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-10 09:00",
+            "end_date": "2025-11-11 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_Kgincf": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/oferta-flash-sticks-dentales-ternera.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-sticks-dentales-ternera.png",
+            "image_link": "",
+            "product": "sticks-dentales-para-perros",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-12 09:00",
+            "end_date": "2025-11-13 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_nhXxLp": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/oferta-flash-sticks-dentales-digestivo.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-sticks-dentales-digestivo.png",
+            "image_link": "",
+            "product": "stick-dental-perros-digestivo",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-12 09:00",
+            "end_date": "2025-11-13 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_hXWBnb": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/oferta-flash-sticks-dentales-calm.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-sticks-dentales-calm.png",
+            "image_link": "",
+            "product": "stick-dental-perros-relajante",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-12 09:00",
+            "end_date": "2025-11-13 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        }
+      },
+      "block_order": [
+        "banner_9KVPxw",
+        "banner_wwYhKr",
+        "banner_fippFK",
+        "banner_hJ6B8t",
+        "banner_4Mgnx6",
+        "banner_p4BdxH",
+        "banner_F7zcaB",
+        "banner_eAX8Ay",
+        "banner_Kgincf",
+        "banner_nhXxLp",
+        "banner_hXWBnb"
+      ],
+      "name": "Banners Grid 2 columnas",
+      "settings": {
+        "heading_before": "",
+        "heading_highlight": "",
+        "heading_after": "",
+        "title_color": "#004623",
+        "title_pt_desktop": 0,
+        "title_pb_desktop": 48,
+        "title_pt_mobile": 0,
+        "title_pb_mobile": 32,
+        "countdown_bg_color": "#1f1f1f",
+        "countdown_text_color": "#ffffff",
+        "pt_desktop": 12,
+        "pb_desktop": 80,
+        "pt_mobile": 20,
+        "pb_mobile": 0,
+        "bg_color": "#f4f0e2"
+      }
+    },
+    "migraciones_selector_de_colecciones_YEcF6e": {
+      "type": "migraciones-selector-de-colecciones",
+      "blocks": {
+        "collection_wLtpT3": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "countdown_date": "2025-10-28 23:59",
+            "show_discount_badge": "discount",
+            "pet_type": "dog",
+            "collection_name": "Dieta BARF",
+            "collection": "barf-perros",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": ""
+          }
+        },
+        "collection_DVXpBQ": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "countdown_date": "",
+            "show_discount_badge": "discount",
+            "pet_type": "dog",
+            "collection_name": "Comida Cocinada",
+            "collection": "comida-cocinada-para-perros",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": ""
+          }
+        },
+        "collection_qr47Xg": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "countdown_date": "",
+            "show_discount_badge": "discount",
+            "pet_type": "dog",
+            "collection_name": "Latas Comida Húmeda",
+            "collection": "black-friday-latas-comida-natural-perros",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": ""
+          }
+        },
+        "collection_3A4r3q": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "countdown_date": "",
+            "show_discount_badge": "discount",
+            "pet_type": "dog",
+            "collection_name": "Suplementos y Aceites",
+            "collection": "black-friday-suplementos-y-aceites-para-perros",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": ""
+          }
+        },
+        "collection_hDjBCz": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "countdown_date": "",
+            "show_discount_badge": "discount",
+            "pet_type": "dog",
+            "collection_name": "Snacks y mordedores",
+            "collection": "black-friday-snacks-mordedores-perros",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": ""
+          }
+        },
+        "collection_9na79a": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "countdown_date": "",
+            "show_discount_badge": "discount",
+            "pet_type": "cat",
+            "collection_name": "Dieta BARF",
+            "collection": "barf-gatos",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": ""
+          }
+        },
+        "collection_mgCBbt": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "countdown_date": "",
+            "show_discount_badge": "discount",
+            "pet_type": "cat",
+            "collection_name": "Comida Cocinada",
+            "collection": "comida-cocinada-para-gatos",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": ""
+          }
+        },
+        "collection_H9Gfem": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "countdown_date": "",
+            "show_discount_badge": "discount",
+            "pet_type": "cat",
+            "collection_name": "Latas Comida Húmeda",
+            "collection": "black-friday-latas-comida-natural-para-gatos",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": ""
+          }
+        },
+        "collection_JThNQp": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "countdown_date": "",
+            "show_discount_badge": "discount",
+            "pet_type": "cat",
+            "collection_name": "Suplementos y Aceites",
+            "collection": "black-friday-suplementos-y-aceites-para-gatos",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": ""
+          }
+        },
+        "collection_JqLpXU": {
+          "type": "collection",
+          "settings": {
+            "countdown_date": "",
+            "show_discount_badge": "discount",
+            "pet_type": "dog",
+            "collection_name": "Snacks",
+            "collection": "black-friday-snacks-mordedores-perros",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": ""
+          }
+        },
+        "collection_nDYQRz": {
+          "type": "collection",
+          "settings": {
+            "countdown_date": "",
+            "show_discount_badge": "discount",
+            "pet_type": "cat",
+            "collection_name": "Snacks",
+            "collection": "black-friday-snacks-para-gatos",
+            "banner_action_type": "link",
+            "banner_link_url": "",
+            "banner_product": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_wLtpT3",
+        "collection_DVXpBQ",
+        "collection_qr47Xg",
+        "collection_3A4r3q",
+        "collection_hDjBCz",
+        "collection_9na79a",
+        "collection_mgCBbt",
+        "collection_H9Gfem",
+        "collection_JThNQp",
+        "collection_JqLpXU",
+        "collection_nDYQRz"
+      ],
+      "name": "Descuentos Especiales",
+      "settings": {
+        "heading_before": "Descuentos",
+        "heading_highlight": "especiales",
+        "heading_after": "",
+        "title_color": "#ffffff",
+        "outer_bg_color": "#f4f0e2",
+        "bg_color": "#1f1f1f",
+        "border_radius": 20,
+        "border_radius_desktop": 40,
+        "inner_padding_mobile": 20,
+        "inner_padding_desktop": 40,
+        "accent_color": "#5ccc84",
+        "countdown_bg_color": "#1f1f1f",
+        "countdown_text_color": "#ffffff",
+        "price_color": "#5ccc84",
+        "compare_price_color": "#f4f0e2",
         "pt_desktop": 0,
-        "pb_desktop": 0,
-        "image_radius": 0,
-        "bg_color": "#ffffff",
-        "boxed": false
+        "pb_desktop": 24,
+        "pt_mobile": 40,
+        "pb_mobile": 40
       }
     },
-    "migraciones_ugc_UrjgJT": {
-      "type": "migraciones-ugc",
+    "migraciones_image_width_text_editable_aeixFi": {
+      "type": "migraciones-image-width-text-editable",
+      "name": "Imagen + Texto",
+      "settings": {
+        "image": "shopify://shop_images/353b4457832967a1e491b564db7028d037415663_1.png",
+        "image_position": "left",
+        "brand_logo": "shopify://shop_images/Equipo_de_expertos.png",
+        "title": "Asesoramiento nutricional experto",
+        "description": "<p>En Wild Balance te ofrecemos asesoramiento nutricional personalizado para mejorar la salud y bienestar de tu mascota. Nuestro equipo te ayuda a elegir la mejor dieta natural y equilibrada, adaptada a sus necesidades. ¡Alimenta con conciencia y nota la diferencia!</p>",
+        "show_badge": true,
+        "badge_image": "shopify://shop_images/Group_1538.png",
+        "badge_title": "+100.000 Mascotas contentas",
+        "badge_subtitle": "Para perros y gatos",
+        "button_text": "Escríbenos",
+        "button_link": "https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0&_kx=_V3Qt6MyBasq1R9MaiJGmqCJaXgPZI4XMm1kP-MvGoCJ2YvBXCDqhjZk3RLlmfVw.YsKiw5",
+        "button_new_tab": true,
+        "bg_color": "#f4f0e2",
+        "title_color": "#004623",
+        "text_color": "#222222",
+        "button_bg_color": "#ffcd00",
+        "button_text_color": "#004623",
+        "pt_desktop": 80,
+        "pb_desktop": 80,
+        "mt_desktop": 0,
+        "mb_desktop": 0,
+        "pt_mobile": 0,
+        "pb_mobile": 40,
+        "mt_mobile": 0,
+        "mb_mobile": 0
+      }
+    },
+    "migraciones_banner_de_iconos_hP7P9A": {
+      "type": "migraciones-banner-de-iconos",
       "blocks": {
-        "video_CY9jYP": {
-          "type": "video",
+        "benefit_3QAkyG": {
+          "type": "benefit",
           "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/8cf2487450614772bf4df9dd2d4f6cff.mov",
-            "poster_url": "shopify://shop_images/T3_-_IMG_Stories.jpg",
-            "caption": ""
+            "icon": "shopify://shop_images/Image_72.png",
+            "text": "+ Esperanza de vida"
           }
         },
-        "video_EaJL63": {
-          "type": "video",
+        "benefit_EQcAM9": {
+          "type": "benefit",
           "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/e440e75b45204310b41ceda30d55e10b.mp4",
-            "poster_url": "shopify://shop_images/IMG_5702.jpg",
-            "caption": ""
+            "icon": "shopify://shop_images/Image_71.png",
+            "text": "Previene el sarro"
           }
         },
-        "video_xQbR4R": {
-          "type": "video",
+        "benefit_MyFAC3": {
+          "type": "benefit",
           "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/975a98b000094c57b2148b082c944d33.mov",
-            "poster_url": "shopify://shop_images/T3_-_IMG_Stories.png",
-            "caption": ""
+            "icon": "shopify://shop_images/Image_73_8b5f7fa0-13dc-4d49-8518-18d44def9b37.png",
+            "text": "Previene la obesidad"
           }
         },
-        "video_V8gqXJ": {
-          "type": "video",
+        "benefit_QrXtVL": {
+          "type": "benefit",
           "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/94f8facdfcd145f3ac97a77a12ccf711.mp4",
-            "poster_url": "shopify://shop_images/T3_-_IMG_Stories_2.jpg",
-            "caption": ""
+            "icon": "shopify://shop_images/Image_74_540c5490-5fcd-4c52-9405-b63417804798.png",
+            "text": "Pelo más brillante"
           }
         }
       },
       "block_order": [
-        "video_CY9jYP",
-        "video_EaJL63",
-        "video_xQbR4R",
-        "video_V8gqXJ"
+        "benefit_3QAkyG",
+        "benefit_EQcAM9",
+        "benefit_MyFAC3",
+        "benefit_QrXtVL"
       ],
-      "name": "Migraciones ugc",
+      "name": "Beneficios con Iconos",
       "settings": {
-        "button_text": "Prueba Wild Balance",
-        "button_url": "shopify://collections/comida"
+        "bg_color": "#d9d9c8",
+        "text_color": "#004622",
+        "columns_mobile": 2,
+        "columns_tablet": 4,
+        "columns_desktop": 4,
+        "gap_mobile": 24,
+        "gap_tablet": 32,
+        "gap_desktop": 40,
+        "icon_size": 40,
+        "item_gap_mobile": 8,
+        "item_gap_desktop": 12,
+        "text_size_mobile": 14,
+        "text_size_desktop": 16,
+        "pt_desktop": 40,
+        "pb_desktop": 40,
+        "pt_mobile": 20,
+        "pb_mobile": 20
       }
     },
-    "migraciones_faq_tUMPqn": {
-      "type": "migraciones-faq",
-      "name": "Migraciones faq",
-      "settings": {
-        "custom_liquid": ""
-      }
-    },
-    "migraciones_reviews_x9hAB4": {
-      "type": "migraciones-reviews",
-      "disabled": true,
-      "name": "Migraciones clientes",
-      "settings": {
-        "custom_liquid": ""
-      }
-    },
-    "migraciones_newsletter_qXCxVc": {
-      "type": "migraciones-newsletter",
-      "name": "Migraciones newsletter",
-      "settings": {
-        "custom_liquid": ""
-      }
-    },
-    "1760292679b5c6369d": {
-      "type": "apps",
-      "settings": {}
-    },
-    "17602927814de94466": {
-      "type": "apps",
+    "migraciones_faq_2_4d9LGa": {
+      "type": "migraciones-faq-2",
       "blocks": {
-        "judge_me_reviews_all_reviews_page_6T6p7J": {
-          "type": "shopify://apps/judge-me-reviews/blocks/all_reviews_page/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
+        "faq_zpMxf7": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Qué es la comida natural y en qué se diferencia del pienso?",
+            "answer": "<p>Nuestros menús están hechos con <strong>ingredientes frescos y 100 % naturales</strong>, sin cereales, conservantes ni subproductos.<br/><br/>A diferencia del pienso, <strong>mantiene los nutrientes y la hidratación</strong>, lo que se traduce en una <strong>digestión más fácil</strong> y una mejor asimilación.<br/><br/>Es una forma de alimentarles más parecida a lo que comerían de manera natural.</p>"
+          }
+        },
+        "faq_MFF6kj": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Qué beneficios tiene cambiar a la comida natural?",
+            "answer": "<p>¡Son muchos!<br/><br/>La comida natural <strong>mejora la digestión, aumenta la energía y ayuda a reducir la inflamación</strong>.<br/><br/>También notarás cambios visibles: <strong>un pelaje más brillante, heces más compactas y menos olorosas</strong>, y un peludo más vital y feliz.<br/><br/>Además, <strong>evitas aditivos, cereales y subproductos</strong>, ofreciéndole solo <strong>ingredientes naturales y de calidad</strong>.<br/><br/></p>"
+          }
+        },
+        "faq_GCBxeq": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Es segura la alimentación natural?",
+            "answer": "<p>¡Sí, totalmente!<br/><br/>Nuestros menús están <strong>formulados por profesionales</strong> para ser completos y equilibrados, siguiendo estándares veterinarios.<br/><br/>Usamos solo <strong>materias primas de calidad</strong>, y mantenemos <strong>la cadena de frío</strong> para garantizar la máxima seguridad alimentaria desde nuestra cocina hasta tu casa.<br/></p>"
+          }
+        },
+        "faq_xMxEq9": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Cómo puedo empezar?",
+            "answer": "<p>¡Muy fácil!<br/><br/>Puedes hacerlo de dos maneras, según el tipo de menú que elijas:</p><ul><li><strong>Si optas por BARF</strong>: empieza directamente con nuestro pack de iniciación o haz la transición poco a poco, sustituyendo una de sus comidas por BARF cada día.<br/></li><li><strong>Si prefieres comida cocinada</strong>: comienza con menús suaves, como el de pollo, e incorpora el resto de manera progresiva.</li></ul><p>Y si te surgen dudas, <strong>nuestro equipo te acompaña en todo el proceso</strong> para que la transición sea sencilla y segura. </p><p>👉🏻 <a href=\"https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0\" target=\"_blank\" title=\"https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0\">Habla con nosotros</a></p>"
+          }
+        },
+        "faq_m6NQ9b": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Qué cantidad tengo que darle?",
+            "answer": "<p>La ración ideal depende de su <strong>edad, peso y nivel de actividad</strong>.<br/><br/>En cachorros o perros mayores ajustamos las cantidades según sus necesidades.<br/><br/>No te preocupes, si nos das esos datos, <strong>te ayudamos encantados a preparar su plan de alimentación personalizado</strong>.</p><p></p><p>👉🏻 <a href=\"https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0\" target=\"_blank\" title=\"https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0\">Habla con nosotros</a></p><p></p><p>Y si prefieres hacerlo tú mismo, puedes usar <a href=\"https://wildbalance.es/pages/calculadora-raciones\" target=\"_blank\" title=\"https://wildbalance.es/pages/calculadora-raciones\"><strong>nuestra calculadora online</strong></a> para conocer la cantidad exacta que necesita tu peludo cada día. <br/><br/></p>"
+          }
+        },
+        "faq_iWFdJa": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Tengo que usar suplementos con este tipo de dieta?",
+            "answer": "<p>Si tu peludo es joven y está sano, <strong>no es necesario añadir suplementos</strong>.<br/><br/>Nuestros menús son <strong>completos y equilibrados</strong>, así que solo necesitarás <strong>un buen aceite de salmón o sardina</strong> los días que no coma pescado, para mantener su aporte de Omega 3.<br/><br/>Si ya es abuelito o quieres ayudar a mejorar alguna patología, puedes valorar incluir <strong>suplementos específicos según sus necesidades</strong>.<br/><br/>👉🏻<a href=\"/collections/suplementos-y-aceites\" target=\"_blank\" title=\"Suplementos y aceites\"> Ver todos los suplementos</a><br/><br/></p>"
+          }
+        },
+        "faq_EDb9Gm": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Cuál es la diferencia entre las latas y la comida cocinada?",
+            "answer": "<p>En <strong>calidad y valor nutricional</strong>, no hay diferencia: ambas opciones son igual de sanas y completas.<br/><br/>La diferencia está en el <strong>proceso</strong>:</p><ul><li>Las <strong>latas</strong> se cocinan a alta temperatura para su conservación.<br/></li><li>La <strong>cocinada</strong> se elabora de forma más casera y se congela para mantener intactas sus propiedades.</li></ul><p>La cocinada suele tener una <strong>textura más suave y casera</strong>, mientras que las latas ofrecen un poco más de variedad.<br/><br/>Lo ideal es <strong>combinar ambas opciones</strong> según lo que mejor se adapte a tu peludo.<br/></p>"
+          }
+        },
+        "faq_G7DwfX": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Puedo cocinar las hamburguesas BARF y cómo debo conservarlas?",
+            "answer": "<p>Lo ideal es <strong>no cocinarlas</strong>, ya que al hacerlo perderían parte de sus nutrientes y el hueso carnoso podría alterarse, lo que no sería seguro.</p><p>Si prefieres comida cocinada, puedes optar por nuestros <a href=\"/collections/comida-cocinada\" target=\"_blank\" title=\"Comida cocinada\"><strong>menús cocinados</strong></a>, pensados para mantener toda la calidad del producto sin riesgos.<br/><br/>Para conservar los menús, <strong>mantenlos congelados hasta el momento de uso</strong> y <strong>descongélalos siempre en la nevera</strong>, nunca a temperatura ambiente.<br/><br/>Una vez abiertos, <strong>guárdalos refrigerados y consúmelos en 24–48 h</strong> para conservar toda su frescura y sabor.</p>"
+          }
+        },
+        "faq_VpUJmT": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Puedo combinar comida natural con pienso?",
+            "answer": "<p>Sí, aunque <strong>lo ideal es hacer la transición completa</strong> a comida natural.<br/><br/>Si quieres hacerlo poco a poco, puedes <strong>alternar las tomas</strong> (una de pienso y otra de natural) y observar cómo responde su digestión.<br/><br/>Nuestro equipo está aquí para ayudarte a que el cambio sea gradual, equilibrado y sin complicaciones.<br/><br/>👉🏻 <a href=\"https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0\" target=\"_blank\" title=\"https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0\">Habla con nosotros</a></p>"
+          }
         }
       },
       "block_order": [
-        "judge_me_reviews_all_reviews_page_6T6p7J"
+        "faq_zpMxf7",
+        "faq_MFF6kj",
+        "faq_GCBxeq",
+        "faq_xMxEq9",
+        "faq_m6NQ9b",
+        "faq_iWFdJa",
+        "faq_EDb9Gm",
+        "faq_G7DwfX",
+        "faq_VpUJmT"
       ],
-      "disabled": true,
-      "settings": {}
+      "name": "Migraciones FAQ",
+      "settings": {
+        "show_image": true,
+        "sidebar_image": "shopify://shop_images/7deadb414f511cd5c3c8ee8266284f065cab2480_1.webp",
+        "brand_logo": "shopify://shop_images/Capa_1_23.png",
+        "heading_before": "Te ayudamos",
+        "heading_highlight": "en todo",
+        "heading_after": "",
+        "bg_color": "#1f1f1f",
+        "title_color": "#ffffff",
+        "button_bg_color": "#222222",
+        "button_text_color": "#ffffff",
+        "item_bg_color": "rgba(0,0,0,0)",
+        "border_color": "#ffffff",
+        "answer_text_color": "#ffffff",
+        "pt_desktop": 100,
+        "pb_desktop": 100,
+        "pt_mobile": 40,
+        "pb_mobile": 40
+      }
+    },
+    "custom_liquid_WAfnkt": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
+      "settings": {
+        "custom_liquid": "<style>\n\n.t4s-header__wrapper {background: #222222;color:white;}\n\n.t4s-menu-item a, .t4s-menu-item a:hover {color:white!important;}\n\n.t4s-sub-menu {background:#222222!important;}\n\n.flex.items-center.bg-white.shadow.border p {color:#222222!important;}\n\n.t4s-site-nav__icon a .t4s-site-nav__icon a svg, .t4s-site-nav__icon a:hover {color:white!important;}\n\n.t4s-top-bar, .t4s-top-bar button {background:#F0807B!important;color:white;}\n\n.header__normal-logo, .header__sticky-logo {filter: brightness(0) invert(1)!important;}\n\n/* Aplica el filtro a todos los iconos menos al carrito */\n.t4s-site-nav__icon a:not([href=\"/cart\"]),\n.t4s-d-lg-none {\n  filter: brightness(0) invert(1);\n}\n\n/* Aplica el filtro solo a los SVG del carrito */\n.t4s-site-nav__cart .t4s-cart-empty-icon,\n.t4s-site-nav__cart .t4s-cart-filled-icon {\n  filter: brightness(0) invert(1);\n}\n\n\n.t4s-nav__ul>li> a:hover {color:white!important;}\n\n.t4s-lh-1.t4s-d-flex svg {display:none;}\n\n#shopify-section-footer, .t4s_se_footer, .t4s_se_footer-bottom {background:#222222!important}\n\n.t4s-count-box {background: #F0807B!important;color:white!important;}\n</style>"
+      }
     }
   },
   "order": [
-    "slideshow3_ArqNAC",
-    "migraciones_image_LxHCKY",
-    "banner_home_tHiHUK",
-    "migraciones_tabs_collections_BaRKMi",
-    "migraciones_feafured_collection_eMTCmk",
-    "migraciones_featured_collection_2_f9XwGn",
-    "migraciones_test_VNQXyJ",
-    "shipping_N8EKqT",
-    "migraciones_image_text_2_yJ9bmh",
-    "migraciones_image_width_text_amVn3j",
-    "migraciones_columns_9qC3kz",
-    "migraciones_rich_text_AFedhg",
-    "migraciones_image_Hth9r7",
-    "migraciones_ugc_UrjgJT",
-    "migraciones_faq_tUMPqn",
-    "migraciones_reviews_x9hAB4",
-    "migraciones_newsletter_qXCxVc",
-    "1760292679b5c6369d",
-    "17602927814de94466"
+    "heading",
+    "main",
+    "migraciones_banner_responsive_d6hJg8",
+    "migraciones_cuenta_atras_UCakWN",
+    "migraciones_banners_cuenta_atras_Ph34WB",
+    "migraciones_selector_de_colecciones_YEcF6e",
+    "migraciones_image_width_text_editable_aeixFi",
+    "migraciones_banner_de_iconos_hP7P9A",
+    "migraciones_faq_2_4d9LGa",
+    "custom_liquid_WAfnkt"
   ]
 }
