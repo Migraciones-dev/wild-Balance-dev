@@ -73,23 +73,25 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
 
       <link rel="stylesheet" type="text/css" href="{{ 'customQuerys.css' | asset_url }}">
 
-      <script>
-        (function () {
-          var loc = window.location;
+      {% comment %}
+        <script>
+          (function () {
+            var loc = window.location;
 
-          // Solo dominio wildbalance.es (con o sin www) y solo la home
-          var esDominioCorrecto = loc.hostname === 'wildbalance.es' || loc.hostname === 'www.wildbalance.es';
+            // Solo dominio wildbalance.es (con o sin www) y solo la home
+            var esDominioCorrecto = loc.hostname === 'wildbalance.es' || loc.hostname === 'www.wildbalance.es';
 
-          var esHome = loc.pathname === '/' || loc.pathname === '';
+            var esHome = loc.pathname === '/' || loc.pathname === '';
 
-          // Evitar bucle en la propia página de destino
-          var yaEnWildDays = loc.pathname.indexOf('/pages/black-friday') === 0;
+            // Evitar bucle en la propia página de destino
+            var yaEnWildDays = loc.pathname.indexOf('/pages/black-friday') === 0;
 
-          if (esDominioCorrecto && esHome && !yaEnWildDays) {
-            loc.replace('https://wildbalance.es/pages/black-friday');
-          }
-        })();
-      </script>
+            if (esDominioCorrecto && esHome && !yaEnWildDays) {
+              loc.replace('https://wildbalance.es/pages/black-friday');
+            }
+          })();
+        </script>
+      {% endcomment %}
 
       {%- if settings.favicon != blank -%}
         <link rel="shortcut icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}"
