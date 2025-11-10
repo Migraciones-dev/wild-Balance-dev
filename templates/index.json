@@ -330,40 +330,19 @@
             "mb_mobile": 0
           }
         },
-        "banner_WNxieW": {
+        "banner_A8VDAk": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/Background_1_da3ecbc6-bdb5-4663-80c8-2ed445b2f836.png",
-            "mobile_image": "shopify://shop_images/Background_1_da3ecbc6-bdb5-4663-80c8-2ed445b2f836.png",
+            "desktop_image": "shopify://shop_images/oferta-flash-iniciacion-perro.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-iniciacion-perro.png",
             "image_link": "",
-            "product": "lata-de-ternera-para-perros-400g-filosofia-barf",
+            "product": "pack-iniciacion-barf-para-perros",
             "enable_countdown": false,
             "countdown_date": "",
             "countdown_position_desktop": "center",
             "enable_schedule": true,
-            "start_date": "2025-11-15 09:00",
-            "end_date": "2025-11-16 09:00",
-            "border_radius_desktop": 30,
-            "border_radius_mobile": 12,
-            "mt_desktop": 0,
-            "mb_desktop": 0,
-            "mt_mobile": 0,
-            "mb_mobile": 0
-          }
-        },
-        "banner_PqUFUM": {
-          "type": "banner",
-          "settings": {
-            "desktop_image": "shopify://shop_images/Background_bdfac8ed-a672-4df9-a3f6-ffa40e09b2e7.png",
-            "mobile_image": "shopify://shop_images/Background_bdfac8ed-a672-4df9-a3f6-ffa40e09b2e7.png",
-            "image_link": "",
-            "product": "",
-            "enable_countdown": false,
-            "countdown_date": "",
-            "countdown_position_desktop": "center",
-            "enable_schedule": true,
-            "start_date": "2025-11-14 09:00",
-            "end_date": "2025-11-15 09:00",
+            "start_date": "2025-11-13 09:00",
+            "end_date": "2025-11-14 09:00",
             "border_radius_desktop": 30,
             "border_radius_mobile": 12,
             "mt_desktop": 0,
@@ -434,6 +413,48 @@
             "mt_mobile": 0,
             "mb_mobile": 0
           }
+        },
+        "banner_PqUFUM": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Background_bdfac8ed-a672-4df9-a3f6-ffa40e09b2e7.png",
+            "mobile_image": "shopify://shop_images/Background_bdfac8ed-a672-4df9-a3f6-ffa40e09b2e7.png",
+            "image_link": "",
+            "product": "",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-14 09:00",
+            "end_date": "2025-11-15 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_WNxieW": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Background_1_da3ecbc6-bdb5-4663-80c8-2ed445b2f836.png",
+            "mobile_image": "shopify://shop_images/Background_1_da3ecbc6-bdb5-4663-80c8-2ed445b2f836.png",
+            "image_link": "",
+            "product": "lata-de-ternera-para-perros-400g-filosofia-barf",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-15 09:00",
+            "end_date": "2025-11-16 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
         }
       },
       "block_order": [
@@ -445,11 +466,12 @@
         "banner_p4BdxH",
         "banner_F7zcaB",
         "banner_eAX8Ay",
-        "banner_WNxieW",
-        "banner_PqUFUM",
+        "banner_A8VDAk",
         "banner_Kgincf",
         "banner_nhXxLp",
-        "banner_hXWBnb"
+        "banner_hXWBnb",
+        "banner_PqUFUM",
+        "banner_WNxieW"
       ],
       "name": "Banners Grid 2 columnas",
       "settings": {
