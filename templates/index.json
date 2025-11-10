@@ -553,6 +553,7 @@
         },
         "collection_JqLpXU": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "countdown_date": "",
             "show_discount_badge": "discount",
@@ -566,6 +567,7 @@
         },
         "collection_nDYQRz": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "countdown_date": "",
             "show_discount_badge": "discount",
