@@ -330,6 +330,27 @@
             "mb_mobile": 0
           }
         },
+        "banner_trDGtt": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/oferta-flash-yaky-original.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-yaky-original.png",
+            "image_link": "",
+            "product": "wild-yaky-original",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-11 09:00",
+            "end_date": "2025-12-11 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
         "banner_Kgincf": {
           "type": "banner",
           "settings": {
@@ -466,6 +487,7 @@
         "banner_p4BdxH",
         "banner_F7zcaB",
         "banner_eAX8Ay",
+        "banner_trDGtt",
         "banner_Kgincf",
         "banner_nhXxLp",
         "banner_hXWBnb",
