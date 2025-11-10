@@ -330,6 +330,27 @@
             "mb_mobile": 0
           }
         },
+        "banner_PqUFUM": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Background_bdfac8ed-a672-4df9-a3f6-ffa40e09b2e7.png",
+            "mobile_image": "shopify://shop_images/Background_bdfac8ed-a672-4df9-a3f6-ffa40e09b2e7.png",
+            "image_link": "",
+            "product": "",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-14 09:00",
+            "end_date": "2025-11-15 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
         "banner_Kgincf": {
           "type": "banner",
           "settings": {
@@ -403,6 +424,7 @@
         "banner_p4BdxH",
         "banner_F7zcaB",
         "banner_eAX8Ay",
+        "banner_PqUFUM",
         "banner_Kgincf",
         "banner_nhXxLp",
         "banner_hXWBnb"
