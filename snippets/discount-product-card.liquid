@@ -12,10 +12,102 @@
   if current_variant.compare_at_price > current_variant.price
     assign discount_percentage = current_variant.compare_at_price | minus: current_variant.price | times: 100 | divided_by: current_variant.compare_at_price | round: 0
   endif
+
+  assign is_countdown_active = false
+  if show_discount_badge == 'countdown' and countdown_date and countdown_date != blank
+    assign is_countdown_active = true
+  endif
+
+  assign promo_product = product
 -%}
 
 <div class="discount-product-card">
   <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow relative">
+    
+    {%- comment -%} ETIQUETA 1: "SOLO HOY 5X4" si tiene tag 'promo' y NO hay countdown {%- endcomment -%}
+    {% unless is_countdown_active %}
+      {%- if promo_product and promo_product.tags contains 'promo' -%}
+        <div
+          class="offer-tag"
+          style="
+            background: #f0807b;
+            color: #faf5e7;
+            position: absolute;
+            z-index: 1;
+            font-size: 1.2rem;
+            border-radius: 0 0 10px 10px;
+            padding: 0.5rem 0.2rem;
+            right: 10%;
+            font-weight: 900;
+          "
+        >
+          <p class="offer-tag-1" style="font-size: 0.8rem; margin: 0;">-SOLO HOY-</p>
+          <p class="offer-tag-2" style="font-size: 2rem; margin: -5px 0 0;">5X4</p>
+        </div>
+      {%- endif -%}
+    {% endunless %}
+
+    {%- comment -%} ETIQUETA 2: Descuento % automático si NO hay countdown {%- endcomment -%}
+    {% unless is_countdown_active %}
+      {% if current_variant.compare_at_price > current_variant.price %}
+        {% unless product.tags contains 'sin-descuento' %}
+          <div
+            class="offer-tag"
+            style="
+              background: #f0807b;
+              color: #faf5e7;
+              position: absolute;
+              z-index: 1;
+              font-size: 1.2rem;
+              border-radius: 0 0 10px 10px;
+              padding: 0.5rem 0.2rem;
+              right: 10%;
+              font-weight: 900;
+              z-index: 2;
+            "
+          >
+            <p class="offer-tag-1 text-center" style="font-size: 0.8rem;">OFERTA</p>
+            <p class="offer-tag-2 text-center" style="font-size: 2rem; margin: -5px 0;">{{ discount_percentage }}%</p>
+          </div>
+        {% endunless %}
+      {% endif %}
+    {% endunless %}
+
+    {%- comment -%} ETIQUETA 3: Tag personalizado 'oferta_TEXTO_PROMO' si NO hay countdown {%- endcomment -%}
+    {% unless is_countdown_active %}
+      {% assign oferta_tag = '' %}
+      {% for t in product.tags %}
+        {% if t contains 'oferta_' %}
+          {% assign oferta_tag = t %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+
+      {% unless oferta_tag == '' or product.tags contains 'sin-descuento' %}
+        {% assign parts = oferta_tag | split: '_' %}
+        {% assign oferta_texto = parts[1] | upcase %}
+        {% assign oferta_promo = parts[2] | upcase %}
+
+        <div
+          class="offer-tag"
+          style="
+            background: #f0807b;
+            color: #fff9ed;
+            position: absolute;
+            z-index: 3;
+            font-size: 1.2rem;
+            border-radius: 0 0 10px 10px;
+            padding: 0.5rem 0.2rem;
+            left: 10%;
+            font-weight: 900;
+          "
+        >
+          <p class="offer-tag-1 text-center" style="font-size: 0.8rem;">{{ oferta_texto }}</p>
+          <p class="offer-tag-2 text-center" style="font-size: 2rem; margin: -5px 0;">{{ oferta_promo }}</p>
+        </div>
+      {% endunless %}
+    {% endunless %}
+
     {%- comment -%} Badge circular solo si show_discount_badge == 'discount' {%- endcomment -%}
     {% if show_discount_badge == 'discount' and current_variant.compare_at_price > current_variant.price %}
       <div
@@ -119,19 +211,16 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    // Countdown timers - CON FIX PARA SAFARI/iOS
     const countdownBadges = document.querySelectorAll('[data-countdown-end]');
 
     countdownBadges.forEach((badge) => {
       const endDateStr = badge.getAttribute('data-countdown-end');
       if (!endDateStr) return;
 
-      // FIX PARA SAFARI/iOS: Convertir formato YYYY-MM-DD HH:MM a ISO 8601
       const parts = endDateStr.split(' ');
-      const datePart = parts[0]; // YYYY-MM-DD
-      const timePart = parts[1] || '00:00'; // HH:MM
+      const datePart = parts[0];
+      const timePart = parts[1] || '00:00';
 
-      // Convertir a formato ISO 8601: YYYY-MM-DDTHH:MM:00
       const isoDate = `${datePart}T${timePart}:00`;
       const endDate = new Date(isoDate).getTime();
 
