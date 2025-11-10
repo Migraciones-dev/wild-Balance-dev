@@ -497,6 +497,27 @@
             "mt_mobile": 0,
             "mb_mobile": 0
           }
+        },
+        "banner_tFrRWV": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Background_2_b43645c1-7baf-4727-91b5-1d46c6c1fb46.png",
+            "mobile_image": "shopify://shop_images/Background_2_b43645c1-7baf-4727-91b5-1d46c6c1fb46.png",
+            "image_link": "",
+            "product": "snacks-premios-naturales-perros-light-pavo",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-16 09:00",
+            "end_date": "2025-11-17 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
         }
       },
       "block_order": [
@@ -515,7 +536,8 @@
         "banner_hXWBnb",
         "banner_A8VDAk",
         "banner_PqUFUM",
-        "banner_WNxieW"
+        "banner_WNxieW",
+        "banner_tFrRWV"
       ],
       "name": "Banners Grid 2 columnas",
       "settings": {
