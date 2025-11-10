@@ -330,6 +330,27 @@
             "mb_mobile": 0
           }
         },
+        "banner_WNxieW": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Background_1_da3ecbc6-bdb5-4663-80c8-2ed445b2f836.png",
+            "mobile_image": "shopify://shop_images/Background_1_da3ecbc6-bdb5-4663-80c8-2ed445b2f836.png",
+            "image_link": "",
+            "product": "lata-de-ternera-para-perros-400g-filosofia-barf",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-15 09:00",
+            "end_date": "2025-11-16 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
         "banner_PqUFUM": {
           "type": "banner",
           "settings": {
@@ -424,6 +445,7 @@
         "banner_p4BdxH",
         "banner_F7zcaB",
         "banner_eAX8Ay",
+        "banner_WNxieW",
         "banner_PqUFUM",
         "banner_Kgincf",
         "banner_nhXxLp",
