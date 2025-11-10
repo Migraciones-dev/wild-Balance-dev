@@ -459,7 +459,6 @@
         },
         "collection_qr47Xg": {
           "type": "collection",
-          "disabled": true,
           "settings": {
             "countdown_date": "",
             "show_discount_badge": "discount",
@@ -473,7 +472,6 @@
         },
         "collection_3A4r3q": {
           "type": "collection",
-          "disabled": true,
           "settings": {
             "countdown_date": "",
             "show_discount_badge": "discount",
@@ -529,7 +527,6 @@
         },
         "collection_H9Gfem": {
           "type": "collection",
-          "disabled": true,
           "settings": {
             "countdown_date": "",
             "show_discount_badge": "discount",
@@ -543,7 +540,6 @@
         },
         "collection_JThNQp": {
           "type": "collection",
-          "disabled": true,
           "settings": {
             "countdown_date": "",
             "show_discount_badge": "discount",
