@@ -518,6 +518,69 @@
             "mt_mobile": 0,
             "mb_mobile": 0
           }
+        },
+        "banner_xfbVyn": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Background_4.png",
+            "mobile_image": "shopify://shop_images/Background_4.png",
+            "image_link": "",
+            "product": "snacks-premios-naturales-ternera-perros-senior",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-16 09:00",
+            "end_date": "2025-11-17 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_KqadgN": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Background_5.png",
+            "mobile_image": "shopify://shop_images/Background_5.png",
+            "image_link": "",
+            "product": "snacks-premios-naturales-perros-pelaje-sano-venado",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-16 09:00",
+            "end_date": "2025-11-17 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_UK9Td8": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Background_3_7f878060-c730-4915-9c84-b5c3fdf45d62.png",
+            "mobile_image": "shopify://shop_images/Background_3_7f878060-c730-4915-9c84-b5c3fdf45d62.png",
+            "image_link": "",
+            "product": "snacks-premios-naturales-perros-digestivo-pato",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-16 09:00",
+            "end_date": "2025-11-17 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
         }
       },
       "block_order": [
@@ -537,7 +600,10 @@
         "banner_A8VDAk",
         "banner_PqUFUM",
         "banner_WNxieW",
-        "banner_tFrRWV"
+        "banner_tFrRWV",
+        "banner_xfbVyn",
+        "banner_KqadgN",
+        "banner_UK9Td8"
       ],
       "name": "Banners Grid 2 columnas",
       "settings": {
