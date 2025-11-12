@@ -135,77 +135,40 @@
     {%- assign promo_product = card_product -%}
   {%- endif -%}
 
-  {% unless is_countdown_active %}
-    {%- if promo_product and promo_product.tags contains 'promo' -%}
+  {%- comment -%} ETIQUETA 1: "SOLO HOY 5X4" si tiene tag 'promo' {%- endcomment -%}
+  {%- if promo_product and promo_product.tags contains 'promo' -%}
+    <div
+      class="offer-tag"
+      style="
+        background: #f0807b;
+        color: #faf5e7;
+        position: absolute;
+        z-index: 1;
+        font-size: 1.2rem;
+        border-radius: 0 0 10px 10px;
+        padding: 0.5rem 0.2rem;
+        left: 10%;
+        font-weight: 900;
+      "
+    >
+      <p class="offer-tag-1" style="font-size: 0.8rem; margin: 0;">-SOLO HOY-</p>
+      <p class="offer-tag-2" style="font-size: 2rem; margin: -5px 0 0;">5X4</p>
+    </div>
+  {%- endif -%}
+
+  {%- comment -%} ETIQUETA 2: Descuento % automático {%- endcomment -%}
+  {% assign v = product.selected_or_first_available_variant %}
+  {% assign d = v.compare_at_price | minus: v.price | times: 100 | divided_by: v.compare_at_price | round %}
+
+  {% if v.compare_at_price > v.price %}
+    {% unless product.tags contains 'sin-descuento' %}
       <div
         class="offer-tag"
         style="
           background: #f0807b;
           color: #faf5e7;
           position: absolute;
-          z-index: 1;
-          font-size: 1.2rem;
-          border-radius: 0 0 10px 10px;
-          padding: 0.5rem 0.2rem;
-          right: 10%;
-          font-weight: 900;
-        "
-      >
-        <p class="offer-tag-1" style="font-size: 0.8rem; margin: 0;">-SOLO HOY-</p>
-        <p class="offer-tag-2" style="font-size: 2rem; margin: -5px 0 0;">5X4</p>
-      </div>
-    {%- endif -%}
-  {% endunless %}
-
-  {% assign v = product.selected_or_first_available_variant %}
-  {% assign d = v.compare_at_price | minus: v.price | times: 100 | divided_by: v.compare_at_price | round %}
-
-  {% unless is_countdown_active %}
-    {% if v.compare_at_price > v.price %}
-      {% unless product.tags contains 'sin-descuento' %}
-        <div
-          class="offer-tag"
-          style="
-            background: #f0807b;
-            color: #faf5e7;
-            position: absolute;
-            z-index: 1;
-            font-size: 1.2rem;
-            border-radius: 0 0 10px 10px;
-            padding: 0.5rem 0.2rem;
-            right: 10%;
-            font-weight: 900;
-            z-index: 2;
-          "
-        >
-          <p class="offer-tag-1 text-center" style="font-size: 0.8rem;">OFERTA</p>
-          <p class="offer-tag-2 text-center" style="font-size: 2rem; margin: -5px 0;">{{ d }}%</p>
-        </div>
-      {% endunless %}
-    {% endif %}
-  {% endunless %}
-
-  {% unless is_countdown_active %}
-    {% assign oferta_tag = '' %}
-    {% for t in product.tags %}
-      {% if t contains 'oferta_' %}
-        {% assign oferta_tag = t %}
-        {% break %}
-      {% endif %}
-    {% endfor %}
-
-    {% unless oferta_tag == '' or product.tags contains 'sin-descuento' %}
-      {% assign parts = oferta_tag | split: '_' %}
-      {% assign oferta_texto = parts[1] | upcase %}
-      {% assign oferta_promo = parts[2] | upcase %}
-
-      <div
-        class="offer-tag"
-        style="
-          background: #f0807b;
-          color: #fff9ed;
-          position: absolute;
-          z-index: 3;
+          z-index: 2;
           font-size: 1.2rem;
           border-radius: 0 0 10px 10px;
           padding: 0.5rem 0.2rem;
@@ -213,15 +176,49 @@
           font-weight: 900;
         "
       >
-        <p class="offer-tag-1 text-center" style="font-size: 0.8rem;">{{ oferta_texto }}</p>
-        <p class="offer-tag-2 text-center" style="font-size: 2rem; margin: -5px 0;">{{ oferta_promo }}</p>
+        <p class="offer-tag-1 text-center" style="font-size: 0.8rem;">OFERTA</p>
+        <p class="offer-tag-2 text-center" style="font-size: 2rem; margin: -5px 0;">{{ d }}%</p>
       </div>
     {% endunless %}
+  {% endif %}
+
+  {%- comment -%} ETIQUETA 3: Tag personalizado 'oferta_TEXTO_PROMO' {%- endcomment -%}
+  {% assign oferta_tag = '' %}
+  {% for t in product.tags %}
+    {% if t contains 'oferta_' %}
+      {% assign oferta_tag = t %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% unless oferta_tag == '' or product.tags contains 'sin-descuento' %}
+    {% assign parts = oferta_tag | split: '_' %}
+    {% assign oferta_texto = parts[1] | upcase %}
+    {% assign oferta_promo = parts[2] | upcase %}
+
+    <div
+      class="offer-tag"
+      style="
+        background: #f0807b;
+        color: #fff9ed;
+        position: absolute;
+        z-index: 3;
+        font-size: 1.2rem;
+        border-radius: 0 0 10px 10px;
+        padding: 0.5rem 0.2rem;
+        left: 10%;
+        font-weight: 900;
+      "
+    >
+      <p class="offer-tag-1 text-center" style="font-size: 0.8rem;">{{ oferta_texto }}</p>
+      <p class="offer-tag-2 text-center" style="font-size: 2rem; margin: -5px 0;">{{ oferta_promo }}</p>
+    </div>
   {% endunless %}
 
+  {%- comment -%} COUNTDOWN BADGE (derecha) {%- endcomment -%}
   {% if countdown_formatted != blank and countdown_formatted != empty %}
     <div
-      class="countdown-badge absolute top-3 right-3 z-20 px-4 py-2 rounded-full font-bold text-[8px] lg:text-[11px] mr-2 lg:mr-4 "
+      class="countdown-badge absolute top-3 right-3 z-20 px-4 py-2 rounded-full font-bold text-[8px] lg:text-[11px] mr-2 lg:mr-4"
       data-countdown-end="{{ countdown_formatted }}"
       style="background-color: {{ countdown_bg_color }}; color: #ffffff;"
     >
