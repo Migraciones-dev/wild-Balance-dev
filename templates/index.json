@@ -683,6 +683,27 @@
             "mt_mobile": 0,
             "mb_mobile": 0
           }
+        },
+        "banner_zPwGNR": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/oferta-flash-pack-salud-bucal.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-pack-salud-bucal.png",
+            "image_link": "",
+            "product": "pack-para-eliminar-sarro-y-mal-aliento-en-perros-y-gatos-salud-bucal-completa",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-20 09:00",
+            "end_date": "2025-11-21 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
         }
       },
       "block_order": [
@@ -709,7 +730,8 @@
         "banner_gVGgXE",
         "banner_9BHJx6",
         "banner_HLDJgA",
-        "banner_jq43ef"
+        "banner_jq43ef",
+        "banner_zPwGNR"
       ],
       "name": "Banners Grid 2 columnas",
       "settings": {
