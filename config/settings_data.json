@@ -799,7 +799,7 @@
           "custom_text_6wKGma": {
             "type": "custom_text",
             "settings": {
-              "text": "Consulta tus dudas, estamos a tu disposición ininterrumpidamente: <br><br>\n📞​ 670319204 <br><br>\n📨​ hola@wildbalance.es <br><br>\n🕖​ Horario:<br><br>\n Lunes - Jueves |\n08h - 17h  <br><br>\nViernes | 08h - 14h<br><br>",
+              "text": "Consulta tus dudas, estamos a tu disposición: <br><br>\n📞​ 670319204 <br><br>\n📨​ hola@wildbalance.es <br><br>\n🕖​ Horario Att Cliente:<br><br>\n Lunes - Jueves |\n08h - 17h  <br><br>\nViernes | 08h - 14h<br><br>",
               "remove_br_tag": false,
               "tag": "p",
               "fontf": "inherit",
