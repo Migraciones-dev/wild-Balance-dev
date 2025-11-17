@@ -641,6 +641,27 @@
             "mt_mobile": 0,
             "mb_mobile": 0
           }
+        },
+        "banner_HLDJgA": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/oferta-flash-pack-barf-grande.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-pack-barf-grande.png",
+            "image_link": "",
+            "product": "pack-barf-grande-dieta-equilibrada",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-18 09:00",
+            "end_date": "2025-11-19 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
         }
       },
       "block_order": [
@@ -665,7 +686,8 @@
         "banner_KqadgN",
         "banner_UK9Td8",
         "banner_gVGgXE",
-        "banner_9BHJx6"
+        "banner_9BHJx6",
+        "banner_HLDJgA"
       ],
       "name": "Banners Grid 2 columnas",
       "settings": {
