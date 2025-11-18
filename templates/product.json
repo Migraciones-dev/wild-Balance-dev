@@ -513,9 +513,9 @@
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
             "review_data": "sample_data",
+            "max_width": 1200,
             "show_shop_reviews": false,
-            "empty_state": "empty_widget",
-            "max_width": 1200
+            "empty_state": "empty_widget"
           }
         }
       },
@@ -545,8 +545,15 @@
         "video_8NwidE": {
           "type": "video",
           "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/1a371b412b1a42d09a0e7ea44f543aeb.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/e440e75b45204310b41ceda30d55e10b.mp4",
             "poster_url": "shopify://shop_images/IMG_5702.jpg",
+            "caption": ""
+          }
+        },
+        "video_cxEP43": {
+          "type": "video",
+          "settings": {
+            "video_url": "",
             "caption": ""
           }
         },
@@ -570,6 +577,7 @@
       "block_order": [
         "video_E7RTWF",
         "video_8NwidE",
+        "video_cxEP43",
         "video_miqyn4",
         "video_zGtGE6"
       ],
