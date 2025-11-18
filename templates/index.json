@@ -684,6 +684,27 @@
             "mb_mobile": 0
           }
         },
+        "banner_bHMUXV": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/oferta-flash-pack-cachorro.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-pack-cachorro.png",
+            "image_link": "",
+            "product": "pack-para-evitar-sarro-fortalecer-encias-perros-cachorros",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-20 09:00",
+            "end_date": "2025-11-21 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
         "banner_zPwGNR": {
           "type": "banner",
           "settings": {
@@ -752,6 +773,7 @@
         "banner_9BHJx6",
         "banner_HLDJgA",
         "banner_jq43ef",
+        "banner_bHMUXV",
         "banner_zPwGNR",
         "banner_VeAihh"
       ],
