@@ -66,6 +66,98 @@
     endif
     assign tabs_list = tabs_list | split: ',' | uniq
   -%}
+{%- liquid
+  assign section_blocks = section.blocks
+  assign se_stts = section.settings
+  assign ccount = cart.item_count
+  assign ck_lumise = 'ck_lumise'
+  assign cart_url = routes.cart_url
+  assign cart_change_url = routes.cart_change_url
+  assign min_qty = settings.min_qty | plus: 0
+  assign compare_tt_price = 0
+  assign shipping_amount = settings.free_ship_pr.metafields.theme.shipping_money.value | default: settings.free_ship_pr.price | default: -1
+  assign total_price = cart.total_price
+
+  assign se_style = se_stts.style
+  assign se_pos = se_stts.pos
+
+  assign gift_pr = all_products[settings.gift_wrap_pr]
+  assign gift_pr_id = gift_pr.id
+  assign arr_gift_id = cart.items | where: 'product_id', gift_pr_id
+  if cart.note != blank
+    assign style_add = 't4s-d-none'
+    assign style_edit = ''
+  else
+    assign style_add = ''
+    assign style_edit = 't4s-d-none'
+  endif
+  assign edit_item = settings.edit_item
+  assign atc_ajax_enable = settings.atc_ajax_enable
+  
+  assign announcement_bg_color = se_stts.announcement_bg_color | default: '#004622'
+  assign announcement_text_color = se_stts.announcement_text_color | default: '#ffffff'
+  assign announcement_rich_text = se_stts.announcement_rich_text
+  
+  assign announcement_padding_top_mobile = se_stts.announcement_padding_top_mobile | default: 12
+  assign announcement_padding_bottom_mobile = se_stts.announcement_padding_bottom_mobile | default: 12
+  assign announcement_padding_top_desktop = se_stts.announcement_padding_top_desktop | default: 16
+  assign announcement_padding_bottom_desktop = se_stts.announcement_padding_bottom_desktop | default: 16
+  
+  assign announcement_margin_top = se_stts.announcement_margin_top | default: 0
+  assign announcement_margin_bottom = se_stts.announcement_margin_bottom | default: 0
+  
+  assign announcement_font_size_mobile = se_stts.announcement_font_size_mobile | default: 14
+  assign announcement_font_size_desktop = se_stts.announcement_font_size_desktop | default: 16
+-%}
+
+{% if announcement_rich_text != blank and announcement_rich_text != empty %}
+  <div 
+    class="cart-announcement-bar w-full text-center"
+    style="
+      background-color: {{ announcement_bg_color }};
+      color: {{ announcement_text_color }};
+      padding-top: {{ announcement_padding_top_mobile }}px;
+      padding-bottom: {{ announcement_padding_bottom_mobile }}px;
+      margin-top: {{ announcement_margin_top }}px;
+      margin-bottom: {{ announcement_margin_bottom }}px;
+      font-size: {{ announcement_font_size_mobile }}px;
+    "
+  >
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="rte" style="color: {{ announcement_text_color }};">
+        {{ announcement_rich_text }}
+      </div>
+    </div>
+  </div>
+
+  <style>
+    @media (min-width: 1024px) {
+      .cart-announcement-bar {
+        padding-top: {{ announcement_padding_top_desktop }}px !important;
+        padding-bottom: {{ announcement_padding_bottom_desktop }}px !important;
+        font-size: {{ announcement_font_size_desktop }}px !important;
+      }
+    }
+    
+    .cart-announcement-bar .rte p {
+      margin: 0;
+      line-height: 1.5;
+    }
+    
+    .cart-announcement-bar .rte a {
+      color: inherit;
+      text-decoration: underline;
+    }
+    
+    .cart-announcement-bar .rte strong {
+      font-weight: 700;
+    }
+  </style>
+{% endif %}
+
+{%- comment -%} RESTO DE TU SECCIÓN DE CARRITO {%- endcomment -%}
+
+
   {%- if tabs_list.size > 0 -%}
     <div class="t4s-drawer__tabs-list t4s-minicart-tabs-list{% if tabs_list.size == 1 %} t4s-d-none{% endif %}" data-tab-cart-wrap>
       {%- for tabs_item in tabs_list limit: 4 -%}
@@ -601,6 +693,108 @@
   "class": "t4s_tp_cdt t4s_tp_tab",
   "max_blocks": 20,
   "settings": [
+    {
+  "type": "header",
+  "content": "Announcement Bar"
+},
+{
+  "type": "richtext",
+  "id": "announcement_rich_text",
+  "label": "Texto del anuncio",
+  "default": "<p>Envío gratis en pedidos superiores a <strong>50€</strong></p>"
+},
+{
+  "type": "color",
+  "id": "announcement_bg_color",
+  "label": "Color de fondo del anuncio",
+  "default": "#004622"
+},
+{
+  "type": "color",
+  "id": "announcement_text_color",
+  "label": "Color del texto del anuncio",
+  "default": "#ffffff"
+},
+{
+  "type": "range",
+  "id": "announcement_padding_top_mobile",
+  "min": 0,
+  "max": 100,
+  "step": 2,
+  "unit": "px",
+  "label": "Padding superior (móvil)",
+  "default": 12
+},
+{
+  "type": "range",
+  "id": "announcement_padding_bottom_mobile",
+  "min": 0,
+  "max": 100,
+  "step": 2,
+  "unit": "px",
+  "label": "Padding inferior (móvil)",
+  "default": 12
+},
+{
+  "type": "range",
+  "id": "announcement_padding_top_desktop",
+  "min": 0,
+  "max": 100,
+  "step": 2,
+  "unit": "px",
+  "label": "Padding superior (desktop)",
+  "default": 16
+},
+{
+  "type": "range",
+  "id": "announcement_padding_bottom_desktop",
+  "min": 0,
+  "max": 100,
+  "step": 2,
+  "unit": "px",
+  "label": "Padding inferior (desktop)",
+  "default": 16
+},
+{
+  "type": "range",
+  "id": "announcement_margin_top",
+  "min": 0,
+  "max": 100,
+  "step": 2,
+  "unit": "px",
+  "label": "Margen superior",
+  "default": 0
+},
+{
+  "type": "range",
+  "id": "announcement_margin_bottom",
+  "min": 0,
+  "max": 100,
+  "step": 2,
+  "unit": "px",
+  "label": "Margen inferior",
+  "default": 0
+},
+{
+  "type": "range",
+  "id": "announcement_font_size_mobile",
+  "min": 10,
+  "max": 30,
+  "step": 1,
+  "unit": "px",
+  "label": "Tamaño de letra (móvil)",
+  "default": 14
+},
+{
+  "type": "range",
+  "id": "announcement_font_size_desktop",
+  "min": 10,
+  "max": 40,
+  "step": 1,
+  "unit": "px",
+  "label": "Tamaño de letra (desktop)",
+  "default": 16
+},
     {
       "type": "header",
       "content": "+ Mini cart tabs"
