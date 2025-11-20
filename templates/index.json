@@ -843,6 +843,69 @@
             "mt_mobile": 0,
             "mb_mobile": 0
           }
+        },
+        "banner_qcMXDy": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/oferta-flash-fuera-placa.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-fuera-placa.png",
+            "image_link": "",
+            "product": "suplemento-sarro-mal-aliento-fuera-placa",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-29 09:00",
+            "end_date": "2025-11-30 23:59",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_yatm9F": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/oferta-flash-cocinada-salmon-perro.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-cocinada-salmon-perro.png",
+            "image_link": "",
+            "product": "comida-cocinada-salmon-y-ternera-con-verduras-para-perros",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-12-01 00:00",
+            "end_date": "2025-12-01 23:59",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_tp63K3": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/oferta-flash-cocinada-salmon-gato.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-cocinada-salmon-gato.png",
+            "image_link": "",
+            "product": "comida-cocinada-salmon-y-ternera-con-verduras-para-gatos",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-12-01 00:00",
+            "end_date": "2025-12-01 23:59",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
         }
       },
       "block_order": [
@@ -875,7 +938,10 @@
         "banner_UK9Td8",
         "banner_PQh76m",
         "banner_WgyLhd",
-        "banner_3waJVG"
+        "banner_3waJVG",
+        "banner_qcMXDy",
+        "banner_yatm9F",
+        "banner_tp63K3"
       ],
       "name": "Banners Grid 2 columnas",
       "settings": {
