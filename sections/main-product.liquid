@@ -4797,3 +4797,14 @@ if product_list == blank
     });
   });
 </script>
+{% if product.compare_at_price > product.price %}
+<style>
+  .loop-widget-purchase-option-compare-at-price {
+  display: block !important;
+  color: #004623 !important;
+}
+.loop-widget-purchase-option-price {
+color: #ce4949!important;
+}
+</style>
+{% endif %}
