@@ -390,69 +390,6 @@
             "mb_mobile": 0
           }
         },
-        "banner_Kgincf": {
-          "type": "banner",
-          "settings": {
-            "desktop_image": "shopify://shop_images/oferta-flash-sticks-dentales-ternera.png",
-            "mobile_image": "shopify://shop_images/oferta-flash-sticks-dentales-ternera.png",
-            "image_link": "",
-            "product": "sticks-dentales-para-perros",
-            "enable_countdown": false,
-            "countdown_date": "",
-            "countdown_position_desktop": "center",
-            "enable_schedule": true,
-            "start_date": "2025-11-12 09:00",
-            "end_date": "2025-11-13 09:00",
-            "border_radius_desktop": 30,
-            "border_radius_mobile": 12,
-            "mt_desktop": 0,
-            "mb_desktop": 0,
-            "mt_mobile": 0,
-            "mb_mobile": 0
-          }
-        },
-        "banner_nhXxLp": {
-          "type": "banner",
-          "settings": {
-            "desktop_image": "shopify://shop_images/oferta-flash-sticks-dentales-digestivo.png",
-            "mobile_image": "shopify://shop_images/oferta-flash-sticks-dentales-digestivo.png",
-            "image_link": "",
-            "product": "stick-dental-perros-digestivo",
-            "enable_countdown": false,
-            "countdown_date": "",
-            "countdown_position_desktop": "center",
-            "enable_schedule": true,
-            "start_date": "2025-11-12 09:00",
-            "end_date": "2025-11-13 09:00",
-            "border_radius_desktop": 30,
-            "border_radius_mobile": 12,
-            "mt_desktop": 0,
-            "mb_desktop": 0,
-            "mt_mobile": 0,
-            "mb_mobile": 0
-          }
-        },
-        "banner_hXWBnb": {
-          "type": "banner",
-          "settings": {
-            "desktop_image": "shopify://shop_images/oferta-flash-sticks-dentales-calm.png",
-            "mobile_image": "shopify://shop_images/oferta-flash-sticks-dentales-calm.png",
-            "image_link": "",
-            "product": "stick-dental-perros-relajante",
-            "enable_countdown": false,
-            "countdown_date": "",
-            "countdown_position_desktop": "center",
-            "enable_schedule": true,
-            "start_date": "2025-11-12 09:00",
-            "end_date": "2025-11-13 09:00",
-            "border_radius_desktop": 30,
-            "border_radius_mobile": 12,
-            "mt_desktop": 0,
-            "mb_desktop": 0,
-            "mt_mobile": 0,
-            "mb_mobile": 0
-          }
-        },
         "banner_A8VDAk": {
           "type": "banner",
           "settings": {
@@ -487,90 +424,6 @@
             "enable_schedule": true,
             "start_date": "2025-11-15 09:00",
             "end_date": "2025-11-16 09:00",
-            "border_radius_desktop": 30,
-            "border_radius_mobile": 12,
-            "mt_desktop": 0,
-            "mb_desktop": 0,
-            "mt_mobile": 0,
-            "mb_mobile": 0
-          }
-        },
-        "banner_tFrRWV": {
-          "type": "banner",
-          "settings": {
-            "desktop_image": "shopify://shop_images/Background_2_b43645c1-7baf-4727-91b5-1d46c6c1fb46.png",
-            "mobile_image": "shopify://shop_images/Background_2_b43645c1-7baf-4727-91b5-1d46c6c1fb46.png",
-            "image_link": "",
-            "product": "snacks-premios-naturales-perros-light-pavo",
-            "enable_countdown": false,
-            "countdown_date": "",
-            "countdown_position_desktop": "center",
-            "enable_schedule": true,
-            "start_date": "2025-11-16 09:00",
-            "end_date": "2025-11-17 09:00",
-            "border_radius_desktop": 30,
-            "border_radius_mobile": 12,
-            "mt_desktop": 0,
-            "mb_desktop": 0,
-            "mt_mobile": 0,
-            "mb_mobile": 0
-          }
-        },
-        "banner_xfbVyn": {
-          "type": "banner",
-          "settings": {
-            "desktop_image": "shopify://shop_images/Background_4.png",
-            "mobile_image": "shopify://shop_images/Background_4.png",
-            "image_link": "",
-            "product": "snacks-premios-naturales-ternera-perros-senior",
-            "enable_countdown": false,
-            "countdown_date": "",
-            "countdown_position_desktop": "center",
-            "enable_schedule": true,
-            "start_date": "2025-11-16 09:00",
-            "end_date": "2025-11-17 09:00",
-            "border_radius_desktop": 30,
-            "border_radius_mobile": 12,
-            "mt_desktop": 0,
-            "mb_desktop": 0,
-            "mt_mobile": 0,
-            "mb_mobile": 0
-          }
-        },
-        "banner_KqadgN": {
-          "type": "banner",
-          "settings": {
-            "desktop_image": "shopify://shop_images/Background_5.png",
-            "mobile_image": "shopify://shop_images/Background_5.png",
-            "image_link": "",
-            "product": "snacks-premios-naturales-perros-pelaje-sano-venado",
-            "enable_countdown": false,
-            "countdown_date": "",
-            "countdown_position_desktop": "center",
-            "enable_schedule": true,
-            "start_date": "2025-11-16 09:00",
-            "end_date": "2025-11-17 09:00",
-            "border_radius_desktop": 30,
-            "border_radius_mobile": 12,
-            "mt_desktop": 0,
-            "mb_desktop": 0,
-            "mt_mobile": 0,
-            "mb_mobile": 0
-          }
-        },
-        "banner_UK9Td8": {
-          "type": "banner",
-          "settings": {
-            "desktop_image": "shopify://shop_images/Background_3_7f878060-c730-4915-9c84-b5c3fdf45d62.png",
-            "mobile_image": "shopify://shop_images/Background_3_7f878060-c730-4915-9c84-b5c3fdf45d62.png",
-            "image_link": "",
-            "product": "snacks-premios-naturales-perros-digestivo-pato",
-            "enable_countdown": false,
-            "countdown_date": "",
-            "countdown_position_desktop": "center",
-            "enable_schedule": true,
-            "start_date": "2025-11-16 09:00",
-            "end_date": "2025-11-17 09:00",
             "border_radius_desktop": 30,
             "border_radius_mobile": 12,
             "mt_desktop": 0,
@@ -746,6 +599,153 @@
             "mt_mobile": 0,
             "mb_mobile": 0
           }
+        },
+        "banner_Kgincf": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/oferta-flash-sticks-dentales-ternera.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-sticks-dentales-ternera.png",
+            "image_link": "",
+            "product": "sticks-dentales-para-perros",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-25 09:00",
+            "end_date": "2025-11-26 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_nhXxLp": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/oferta-flash-sticks-dentales-digestivo.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-sticks-dentales-digestivo.png",
+            "image_link": "",
+            "product": "stick-dental-perros-digestivo",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-25 09:00",
+            "end_date": "2025-11-26 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_hXWBnb": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/oferta-flash-sticks-dentales-calm.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-sticks-dentales-calm.png",
+            "image_link": "",
+            "product": "stick-dental-perros-relajante",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-25 09:00",
+            "end_date": "2025-11-26 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_tFrRWV": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Background_2_b43645c1-7baf-4727-91b5-1d46c6c1fb46.png",
+            "mobile_image": "shopify://shop_images/Background_2_b43645c1-7baf-4727-91b5-1d46c6c1fb46.png",
+            "image_link": "",
+            "product": "snacks-premios-naturales-perros-light-pavo",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-26 09:00",
+            "end_date": "2025-11-27 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_xfbVyn": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Background_4.png",
+            "mobile_image": "shopify://shop_images/Background_4.png",
+            "image_link": "",
+            "product": "snacks-premios-naturales-ternera-perros-senior",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-26 09:00",
+            "end_date": "2025-11-27 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_KqadgN": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Background_5.png",
+            "mobile_image": "shopify://shop_images/Background_5.png",
+            "image_link": "",
+            "product": "snacks-premios-naturales-perros-pelaje-sano-venado",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-26 09:00",
+            "end_date": "2025-11-27 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_UK9Td8": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Background_3_7f878060-c730-4915-9c84-b5c3fdf45d62.png",
+            "mobile_image": "shopify://shop_images/Background_3_7f878060-c730-4915-9c84-b5c3fdf45d62.png",
+            "image_link": "",
+            "product": "snacks-premios-naturales-perros-digestivo-pato",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-26 09:00",
+            "end_date": "2025-11-27 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
         }
       },
       "block_order": [
@@ -759,15 +759,8 @@
         "banner_eAX8Ay",
         "banner_trDGtt",
         "banner_k8Fbx4",
-        "banner_Kgincf",
-        "banner_nhXxLp",
-        "banner_hXWBnb",
         "banner_A8VDAk",
         "banner_WNxieW",
-        "banner_tFrRWV",
-        "banner_xfbVyn",
-        "banner_KqadgN",
-        "banner_UK9Td8",
         "banner_gVGgXE",
         "banner_9BHJx6",
         "banner_HLDJgA",
@@ -775,7 +768,14 @@
         "banner_bHMUXV",
         "banner_zPwGNR",
         "banner_VeAihh",
-        "banner_PqUFUM"
+        "banner_PqUFUM",
+        "banner_Kgincf",
+        "banner_nhXxLp",
+        "banner_hXWBnb",
+        "banner_tFrRWV",
+        "banner_xfbVyn",
+        "banner_KqadgN",
+        "banner_UK9Td8"
       ],
       "name": "Banners Grid 2 columnas",
       "settings": {
