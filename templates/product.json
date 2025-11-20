@@ -201,6 +201,9 @@
         "tab_liquid_xpemQN",
         "tab_html_aQRVmq"
       ],
+      "custom_css": [
+        ".loop-widget-purchase-option-compare-at-price {display:block!important;color: #004623!important;}"
+      ],
       "settings": {
         "pr_layout": "full",
         "enable_sticky_info": true,
