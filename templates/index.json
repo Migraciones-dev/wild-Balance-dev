@@ -127,7 +127,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/BANNER_BLACK_FRIDAY_15_1_1.png",
             "mobile_image": "shopify://shop_images/Background_faa49548-8b34-4a69-a85e-e8c3d7d0d983.png",
-            "image_link": "",
+            "image_link": "https://wildbalance.es/pages/sorteo-wild-days-bases-legales",
             "enable_schedule": true,
             "start_date": "2025-11-03 9:00",
             "end_date": "2025-11-23 23:59",
