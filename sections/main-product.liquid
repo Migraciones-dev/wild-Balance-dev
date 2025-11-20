@@ -4797,17 +4797,118 @@ if product_list == blank
     });
   });
 </script>
-{% comment %} {% if product.compare_at_price > product.price and product.compare_at_price > 0 %}
-  <style>
-    .loop-widget-purchase-option-compare-at-price {
-      display: block !important;
-      color: #004623 !important;
+<script>
+  (function() {
+    let isChecking = false;
+    let observer = null;
+    
+    function checkCompareAtPrice() {
+      if (isChecking) return;
+      isChecking = true;
+      
+      // Desconectar el observer temporalmente
+      if (observer) observer.disconnect();
+      
+      const compareAtPriceElements = document.querySelectorAll('.loop-widget-purchase-option-compare-at-price');
+      
+      compareAtPriceElements.forEach(element => {
+        const priceText = element.textContent.trim();
+        const priceValue = parseFloat(priceText.replace(/[^\d,.-]/g, '').replace(',', '.'));
+        
+        const shouldHide = isNaN(priceValue) || priceValue <= 0;
+        const currentDisplay = window.getComputedStyle(element).display;
+        
+        // Encontrar el precio normal en el mismo contenedor
+        const priceContainer = element.closest('.loop-widget-purchase-option-price-container');
+        const normalPrice = priceContainer ? priceContainer.querySelector('.loop-widget-purchase-option-price') : null;
+        
+        if (shouldHide && currentDisplay !== 'none') {
+          element.style.setProperty('display', 'none', 'important');
+          element.classList.add('loop-display-none');
+          
+          // Quitar el color rojo del precio normal si no hay descuento
+          if (normalPrice) {
+            normalPrice.style.removeProperty('color');
+          }
+        } else if (!shouldHide && (currentDisplay === 'none' || element.classList.contains('loop-display-none'))) {
+          element.style.setProperty('display', 'block', 'important');
+          element.classList.remove('loop-display-none');
+          
+          // Aplicar el color rojo al precio normal si hay descuento
+          if (normalPrice) {
+            normalPrice.style.setProperty('color', '#ce4949', 'important');
+          }
+        }
+      });
+      
+      // Reconectar el observer después de hacer cambios
+      requestAnimationFrame(function() {
+        if (observer) startObserving();
+        isChecking = false;
+      });
     }
-    .loop-widget-purchase-option-price {
-      color: #ce4949 !important;
+    
+    function startObserving() {
+      const loopContainers = document.querySelectorAll('[class*="loop-widget"]');
+      loopContainers.forEach(container => {
+        observer.observe(container, {
+          childList: true,
+          subtree: true,
+          characterData: true
+        });
+      });
     }
-    .loop-widget-purchase-option-price-container {
-      align-items: baseline;
-    }
-  </style>
-{% endif %} {% endcomment %}
+    
+    // Crear el observer sin debounce para máxima velocidad
+    observer = new MutationObserver(function(mutations) {
+      checkCompareAtPrice();
+    });
+    
+    // Iniciar INMEDIATAMENTE (sin timeout)
+    checkCompareAtPrice();
+    requestAnimationFrame(startObserving);
+    
+    // Escuchar cambios de variante SIN delay
+    document.addEventListener('change', function(e) {
+      if (e.target.matches('[name*="variant"], [name*="option"], input[type="radio"]')) {
+        checkCompareAtPrice();
+      }
+    });
+    
+    // Escuchar clics en el widget SIN delay
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('[class*="loop-widget"]')) {
+        requestAnimationFrame(checkCompareAtPrice);
+      }
+    });
+    
+    // Observar cambios en atributos también (para detectar cambios de estilo/clase)
+    const fullObserver = new MutationObserver(checkCompareAtPrice);
+    document.addEventListener('DOMContentLoaded', function() {
+      fullObserver.observe(document.body, {
+        childList: true,
+        subtree: true,
+        characterData: true,
+        attributes: true,
+        attributeFilter: ['class', 'style']
+      });
+    });
+  })();
+</script>
+
+<style>
+  .loop-widget-purchase-option-compare-at-price {
+    display: block !important;
+    color: #004623 !important;
+  }
+  .loop-widget-purchase-option-price-container {
+    align-items: baseline;
+  }
+  
+  /* Pre-ocultar precios de comparación en 0 con CSS para hacerlo instantáneo */
+  .loop-widget-purchase-option-compare-at-price:empty,
+  .loop-widget-purchase-option-compare-at-price.loop-display-none {
+    display: none !important;
+  }
+</style>
+
