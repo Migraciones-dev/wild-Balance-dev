@@ -9,6 +9,13 @@
  */
 {
   "sections": {
+    "custom_liquid_LjkQU6": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
+      "settings": {
+        "custom_liquid": "<script>\n  (function() {\n    const currentPath = window.location.pathname;\n    const targetUrl = 'https://wildbalance.es/collections/black-friday';\n    \n    // Redirigir solo si estamos en /pages/black-friday\n    if (currentPath === '/pages/black-friday') {\n      // Usar replace para que no se pueda volver atrás con el botón\n      window.location.replace(targetUrl);\n    }\n  })();\n</script>"
+      }
+    },
     "heading": {
       "type": "heading-template",
       "blocks": {
@@ -816,6 +823,7 @@
     }
   },
   "order": [
+    "custom_liquid_LjkQU6",
     "heading",
     "main",
     "migraciones_banner_responsive_d6hJg8",
