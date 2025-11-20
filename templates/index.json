@@ -88,23 +88,6 @@
     "migraciones_banner_responsive_d6hJg8": {
       "type": "migraciones-banner-responsive",
       "blocks": {
-        "banner_4nDMtb": {
-          "type": "banner",
-          "settings": {
-            "desktop_image": "shopify://shop_images/wild-days2-desk.png",
-            "mobile_image": "shopify://shop_images/wild-days2-mobile.png",
-            "image_link": "https://wildbalance.es/collections/black-friday",
-            "enable_schedule": true,
-            "start_date": "2025-11-10 09:00",
-            "end_date": "2025-11-17 9:00",
-            "border_radius_desktop": 30,
-            "border_radius_mobile": 12,
-            "mt_desktop": 0,
-            "mb_desktop": 0,
-            "mt_mobile": 0,
-            "mb_mobile": 16
-          }
-        },
         "banner_pYCX7e": {
           "type": "banner",
           "settings": {
@@ -114,6 +97,23 @@
             "enable_schedule": true,
             "start_date": "2025-11-17 09:00",
             "end_date": "2025-11-24 9:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 16
+          }
+        },
+        "banner_4nDMtb": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/banner-home-black-friday-desk.png",
+            "mobile_image": "shopify://shop_images/banner-home-black-friday-mobile.png",
+            "image_link": "https://wildbalance.es/collections/black-friday",
+            "enable_schedule": true,
+            "start_date": "2025-11-24 09:00",
+            "end_date": "2025-11-30 23:59",
             "border_radius_desktop": 30,
             "border_radius_mobile": 12,
             "mt_desktop": 0,
@@ -138,12 +138,46 @@
             "mt_mobile": 0,
             "mb_mobile": 0
           }
+        },
+        "banner_FMTLWC": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/banner-home-sorteo-higiene-desk.png",
+            "mobile_image": "shopify://shop_images/banner-home-sorteo-higiene-mobile.png",
+            "image_link": "",
+            "enable_schedule": true,
+            "start_date": "2025-11-24 9:00",
+            "end_date": "2025-11-30 23:59",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 20,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_VMfpEr": {
+          "type": "banner",
+          "settings": {
+            "image_link": "",
+            "enable_schedule": false,
+            "start_date": "",
+            "end_date": "",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
         }
       },
       "block_order": [
-        "banner_4nDMtb",
         "banner_pYCX7e",
-        "banner_LJFEdc"
+        "banner_4nDMtb",
+        "banner_LJFEdc",
+        "banner_FMTLWC",
+        "banner_VMfpEr"
       ],
       "name": "Banner imagen responsivo",
       "settings": {
