@@ -53,7 +53,7 @@
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
       {%- for block in section.blocks -%}
         {%- liquid
-          assign block_type = block.settings.block_type
+          assign block_type = block.type
           assign day_number = block.settings.day_number
           assign unlock_date = block.settings.unlock_date
           assign expire_date = block.settings.expire_date
@@ -123,31 +123,33 @@
 {%- for block in section.blocks -%}
   <template id="modal-content-{{ block.id }}">
     {%- liquid
-      assign block_type = block.settings.block_type
+      assign block_type = block.type
     -%}
 
     {%- case block_type -%}
       {%- when 'discount' -%}
         <div class="discount-block">
           {%- if block.settings.discount_image -%}
-            <img
-              src="{{ block.settings.discount_image | img_url: 'master' }}"
-              alt="{{ block.settings.discount_title }}"
-              class="w-full rounded-xl mb-6"
-              style="max-width: {{ block.settings.image_width | default: 100 }}%;"
-            >
+            <div class="flex justify-center mb-6">
+              <img
+                src="{{ block.settings.discount_image | img_url: 'master' }}"
+                alt="{{ block.settings.discount_title }}"
+                class="rounded-xl"
+                style="max-width: {{ block.settings.image_width | default: 100 }}%;"
+              >
+            </div>
           {%- endif -%}
 
-          <h3 class="font-['Barlow'] font-bold text-3xl text-[#004622] mb-4">
+          <h3 class="font-['Barlow'] font-bold text-4xl text-[#004622] mb-4">
             {{ block.settings.discount_title }}
           </h3>
 
-          <p class="font-['DM_Sans'] text-base text-gray-700 mb-6">
+          <div class="font-['DM_Sans'] text-lg text-gray-700 mb-6 prose prose-lg max-w-none">
             {{ block.settings.discount_text }}
-          </p>
+          </div>
 
-          <div class="bg-[#FBF5E7] rounded-xl p-6 flex items-center justify-between gap-4">
-            <div class="flex-1">
+          <div class="bg-[#FBF5E7] rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex-1 text-center sm:text-left">
               <span class="font-['DM_Sans'] text-sm text-gray-600 block mb-1">Código de descuento:</span>
               <span class="font-['Barlow'] font-bold text-2xl text-[#004622]" id="discount-code-{{ block.id }}">
                 {{ block.settings.discount_code }}
@@ -155,6 +157,7 @@
             </div>
             <button
               onclick="copyDiscountCode('{{ block.id }}', '{{ block.settings.discount_code }}')"
+              id="copy-btn-{{ block.id }}"
               class="bg-[#004622] text-white px-6 py-3 rounded-full font-['DM_Sans'] font-bold hover:bg-[#003318] transition-colors whitespace-nowrap"
             >
               Copiar código
@@ -164,19 +167,21 @@
 
       {%- when 'recipe' -%}
         <div class="recipe-block">
-          <h3 class="font-['Barlow'] font-bold text-3xl text-[#004622] mb-4">
+          <h3 class="font-['Barlow'] font-bold text-4xl text-[#004622] mb-4">
             {{ block.settings.recipe_title }}
           </h3>
 
           {%- if block.settings.recipe_image -%}
-            <img
-              src="{{ block.settings.recipe_image | img_url: 'master' }}"
-              alt="{{ block.settings.recipe_title }}"
-              class="w-full rounded-xl mb-6"
-            >
+            <div class="flex justify-center mb-6">
+              <img
+                src="{{ block.settings.recipe_image | img_url: 'master' }}"
+                alt="{{ block.settings.recipe_title }}"
+                class="w-full rounded-xl"
+              >
+            </div>
           {%- endif -%}
 
-          <div class="font-['DM_Sans'] text-base text-gray-700 prose prose-lg max-w-none mb-6">
+          <div class="font-['DM_Sans'] text-lg text-gray-700 prose prose-lg max-w-none mb-6">
             {{ block.settings.recipe_richtext }}
           </div>
 
@@ -192,13 +197,13 @@
 
       {%- when 'survey' -%}
         <div class="survey-block">
-          <h3 class="font-['Barlow'] font-bold text-3xl text-[#004622] mb-4">
+          <h3 class="font-['Barlow'] font-bold text-4xl text-[#004622] mb-4">
             {{ block.settings.survey_title }}
           </h3>
 
-          <p class="font-['DM_Sans'] text-base text-gray-700 mb-6">
+          <div class="font-['DM_Sans'] text-lg text-gray-700 mb-6 prose prose-lg max-w-none">
             {{ block.settings.survey_text }}
-          </p>
+          </div>
 
           <div class="survey-embed">
             {{ block.settings.survey_embed }}
@@ -207,7 +212,7 @@
 
       {%- when 'trivia' -%}
         <div class="trivia-block" id="trivia-{{ block.id }}">
-          <h3 class="font-['Barlow'] font-bold text-3xl text-[#004622] mb-6">
+          <h3 class="font-['Barlow'] font-bold text-4xl text-[#004622] mb-6">
             {{ block.settings.trivia_title }}
           </h3>
 
@@ -221,26 +226,30 @@
               {%- assign correct_answer = block.settings[answer_key] -%}
               {%- assign options = block.settings[options_key] | split: ',' -%}
 
-              <div class="trivia-question bg-[#FBF5E7] rounded-xl p-6" data-correct-answer="{{ correct_answer }}">
-                <p class="font-['DM_Sans'] font-bold text-lg text-[#004622] mb-4">
-                  {{ i }}. {{ question }}
-                </p>
+              {%- if question != blank and correct_answer != blank -%}
+                <div class="trivia-question bg-[#FBF5E7] rounded-xl p-6" data-correct-answer="{{ correct_answer }}">
+                  <p class="font-['DM_Sans'] font-bold text-lg text-[#004622] mb-4">
+                    {{ i }}. {{ question }}
+                  </p>
 
-                <div class="space-y-3">
-                  {%- for option in options -%}
-                    {%- assign trimmed_option = option | strip -%}
-                    <label class="flex items-center gap-3 cursor-pointer">
-                      <input
-                        type="radio"
-                        name="trivia-q{{ i }}-{{ block.id }}"
-                        value="{{ trimmed_option }}"
-                        class="w-5 h-5 text-[#004622] focus:ring-[#004622]"
-                      >
-                      <span class="font-['DM_Sans'] text-base">{{ trimmed_option }}</span>
-                    </label>
-                  {%- endfor -%}
+                  <div class="space-y-3">
+                    {%- for option in options -%}
+                      {%- assign trimmed_option = option | strip -%}
+                      {%- if trimmed_option != blank -%}
+                        <label class="flex items-center gap-3 cursor-pointer">
+                          <input
+                            type="radio"
+                            name="trivia-q{{ i }}-{{ block.id }}"
+                            value="{{ trimmed_option }}"
+                            class="w-5 h-5 text-[#004622] focus:ring-[#004622]"
+                          >
+                          <span class="font-['DM_Sans'] text-base">{{ trimmed_option }}</span>
+                        </label>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </div>
                 </div>
-              </div>
+              {%- endif -%}
             {%- endfor -%}
           </div>
 
@@ -256,8 +265,8 @@
               <p class="font-['Barlow'] font-bold text-2xl text-green-700 mb-4">
                 ¡Enhorabuena! Has acertado todas las preguntas 🎉
               </p>
-              <div class="bg-white rounded-xl p-4 flex items-center justify-between gap-4">
-                <div class="flex-1">
+              <div class="bg-white rounded-xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex-1 text-center sm:text-left">
                   <span class="font-['DM_Sans'] text-sm text-gray-600 block mb-1">Tu código de descuento:</span>
                   <span class="font-['Barlow'] font-bold text-2xl text-[#004622]" id="trivia-code-{{ block.id }}">
                     {{ block.settings.trivia_reward_code }}
@@ -265,6 +274,7 @@
                 </div>
                 <button
                   onclick="copyDiscountCode('trivia-{{ block.id }}', '{{ block.settings.trivia_reward_code }}')"
+                  id="copy-btn-trivia-{{ block.id }}"
                   class="bg-[#004622] text-white px-6 py-3 rounded-full font-['DM_Sans'] font-bold hover:bg-[#003318] transition-colors whitespace-nowrap"
                 >
                   Copiar código
@@ -285,13 +295,13 @@
 
       {%- when 'downloadable' -%}
         <div class="downloadable-block">
-          <h3 class="font-['Barlow'] font-bold text-3xl text-[#004622] mb-4">
+          <h3 class="font-['Barlow'] font-bold text-4xl text-[#004622] mb-4">
             {{ block.settings.downloadable_title }}
           </h3>
 
-          <p class="font-['DM_Sans'] text-base text-gray-700 mb-6">
+          <div class="font-['DM_Sans'] text-lg text-gray-700 mb-6 prose prose-lg max-w-none">
             {{ block.settings.downloadable_text }}
-          </p>
+          </div>
 
           {%- if block.settings.downloadable_cta_text != blank and block.settings.downloadable_cta_link != blank -%}
             <a
@@ -306,13 +316,13 @@
 
       {%- when 'video' -%}
         <div class="video-block">
-          <h3 class="font-['Barlow'] font-bold text-3xl text-[#004622] mb-4">
+          <h3 class="font-['Barlow'] font-bold text-4xl text-[#004622] mb-4">
             {{ block.settings.video_title }}
           </h3>
 
-          <p class="font-['DM_Sans'] text-base text-gray-700 mb-6">
+          <div class="font-['DM_Sans'] text-lg text-gray-700 mb-6 prose prose-lg max-w-none">
             {{ block.settings.video_text }}
-          </p>
+          </div>
 
           {%- if block.settings.video_embed != blank -%}
             <div class="video-container rounded-xl overflow-hidden mb-4">
@@ -323,13 +333,13 @@
 
       {%- when 'raffle' -%}
         <div class="raffle-block">
-          <h3 class="font-['Barlow'] font-bold text-3xl text-[#004622] mb-4">
+          <h3 class="font-['Barlow'] font-bold text-4xl text-[#004622] mb-4">
             {{ block.settings.raffle_title }}
           </h3>
 
-          <p class="font-['DM_Sans'] text-base text-gray-700 mb-6">
+          <div class="font-['DM_Sans'] text-lg text-gray-700 mb-6 prose prose-lg max-w-none">
             {{ block.settings.raffle_text }}
-          </p>
+          </div>
 
           {%- if block.settings.raffle_embed != blank -%}
             <div class="raffle-embed">
@@ -412,8 +422,21 @@
 
   // Función para copiar código de descuento
   window.copyDiscountCode = function(blockId, code) {
+    const button = document.getElementById(`copy-btn-${blockId}`);
+    
     navigator.clipboard.writeText(code).then(() => {
-      alert('¡Código copiado al portapapeles!');
+      const originalText = button.textContent;
+      button.textContent = '¡Copiado!';
+      button.classList.add('bg-green-600');
+      button.classList.remove('bg-[#004622]');
+      
+      setTimeout(() => {
+        button.textContent = originalText;
+        button.classList.remove('bg-green-600');
+        button.classList.add('bg-[#004622]');
+      }, 2000);
+    }).catch(() => {
+      alert('Error al copiar el código');
     });
   };
 
@@ -424,10 +447,10 @@
     let allCorrect = true;
 
     questions.forEach(question => {
-      const correctAnswer = question.dataset.correctAnswer;
+      const correctAnswer = question.dataset.correctAnswer.trim();
       const selectedAnswer = question.querySelector('input[type="radio"]:checked');
       
-      if (!selectedAnswer || selectedAnswer.value.trim() !== correctAnswer.trim()) {
+      if (!selectedAnswer || selectedAnswer.value.trim() !== correctAnswer) {
         allCorrect = false;
       }
     });
@@ -602,15 +625,6 @@
           "default": "#FFCD00"
         },
         {
-          "type": "select",
-          "id": "block_type",
-          "label": "Tipo de bloque",
-          "options": [
-            { "value": "discount", "label": "Descuento" }
-          ],
-          "default": "discount"
-        },
-        {
           "type": "header",
           "content": "Contenido del modal"
         },
@@ -621,7 +635,7 @@
           "default": "¡Descuento especial!"
         },
         {
-          "type": "textarea",
+          "type": "richtext",
           "id": "discount_text",
           "label": "Descripción"
         },
@@ -683,15 +697,6 @@
           "id": "bg_color_block",
           "label": "Color de fondo (si no hay imagen)",
           "default": "#FFCD00"
-        },
-        {
-          "type": "select",
-          "id": "block_type",
-          "label": "Tipo de bloque",
-          "options": [
-            { "value": "recipe", "label": "Receta / Historia / Consejo" }
-          ],
-          "default": "recipe"
         },
         {
           "type": "header",
@@ -763,15 +768,6 @@
           "default": "#FFCD00"
         },
         {
-          "type": "select",
-          "id": "block_type",
-          "label": "Tipo de bloque",
-          "options": [
-            { "value": "survey", "label": "Encuesta" }
-          ],
-          "default": "survey"
-        },
-        {
           "type": "header",
           "content": "Contenido del modal"
         },
@@ -782,7 +778,7 @@
           "default": "Participa en nuestra encuesta"
         },
         {
-          "type": "textarea",
+          "type": "richtext",
           "id": "survey_text",
           "label": "Descripción"
         },
@@ -829,15 +825,6 @@
           "id": "bg_color_block",
           "label": "Color de fondo (si no hay imagen)",
           "default": "#FFCD00"
-        },
-        {
-          "type": "select",
-          "id": "block_type",
-          "label": "Tipo de bloque",
-          "options": [
-            { "value": "trivia", "label": "Trivial" }
-          ],
-          "default": "trivia"
         },
         {
           "type": "header",
@@ -995,15 +982,6 @@
           "default": "#FFCD00"
         },
         {
-          "type": "select",
-          "id": "block_type",
-          "label": "Tipo de bloque",
-          "options": [
-            { "value": "downloadable", "label": "Descargable" }
-          ],
-          "default": "downloadable"
-        },
-        {
           "type": "header",
           "content": "Contenido del modal"
         },
@@ -1014,7 +992,7 @@
           "default": "Descarga tu regalo"
         },
         {
-          "type": "textarea",
+          "type": "richtext",
           "id": "downloadable_text",
           "label": "Descripción"
         },
@@ -1069,15 +1047,6 @@
           "default": "#FFCD00"
         },
         {
-          "type": "select",
-          "id": "block_type",
-          "label": "Tipo de bloque",
-          "options": [
-            { "value": "video", "label": "Video" }
-          ],
-          "default": "video"
-        },
-        {
           "type": "header",
           "content": "Contenido del modal"
         },
@@ -1088,7 +1057,7 @@
           "default": "Video especial"
         },
         {
-          "type": "textarea",
+          "type": "richtext",
           "id": "video_text",
           "label": "Descripción"
         },
@@ -1137,15 +1106,6 @@
           "default": "#FFCD00"
         },
         {
-          "type": "select",
-          "id": "block_type",
-          "label": "Tipo de bloque",
-          "options": [
-            { "value": "raffle", "label": "Sorteo" }
-          ],
-          "default": "raffle"
-        },
-        {
           "type": "header",
           "content": "Contenido del modal"
         },
@@ -1156,7 +1116,7 @@
           "default": "¡Participa en el sorteo!"
         },
         {
-          "type": "textarea",
+          "type": "richtext",
           "id": "raffle_text",
           "label": "Descripción"
         },
