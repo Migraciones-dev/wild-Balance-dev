@@ -188,7 +188,7 @@
             "downloadable_title": "Descarga tu regalo",
             "downloadable_text": "",
             "downloadable_cta_text": "Descargar ahora",
-            "downloadable_cta_link": ""
+            "downloadable_cta_link": "shopify://collections/best-sellers-comida-natural-gato"
           }
         },
         "video_66zQV7": {
@@ -199,8 +199,8 @@
             "expire_date": "",
             "bg_color_block": "#ffcd00",
             "video_title": "Video especial",
-            "video_text": "",
-            "video_embed": ""
+            "video_text": "<p>Texto sobre el video</p>",
+            "video_embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/mfmrNsm15I0?si=c1v0_JwlZRvzBYgc\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen=\"\"></iframe>"
           }
         },
         "raffle_cExRHe": {
