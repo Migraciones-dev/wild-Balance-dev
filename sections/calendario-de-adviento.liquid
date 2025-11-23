@@ -104,9 +104,9 @@
   </div>
 
   {%- comment -%} Modal container {%- endcomment -%}
-  <div id="advent-modal-{{ section_id }}" class="advent-modal fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/50" style="z-index:999999">
-    <div class="modal-content bg-white rounded-2xl max-w-4xl w-full max-h-[80vh] overflow-y-auto relative">
-      <button class="modal-close sticky top-4 left-full -mr-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-[#004622] text-white hover:bg-[#003318] transition-colors shadow-lg">
+  <div id="advent-modal-{{ section_id }}" class="advent-modal fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/50">
+    <div class="modal-content bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+      <button class="modal-close absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-[#004622] text-white hover:bg-[#003318] transition-colors">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
         </svg>
@@ -373,14 +373,12 @@
   modalClose.addEventListener('click', () => {
     modal.classList.add('hidden');
     modal.classList.remove('flex');
-    document.body.style.overflow = '';
   });
   
   modal.addEventListener('click', (e) => {
     if (e.target === modal) {
       modal.classList.add('hidden');
       modal.classList.remove('flex');
-      document.body.style.overflow = '';
     }
   });
 
@@ -428,7 +426,6 @@
           modalBody.innerHTML = template.innerHTML;
           modal.classList.remove('hidden');
           modal.classList.add('flex');
-          document.body.style.overflow = 'hidden';
         }
       });
     }
