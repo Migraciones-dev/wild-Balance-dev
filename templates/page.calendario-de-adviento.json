@@ -127,6 +127,19 @@
             "recipe_cta_link": ""
           }
         },
+        "survey_4j43NW": {
+          "type": "survey",
+          "settings": {
+            "day_number": "3",
+            "unlock_date": "",
+            "expire_date": "",
+            "bg_color_block": "#FFCD00",
+            "block_type": "survey",
+            "survey_title": "Participa en nuestra encuesta",
+            "survey_text": "fdsfdfsdfs",
+            "survey_embed": ""
+          }
+        },
         "trivia_egaHhR": {
           "type": "trivia",
           "settings": {
@@ -152,19 +165,6 @@
             "trivia_options_5": "",
             "trivia_answer_5": "",
             "trivia_reward_code": ""
-          }
-        },
-        "survey_4j43NW": {
-          "type": "survey",
-          "settings": {
-            "day_number": "3",
-            "unlock_date": "",
-            "expire_date": "",
-            "bg_color_block": "#FFCD00",
-            "block_type": "survey",
-            "survey_title": "Participa en nuestra encuesta",
-            "survey_text": "fdsfdfsdfs",
-            "survey_embed": ""
           }
         },
         "downloadable_Yrhywk": {
@@ -211,8 +211,8 @@
       "block_order": [
         "discount_yxwfj6",
         "recipe_C6JXpc",
-        "trivia_egaHhR",
         "survey_4j43NW",
+        "trivia_egaHhR",
         "downloadable_Yrhywk",
         "video_66zQV7",
         "raffle_cExRHe"
