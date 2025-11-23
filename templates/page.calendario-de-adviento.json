@@ -149,7 +149,7 @@
             "bg_color_block": "#ffcd00",
             "survey_title": "Participa en nuestra encuesta",
             "survey_text": "<p>Rellena los datos para desbloquear tu regalo.</p>",
-            "survey_embed": ""
+            "survey_embed": "\"Aquí mostraremos una encuesta traída de Typeform o similar\""
           }
         },
         "trivia_egaHhR": {
