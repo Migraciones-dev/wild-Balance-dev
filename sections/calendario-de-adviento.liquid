@@ -14,7 +14,11 @@
   assign pb_desktop = se_stts.pb_desktop | default: 60
   
   assign heading = se_stts.heading
+  assign heading_highlight = se_stts.heading_highlight
   assign subheading = se_stts.subheading
+  assign title_gap_mobile = se_stts.title_gap_mobile | default: 32
+  assign title_gap_desktop = se_stts.title_gap_desktop | default: 40
+  assign max_width = se_stts.max_width | default: 1600
 -%}
 
 <section
@@ -33,16 +37,35 @@
         padding-bottom: {{ pb_desktop }}px !important;
       }
     }
+
+    #advent-calendar-{{ section_id }} .title-container {
+      margin-bottom: {{ title_gap_mobile }}px;
+    }
+
+    @media (min-width: 1024px) {
+      #advent-calendar-{{ section_id }} .title-container {
+        margin-bottom: {{ title_gap_desktop }}px;
+      }
+    }
+
+    #advent-calendar-{{ section_id }} .highlight {
+      background: linear-gradient(180deg, transparent 60%, #FFCD00 60%);
+      padding: 0 4px;
+    }
   </style>
 
-  <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+  <div style="max-width: {{ max_width }}px;" class="mx-auto px-4 sm:px-6 lg:px-8">
     {%- if heading != blank -%}
-      <div class="text-center mb-8">
-        <h2 class="font-['Barlow'] font-extrabold text-3xl lg:text-5xl text-[#004622] mb-4">
-          {{ heading }}
+      <div class="title-container text-center">
+        <h2 class="font-['Barlow'] font-extrabold text-[#004622] text-[30px] sm:text-[38px] md:text-[44px] lg:text-[57px] xl:text-[64px] leading-[1]">
+          {%- if heading_highlight != blank -%}
+            {{ heading | replace: heading_highlight, '<span class="highlight">' | append: heading_highlight | append: '</span>' }}
+          {%- else -%}
+            {{ heading }}
+          {%- endif -%}
         </h2>
         {%- if subheading != blank -%}
-          <p class="font-['DM_Sans'] text-base lg:text-lg text-[#004622] opacity-80">
+          <p class="font-['DM_Sans'] text-base lg:text-lg text-[#004622] opacity-80 mt-4">
             {{ subheading }}
           </p>
         {%- endif -%}
@@ -624,9 +647,45 @@
       "default": "Calendario de Adviento 2025"
     },
     {
+      "type": "text",
+      "id": "heading_highlight",
+      "label": "Texto a resaltar (debe estar en el título)",
+      "info": "Ej: Wild Balance"
+    },
+    {
       "type": "textarea",
       "id": "subheading",
       "label": "Subtítulo"
+    },
+    {
+      "type": "range",
+      "id": "title_gap_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Separación título-grid (móvil)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "title_gap_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Separación título-grid (desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 1000,
+      "max": 1600,
+      "step": 50,
+      "unit": "px",
+      "label": "Ancho máximo de la sección",
+      "default": 1600
     },
     {
       "type": "color",
