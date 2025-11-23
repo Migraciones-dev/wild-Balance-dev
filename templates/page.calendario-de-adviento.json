@@ -249,7 +249,7 @@
       "settings": {
         "heading": "Calendario de Adviento 2025",
         "heading_highlight": "",
-        "subheading": "",
+        "subheading": "<p>Esta será la descripción del sorteo.</p>",
         "title_gap_mobile": 36,
         "title_gap_desktop": 92,
         "max_width": 1300,
@@ -259,12 +259,41 @@
         "pt_desktop": 60,
         "pb_desktop": 60
       }
+    },
+    "migraciones_image_width_text_editable_EptBDG": {
+      "type": "migraciones-image-width-text-editable",
+      "name": "Imagen + Texto",
+      "settings": {
+        "image_position": "left",
+        "title": "Asesoramiento nutricional experto",
+        "description": "<p>En Wild Balance te ofrecemos asesoramiento nutricional personalizado para mejorar la salud y bienestar de tu mascota.</p>",
+        "show_badge": true,
+        "badge_title": "+100.000 Mascotas contentas",
+        "badge_subtitle": "Para perros y gatos",
+        "button_text": "Escríbenos",
+        "button_link": "",
+        "button_new_tab": true,
+        "bg_color": "#F4F0E2",
+        "title_color": "#004623",
+        "text_color": "#222222",
+        "button_bg_color": "#ffcd00",
+        "button_text_color": "#004623",
+        "pt_desktop": 80,
+        "pb_desktop": 80,
+        "mt_desktop": 80,
+        "mb_desktop": 80,
+        "pt_mobile": 40,
+        "pb_mobile": 40,
+        "mt_mobile": 40,
+        "mb_mobile": 40
+      }
     }
   },
   "order": [
     "heading",
     "main",
     "custom_liquid_naafgA",
-    "calendario_de_adviento_QyhqM7"
+    "calendario_de_adviento_QyhqM7",
+    "migraciones_image_width_text_editable_EptBDG"
   ]
 }
