@@ -35,14 +35,14 @@
     }
   </style>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
     {%- if heading != blank -%}
       <div class="text-center mb-8">
         <h2 class="font-['Barlow'] font-extrabold text-3xl lg:text-5xl text-[#004622] mb-4">
           {{ heading }}
         </h2>
         {%- if subheading != blank -%}
-          <p class="font-['DM_Sans'] text-base lg:text-[#004622] opacity-80">
+          <p class="font-['DM_Sans'] text-base lg:text-lg text-[#004622] opacity-80">
             {{ subheading }}
           </p>
         {%- endif -%}
@@ -105,7 +105,7 @@
 
   {%- comment -%} Modal container {%- endcomment -%}
   <div id="advent-modal-{{ section_id }}" class="advent-modal fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/50">
-    <div class="modal-content bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative">
+    <div class="modal-content bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
       <button class="modal-close absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-[#004622] text-white hover:bg-[#003318] transition-colors">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
@@ -243,7 +243,7 @@
                             value="{{ trimmed_option }}"
                             class="w-5 h-5 text-[#004622] focus:ring-[#004622]"
                           >
-                          <span class="font-['DM_Sans'] text-base">{{ trimmed_option }}</span>
+                          <span class="font-['DM_Sans']">{{ trimmed_option }}</span>
                         </label>
                       {%- endif -%}
                     {%- endfor -%}
@@ -263,7 +263,7 @@
           <div id="trivia-result-{{ block.id }}" class="hidden mt-6">
             <div class="trivia-success hidden bg-green-100 border-2 border-green-500 rounded-xl p-6 text-center">
               <p class="font-['Barlow'] font-bold text-2xl text-green-700 mb-4">
-                ¡Enhorabuena! Has acertado todas las preguntas 🎉
+                {{ block.settings.trivia_success_text | default: '¡Enhorabuena! Has acertado todas las preguntas 🎉' }}
               </p>
               <div class="bg-white rounded-xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div class="flex-1 text-center sm:text-left">
@@ -284,10 +284,10 @@
 
             <div class="trivia-failure hidden bg-red-100 border-2 border-red-500 rounded-xl p-6 text-center">
               <p class="font-['Barlow'] font-bold text-xl text-red-700 mb-2">
-                Lo sentimos, has fallado alguna pregunta 😔
+                {{ block.settings.trivia_failure_title | default: 'Lo sentimos, has fallado alguna pregunta 😔' }}
               </p>
-              <p class="font-['DM_Sans'] text-base text-red-600">
-                Revisa tus respuestas e inténtalo de nuevo.
+              <p class="font-['DM_Sans'] text-red-600">
+                {{ block.settings.trivia_failure_text | default: 'Revisa tus respuestas e inténtalo de nuevo.' }}
               </p>
             </div>
           </div>
@@ -298,6 +298,17 @@
           <h3 class="font-['Barlow'] font-bold text-4xl text-[#004622] mb-4">
             {{ block.settings.downloadable_title }}
           </h3>
+
+          {%- if block.settings.downloadable_image -%}
+            <div class="flex justify-center mb-6">
+              <img
+                src="{{ block.settings.downloadable_image | img_url: 'master' }}"
+                alt="{{ block.settings.downloadable_title }}"
+                class="rounded-xl"
+                style="max-width: {{ block.settings.downloadable_image_width | default: 100 }}%;"
+              >
+            </div>
+          {%- endif -%}
 
           <div class="font-['DM_Sans'] text-gray-700 mb-6 prose prose-lg max-w-none">
             {{ block.settings.downloadable_text }}
@@ -941,6 +952,24 @@
           "type": "text",
           "id": "trivia_reward_code",
           "label": "Código de descuento al acertar todas"
+        },
+        {
+          "type": "text",
+          "id": "trivia_success_text",
+          "label": "Texto de éxito",
+          "default": "¡Enhorabuena! Has acertado todas las preguntas 🎉"
+        },
+        {
+          "type": "text",
+          "id": "trivia_failure_title",
+          "label": "Título de error",
+          "default": "Lo sentimos, has fallado alguna pregunta 😔"
+        },
+        {
+          "type": "text",
+          "id": "trivia_failure_text",
+          "label": "Texto de error",
+          "default": "Revisa tus respuestas e inténtalo de nuevo."
         }
       ]
     },
@@ -990,6 +1019,21 @@
           "id": "downloadable_title",
           "label": "Título",
           "default": "Descarga tu regalo"
+        },
+        {
+          "type": "image_picker",
+          "id": "downloadable_image",
+          "label": "Imagen"
+        },
+        {
+          "type": "range",
+          "id": "downloadable_image_width",
+          "min": 30,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "label": "Ancho máximo de la imagen",
+          "default": 100
         },
         {
           "type": "richtext",
