@@ -93,11 +93,146 @@
       "settings": {
         "custom_liquid": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"BreadcrumbList\",\n      \"itemListElement\": [\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 1,\n          \"name\": \"Inicio\",\n          \"item\": \"https://wildbalance.es\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 2,\n          \"name\": \"Nutricionista - Almudena Armelles\",\n          \"item\": \"https://wildbalance.es/pages/nutricionista-almudena-armelles\"\n        }\n      ]\n    },\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://wildbalance.es/pages/nutricionista-almudena-armelles#person\",\n      \"name\": \"Almudena Armelles\",\n      \"image\": \"https://wildbalance.es/cdn/shop/files/almudena-armelles.jpg\", \n      \"jobTitle\": \"Nutricionista Animal y Bióloga\",\n      \"worksFor\": {\n        \"@type\": \"Organization\",\n        \"name\": \"Wild Balance\",\n        \"url\": \"https://wildbalance.es\"\n      },\n      \"description\": \"Licenciada en Biología y especialista en nutrición, dietética y homeopatía veterinaria. Almudena centra su trabajo en mejorar la salud y bienestar de perros y gatos a través de la alimentación natural.\",\n      \"alumniOf\": [\n        {\n          \"@type\": \"CollegeOrUniversity\",\n          \"name\": \"Universidad de Valencia\"\n        },\n        {\n          \"@type\": \"CollegeOrUniversity\",\n          \"name\": \"Universidad de Gerona\"\n        },\n        {\n          \"@type\": \"CollegeOrUniversity\",\n          \"name\": \"Instituto Europeo de Nutrición y Salud\"\n        }\n      ],\n      \"hasOccupation\": {\n        \"@type\": \"Occupation\",\n        \"name\": \"Nutrición Animal\",\n        \"description\": \"Evaluación y diseño de planes nutricionales para perros y gatos, basados en alimentación natural y principios de bienestar animal.\"\n      },\n      \"sameAs\": [\n        \"https://www.linkedin.com/in/almudena-armelles\",\n        \"https://www.instagram.com/almudenawildbalance/\"\n      ],\n      \"url\": \"https://wildbalance.es/pages/nutricionista-almudena-armelles\"\n    }\n  ]\n}\n</script>"
       }
+    },
+    "calendario_de_adviento_QyhqM7": {
+      "type": "calendario-de-adviento",
+      "blocks": {
+        "discount_yxwfj6": {
+          "type": "discount",
+          "settings": {
+            "day_number": "1",
+            "unlock_date": "",
+            "expire_date": "",
+            "bg_color_block": "#FFCD00",
+            "block_type": "discount",
+            "discount_title": "¡Descuento especial!",
+            "discount_text": "bnhgfh",
+            "discount_image": "shopify://shop_images/PORTADAS_BLOG_13.webp",
+            "image_width": 60,
+            "discount_code": "ABCD123"
+          }
+        },
+        "recipe_C6JXpc": {
+          "type": "recipe",
+          "settings": {
+            "day_number": "2",
+            "unlock_date": "",
+            "expire_date": "",
+            "bg_color_block": "#FFCD00",
+            "block_type": "recipe",
+            "recipe_title": "Receta especial",
+            "recipe_image": "shopify://shop_images/oferta-flash-boquerones.png",
+            "recipe_richtext": "<p>fgdasfdsfdsfffdsafsd</p>",
+            "recipe_cta_text": "",
+            "recipe_cta_link": ""
+          }
+        },
+        "trivia_egaHhR": {
+          "type": "trivia",
+          "settings": {
+            "day_number": "4",
+            "unlock_date": "",
+            "expire_date": "",
+            "bg_color_block": "#FFCD00",
+            "block_type": "trivia",
+            "trivia_title": "Trivial de Navidad",
+            "trivia_question_1": "gfdgfd",
+            "trivia_options_1": "A,B,C",
+            "trivia_answer_1": "A",
+            "trivia_question_2": "",
+            "trivia_options_2": "",
+            "trivia_answer_2": "",
+            "trivia_question_3": "",
+            "trivia_options_3": "",
+            "trivia_answer_3": "",
+            "trivia_question_4": "",
+            "trivia_options_4": "",
+            "trivia_answer_4": "",
+            "trivia_question_5": "",
+            "trivia_options_5": "",
+            "trivia_answer_5": "",
+            "trivia_reward_code": ""
+          }
+        },
+        "survey_4j43NW": {
+          "type": "survey",
+          "settings": {
+            "day_number": "3",
+            "unlock_date": "",
+            "expire_date": "",
+            "bg_color_block": "#FFCD00",
+            "block_type": "survey",
+            "survey_title": "Participa en nuestra encuesta",
+            "survey_text": "fdsfdfsdfs",
+            "survey_embed": ""
+          }
+        },
+        "downloadable_Yrhywk": {
+          "type": "downloadable",
+          "settings": {
+            "day_number": "5",
+            "unlock_date": "",
+            "expire_date": "",
+            "bg_color_block": "#FFCD00",
+            "block_type": "downloadable",
+            "downloadable_title": "Descarga tu regalo",
+            "downloadable_text": "",
+            "downloadable_cta_text": "Descargar ahora",
+            "downloadable_cta_link": ""
+          }
+        },
+        "video_66zQV7": {
+          "type": "video",
+          "settings": {
+            "day_number": "6",
+            "unlock_date": "",
+            "expire_date": "",
+            "bg_color_block": "#FFCD00",
+            "block_type": "video",
+            "video_title": "Video especial",
+            "video_text": "",
+            "video_embed": ""
+          }
+        },
+        "raffle_cExRHe": {
+          "type": "raffle",
+          "settings": {
+            "day_number": "7",
+            "unlock_date": "",
+            "expire_date": "",
+            "bg_color_block": "#FFCD00",
+            "block_type": "raffle",
+            "raffle_title": "¡Participa en el sorteo!",
+            "raffle_text": "",
+            "raffle_embed": ""
+          }
+        }
+      },
+      "block_order": [
+        "discount_yxwfj6",
+        "recipe_C6JXpc",
+        "trivia_egaHhR",
+        "survey_4j43NW",
+        "downloadable_Yrhywk",
+        "video_66zQV7",
+        "raffle_cExRHe"
+      ],
+      "name": "Calendario de Adviento",
+      "settings": {
+        "heading": "Calendario de Adviento 2025",
+        "subheading": "",
+        "bg_color": "#FBF5E7",
+        "pt_mobile": 40,
+        "pb_mobile": 40,
+        "pt_desktop": 60,
+        "pb_desktop": 60
+      }
     }
   },
   "order": [
     "heading",
     "main",
-    "custom_liquid_naafgA"
+    "custom_liquid_naafgA",
+    "calendario_de_adviento_QyhqM7"
   ]
 }
