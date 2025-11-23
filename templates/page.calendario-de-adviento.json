@@ -97,6 +97,19 @@
     "calendario_de_adviento_QyhqM7": {
       "type": "calendario-de-adviento",
       "blocks": {
+        "discount_9QiKkN": {
+          "type": "discount",
+          "settings": {
+            "day_number": "0",
+            "unlock_date": "2024-12-01 00:00",
+            "expire_date": "2025-11-02 23:59",
+            "bg_color_block": "#ffcd00",
+            "discount_title": "¡Descuento especial!",
+            "discount_text": "",
+            "image_width": 100,
+            "discount_code": ""
+          }
+        },
         "discount_yxwfj6": {
           "type": "discount",
           "settings": {
@@ -198,16 +211,31 @@
             "raffle_text": "",
             "raffle_embed": ""
           }
+        },
+        "discount_LiieUL": {
+          "type": "discount",
+          "settings": {
+            "day_number": "8",
+            "unlock_date": "2025-12-01 00:00",
+            "expire_date": "",
+            "bg_color_block": "#ffcd00",
+            "discount_title": "¡Descuento especial!",
+            "discount_text": "",
+            "image_width": 100,
+            "discount_code": ""
+          }
         }
       },
       "block_order": [
+        "discount_9QiKkN",
         "discount_yxwfj6",
         "recipe_C6JXpc",
         "survey_4j43NW",
         "trivia_egaHhR",
         "downloadable_Yrhywk",
         "video_66zQV7",
-        "raffle_cExRHe"
+        "raffle_cExRHe",
+        "discount_LiieUL"
       ],
       "name": "Calendario de Adviento",
       "settings": {
