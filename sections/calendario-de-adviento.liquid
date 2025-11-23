@@ -65,7 +65,7 @@
           {%- endif -%}
         </h2>
         {%- if subheading != blank -%}
-          <p class="description w-full [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal tracking-[0] leading-[26.1px] text-[14px] sm:text-[16px] lg:text-[18px] text-black mt-6 lg:mt-12">
+          <p class="font-['DM_Sans'] text-base lg:text-lg text-[#004622] opacity-80 mt-4">
             {{ subheading }}
           </p>
         {%- endif -%}
@@ -142,7 +142,7 @@
   </div>
 </section>
 
-{%- comment -%} Templates para cada tipo de bloque {%- endcomment -%}
+{%- comment -%} Templates para cada tipo de bloque - MISMO CÓDIGO QUE ANTES {%- endcomment -%}
 {%- for block in section.blocks -%}
   <template id="modal-content-{{ block.id }}">
     {%- liquid
@@ -508,11 +508,12 @@
 </script>
 
 <style>
+  /* Animación limpia del modal - solo fade-in del overlay */
   .advent-modal {
-    animation: fadeIn 0.3s ease-in-out;
+    animation: fadeInOverlay 0.2s ease-out;
   }
 
-  @keyframes fadeIn {
+  @keyframes fadeInOverlay {
     from {
       opacity: 0;
     }
@@ -521,18 +522,19 @@
     }
   }
 
+  /* Animación elegante del contenido - zoom sutil + fade */
   .modal-content {
-    animation: slideUp 0.3s ease-in-out;
+    animation: modalZoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  @keyframes slideUp {
+  @keyframes modalZoomIn {
     from {
-      transform: translateY(50px);
       opacity: 0;
+      transform: scale(0.95);
     }
     to {
-      transform: translateY(0);
       opacity: 1;
+      transform: scale(1);
     }
   }
 
@@ -609,10 +611,6 @@
     margin-bottom: 1em;
   }
 
-  .title-container {
-color: #222222;
-}
-
   .advent-richtext li {
     line-height: 1.6;
   }
@@ -657,7 +655,7 @@ color: #222222;
       "info": "Ej: Wild Balance"
     },
     {
-      "type": "richtext",
+      "type": "textarea",
       "id": "subheading",
       "label": "Subtítulo"
     },
