@@ -105,7 +105,7 @@
             "expire_date": "2025-11-02 23:59",
             "bg_color_block": "#ffcd00",
             "discount_title": "¡Descuento especial!",
-            "discount_text": "",
+            "discount_text": "<p>dsadsa</p>",
             "image_width": 100,
             "discount_code": ""
           }
