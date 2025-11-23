@@ -110,6 +110,20 @@
             "discount_code": ""
           }
         },
+        "discount_wfzd4T": {
+          "type": "discount",
+          "settings": {
+            "day_number": "0",
+            "unlock_date": "2024-12-01 00:00",
+            "expire_date": "2025-11-02 23:59",
+            "cover_image": "shopify://shop_images/10.webp",
+            "bg_color_block": "#ffcd00",
+            "discount_title": "¡Descuento especial!",
+            "discount_text": "",
+            "image_width": 100,
+            "discount_code": ""
+          }
+        },
         "discount_yxwfj6": {
           "type": "discount",
           "settings": {
@@ -232,10 +246,25 @@
             "image_width": 100,
             "discount_code": ""
           }
+        },
+        "discount_HFb7XW": {
+          "type": "discount",
+          "settings": {
+            "day_number": "9",
+            "unlock_date": "2025-12-01 00:00",
+            "expire_date": "",
+            "cover_image": "shopify://shop_images/PDP_Gato_LataMIX_Navidad_carrusel_mascota_20251106.webp",
+            "bg_color_block": "#ffcd00",
+            "discount_title": "¡Descuento especial!",
+            "discount_text": "",
+            "image_width": 100,
+            "discount_code": ""
+          }
         }
       },
       "block_order": [
         "discount_9QiKkN",
+        "discount_wfzd4T",
         "discount_yxwfj6",
         "recipe_C6JXpc",
         "survey_4j43NW",
@@ -243,7 +272,8 @@
         "downloadable_Yrhywk",
         "video_66zQV7",
         "raffle_cExRHe",
-        "discount_LiieUL"
+        "discount_LiieUL",
+        "discount_HFb7XW"
       ],
       "name": "Calendario de Adviento",
       "settings": {
