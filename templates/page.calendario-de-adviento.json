@@ -105,7 +105,7 @@
             "expire_date": "2025-11-02 23:59",
             "bg_color_block": "#ffcd00",
             "discount_title": "¡Descuento especial!",
-            "discount_text": "<p>dsadsa</p>",
+            "discount_text": "",
             "image_width": 100,
             "discount_code": ""
           }
@@ -119,8 +119,9 @@
             "cover_image": "shopify://shop_images/BLOG_MejillonVerde_Portada_movile_20251118.webp",
             "bg_color_block": "#ffcd00",
             "discount_title": "¡Descuento especial!",
-            "discount_text": "<p>bnhgfh</p>",
-            "image_width": 60,
+            "discount_text": "<p>Descuento en latas y accesorios.</p>",
+            "discount_image": "shopify://shop_images/PORTADAS_BLOG_13.webp",
+            "image_width": 100,
             "discount_code": "ABCD123"
           }
         },
