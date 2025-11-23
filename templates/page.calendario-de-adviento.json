@@ -247,8 +247,12 @@
       ],
       "name": "Calendario de Adviento",
       "settings": {
-        "heading": "Calendario de Adviento 2025",
+        "heading": "Calendario de Adviento",
+        "heading_highlight": "2025",
         "subheading": "",
+        "title_gap_mobile": 36,
+        "title_gap_desktop": 92,
+        "max_width": 1600,
         "bg_color": "#fbf5e7",
         "pt_mobile": 40,
         "pb_mobile": 40,
