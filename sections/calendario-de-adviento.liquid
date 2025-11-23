@@ -105,14 +105,18 @@
 
   {%- comment -%} Modal container {%- endcomment -%}
   <div id="advent-modal-{{ section_id }}" class="advent-modal fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/50">
-    <div class="modal-content bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
-      <button class="modal-close absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-[#004622] text-white hover:bg-[#003318] transition-colors">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
-      </button>
+    <div class="modal-content bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden relative flex flex-col">
+      {%- comment -%} Header sticky con botón cerrar {%- endcomment -%}
+      <div class="sticky top-0 z-20 bg-white rounded-t-2xl flex justify-end p-4 border-b border-gray-100">
+        <button class="modal-close w-10 h-10 flex items-center justify-center rounded-full bg-[#004622] text-white hover:bg-[#003318] transition-colors">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
 
-      <div class="modal-body p-8">
+      {%- comment -%} Contenido scrollable {%- endcomment -%}
+      <div class="modal-body overflow-y-auto p-8 pt-4">
         {%- comment -%} Contenido dinámico se insertará aquí con JS {%- endcomment -%}
       </div>
     </div>
@@ -373,12 +377,14 @@
   modalClose.addEventListener('click', () => {
     modal.classList.add('hidden');
     modal.classList.remove('flex');
+    document.body.style.overflow = '';
   });
   
   modal.addEventListener('click', (e) => {
     if (e.target === modal) {
       modal.classList.add('hidden');
       modal.classList.remove('flex');
+      document.body.style.overflow = '';
     }
   });
 
@@ -426,6 +432,7 @@
           modalBody.innerHTML = template.innerHTML;
           modal.classList.remove('hidden');
           modal.classList.add('flex');
+          document.body.style.overflow = 'hidden';
         }
       });
     }
