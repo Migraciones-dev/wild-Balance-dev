@@ -262,6 +262,7 @@
     },
     "migraciones_image_width_text_editable_EptBDG": {
       "type": "migraciones-image-width-text-editable",
+      "disabled": true,
       "name": "Imagen + Texto",
       "settings": {
         "image_position": "left",
