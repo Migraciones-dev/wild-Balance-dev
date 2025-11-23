@@ -634,6 +634,48 @@
             "mb_mobile": 0
           }
         },
+        "banner_pVjcgQ": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/oferta-flash-barf-salmon-perro.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-barf-salmon-perro.png",
+            "image_link": "",
+            "product": "menu-barf-salmon-pavo-perros",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-24 09:00",
+            "end_date": "2025-11-25 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_EPwxcp": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/oferta-flash-barf-conejo-gato.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-barf-conejo-gato.png",
+            "image_link": "",
+            "product": "menu-barf-conejo-gatos",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-24 09:00",
+            "end_date": "2025-11-25 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
         "banner_Kgincf": {
           "type": "banner",
           "settings": {
@@ -929,6 +971,8 @@
         "banner_zPwGNR",
         "banner_VeAihh",
         "banner_PqUFUM",
+        "banner_pVjcgQ",
+        "banner_EPwxcp",
         "banner_Kgincf",
         "banner_nhXxLp",
         "banner_hXWBnb",
