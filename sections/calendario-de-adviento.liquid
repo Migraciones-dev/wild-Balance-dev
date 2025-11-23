@@ -1,0 +1,1178 @@
+{%- comment -%}
+  Section: Calendario de Adviento Wild Balance
+  7 tipos de bloques: Descuento, Receta/Historia/Consejo, Encuesta, Trivial, Descargable, Video, Sorteo
+{%- endcomment -%}
+
+{%- liquid
+  assign se_stts = section.settings
+  assign section_id = section.id
+  
+  assign bg_color = se_stts.bg_color | default: '#FBF5E7'
+  assign pt_mobile = se_stts.pt_mobile | default: 40
+  assign pb_mobile = se_stts.pb_mobile | default: 40
+  assign pt_desktop = se_stts.pt_desktop | default: 60
+  assign pb_desktop = se_stts.pb_desktop | default: 60
+  
+  assign heading = se_stts.heading
+  assign subheading = se_stts.subheading
+-%}
+
+<section
+  id="advent-calendar-{{ section_id }}"
+  class="advent-calendar-section w-full"
+  style="
+    background-color: {{ bg_color }};
+    padding-top: {{ pt_mobile }}px;
+    padding-bottom: {{ pb_mobile }}px;
+  "
+>
+  <style>
+    @media (min-width: 1024px) {
+      #advent-calendar-{{ section_id }} {
+        padding-top: {{ pt_desktop }}px !important;
+        padding-bottom: {{ pb_desktop }}px !important;
+      }
+    }
+  </style>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {%- if heading != blank -%}
+      <div class="text-center mb-8">
+        <h2 class="font-['Barlow'] font-extrabold text-3xl lg:text-5xl text-[#004622] mb-4">
+          {{ heading }}
+        </h2>
+        {%- if subheading != blank -%}
+          <p class="font-['DM_Sans'] text-base lg:text-lg text-[#004622] opacity-80">
+            {{ subheading }}
+          </p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} Grid de bloques {%- endcomment -%}
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign block_type = block.settings.block_type
+          assign day_number = block.settings.day_number
+          assign unlock_date = block.settings.unlock_date
+          assign expire_date = block.settings.expire_date
+          assign cover_image = block.settings.cover_image
+          assign bg_color_block = block.settings.bg_color_block | default: '#FFCD00'
+          
+          assign block_id = block.id
+        -%}
+
+        <div
+          class="advent-day-block relative aspect-square rounded-xl overflow-hidden cursor-pointer transition-transform hover:scale-105"
+          data-block-id="{{ block_id }}"
+          data-block-type="{{ block_type }}"
+          data-unlock-date="{{ unlock_date }}"
+          data-expire-date="{{ expire_date }}"
+          style="{% unless cover_image %}background-color: {{ bg_color_block }};{% endunless %}"
+        >
+          {%- if cover_image -%}
+            <img
+              src="{{ cover_image | img_url: '600x600', crop: 'center' }}"
+              alt="Día {{ day_number }}"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            >
+          {%- endif -%}
+
+          {%- comment -%} Número del día {%- endcomment -%}
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span class="font-['Barlow'] font-black text-6xl lg:text-7xl text-white drop-shadow-lg">
+              {{ day_number }}
+            </span>
+          </div>
+
+          {%- comment -%} Overlay de bloqueado {%- endcomment -%}
+          <div class="locked-overlay absolute inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center">
+            <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+
+          {%- comment -%} Overlay de expirado {%- endcomment -%}
+          <div class="expired-overlay absolute inset-0 bg-gray-500/80 hidden items-center justify-center">
+            <span class="font-['DM_Sans'] font-bold text-white text-sm">Expirado</span>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+
+  {%- comment -%} Modal container {%- endcomment -%}
+  <div id="advent-modal-{{ section_id }}" class="advent-modal fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/50">
+    <div class="modal-content bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative">
+      <button class="modal-close absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-[#004622] text-white hover:bg-[#003318] transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <div class="modal-body p-8">
+        {%- comment -%} Contenido dinámico se insertará aquí con JS {%- endcomment -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- comment -%} Templates para cada tipo de bloque {%- endcomment -%}
+{%- for block in section.blocks -%}
+  <template id="modal-content-{{ block.id }}">
+    {%- liquid
+      assign block_type = block.settings.block_type
+    -%}
+
+    {%- case block_type -%}
+      {%- when 'discount' -%}
+        <div class="discount-block">
+          {%- if block.settings.discount_image -%}
+            <img
+              src="{{ block.settings.discount_image | img_url: 'master' }}"
+              alt="{{ block.settings.discount_title }}"
+              class="w-full rounded-xl mb-6"
+              style="max-width: {{ block.settings.image_width | default: 100 }}%;"
+            >
+          {%- endif -%}
+
+          <h3 class="font-['Barlow'] font-bold text-3xl text-[#004622] mb-4">
+            {{ block.settings.discount_title }}
+          </h3>
+
+          <p class="font-['DM_Sans'] text-base text-gray-700 mb-6">
+            {{ block.settings.discount_text }}
+          </p>
+
+          <div class="bg-[#FBF5E7] rounded-xl p-6 flex items-center justify-between gap-4">
+            <div class="flex-1">
+              <span class="font-['DM_Sans'] text-sm text-gray-600 block mb-1">Código de descuento:</span>
+              <span class="font-['Barlow'] font-bold text-2xl text-[#004622]" id="discount-code-{{ block.id }}">
+                {{ block.settings.discount_code }}
+              </span>
+            </div>
+            <button
+              onclick="copyDiscountCode('{{ block.id }}', '{{ block.settings.discount_code }}')"
+              class="bg-[#004622] text-white px-6 py-3 rounded-full font-['DM_Sans'] font-bold hover:bg-[#003318] transition-colors whitespace-nowrap"
+            >
+              Copiar código
+            </button>
+          </div>
+        </div>
+
+      {%- when 'recipe' -%}
+        <div class="recipe-block">
+          <h3 class="font-['Barlow'] font-bold text-3xl text-[#004622] mb-4">
+            {{ block.settings.recipe_title }}
+          </h3>
+
+          {%- if block.settings.recipe_image -%}
+            <img
+              src="{{ block.settings.recipe_image | img_url: 'master' }}"
+              alt="{{ block.settings.recipe_title }}"
+              class="w-full rounded-xl mb-6"
+            >
+          {%- endif -%}
+
+          <div class="font-['DM_Sans'] text-base text-gray-700 prose prose-lg max-w-none mb-6">
+            {{ block.settings.recipe_richtext }}
+          </div>
+
+          {%- if block.settings.recipe_cta_text != blank and block.settings.recipe_cta_link != blank -%}
+            <a
+              href="{{ block.settings.recipe_cta_link }}"
+              class="inline-block bg-[#FFCD00] text-[#004622] px-8 py-4 rounded-full font-['DM_Sans'] font-bold hover:bg-[#FFD700] transition-colors"
+            >
+              {{ block.settings.recipe_cta_text }}
+            </a>
+          {%- endif -%}
+        </div>
+
+      {%- when 'survey' -%}
+        <div class="survey-block">
+          <h3 class="font-['Barlow'] font-bold text-3xl text-[#004622] mb-4">
+            {{ block.settings.survey_title }}
+          </h3>
+
+          <p class="font-['DM_Sans'] text-base text-gray-700 mb-6">
+            {{ block.settings.survey_text }}
+          </p>
+
+          <div class="survey-embed">
+            {{ block.settings.survey_embed }}
+          </div>
+        </div>
+
+      {%- when 'trivia' -%}
+        <div class="trivia-block" id="trivia-{{ block.id }}">
+          <h3 class="font-['Barlow'] font-bold text-3xl text-[#004622] mb-6">
+            {{ block.settings.trivia_title }}
+          </h3>
+
+          <div class="trivia-questions space-y-6">
+            {%- for i in (1..5) -%}
+              {%- assign question_key = 'trivia_question_' | append: i -%}
+              {%- assign answer_key = 'trivia_answer_' | append: i -%}
+              {%- assign options_key = 'trivia_options_' | append: i -%}
+              
+              {%- assign question = block.settings[question_key] -%}
+              {%- assign correct_answer = block.settings[answer_key] -%}
+              {%- assign options = block.settings[options_key] | split: ',' -%}
+
+              <div class="trivia-question bg-[#FBF5E7] rounded-xl p-6" data-correct-answer="{{ correct_answer }}">
+                <p class="font-['DM_Sans'] font-bold text-lg text-[#004622] mb-4">
+                  {{ i }}. {{ question }}
+                </p>
+
+                <div class="space-y-3">
+                  {%- for option in options -%}
+                    {%- assign trimmed_option = option | strip -%}
+                    <label class="flex items-center gap-3 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="trivia-q{{ i }}-{{ block.id }}"
+                        value="{{ trimmed_option }}"
+                        class="w-5 h-5 text-[#004622] focus:ring-[#004622]"
+                      >
+                      <span class="font-['DM_Sans'] text-base">{{ trimmed_option }}</span>
+                    </label>
+                  {%- endfor -%}
+                </div>
+              </div>
+            {%- endfor -%}
+          </div>
+
+          <button
+            onclick="checkTriviaAnswers('{{ block.id }}')"
+            class="mt-6 w-full bg-[#004622] text-white px-8 py-4 rounded-full font-['DM_Sans'] font-bold hover:bg-[#003318] transition-colors"
+          >
+            Comprobar respuestas
+          </button>
+
+          <div id="trivia-result-{{ block.id }}" class="hidden mt-6">
+            <div class="trivia-success hidden bg-green-100 border-2 border-green-500 rounded-xl p-6 text-center">
+              <p class="font-['Barlow'] font-bold text-2xl text-green-700 mb-4">
+                ¡Enhorabuena! Has acertado todas las preguntas 🎉
+              </p>
+              <div class="bg-white rounded-xl p-4 flex items-center justify-between gap-4">
+                <div class="flex-1">
+                  <span class="font-['DM_Sans'] text-sm text-gray-600 block mb-1">Tu código de descuento:</span>
+                  <span class="font-['Barlow'] font-bold text-2xl text-[#004622]" id="trivia-code-{{ block.id }}">
+                    {{ block.settings.trivia_reward_code }}
+                  </span>
+                </div>
+                <button
+                  onclick="copyDiscountCode('trivia-{{ block.id }}', '{{ block.settings.trivia_reward_code }}')"
+                  class="bg-[#004622] text-white px-6 py-3 rounded-full font-['DM_Sans'] font-bold hover:bg-[#003318] transition-colors whitespace-nowrap"
+                >
+                  Copiar código
+                </button>
+              </div>
+            </div>
+
+            <div class="trivia-failure hidden bg-red-100 border-2 border-red-500 rounded-xl p-6 text-center">
+              <p class="font-['Barlow'] font-bold text-xl text-red-700 mb-2">
+                Lo sentimos, has fallado alguna pregunta 😔
+              </p>
+              <p class="font-['DM_Sans'] text-base text-red-600">
+                Revisa tus respuestas e inténtalo de nuevo.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      {%- when 'downloadable' -%}
+        <div class="downloadable-block">
+          <h3 class="font-['Barlow'] font-bold text-3xl text-[#004622] mb-4">
+            {{ block.settings.downloadable_title }}
+          </h3>
+
+          <p class="font-['DM_Sans'] text-base text-gray-700 mb-6">
+            {{ block.settings.downloadable_text }}
+          </p>
+
+          {%- if block.settings.downloadable_cta_text != blank and block.settings.downloadable_cta_link != blank -%}
+            <a
+              href="{{ block.settings.downloadable_cta_link }}"
+              download
+              class="inline-block bg-[#FFCD00] text-[#004622] px-8 py-4 rounded-full font-['DM_Sans'] font-bold hover:bg-[#FFD700] transition-colors"
+            >
+              {{ block.settings.downloadable_cta_text }}
+            </a>
+          {%- endif -%}
+        </div>
+
+      {%- when 'video' -%}
+        <div class="video-block">
+          <h3 class="font-['Barlow'] font-bold text-3xl text-[#004622] mb-4">
+            {{ block.settings.video_title }}
+          </h3>
+
+          <p class="font-['DM_Sans'] text-base text-gray-700 mb-6">
+            {{ block.settings.video_text }}
+          </p>
+
+          {%- if block.settings.video_embed != blank -%}
+            <div class="video-container rounded-xl overflow-hidden mb-4">
+              {{ block.settings.video_embed }}
+            </div>
+          {%- endif -%}
+        </div>
+
+      {%- when 'raffle' -%}
+        <div class="raffle-block">
+          <h3 class="font-['Barlow'] font-bold text-3xl text-[#004622] mb-4">
+            {{ block.settings.raffle_title }}
+          </h3>
+
+          <p class="font-['DM_Sans'] text-base text-gray-700 mb-6">
+            {{ block.settings.raffle_text }}
+          </p>
+
+          {%- if block.settings.raffle_embed != blank -%}
+            <div class="raffle-embed">
+              {{ block.settings.raffle_embed }}
+            </div>
+          {%- endif -%}
+        </div>
+    {%- endcase -%}
+  </template>
+{%- endfor -%}
+
+<script>
+(function() {
+  const sectionId = '{{ section_id }}';
+  const modal = document.getElementById(`advent-modal-${sectionId}`);
+  const modalBody = modal.querySelector('.modal-body');
+  const modalClose = modal.querySelector('.modal-close');
+  
+  // Cerrar modal
+  modalClose.addEventListener('click', () => {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  });
+  
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  });
+
+  // Función para verificar si un bloque está desbloqueado
+  function isUnlocked(unlockDate) {
+    if (!unlockDate) return true;
+    const unlock = new Date(unlockDate).getTime();
+    const now = new Date().getTime();
+    return now >= unlock;
+  }
+
+  // Función para verificar si un bloque ha expirado
+  function isExpired(expireDate) {
+    if (!expireDate) return false;
+    const expire = new Date(expireDate).getTime();
+    const now = new Date().getTime();
+    return now > expire;
+  }
+
+  // Inicializar bloques
+  const blocks = document.querySelectorAll('[data-block-id]');
+  
+  blocks.forEach(block => {
+    const blockId = block.dataset.blockId;
+    const unlockDate = block.dataset.unlockDate;
+    const expireDate = block.dataset.expireDate;
+    
+    const lockedOverlay = block.querySelector('.locked-overlay');
+    const expiredOverlay = block.querySelector('.expired-overlay');
+
+    // Verificar estado
+    if (isExpired(expireDate)) {
+      expiredOverlay.classList.remove('hidden');
+      expiredOverlay.classList.add('flex');
+      block.classList.add('pointer-events-none');
+    } else if (!isUnlocked(unlockDate)) {
+      lockedOverlay.classList.remove('hidden');
+      lockedOverlay.classList.add('flex');
+      block.classList.add('pointer-events-none');
+    } else {
+      // Bloque desbloqueado - agregar evento click
+      block.addEventListener('click', () => {
+        const template = document.getElementById(`modal-content-${blockId}`);
+        if (template) {
+          modalBody.innerHTML = template.innerHTML;
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+        }
+      });
+    }
+  });
+
+  // Función para copiar código de descuento
+  window.copyDiscountCode = function(blockId, code) {
+    navigator.clipboard.writeText(code).then(() => {
+      alert('¡Código copiado al portapapeles!');
+    });
+  };
+
+  // Función para verificar respuestas del trivial
+  window.checkTriviaAnswers = function(blockId) {
+    const triviaBlock = document.getElementById(`trivia-${blockId}`);
+    const questions = triviaBlock.querySelectorAll('.trivia-question');
+    let allCorrect = true;
+
+    questions.forEach(question => {
+      const correctAnswer = question.dataset.correctAnswer;
+      const selectedAnswer = question.querySelector('input[type="radio"]:checked');
+      
+      if (!selectedAnswer || selectedAnswer.value.trim() !== correctAnswer.trim()) {
+        allCorrect = false;
+      }
+    });
+
+    const resultDiv = document.getElementById(`trivia-result-${blockId}`);
+    const successDiv = resultDiv.querySelector('.trivia-success');
+    const failureDiv = resultDiv.querySelector('.trivia-failure');
+
+    resultDiv.classList.remove('hidden');
+
+    if (allCorrect) {
+      successDiv.classList.remove('hidden');
+      failureDiv.classList.add('hidden');
+    } else {
+      successDiv.classList.add('hidden');
+      failureDiv.classList.remove('hidden');
+    }
+  };
+})();
+</script>
+
+<style>
+  .advent-modal {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .modal-content {
+    animation: slideUp 0.3s ease-in-out;
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .video-container iframe,
+  .video-container video {
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
+
+  .survey-embed iframe,
+  .raffle-embed iframe {
+    width: 100%;
+    min-height: 500px;
+    border: none;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Calendario de Adviento",
+  "class": "advent-calendar-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Configuración general"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título principal",
+      "default": "Calendario de Adviento 2025"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subtítulo"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Color de fondo",
+      "default": "#FBF5E7"
+    },
+    {
+      "type": "header",
+      "content": "Espaciado"
+    },
+    {
+      "type": "range",
+      "id": "pt_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding superior (móvil)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "pb_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding inferior (móvil)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "pt_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding superior (desktop)",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "pb_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding inferior (desktop)",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "discount",
+      "name": "Descuento",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Configuración del bloque"
+        },
+        {
+          "type": "text",
+          "id": "day_number",
+          "label": "Número del día",
+          "default": "1"
+        },
+        {
+          "type": "text",
+          "id": "unlock_date",
+          "label": "Fecha de desbloqueo",
+          "info": "Formato: YYYY-MM-DD HH:MM (ej: 2025-12-01 00:00)"
+        },
+        {
+          "type": "text",
+          "id": "expire_date",
+          "label": "Fecha de expiración",
+          "info": "Formato: YYYY-MM-DD HH:MM (ej: 2025-12-02 23:59)"
+        },
+        {
+          "type": "image_picker",
+          "id": "cover_image",
+          "label": "Imagen de portada (opcional)"
+        },
+        {
+          "type": "color",
+          "id": "bg_color_block",
+          "label": "Color de fondo (si no hay imagen)",
+          "default": "#FFCD00"
+        },
+        {
+          "type": "select",
+          "id": "block_type",
+          "label": "Tipo de bloque",
+          "options": [
+            { "value": "discount", "label": "Descuento" }
+          ],
+          "default": "discount"
+        },
+        {
+          "type": "header",
+          "content": "Contenido del modal"
+        },
+        {
+          "type": "text",
+          "id": "discount_title",
+          "label": "Título",
+          "default": "¡Descuento especial!"
+        },
+        {
+          "type": "textarea",
+          "id": "discount_text",
+          "label": "Descripción"
+        },
+        {
+          "type": "image_picker",
+          "id": "discount_image",
+          "label": "Imagen"
+        },
+        {
+          "type": "range",
+          "id": "image_width",
+          "min": 30,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "label": "Ancho máximo de la imagen",
+          "default": 100
+        },
+        {
+          "type": "text",
+          "id": "discount_code",
+          "label": "Código de descuento"
+        }
+      ]
+    },
+    {
+      "type": "recipe",
+      "name": "Receta/Historia/Consejo",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Configuración del bloque"
+        },
+        {
+          "type": "text",
+          "id": "day_number",
+          "label": "Número del día",
+          "default": "2"
+        },
+        {
+          "type": "text",
+          "id": "unlock_date",
+          "label": "Fecha de desbloqueo",
+          "info": "Formato: YYYY-MM-DD HH:MM"
+        },
+        {
+          "type": "text",
+          "id": "expire_date",
+          "label": "Fecha de expiración",
+          "info": "Formato: YYYY-MM-DD HH:MM"
+        },
+        {
+          "type": "image_picker",
+          "id": "cover_image",
+          "label": "Imagen de portada (opcional)"
+        },
+        {
+          "type": "color",
+          "id": "bg_color_block",
+          "label": "Color de fondo (si no hay imagen)",
+          "default": "#FFCD00"
+        },
+        {
+          "type": "select",
+          "id": "block_type",
+          "label": "Tipo de bloque",
+          "options": [
+            { "value": "recipe", "label": "Receta / Historia / Consejo" }
+          ],
+          "default": "recipe"
+        },
+        {
+          "type": "header",
+          "content": "Contenido del modal"
+        },
+        {
+          "type": "text",
+          "id": "recipe_title",
+          "label": "Título",
+          "default": "Receta especial"
+        },
+        {
+          "type": "image_picker",
+          "id": "recipe_image",
+          "label": "Imagen"
+        },
+        {
+          "type": "richtext",
+          "id": "recipe_richtext",
+          "label": "Contenido"
+        },
+        {
+          "type": "text",
+          "id": "recipe_cta_text",
+          "label": "Texto del botón"
+        },
+        {
+          "type": "url",
+          "id": "recipe_cta_link",
+          "label": "Enlace del botón"
+        }
+      ]
+    },
+    {
+      "type": "survey",
+      "name": "Encuesta",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Configuración del bloque"
+        },
+        {
+          "type": "text",
+          "id": "day_number",
+          "label": "Número del día",
+          "default": "3"
+        },
+        {
+          "type": "text",
+          "id": "unlock_date",
+          "label": "Fecha de desbloqueo",
+          "info": "Formato: YYYY-MM-DD HH:MM"
+        },
+        {
+          "type": "text",
+          "id": "expire_date",
+          "label": "Fecha de expiración",
+          "info": "Formato: YYYY-MM-DD HH:MM"
+        },
+        {
+          "type": "image_picker",
+          "id": "cover_image",
+          "label": "Imagen de portada (opcional)"
+        },
+        {
+          "type": "color",
+          "id": "bg_color_block",
+          "label": "Color de fondo (si no hay imagen)",
+          "default": "#FFCD00"
+        },
+        {
+          "type": "select",
+          "id": "block_type",
+          "label": "Tipo de bloque",
+          "options": [
+            { "value": "survey", "label": "Encuesta" }
+          ],
+          "default": "survey"
+        },
+        {
+          "type": "header",
+          "content": "Contenido del modal"
+        },
+        {
+          "type": "text",
+          "id": "survey_title",
+          "label": "Título",
+          "default": "Participa en nuestra encuesta"
+        },
+        {
+          "type": "textarea",
+          "id": "survey_text",
+          "label": "Descripción"
+        },
+        {
+          "type": "html",
+          "id": "survey_embed",
+          "label": "Código embed de la encuesta (Typeform, etc.)"
+        }
+      ]
+    },
+    {
+      "type": "trivia",
+      "name": "Trivial",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Configuración del bloque"
+        },
+        {
+          "type": "text",
+          "id": "day_number",
+          "label": "Número del día",
+          "default": "4"
+        },
+        {
+          "type": "text",
+          "id": "unlock_date",
+          "label": "Fecha de desbloqueo",
+          "info": "Formato: YYYY-MM-DD HH:MM"
+        },
+        {
+          "type": "text",
+          "id": "expire_date",
+          "label": "Fecha de expiración",
+          "info": "Formato: YYYY-MM-DD HH:MM"
+        },
+        {
+          "type": "image_picker",
+          "id": "cover_image",
+          "label": "Imagen de portada (opcional)"
+        },
+        {
+          "type": "color",
+          "id": "bg_color_block",
+          "label": "Color de fondo (si no hay imagen)",
+          "default": "#FFCD00"
+        },
+        {
+          "type": "select",
+          "id": "block_type",
+          "label": "Tipo de bloque",
+          "options": [
+            { "value": "trivia", "label": "Trivial" }
+          ],
+          "default": "trivia"
+        },
+        {
+          "type": "header",
+          "content": "Contenido del modal"
+        },
+        {
+          "type": "text",
+          "id": "trivia_title",
+          "label": "Título",
+          "default": "Trivial de Navidad"
+        },
+        {
+          "type": "header",
+          "content": "Pregunta 1"
+        },
+        {
+          "type": "text",
+          "id": "trivia_question_1",
+          "label": "Pregunta 1"
+        },
+        {
+          "type": "text",
+          "id": "trivia_options_1",
+          "label": "Opciones (separadas por comas)",
+          "info": "Ej: Opción A, Opción B, Opción C"
+        },
+        {
+          "type": "text",
+          "id": "trivia_answer_1",
+          "label": "Respuesta correcta",
+          "info": "Debe coincidir exactamente con una de las opciones"
+        },
+        {
+          "type": "header",
+          "content": "Pregunta 2"
+        },
+        {
+          "type": "text",
+          "id": "trivia_question_2",
+          "label": "Pregunta 2"
+        },
+        {
+          "type": "text",
+          "id": "trivia_options_2",
+          "label": "Opciones (separadas por comas)"
+        },
+        {
+          "type": "text",
+          "id": "trivia_answer_2",
+          "label": "Respuesta correcta"
+        },
+        {
+          "type": "header",
+          "content": "Pregunta 3"
+        },
+        {
+          "type": "text",
+          "id": "trivia_question_3",
+          "label": "Pregunta 3"
+        },
+        {
+          "type": "text",
+          "id": "trivia_options_3",
+          "label": "Opciones (separadas por comas)"
+        },
+        {
+          "type": "text",
+          "id": "trivia_answer_3",
+          "label": "Respuesta correcta"
+        },
+        {
+          "type": "header",
+          "content": "Pregunta 4"
+        },
+        {
+          "type": "text",
+          "id": "trivia_question_4",
+          "label": "Pregunta 4"
+        },
+        {
+          "type": "text",
+          "id": "trivia_options_4",
+          "label": "Opciones (separadas por comas)"
+        },
+        {
+          "type": "text",
+          "id": "trivia_answer_4",
+          "label": "Respuesta correcta"
+        },
+        {
+          "type": "header",
+          "content": "Pregunta 5"
+        },
+        {
+          "type": "text",
+          "id": "trivia_question_5",
+          "label": "Pregunta 5"
+        },
+        {
+          "type": "text",
+          "id": "trivia_options_5",
+          "label": "Opciones (separadas por comas)"
+        },
+        {
+          "type": "text",
+          "id": "trivia_answer_5",
+          "label": "Respuesta correcta"
+        },
+        {
+          "type": "header",
+          "content": "Recompensa"
+        },
+        {
+          "type": "text",
+          "id": "trivia_reward_code",
+          "label": "Código de descuento al acertar todas"
+        }
+      ]
+    },
+    {
+      "type": "downloadable",
+      "name": "Descargable",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Configuración del bloque"
+        },
+        {
+          "type": "text",
+          "id": "day_number",
+          "label": "Número del día",
+          "default": "5"
+        },
+        {
+          "type": "text",
+          "id": "unlock_date",
+          "label": "Fecha de desbloqueo",
+          "info": "Formato: YYYY-MM-DD HH:MM"
+        },
+        {
+          "type": "text",
+          "id": "expire_date",
+          "label": "Fecha de expiración",
+          "info": "Formato: YYYY-MM-DD HH:MM"
+        },
+        {
+          "type": "image_picker",
+          "id": "cover_image",
+          "label": "Imagen de portada (opcional)"
+        },
+        {
+          "type": "color",
+          "id": "bg_color_block",
+          "label": "Color de fondo (si no hay imagen)",
+          "default": "#FFCD00"
+        },
+        {
+          "type": "select",
+          "id": "block_type",
+          "label": "Tipo de bloque",
+          "options": [
+            { "value": "downloadable", "label": "Descargable" }
+          ],
+          "default": "downloadable"
+        },
+        {
+          "type": "header",
+          "content": "Contenido del modal"
+        },
+        {
+          "type": "text",
+          "id": "downloadable_title",
+          "label": "Título",
+          "default": "Descarga tu regalo"
+        },
+        {
+          "type": "textarea",
+          "id": "downloadable_text",
+          "label": "Descripción"
+        },
+        {
+          "type": "text",
+          "id": "downloadable_cta_text",
+          "label": "Texto del botón",
+          "default": "Descargar ahora"
+        },
+        {
+          "type": "url",
+          "id": "downloadable_cta_link",
+          "label": "Enlace de descarga"
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Configuración del bloque"
+        },
+        {
+          "type": "text",
+          "id": "day_number",
+          "label": "Número del día",
+          "default": "6"
+        },
+        {
+          "type": "text",
+          "id": "unlock_date",
+          "label": "Fecha de desbloqueo",
+          "info": "Formato: YYYY-MM-DD HH:MM"
+        },
+        {
+          "type": "text",
+          "id": "expire_date",
+          "label": "Fecha de expiración",
+          "info": "Formato: YYYY-MM-DD HH:MM"
+        },
+        {
+          "type": "image_picker",
+          "id": "cover_image",
+          "label": "Imagen de portada (opcional)"
+        },
+        {
+          "type": "color",
+          "id": "bg_color_block",
+          "label": "Color de fondo (si no hay imagen)",
+          "default": "#FFCD00"
+        },
+        {
+          "type": "select",
+          "id": "block_type",
+          "label": "Tipo de bloque",
+          "options": [
+            { "value": "video", "label": "Video" }
+          ],
+          "default": "video"
+        },
+        {
+          "type": "header",
+          "content": "Contenido del modal"
+        },
+        {
+          "type": "text",
+          "id": "video_title",
+          "label": "Título",
+          "default": "Video especial"
+        },
+        {
+          "type": "textarea",
+          "id": "video_text",
+          "label": "Descripción"
+        },
+        {
+          "type": "html",
+          "id": "video_embed",
+          "label": "Código embed del video (YouTube, Vimeo, etc.)"
+        }
+      ]
+    },
+    {
+      "type": "raffle",
+      "name": "Sorteo",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Configuración del bloque"
+        },
+        {
+          "type": "text",
+          "id": "day_number",
+          "label": "Número del día",
+          "default": "7"
+        },
+        {
+          "type": "text",
+          "id": "unlock_date",
+          "label": "Fecha de desbloqueo",
+          "info": "Formato: YYYY-MM-DD HH:MM"
+        },
+        {
+          "type": "text",
+          "id": "expire_date",
+          "label": "Fecha de expiración",
+          "info": "Formato: YYYY-MM-DD HH:MM"
+        },
+        {
+          "type": "image_picker",
+          "id": "cover_image",
+          "label": "Imagen de portada (opcional)"
+        },
+        {
+          "type": "color",
+          "id": "bg_color_block",
+          "label": "Color de fondo (si no hay imagen)",
+          "default": "#FFCD00"
+        },
+        {
+          "type": "select",
+          "id": "block_type",
+          "label": "Tipo de bloque",
+          "options": [
+            { "value": "raffle", "label": "Sorteo" }
+          ],
+          "default": "raffle"
+        },
+        {
+          "type": "header",
+          "content": "Contenido del modal"
+        },
+        {
+          "type": "text",
+          "id": "raffle_title",
+          "label": "Título",
+          "default": "¡Participa en el sorteo!"
+        },
+        {
+          "type": "textarea",
+          "id": "raffle_text",
+          "label": "Descripción"
+        },
+        {
+          "type": "html",
+          "id": "raffle_embed",
+          "label": "Código embed del sorteo"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Calendario de Adviento",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
