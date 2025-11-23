@@ -507,6 +507,11 @@
 })();
 </script>
 
+{%- comment -%} Script de nieve condicional {%- endcomment -%}
+{%- if section.settings.enable_snow -%}
+  <script src="https://app.embed.im/snow.js" defer></script>
+{%- endif -%}
+
 <style>
   /* Animación limpia del modal - solo fade-in del overlay */
   .advent-modal {
@@ -641,6 +646,13 @@
     {
       "type": "header",
       "content": "Configuración general"
+    },
+        {
+      "type": "checkbox",
+      "id": "enable_snow",
+      "label": "Activar efecto nieve",
+      "default": false,
+      "info": "Activa la nieve en toda la página cuando esta sección esté visible"
     },
     {
       "type": "text",
