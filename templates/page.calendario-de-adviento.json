@@ -189,6 +189,7 @@
             "expire_date": "",
             "bg_color_block": "#ffcd00",
             "downloadable_title": "Descarga tu regalo",
+            "downloadable_image": "shopify://shop_images/PORTADAS_BLOG_13.webp",
             "downloadable_image_width": 100,
             "downloadable_text": "",
             "downloadable_cta_text": "Descargar ahora",
@@ -215,8 +216,8 @@
             "expire_date": "",
             "bg_color_block": "#ffcd00",
             "raffle_title": "¡Participa en el sorteo!",
-            "raffle_text": "",
-            "raffle_embed": ""
+            "raffle_text": "<p>Explicación del sorteo.</p>",
+            "raffle_embed": "\"Aquí mostraremos un formulario de Klaviyo o lo que se decida finalmente.\""
           }
         },
         "discount_LiieUL": {
