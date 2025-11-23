@@ -277,6 +277,7 @@
       ],
       "name": "Calendario de Adviento",
       "settings": {
+        "enable_snow": true,
         "heading": "Calendario de Adviento 2025",
         "heading_highlight": "",
         "subheading": "<p>Esta será la descripción del sorteo.</p>",
