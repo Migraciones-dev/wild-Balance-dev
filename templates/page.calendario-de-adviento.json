@@ -51,6 +51,7 @@
         "b49343f1-a16f-4a0c-834a-46b77fe777da",
         "46ff9c32-9810-4c24-b2bd-9c6e38cc2ea8"
       ],
+      "disabled": true,
       "settings": {
         "parallax": false,
         "color": "#000000",
@@ -72,6 +73,7 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "layout": "t4s-container-wrap",
         "cl_bg": "",
@@ -86,6 +88,7 @@
     },
     "custom_liquid_naafgA": {
       "type": "custom-liquid",
+      "disabled": true,
       "name": "Custom Liquid",
       "settings": {
         "custom_liquid": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"BreadcrumbList\",\n      \"itemListElement\": [\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 1,\n          \"name\": \"Inicio\",\n          \"item\": \"https://wildbalance.es\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 2,\n          \"name\": \"Nutricionista - Almudena Armelles\",\n          \"item\": \"https://wildbalance.es/pages/nutricionista-almudena-armelles\"\n        }\n      ]\n    },\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://wildbalance.es/pages/nutricionista-almudena-armelles#person\",\n      \"name\": \"Almudena Armelles\",\n      \"image\": \"https://wildbalance.es/cdn/shop/files/almudena-armelles.jpg\", \n      \"jobTitle\": \"Nutricionista Animal y Bióloga\",\n      \"worksFor\": {\n        \"@type\": \"Organization\",\n        \"name\": \"Wild Balance\",\n        \"url\": \"https://wildbalance.es\"\n      },\n      \"description\": \"Licenciada en Biología y especialista en nutrición, dietética y homeopatía veterinaria. Almudena centra su trabajo en mejorar la salud y bienestar de perros y gatos a través de la alimentación natural.\",\n      \"alumniOf\": [\n        {\n          \"@type\": \"CollegeOrUniversity\",\n          \"name\": \"Universidad de Valencia\"\n        },\n        {\n          \"@type\": \"CollegeOrUniversity\",\n          \"name\": \"Universidad de Gerona\"\n        },\n        {\n          \"@type\": \"CollegeOrUniversity\",\n          \"name\": \"Instituto Europeo de Nutrición y Salud\"\n        }\n      ],\n      \"hasOccupation\": {\n        \"@type\": \"Occupation\",\n        \"name\": \"Nutrición Animal\",\n        \"description\": \"Evaluación y diseño de planes nutricionales para perros y gatos, basados en alimentación natural y principios de bienestar animal.\"\n      },\n      \"sameAs\": [\n        \"https://www.linkedin.com/in/almudena-armelles\",\n        \"https://www.instagram.com/almudenawildbalance/\"\n      ],\n      \"url\": \"https://wildbalance.es/pages/nutricionista-almudena-armelles\"\n    }\n  ]\n}\n</script>"
