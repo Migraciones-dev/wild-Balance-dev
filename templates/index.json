@@ -1176,8 +1176,8 @@
       ],
       "name": "Descuentos Especiales",
       "settings": {
-        "heading_before": "Descuentos",
-        "heading_highlight": "especiales",
+        "heading_before": "Descuentos Black Friday",
+        "heading_highlight": "",
         "heading_after": "",
         "title_color": "#ffffff",
         "outer_bg_color": "#f4f0e2",
