@@ -192,8 +192,8 @@
       "type": "migraciones-cuenta-atras",
       "name": "Ofertas Flash - Countdown",
       "settings": {
-        "heading_before": "⚡Ofertas",
-        "heading_highlight": "del día⚡",
+        "heading_before": "⚡Ofertas del día⚡",
+        "heading_highlight": "",
         "heading_after": "",
         "countdown_date": "2025-11-25 09:00",
         "label_hours": "horas",
