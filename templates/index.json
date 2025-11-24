@@ -1169,7 +1169,7 @@
         "collection_nDYQRz"
       ],
       "custom_css": [
-        ".w-full {background: #222222!important;}"
+        ".w-full {background: #222222 !important;}"
       ],
       "name": "Descuentos Especiales",
       "settings": {
@@ -1265,7 +1265,7 @@
       ],
       "name": "Beneficios con Iconos",
       "settings": {
-        "bg_color": "#222222",
+        "bg_color": "#5ccc84",
         "text_color": "#fff",
         "columns_mobile": 2,
         "columns_tablet": 4,
@@ -1387,7 +1387,7 @@
       "type": "custom-liquid",
       "name": "Custom Liquid",
       "settings": {
-        "custom_liquid": "<style>\n\n.t4s-header__wrapper {background: #222222;color:white;}\n\n.t4s-menu-item a, .t4s-menu-item a:hover {color:white!important;}\n\n.t4s-sub-menu {background:#222222!important;}\n\n.flex.items-center.bg-white.shadow.border p {color:#222222!important;}\n\n.t4s-site-nav__icon a .t4s-site-nav__icon a svg, .t4s-site-nav__icon a:hover {color:white!important;}\n\n.t4s-top-bar, .t4s-top-bar button {background:#F0807B!important;color:white;}\n\n.header__normal-logo, .header__sticky-logo {filter: brightness(0) invert(1)!important;}\n\n/* Aplica el filtro a todos los iconos menos al carrito */\n.t4s-site-nav__icon a:not([href=\"/cart\"]),\n.t4s-d-lg-none {\n  filter: brightness(0) invert(1);\n}\n\n/* Aplica el filtro solo a los SVG del carrito */\n.t4s-site-nav__cart .t4s-cart-empty-icon,\n.t4s-site-nav__cart .t4s-cart-filled-icon {\n  filter: brightness(0) invert(1);\n}\n\n\n.t4s-nav__ul>li> a:hover {color:white!important;}\n\n.t4s-lh-1.t4s-d-flex svg {display:none;}\n\n#shopify-section-footer, .t4s_se_footer, .t4s_se_footer-bottom {background:#222222!important}\n\n.t4s-count-box {background: #F0807B!important;color:white!important;}\n</style>"
+        "custom_liquid": "<style>\n\n.t4s-header__wrapper {background: #222222;color:white;}\n\n.t4s-menu-item a, .t4s-menu-item a:hover {color:white!important;}\n\n.t4s-sub-menu {background:#222222!important;}\n\n.flex.items-center.bg-white.shadow.border p {color:#222222!important;}\n\n.t4s-site-nav__icon a .t4s-site-nav__icon a svg, .t4s-site-nav__icon a:hover {color:white!important;}\n\n.t4s-top-bar, .t4s-top-bar button {background:#F0807B!important;color:white;}\n\n.header__normal-logo, .header__sticky-logo {filter: brightness(0) invert(1)!important;}\n\n/* Aplica el filtro a todos los iconos menos al carrito */\n.t4s-site-nav__icon a:not([href=\"/cart\"]),\n.t4s-d-lg-none {\n  filter: brightness(0) invert(1);\n}\n\n/* Aplica el filtro solo a los SVG del carrito */\n.t4s-site-nav__cart .t4s-cart-empty-icon,\n.t4s-site-nav__cart .t4s-cart-filled-icon {\n  filter: brightness(0) invert(1);\n}\n\n\n.t4s-nav__ul>li> a:hover {color:white!important;}\n\n.t4s-lh-1.t4s-d-flex svg {display:none;}\n\n#shopify-section-footer, .t4s_se_footer, .t4s_se_footer-bottom {background:#222222!important}\n\n.t4s-count-box {background: #F0807B!important;color:white!important;}\n\n.banner-image, .inner-wrapper {\nbox-shadow: 0 4px 15.7px -1px #5CCC84;\n}\n</style>"
       }
     }
   },
