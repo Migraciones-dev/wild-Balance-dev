@@ -1172,7 +1172,7 @@
         ".w-full {background: #222222 !important;}",
         ".discount-circle {display: none;}",
         ".aspect-square img {background: white !important;}",
-        ".offer-tag {background:black}"
+        ".offer-tag {background: #222222;}"
       ],
       "name": "Descuentos Especiales",
       "settings": {
