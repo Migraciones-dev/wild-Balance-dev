@@ -637,8 +637,8 @@
         "banner_pVjcgQ": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/oferta-flash-barf-salmon-perro.png",
-            "mobile_image": "shopify://shop_images/oferta-flash-barf-salmon-perro.png",
+            "desktop_image": "shopify://shop_images/oferta-flash-salmon-perro_a74748d1-012f-486a-b9f2-6cb5fef845d6.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-salmon-perro_a74748d1-012f-486a-b9f2-6cb5fef845d6.png",
             "image_link": "",
             "product": "menu-barf-salmon-pavo-perros",
             "enable_countdown": false,
@@ -1172,7 +1172,7 @@
         ".w-full {background: #222222 !important;}",
         ".discount-circle {display: none;}",
         ".aspect-square img {background: white !important;}",
-        ".offer-tag {background: #222222;}"
+        ".offer-tag {background: #222222 !important;}"
       ],
       "name": "Descuentos Especiales",
       "settings": {
