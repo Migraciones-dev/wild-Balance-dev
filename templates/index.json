@@ -1231,28 +1231,28 @@
         "benefit_3QAkyG": {
           "type": "benefit",
           "settings": {
-            "icon": "shopify://shop_images/Image_72.png",
+            "icon": "shopify://shop_images/cora_svg.png",
             "text": "+ Esperanza de vida"
           }
         },
         "benefit_EQcAM9": {
           "type": "benefit",
           "settings": {
-            "icon": "shopify://shop_images/Image_71.png",
+            "icon": "shopify://shop_images/Image.png",
             "text": "Previene el sarro"
           }
         },
         "benefit_MyFAC3": {
           "type": "benefit",
           "settings": {
-            "icon": "shopify://shop_images/Image_73_8b5f7fa0-13dc-4d49-8518-18d44def9b37.png",
+            "icon": "shopify://shop_images/Image_1_bc595195-73c5-4802-8bdd-0427a60efd38.png",
             "text": "Previene la obesidad"
           }
         },
         "benefit_QrXtVL": {
           "type": "benefit",
           "settings": {
-            "icon": "shopify://shop_images/Image_74_540c5490-5fcd-4c52-9405-b63417804798.png",
+            "icon": "shopify://shop_images/Image_2_6028d724-c977-4c7c-a1fe-b9a8b70ce3ea.png",
             "text": "Pelo más brillante"
           }
         }
