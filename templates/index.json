@@ -658,8 +658,8 @@
         "banner_EPwxcp": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/oferta-flash-barf-conejo-gato_343e3183-81b5-4e14-b3e9-b7ca2efde7e3.png",
-            "mobile_image": "shopify://shop_images/oferta-flash-barf-conejo-gato_343e3183-81b5-4e14-b3e9-b7ca2efde7e3.png",
+            "desktop_image": "shopify://shop_images/oferta-flash-conejo-gato.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-conejo-gato.png",
             "image_link": "",
             "product": "menu-barf-conejo-gatos",
             "enable_countdown": false,
