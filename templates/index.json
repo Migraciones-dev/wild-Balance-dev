@@ -192,7 +192,7 @@
       "type": "migraciones-cuenta-atras",
       "name": "Ofertas Flash - Countdown",
       "settings": {
-        "heading_before": "Oferta",
+        "heading_before": "Ofertas",
         "heading_highlight": "flash",
         "heading_after": "",
         "countdown_date": "2025-11-25 09:00",
@@ -1130,6 +1130,7 @@
         },
         "collection_JqLpXU": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "countdown_date": "",
             "show_discount_badge": "discount",
