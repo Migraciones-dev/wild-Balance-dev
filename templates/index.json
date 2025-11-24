@@ -641,7 +641,7 @@
             "mobile_image": "shopify://shop_images/oferta-flash-barf-salmon-perro.png",
             "image_link": "",
             "product": "menu-barf-salmon-pavo-perros",
-            "enable_countdown": true,
+            "enable_countdown": false,
             "countdown_date": "2025-11-25 09:00",
             "countdown_position_desktop": "right",
             "enable_schedule": true,
@@ -658,8 +658,8 @@
         "banner_EPwxcp": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/oferta-flash-barf-conejo-gato.png",
-            "mobile_image": "shopify://shop_images/oferta-flash-barf-conejo-gato.png",
+            "desktop_image": "shopify://shop_images/oferta-flash-barf-conejo-gato_343e3183-81b5-4e14-b3e9-b7ca2efde7e3.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-barf-conejo-gato_343e3183-81b5-4e14-b3e9-b7ca2efde7e3.png",
             "image_link": "",
             "product": "menu-barf-conejo-gatos",
             "enable_countdown": false,
