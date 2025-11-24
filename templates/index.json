@@ -1171,7 +1171,7 @@
       "custom_css": [
         ".w-full {background: #222222 !important;}",
         ".discount-circle {display: none;}",
-        ".aspect-square img {background:white;}"
+        ".aspect-square img {background: white!important;}"
       ],
       "name": "Descuentos Especiales",
       "settings": {
