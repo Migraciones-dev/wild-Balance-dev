@@ -1200,7 +1200,7 @@
     "migraciones_image_width_text_editable_aeixFi": {
       "type": "migraciones-image-width-text-editable",
       "custom_css": [
-        ".font-bold {color:white;}"
+        ".font-bold {color: white;}"
       ],
       "name": "Imagen + Texto",
       "settings": {
