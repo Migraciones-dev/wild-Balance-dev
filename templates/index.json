@@ -185,7 +185,7 @@
         "pb_desktop": 20,
         "pt_mobile": 20,
         "pb_mobile": 32,
-        "bg_color": "#f4f0e2"
+        "bg_color": "#222222"
       }
     },
     "migraciones_cuenta_atras_UCakWN": {
@@ -199,10 +199,10 @@
         "label_hours": "horas",
         "label_minutes": "minutos",
         "label_seconds": "segundos",
-        "bg_color": "#f4f0e2",
-        "title_color": "#004622",
-        "number_color": "#004622",
-        "label_color": "#004622",
+        "bg_color": "#222222",
+        "title_color": "#fff",
+        "number_color": "#fff",
+        "label_color": "#fff",
         "pt_desktop": 20,
         "pb_desktop": 20,
         "countdown_mt_desktop": 12,
@@ -1003,7 +1003,7 @@
         "pb_desktop": 80,
         "pt_mobile": 20,
         "pb_mobile": 0,
-        "bg_color": "#f4f0e2"
+        "bg_color": "#222222"
       }
     },
     "migraciones_selector_de_colecciones_YEcF6e": {
@@ -1130,7 +1130,6 @@
         },
         "collection_JqLpXU": {
           "type": "collection",
-          "disabled": true,
           "settings": {
             "countdown_date": "",
             "show_discount_badge": "discount",
@@ -1168,6 +1167,9 @@
         "collection_JThNQp",
         "collection_JqLpXU",
         "collection_nDYQRz"
+      ],
+      "custom_css": [
+        ".w-full {background: #222222!important;}"
       ],
       "name": "Descuentos Especiales",
       "settings": {
@@ -1208,11 +1210,11 @@
         "button_text": "Escríbenos",
         "button_link": "https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0&_kx=_V3Qt6MyBasq1R9MaiJGmqCJaXgPZI4XMm1kP-MvGoCJ2YvBXCDqhjZk3RLlmfVw.YsKiw5",
         "button_new_tab": true,
-        "bg_color": "#f4f0e2",
-        "title_color": "#004623",
-        "text_color": "#222222",
+        "bg_color": "#222222",
+        "title_color": "#fff",
+        "text_color": "#fff",
         "button_bg_color": "#ffcd00",
-        "button_text_color": "#004623",
+        "button_text_color": "#fff",
         "pt_desktop": 80,
         "pb_desktop": 80,
         "mt_desktop": 0,
@@ -1263,8 +1265,8 @@
       ],
       "name": "Beneficios con Iconos",
       "settings": {
-        "bg_color": "#d9d9c8",
-        "text_color": "#004622",
+        "bg_color": "#222222",
+        "text_color": "#fff",
         "columns_mobile": 2,
         "columns_tablet": 4,
         "columns_desktop": 4,
