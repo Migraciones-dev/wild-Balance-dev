@@ -200,9 +200,9 @@
         "label_minutes": "minutos",
         "label_seconds": "segundos",
         "bg_color": "#222222",
-        "title_color": "#fff",
-        "number_color": "#fff",
-        "label_color": "#fff",
+        "title_color": "#ffffff",
+        "number_color": "#ffffff",
+        "label_color": "#ffffff",
         "pt_desktop": 20,
         "pb_desktop": 20,
         "countdown_mt_desktop": 12,
@@ -1169,7 +1169,8 @@
         "collection_nDYQRz"
       ],
       "custom_css": [
-        ".w-full {background: #222222 !important;}"
+        ".w-full {background: #222222 !important;}",
+        ".discount-circle {display:none;}"
       ],
       "name": "Descuentos Especiales",
       "settings": {
@@ -1211,10 +1212,10 @@
         "button_link": "https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0&_kx=_V3Qt6MyBasq1R9MaiJGmqCJaXgPZI4XMm1kP-MvGoCJ2YvBXCDqhjZk3RLlmfVw.YsKiw5",
         "button_new_tab": true,
         "bg_color": "#222222",
-        "title_color": "#fff",
-        "text_color": "#fff",
+        "title_color": "#ffffff",
+        "text_color": "#ffffff",
         "button_bg_color": "#ffcd00",
-        "button_text_color": "#fff",
+        "button_text_color": "#ffffff",
         "pt_desktop": 80,
         "pb_desktop": 80,
         "mt_desktop": 0,
@@ -1266,7 +1267,7 @@
       "name": "Beneficios con Iconos",
       "settings": {
         "bg_color": "#5ccc84",
-        "text_color": "#fff",
+        "text_color": "#ffffff",
         "columns_mobile": 2,
         "columns_tablet": 4,
         "columns_desktop": 4,
