@@ -739,32 +739,11 @@
             "mb_mobile": 0
           }
         },
-        "banner_tFrRWV": {
-          "type": "banner",
-          "settings": {
-            "desktop_image": "shopify://shop_images/Background_2_b43645c1-7baf-4727-91b5-1d46c6c1fb46.png",
-            "mobile_image": "shopify://shop_images/Background_2_b43645c1-7baf-4727-91b5-1d46c6c1fb46.png",
-            "image_link": "",
-            "product": "snacks-premios-naturales-perros-light-pavo",
-            "enable_countdown": false,
-            "countdown_date": "",
-            "countdown_position_desktop": "center",
-            "enable_schedule": true,
-            "start_date": "2025-11-26 09:00",
-            "end_date": "2025-11-27 09:00",
-            "border_radius_desktop": 30,
-            "border_radius_mobile": 12,
-            "mt_desktop": 0,
-            "mb_desktop": 0,
-            "mt_mobile": 0,
-            "mb_mobile": 0
-          }
-        },
         "banner_xfbVyn": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/Background_4.png",
-            "mobile_image": "shopify://shop_images/Background_4.png",
+            "desktop_image": "shopify://shop_images/oferta-flash-premios-ternera.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-premios-ternera.png",
             "image_link": "",
             "product": "snacks-premios-naturales-ternera-perros-senior",
             "enable_countdown": false,
@@ -784,10 +763,31 @@
         "banner_KqadgN": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/Background_5.png",
-            "mobile_image": "shopify://shop_images/Background_5.png",
+            "desktop_image": "shopify://shop_images/oferta-flash-premios-venado.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-premios-venado.png",
             "image_link": "",
             "product": "snacks-premios-naturales-perros-pelaje-sano-venado",
+            "enable_countdown": false,
+            "countdown_date": "",
+            "countdown_position_desktop": "center",
+            "enable_schedule": true,
+            "start_date": "2025-11-26 09:00",
+            "end_date": "2025-11-27 09:00",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
+        },
+        "banner_tFrRWV": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/oferta-flash-premios-pavo.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-premios-pavo.png",
+            "image_link": "",
+            "product": "snacks-premios-naturales-perros-light-pavo",
             "enable_countdown": false,
             "countdown_date": "",
             "countdown_position_desktop": "center",
@@ -805,8 +805,8 @@
         "banner_UK9Td8": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/Background_3_7f878060-c730-4915-9c84-b5c3fdf45d62.png",
-            "mobile_image": "shopify://shop_images/Background_3_7f878060-c730-4915-9c84-b5c3fdf45d62.png",
+            "desktop_image": "shopify://shop_images/oferta-flash-premios-pato.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-premios-pato.png",
             "image_link": "",
             "product": "snacks-premios-naturales-perros-digestivo-pato",
             "enable_countdown": false,
@@ -976,9 +976,9 @@
         "banner_Kgincf",
         "banner_nhXxLp",
         "banner_hXWBnb",
-        "banner_tFrRWV",
         "banner_xfbVyn",
         "banner_KqadgN",
+        "banner_tFrRWV",
         "banner_UK9Td8",
         "banner_PQh76m",
         "banner_WgyLhd",
