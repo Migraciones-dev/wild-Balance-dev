@@ -676,13 +676,13 @@
             "mb_mobile": 0
           }
         },
-        "banner_Kgincf": {
+        "banner_nhXxLp": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/oferta-flash-sticks-ternera.png",
-            "mobile_image": "shopify://shop_images/oferta-flash-sticks-ternera.png",
+            "desktop_image": "shopify://shop_images/oferta-flash-sticks-conejo.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-sticks-conejo.png",
             "image_link": "",
-            "product": "sticks-dentales-para-perros",
+            "product": "stick-dental-perros-digestivo",
             "enable_countdown": false,
             "countdown_date": "",
             "countdown_position_desktop": "center",
@@ -697,13 +697,13 @@
             "mb_mobile": 0
           }
         },
-        "banner_nhXxLp": {
+        "banner_Kgincf": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/oferta-flash-sticks-conejo.png",
-            "mobile_image": "shopify://shop_images/oferta-flash-sticks-conejo.png",
+            "desktop_image": "shopify://shop_images/oferta-flash-sticks-ternera-agotada.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-sticks-ternera-agotada.png",
             "image_link": "",
-            "product": "stick-dental-perros-digestivo",
+            "product": "",
             "enable_countdown": false,
             "countdown_date": "",
             "countdown_position_desktop": "center",
@@ -973,8 +973,8 @@
         "banner_PqUFUM",
         "banner_pVjcgQ",
         "banner_EPwxcp",
-        "banner_Kgincf",
         "banner_nhXxLp",
+        "banner_Kgincf",
         "banner_hXWBnb",
         "banner_xfbVyn",
         "banner_KqadgN",
