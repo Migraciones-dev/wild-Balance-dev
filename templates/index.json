@@ -1133,9 +1133,9 @@
           "settings": {
             "countdown_date": "",
             "show_discount_badge": "discount",
-            "pet_type": "dog",
+            "pet_type": "cat",
             "collection_name": "Snacks",
-            "collection": "black-friday-snacks-mordedores-perros",
+            "collection": "black-friday-snacks-para-gatos",
             "banner_action_type": "link",
             "banner_link_url": "",
             "banner_product": ""
