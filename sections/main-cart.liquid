@@ -244,7 +244,7 @@
                       <button type="submit" data-loading-bar data-confirm="{{ ck_lumise }}" name="checkout" disabled class="
                         shadow  inline-flex items-center justify-center gap-2.5 py-8 px-12 bg-[#ffcd00] rounded-[50px] text-[#004623] hover:bg-[#ffcd00]/90
 max-sm:w-full md:w-auto text-[18px] font-bold hover:text-[#004623]">
-                        {{section.settings.texto}}
+                        Para asegurar la calidad del producto, tu suscripción a alimentación congelada debe de ser de 5kg 
                       </button>
                     {% else %}
                       {% assign sub_weight = 0 %}
@@ -773,7 +773,7 @@ max-sm:w-full md:w-auto text-[18px] font-bold hover:text-[#004623]">
     if (subWeight / 1000 < 5) {
       btn.setAttribute('disabled', 'disabled');
       btn.textContent =
-        '{{section.settings.texto}}';
+        'Para asegurar la calidad del producto, tu suscripción a alimentación congelada debe de ser de al menos 5 kg';
     } else {
       btn.removeAttribute('disabled');
       btn.innerHTML = checkoutHTML;
@@ -955,12 +955,6 @@ max-sm:w-full md:w-auto text-[18px] font-bold hover:text-[#004623]">
   "tag": "section",
   "class": "t4s-section t4s-section-main t4s-main-cart",
   "settings": [
-    {
-      "type": "text",
-      "id": "texto",
-      "label": "texto",
-      "default": "Para asegurar la calidad del producto, tu suscripción a alimentación congelada debe de ser de 5kg"
-    },
     {
       "type": "checkbox",
       "id": "enable_calc_ship",
