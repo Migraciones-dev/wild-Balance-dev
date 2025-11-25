@@ -240,7 +240,7 @@
                     
                     {% assign sub_weight_kg = sub_weight | divided_by: 1000 %}
                     
-                    {% if sub_weight_kg < 5 and sub_weight_kg > 0 %}
+                    {% if sub_weight_kg < 1 and sub_weight_kg > 0 %}
                       <button type="submit" data-loading-bar data-confirm="{{ ck_lumise }}" name="checkout" disabled class="
                         shadow  inline-flex items-center justify-center gap-2.5 py-8 px-12 bg-[#ffcd00] rounded-[50px] text-[#004623] hover:bg-[#ffcd00]/90
 max-sm:w-full md:w-auto text-[18px] font-bold hover:text-[#004623]">
@@ -770,7 +770,7 @@ max-sm:w-full md:w-auto text-[18px] font-bold hover:text-[#004623]">
       return;
     }
 
-    if (subWeight / 1000 < 5) {
+    if (subWeight / 1000 < 1) {
       btn.setAttribute('disabled', 'disabled');
       btn.textContent =
         'Para asegurar la calidad del producto, tu suscripción a alimentación congelada debe de ser de al menos 5 kg';
