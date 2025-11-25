@@ -679,8 +679,8 @@
         "banner_Kgincf": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/oferta-flash-sticks-dentales-ternera.png",
-            "mobile_image": "shopify://shop_images/oferta-flash-sticks-dentales-ternera.png",
+            "desktop_image": "shopify://shop_images/oferta-flash-sticks-ternera.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-sticks-ternera.png",
             "image_link": "",
             "product": "sticks-dentales-para-perros",
             "enable_countdown": false,
@@ -700,8 +700,8 @@
         "banner_nhXxLp": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/oferta-flash-sticks-dentales-digestivo.png",
-            "mobile_image": "shopify://shop_images/oferta-flash-sticks-dentales-digestivo.png",
+            "desktop_image": "shopify://shop_images/oferta-flash-sticks-conejo.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-sticks-conejo.png",
             "image_link": "",
             "product": "stick-dental-perros-digestivo",
             "enable_countdown": false,
@@ -721,8 +721,8 @@
         "banner_hXWBnb": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/oferta-flash-sticks-dentales-calm.png",
-            "mobile_image": "shopify://shop_images/oferta-flash-sticks-dentales-calm.png",
+            "desktop_image": "shopify://shop_images/oferta-flash-sticks-pavo.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-sticks-pavo.png",
             "image_link": "",
             "product": "stick-dental-perros-relajante",
             "enable_countdown": false,
