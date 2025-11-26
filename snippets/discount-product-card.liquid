@@ -1,6 +1,11 @@
 {%- comment -%}
   Snippet: discount-product-card.liquid
   Uso: {% render 'discount-product-card', product: product, countdown_date: block.settings.countdown_date, show_discount_badge: block.settings.show_discount_badge %}
+
+  Opciones para show_discount_badge:
+  - 'discount': Muestra círculo con % a la derecha o etiquetas a la izquierda.
+  - 'countdown': Muestra SOLO el contador a la derecha (oculta etiquetas izq).
+  - 'both': Muestra AMBOS (Etiquetas Descuento Izquierda + Contador Derecha).
 {%- endcomment -%}
 
 {%- liquid
@@ -14,8 +19,24 @@
   endif
 
   assign is_countdown_active = false
+  
+  comment
+    Solo activamos 'is_countdown_active' (que oculta las etiquetas de la izquierda)
+    si la opción es ESTRICTAMENTE 'countdown'.
+    Si es 'both', queremos que las etiquetas de la izquierda se sigan viendo.
+  endcomment
   if show_discount_badge == 'countdown' and countdown_date and countdown_date != blank
     assign is_countdown_active = true
+  endif
+
+  comment
+    Variable auxiliar para mostrar el countdown (tanto en modo 'countdown' como 'both')
+  endcomment
+  assign show_countdown = false
+  if countdown_date and countdown_date != blank
+    if show_discount_badge == 'countdown' or show_discount_badge == 'both'
+      assign show_countdown = true
+    endif
   endif
 
   assign promo_product = product
@@ -24,7 +45,12 @@
 <div class="discount-product-card">
   <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow relative">
     
-    {%- comment -%} ETIQUETA 1: "SOLO HOY 5X4" si tiene tag 'promo' y NO hay countdown {%- endcomment -%}
+    {%- comment -%} ================================================================== {%- endcomment -%}
+    {%- comment -%} ETIQUETAS IZQUIERDA (Descuentos) {%- endcomment -%}
+    {%- comment -%} Se muestran siempre, EXCEPTO si is_countdown_active es true {%- endcomment -%}
+    {%- comment -%} ================================================================== {%- endcomment -%}
+
+    {%- comment -%} ETIQUETA 1: "SOLO HOY 5X4" si tiene tag 'promo' {%- endcomment -%}
     {% unless is_countdown_active %}
       {%- if promo_product and promo_product.tags contains 'promo' -%}
         <div
@@ -47,7 +73,7 @@
       {%- endif -%}
     {% endunless %}
 
-    {%- comment -%} ETIQUETA 2: Descuento % automático si NO hay countdown {%- endcomment -%}
+    {%- comment -%} ETIQUETA 2: Descuento % automático {%- endcomment -%}
     {% unless is_countdown_active %}
       {% if current_variant.compare_at_price > current_variant.price %}
         {% unless product.tags contains 'sin-descuento' %}
@@ -73,7 +99,7 @@
       {% endif %}
     {% endunless %}
 
-    {%- comment -%} ETIQUETA 3: Tag personalizado 'oferta_TEXTO_PROMO' si NO hay countdown {%- endcomment -%}
+    {%- comment -%} ETIQUETA 3: Tag personalizado 'oferta_TEXTO_PROMO' {%- endcomment -%}
     {% unless is_countdown_active %}
       {% assign oferta_tag = '' %}
       {% for t in product.tags %}
@@ -108,6 +134,11 @@
       {% endunless %}
     {% endunless %}
 
+
+    {%- comment -%} ================================================================== {%- endcomment -%}
+    {%- comment -%} ELEMENTOS DERECHA (Badge Circular o Countdown) {%- endcomment -%}
+    {%- comment -%} ================================================================== {%- endcomment -%}
+
     {%- comment -%} Badge circular solo si show_discount_badge == 'discount' {%- endcomment -%}
     {% if show_discount_badge == 'discount' and current_variant.compare_at_price > current_variant.price %}
       <div
@@ -118,8 +149,11 @@
       </div>
     {% endif %}
 
-    {%- comment -%} Cuenta atrás si está configurada y seleccionada {%- endcomment -%}
-    {% if show_discount_badge == 'countdown' and countdown_date and countdown_date != blank %}
+    {%- comment -%} 
+      Cuenta atrás: Se muestra si show_countdown es true.
+      En el modo 'both', convivirá con las etiquetas de la izquierda.
+    {%- endcomment -%}
+    {% if show_countdown %}
       <div
         class="countdown-badge absolute top-3 right-3 z-20 px-4 py-2 rounded-full font-bold text-[8px] lg:text-[11px]"
         data-countdown-end="{{ countdown_date }}"
@@ -128,6 +162,7 @@
         00:00:00
       </div>
     {% endif %}
+
 
     {%- comment -%} Imagen del producto con botón dentro {%- endcomment -%}
     <div class="relative aspect-square bg-gray-100">
