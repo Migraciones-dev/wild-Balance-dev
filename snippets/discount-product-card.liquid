@@ -250,19 +250,42 @@
 
     countdownBadges.forEach((badge) => {
       const endDateStr = badge.getAttribute('data-countdown-end');
-      if (!endDateStr) return;
-
-      const parts = endDateStr.split(' ');
-      const datePart = parts[0];
-      const timePart = parts[1] || '00:00';
-
-      const isoDate = `${datePart}T${timePart}:00`;
-      const endDate = new Date(isoDate).getTime();
-
-      if (isNaN(endDate)) {
-        console.error('❌ Error al parsear la fecha. Verifica el formato: YYYY-MM-DD HH:MM');
+      if (!endDateStr || endDateStr.trim() === '') {
+        console.warn('⚠️ No hay fecha de countdown configurada');
         return;
       }
+
+      console.log('📅 Fecha recibida:', endDateStr);
+
+      // Intentar parsear diferentes formatos
+      let endDate;
+
+      // Formato 1: "YYYY-MM-DD HH:MM" o "YYYY-MM-DD HH:MM:SS"
+      if (endDateStr.includes(' ')) {
+        const [datePart, timePart] = endDateStr.split(' ');
+        const timeWithSeconds = timePart.includes(':') && timePart.split(':').length === 2 
+          ? `${timePart}:00` 
+          : timePart;
+        const isoDate = `${datePart}T${timeWithSeconds}`;
+        endDate = new Date(isoDate).getTime();
+      } 
+      // Formato 2: ISO completo "YYYY-MM-DDTHH:MM:SS"
+      else if (endDateStr.includes('T')) {
+        endDate = new Date(endDateStr).getTime();
+      }
+      // Formato 3: Timestamp o formato no estándar
+      else {
+        endDate = new Date(endDateStr).getTime();
+      }
+
+      if (isNaN(endDate)) {
+        console.error('❌ Error al parsear la fecha:', endDateStr);
+        badge.textContent = 'ERROR';
+        return;
+      }
+
+      console.log('✅ Fecha parseada correctamente. Timestamp:', endDate);
+      console.log('🕐 Fecha objetivo:', new Date(endDate).toString());
 
       function updateCountdown() {
         const now = new Date().getTime();
@@ -270,6 +293,7 @@
 
         if (distance < 0) {
           badge.textContent = '00:00:00';
+          console.log('⏰ Countdown terminado');
           return;
         }
 
