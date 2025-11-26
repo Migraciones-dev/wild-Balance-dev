@@ -142,8 +142,8 @@
         "banner_FMTLWC": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/banner-home-sorteo-higiene-desk.png",
-            "mobile_image": "shopify://shop_images/banner-home-sorteo-higiene-mobile.png",
+            "desktop_image": "shopify://shop_images/banner-home-sorteo-higiene-desk_ea274c26-d89b-4661-9b2d-f4601ccf2715.png",
+            "mobile_image": "shopify://shop_images/banner-home-sorteo-higiene-mobile_a496badf-b46f-4d99-a621-4eec2515dd7a.png",
             "image_link": "https://wildbalance.es/pages/sorteo-wild-days-bases-legales",
             "enable_schedule": true,
             "start_date": "2025-11-24 9:00",
@@ -742,7 +742,7 @@
         "banner_xfbVyn": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/oferta-flash-premios-ternera.png",
+            "desktop_image": "shopify://shop_images/oferta-flash-premios-ternera_420a56c1-9720-4cdf-ad9c-2e913696b9b1.png",
             "mobile_image": "shopify://shop_images/oferta-flash-premios-ternera.png",
             "image_link": "",
             "product": "snacks-premios-naturales-ternera-perros-senior",
