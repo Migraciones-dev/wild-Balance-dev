@@ -1090,13 +1090,12 @@
         },
         "collection_mgCBbt": {
           "type": "collection",
-          "disabled": true,
           "settings": {
             "countdown_date": "",
             "show_discount_badge": "discount",
             "pet_type": "cat",
             "collection_name": "Comida Cocinada",
-            "collection": "comida-cocinada-para-gatos",
+            "collection": "black-friday-comida-cocinada-para-gatos",
             "banner_action_type": "link",
             "banner_link_url": "",
             "banner_product": ""
