@@ -760,26 +760,17 @@
           "info": "Formato: YYYY-MM-DD HH:MM. Se aplicará a todos los productos de esta colección"
         },
         {
-          "type": "select",
-          "id": "show_discount_badge",
-          "label": "Mostrar badge superior",
-          "options": [
-            {
-              "value": "countdown",
-              "label": "Cuenta atrás (HH:MM:SS)"
-            },
-            {
-              "value": "discount",
-              "label": "Porcentaje de descuento (-X%)"
-            },
-            {
-              "value": "none",
-              "label": "Ninguno"
-            }
-          ],
-          "default": "countdown",
-          "info": "Elige qué mostrar en la esquina superior derecha"
-        },
+  "type": "select",
+  "id": "show_discount_badge",
+  "label": "Mostrar badge superior",
+  "options": [
+    { "value": "none", "label": "Ninguno" },
+    { "value": "discount", "label": "Solo Descuento" },
+    { "value": "countdown", "label": "Solo Cuenta Atrás" },
+    { "value": "combined", "label": "Combinado (Desc + Timer)" } 
+  ],
+  "default": "discount"
+},
         {
           "type": "select",
           "id": "pet_type",
