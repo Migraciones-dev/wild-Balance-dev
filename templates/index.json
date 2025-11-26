@@ -784,10 +784,10 @@
         "banner_tFrRWV": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/oferta-flash-premios-pavo.png",
-            "mobile_image": "shopify://shop_images/oferta-flash-premios-pavo.png",
+            "desktop_image": "shopify://shop_images/oferta-flash-premios-pavo-agotada.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-premios-pavo-agotada.png",
             "image_link": "",
-            "product": "snacks-premios-naturales-perros-light-pavo",
+            "product": "",
             "enable_countdown": false,
             "countdown_date": "",
             "countdown_position_desktop": "center",
@@ -826,10 +826,10 @@
         "banner_PQh76m": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/oferta-flash-boquerones.png",
-            "mobile_image": "shopify://shop_images/oferta-flash-boquerones.png",
+            "desktop_image": "shopify://shop_images/oferta-flash-pedido-minimo.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-pedido-minimo.png",
             "image_link": "",
-            "product": "boquerones-deshidratados",
+            "product": "",
             "enable_countdown": false,
             "countdown_date": "",
             "countdown_position_desktop": "center",
