@@ -1013,7 +1013,7 @@
           "type": "collection",
           "settings": {
             "countdown_date": "2025-10-28 23:59",
-            "show_discount_badge": "discount",
+            "show_discount_badge": "combined",
             "pet_type": "dog",
             "collection_name": "Dieta BARF",
             "collection": "black-friday-dieta-barf-para-perros",
