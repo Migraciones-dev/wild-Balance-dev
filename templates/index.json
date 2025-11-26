@@ -1040,7 +1040,7 @@
           "type": "collection",
           "settings": {
             "countdown_date": "",
-            "show_discount_badge": "none",
+            "show_discount_badge": "discount",
             "pet_type": "dog",
             "collection_name": "Latas Comida Húmeda",
             "collection": "black-friday-latas-comida-natural-perros",
