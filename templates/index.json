@@ -1013,7 +1013,7 @@
           "type": "collection",
           "settings": {
             "countdown_date": "",
-            "show_discount_badge": "discount",
+            "show_discount_badge": "both",
             "pet_type": "dog",
             "collection_name": "Dieta BARF",
             "collection": "black-friday-dieta-barf-para-perros",
@@ -1027,7 +1027,7 @@
           "disabled": true,
           "settings": {
             "countdown_date": "",
-            "show_discount_badge": "discount",
+            "show_discount_badge": "both",
             "pet_type": "dog",
             "collection_name": "Comida Cocinada",
             "collection": "comida-cocinada-para-perros",
@@ -1040,7 +1040,7 @@
           "type": "collection",
           "settings": {
             "countdown_date": "",
-            "show_discount_badge": "discount",
+            "show_discount_badge": "both",
             "pet_type": "dog",
             "collection_name": "Latas Comida Húmeda",
             "collection": "black-friday-latas-comida-natural-perros",
@@ -1053,7 +1053,7 @@
           "type": "collection",
           "settings": {
             "countdown_date": "",
-            "show_discount_badge": "discount",
+            "show_discount_badge": "both",
             "pet_type": "dog",
             "collection_name": "Suplementos y Aceites",
             "collection": "black-friday-suplementos-y-aceites-para-perros",
@@ -1066,7 +1066,7 @@
           "type": "collection",
           "settings": {
             "countdown_date": "",
-            "show_discount_badge": "discount",
+            "show_discount_badge": "both",
             "pet_type": "dog",
             "collection_name": "Snacks y mordedores",
             "collection": "black-friday-snacks-mordedores-perros",
@@ -1079,7 +1079,7 @@
           "type": "collection",
           "settings": {
             "countdown_date": "",
-            "show_discount_badge": "discount",
+            "show_discount_badge": "both",
             "pet_type": "cat",
             "collection_name": "Dieta BARF",
             "collection": "black-friday-dieta-barf-para-gatos",
@@ -1092,7 +1092,7 @@
           "type": "collection",
           "settings": {
             "countdown_date": "",
-            "show_discount_badge": "discount",
+            "show_discount_badge": "both",
             "pet_type": "cat",
             "collection_name": "Comida Cocinada",
             "collection": "black-friday-comida-cocinada-para-gatos",
@@ -1105,7 +1105,7 @@
           "type": "collection",
           "settings": {
             "countdown_date": "",
-            "show_discount_badge": "discount",
+            "show_discount_badge": "both",
             "pet_type": "cat",
             "collection_name": "Latas Comida Húmeda",
             "collection": "black-friday-latas-comida-natural-para-gatos",
@@ -1118,7 +1118,7 @@
           "type": "collection",
           "settings": {
             "countdown_date": "",
-            "show_discount_badge": "discount",
+            "show_discount_badge": "both",
             "pet_type": "cat",
             "collection_name": "Suplementos y Aceites",
             "collection": "black-friday-suplementos-y-aceites-para-gatos",
@@ -1131,7 +1131,7 @@
           "type": "collection",
           "settings": {
             "countdown_date": "",
-            "show_discount_badge": "discount",
+            "show_discount_badge": "both",
             "pet_type": "cat",
             "collection_name": "Snacks",
             "collection": "black-friday-snacks-para-gatos",
@@ -1145,7 +1145,7 @@
           "disabled": true,
           "settings": {
             "countdown_date": "",
-            "show_discount_badge": "discount",
+            "show_discount_badge": "both",
             "pet_type": "cat",
             "collection_name": "Snacks",
             "collection": "black-friday-snacks-para-gatos",
