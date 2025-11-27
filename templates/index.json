@@ -195,7 +195,7 @@
         "heading_before": "⚡Ofertas del día⚡",
         "heading_highlight": "",
         "heading_after": "",
-        "countdown_date": "2025-11-27 09:00",
+        "countdown_date": "2025-11-28 09:00",
         "label_hours": "horas",
         "label_minutes": "minutos",
         "label_seconds": "segundos",
@@ -741,6 +741,7 @@
         },
         "banner_xfbVyn": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/oferta-flash-premios-ternera_420a56c1-9720-4cdf-ad9c-2e913696b9b1.png",
             "mobile_image": "shopify://shop_images/oferta-flash-premios-ternera.png",
@@ -762,6 +763,7 @@
         },
         "banner_KqadgN": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/oferta-flash-premios-venado.png",
             "mobile_image": "shopify://shop_images/oferta-flash-premios-venado.png",
@@ -783,6 +785,7 @@
         },
         "banner_tFrRWV": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/oferta-flash-premios-pavo-agotada_72c31311-3cd0-4bf5-8009-8ebf16b5cbfa.png",
             "mobile_image": "shopify://shop_images/oferta-flash-premios-pavo-agotada_72c31311-3cd0-4bf5-8009-8ebf16b5cbfa.png",
@@ -804,6 +807,7 @@
         },
         "banner_UK9Td8": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/oferta-flash-premios-pato.png",
             "mobile_image": "shopify://shop_images/oferta-flash-premios-pato.png",
@@ -834,7 +838,7 @@
             "countdown_date": "",
             "countdown_position_desktop": "center",
             "enable_schedule": true,
-            "start_date": "2025-11-27 09:00",
+            "start_date": "2025-11-27 08:00",
             "end_date": "2025-11-28 09:00",
             "border_radius_desktop": 30,
             "border_radius_mobile": 12,
