@@ -101,8 +101,8 @@
           "type": "discount",
           "settings": {
             "day_number": "",
-            "unlock_date": "2024-12-01 00:00",
-            "expire_date": "2025-11-02 23:59",
+            "unlock_date": "",
+            "expire_date": "",
             "bg_color_block": "#faf5e7",
             "discount_title": "¡Descuento especial!",
             "discount_text": "",
@@ -114,8 +114,8 @@
           "type": "discount",
           "settings": {
             "day_number": "",
-            "unlock_date": "2025-12-03 00:00",
-            "expire_date": "2025-12-04 23:59",
+            "unlock_date": "",
+            "expire_date": "",
             "cover_image": "shopify://shop_images/1_b65feb11-cb9c-4ced-a41a-939d1f09bd65.jpg",
             "bg_color_block": "#faf5e7",
             "discount_title": "¡Descuento especial!",
@@ -167,13 +167,87 @@
             "survey_embed": "\"Aquí mostraremos una encuesta traída de Typeform o similar\""
           }
         },
+        "discount_BxjMzz": {
+          "type": "discount",
+          "settings": {
+            "day_number": "",
+            "unlock_date": "",
+            "expire_date": "",
+            "cover_image": "shopify://shop_images/5_fbf70e77-4662-4682-b965-ef3d1908064d.jpg",
+            "bg_color_block": "#faf5e7",
+            "discount_title": "¡Descuento especial!",
+            "discount_text": "",
+            "image_width": 100,
+            "discount_code": ""
+          }
+        },
+        "recipe_8EXHL8": {
+          "type": "recipe",
+          "settings": {
+            "day_number": "",
+            "unlock_date": "",
+            "expire_date": "",
+            "cover_image": "shopify://shop_images/6_77176179-894e-4d94-b33e-971c97ce21a9.jpg",
+            "bg_color_block": "#faf5e7",
+            "recipe_title": "Receta BARF rápida",
+            "recipe_image": "shopify://shop_images/PORTADAS_BLOG_13.webp",
+            "recipe_richtext": "<p>Una mezcla fresca y equilibrada para aportar proteínas, hueso y verduras en su estado más natural.</p><ul><li>300 g de carne magra cruda (pollo o ternera)</li><li>150 g de huesos carnosos crudos (alitas o cuello de pollo)</li><li>100 g de verduras trituradas (calabacín, zanahoria, espinaca)</li><li>1 cucharada de aceite de salmón</li><li>1 huevo crudo<br/></li></ul><p>Mezcla y sirve frío.</p>",
+            "recipe_cta_text": "COMPRA BARF",
+            "recipe_cta_link": "#"
+          }
+        },
+        "discount_6DayGP": {
+          "type": "discount",
+          "settings": {
+            "day_number": "",
+            "unlock_date": "",
+            "expire_date": "",
+            "cover_image": "shopify://shop_images/7_7d0fde6c-0d1c-4f37-bbe2-7f726996c97f.jpg",
+            "bg_color_block": "#faf5e7",
+            "discount_title": "¡Descuento especial!",
+            "discount_text": "",
+            "image_width": 100,
+            "discount_code": ""
+          }
+        },
+        "downloadable_Yrhywk": {
+          "type": "downloadable",
+          "settings": {
+            "day_number": "",
+            "unlock_date": "",
+            "expire_date": "",
+            "cover_image": "shopify://shop_images/6_a5f6fe9f-18fe-4fbc-bfc8-9683229959d2.jpg",
+            "bg_color_block": "#faf5e7",
+            "downloadable_title": "Descarga tu regalo",
+            "downloadable_image": "shopify://shop_images/PORTADAS_BLOG_13.webp",
+            "downloadable_image_width": 100,
+            "downloadable_text": "",
+            "downloadable_cta_text": "Descargar ahora",
+            "downloadable_cta_link": "shopify://collections/best-sellers-comida-natural-gato"
+          }
+        },
+        "recipe_VfKBrA": {
+          "type": "recipe",
+          "settings": {
+            "day_number": "",
+            "unlock_date": "",
+            "expire_date": "",
+            "cover_image": "shopify://shop_images/9_d52070f4-aacb-4bc0-8223-0a093207bf89.jpg",
+            "bg_color_block": "#faf5e7",
+            "recipe_title": "Receta BARF rápida",
+            "recipe_image": "shopify://shop_images/PORTADAS_BLOG_13.webp",
+            "recipe_richtext": "<p>Una mezcla fresca y equilibrada para aportar proteínas, hueso y verduras en su estado más natural.</p><ul><li>300 g de carne magra cruda (pollo o ternera)</li><li>150 g de huesos carnosos crudos (alitas o cuello de pollo)</li><li>100 g de verduras trituradas (calabacín, zanahoria, espinaca)</li><li>1 cucharada de aceite de salmón</li><li>1 huevo crudo<br/></li></ul><p>Mezcla y sirve frío.</p>",
+            "recipe_cta_text": "COMPRA BARF",
+            "recipe_cta_link": "#"
+          }
+        },
         "trivia_egaHhR": {
           "type": "trivia",
           "settings": {
             "day_number": "",
             "unlock_date": "",
             "expire_date": "",
-            "cover_image": "shopify://shop_images/5_fbf70e77-4662-4682-b965-ef3d1908064d.jpg",
+            "cover_image": "shopify://shop_images/10_3d0091c8-b2eb-42fc-8891-0f90dde63978.jpg",
             "bg_color_block": "#faf5e7",
             "trivia_title": "Trivial de Navidad",
             "trivia_question_1": "¿A, B o C? (Resp: A)",
@@ -197,29 +271,13 @@
             "trivia_failure_text": "Revisa tus respuestas e inténtalo de nuevo."
           }
         },
-        "downloadable_Yrhywk": {
-          "type": "downloadable",
-          "settings": {
-            "day_number": "",
-            "unlock_date": "",
-            "expire_date": "",
-            "cover_image": "shopify://shop_images/6_a5f6fe9f-18fe-4fbc-bfc8-9683229959d2.jpg",
-            "bg_color_block": "#faf5e7",
-            "downloadable_title": "Descarga tu regalo",
-            "downloadable_image": "shopify://shop_images/PORTADAS_BLOG_13.webp",
-            "downloadable_image_width": 100,
-            "downloadable_text": "",
-            "downloadable_cta_text": "Descargar ahora",
-            "downloadable_cta_link": "shopify://collections/best-sellers-comida-natural-gato"
-          }
-        },
         "video_66zQV7": {
           "type": "video",
           "settings": {
             "day_number": "",
             "unlock_date": "",
             "expire_date": "",
-            "cover_image": "shopify://shop_images/7_7d0fde6c-0d1c-4f37-bbe2-7f726996c97f.jpg",
+            "cover_image": "shopify://shop_images/11_af5a9ac7-387d-49b6-8004-651e83af417f.jpg",
             "bg_color_block": "#faf5e7",
             "video_title": "Video especial",
             "video_text": "<p>Texto sobre el video</p>",
@@ -232,10 +290,114 @@
             "day_number": "",
             "unlock_date": "",
             "expire_date": "",
+            "cover_image": "shopify://shop_images/12_4e59e5c5-9b59-491f-a55e-28ee9d368d39.jpg",
             "bg_color_block": "#faf5e7",
             "raffle_title": "¡Participa en el sorteo!",
             "raffle_text": "<p>Explicación del sorteo.</p>",
             "raffle_embed": "\"Aquí mostraremos un formulario de Klaviyo o lo que se decida finalmente.\""
+          }
+        },
+        "recipe_4wqV7F": {
+          "type": "recipe",
+          "settings": {
+            "day_number": "",
+            "unlock_date": "",
+            "expire_date": "",
+            "cover_image": "shopify://shop_images/13.jpg",
+            "bg_color_block": "#faf5e7",
+            "recipe_title": "Receta BARF rápida",
+            "recipe_image": "shopify://shop_images/PORTADAS_BLOG_13.webp",
+            "recipe_richtext": "<p>Una mezcla fresca y equilibrada para aportar proteínas, hueso y verduras en su estado más natural.</p><ul><li>300 g de carne magra cruda (pollo o ternera)</li><li>150 g de huesos carnosos crudos (alitas o cuello de pollo)</li><li>100 g de verduras trituradas (calabacín, zanahoria, espinaca)</li><li>1 cucharada de aceite de salmón</li><li>1 huevo crudo<br/></li></ul><p>Mezcla y sirve frío.</p>",
+            "recipe_cta_text": "COMPRA BARF",
+            "recipe_cta_link": "#"
+          }
+        },
+        "recipe_jHK8FC": {
+          "type": "recipe",
+          "settings": {
+            "day_number": "",
+            "unlock_date": "",
+            "expire_date": "",
+            "cover_image": "shopify://shop_images/14.jpg",
+            "bg_color_block": "#faf5e7",
+            "recipe_title": "Receta BARF rápida",
+            "recipe_image": "shopify://shop_images/PORTADAS_BLOG_13.webp",
+            "recipe_richtext": "<p>Una mezcla fresca y equilibrada para aportar proteínas, hueso y verduras en su estado más natural.</p><ul><li>300 g de carne magra cruda (pollo o ternera)</li><li>150 g de huesos carnosos crudos (alitas o cuello de pollo)</li><li>100 g de verduras trituradas (calabacín, zanahoria, espinaca)</li><li>1 cucharada de aceite de salmón</li><li>1 huevo crudo<br/></li></ul><p>Mezcla y sirve frío.</p>",
+            "recipe_cta_text": "COMPRA BARF",
+            "recipe_cta_link": "#"
+          }
+        },
+        "discount_XATPyV": {
+          "type": "discount",
+          "settings": {
+            "day_number": "",
+            "unlock_date": "",
+            "expire_date": "",
+            "cover_image": "shopify://shop_images/15.jpg",
+            "bg_color_block": "#faf5e7",
+            "discount_title": "¡Descuento especial!",
+            "discount_text": "",
+            "image_width": 100,
+            "discount_code": ""
+          }
+        },
+        "recipe_FjXeii": {
+          "type": "recipe",
+          "settings": {
+            "day_number": "",
+            "unlock_date": "",
+            "expire_date": "",
+            "cover_image": "shopify://shop_images/16.jpg",
+            "bg_color_block": "#faf5e7",
+            "recipe_title": "Receta BARF rápida",
+            "recipe_image": "shopify://shop_images/PORTADAS_BLOG_13.webp",
+            "recipe_richtext": "<p>Una mezcla fresca y equilibrada para aportar proteínas, hueso y verduras en su estado más natural.</p><ul><li>300 g de carne magra cruda (pollo o ternera)</li><li>150 g de huesos carnosos crudos (alitas o cuello de pollo)</li><li>100 g de verduras trituradas (calabacín, zanahoria, espinaca)</li><li>1 cucharada de aceite de salmón</li><li>1 huevo crudo<br/></li></ul><p>Mezcla y sirve frío.</p>",
+            "recipe_cta_text": "COMPRA BARF",
+            "recipe_cta_link": "#"
+          }
+        },
+        "downloadable_xNd3Ai": {
+          "type": "downloadable",
+          "settings": {
+            "day_number": "",
+            "unlock_date": "",
+            "expire_date": "",
+            "cover_image": "shopify://shop_images/17.jpg",
+            "bg_color_block": "#faf5e7",
+            "downloadable_title": "Descarga tu regalo",
+            "downloadable_image": "shopify://shop_images/PORTADAS_BLOG_13.webp",
+            "downloadable_image_width": 100,
+            "downloadable_text": "",
+            "downloadable_cta_text": "Descargar ahora",
+            "downloadable_cta_link": "shopify://collections/best-sellers-comida-natural-gato"
+          }
+        },
+        "recipe_xaxEhn": {
+          "type": "recipe",
+          "settings": {
+            "day_number": "",
+            "unlock_date": "",
+            "expire_date": "",
+            "cover_image": "shopify://shop_images/18.jpg",
+            "bg_color_block": "#faf5e7",
+            "recipe_title": "Receta BARF rápida",
+            "recipe_image": "shopify://shop_images/PORTADAS_BLOG_13.webp",
+            "recipe_richtext": "<p>Una mezcla fresca y equilibrada para aportar proteínas, hueso y verduras en su estado más natural.</p><ul><li>300 g de carne magra cruda (pollo o ternera)</li><li>150 g de huesos carnosos crudos (alitas o cuello de pollo)</li><li>100 g de verduras trituradas (calabacín, zanahoria, espinaca)</li><li>1 cucharada de aceite de salmón</li><li>1 huevo crudo<br/></li></ul><p>Mezcla y sirve frío.</p>",
+            "recipe_cta_text": "COMPRA BARF",
+            "recipe_cta_link": "#"
+          }
+        },
+        "video_BABTHj": {
+          "type": "video",
+          "settings": {
+            "day_number": "",
+            "unlock_date": "",
+            "expire_date": "",
+            "cover_image": "shopify://shop_images/19.jpg",
+            "bg_color_block": "#faf5e7",
+            "video_title": "Video especial",
+            "video_text": "<p>Texto sobre el video</p>",
+            "video_embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/mfmrNsm15I0?si=c1v0_JwlZRvzBYgc\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen=\"\"></iframe>"
           }
         },
         "discount_LiieUL": {
@@ -244,7 +406,7 @@
             "day_number": "",
             "unlock_date": "",
             "expire_date": "",
-            "cover_image": "shopify://shop_images/9_d52070f4-aacb-4bc0-8223-0a093207bf89.jpg",
+            "cover_image": "shopify://shop_images/20.jpg",
             "bg_color_block": "#faf5e7",
             "discount_title": "¡Descuento especial!",
             "discount_text": "",
@@ -252,18 +414,47 @@
             "discount_code": ""
           }
         },
-        "discount_HFb7XW": {
-          "type": "discount",
+        "trivia_xjciDx": {
+          "type": "trivia",
           "settings": {
             "day_number": "",
             "unlock_date": "",
             "expire_date": "",
-            "cover_image": "shopify://shop_images/10_3d0091c8-b2eb-42fc-8891-0f90dde63978.jpg",
-            "bg_color_block": "#ffcd00",
-            "discount_title": "¡Descuento especial!",
-            "discount_text": "",
-            "image_width": 100,
-            "discount_code": ""
+            "cover_image": "shopify://shop_images/21.jpg",
+            "bg_color_block": "#faf5e7",
+            "trivia_title": "Trivial de Navidad",
+            "trivia_question_1": "¿A, B o C? (Resp: A)",
+            "trivia_options_1": "A,B,C",
+            "trivia_answer_1": "A",
+            "trivia_question_2": "¿X, Y o Z? (Resp: Z)",
+            "trivia_options_2": "X,Y,Z",
+            "trivia_answer_2": "Z",
+            "trivia_question_3": "",
+            "trivia_options_3": "",
+            "trivia_answer_3": "",
+            "trivia_question_4": "",
+            "trivia_options_4": "",
+            "trivia_answer_4": "",
+            "trivia_question_5": "",
+            "trivia_options_5": "",
+            "trivia_answer_5": "",
+            "trivia_reward_code": "DSADSA",
+            "trivia_success_text": "¡Enhorabuena! Has acertado todas las preguntas 🎉",
+            "trivia_failure_title": "Lo sentimos, has fallado alguna pregunta 😔",
+            "trivia_failure_text": "Revisa tus respuestas e inténtalo de nuevo."
+          }
+        },
+        "video_Qj4HBm": {
+          "type": "video",
+          "settings": {
+            "day_number": "",
+            "unlock_date": "",
+            "expire_date": "",
+            "cover_image": "shopify://shop_images/24_745eac35-30c1-4247-b008-566f1be94b85.jpg",
+            "bg_color_block": "#faf5e7",
+            "video_title": "Video especial",
+            "video_text": "<p>Texto sobre el video</p>",
+            "video_embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/mfmrNsm15I0?si=c1v0_JwlZRvzBYgc\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen=\"\"></iframe>"
           }
         }
       },
@@ -273,12 +464,24 @@
         "discount_yxwfj6",
         "recipe_C6JXpc",
         "survey_4j43NW",
-        "trivia_egaHhR",
+        "discount_BxjMzz",
+        "recipe_8EXHL8",
+        "discount_6DayGP",
         "downloadable_Yrhywk",
+        "recipe_VfKBrA",
+        "trivia_egaHhR",
         "video_66zQV7",
         "raffle_cExRHe",
+        "recipe_4wqV7F",
+        "recipe_jHK8FC",
+        "discount_XATPyV",
+        "recipe_FjXeii",
+        "downloadable_xNd3Ai",
+        "recipe_xaxEhn",
+        "video_BABTHj",
         "discount_LiieUL",
-        "discount_HFb7XW"
+        "trivia_xjciDx",
+        "video_Qj4HBm"
       ],
       "name": "Calendario de Adviento",
       "settings": {
