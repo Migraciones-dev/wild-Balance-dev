@@ -157,11 +157,11 @@
         "survey_4j43NW": {
           "type": "survey",
           "settings": {
-            "day_number": "5",
+            "day_number": "",
             "unlock_date": "",
             "expire_date": "",
-            "cover_image": "shopify://shop_images/BLOG_Gato_Razas_Ragdoll_Portada_movile_20251114.webp",
-            "bg_color_block": "#ffcd00",
+            "cover_image": "shopify://shop_images/4_bb9bca75-dea5-44cb-9ba2-b272977dd23b.jpg",
+            "bg_color_block": "#faf5e7",
             "survey_title": "Participa en nuestra encuesta",
             "survey_text": "<p>Rellena los datos para desbloquear tu regalo.</p>",
             "survey_embed": "\"Aquí mostraremos una encuesta traída de Typeform o similar\""
@@ -170,10 +170,11 @@
         "trivia_egaHhR": {
           "type": "trivia",
           "settings": {
-            "day_number": "6",
+            "day_number": "",
             "unlock_date": "",
             "expire_date": "",
-            "bg_color_block": "#ffcd00",
+            "cover_image": "shopify://shop_images/5_fbf70e77-4662-4682-b965-ef3d1908064d.jpg",
+            "bg_color_block": "#faf5e7",
             "trivia_title": "Trivial de Navidad",
             "trivia_question_1": "¿A, B o C? (Resp: A)",
             "trivia_options_1": "A,B,C",
@@ -199,10 +200,11 @@
         "downloadable_Yrhywk": {
           "type": "downloadable",
           "settings": {
-            "day_number": "7",
+            "day_number": "",
             "unlock_date": "",
             "expire_date": "",
-            "bg_color_block": "#ffcd00",
+            "cover_image": "shopify://shop_images/6_a5f6fe9f-18fe-4fbc-bfc8-9683229959d2.jpg",
+            "bg_color_block": "#faf5e7",
             "downloadable_title": "Descarga tu regalo",
             "downloadable_image": "shopify://shop_images/PORTADAS_BLOG_13.webp",
             "downloadable_image_width": 100,
@@ -214,10 +216,11 @@
         "video_66zQV7": {
           "type": "video",
           "settings": {
-            "day_number": "8",
+            "day_number": "",
             "unlock_date": "",
             "expire_date": "",
-            "bg_color_block": "#ffcd00",
+            "cover_image": "shopify://shop_images/7_7d0fde6c-0d1c-4f37-bbe2-7f726996c97f.jpg",
+            "bg_color_block": "#faf5e7",
             "video_title": "Video especial",
             "video_text": "<p>Texto sobre el video</p>",
             "video_embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/mfmrNsm15I0?si=c1v0_JwlZRvzBYgc\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen=\"\"></iframe>"
@@ -226,10 +229,10 @@
         "raffle_cExRHe": {
           "type": "raffle",
           "settings": {
-            "day_number": "9",
+            "day_number": "",
             "unlock_date": "",
             "expire_date": "",
-            "bg_color_block": "#ffcd00",
+            "bg_color_block": "#faf5e7",
             "raffle_title": "¡Participa en el sorteo!",
             "raffle_text": "<p>Explicación del sorteo.</p>",
             "raffle_embed": "\"Aquí mostraremos un formulario de Klaviyo o lo que se decida finalmente.\""
@@ -238,10 +241,11 @@
         "discount_LiieUL": {
           "type": "discount",
           "settings": {
-            "day_number": "10",
-            "unlock_date": "2025-12-01 00:00",
+            "day_number": "",
+            "unlock_date": "",
             "expire_date": "",
-            "bg_color_block": "#ffcd00",
+            "cover_image": "shopify://shop_images/9_d52070f4-aacb-4bc0-8223-0a093207bf89.jpg",
+            "bg_color_block": "#faf5e7",
             "discount_title": "¡Descuento especial!",
             "discount_text": "",
             "image_width": 100,
@@ -251,10 +255,10 @@
         "discount_HFb7XW": {
           "type": "discount",
           "settings": {
-            "day_number": "11",
-            "unlock_date": "2025-12-01 00:00",
+            "day_number": "",
+            "unlock_date": "",
             "expire_date": "",
-            "cover_image": "shopify://shop_images/PDP_Gato_LataMIX_Navidad_carrusel_mascota_20251106.webp",
+            "cover_image": "shopify://shop_images/10_3d0091c8-b2eb-42fc-8891-0f90dde63978.jpg",
             "bg_color_block": "#ffcd00",
             "discount_title": "¡Descuento especial!",
             "discount_text": "",
