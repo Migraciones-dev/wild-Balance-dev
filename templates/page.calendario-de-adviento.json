@@ -483,6 +483,9 @@
         "trivia_xjciDx",
         "video_Qj4HBm"
       ],
+      "custom_css": [
+        "h2, .section-title, .page-title {color: #FAF5E7 !important;}"
+      ],
       "name": "Calendario de Adviento",
       "settings": {
         "enable_snow": false,
