@@ -7,18 +7,13 @@
     {% break %}
   {% endif %}
 {% endfor %}
-<section
-  class="    frequently !bg-white mb-20 lg:!pb-12"
->
+
+<section class="frequently !bg-white mb-20 lg:!pb-12">
   <div class="pt-12 [@media(max-width:1024px)]:px-6">
-    <h2
-      class="
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                mx-auto relative [font-family:'Barlow',Helvetica] font-extrabold text-[#004623] max-w-[1600px] text-[30px] lg:text-[60px] text-center leading-[1] mb-10 !lg:mb-16 max-w-[650px]
-      "
-    >
+    <h2 class="mx-auto relative [font-family:'Barlow',Helvetica] font-extrabold text-[#004623] max-w-[1600px] text-[30px] lg:text-[60px] text-center leading-[1] mb-10 !lg:mb-16 max-w-[650px]">
       ¿Cada cuanto tiempo te lo enviamos a casa?
     </h2>
-    <p class="mx-auto max-w-[733px] pb-10 lg:pb-16 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#222222] text-center tracking-[0] leading-[1.5]  text-[14px] lg:text-[20px] mt-6 ">
+    <p class="mx-auto max-w-[733px] pb-10 lg:pb-16 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#222222] text-center tracking-[0] leading-[1.5] text-[14px] lg:text-[20px] mt-6">
       Deja espacio para tus heladitos, selecciona la capacidad que te queda disponible y el resto de lo llenamos entre
       la selección de menús que has hecho en el paso anterior.
     </p>
@@ -51,7 +46,6 @@
             </div>
             <div>
               <h3>
-                <!-- sin checked por defecto -->
                 <input type="radio" id="freezer_big" name="freezer" value="big" required> Tengo mucho espacio
               </h3>
               <p>
@@ -74,8 +68,8 @@
               >
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9534 0.349028C11.0825 0.271337 11.2368 0.246697 11.3837 0.280278C11.5306 0.313859 11.6588 0.403051 11.7414 0.529133L12.3185 1.40926C12.3937 1.52423 12.4259 1.66209 12.4093 1.79849C12.3928 1.93488 12.3286 2.06106 12.2281 2.15474L12.2264 2.15707L12.2182 2.16465L12.185 2.19554L12.0538 2.32086C11.3282 3.02476 10.6245 3.75096 9.94387 4.49843C8.66332 5.90663 7.14263 7.74965 6.11912 9.53787C5.83352 10.0368 5.13583 10.1441 4.722 9.71332L0.942127 5.78598C0.887959 5.72968 0.845663 5.66306 0.817753 5.59008C0.789844 5.51711 0.776891 5.43927 0.779664 5.36119C0.782437 5.28311 0.80088 5.20638 0.833896 5.13557C0.866912 5.06476 0.913827 5.00131 0.971853 4.94899L2.11427 3.91848C2.21466 3.82797 2.34339 3.77517 2.47843 3.76911C2.61346 3.76304 2.7464 3.80411 2.8545 3.88526L4.7832 5.33135C7.79602 2.36049 9.50439 1.22041 10.9534 0.349028Z" fill="#004623"/>
               </svg>
-              <span>Seleccionado</span></span
-            >
+              <span>Seleccionado</span>
+            </span>
           </div>
         </article>
       </label>
@@ -93,7 +87,6 @@
             <div>
               <span class="label recomended">Recomendado</span>
               <h3>
-                <!-- checked por defecto -->
                 <input type="radio" id="freezer_medium" name="freezer" value="medium" required checked> Medio congelador
               </h3>
               <p>{{ result.medium_freezer_frequency }} semana(s) de comida</p>
@@ -114,8 +107,8 @@
               >
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9534 0.349028C11.0825 0.271337 11.2368 0.246697 11.3837 0.280278C11.5306 0.313859 11.6588 0.403051 11.7414 0.529133L12.3185 1.40926C12.3937 1.52423 12.4259 1.66209 12.4093 1.79849C12.3928 1.93488 12.3286 2.06106 12.2281 2.15474L12.2264 2.15707L12.2182 2.16465L12.185 2.19554L12.0538 2.32086C11.3282 3.02476 10.6245 3.75096 9.94387 4.49843C8.66332 5.90663 7.14263 7.74965 6.11912 9.53787C5.83352 10.0368 5.13583 10.1441 4.722 9.71332L0.942127 5.78598C0.887959 5.72968 0.845663 5.66306 0.817753 5.59008C0.789844 5.51711 0.776891 5.43927 0.779664 5.36119C0.782437 5.28311 0.80088 5.20638 0.833896 5.13557C0.866912 5.06476 0.913827 5.00131 0.971853 4.94899L2.11427 3.91848C2.21466 3.82797 2.34339 3.77517 2.47843 3.76911C2.61346 3.76304 2.7464 3.80411 2.8545 3.88526L4.7832 5.33135C7.79602 2.36049 9.50439 1.22041 10.9534 0.349028Z" fill="#004623"/>
               </svg>
-              <span>Seleccionado</span></span
-            >
+              <span>Seleccionado</span>
+            </span>
           </div>
         </article>
       </label>
@@ -152,14 +145,14 @@
               >
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9534 0.349028C11.0825 0.271337 11.2368 0.246697 11.3837 0.280278C11.5306 0.313859 11.6588 0.403051 11.7414 0.529133L12.3185 1.40926C12.3937 1.52423 12.4259 1.66209 12.4093 1.79849C12.3928 1.93488 12.3286 2.06106 12.2281 2.15474L12.2264 2.15707L12.2182 2.16465L12.185 2.19554L12.0538 2.32086C11.3282 3.02476 10.6245 3.75096 9.94387 4.49843C8.66332 5.90663 7.14263 7.74965 6.11912 9.53787C5.83352 10.0368 5.13583 10.1441 4.722 9.71332L0.942127 5.78598C0.887959 5.72968 0.845663 5.66306 0.817753 5.59008C0.789844 5.51711 0.776891 5.43927 0.779664 5.36119C0.782437 5.28311 0.80088 5.20638 0.833896 5.13557C0.866912 5.06476 0.913827 5.00131 0.971853 4.94899L2.11427 3.91848C2.21466 3.82797 2.34339 3.77517 2.47843 3.76911C2.61346 3.76304 2.7464 3.80411 2.8545 3.88526L4.7832 5.33135C7.79602 2.36049 9.50439 1.22041 10.9534 0.349028Z" fill="#004623"/>
               </svg>
-              <span>Seleccionado</span></span
-            >
+              <span>Seleccionado</span>
+            </span>
           </div>
         </article>
       </label>
     </div>
     <button
-      class="!shadow h-9 inline-flex items-center justify-center gap-2.5 !py-10 !px-24 [@media(min-width:1280px)]:!px-[90px] bg-[#ffcd00] rounded-[50px] text-[#004623] hover:bg-[#ffcd00]/90 max-sm:w-full md:w-auto !text-[18px]  py-18 lg:!my-20 mx-auto mt-20 lg:!mt-[12rem] !font-bold"
+      class="!shadow h-9 inline-flex items-center justify-center gap-2.5 !py-10 !px-24 [@media(min-width:1280px)]:!px-[90px] bg-[#ffcd00] rounded-[50px] text-[#004623] hover:bg-[#ffcd00]/90 max-sm:w-full md:w-auto !text-[18px] py-18 lg:!my-20 mx-auto mt-20 lg:!mt-[12rem] !font-bold"
       type="button"
       onclick="recalculate()"
     >
@@ -200,7 +193,7 @@
               <li>Asesoramiento nutricional gratuito</li>
               <li>Guía de iniciación</li>
               <li>Ventajas exclusivas</li>
-              <li>Modifica, cancela o pausa tu plan desde “Mi cuenta” en cualquier momento</li>
+              <li>Modifica, cancela o pausa tu plan desde "Mi cuenta" en cualquier momento</li>
             </ul>
             <span style="font-size: smaller"
               ><i>*Descuento no aplicable en periodos especiales como Black Friday o Rebajas </i></span
@@ -218,7 +211,7 @@
               <li>Oferta especial en el primer envío</li>
               <li>Asesoramiento nutricional gratuito</li>
               <li>Ventajas exclusivas</li>
-              <li>Modifica, cancela o pausa tu plan desde “Mi cuenta” en cualquier momento</li>
+              <li>Modifica, cancela o pausa tu plan desde "Mi cuenta" en cualquier momento</li>
             </ul>
             <span style="font-size: smaller"
               ><i>*Descuento no aplicable en periodos especiales como Black Friday o Rebajas </i></span
@@ -264,7 +257,6 @@
                     >
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1741 0.64395C10.3033 0.566259 10.4575 0.541619 10.6044 0.5752C10.7513 0.608781 10.8795 0.697972 10.9621 0.824054L11.5392 1.70418C11.6144 1.81916 11.6466 1.95701 11.63 2.09341C11.6135 2.22981 11.5493 2.35598 11.4488 2.44966L11.4471 2.45199L11.4389 2.45957L11.4057 2.49046L11.2745 2.61578C10.5489 3.31968 9.84525 4.04589 9.16458 4.79336C7.88403 6.20155 6.36333 8.04457 5.33983 9.8328C5.05422 10.3317 4.35653 10.439 3.9427 10.0082L0.16283 6.0809C0.108662 6.0246 0.066366 5.95798 0.0384566 5.885C0.0105473 5.81203 -0.00240579 5.73419 0.000367269 5.65611C0.00314033 5.57803 0.0215829 5.5013 0.0545988 5.43049C0.0876148 5.35968 0.13453 5.29623 0.192556 5.24391L1.33497 4.21341C1.43536 4.12289 1.56409 4.07009 1.69913 4.06403C1.83416 4.05797 1.96711 4.09903 2.07521 4.18018L4.0039 5.62627C7.01672 2.65541 8.7251 1.51533 10.1741 0.64395Z" fill="#004623"/>
                     </svg>
-
                     <span class="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#004623] text-[16px] text-[20px]"
                       >Guía de iniciación</span
                     >
@@ -280,7 +272,6 @@
                     >
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1741 0.64395C10.3033 0.566259 10.4575 0.541619 10.6044 0.5752C10.7513 0.608781 10.8795 0.697972 10.9621 0.824054L11.5392 1.70418C11.6144 1.81916 11.6466 1.95701 11.63 2.09341C11.6135 2.22981 11.5493 2.35598 11.4488 2.44966L11.4471 2.45199L11.4389 2.45957L11.4057 2.49046L11.2745 2.61578C10.5489 3.31968 9.84525 4.04589 9.16458 4.79336C7.88403 6.20155 6.36333 8.04457 5.33983 9.8328C5.05422 10.3317 4.35653 10.439 3.9427 10.0082L0.16283 6.0809C0.108662 6.0246 0.066366 5.95798 0.0384566 5.885C0.0105473 5.81203 -0.00240579 5.73419 0.000367269 5.65611C0.00314033 5.57803 0.0215829 5.5013 0.0545988 5.43049C0.0876148 5.35968 0.13453 5.29623 0.192556 5.24391L1.33497 4.21341C1.43536 4.12289 1.56409 4.07009 1.69913 4.06403C1.83416 4.05797 1.96711 4.09903 2.07521 4.18018L4.0039 5.62627C7.01672 2.65541 8.7251 1.51533 10.1741 0.64395Z" fill="#004623"/>
                     </svg>
-
                     <span class="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#004623] text-[16px] text-[20px]"
                       >Envío con precio especial</span
                     >
@@ -296,7 +287,6 @@
                     >
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1741 0.64395C10.3033 0.566259 10.4575 0.541619 10.6044 0.5752C10.7513 0.608781 10.8795 0.697972 10.9621 0.824054L11.5392 1.70418C11.6144 1.81916 11.6466 1.95701 11.63 2.09341C11.6135 2.22981 11.5493 2.35598 11.4488 2.44966L11.4471 2.45199L11.4389 2.45957L11.4057 2.49046L11.2745 2.61578C10.5489 3.31968 9.84525 4.04589 9.16458 4.79336C7.88403 6.20155 6.36333 8.04457 5.33983 9.8328C5.05422 10.3317 4.35653 10.439 3.9427 10.0082L0.16283 6.0809C0.108662 6.0246 0.066366 5.95798 0.0384566 5.885C0.0105473 5.81203 -0.00240579 5.73419 0.000367269 5.65611C0.00314033 5.57803 0.0215829 5.5013 0.0545988 5.43049C0.0876148 5.35968 0.13453 5.29623 0.192556 5.24391L1.33497 4.21341C1.43536 4.12289 1.56409 4.07009 1.69913 4.06403C1.83416 4.05797 1.96711 4.09903 2.07521 4.18018L4.0039 5.62627C7.01672 2.65541 8.7251 1.51533 10.1741 0.64395Z" fill="#004623"/>
                     </svg>
-
                     <span class="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#004623] text-[16px] text-[20px]"
                       >Regalo de cumplemés</span
                     >
@@ -312,7 +302,6 @@
                     >
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1741 0.64395C10.3033 0.566259 10.4575 0.541619 10.6044 0.5752C10.7513 0.608781 10.8795 0.697972 10.9621 0.824054L11.5392 1.70418C11.6144 1.81916 11.6466 1.95701 11.63 2.09341C11.6135 2.22981 11.5493 2.35598 11.4488 2.44966L11.4471 2.45199L11.4389 2.45957L11.4057 2.49046L11.2745 2.61578C10.5489 3.31968 9.84525 4.04589 9.16458 4.79336C7.88403 6.20155 6.36333 8.04457 5.33983 9.8328C5.05422 10.3317 4.35653 10.439 3.9427 10.0082L0.16283 6.0809C0.108662 6.0246 0.066366 5.95798 0.0384566 5.885C0.0105473 5.81203 -0.00240579 5.73419 0.000367269 5.65611C0.00314033 5.57803 0.0215829 5.5013 0.0545988 5.43049C0.0876148 5.35968 0.13453 5.29623 0.192556 5.24391L1.33497 4.21341C1.43536 4.12289 1.56409 4.07009 1.69913 4.06403C1.83416 4.05797 1.96711 4.09903 2.07521 4.18018L4.0039 5.62627C7.01672 2.65541 8.7251 1.51533 10.1741 0.64395Z" fill="#004623"/>
                     </svg>
-
                     <span class="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#004623] text-[16px] text-[20px]"
                       >Productos sorpresa en pedidos</span
                     >
@@ -328,7 +317,6 @@
                     >
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1741 0.64395C10.3033 0.566259 10.4575 0.541619 10.6044 0.5752C10.7513 0.608781 10.8795 0.697972 10.9621 0.824054L11.5392 1.70418C11.6144 1.81916 11.6466 1.95701 11.63 2.09341C11.6135 2.22981 11.5493 2.35598 11.4488 2.44966L11.4471 2.45199L11.4389 2.45957L11.4057 2.49046L11.2745 2.61578C10.5489 3.31968 9.84525 4.04589 9.16458 4.79336C7.88403 6.20155 6.36333 8.04457 5.33983 9.8328C5.05422 10.3317 4.35653 10.439 3.9427 10.0082L0.16283 6.0809C0.108662 6.0246 0.066366 5.95798 0.0384566 5.885C0.0105473 5.81203 -0.00240579 5.73419 0.000367269 5.65611C0.00314033 5.57803 0.0215829 5.5013 0.0545988 5.43049C0.0876148 5.35968 0.13453 5.29623 0.192556 5.24391L1.33497 4.21341C1.43536 4.12289 1.56409 4.07009 1.69913 4.06403C1.83416 4.05797 1.96711 4.09903 2.07521 4.18018L4.0039 5.62627C7.01672 2.65541 8.7251 1.51533 10.1741 0.64395Z" fill="#004623"/>
                     </svg>
-
                     <span class="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#004623] text-[16px] text-[20px]"
                       >Acceso anticipado a lanzamientos y campañas VIP</span
                     >
@@ -344,7 +332,6 @@
                     >
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1741 0.64395C10.3033 0.566259 10.4575 0.541619 10.6044 0.5752C10.7513 0.608781 10.8795 0.697972 10.9621 0.824054L11.5392 1.70418C11.6144 1.81916 11.6466 1.95701 11.63 2.09341C11.6135 2.22981 11.5493 2.35598 11.4488 2.44966L11.4471 2.45199L11.4389 2.45957L11.4057 2.49046L11.2745 2.61578C10.5489 3.31968 9.84525 4.04589 9.16458 4.79336C7.88403 6.20155 6.36333 8.04457 5.33983 9.8328C5.05422 10.3317 4.35653 10.439 3.9427 10.0082L0.16283 6.0809C0.108662 6.0246 0.066366 5.95798 0.0384566 5.885C0.0105473 5.81203 -0.00240579 5.73419 0.000367269 5.65611C0.00314033 5.57803 0.0215829 5.5013 0.0545988 5.43049C0.0876148 5.35968 0.13453 5.29623 0.192556 5.24391L1.33497 4.21341C1.43536 4.12289 1.56409 4.07009 1.69913 4.06403C1.83416 4.05797 1.96711 4.09903 2.07521 4.18018L4.0039 5.62627C7.01672 2.65541 8.7251 1.51533 10.1741 0.64395Z" fill="#004623"/>
                     </svg>
-
                     <span class="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#004623] text-[16px] text-[20px]"
                       >Asesoramiento nutricional gratuito</span
                     >
@@ -414,13 +401,13 @@
     Completa tu pack
   </h2>
 </div>
-<section class="xselling frequently completePack  !bg-[#F4F0E2] [@media(max-width:1024px)]:!items-start">
+<section class="xselling frequently completePack !bg-[#F4F0E2] [@media(max-width:1024px)]:!items-start">
   {% render 'wizard-xselling', result: result %}
 </section>
 
-<section class="calculate frequently  !bg-[#F4F0E2]">
+<section class="calculate frequently !bg-[#F4F0E2]">
   <button
-    class="!shadow h-9 inline-flex items-center justify-center gap-2.5 !py-10 !px-24 [@media(min-width:1280px)]:!px-[90px] bg-[#ffcd00] rounded-[50px] text-[#004623] hover:bg-[#ffcd00]/90 max-sm:w-full md:w-auto !text-[18px]  py-18 lg:!my-20 mx-auto"
+    class="!shadow h-9 inline-flex items-center justify-center gap-2.5 !py-10 !px-24 [@media(min-width:1280px)]:!px-[90px] bg-[#ffcd00] rounded-[50px] text-[#004623] hover:bg-[#ffcd00]/90 max-sm:w-full md:w-auto !text-[18px] py-18 lg:!my-20 mx-auto"
     type="button"
     onclick="recalculate()"
   >
@@ -453,7 +440,7 @@
 </section>
 
 <script>
-  // Mapa semanas -> selling_plan_id (Loop)
+  // Mapa semanas → selling_plan_id
   window.planIdByWeeks = {
     1: 712729952640,
     2: 712729985408,
@@ -471,9 +458,7 @@
     medium: {{ result.medium_freezer_frequency | json }},
     big: {{ result.big_freezer_frequency | json }}
   };
-</script>
 
-<script>
   // --- UI: selección de freezer ---
   let freezerContainers = document.querySelectorAll('input[name="freezer"]');
   Array.from(freezerContainers).forEach(function(freezer) {
@@ -496,7 +481,7 @@
     Array.from(results).forEach(function(result){ result.style.display = "none"; });
   }
 
-  // --- Acción principal ---
+  // --- Acción principal (ÚNICA FUNCIÓN recalculate) ---
   function recalculate() {
     // Recolectar proteínas seleccionadas
     let selectedProteins = document.querySelectorAll('input[name="protein"]:checked');
@@ -505,121 +490,7 @@
       selectedProteinsValues.push({ variantId: protein.value });
     });
 
-    // ✅ NUEVO: Recolectar xselling seleccionados
-    let selectedXselling = document.querySelectorAll('input[name="xselling"]:checked');
-    let selectedXsellingValues = [];
-    Array.from(selectedXselling).forEach(function(xselling){
-      selectedXsellingValues.push({ variantId: xselling.value });
-    });
-
-    let selectedFreezerKey = document.querySelector('input[name="freezer"]:checked').value;
-    let targetWeeks = window.freezerFrequencies[selectedFreezerKey];
-
-    // Validar que existe plan para esas semanas
-    const planId = window.planIdByWeeks[targetWeeks];
-    if (!planId) {
-      alert(`No hay un plan configurado para ${targetWeeks} semana(s). Revisa el mapping semanas → selling_plan_id.`);
-      return;
-    }
-
-    let recalculateData = {
-      pet: "{{result.pet}}",
-      grams: {{result.grams}},
-      foodType: "{{comida}}",
-      newWithBarf: {{result.is_new_with_barf | default: false}},
-      selectedFreezer: selectedFreezerKey,
-      selectedProteins: selectedProteinsValues,
-      selectedXselling: selectedXsellingValues  // ✅ Enviar xselling al backend
-    };
-
-    console.log('📦 Datos enviados al backend:', recalculateData);
-
-    $.ajax({
-      url: "https://wildbalance-app-rocket.fly.dev/recalculate",
-      type: "POST",
-      contentType: "application/json",
-      dataType: "json",
-      data: JSON.stringify(recalculateData),
-      success: function(data) {
-        const freezerVariantsAndQtys = data.freezerVariantsAndQtys || [];
-
-        // Construimos items base con selling_plan
-        const items = freezerVariantsAndQtys.map(item => ({
-          id: item.variantId,
-          quantity: item.qty,
-          selling_plan: planId
-        }));
-
-        // ✅ NUEVO: Agregar items de xselling (sin selling_plan, son one-time)
-        Array.from(selectedXselling).forEach(function(xselling){
-          items.push({
-            id: xselling.value,
-            quantity: 1
-            // NO incluir selling_plan para xselling (son compras únicas)
-          });
-        });
-
-        console.log('🛒 Items finales a agregar al carrito:', items);
-
-        if (!items.length) {
-          alert('No hay items que añadir al carrito.');
-          return;
-        }
-
-        fetch('/cart/add.js', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ items })
-        })
-        .then(response => {
-          if (!response.ok) throw new Error('Error al agregar productos al carrito');
-          console.log('✅ Productos agregados correctamente');
-          window.location.href = '{{ shop.url }}/cart';
-        })
-        .catch(error => {
-          console.error('❌ Hubo un problema con el add to cart:', error);
-          alert('No se pudo añadir el pack al carrito. Inténtalo de nuevo.');
-        });
-      },
-      error: function(jqXHR, textStatus, errorThrown) {
-        console.error('❌ Error en recalculate:', errorThrown);
-        alert('No se pudo recalcular el pack. Inténtalo de nuevo.');
-      }
-    });
-  }
-</script>
-
-<script>
-  // --- UI: selección de freezer ---
-  let freezerContainers = document.querySelectorAll('input[name="freezer"]');
-  Array.from(freezerContainers).forEach(function(freezer) {
-    freezer.addEventListener('click', function(){ activateFreezer(freezer, freezerContainers); });
-  });
-
-  function activateFreezer(thisfreezer,freezerContainers) {
-    Array.from(freezerContainers).forEach(function(freezer){
-      let article = freezer.closest(".articleInfoFrequently");
-      article.classList.remove("active");
-      article.querySelector(".selected").style.display = "none";
-      article.querySelector(".select").style.display = "flex";
-    });
-    let thisarticle = thisfreezer.closest(".articleInfoFrequently");
-    thisarticle.classList.add("active");
-    thisarticle.querySelector(".selected").style.display = "flex";
-    thisarticle.querySelector(".select").style.display = "none";
-
-    let results = document.querySelectorAll('._wizard-result-freezer');
-    Array.from(results).forEach(function(result){ result.style.display = "none"; });
-  }
-
-  // --- Acción principal ---
-  function recalculate() {
-    let selectedProteins = document.querySelectorAll('input[name="protein"]:checked');
-    let selectedProteinsValues = [];
-    Array.from(selectedProteins).forEach(function(protein){
-      selectedProteinsValues.push({ variantId: protein.value });
-    });
-
+    // Recolectar xselling seleccionados
     let selectedXselling = document.querySelectorAll('input[name="xselling"]:checked');
     let selectedXsellingValues = [];
     Array.from(selectedXselling).forEach(function(xselling){
@@ -646,6 +517,8 @@
       selectedXselling: selectedXsellingValues
     };
 
+    console.log('📦 Datos enviados al backend:', recalculateData);
+
     $.ajax({
       url: "https://wildbalance-app-rocket.fly.dev/recalculate",
       type: "POST",
@@ -653,36 +526,62 @@
       dataType: "json",
       data: JSON.stringify(recalculateData),
       success: function(data) {
+        console.log('📊 Respuesta del backend:', data);
+        
         const freezerVariantsAndQtys = data.freezerVariantsAndQtys || [];
 
-        // Construimos items con el selling_plan correspondiente a las semanas target
+        // ✅ Convertir IDs a strings y construir items
         const items = freezerVariantsAndQtys.map(item => ({
-          id: item.variantId,
+          id: String(item.variantId), // ✅ Convertir a string
           quantity: item.qty,
           selling_plan: planId
         }));
+
+        // ✅ Agregar items de xselling (sin selling_plan, compras únicas)
+        Array.from(selectedXselling).forEach(function(xselling){
+          items.push({
+            id: String(xselling.value), // ✅ Convertir a string
+            quantity: 1
+          });
+        });
+
+        console.log('🛒 Items finales a agregar al carrito:', items);
 
         if (!items.length) {
           alert('No hay items que añadir al carrito.');
           return;
         }
 
+        // ✅ MEJORADO: Agregar al carrito con mejor manejo de errores
         fetch('/cart/add.js', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
           body: JSON.stringify({ items })
         })
         .then(response => {
-          if (!response.ok) throw new Error('Error al agregar productos al carrito');
+          if (!response.ok) {
+            // ✅ Capturar el error completo de Shopify
+            return response.json().then(err => {
+              console.error('❌ Error detallado de Shopify:', err);
+              throw new Error(err.description || err.message || 'Error desconocido');
+            });
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log('✅ Productos agregados correctamente:', data);
           window.location.href = '{{ shop.url }}/cart';
         })
         .catch(error => {
-          console.error('Hubo un problema con el add to cart:', error);
-          alert('No se pudo añadir el pack al carrito. Inténtalo de nuevo.');
+          console.error('❌ Error al agregar al carrito:', error);
+          alert(`No se pudo añadir el pack al carrito.\n\nError: ${error.message}\n\nVerifica:\n- Que el selling plan esté asociado a estos productos en Shopify Admin\n- Que los productos estén disponibles`);
         });
       },
       error: function(jqXHR, textStatus, errorThrown) {
-        console.error(errorThrown);
+        console.error('❌ Error en recalculate:', jqXHR.responseJSON || errorThrown);
         alert('No se pudo recalcular el pack. Inténtalo de nuevo.');
       }
     });
@@ -690,36 +589,36 @@
 </script>
 
 <style>
-              .contentFreezerSpace .articleInfoFrequently:active, .contentFreezerSpace .articleInfoFrequently.active, .contentFreezerSpace .articleInfoFrequently:visited {
-                background-color: #D9D9C8;
-                border: 2px solid var(--WildBalanceGreen-css);
-            }
-            .label.recomended {
-              background: var(--WildBalanceGreen-css)
-            }
-            .articleInfoFrequently.active .label.selected {
-              background-color: #FFCD00;
-              color: var(--WildBalanceGreen-css)
-          }
-          .contentFreezerSpace .articleInfoFrequently {
-            opacity: 0.75;
-            background-color: #fff;
-            border-radius: 20px;
-            border: 2px solid var(--lightGreen-css);
-        }
-        .contentFreezerSpace .articleInfoFrequently:active, .contentFreezerSpace .articleInfoFrequently.active, .contentFreezerSpace .articleInfoFrequently:visited {
-            opacity: 1;
-      }
-      .label.select {
-        background: white!important;
-        border: 2px solid #FFCD00;
-      }
-      .contentFreezerSpace .articleInfoFrequently:hover {
-        background-color: #D9D9C8!important;
+  .contentFreezerSpace .articleInfoFrequently:active, .contentFreezerSpace .articleInfoFrequently.active, .contentFreezerSpace .articleInfoFrequently:visited {
+    background-color: #D9D9C8;
+    border: 2px solid var(--WildBalanceGreen-css);
+  }
+  .label.recomended {
+    background: var(--WildBalanceGreen-css)
+  }
+  .articleInfoFrequently.active .label.selected {
+    background-color: #FFCD00;
+    color: var(--WildBalanceGreen-css)
+  }
+  .contentFreezerSpace .articleInfoFrequently {
+    opacity: 0.75;
+    background-color: #fff;
+    border-radius: 20px;
+    border: 2px solid var(--lightGreen-css);
+  }
+  .contentFreezerSpace .articleInfoFrequently:active, .contentFreezerSpace .articleInfoFrequently.active, .contentFreezerSpace .articleInfoFrequently:visited {
+    opacity: 1;
+  }
+  .label.select {
+    background: white!important;
+    border: 2px solid #FFCD00;
+  }
+  .contentFreezerSpace .articleInfoFrequently:hover {
+    background-color: #D9D9C8!important;
+  }
+  @media (max-width: 765px) {
+    .textInfo .label.select, .textInfo .label.selected {
+      color: #004623;
     }
-    @media (max-width: 765px) {
-      .textInfo .label.select, .textInfo .label.selected {
-          color: #004623;
-      }
   }
 </style>
