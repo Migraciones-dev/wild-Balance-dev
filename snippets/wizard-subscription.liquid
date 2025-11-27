@@ -496,107 +496,36 @@
     Array.from(results).forEach(function(result){ result.style.display = "none"; });
   }
 
-  // --- Acción principal ---
-  function recalculate() {
-    // Recolectar proteínas seleccionadas
-    let selectedProteins = document.querySelectorAll('input[name="protein"]:checked');
-    let selectedProteinsValues = [];
-    Array.from(selectedProteins).forEach(function(protein){
-      selectedProteinsValues.push({ variantId: protein.value });
-    });
 
-    // ✅ NUEVO: Recolectar xselling seleccionados
-    let selectedXselling = document.querySelectorAll('input[name="xselling"]:checked');
-    let selectedXsellingValues = [];
-    Array.from(selectedXselling).forEach(function(xselling){
-      selectedXsellingValues.push({ variantId: xselling.value });
-    });
-
-    let selectedFreezerKey = document.querySelector('input[name="freezer"]:checked').value;
-    let targetWeeks = window.freezerFrequencies[selectedFreezerKey];
-
-    // Validar que existe plan para esas semanas
-    const planId = window.planIdByWeeks[targetWeeks];
-    if (!planId) {
-      alert(`No hay un plan configurado para ${targetWeeks} semana(s). Revisa el mapping semanas → selling_plan_id.`);
-      return;
-    }
-
-    let recalculateData = {
-      pet: "{{result.pet}}",
-      grams: {{result.grams}},
-      foodType: "{{comida}}",
-      newWithBarf: {{result.is_new_with_barf | default: false}},
-      selectedFreezer: selectedFreezerKey,
-      selectedProteins: selectedProteinsValues,
-      selectedXselling: selectedXsellingValues  // ✅ Enviar xselling al backend
-    };
-
-    console.log('📦 Datos enviados al backend:', recalculateData);
-
-    $.ajax({
-      url: "https://wildbalance-app-rocket.fly.dev/recalculate",
-      type: "POST",
-      contentType: "application/json",
-      dataType: "json",
-      data: JSON.stringify(recalculateData),
-      success: function(data) {
-        const freezerVariantsAndQtys = data.freezerVariantsAndQtys || [];
-
-        // Construimos items base con selling_plan
-        const items = freezerVariantsAndQtys.map(item => ({
-          id: item.variantId,
-          quantity: item.qty,
-          selling_plan: planId
-        }));
-
-        // ✅ NUEVO: Agregar items de xselling (sin selling_plan, son one-time)
-        Array.from(selectedXselling).forEach(function(xselling){
-          items.push({
-            id: xselling.value,
-            quantity: 1
-            // NO incluir selling_plan para xselling (son compras únicas)
-          });
-        });
-
-        console.log('🛒 Items finales a agregar al carrito:', items);
-
-        if (!items.length) {
-          alert('No hay items que añadir al carrito.');
-          return;
-        }
-
-        fetch('/cart/add.js', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ items })
-        })
-        .then(response => {
-          if (!response.ok) throw new Error('Error al agregar productos al carrito');
-          console.log('✅ Productos agregados correctamente');
-          window.location.href = '{{ shop.url }}/cart';
-        })
-        .catch(error => {
-          console.error('❌ Hubo un problema con el add to cart:', error);
-          alert('No se pudo añadir el pack al carrito. Inténtalo de nuevo.');
-        });
-      },
-      error: function(jqXHR, textStatus, errorThrown) {
-        console.error('❌ Error en recalculate:', errorThrown);
-        alert('No se pudo recalcular el pack. Inténtalo de nuevo.');
-      }
-    });
-  }
 </script>
 
 <script>
+  // Mapa semanas → selling_plan_id
+  window.planIdByWeeks = {
+    1: 712729952640,
+    2: 712729985408,
+    3: 712730018176,
+    4: 712730050944,
+    5: 712753348992,
+    6: 712753381760,
+    7: 712753414528,
+    8: 712753447296
+  };
+
+  // Frecuencias por tamaño
+  window.freezerFrequencies = {
+    small: {{ result.small_freezer_frequency | json }},
+    medium: {{ result.medium_freezer_frequency | json }},
+    big: {{ result.big_freezer_frequency | json }}
+  };
+
   // --- UI: selección de freezer ---
   let freezerContainers = document.querySelectorAll('input[name="freezer"]');
   Array.from(freezerContainers).forEach(function(freezer) {
     freezer.addEventListener('click', function(){ activateFreezer(freezer, freezerContainers); });
   });
 
-  function activateFreezer(thisfreezer,freezerContainers) {
+  function activateFreezer(thisfreezer, freezerContainers) {
     Array.from(freezerContainers).forEach(function(freezer){
       let article = freezer.closest(".articleInfoFrequently");
       article.classList.remove("active");
@@ -612,14 +541,16 @@
     Array.from(results).forEach(function(result){ result.style.display = "none"; });
   }
 
-  // --- Acción principal ---
+  // --- Acción principal (ÚNICA FUNCIÓN recalculate) ---
   function recalculate() {
+    // Recolectar proteínas seleccionadas
     let selectedProteins = document.querySelectorAll('input[name="protein"]:checked');
     let selectedProteinsValues = [];
     Array.from(selectedProteins).forEach(function(protein){
       selectedProteinsValues.push({ variantId: protein.value });
     });
 
+    // Recolectar xselling seleccionados
     let selectedXselling = document.querySelectorAll('input[name="xselling"]:checked');
     let selectedXsellingValues = [];
     Array.from(selectedXselling).forEach(function(xselling){
@@ -646,6 +577,8 @@
       selectedXselling: selectedXsellingValues
     };
 
+    console.log('📦 Datos enviados al backend:', recalculateData);
+
     $.ajax({
       url: "https://wildbalance-app-rocket.fly.dev/recalculate",
       type: "POST",
@@ -653,41 +586,68 @@
       dataType: "json",
       data: JSON.stringify(recalculateData),
       success: function(data) {
+        console.log('📊 Respuesta del backend:', data);
+        
         const freezerVariantsAndQtys = data.freezerVariantsAndQtys || [];
 
-        // Construimos items con el selling_plan correspondiente a las semanas target
+        // ✅ Convertir IDs a strings y construir items
         const items = freezerVariantsAndQtys.map(item => ({
-          id: item.variantId,
+          id: String(item.variantId), // ✅ Convertir a string
           quantity: item.qty,
           selling_plan: planId
         }));
+
+        // ✅ Agregar items de xselling (sin selling_plan, compras únicas)
+        Array.from(selectedXselling).forEach(function(xselling){
+          items.push({
+            id: String(xselling.value), // ✅ Convertir a string
+            quantity: 1
+          });
+        });
+
+        console.log('🛒 Items finales a agregar al carrito:', items);
 
         if (!items.length) {
           alert('No hay items que añadir al carrito.');
           return;
         }
 
+        // ✅ MEJORADO: Agregar al carrito con mejor manejo de errores
         fetch('/cart/add.js', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
           body: JSON.stringify({ items })
         })
         .then(response => {
-          if (!response.ok) throw new Error('Error al agregar productos al carrito');
+          if (!response.ok) {
+            // ✅ Capturar el error completo de Shopify
+            return response.json().then(err => {
+              console.error('❌ Error detallado de Shopify:', err);
+              throw new Error(err.description || err.message || 'Error desconocido');
+            });
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log('✅ Productos agregados correctamente:', data);
           window.location.href = '{{ shop.url }}/cart';
         })
         .catch(error => {
-          console.error('Hubo un problema con el add to cart:', error);
-          alert('No se pudo añadir el pack al carrito. Inténtalo de nuevo.');
+          console.error('❌ Error al agregar al carrito:', error);
+          alert(`No se pudo añadir el pack al carrito.\n\nError: ${error.message}\n\nVerifica:\n- Que el selling plan esté asociado a estos productos en Shopify Admin\n- Que los productos estén disponibles`);
         });
       },
       error: function(jqXHR, textStatus, errorThrown) {
-        console.error(errorThrown);
+        console.error('❌ Error en recalculate:', jqXHR.responseJSON || errorThrown);
         alert('No se pudo recalcular el pack. Inténtalo de nuevo.');
       }
     });
   }
 </script>
+
 
 <style>
               .contentFreezerSpace .articleInfoFrequently:active, .contentFreezerSpace .articleInfoFrequently.active, .contentFreezerSpace .articleInfoFrequently:visited {
