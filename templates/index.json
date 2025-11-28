@@ -1050,13 +1050,12 @@
         },
         "collection_DVXpBQ": {
           "type": "collection",
-          "disabled": true,
           "settings": {
             "countdown_date": "",
             "show_discount_badge": "both",
             "pet_type": "dog",
             "collection_name": "Comida Cocinada",
-            "collection": "comida-cocinada-para-perros",
+            "collection": "black-friday-comida-cocinada-para-perros",
             "banner_action_type": "link",
             "banner_link_url": "",
             "banner_product": ""
