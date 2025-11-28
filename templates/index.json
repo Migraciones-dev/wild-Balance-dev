@@ -851,8 +851,8 @@
         "banner_WgyLhd": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/oferta-flash-cocinado-pollo.png",
-            "mobile_image": "shopify://shop_images/oferta-flash-cocinado-pollo.png",
+            "desktop_image": "shopify://shop_images/oferta-flash-cocinado-pollo_a55c701c-8dd5-4b54-95ed-d7b0263df04e.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-cocinado-pollo_a55c701c-8dd5-4b54-95ed-d7b0263df04e.png",
             "image_link": "",
             "product": "comida-cocinada-pollo-con-verduras-para-perro",
             "enable_countdown": false,
@@ -872,8 +872,8 @@
         "banner_3waJVG": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/oferta-flash-cocinada-pollo-gato.png",
-            "mobile_image": "shopify://shop_images/oferta-flash-cocinada-pollo-gato.png",
+            "desktop_image": "shopify://shop_images/oferta-flash-cocinado-pollo-gato.png",
+            "mobile_image": "shopify://shop_images/oferta-flash-cocinado-pollo-gato.png",
             "image_link": "",
             "product": "comida-cocinada-pollo-con-verduras-para-gatos",
             "enable_countdown": false,
