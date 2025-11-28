@@ -195,7 +195,7 @@
         "heading_before": "⚡Ofertas del día⚡",
         "heading_highlight": "",
         "heading_after": "",
-        "countdown_date": "2025-11-28 09:00",
+        "countdown_date": "2025-11-29 09:00",
         "label_hours": "horas",
         "label_minutes": "minutos",
         "label_seconds": "segundos",
@@ -850,6 +850,7 @@
         },
         "banner_WgyLhd": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/oferta-flash-cocinada-pollo-perro.png",
             "mobile_image": "shopify://shop_images/oferta-flash-cocinada-pollo-perro.png",
@@ -871,6 +872,7 @@
         },
         "banner_3waJVG": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/oferta-flash-cocinada-pollo-gato.png",
             "mobile_image": "shopify://shop_images/oferta-flash-cocinada-pollo-gato.png",
