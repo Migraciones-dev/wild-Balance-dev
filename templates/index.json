@@ -902,7 +902,7 @@
             "countdown_position_desktop": "center",
             "enable_schedule": true,
             "start_date": "2025-11-29 09:00",
-            "end_date": "2025-11-30 23:59",
+            "end_date": "2025-11-30 09:00",
             "border_radius_desktop": 30,
             "border_radius_mobile": 12,
             "mt_desktop": 0,
