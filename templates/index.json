@@ -176,7 +176,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/HOME_DESKTOP.png",
             "mobile_image": "shopify://shop_images/HOME_MOBILE.png",
-            "image_link": "",
+            "image_link": "shopify://collections/comida-perros",
             "enable_schedule": false,
             "start_date": "",
             "end_date": "",
@@ -193,7 +193,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/SORTEO_DESK.png",
             "mobile_image": "shopify://shop_images/SORTEO_MOBILE.png",
-            "image_link": "",
+            "image_link": "shopify://collections/comida-perros",
             "enable_schedule": false,
             "start_date": "",
             "end_date": "",
