@@ -187,6 +187,23 @@
             "mt_mobile": 0,
             "mb_mobile": 0
           }
+        },
+        "banner_rDFGR7": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/SORTEO_DESK.png",
+            "mobile_image": "shopify://shop_images/SORTEO_MOBILE.png",
+            "image_link": "",
+            "enable_schedule": false,
+            "start_date": "",
+            "end_date": "",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 56,
+            "mb_desktop": 32,
+            "mt_mobile": 32,
+            "mb_mobile": 0
+          }
         }
       },
       "block_order": [
@@ -195,7 +212,8 @@
         "banner_LJFEdc",
         "banner_FMTLWC",
         "banner_VMfpEr",
-        "banner_hVR9mE"
+        "banner_hVR9mE",
+        "banner_rDFGR7"
       ],
       "name": "Banner imagen responsivo",
       "settings": {
