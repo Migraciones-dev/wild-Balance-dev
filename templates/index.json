@@ -170,6 +170,23 @@
             "mt_mobile": 0,
             "mb_mobile": 0
           }
+        },
+        "banner_hVR9mE": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/HOME_DESKTOP.png",
+            "mobile_image": "shopify://shop_images/HOME_MOBILE.png",
+            "image_link": "",
+            "enable_schedule": false,
+            "start_date": "",
+            "end_date": "",
+            "border_radius_desktop": 30,
+            "border_radius_mobile": 12,
+            "mt_desktop": 0,
+            "mb_desktop": 0,
+            "mt_mobile": 0,
+            "mb_mobile": 0
+          }
         }
       },
       "block_order": [
@@ -177,7 +194,8 @@
         "banner_4nDMtb",
         "banner_LJFEdc",
         "banner_FMTLWC",
-        "banner_VMfpEr"
+        "banner_VMfpEr",
+        "banner_hVR9mE"
       ],
       "name": "Banner imagen responsivo",
       "settings": {
