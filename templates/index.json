@@ -16,7 +16,7 @@
           "type": "image_parent",
           "settings": {
             "image": "shopify://shop_images/banner-home-navidad-coleccion.jpg",
-            "image_mb": "shopify://shop_images/banner-home-navidad-mobile-coleccion_8d0a56ef-7c59-47d3-bca5-0a11e910dc2c.png",
+            "image_mb": "shopify://shop_images/banner-home-navidad-mobile-coleccion_cc1c9453-6060-4459-8970-cc0d9ba97012.png",
             "image_position": "8",
             "cl_img": "",
             "link_img1": "shopify://collections/navidad",
@@ -271,7 +271,7 @@
       "name": "Migraciones imagen",
       "settings": {
         "desktop_image": "shopify://shop_images/banner-home-navidad-calendario-adviento.png",
-        "mobile_image": "shopify://shop_images/banner-home-navidad-mobile-calendario-adviento_4032f62e-87c3-44f9-bc6c-2c054da80dcb.png",
+        "mobile_image": "shopify://shop_images/banner-home-navidad-mobile-calendario-adviento_6b4ac351-fb0b-4e9d-bdbe-a1c058199696.png",
         "image_link": "https://wildbalance.es/pages/calendario-de-adviento-1",
         "pt_mobile": 0,
         "pb_mobile": 0,
