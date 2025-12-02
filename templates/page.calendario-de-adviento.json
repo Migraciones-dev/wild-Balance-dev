@@ -161,10 +161,11 @@
             "expire_date": "2025-12-07 00:01",
             "cover_image": "shopify://shop_images/4_bb9bca75-dea5-44cb-9ba2-b272977dd23b.jpg",
             "bg_color_block": "#faf5e7",
-            "discount_title": "¡Descuento especial!",
-            "discount_text": "",
+            "discount_title": "Snack Day: ¡Mímale sin culpa!",
+            "discount_text": "<p>Hoy celebramos el día más rico del mes: <strong>15% en todos los snacks naturales</strong>. Premiarlos nunca fue tan sano. ¡Aprovecha y llévate sus favoritos!<br/><br/></p>",
+            "discount_image": "shopify://shop_images/4_bb9bca75-dea5-44cb-9ba2-b272977dd23b.jpg",
             "image_width": 100,
-            "discount_code": ""
+            "discount_code": "SNACKDAY"
           }
         },
         "recipe_8EXHL8": {
