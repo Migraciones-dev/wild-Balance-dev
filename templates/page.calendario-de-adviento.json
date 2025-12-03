@@ -97,21 +97,6 @@
     "calendario_de_adviento_QyhqM7": {
       "type": "calendario-de-adviento",
       "blocks": {
-        "discount_wfzd4T": {
-          "type": "discount",
-          "settings": {
-            "day_number": "",
-            "unlock_date": "2025-12-02 00:01",
-            "expire_date": "2025-12-04 00:01",
-            "cover_image": "shopify://shop_images/CALENDARIO_ADVIENTO_NAVIDAD_1.jpg",
-            "bg_color_block": "#faf5e7",
-            "discount_title": "¡Nuevo Kéfir Wild Balance! El secreto para barriguitas felices",
-            "discount_text": "<p>Descubre nuestro nuevo Kéfir: 100% natural, probiótico y perfecto para mejorar la digestión de tu peludo. ¡Está riquíiiiiisimo! <strong>Truco</strong>: añádeselo a su comida diaria y mira cómo lo devora.</p><p>⚡Solo hoy tienes <strong>-10% en este lanzamiento flash</strong>⚡<br/></p>",
-            "discount_image": "shopify://shop_images/CALENDARIO_ADVIENTO_NAVIDAD_1.jpg",
-            "image_width": 100,
-            "discount_code": "KEFIR10"
-          }
-        },
         "video_66zQV7": {
           "type": "video",
           "settings": {
@@ -120,9 +105,24 @@
             "expire_date": "2025-12-04 00:01",
             "cover_image": "shopify://shop_images/CALENDARIO_ADVIENTO_NAVIDAD.jpg",
             "bg_color_block": "#faf5e7",
-            "video_title": "Video especial",
-            "video_text": "<p>Texto sobre el video</p>",
+            "video_title": "Empieza la mejor época del año 💫Navidad",
+            "video_text": "<p>Y con ella llega este🎄Calendario de Adviento con:</p><p>💝 Descuentos<br/>💝Concursos<br/>💝Sorteos</p><p><br/>Y muchas sorpresas más</p><p>¡Que empiece la magia!</p>",
             "video_embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/mfmrNsm15I0?si=c1v0_JwlZRvzBYgc\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen=\"\"></iframe>"
+          }
+        },
+        "discount_wfzd4T": {
+          "type": "discount",
+          "settings": {
+            "day_number": "",
+            "unlock_date": "2025-12-02 00:01",
+            "expire_date": "2025-12-04 00:01",
+            "cover_image": "shopify://shop_images/1_45674e09-5768-4e46-8d16-aa6e30998285.jpg",
+            "bg_color_block": "#faf5e7",
+            "discount_title": "¡Nuevo Kéfir Wild Balance! El secreto para barriguitas felices",
+            "discount_text": "<p>Descubre nuestro nuevo Kéfir: 100% natural, probiótico y perfecto para mejorar la digestión de tu peludo. ¡Está riquíiiiiisimo! <strong>Truco</strong>: añádeselo a su comida diaria y mira cómo lo devora.</p><p>⚡Solo hoy tienes <strong>-10% en este lanzamiento flash</strong>⚡<br/></p>",
+            "discount_image": "shopify://shop_images/1_45674e09-5768-4e46-8d16-aa6e30998285.jpg",
+            "image_width": 100,
+            "discount_code": "KEFIR10"
           }
         },
         "recipe_C6JXpc": {
@@ -477,8 +477,8 @@
         }
       },
       "block_order": [
-        "discount_wfzd4T",
         "video_66zQV7",
+        "discount_wfzd4T",
         "recipe_C6JXpc",
         "survey_4j43NW",
         "discount_BxjMzz",
