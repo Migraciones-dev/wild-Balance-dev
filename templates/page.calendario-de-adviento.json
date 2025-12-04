@@ -134,7 +134,6 @@
             "cover_image": "shopify://shop_images/2_88dcd096-66be-4adc-92c1-fa91556825c5.jpg",
             "bg_color_block": "#faf5e7",
             "recipe_title": "Receta BARF rápida",
-            "recipe_image": "shopify://shop_images/PORTADAS_BLOG_13.webp",
             "recipe_richtext": "<p>Una mezcla fresca y equilibrada para aportar proteínas, hueso y verduras en su estado más natural.</p><ul><li>300 g de carne magra cruda (pollo o ternera)</li><li>150 g de huesos carnosos crudos (alitas o cuello de pollo)</li><li>100 g de verduras trituradas (calabacín, zanahoria, espinaca)</li><li>1 cucharada de aceite de salmón</li><li>1 huevo crudo<br/></li></ul><p>Mezcla y sirve frío.</p>",
             "recipe_cta_text": "COMPRA BARF",
             "recipe_cta_link": "#"
@@ -474,6 +473,19 @@
             "video_text": "<p>Texto sobre el video</p>",
             "video_embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/mfmrNsm15I0?si=c1v0_JwlZRvzBYgc\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen=\"\"></iframe>"
           }
+        },
+        "video_9Xmm4e": {
+          "type": "video",
+          "settings": {
+            "day_number": "",
+            "unlock_date": "2025-12-03 09:00",
+            "expire_date": "2025-12-24 09:00",
+            "cover_image": "shopify://shop_images/2_57abba4e-d1a9-4524-a2f2-6aec27d1e720.jpg",
+            "bg_color_block": "#ffcd00",
+            "video_title": "La historia de Mia",
+            "video_text": "",
+            "video_embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/gypxfEFXLK0\" frameborder=\"0\" allowfullscreen=\"\"></iframe>"
+          }
         }
       },
       "block_order": [
@@ -499,7 +511,8 @@
         "video_BABTHj",
         "discount_LiieUL",
         "trivia_xjciDx",
-        "video_Qj4HBm"
+        "video_Qj4HBm",
+        "video_9Xmm4e"
       ],
       "custom_css": [
         "h2,.section-title,.page-title {color: #faf5e7 !important;}"
