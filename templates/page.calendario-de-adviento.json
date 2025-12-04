@@ -142,13 +142,13 @@
           "type": "survey",
           "settings": {
             "day_number": "",
-            "unlock_date": "2025-12-05 00:01",
+            "unlock_date": "2025-12-04 00:01",
             "expire_date": "2025-12-06 00:01",
             "cover_image": "shopify://shop_images/3_29e50b2a-b71c-4a02-9962-4805c6206c46.jpg",
             "bg_color_block": "#faf5e7",
             "survey_title": "¡Ayúdanos a elegir el próximo lanzamiento Wild Balance!",
             "survey_text": "<p>Te mostramos <strong>3 posibles futuros productos</strong>… y tú eliges cuál te gustaría ver hecho realidad.<br/><br/>Entre quienes voten por la opción ganadora <strong>sorteamos 3 lotes del nuevo producto</strong>, que recibirán totalmente gratis en cuanto se lance.<br/><br/>¿Preparado para decidir el futuro de Wild Balance? 🎁✨<br/></p>",
-            "survey_embed": "\"Aquí mostraremos una encuesta traída de Typeform o similar\""
+            "survey_embed": "<iframe src=\"https://tally.so/embed/7Rql0a\" width=\"100%\" height=\"500\" frameborder=\"0\" marginheight=\"0\" marginwidth=\"0\" title=\"Formulario Tally\"></iframe>"
           }
         },
         "discount_BxjMzz": {
