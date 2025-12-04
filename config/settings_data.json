@@ -332,27 +332,13 @@
               "lb": "",
               "lb_cl": ""
             }
-          },
-          "base_TDacBd": {
-            "type": "base",
-            "settings": {
-              "title": "Navidad",
-              "url": "shopify://collections/navidad",
-              "open_link": "_self",
-              "icon": "",
-              "cus_cl": false,
-              "cl": "#ec0101",
-              "lb": "",
-              "lb_cl": ""
-            }
           }
         },
         "block_order": [
           "mega_dTwYKq",
           "mega_NQnT3c",
           "drop_hTn3r4",
-          "base_xHCd8G",
-          "base_TDacBd"
+          "base_xHCd8G"
         ],
         "settings": {
           "promo_img": "shopify://shop_images/Background_1_51674053-6f90-4383-9a7a-77e3e0d87076.png",
