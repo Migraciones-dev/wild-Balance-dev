@@ -125,6 +125,19 @@
             "discount_code": "KEFIR10"
           }
         },
+        "video_fKHMzJ": {
+          "type": "video",
+          "settings": {
+            "day_number": "",
+            "unlock_date": "2025-12-03 09:00",
+            "expire_date": "",
+            "cover_image": "shopify://shop_images/2_57abba4e-d1a9-4524-a2f2-6aec27d1e720.jpg",
+            "bg_color_block": "#ffcd00",
+            "video_title": "La historia de Mia",
+            "video_text": "",
+            "video_embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/046O4t1I_j8\" frameborder=\"0\" allowfullscreen=\"\"></iframe>"
+          }
+        },
         "recipe_C6JXpc": {
           "type": "recipe",
           "settings": {
@@ -491,6 +504,7 @@
       "block_order": [
         "video_66zQV7",
         "discount_wfzd4T",
+        "video_fKHMzJ",
         "recipe_C6JXpc",
         "survey_4j43NW",
         "discount_BxjMzz",
