@@ -887,12 +887,12 @@
       "disabled": true,
       "name": "Wild Teaser Popup",
       "settings": {
-        "text": "GET 10% OFF",
+        "text": "🎁 DESCUBRE LA SORPRESA DE HOY",
         "link": "shopify://pages/calendario-de-adviento-1",
-        "bg_color": "#004623",
-        "text_color": "#FFFFFF",
-        "close_bg_color": "#FFFFFF",
-        "close_icon_color": "#000000",
+        "bg_color": "#8c0303",
+        "text_color": "#ffffff",
+        "close_bg_color": "#ffffff",
+        "close_icon_color": "#8c0303",
         "position": "bottom_left",
         "target_collection": ""
       }
