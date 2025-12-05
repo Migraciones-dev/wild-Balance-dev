@@ -26,19 +26,13 @@
       assign position_classes = 'bottom-6 right-6'
     when 'bottom_center'
       assign position_classes = 'bottom-6 left-1/2 -translate-x-1/2'
-    when 'top_left'
-      assign position_classes = 'top-6 left-6'
-    when 'top_right'
-      assign position_classes = 'top-6 right-6'
-    when 'top_center'
-      assign position_classes = 'top-6 left-1/2 -translate-x-1/2'
   endcase
 -%}
 
-{%- if show_teaser -%}
+{%- if show_teaser or request.design_mode -%}
 <div
   id="wild-teaser-{{ section.id }}"
-  class="fixed {{ position_classes }} z-[9999] transition-all duration-500 ease-out transform translate-y-0 opacity-100 hidden"
+  class="fixed {{ position_classes }} z-[9999] transition-all duration-500 ease-out transform translate-y-8 opacity-0"
   style="display: none;" 
   role="dialog"
   aria-label="Oferta especial"
@@ -61,7 +55,8 @@
     <button
       type="button"
       onclick="closeWildTeaser('{{ section.id }}')"
-      class="absolute -top-2 -right-2 bg-white text-black rounded-full p-1 shadow-md hover:bg-gray-100 transition-colors cursor-pointer flex items-center justify-center w-6 h-6"
+      class="absolute -top-2 -right-2 rounded-full p-1 shadow-md hover:opacity-90 transition-colors cursor-pointer flex items-center justify-center w-6 h-6"
+      style="background-color: {{ section.settings.close_bg_color }}; color: {{ section.settings.close_icon_color }};"
       aria-label="Cerrar oferta"
     >
       <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
@@ -73,39 +68,59 @@
 </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var teaserId = 'wild-teaser-{{ section.id }}';
-    var teaserElement = document.getElementById(teaserId);
-    
-    // Comprobar si ya fue cerrado en esta sesión
-    if (!sessionStorage.getItem('wild_teaser_closed_' + '{{ section.id }}')) {
-      // Pequeño delay para que la animación de entrada se note (opcional)
-      setTimeout(function() {
-        teaserElement.style.display = 'block'; 
-        teaserElement.classList.remove('hidden');
-      }, 500);
+  (function() {
+    function initTeaser() {
+      var teaserId = 'wild-teaser-{{ section.id }}';
+      var teaserElement = document.getElementById(teaserId);
+      if (!teaserElement) return;
+
+      // Detectar si estamos en el editor de Shopify
+      var isDesignMode = false;
+      if (window.Shopify && window.Shopify.designMode) {
+        isDesignMode = true;
+      }
+
+      // Lógica de visualización:
+      // Si es modo diseño (editor) -> MOSTRAR SIEMPRE (ignora sessionStorage)
+      // Si es web real -> Comprobar sessionStorage
+      if (isDesignMode || !sessionStorage.getItem('wild_teaser_closed_' + '{{ section.id }}')) {
+        teaserElement.style.display = 'block';
+        
+        // Pequeño timeout para permitir que el display:block se renderice antes de la transición de opacidad
+        setTimeout(function() {
+          teaserElement.classList.remove('translate-y-8', 'opacity-0');
+        }, 100);
+      }
     }
-  });
+
+    // Ejecutar al cargar
+    initTeaser();
+
+    // Escuchar eventos del editor de Shopify para recargar sin F5
+    document.addEventListener("shopify:section:load", initTeaser);
+    document.addEventListener("shopify:section:select", initTeaser);
+  })();
 
   function closeWildTeaser(id) {
     var teaserElement = document.getElementById('wild-teaser-' + id);
     if (teaserElement) {
       // Animación de salida
-      teaserElement.classList.add('opacity-0', 'translate-y-4');
+      teaserElement.classList.add('opacity-0', 'translate-y-8');
       
       setTimeout(function() {
         teaserElement.style.display = 'none';
-      }, 500); // Espera a que termine la transición CSS
+      }, 500);
 
-      // Guardar estado cerrado en Session Storage (se borra al cerrar navegador)
-      // Cambiar a localStorage si se quiere persistencia eterna
-      sessionStorage.setItem('wild_teaser_closed_' + id, 'true');
+      // Solo guardamos en sessionStorage si NO estamos editando, 
+      // para no "romper" la vista previa del editor permanentemente.
+      if (!window.Shopify || !window.Shopify.designMode) {
+        sessionStorage.setItem('wild_teaser_closed_' + id, 'true');
+      }
     }
   }
 </script>
 
 <style>
-  /* Asegurar tipografía Barlow si no está cargada globalmente */
   @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@800&display=swap');
 </style>
 {%- endif -%}
@@ -133,36 +148,48 @@
     },
     {
       "type": "header",
-      "content": "Diseño"
+      "content": "Colores Principales"
     },
     {
       "type": "color",
       "id": "bg_color",
-      "label": "Color de Fondo",
-      "default": "#000000",
-      "info": "Color negro como en la referencia o Accent #004622"
+      "label": "Fondo del Teaser",
+      "default": "#000000"
     },
     {
       "type": "color",
       "id": "text_color",
-      "label": "Color de Texto",
+      "label": "Color del Texto",
       "default": "#FFFFFF"
     },
     {
       "type": "header",
-      "content": "Posición y Visibilidad"
+      "content": "Botón de Cerrar (X)"
+    },
+    {
+      "type": "color",
+      "id": "close_bg_color",
+      "label": "Fondo Botón Cerrar",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "close_icon_color",
+      "label": "Color Icono X",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Posición y Reglas"
     },
     {
       "type": "select",
       "id": "position",
-      "label": "Posición en pantalla",
+      "label": "Ubicación",
       "options": [
         { "value": "bottom_left", "label": "Abajo Izquierda" },
-        { "value": "bottom_right", "label": "Abajo Derecha" },
         { "value": "bottom_center", "label": "Abajo Centro" },
-        { "value": "top_left", "label": "Arriba Izquierda" },
-        { "value": "top_right", "label": "Arriba Derecha" },
-        { "value": "top_center", "label": "Arriba Centro" }
+        { "value": "bottom_right", "label": "Abajo Derecha" }
       ],
       "default": "bottom_center"
     },
@@ -170,7 +197,7 @@
       "type": "collection",
       "id": "target_collection",
       "label": "Colección Específica (Opcional)",
-      "info": "Selecciona una colección para mostrarlo SOLO ahí. Déjalo vacío para mostrar en toda la web."
+      "info": "Si se selecciona, solo aparecerá en esta colección y sus productos."
     }
   ],
   "presets": [
