@@ -9,6 +9,21 @@
  */
 {
   "sections": {
+    "popover_DGAhw3": {
+      "type": "popover",
+      "disabled": true,
+      "name": "Teaser Popup",
+      "settings": {
+        "text": "🎁 DESCUBRE LA SORPRESA DE HOY",
+        "link": "shopify://pages/calendario-de-adviento-1",
+        "bg_color": "#8c0303",
+        "text_color": "#ffffff",
+        "close_bg_color": "#ffffff",
+        "close_icon_color": "#8c0303",
+        "position": "bottom_left",
+        "target_collection": ""
+      }
+    },
     "heading_template": {
       "type": "collection-heading-template",
       "blocks": {
@@ -200,6 +215,7 @@
     }
   },
   "order": [
+    "popover_DGAhw3",
     "heading_template",
     "sidebar",
     "main",

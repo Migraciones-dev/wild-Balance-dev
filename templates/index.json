@@ -881,21 +881,6 @@
       ],
       "disabled": true,
       "settings": {}
-    },
-    "popover_KCJWcW": {
-      "type": "popover",
-      "disabled": true,
-      "name": "Teaser Popup",
-      "settings": {
-        "text": "🎁 DESCUBRE LA SORPRESA DE HOY",
-        "link": "shopify://pages/calendario-de-adviento-1",
-        "bg_color": "#8c0303",
-        "text_color": "#ffffff",
-        "close_bg_color": "#ffffff",
-        "close_icon_color": "#8c0303",
-        "position": "bottom_left",
-        "target_collection": ""
-      }
     }
   },
   "order": [
@@ -917,7 +902,6 @@
     "migraciones_reviews_x9hAB4",
     "migraciones_newsletter_qXCxVc",
     "1760292679b5c6369d",
-    "17602927814de94466",
-    "popover_KCJWcW"
+    "17602927814de94466"
   ]
 }
