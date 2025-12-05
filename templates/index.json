@@ -881,6 +881,21 @@
       ],
       "disabled": true,
       "settings": {}
+    },
+    "popover_KCJWcW": {
+      "type": "popover",
+      "disabled": true,
+      "name": "Wild Teaser Popup",
+      "settings": {
+        "text": "GET 10% OFF",
+        "link": "shopify://pages/calendario-de-adviento-1",
+        "bg_color": "#004623",
+        "text_color": "#FFFFFF",
+        "close_bg_color": "#FFFFFF",
+        "close_icon_color": "#000000",
+        "position": "bottom_left",
+        "target_collection": ""
+      }
     }
   },
   "order": [
@@ -902,6 +917,7 @@
     "migraciones_reviews_x9hAB4",
     "migraciones_newsletter_qXCxVc",
     "1760292679b5c6369d",
-    "17602927814de94466"
+    "17602927814de94466",
+    "popover_KCJWcW"
   ]
 }
