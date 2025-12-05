@@ -1,0 +1,182 @@
+{%- liquid
+  assign show_teaser = true
+  
+  # 1. Lógica de visualización por colección
+  if section.settings.target_collection != blank
+    assign show_teaser = false
+    # Si estamos en la página de colección y coincide
+    if template contains 'collection' and collection.handle == section.settings.target_collection
+      assign show_teaser = true
+    # Si estamos en un producto y pertenece a la colección
+    elsif template contains 'product'
+      for col in product.collections
+        if col.handle == section.settings.target_collection
+          assign show_teaser = true
+          break
+        endif
+      endfor
+    endif
+  endif
+
+  # 2. Lógica de posicionamiento (Tailwind classes)
+  case section.settings.position
+    when 'bottom_left'
+      assign position_classes = 'bottom-6 left-6'
+    when 'bottom_right'
+      assign position_classes = 'bottom-6 right-6'
+    when 'bottom_center'
+      assign position_classes = 'bottom-6 left-1/2 -translate-x-1/2'
+    when 'top_left'
+      assign position_classes = 'top-6 left-6'
+    when 'top_right'
+      assign position_classes = 'top-6 right-6'
+    when 'top_center'
+      assign position_classes = 'top-6 left-1/2 -translate-x-1/2'
+  endcase
+-%}
+
+{%- if show_teaser -%}
+<div
+  id="wild-teaser-{{ section.id }}"
+  class="fixed {{ position_classes }} z-[9999] transition-all duration-500 ease-out transform translate-y-0 opacity-100 hidden"
+  style="display: none;" 
+  role="dialog"
+  aria-label="Oferta especial"
+>
+  <!-- Contenedor Relativo para posicionar la X -->
+  <div class="relative group">
+    
+    <!-- Enlace principal (Pill Shape) -->
+    <a 
+      href="{{ section.settings.link }}" 
+      class="flex items-center justify-center px-8 py-3 rounded-full shadow-xl hover:shadow-2xl transition-shadow cursor-pointer no-underline"
+      style="background-color: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }};"
+    >
+      <span class="[font-family:'Barlow',sans-serif] font-extrabold text-[16px] tracking-wider uppercase leading-none">
+        {{ section.settings.text }}
+      </span>
+    </a>
+
+    <!-- Botón de cerrar (X pequeña) -->
+    <button
+      type="button"
+      onclick="closeWildTeaser('{{ section.id }}')"
+      class="absolute -top-2 -right-2 bg-white text-black rounded-full p-1 shadow-md hover:bg-gray-100 transition-colors cursor-pointer flex items-center justify-center w-6 h-6"
+      aria-label="Cerrar oferta"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var teaserId = 'wild-teaser-{{ section.id }}';
+    var teaserElement = document.getElementById(teaserId);
+    
+    // Comprobar si ya fue cerrado en esta sesión
+    if (!sessionStorage.getItem('wild_teaser_closed_' + '{{ section.id }}')) {
+      // Pequeño delay para que la animación de entrada se note (opcional)
+      setTimeout(function() {
+        teaserElement.style.display = 'block'; 
+        teaserElement.classList.remove('hidden');
+      }, 500);
+    }
+  });
+
+  function closeWildTeaser(id) {
+    var teaserElement = document.getElementById('wild-teaser-' + id);
+    if (teaserElement) {
+      // Animación de salida
+      teaserElement.classList.add('opacity-0', 'translate-y-4');
+      
+      setTimeout(function() {
+        teaserElement.style.display = 'none';
+      }, 500); // Espera a que termine la transición CSS
+
+      // Guardar estado cerrado en Session Storage (se borra al cerrar navegador)
+      // Cambiar a localStorage si se quiere persistencia eterna
+      sessionStorage.setItem('wild_teaser_closed_' + id, 'true');
+    }
+  }
+</script>
+
+<style>
+  /* Asegurar tipografía Barlow si no está cargada globalmente */
+  @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@800&display=swap');
+</style>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Wild Teaser Popup",
+  "tag": "section",
+  "class": "section-wild-teaser",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Contenido"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Texto del Botón",
+      "default": "GET 10% OFF"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Enlace de destino"
+    },
+    {
+      "type": "header",
+      "content": "Diseño"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Color de Fondo",
+      "default": "#000000",
+      "info": "Color negro como en la referencia o Accent #004622"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color de Texto",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Posición y Visibilidad"
+    },
+    {
+      "type": "select",
+      "id": "position",
+      "label": "Posición en pantalla",
+      "options": [
+        { "value": "bottom_left", "label": "Abajo Izquierda" },
+        { "value": "bottom_right", "label": "Abajo Derecha" },
+        { "value": "bottom_center", "label": "Abajo Centro" },
+        { "value": "top_left", "label": "Arriba Izquierda" },
+        { "value": "top_right", "label": "Arriba Derecha" },
+        { "value": "top_center", "label": "Arriba Centro" }
+      ],
+      "default": "bottom_center"
+    },
+    {
+      "type": "collection",
+      "id": "target_collection",
+      "label": "Colección Específica (Opcional)",
+      "info": "Selecciona una colección para mostrarlo SOLO ahí. Déjalo vacío para mostrar en toda la web."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Wild Teaser Popup"
+    }
+  ]
+}
+{% endschema %}
