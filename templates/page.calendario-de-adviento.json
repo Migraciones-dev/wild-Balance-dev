@@ -196,20 +196,19 @@
             "discount_code": "BOCADITOS10"
           }
         },
-        "downloadable_Yrhywk": {
-          "type": "downloadable",
+        "recipe_tx3AYA": {
+          "type": "recipe",
           "settings": {
             "day_number": "",
             "unlock_date": "2025-12-09 00:01",
-            "expire_date": "2025-12-10 00:01",
-            "cover_image": "shopify://shop_images/7_7d0fde6c-0d1c-4f37-bbe2-7f726996c97f.jpg",
+            "expire_date": "2025-12-0 00:01",
+            "cover_image": "shopify://shop_images/CALENDARIO_ADVIENTO_NAVIDAD_2.png",
             "bg_color_block": "#faf5e7",
-            "downloadable_title": "Descarga tu regalo",
-            "downloadable_image": "shopify://shop_images/7_7d0fde6c-0d1c-4f37-bbe2-7f726996c97f.jpg",
-            "downloadable_image_width": 100,
-            "downloadable_text": "",
-            "downloadable_cta_text": "Descargar ahora",
-            "downloadable_cta_link": "shopify://collections/best-sellers-comida-natural-gato"
+            "recipe_title": "Hoy tu compra vale doble: tu comida y la ayuda a los que más lo necesitan.",
+            "recipe_image": "shopify://shop_images/CALENDARIO_ADVIENTO_NAVIDAD_2.png",
+            "recipe_richtext": "<p>El día 7 lo dedicamos a apoyar a una protectora de gatitos.<br/>Cuanto más compras, más podemos donar. De cada pedido, 1€ lo donaremos en comida. <strong>Ayúdanos a llenarles el cuenco… y el corazón❤️‍🩹</strong></p>",
+            "recipe_cta_text": "Quiero colaborar",
+            "recipe_cta_link": "shopify://collections/comida"
           }
         },
         "recipe_VfKBrA": {
@@ -315,6 +314,7 @@
         },
         "recipe_4wqV7F": {
           "type": "recipe",
+          "disabled": true,
           "settings": {
             "day_number": "",
             "unlock_date": "2025-12-15 00:01",
@@ -326,6 +326,22 @@
             "recipe_richtext": "<p>Una mezcla fresca y equilibrada para aportar proteínas, hueso y verduras en su estado más natural.</p><ul><li>300 g de carne magra cruda (pollo o ternera)</li><li>150 g de huesos carnosos crudos (alitas o cuello de pollo)</li><li>100 g de verduras trituradas (calabacín, zanahoria, espinaca)</li><li>1 cucharada de aceite de salmón</li><li>1 huevo crudo<br/></li></ul><p>Mezcla y sirve frío.</p>",
             "recipe_cta_text": "COMPRA BARF",
             "recipe_cta_link": "#"
+          }
+        },
+        "downloadable_Yrhywk": {
+          "type": "downloadable",
+          "settings": {
+            "day_number": "",
+            "unlock_date": "2025-12-09 00:01",
+            "expire_date": "2025-12-10 00:01",
+            "cover_image": "shopify://shop_images/CALENDARIO_ADVIENTO_NAVIDAD_a1a834ce-a843-4b22-b9bf-96ef2139fda9.jpg",
+            "bg_color_block": "#faf5e7",
+            "downloadable_title": "Descarga tu regalo",
+            "downloadable_image": "shopify://shop_images/CALENDARIO_ADVIENTO_NAVIDAD_a1a834ce-a843-4b22-b9bf-96ef2139fda9.jpg",
+            "downloadable_image_width": 100,
+            "downloadable_text": "",
+            "downloadable_cta_text": "Descargar ahora",
+            "downloadable_cta_link": "shopify://collections/best-sellers-comida-natural-gato"
           }
         },
         "recipe_jHK8FC": {
@@ -482,13 +498,14 @@
         "discount_BxjMzz",
         "recipe_8EXHL8",
         "discount_6DayGP",
-        "downloadable_Yrhywk",
+        "recipe_tx3AYA",
         "recipe_VfKBrA",
         "trivia_egaHhR",
         "trivia_7NHF4C",
         "video_3rJdEL",
         "raffle_cExRHe",
         "recipe_4wqV7F",
+        "downloadable_Yrhywk",
         "recipe_jHK8FC",
         "discount_XATPyV",
         "recipe_FjXeii",
