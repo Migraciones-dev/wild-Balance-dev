@@ -588,13 +588,11 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
       </script> {% endcomment %}
       <script>
   (function(){
-    // Evita inicialización doble
     if (window.__BANNERS_TRACKER_INIT__) return;
     window.__BANNERS_TRACKER_INIT__ = true;
 
     window.dataLayer = window.dataLayer || [];
 
-    // ---- Contexto de Página ----
     var PAGE_TYPE = {{ request.page_type | json }};
     function getPageContext(){
       switch (PAGE_TYPE) {
@@ -610,7 +608,6 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
       }
     }
 
-    // ---- Helpers de Imagen ----
     function isVisible(el){
       if (!el || !el.getBoundingClientRect) return false;
       var cs = window.getComputedStyle(el);
@@ -653,7 +650,6 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
       return imgs.length ? imgs[0] : null;
     }
 
-    // ---- Lógica Anti-Duplicados ----
     var lastSent = { key: null, ts: 0 };
     function makeKey(p){
       return [p.banner_name, p.banner_position, p.banner_campaign].join('|');
@@ -662,26 +658,36 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
     // ---- Listener Principal ----
     document.addEventListener('click', function(e){
       
-      // 1. EXCLUSIÓN: Ignorar clic si es Añadir al Carrito
-      // Cubrimos: formularios de carrito, botones con name="add", clases comunes y atributos data
-      var isAddToCart = e.target.closest(
-        'form[action*="/cart/add"], ' +    // Formulario estándar Shopify
-        'button[name="add"], ' +           // Botón estándar
-        'input[name="add"], ' +            // Input submit antiguo
-        '.single_add_to_cart_button, ' +   // Clases comunes
-        '.ajax_add_to_cart, ' +
-        '.t4s-product-form__submit, ' +    // Específico temas The4/Kalles/Unsen
-        '[data-add-to-cart], ' +           
-        '[aria-label*="Add to cart"]'      // Accesibilidad
-      );
+      // 1. SOLO trackear si el clic viene de un enlace <a>
+      // Esto elimina automáticamente botones <button>, inputs, divs, etc.
+      var link = e.target.closest('a');
+      if (!link) return;
 
-      if (isAddToCart) return; // <-- Salimos inmediatamente
-
-      // 2. Selectores de Banners
-      var banner = e.target.closest('.banner_promo, .t4s-slideshow-inner, .t4s-banner-inner, .t4s-col-item, [data-banner-track]');
+      // 2. EXCLUSIONES: Si es un enlace, asegurarse de que NO sea una acción técnica
+      // Excluye: Wishlist, QuickView, Compare, AddToCart links, Swatches de color (si son <a>)
+      var href = (link.getAttribute('href') || '').toLowerCase();
+      var linkClass = (link.className || '').toLowerCase();
       
+      if (
+        href.includes('/cart/add') || 
+        href.includes('#add') ||
+        href === '#' ||                    // Enlaces vacíos suelen ser JS buttons
+        link.hasAttribute('data-no-instant') || 
+        link.hasAttribute('data-wishlist-handle') ||
+        link.hasAttribute('data-compare-handle') ||
+        linkClass.includes('wishlist') ||
+        linkClass.includes('compare') ||
+        linkClass.includes('quick-view') ||
+        linkClass.includes('t4s-swatch-btn') // Swatches de color en Kalles
+      ) {
+        return;
+      }
+
+      // 3. Verificar si el enlace está dentro de un banner
+      var banner = link.closest('.banner_promo, .t4s-slideshow-inner, .t4s-banner-inner, .t4s-col-item, [data-banner-track]');
       if (!banner) return;
 
+      // Resto del proceso normal...
       var imgEl = findBannerImageEl(banner, e.target);
       var src = getImgSrc(imgEl) || getBgUrl(banner) || getBgUrl(banner.querySelector('.lazyloadt4s-loader'));
       
@@ -697,7 +703,6 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
         banner_campaign: campaign
       };
 
-      // De-dupe: si es idéntico al último enviado en <400ms, ignorar
       var key = makeKey(payload);
       var now = Date.now();
       if (lastSent.key === key && (now - lastSent.ts) < 400) return;
@@ -707,7 +712,7 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
       console.log('banners enviado:', payload);
       window.dataLayer.push(payload);
 
-    }, true); // useCapture true
+    }, true);
   })();
 </script>
 
