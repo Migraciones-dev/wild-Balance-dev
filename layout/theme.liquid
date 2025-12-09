@@ -147,30 +147,58 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
         <meta name="robots" content="noindex">
       {% endif %}
 
-<!-- --------------------- BOTÓN WHATSAPP --------------------- -->
+<!-- --------------------- POPUP ESTILO WHATSAPP --------------------- -->
 
 <style>
-  #messageDiv {
+  #whatsappPopup {
     display: none;
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #25D366;
-    color: #fff;
-    padding: 15px 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    max-width: 300px;
+    width: 280px;
     z-index: 9999;
     font-family: sans-serif;
   }
 
-  #messageDiv p {
-    margin: 0 0 10px 0;
-    font-size: 14px;
+  .chat-bubble {
+    background-color: #25D366;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    max-width: 100%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    word-wrap: break-word;
   }
 
-  #messageDiv button {
+  .chat-bubble.user {
+    background-color: #fff;
+    color: #000;
+    align-self: flex-end;
+  }
+
+  .chat-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #whatsappPopupHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #075E54;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  #whatsappPopupHeader span {
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  #whatsappPopup button {
     background-color: #fff;
     color: #25D366;
     border: none;
@@ -178,40 +206,32 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-  }
-
-  #messageDiv .close-btn {
-    position: absolute;
-    top: 5px;
-    right: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    color: #fff;
+    margin-top: 5px;
+    width: 100%;
   }
 </style>
 
-<div id="messageDiv">
-  <span class="close-btn" onclick="closeMessage()">×</span>
-  <p>Escríbenos con la raza, edad y peso de tu perro para personalizar su dieta 100% natural y casera. ¡Mejoraremos la vida de tu perro!</p>
+<div id="whatsappPopup">
+  <div id="whatsappPopupHeader">
+    <div>Asistente</div>
+    <span onclick="closePopup()">×</span>
+  </div>
+  <div class="chat-container">
+    <div class="chat-bubble">Escríbenos con la raza, edad y peso de tu perro para personalizar su dieta 100% natural y casera.</div>
+    <div class="chat-bubble">¡Mejoraremos la vida de tu perro!</div>
+  </div>
   <button onclick="goToWhatsApp()">Hablar por WhatsApp</button>
 </div>
 
 <script>
-  function showMessage() {
-    var messageDiv = document.getElementById('messageDiv');
-    if (messageDiv) {
-      messageDiv.style.display = 'flex';
-      messageDiv.style.flexDirection = 'column';
-      messageDiv.style.alignItems = 'flex-start';
-    }
+  function showPopup() {
+    var popup = document.getElementById('whatsappPopup');
+    if(popup) popup.style.display = 'flex';
   }
 
-  function closeMessage() {
-    var messageDiv = document.getElementById('messageDiv');
-    if (messageDiv) {
-      messageDiv.style.display = 'none';
-      localStorage.setItem('whatsappPopupClose', 'true');
-    }
+  function closePopup() {
+    var popup = document.getElementById('whatsappPopup');
+    if(popup) popup.style.display = 'none';
   }
 
   function goToWhatsApp() {
@@ -222,11 +242,9 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    setTimeout(showMessage, 1000); // 1 segundo
+    setTimeout(showPopup, 1000); // 1 segundo después de cargar
   });
 </script>
-
-<!-- --------------------- FIN BOTÓN WHATSAPP --------------------- -->
 
       {% comment %}
         <script>
