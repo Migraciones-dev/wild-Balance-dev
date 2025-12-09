@@ -147,7 +147,7 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
         <meta name="robots" content="noindex">
       {% endif %}
 
-<!-- --------------------- POPUP ESTILO WHATSAPP --------------------- -->
+<!-- --------------------- POPUP ESTILO WHATSAPP PROFESIONAL --------------------- -->
 
 <style>
   #whatsappPopup {
@@ -155,9 +155,43 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 280px;
+    width: 320px;
+    max-width: 90%;
     z-index: 9999;
-    font-family: sans-serif;
+    font-family: 'Helvetica', sans-serif;
+    animation: slideIn 0.5s ease forwards;
+  }
+
+  @keyframes slideIn {
+    from { transform: translateY(100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  #whatsappPopupHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #075E54;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 12px 12px 0 0;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  #whatsappPopupHeader span {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .chat-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #ECE5DD;
+    padding: 12px;
+    border-radius: 0 0 12px 12px;
   }
 
   .chat-bubble {
@@ -165,9 +199,7 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
     color: #fff;
     padding: 10px 14px;
     border-radius: 20px;
-    margin-bottom: 8px;
-    max-width: 100%;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    max-width: 80%;
     word-wrap: break-word;
   }
 
@@ -177,37 +209,22 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
     align-self: flex-end;
   }
 
-  .chat-container {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  #whatsappPopupHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #075E54;
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 12px 12px 0 0;
-  }
-
-  #whatsappPopupHeader span {
-    cursor: pointer;
-    font-weight: bold;
-  }
-
   #whatsappPopup button {
-    background-color: #fff;
-    color: #25D366;
+    background-color: #25D366;
+    color: #fff;
     border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
+    padding: 10px;
+    border-radius: 20px;
     cursor: pointer;
     font-weight: bold;
-    margin-top: 5px;
+    margin-top: 10px;
     width: 100%;
+    font-size: 14px;
+    transition: background 0.3s;
+  }
+
+  #whatsappPopup button:hover {
+    background-color: #128C7E;
   }
 </style>
 
@@ -220,7 +237,7 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
     <div class="chat-bubble">Escríbenos con la raza, edad y peso de tu perro para personalizar su dieta 100% natural y casera.</div>
     <div class="chat-bubble">¡Mejoraremos la vida de tu perro!</div>
   </div>
-  <button onclick="goToWhatsApp()">Hablar por WhatsApp</button>
+  <button onclick="goToWhatsApp()">💬 Hablar por WhatsApp</button>
 </div>
 
 <script>
