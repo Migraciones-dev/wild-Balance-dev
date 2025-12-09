@@ -147,7 +147,7 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
         <meta name="robots" content="noindex">
       {% endif %}
 
-<!-- --------------------- POPUP MINI CHAT CON NOMBRE --------------------- -->
+<!-- --------------------- POPUP MINI CHAT CON TEXTO FINAL --------------------- -->
 
 <style>
   #whatsappPopup {
@@ -157,7 +157,7 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
     right: 20px;
     width: 300px;
     max-width: 90%;
-    background-color: #f5f1e6; /* color beige */
+    background-color: #f5f1e6; /* beige */
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     font-family: 'Helvetica', sans-serif;
@@ -169,6 +169,7 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
   #whatsappPopup .header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 10px 12px;
     background-color: #25D366; /* verde WhatsApp */
     border-radius: 15px 15px 0 0;
@@ -184,6 +185,13 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
     color: #fff;
     font-weight: bold;
     font-size: 14px;
+  }
+
+  #whatsappPopup .header .close-btn {
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+    font-size: 18px;
   }
 
   .chat-container {
@@ -224,8 +232,11 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
 
 <div id="whatsappPopup">
   <div class="header">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    <span>Almu, nutricionista</span>
+    <div style="display:flex; align-items:center;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+      <span>Almu, nutricionista</span>
+    </div>
+    <span class="close-btn" onclick="closePopup()">×</span>
   </div>
   <div class="chat-container">
     <div class="chat-bubble">Cuéntanos la raza, edad y peso de tu perro o gatito y personalizaremos su menú 100% natural.</div>
@@ -235,12 +246,22 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
 </div>
 
 <script>
-  function showPopup() {
+  function showPopup(force=false) {
+    var closed = localStorage.getItem('whatsappPopupClosed');
+    if(!closed || force){
+      var popup = document.getElementById('whatsappPopup');
+      if(popup) popup.style.display = 'flex';
+    }
+  }
+
+  function closePopup() {
     var popup = document.getElementById('whatsappPopup');
-    if(popup) popup.style.display = 'flex';
+    if(popup) popup.style.display = 'none';
+    localStorage.setItem('whatsappPopupClosed','true');
   }
 
   function goToWhatsApp() {
+    localStorage.removeItem('whatsappPopupClosed');
     window.open(
       'https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0',
       '_blank'
