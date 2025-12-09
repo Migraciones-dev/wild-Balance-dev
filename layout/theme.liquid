@@ -147,7 +147,7 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
         <meta name="robots" content="noindex">
       {% endif %}
 
-<!-- --------------------- POPUP MINI CHAT ESTILO WHATSAPP --------------------- -->
+<!-- --------------------- POPUP MINI CHAT CON NOMBRE --------------------- -->
 
 <style>
   #whatsappPopup {
@@ -155,7 +155,7 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 280px;
+    width: 300px;
     max-width: 90%;
     background-color: #f5f1e6; /* color beige */
     border-radius: 15px;
@@ -168,15 +168,22 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
 
   #whatsappPopup .header {
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 10px 12px;
     background-color: #25D366; /* verde WhatsApp */
+    border-radius: 15px 15px 0 0;
   }
 
   #whatsappPopup .header img {
     width: 30px;
     height: 30px;
+    margin-right: 10px;
+  }
+
+  #whatsappPopup .header span {
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
   }
 
   .chat-container {
@@ -218,6 +225,7 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
 <div id="whatsappPopup">
   <div class="header">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    <span>Almu, nutricionista de Wild Balance</span>
   </div>
   <div class="chat-container">
     <div class="chat-bubble">Escríbenos con la raza, edad y peso de tu perro para personalizar su dieta 100% natural y casera.</div>
