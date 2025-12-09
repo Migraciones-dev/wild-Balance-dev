@@ -197,7 +197,36 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
 </div>
 
 <script>
-  function showMessag
+  function showMessage() {
+    var messageDiv = document.getElementById('messageDiv');
+    if (messageDiv) {
+      messageDiv.style.display = 'flex';
+      messageDiv.style.flexDirection = 'column';
+      messageDiv.style.alignItems = 'flex-start';
+    }
+  }
+
+  function closeMessage() {
+    var messageDiv = document.getElementById('messageDiv');
+    if (messageDiv) {
+      messageDiv.style.display = 'none';
+      localStorage.setItem('whatsappPopupClose', 'true');
+    }
+  }
+
+  function goToWhatsApp() {
+    window.open(
+      'https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0',
+      '_blank'
+    );
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    setTimeout(showMessage, 1000); // 1 segundo
+  });
+</script>
+
+<!-- --------------------- FIN BOTÓN WHATSAPP --------------------- -->
 
       {% comment %}
         <script>
