@@ -211,28 +211,13 @@
             "recipe_cta_link": "shopify://collections/comida"
           }
         },
-        "recipe_VfKBrA": {
-          "type": "recipe",
-          "settings": {
-            "day_number": "",
-            "unlock_date": "2025-12-10 00:01",
-            "expire_date": "2025-12-10 00:01",
-            "cover_image": "shopify://shop_images/CALENDARIO_ADVIENTO_NAVIDAD.png",
-            "bg_color_block": "#faf5e7",
-            "recipe_title": "Receta BARF rápida",
-            "recipe_image": "shopify://shop_images/PORTADAS_BLOG_13.webp",
-            "recipe_richtext": "<p>Una mezcla fresca y equilibrada para aportar proteínas, hueso y verduras en su estado más natural.</p><ul><li>300 g de carne magra cruda (pollo o ternera)</li><li>150 g de huesos carnosos crudos (alitas o cuello de pollo)</li><li>100 g de verduras trituradas (calabacín, zanahoria, espinaca)</li><li>1 cucharada de aceite de salmón</li><li>1 huevo crudo<br/></li></ul><p>Mezcla y sirve frío.</p>",
-            "recipe_cta_text": "COMPRA BARF",
-            "recipe_cta_link": "#"
-          }
-        },
         "trivia_egaHhR": {
           "type": "trivia",
           "settings": {
             "day_number": "",
-            "unlock_date": "2025-12-11 00:01",
-            "expire_date": "2025-12-12 00:01",
-            "cover_image": "shopify://shop_images/9_d52070f4-aacb-4bc0-8223-0a093207bf89.jpg",
+            "unlock_date": "2025-12-10 00:01",
+            "expire_date": "2025-12-11 00:01",
+            "cover_image": "shopify://shop_images/CALENDARIO_ADVIENTO_NAVIDAD_4.png",
             "bg_color_block": "#faf5e7",
             "trivia_title": "Trivial de Navidad",
             "trivia_question_1": "¿Cuál de estos alimentos es seguro para perros y gatos en una dieta natural?",
@@ -254,6 +239,21 @@
             "trivia_success_text": "¡Enhorabuena! Has acertado todas las preguntas y tienes un 20% de descuento en tu pedido 🎉",
             "trivia_failure_title": "Lo sentimos, has fallado alguna pregunta 😔",
             "trivia_failure_text": "Revisa tus respuestas e inténtalo de nuevo."
+          }
+        },
+        "downloadable_bndNXW": {
+          "type": "downloadable",
+          "settings": {
+            "day_number": "",
+            "unlock_date": "2025-12-11 00:01",
+            "expire_date": "2025-12-12 00:01",
+            "cover_image": "shopify://shop_images/CALENDARIO_ADVIENTO_NAVIDAD_3.png",
+            "bg_color_block": "#ffcd00",
+            "downloadable_title": "Descarga tu regalo",
+            "downloadable_image_width": 100,
+            "downloadable_text": "",
+            "downloadable_cta_text": "Descargar ahora",
+            "downloadable_cta_link": ""
           }
         },
         "trivia_7NHF4C": {
@@ -312,36 +312,19 @@
             "raffle_embed": "\"Aquí mostraremos un formulario de Klaviyo o lo que se decida finalmente.\""
           }
         },
-        "recipe_4wqV7F": {
+        "recipe_x3HUyX": {
           "type": "recipe",
-          "disabled": true,
           "settings": {
             "day_number": "",
             "unlock_date": "2025-12-15 00:01",
             "expire_date": "2025-12-16 00:01",
-            "cover_image": "shopify://shop_images/13.jpg",
+            "cover_image": "shopify://shop_images/CALENDARIO_ADVIENTO_NAVIDAD_5.png",
             "bg_color_block": "#faf5e7",
             "recipe_title": "Receta BARF rápida",
             "recipe_image": "shopify://shop_images/PORTADAS_BLOG_13.webp",
             "recipe_richtext": "<p>Una mezcla fresca y equilibrada para aportar proteínas, hueso y verduras en su estado más natural.</p><ul><li>300 g de carne magra cruda (pollo o ternera)</li><li>150 g de huesos carnosos crudos (alitas o cuello de pollo)</li><li>100 g de verduras trituradas (calabacín, zanahoria, espinaca)</li><li>1 cucharada de aceite de salmón</li><li>1 huevo crudo<br/></li></ul><p>Mezcla y sirve frío.</p>",
             "recipe_cta_text": "COMPRA BARF",
             "recipe_cta_link": "#"
-          }
-        },
-        "downloadable_Yrhywk": {
-          "type": "downloadable",
-          "settings": {
-            "day_number": "",
-            "unlock_date": "2025-12-16 00:01",
-            "expire_date": "2025-12-17 00:01",
-            "cover_image": "shopify://shop_images/CALENDARIO_ADVIENTO_NAVIDAD_a1a834ce-a843-4b22-b9bf-96ef2139fda9.jpg",
-            "bg_color_block": "#faf5e7",
-            "downloadable_title": "Descarga tu regalo",
-            "downloadable_image": "shopify://shop_images/CALENDARIO_ADVIENTO_NAVIDAD_a1a834ce-a843-4b22-b9bf-96ef2139fda9.jpg",
-            "downloadable_image_width": 100,
-            "downloadable_text": "",
-            "downloadable_cta_text": "Descargar ahora",
-            "downloadable_cta_link": "shopify://collections/best-sellers-comida-natural-gato"
           }
         },
         "recipe_jHK8FC": {
@@ -499,13 +482,12 @@
         "recipe_8EXHL8",
         "discount_6DayGP",
         "recipe_tx3AYA",
-        "recipe_VfKBrA",
         "trivia_egaHhR",
+        "downloadable_bndNXW",
         "trivia_7NHF4C",
         "video_3rJdEL",
         "raffle_cExRHe",
-        "recipe_4wqV7F",
-        "downloadable_Yrhywk",
+        "recipe_x3HUyX",
         "recipe_jHK8FC",
         "discount_XATPyV",
         "recipe_FjXeii",
