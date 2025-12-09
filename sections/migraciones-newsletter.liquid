@@ -9,28 +9,40 @@
     lg:bg-cover
   "
 >
+  <!-- Contenedor principal de la sección -->
   <div class="flex flex-col items-start gap-[21px] relative max-w-[1600px] mx-auto top-[50px] lg:top-[70px] px-10">
-    <div class="flex flex-col items-start gap-12 relative self-stretch w-full flex-[0_0_auto] max-w-[800px] mx-auto lg:ml-0">
+    <!-- Contenedor de textos y logo -->
+    <div class="flex flex-col items-start gap-6 relative self-stretch w-full flex-[0_0_auto] max-w-[800px] lg:ml-0">
       <div class="flex flex-col items-start gap-[13px] relative self-stretch w-full flex-[0_0_auto]">
-        <div class="flex flex-col w-[155px] items-center gap-2.5 relative flex-[0_0_auto] mx-auto lg:ml-0">
+        <!-- Logo -->
+        <div class="flex flex-col w-[155px] items-start gap-2.5 relative flex-[0_0_auto]">
           <img
             class="h-[27px] sm:h-[37px] lg:h-[47px]"
             alt="Vector"
             src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Capa_1_15.png?v=1753458843"
           >
         </div>
-        <div class="relative w-[370px] mx-auto lg:ml-0">
-          <h2 class="top-0 left-0 [font-family:'Barlow',Helvetica] font-extrabold text-[#004623] text-[30px] sm:text-[38px] md:text-[44px] lg:text-[57px] xl:text-[64px] [@media(max-width:1024px)]:text-center leading-[1.25]">
-            Bienvenido a <br>
+        <!-- Texto principal -->
+        <div class="relative w-full lg:w-[370px]">
+          <h2 class="font-extrabold text-[#004623] text-[30px] sm:text-[38px] md:text-[44px] lg:text-[57px] xl:text-[64px] leading-[1.25]">
+            <!-- CAMBIO: texto actualizado -->
+            Únete a <br>
             <span class="highlight">Wild Balance</span>
           </h2>
+          <!-- Subtítulo promocional -->
+          <p class="mt-4 text-[#222222] font-normal text-lg lg:text-[18px] leading-[26.1px] max-w-[550px]">
+            <!-- CAMBIO: subtítulo añadido con promoción -->
+            Suscríbete y disfruta de un <strong>-10% de descuento</strong> en tu primera compra.
+          </p>
         </div>
       </div>
-      <p class="w-full [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#222222] text-lg tracking-[0] leading-[26.1px] text-[14px] sm:text-[16px] lg:text-[18px] mx-auto lg:ml-0 [@media(max-width:1024px)]:text-center lg:text-left max-w-[550px]">
+      <!-- Párrafo descriptivo -->
+      <p class="w-full font-normal text-[#222222] text-lg leading-[26.1px] max-w-[550px]">
         Suscríbete a nuestra newsletter para recibir contenidos exclusivos. ¡No dejes de aprender nunca sobre peludos!
       </p>
     </div>
-    <div class="mx-auto lg:ml-0">
+    <!-- Formulario de suscripción -->
+    <div class="lg:ml-0 mt-6">
       <div class="klaviyo-form-Yk6iWq"></div>
       {% comment %}
         {% form 'customer' %}
@@ -66,9 +78,9 @@
             type="submit"
             class="shadow h-9 flex items-center justify-center gap-2.5 bg-[#ffcd00] rounded-[50px] hover:bg-[#ffcd00]/90 py-10 px-14 mt-8 [@media(max-width:1024px)]:w-full"
           >
-            <span class="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#004623] tracking-[0] leading-[26px] text-[16px] lg:text-[18px]"
-              >Quiero suscribirme</span
-            >
+            <span class="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#004623] tracking-[0] leading-[26px] text-[16px] lg:text-[18px]">
+              Quiero suscribirme
+            </span>
             <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12.4587 5.25439L17.6686 11.6536M17.6686 11.6536L12.4587 18.0528M17.6686 11.6536L4.27158 11.6536" stroke="#004623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -80,23 +92,3 @@
   </div>
 </section>
 
-{% schema %}
-{
-  "name": "Migraciones newsletter",
-  "tag": "section",
-  "class": "t4s-section t4s-section-all t4s-custom-liquid",
-  "settings": [
-    {
-      "type": "liquid",
-      "id": "custom_liquid",
-      "label": "Custom Liquid",
-      "info": "Add app snippets or other Liquid code to create advanced customizations."
-    }
-  ],
-  "presets": [
-    {
-      "name": "Migraciones newsletter"
-    }
-  ]
-}
-{% endschema %}
