@@ -150,13 +150,12 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
 <!-- --------------------- BOTÓN WHATSAPP --------------------- -->
 
 <style>
-  /* Estilos básicos del popup */
   #messageDiv {
     display: none;
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #25D366; /* verde WhatsApp */
+    background-color: #25D366;
     color: #fff;
     padding: 15px 20px;
     border-radius: 10px;
@@ -198,38 +197,7 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
 </div>
 
 <script>
-  function temporizador(callback) {
-    setTimeout(callback, 1000); // 1 segundo
-  }
-
-  function showMessage() {
-    var messageDiv = document.getElementById('messageDiv');
-    messageDiv.style.display = 'flex';
-    messageDiv.style.flexDirection = 'column';
-    messageDiv.style.alignItems = 'flex-start';
-  }
-
-  function closeMessage() {
-    var messageDiv = document.getElementById('messageDiv');
-    messageDiv.style.display = 'none';
-    localStorage.setItem('whatsappPopupClose', 'true');
-  }
-
-  function goToWhatsApp() {
-    window.open(
-      'https://api.whatsapp.com/send/?phone=34670319204&text&type=phone_number&app_absent=0',
-      '_blank'
-    );
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    var cerro = localStorage.getItem('whatsappPopupClose');
-    if (cerro !== 'true') {
-      temporizador(showMessage);
-    }
-  });
-</script>
-<!-- --------------------- FIN BOTÓN WHATSAPP --------------------- -->
+  function showMessag
 
       {% comment %}
         <script>
