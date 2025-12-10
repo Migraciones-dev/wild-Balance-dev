@@ -339,19 +339,18 @@
             "recipe_cta_link": "https://wildbalance.es/collections/productos-sin-oferta?filter.p.m.custom.care=cuidado+digestivo"
           }
         },
-        "recipe_FjXeii": {
-          "type": "recipe",
+        "discount_F7HMgz": {
+          "type": "discount",
           "settings": {
             "day_number": "",
             "unlock_date": "2025-12-18 00:01",
             "expire_date": "2025-12-19 00:01",
             "cover_image": "shopify://shop_images/16.jpg",
-            "bg_color_block": "#faf5e7",
-            "recipe_title": "Receta BARF rápida",
-            "recipe_image": "shopify://shop_images/PORTADAS_BLOG_13.webp",
-            "recipe_richtext": "<p>Una mezcla fresca y equilibrada para aportar proteínas, hueso y verduras en su estado más natural.</p><ul><li>300 g de carne magra cruda (pollo o ternera)</li><li>150 g de huesos carnosos crudos (alitas o cuello de pollo)</li><li>100 g de verduras trituradas (calabacín, zanahoria, espinaca)</li><li>1 cucharada de aceite de salmón</li><li>1 huevo crudo<br/></li></ul><p>Mezcla y sirve frío.</p>",
-            "recipe_cta_text": "COMPRA BARF",
-            "recipe_cta_link": "#"
+            "bg_color_block": "#ffcd00",
+            "discount_title": "🎁 ENVIO GRATIS",
+            "discount_text": "<p><br/>✅ <strong>Envío gratuito SOLO HOY en compras superiores a 79€</strong></p><p>Hoy es <strong>tu última oportunidad</strong> para que tu pedido llegue a tiempo para <strong>Nochebuena</strong>.<br/><br/>Haz tu compra ahora, supera los 79€ y disfrútala en casa.<br/><br/>Si quieres asegurar los regalos o el menú de tu peludo para la noche más mágica del año, <strong>este es el momento de hacerlo</strong>.</p>",
+            "image_width": 100,
+            "discount_code": "ENVIONAVIDAD"
           }
         },
         "downloadable_xNd3Ai": {
@@ -473,7 +472,7 @@
         "recipe_x3HUyX",
         "recipe_jHK8FC",
         "recipe_ALCmt7",
-        "recipe_FjXeii",
+        "discount_F7HMgz",
         "downloadable_xNd3Ai",
         "recipe_xaxEhn",
         "video_BABTHj",
