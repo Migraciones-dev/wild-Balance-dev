@@ -319,11 +319,10 @@
             "expire_date": "2025-12-17 00:01",
             "cover_image": "shopify://shop_images/14.jpg",
             "bg_color_block": "#faf5e7",
-            "recipe_title": "Receta BARF rápida",
-            "recipe_image": "shopify://shop_images/PORTADAS_BLOG_13.webp",
-            "recipe_richtext": "<p>Una mezcla fresca y equilibrada para aportar proteínas, hueso y verduras en su estado más natural.</p><ul><li>300 g de carne magra cruda (pollo o ternera)</li><li>150 g de huesos carnosos crudos (alitas o cuello de pollo)</li><li>100 g de verduras trituradas (calabacín, zanahoria, espinaca)</li><li>1 cucharada de aceite de salmón</li><li>1 huevo crudo<br/></li></ul><p>Mezcla y sirve frío.</p>",
-            "recipe_cta_text": "COMPRA BARF",
-            "recipe_cta_link": "#"
+            "recipe_title": "🎁¡Hoy toca REGALO!",
+            "recipe_richtext": "<p></p><p>✅ Hoy tu compra de +69€ incluye <strong>REGALO DIRECTO.</strong><br/><br/>Supera el importe y selecciona tu favorito:</p><p><strong>Sticks, Premios, Wild Yaky o Boquerones</strong>.<br/><br/></p>",
+            "recipe_cta_text": "Conseguir regalo",
+            "recipe_cta_link": "shopify://collections/comida"
           }
         },
         "discount_XATPyV": {
