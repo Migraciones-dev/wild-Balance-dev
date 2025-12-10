@@ -282,17 +282,18 @@
             "raffle_embed": ""
           }
         },
-        "raffle_cExRHe": {
-          "type": "raffle",
+        "recipe_Rdx7hp": {
+          "type": "recipe",
           "settings": {
             "day_number": "",
-            "unlock_date": "2025-12-14 00:01",
+            "unlock_date": "2025-12-10 00:01",
             "expire_date": "2025-12-15 00:01",
             "cover_image": "shopify://shop_images/12_4e59e5c5-9b59-491f-a55e-28ee9d368d39.jpg",
-            "bg_color_block": "#faf5e7",
-            "raffle_title": "¡Participa en el sorteo!",
-            "raffle_text": "<p>Explicación del sorteo.</p>",
-            "raffle_embed": "\"Aquí mostraremos un formulario de Klaviyo o lo que se decida finalmente.\""
+            "bg_color_block": "#ffcd00",
+            "recipe_title": "Wild Consejo 📝",
+            "recipe_richtext": "<p>Si tu peludo se estresa fácilmente durante las fiestas os traemos unos consejos muy fáciles y prácticos.</p><p><strong>🏡 1. Crea un “refugio seguro”</strong></p><ul><li>Prepara una habitación tranquila o un rincón con su cama, mantas y juguetes.</li><li>Mantén la puerta entreabierta o usa una barrera para que pueda entrar y salir cuando quiera.</li></ul><p><strong>🎧 2. Reduce el impacto del ruido</strong></p><ul><li>Usa música relajante, ruidos ambientales o sonidos para perros (hay listas especiales).</li><li>Baja el volumen general de la casa cuando sea posible.</li></ul><p><strong>🚶 3. Anticípate con ejercicio y rutina</strong></p><ul><li>Sácalo a pasear antes de que lleguen los invitados para gastar energía.</li><li>Mantén sus horarios de comida, paseo y descanso lo más parecidos posible.</li></ul><p><strong>🧸 4. Ofrécele distracciones “positivas”</strong></p><ul><li>Juguetes rellenables con comida, huesos recreativos crudos o mordedores  resistentes. </li><li>Alfombras olfativas o juegos de búsqueda para redirigir su atención.</li></ul><p>Así ayudarás a tu peludo a no ponerse nervioso y a <em>¡disfrutar de las fiestas!</em></p>",
+            "recipe_cta_text": "Ver mordedores para entretenimiento",
+            "recipe_cta_link": "shopify://collections/snacks-y-mordedores"
           }
         },
         "recipe_x3HUyX": {
@@ -469,7 +470,7 @@
         "downloadable_bndNXW",
         "video_tNLggN",
         "raffle_pVR3mg",
-        "raffle_cExRHe",
+        "recipe_Rdx7hp",
         "recipe_x3HUyX",
         "recipe_jHK8FC",
         "discount_XATPyV",
