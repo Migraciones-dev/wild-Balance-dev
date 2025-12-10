@@ -256,47 +256,30 @@
             "downloadable_cta_link": "https://cdn.shopify.com/s/files/1/0713/9898/1933/files/WildBalance_Fondos_pantalla_navidad.pdf?v=1765374880"
           }
         },
-        "trivia_7NHF4C": {
-          "type": "trivia",
+        "video_tNLggN": {
+          "type": "video",
           "settings": {
             "day_number": "",
             "unlock_date": "2025-12-12 00:01",
             "expire_date": "2025-12-13 00:01",
             "cover_image": "shopify://shop_images/10_3d0091c8-b2eb-42fc-8891-0f90dde63978.jpg",
-            "bg_color_block": "#faf5e7",
-            "trivia_title": "Trivial de Navidad",
-            "trivia_question_1": "¿A, B o C? (Resp: A)",
-            "trivia_options_1": "A,B,C",
-            "trivia_answer_1": "A",
-            "trivia_question_2": "¿X, Y o Z? (Resp: Z)",
-            "trivia_options_2": "X,Y,Z",
-            "trivia_answer_2": "Z",
-            "trivia_question_3": "",
-            "trivia_options_3": "",
-            "trivia_answer_3": "",
-            "trivia_question_4": "",
-            "trivia_options_4": "",
-            "trivia_answer_4": "",
-            "trivia_question_5": "",
-            "trivia_options_5": "",
-            "trivia_answer_5": "",
-            "trivia_reward_code": "DSADSA",
-            "trivia_success_text": "¡Enhorabuena! Has acertado todas las preguntas 🎉",
-            "trivia_failure_title": "Lo sentimos, has fallado alguna pregunta 😔",
-            "trivia_failure_text": "Revisa tus respuestas e inténtalo de nuevo."
+            "bg_color_block": "#ffcd00",
+            "video_title": "Video especial",
+            "video_text": "",
+            "video_embed": ""
           }
         },
-        "video_3rJdEL": {
-          "type": "video",
+        "raffle_pVR3mg": {
+          "type": "raffle",
           "settings": {
             "day_number": "",
             "unlock_date": "2025-12-13 00:01",
             "expire_date": "2025-12-14 00:01",
             "cover_image": "shopify://shop_images/11_af5a9ac7-387d-49b6-8004-651e83af417f.jpg",
-            "bg_color_block": "#faf5e7",
-            "video_title": "Video especial",
-            "video_text": "<p>Texto sobre el video</p>",
-            "video_embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/mfmrNsm15I0?si=c1v0_JwlZRvzBYgc\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen=\"\"></iframe>"
+            "bg_color_block": "#ffcd00",
+            "raffle_title": "¡Hazle sonreír! 📸😁",
+            "raffle_text": "<p>Hoy os proponemos un reto muy especial. </p><p>1. Haz sonreír a tu peludo</p><p>2. Captura ese momento en una foto </p><p>3. Compártela con nosotros aquí. </p><p>Puedes ganar una sesión de fotos y tener muchas fotos de la sonrisa de tu peludo.</p>",
+            "raffle_embed": ""
           }
         },
         "raffle_cExRHe": {
@@ -484,8 +467,8 @@
         "recipe_tx3AYA",
         "trivia_egaHhR",
         "downloadable_bndNXW",
-        "trivia_7NHF4C",
-        "video_3rJdEL",
+        "video_tNLggN",
+        "raffle_pVR3mg",
         "raffle_cExRHe",
         "recipe_x3HUyX",
         "recipe_jHK8FC",
