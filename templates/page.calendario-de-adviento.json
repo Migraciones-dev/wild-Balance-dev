@@ -279,7 +279,7 @@
             "bg_color_block": "#ffcd00",
             "raffle_title": "¡Hazle sonreír! 📸😁",
             "raffle_text": "<p>Hoy os proponemos un reto muy especial. </p><ol><li>Haz sonreír a tu peludo</li><li>Captura ese momento en una foto </li><li>Compártela con nosotros aquí o etiquétanos en redes sociales. </li></ol><p><strong>🎁Premio:</strong> el ganador recibirá una <strong>ilustración personalizada</strong> de la foto ganadora (o de la que más te guste).</p>",
-            "raffle_embed": ""
+            "raffle_embed": "<!-- Botón del sorteo -->\n<a href=\"https://docs.google.com/forms/d/e/1FAIpQLSf8A6SC4IfzD3uS1MqjjJsitnoQn7TG3cCp0rz7C-17-iQHQQ/viewform?usp=sharing&amp;ouid=112136479251236819854\" target=\"_blank\" style=\"\n       display: inline-block;\n       background-color: #ffcd00;  /* amarillo */\n       color: #004623;             /* verde oscuro */\n       font-weight: bold;           /* negrita */\n       padding: 15px 30px;\n       border-radius: 50px;\n       text-decoration: none;\n       font-family: 'DM Sans', sans-serif;\n       font-size: 18px;\n       transition: background-color 0.3s;\n   \" onmouseover=\"this.style.backgroundColor='#ffdb33';\" onmouseout=\"this.style.backgroundColor='#ffcd00';\">\n  Participa en el sorteo\n</a>"
           }
         },
         "recipe_Rdx7hp": {
