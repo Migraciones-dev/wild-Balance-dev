@@ -325,18 +325,18 @@
             "recipe_cta_link": "shopify://collections/comida"
           }
         },
-        "discount_XATPyV": {
-          "type": "discount",
+        "recipe_ALCmt7": {
+          "type": "recipe",
           "settings": {
             "day_number": "",
             "unlock_date": "2025-12-17 00:01",
             "expire_date": "2025-12-18 00:01",
             "cover_image": "shopify://shop_images/15.jpg",
-            "bg_color_block": "#faf5e7",
-            "discount_title": "¡Descuento especial!",
-            "discount_text": "",
-            "image_width": 100,
-            "discount_code": ""
+            "bg_color_block": "#ffcd00",
+            "recipe_title": "Wild Consejo: Cuida su digestión estas fiestas",
+            "recipe_richtext": "<p>Durante las navidades solemos darles algunos caprichos a nuestros peludos y eso puede complicar sus digestiones, os dejamos por aquí algunos tips para que esto no pase:</p><p><strong>🍽️ 1. Reparte la comida en porciones pequeñas</strong></p><p>En lugar de 1 o 2 comidas grandes, ofrece <strong>3 raciones más pequeñas</strong>. Evita atracones y reduce gases e hinchazón.</p><p><strong>🐌 2. Usa un comedero lento</strong></p><p>Si come muy rápido, traga aire y digiere peor. Los comederos lentos obligan a masticar más y reducen el riesgo de malestar y vómitos “por engullir”.</p><p><strong>🕑3. Mantén un horario regular</strong></p><p>Los perros digieren mejor si tienen <strong>horas fijas</strong> de comida. El estómago se “prepara” y trabaja mejor.</p><p><strong>🥕 4. Incorpora fibra suave</strong></p><p>La fibra ayuda al tránsito intestinal. Opciones suaves:</p><ul><li>Zanahoria rallada</li><li>Calabaza cruda muy finamente rallada</li><li>Un poco de manzana sin piel ni semillas <em>(Introduce cualquier alimento nuevo poco a poco.)</em></li></ul><p>Además de esto puedes complementar su comida con suplementos, como el de <a href=\"/products/suplemento-salud-intestinal-perro-digestiones-firmes\" target=\"_blank\" title=\"DIGESTIONES FIRMES Prebiótico regulador problemas intestinales\">Digestiones Firmes.</a> Los ingredientes de este mix natural son ricos en fibra y mejoran la microbiota intestinal. Todo esto ayuda a una mejora de su salud intestinal y a cortar la diarrea de tu perro.<br/></p>",
+            "recipe_cta_text": "Ver productos digestivos",
+            "recipe_cta_link": "https://wildbalance.es/collections/productos-sin-oferta?filter.p.m.custom.care=cuidado+digestivo"
           }
         },
         "recipe_FjXeii": {
@@ -472,7 +472,7 @@
         "recipe_Rdx7hp",
         "recipe_x3HUyX",
         "recipe_jHK8FC",
-        "discount_XATPyV",
+        "recipe_ALCmt7",
         "recipe_FjXeii",
         "downloadable_xNd3Ai",
         "recipe_xaxEhn",
