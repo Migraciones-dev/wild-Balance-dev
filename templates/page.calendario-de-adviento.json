@@ -264,9 +264,9 @@
             "expire_date": "2025-12-13 00:01",
             "cover_image": "shopify://shop_images/10_3d0091c8-b2eb-42fc-8891-0f90dde63978.jpg",
             "bg_color_block": "#ffcd00",
-            "video_title": "Video especial",
-            "video_text": "",
-            "video_embed": ""
+            "video_title": "Detrás de nuestras recetas 👨🏻‍🍳",
+            "video_text": "<p>Así cocinamos en Wild Balance comida real y natural para tu peludo 💚. Sin rellenos, con ingredientes frescos, directos de granjas y huertos locales. Así de simple. Tu compañero se merece lo mejor y aquí te mostramos cómo lo hacemos posible. </p>",
+            "video_embed": "<iframe width=\"315\" height=\"560\" src=\"https://www.youtube.com/embed/-i7L-ZjWjFQ\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen=\"\">\n</iframe>"
           }
         },
         "raffle_pVR3mg": {
