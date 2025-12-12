@@ -3,6 +3,42 @@
   t4s_group_btns_split
 {%- endcomment -%}
 
+{%- style -%}
+  @media (max-width: 767px) {
+    .t4s-site-nav__icons .cta-menu-mobile {
+      margin-left: 6px;
+      margin-right: 4px;
+    }
+    .t4s-site-nav__icon.t4s-site-nav__search {
+      width: auto !important;
+      min-width: 0;
+      flex: 0 0 auto !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+  @media (min-width: 1025px) {
+    .cta-menu-mobile {
+      display: none !important;
+    }
+  }
+  .cta-menu-mobile {
+    white-space: nowrap !important;
+    min-width: max-content;
+    color: #fff !important;
+  }
+  .cta-menu-mobile:visited,
+  .cta-menu-mobile:active,
+  .cta-menu-mobile:focus {
+    color: #fff !important;
+  }
+  .cta-menu-mobile svg {
+    flex-shrink: 0;
+    margin-top: -1px;
+    color: currentColor;
+  }
+{%- endstyle -%}
+
 <a
   href="/pages/crea-su-menu"
   class=" h-9 flex items-center justify-center gap-2.5 bg-[#ffcd00] rounded-[50px] hover:bg-[#ffcd00]/90 py-10 px-14 [@media(max-width:1024px)]:!hidden"
@@ -489,19 +525,39 @@
             </div>
           </div>
         </div>
-        <a class="t4s-pr t4s-d-lg-none" href="{{ routes.search_url }}">
+        <a
+          class="cta-menu-mobile t4s-pr t4s-d-lg-none inline-flex shrink-0 items-center gap-1.5 rounded-full bg-[#6ac989] px-3.5 py-1.5 text-[13px] font-semibold text-white shadow-sm whitespace-nowrap"
+          href="/pages/crea-su-menu"
+        >
+          <span class="leading-none">Crea su menú</span>
           <svg
-            class="t4s-icon t4s-icon--search {% if se_stts.h_txt_lable %}t4s-d-lg-none{% endif -%}"
+            class="h-3.5 w-3.5"
+            viewBox="0 0 24 24"
             aria-hidden="true"
             focusable="false"
             role="presentation"
           >
-            <use href="#icon-h-search"></use>
+            <path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
       {%- else -%}
         <a
-          class="t4s-pr"
+          class="cta-menu-mobile t4s-pr t4s-d-lg-none inline-flex shrink-0 items-center gap-1.5 rounded-full bg-[#6ac989] px-3.5 py-1.5 text-[13px] font-semibold text-white shadow-sm whitespace-nowrap"
+          href="/pages/crea-su-menu"
+        >
+          <span class="leading-none">Crea su menú</span>
+          <svg
+            class="h-3.5 w-3.5"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
+            role="presentation"
+          >
+            <path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a
+          class="t4s-pr t4s-d-none t4s-d-lg-inline-block"
           href="{{ routes.search_url }}"
           data-drawer-delay-
           data-drawer-options='{ "id": "#t4s-search-hidden" }'

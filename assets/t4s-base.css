@@ -4828,3 +4828,16 @@ blockquote small{
     }
   }
 }
+
+.t4s-header__wrapper .t4s-col-lg-2.t4s-col-md-4 {
+    text-align: left !important;
+    
+}
+.cta-menu-mobile {
+      display: flex!important;
+    height: 3rem!important;
+}
+
+.t4s-header__wrapper .t4s-d-lg-none {
+    margin-left: -15px;
+}
