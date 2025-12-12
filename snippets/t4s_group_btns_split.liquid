@@ -678,6 +678,72 @@
       {%- endif -%}
     </div>
   {%- else -%}
+    <div class="t4s-site-nav__icons t4s-use__{{ se_stts.h_icon }} {% if se_stts.h_txt_lable %}t4s-use__label {% endif -%} t4s-h-cart__design{{ se_stts.cart_des }} t4s-lh-1 t4s-d-inline-flex t4s-align-items-center">
+      {%- if shop.customer_accounts_enabled -%}
+        {%- capture acc_action -%}
+	                  	{%- if se_stts.account_des == '1' -%}
+	                  		<svg class="t4s-icon t4s-icon--account" aria-hidden="true" focusable="false" role="presentation"><use href="#icon-h-account"></use></svg>
+	                  	{% else %}
+	                  		{{ 'customer.menu.login_register' | t }}
+	                 	{% endif -%}
+	              	{%- endcapture -%}
+        <div class="t4s-site-nav__icon t4s-site-nav__account t4s-pr t4s-d-none t4s-d-md-inline-block">
+          <a
+            class="t4s-pr"
+            href="{{ routes.account_url }}"
+            {% unless customer or settings.login_side == false or request.page_type contains 'customers' %}
+              data-drawer-delay- data-drawer-options='{ "id": "#t4s-login-sidebar" }'
+            {% endunless %}
+          >
+            {{- acc_action -}}
+          </a>
+          {{ my_account_dropdown }}
+        </div>
+      {%- endif -%}
+      {%- if se_stts.show_compare -%}
+        <div class="t4s-site-nav__icon t4s-site-nav__compare t4s-d-none t4s-d-md-inline-block">
+          <a data-link-compare class="t4s-pr" href="{{ routes.search_url }}/?view=compare">
+            <svg class="t4s-icon t4s-icon--compare" aria-hidden="true" focusable="false" role="presentation">
+              <use href="#icon-h-compare"></use>
+            </svg>
+            <span data-count-compare class="t4s-pa t4s-op-0 t4s-ts-op t4s-count-box">0</span>
+          </a>
+        </div>
+      {%- endif -%}
+      {% comment %}
+        {%- if se_stts.show_wis -%}
+          <div class="t4s-site-nav__icon t4s-site-nav__heart t4s-d-none t4s-d-md-inline-block">
+            <a data-link-wishlist class="t4s-pr" href="{{ routes.search_url }}/?view=wishlist">
+              <svg class="t4s-icon t4s-icon--wishlist" aria-hidden="true" focusable="false" role="presentation">
+                <use href="#icon-h-heart"></use>
+              </svg>
+              <span data-count-wishlist class="t4s-pa t4s-op-0 t4s-ts-op t4s-count-box">0</span>
+            </a>
+          </div>
+        {%- endif -%}
+      {% endcomment %}
 
+      {%- if se_stts.cart_des != '0' -%}
+        <div class="t4s-site-nav__icon t4s-site-nav__cart">
+          <a
+            href="{{ routes.cart_url }}"
+            {% if request.page_type != 'cart' and settings.cart_type != 'disable' %}
+              data-drawer-delay- data-drawer-options='{ "id": "#t4s-mini_cart" }'
+            {% endif %}
+          >
+            <span class="t4s-pr t4s-icon-cart__wrap">
+              <svg class="t4s-icon t4s-icon--account" aria-hidden="true" focusable="false" role="presentation">
+                <use href="#icon-h-cart"></use>
+              </svg>
+              <span data-cart-count class="t4s-pa t4s-op-0 t4s-ts-op t4s-count-box">{{ cart.item_count }}</span>
+            </span>
+            <span class="t4s-h-cart-totals t4s-dn t4s-truncate">
+              <span class="t4s-h-cart__divider t4s-dn">/</span>
+              <span data-cart-tt-price class="t4s-h-cart__total">{{ cart.total_price | money }}</span>
+            </span>
+          </a>
+        </div>
+      {%- endif -%}
+    </div>
   {%- endif -%}
 {%- endif -%}
