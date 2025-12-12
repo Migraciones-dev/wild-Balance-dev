@@ -112,6 +112,17 @@
   </section>
 {% endcomment %}
 
+{% assign pet_type = result.pet | upcase %}
+
+{% assign hero_img_feature = 'https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_1545.png?v=1757599783' %}
+{% if comida == 'cooked' %}
+  {% if pet_type == 'PERRO' %}
+    {% assign hero_img_feature = 'https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_1544_1.png?v=1765538942' %}
+  {% elsif pet_type == 'GATO' %}
+    {% assign hero_img_feature = 'https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_1543_1_1.png?v=1765538942' %}
+  {% endif %}
+{% endif %}
+
 {% if comida == 'burgers' %}
   {% assign hero_img_top = 'https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Image_66.png?v=1757606670' %}
 {% else %}
@@ -273,7 +284,7 @@
             data-swiper-slide-index="0"
           >
             <img
-              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_1545.png?v=1757599783"
+              src="{{ hero_img_feature }}"
               alt="Imagen escritorio"
               width="2000"
               height="2213"
