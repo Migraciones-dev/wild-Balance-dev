@@ -373,32 +373,41 @@
             {%- if se_style == '1' and se_pos == '1' %}{{- html_btn -}}{% endif -%}
             <div data-cart-items class="t4s-mini_cart__items t4s_ratioadapt !bg-[#F4F0E2]">
               {%- if ccount > 0 -%}
-                {%- assign subscription_items = cart.items | reject: 'selling_plan_allocation', null -%}
-                {%- assign onetime_items = cart.items | where: 'selling_plan_allocation', null -%}
+                {%- assign has_onetime = false -%}
+                {%- assign has_subscription = false -%}
+                {%- for item in cart.items -%}
+                  {%- if item.selling_plan_allocation -%}
+                    {%- assign has_subscription = true -%}
+                  {%- else -%}
+                    {%- assign has_onetime = true -%}
+                  {%- endif -%}
+                {%- endfor -%}
 
-                {%- if subscription_items.size > 0 -%}
+                {%- if has_onetime -%}
                   <div class="mb-4 w-full border-b border-[#d9d9c8] pb-2">
                     <h3 class="font-['Barlow',Helvetica] font-bold text-[#004623] text-[14.6px] leading-[21.6px]">
                       Compras únicas
                     </h3>
                   </div>
-                  <div class="cart-subscription mb-8">
-                    {% for item in subscription_items %}
-                      {% render 'cart-item',
-                        item: item,
-                        gift_pr_id: gift_pr_id,
-                        min_qty: min_qty,
-                        compare_tt_price: compare_tt_price,
-                        cart_change_url: cart_change_url,
-                        edit_item: edit_item,
-                        atc_ajax_enable: atc_ajax_enable,
-                        cart_ajax_enable: cart_ajax_enable
-                      %}
+                  <div class="cart-onetime mb-8">
+                    {% for item in cart.items %}
+                      {% unless item.selling_plan_allocation %}
+                        {% render 'cart-item',
+                          item: item,
+                          gift_pr_id: gift_pr_id,
+                          min_qty: min_qty,
+                          compare_tt_price: compare_tt_price,
+                          cart_change_url: cart_change_url,
+                          edit_item: edit_item,
+                          atc_ajax_enable: atc_ajax_enable,
+                          cart_ajax_enable: cart_ajax_enable
+                        %}
+                      {% endunless %}
                     {% endfor %}
                   </div>
                 {%- endif -%}
 
-                {%- if onetime_items.size > 0 -%}
+                {%- if has_subscription -%}
                   <div class="mb-4 w-full">
                     <h3 class="font-['Barlow',Helvetica] font-bold text-[#004623] text-[14.6px] leading-[21.6px]">
                       Subscripciones
@@ -409,18 +418,20 @@
                       class="shrink-0 bg-border h-[1px] w-full mt-1 border-[#d9d9c8]"
                     ></div>
                   </div>
-                  <div class="cart-onetime">
-                    {% for item in onetime_items %}
-                      {% render 'cart-item-sub',
-                        item: item,
-                        gift_pr_id: gift_pr_id,
-                        min_qty: min_qty,
-                        compare_tt_price: compare_tt_price,
-                        cart_change_url: cart_change_url,
-                        edit_item: edit_item,
-                        atc_ajax_enable: atc_ajax_enable,
-                        cart_ajax_enable: cart_ajax_enable
-                      %}
+                  <div class="cart-subscription">
+                    {% for item in cart.items %}
+                      {% if item.selling_plan_allocation %}
+                        {% render 'cart-item',
+                          item: item,
+                          gift_pr_id: gift_pr_id,
+                          min_qty: min_qty,
+                          compare_tt_price: compare_tt_price,
+                          cart_change_url: cart_change_url,
+                          edit_item: edit_item,
+                          atc_ajax_enable: atc_ajax_enable,
+                          cart_ajax_enable: cart_ajax_enable
+                        %}
+                      {% endif %}
                     {% endfor %}
                   </div>
                 {%- endif -%}
@@ -686,6 +697,173 @@
 {%- endif -%}
 
 {%- if request.design_mode %}</div>{% endif -%}
+
+<script>
+  // Manejo robusto de cantidades en mini cart (compras únicas y suscripciones)
+  (function() {
+    const miniCart = document.getElementById('t4s-mini_cart');
+    if (!miniCart) return;
+
+    let isUpdating = false;
+
+    const setQuantityDisabled = (disabled) => {
+      isUpdating = disabled;
+      miniCart.querySelectorAll('[data-quantity-selector], [data-quantity-value]').forEach(el => {
+        el.disabled = disabled;
+        if (disabled) {
+          el.classList.add('t4s-pe-none', 't4s-op-50');
+        } else {
+          el.classList.remove('t4s-pe-none', 't4s-op-50');
+        }
+      });
+    };
+
+    const moneyFormat = {{ shop.money_format | json }};
+    const formatMoney = (cents) => {
+      try {
+        if (window.Shopify && typeof window.Shopify.formatMoney === 'function') {
+          return window.Shopify.formatMoney(cents, moneyFormat);
+        }
+      } catch (e) {}
+      const value = (cents / 100).toFixed(2);
+      // Formato simple: € y coma decimal
+      return value.replace('.', ',') + '€';
+    };
+
+    const svgMinus = '<svg focusable="false" class="icon icon--minus m-auto" viewBox="0 0 10 2" role="presentation"><path d="M10 0v2H0V0z" fill="currentColor"></path></svg>';
+    const svgTrash = '<svg class="m-auto" viewBox="0 0 24 24" width="17"><use href="#icon-cart-remove"></use></svg>';
+    const syncMinusIcons = () => {
+      miniCart.querySelectorAll('[data-quantity-wrapper]').forEach(wrapper => {
+        const input = wrapper.querySelector('[data-quantity-value]');
+        const minusBtn = wrapper.querySelector('.t4s-quantity-selector.is--minus');
+        if (!input || !minusBtn) return;
+        const qty = parseInt(input.value || '0', 10);
+        minusBtn.innerHTML = qty > 1 ? svgMinus : svgTrash;
+      });
+    };
+
+    const updateCartCount = (cart) => {
+      if (!cart || typeof cart.item_count === 'undefined') return;
+      document.querySelectorAll('[data-cart-count]').forEach((el) => {
+        el.textContent = cart.item_count;
+        if (cart.item_count > 0) {
+          el.classList.remove('t4s-op-0');
+        } else {
+          el.classList.add('t4s-op-0');
+        }
+      });
+    };
+
+    const updateCartPrices = (cart) => {
+      if (!cart || typeof cart.total_price === 'undefined') return;
+      const formatted = formatMoney(cart.total_price);
+      document.querySelectorAll('[data-cart-prices]').forEach((el) => {
+        el.textContent = formatted;
+      });
+    };
+
+    const updateLinePrices = (cart) => {
+      if (!cart || !Array.isArray(cart.items)) return;
+      cart.items.forEach((line) => {
+        const key = line.key;
+        const priceEl = document.querySelector(`[data-line-price][data-line-key="${key}"]`);
+        if (priceEl) {
+          priceEl.textContent = formatMoney(line.final_line_price);
+        }
+      });
+    };
+
+    const triggerThemeCartRefresh = () => {
+      try {
+        if (window.T4SThemeSP && T4SThemeSP.Cart) {
+          if (typeof T4SThemeSP.Cart.getCart === 'function') {
+            T4SThemeSP.Cart.getCart();
+            return;
+          }
+          if (typeof T4SThemeSP.Cart.updateCart === 'function') {
+            T4SThemeSP.Cart.updateCart();
+            return;
+          }
+        }
+        document.dispatchEvent(new Event('cart:refresh'));
+        document.dispatchEvent(new Event('t4s:cart:refresh'));
+      } catch (e) {
+        /* noop */
+      }
+    };
+
+    miniCart.addEventListener('click', function (event) {
+      const btn = event.target.closest('[data-quantity-selector]');
+      if (!btn) return;
+
+      const itemEl = btn.closest('[data-cart-item]');
+      if (!itemEl) return;
+      const input = itemEl.querySelector('[data-quantity-value]');
+      if (!input) return;
+      if (isUpdating) {
+        event.preventDefault();
+        return;
+      }
+
+      event.preventDefault();
+      event.stopPropagation();
+      if (event.stopImmediatePropagation) event.stopImmediatePropagation();
+
+      const key = itemEl.dataset.key || itemEl.dataset.pid || input.dataset.id;
+      if (!key) return;
+
+      const step = parseInt(input.step || '1', 10) || 1;
+      const min = parseInt(input.min || '0', 10);
+      const max = parseInt(input.max || '9999', 10);
+      const current = parseInt(input.value || '0', 10);
+      const isPlus = btn.classList.contains('is--plus');
+      const isMinus = btn.classList.contains('is--minus');
+      const delta = isPlus ? step : -step;
+
+      let next;
+      // Si está en 1 (icono de basura) y damos a minus, forzamos 0 para eliminar
+      if (isMinus && current <= 1) {
+        next = 0;
+      } else {
+        next = Math.max(min, Math.min(max, current + delta));
+      }
+      if (next === current) return;
+
+      input.value = next;
+
+      setQuantityDisabled(true);
+
+      fetch('/cart/change.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: key, quantity: next })
+      })
+        .then(res => res.json())
+        .then(cart => {
+          if (next === 0 && itemEl.parentNode) {
+            itemEl.parentNode.removeChild(itemEl);
+          }
+          updateCartCount(cart);
+          updateCartPrices(cart);
+          updateLinePrices(cart);
+          triggerThemeCartRefresh();
+          syncMinusIcons();
+          setQuantityDisabled(false);
+        })
+        .catch(() => {
+          setQuantityDisabled(false);
+        });
+    });
+
+    // Sincroniza iconos al iniciar y en cambios manuales
+    syncMinusIcons();
+    miniCart.addEventListener('input', function(event) {
+      if (event.target && event.target.matches('[data-quantity-value]')) {
+        syncMinusIcons();
+      }
+    });
+  })();
+</script>
 
 {% schema %}
 {

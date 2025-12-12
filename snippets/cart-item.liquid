@@ -15,13 +15,20 @@
   if item_variant.quantity_rule.max
     assign max_qty = max_qty | at_most: item_variant.quantity_rule.max
   endif
+  assign selling_plan_id = ''
+  if item.selling_plan_allocation
+    assign selling_plan_id = item.selling_plan_allocation.selling_plan.id
+  endif
 -%}
 
 <div
   data-item-qty-{{ cart_ajax_enable }}="{% if item_qty > 1 %}94{% else %}1{% endif %}"
   data-cart-item
-  data-pid="{{ item.product_id }}"
-  class="t4s-mini_cart__item cart_item_{{ item_id }} t4s-d-flex t4s-pr t4s-oh{% if gift_pr_id == item.product_id %} is--gift{% endif %}"
+  data-key="{{ item_key }}"
+  data-pid="{{ item_key }}"
+  data-product-id="{{ item.product_id }}"
+  data-selling-plan="{{ selling_plan_id }}"
+  class="t4s-mini_cart__item cart_item_{{ item_id }} cart_item_key_{{ item_key | replace: ':', '-' }} t4s-d-flex t4s-pr t4s-oh{% if gift_pr_id == item.product_id %} is--gift{% endif %}"
 >
   <a
     href="{{ item_url }}"
@@ -161,15 +168,9 @@
         <div data-quantity-wrapper class="t4s-quantity-wrapper t4s-quantity-cart-item">
           <div class="t4s-quantity-control bg-white" style="border">
             <button data-quantity-selector data-decrease-qty type="button" class="t4s-quantity-selector is--minus">
-              {% if item_qty > 1 or min_qty == 1 %}
-                <svg focusable="false" class="icon icon--minus m-auto" viewBox="0 0 10 2" role="presentation">
-                  <path d="M10 0v2H0V0z" fill="currentColor"></path>
-                </svg>
-              {% else %}
-                <svg class="m-auto" viewBox="0 0 24 24" width="17">
-                  <use href="#icon-cart-remove"/>
-                </svg>
-              {% endif %}
+              <svg focusable="false" class="icon icon--minus m-auto" viewBox="0 0 10 2" role="presentation">
+                <path d="M10 0v2H0V0z" fill="currentColor"></path>
+              </svg>
             </button>
             <input
               data-action-change
@@ -199,7 +200,7 @@
 
       {%- if item_qty >= 1 -%}
         <div class="t4s-cart_price-total">
-          <div class="t4s-cart_price font-bold text-[15px]">
+          <div class="t4s-cart_price font-bold text-[15px]" data-line-key="{{ item_key }}" data-line-price>
             {%- assign item_compare_price = item_variant.compare_at_price
               | default: item.original_price
               | times: item_qty
