@@ -7,6 +7,8 @@
     window.pushRemoveFromCartAnalytics = function (opts = {}) {
       const {
         id,
+        productId,
+        variantId,
         name,
         brand,
         category,
@@ -16,7 +18,11 @@
       } = opts;
       if (!id) return;
       const value = price || 0;
-      const idString = id;
+      const country = (window.Shopify && Shopify.country) || 'ES';
+      const idString =
+        productId && variantId
+          ? `shopify_${country}_${String(productId)}_${String(variantId)}`
+          : String(id);
       const customerData = analyticsCustomer
         ? {
             email: analyticsCustomer.email || undefined,
@@ -40,7 +46,6 @@
       const payload = {
         event: 'remove_from_cart',
         eventModel: {
-          send_to: 'G-N784J48P1E,AW-626908167/Ajc-CMaVlIobEIe496oC',
           developer_id: { dNzYwYj: true },
           ecomm_prodid: idString ? [idString] : [],
           ecomm_totalvalue: value,
@@ -55,7 +60,7 @@
               category: category || undefined,
               price: value,
               quantity,
-              variant: undefined,
+              variant: variantId || null,
             },
           ],
           user_data: customerData || undefined,
@@ -184,49 +189,53 @@
     });
 
     // REMOVE FROM CART
+    // Capturamos el click en "remove" para asegurar el envío (aunque el tema elimine vía AJAX).
+    // Si también se dispara desde otros scripts, no pasa nada (puede duplicarse).
     const parsePrice = (text) => {
       if (!text) return null;
-      const cleaned = text.replace(/[^\d,.-]/g, '').replace('.', '').replace(',', '.');
+      const cleaned = text.replace(/[^\d,.-]/g, '').replace(/\./g, '').replace(',', '.');
       const val = parseFloat(cleaned);
       return isNaN(val) ? null : val;
     };
 
-    document.addEventListener('click', (e) => {
-      const btn = e.target.closest('[data-cart-remove]');
-      if (!btn) return;
-      const itemEl = btn.closest('[data-cart-item]');
-      const qty = parseInt(itemEl?.querySelector('[data-quantity-value]')?.value || '1', 10);
-      const prodId = itemEl?.dataset.productId || '';
-      const variantId = itemEl?.dataset.variantId || '';
-      const priceText =
-        itemEl?.querySelector('[data-line-price]')?.textContent ||
-        itemEl?.querySelector('.t4s-page_cart__total_price')?.textContent ||
-        '';
-      const value = parsePrice(priceText);
-      const idString = variantId
-        ? `shopify_${(Shopify && Shopify.country) || 'XX'}_${prodId}_${variantId}`
-        : prodId;
+    document.addEventListener(
+      'click',
+      (e) => {
+        const btn = e.target.closest('[data-cart-remove]');
+        if (!btn) return;
+        const itemEl = btn.closest('[data-cart-item]');
+        if (!itemEl) return;
 
-      pushEvt('remove_from_cart', {
-        eventModel: {
-          send_to: 'G-N784J48P1E,AW-626908167/Ajc-CMaVlIobEIe496oC',
-          developer_id: { dNzYwYj: true },
-          ecomm_prodid: idString ? [idString] : [],
-          ecomm_totalvalue: value || undefined,
-          ecomm_pagetype: 'cart',
-          value: value || undefined,
-          currency: (Shopify && Shopify.currency && Shopify.currency.active) || 'EUR',
-          items: [
-            {
-              id: idString || undefined,
-              quantity: qty || 1,
-              price: value || undefined,
-              variant: variantId || null,
-              product_id: prodId || undefined,
-            },
-          ],
-        },
-      });
-    });
+        const qty = parseInt(itemEl.querySelector('[data-quantity-value]')?.value || '1', 10) || 1;
+        const productId = itemEl.dataset.productId || '';
+        const variantId = itemEl.dataset.variantId || '';
+        const title =
+          itemEl.querySelector('.t4s-mini_cart__title')?.textContent?.trim() ||
+          itemEl.querySelector('.t4s-page_cart__title')?.textContent?.trim() ||
+          itemEl.querySelector('[data-item-title]')?.textContent?.trim() ||
+          undefined;
+
+        const priceText =
+          itemEl.querySelector('[data-line-price]')?.textContent ||
+          itemEl.querySelector('.t4s-page_cart__total_price')?.textContent ||
+          '';
+        const value = parsePrice(priceText) || 0;
+
+        const brand = itemEl.dataset.productVendor || 'Wild Balance';
+        const category = itemEl.dataset.productCollections || itemEl.dataset.productType || undefined;
+
+        window.pushRemoveFromCartAnalytics?.({
+          id: itemEl.dataset.key || productId || variantId,
+          productId,
+          variantId,
+          name: title,
+          brand,
+          category,
+          price: value,
+          quantity: qty,
+        });
+      },
+      true
+    );
   })();
 </script>
