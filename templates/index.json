@@ -15,8 +15,8 @@
         "image_parent_7HhBqi": {
           "type": "image_parent",
           "settings": {
-            "image": "shopify://shop_images/banner-home-navidad-regalasalud-desk.png",
-            "image_mb": "shopify://shop_images/banner-home-navidad-regalasalud-mobile1_1.png",
+            "image": "shopify://shop_images/banner-home-latas-bocaditos-kefir-desk.jpg",
+            "image_mb": "shopify://shop_images/banner-home-latas-bocaditos-kefir-mobile.jpg",
             "image_position": "8",
             "cl_img": "",
             "link_img1": "shopify://collections/navidad",
@@ -873,7 +873,13 @@
       "blocks": {
         "judge_me_reviews_all_reviews_page_6T6p7J": {
           "type": "shopify://apps/judge-me-reviews/blocks/all_reviews_page/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
+          "settings": {
+            "max_width": 1200,
+            "review_source": "all",
+            "show_tabs": false,
+            "show_first": "product",
+            "empty_state": "empty_widget"
+          }
         }
       },
       "block_order": [
