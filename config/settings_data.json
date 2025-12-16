@@ -1146,7 +1146,7 @@
         ],
         "custom_css": [],
         "settings": {
-          "announcement_rich_text": "",
+          "announcement_rich_text": "<p>🎁Hoy tu pedido +69€ tiene <strong>REGALO</strong>:</p><p>Sticks, Premios, Yaky o Boquerones</p>",
           "announcement_bg_color": "#004622",
           "announcement_text_color": "#ffffff",
           "announcement_padding_top_mobile": 8,
