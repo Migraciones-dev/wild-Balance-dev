@@ -950,6 +950,8 @@
             const category = itemEl.dataset.productCollections || itemEl.dataset.productType;
             window.pushRemoveFromCartAnalytics?.({
               id: removalId,
+              productId: itemEl.dataset.productId,
+              variantId: itemEl.dataset.variantId,
               name: title,
               brand: vendor,
               category,
