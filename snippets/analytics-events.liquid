@@ -1,0 +1,232 @@
+<script>
+  (function () {
+    const dataLayer = (window.dataLayer = window.dataLayer || []);
+    const contentGroup = {{ request.page_type | default: template.name | json }};
+    const getText = (el) => (el && el.textContent ? el.textContent.trim() : '');
+    const analyticsCustomer = {{ customer | default: null | json }};
+    window.pushRemoveFromCartAnalytics = function (opts = {}) {
+      const {
+        id,
+        name,
+        brand,
+        category,
+        price,
+        quantity = 1,
+        currency = (window.Shopify && Shopify.currency && Shopify.currency.active) || 'EUR',
+      } = opts;
+      if (!id) return;
+      const value = price || 0;
+      const idString = id;
+      const customerData = analyticsCustomer
+        ? {
+            email: analyticsCustomer.email || undefined,
+            phone_number: analyticsCustomer.phone || null,
+            address:
+              analyticsCustomer.default_address || analyticsCustomer.addresses?.[0]
+                ? {
+                    first_name:
+                      analyticsCustomer.default_address?.first_name ||
+                      analyticsCustomer.addresses?.[0]?.first_name ||
+                      undefined,
+                    last_name:
+                      analyticsCustomer.default_address?.last_name ||
+                      analyticsCustomer.addresses?.[0]?.last_name ||
+                      undefined,
+                  }
+                : undefined,
+          }
+        : undefined;
+
+      const payload = {
+        event: 'remove_from_cart',
+        eventModel: {
+          send_to: 'G-N784J48P1E,AW-626908167/Ajc-CMaVlIobEIe496oC',
+          developer_id: { dNzYwYj: true },
+          ecomm_prodid: idString ? [idString] : [],
+          ecomm_totalvalue: value,
+          ecomm_pagetype: 'cart',
+          value,
+          currency,
+          items: [
+            {
+              id: idString,
+              name: name || undefined,
+              brand: brand || 'Wild Balance',
+              category: category || undefined,
+              price: value,
+              quantity,
+              variant: undefined,
+            },
+          ],
+          user_data: customerData || undefined,
+        },
+      };
+      console.log('[analytics]', payload);
+      dataLayer.push(payload);
+    };
+
+    const pushEvt = (event, payload = {}) => {
+      const body = Object.assign({ event, content_group: contentGroup }, payload);
+      console.log('[analytics]', body);
+      dataLayer.push(body);
+    };
+
+    // MENU (click + hover)
+    let lastMenu = { key: '', t: 0 };
+    const menuHandler = (event, type) => {
+      const link = event.target.closest('.t4s-site-nav__link, [data-nav-link], nav a');
+      if (!link) return;
+      const now = Date.now();
+      const key = link.href + type;
+      if (lastMenu.key === key && now - lastMenu.t < 500) return;
+      lastMenu = { key, t: now };
+
+      const menuLi = link.closest('li.t4s-menu-item');
+      const parentLink = menuLi?.querySelector(':scope > a') || link;
+      const parameter1 = getText(parentLink) || getText(link) || 'unknown';
+      const parameter2 =
+        link === parentLink ? '' : getText(link) || 'unknown';
+
+      pushEvt('menu', { parameter1, parameter2 });
+    };
+    document.addEventListener(
+      'mouseover',
+      (e) => {
+        menuHandler(e, 'hover');
+      },
+      true
+    );
+    document.addEventListener(
+      'click',
+      (e) => {
+        menuHandler(e, 'click');
+      },
+      true
+    );
+
+    // BURGER MENU
+    const burgerSelector =
+      '[data-drawer-open],[data-drawer-close],.t4s-drawer__open--nav,.t4s-header__bars,.t4s-hamburger';
+    const menuEl = document.getElementById('mig-menu');
+    let lastBurgerState = null;
+    const detectBurgerState = () => {
+      if (!menuEl) return;
+      const classes = menuEl.classList;
+      const open =
+        classes.contains('overflow-hidden') &&
+        classes.contains('transition-all') &&
+        classes.contains('duration-300') &&
+        classes.contains('ease-in-out') &&
+        classes.contains('bg-white') &&
+        classes.contains('max-h-[1000px]') &&
+        classes.contains('opacity-100');
+      const state = open ? 'abrir' : 'cerrar';
+      if (state !== lastBurgerState) {
+        lastBurgerState = state;
+        pushEvt('burguer_menu', { parameter1: state });
+      }
+    };
+    if (menuEl) {
+      const observer = new MutationObserver(detectBurgerState);
+      observer.observe(menuEl, { attributes: true, attributeFilter: ['class'] });
+    }
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest(burgerSelector);
+      if (!btn) return;
+      setTimeout(detectBurgerState, 50);
+    });
+
+    // CTA TO QUIZ (crea-su-menu)
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[href*="/pages/crea-su-menu"], a[href*="crea-su-menu"]');
+      if (!link) return;
+      const parameter1 = getText(link) || link.getAttribute('aria-label') || link.getAttribute('title') || 'cta';
+      const isHeader = !!link.closest('header, .t4s-header, .t4s-site-nav, .t4s-navigation, #mig-menu, [data-header-height]');
+      const parameter2 = isHeader ? 'header' : 'section';
+      pushEvt('cta_to_quiz', { parameter1, parameter2 });
+    });
+
+    // SECONDARY CTA (perros/gatos / escribenos / prueba Wild Balance)
+    const secondaryCtas = [
+      {
+        selector: '[data-tab="perros"]',
+        parameter2: 'carrusel_perros',
+      },
+      {
+        selector: '[data-tab="gatos"]',
+        parameter2: 'carrusel_gatos',
+      },
+      {
+        selector:
+          'a[href*="https://api.whatsapp.com/send/?phone=34670319204"]',
+        parameter2: 'escribenos',
+      },
+      {
+        selector: 'a[href="/collections/comida"]',
+        parameter2: 'prueba_wild_balance',
+      },
+    ];
+
+    document.addEventListener('click', (e) => {
+      const match =
+        secondaryCtas.find((item) => e.target.closest(item.selector)) || null;
+      if (!match) return;
+      const el = e.target.closest(match.selector);
+      const parameter1 = getText(el) || el.getAttribute('aria-label') || 'cta';
+      pushEvt('secondary_cta', { parameter1, parameter2: match.parameter2 });
+    });
+
+    // LOGIN
+    document.addEventListener('click', (e) => {
+      const el = e.target.closest('.t4s-site-nav__account, .t4s-header__account, [data-open-auth]');
+      if (!el) return;
+      pushEvt('login', {});
+    });
+
+    // REMOVE FROM CART
+    const parsePrice = (text) => {
+      if (!text) return null;
+      const cleaned = text.replace(/[^\d,.-]/g, '').replace('.', '').replace(',', '.');
+      const val = parseFloat(cleaned);
+      return isNaN(val) ? null : val;
+    };
+
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-cart-remove]');
+      if (!btn) return;
+      const itemEl = btn.closest('[data-cart-item]');
+      const qty = parseInt(itemEl?.querySelector('[data-quantity-value]')?.value || '1', 10);
+      const prodId = itemEl?.dataset.productId || '';
+      const variantId = itemEl?.dataset.variantId || '';
+      const priceText =
+        itemEl?.querySelector('[data-line-price]')?.textContent ||
+        itemEl?.querySelector('.t4s-page_cart__total_price')?.textContent ||
+        '';
+      const value = parsePrice(priceText);
+      const idString = variantId
+        ? `shopify_${(Shopify && Shopify.country) || 'XX'}_${prodId}_${variantId}`
+        : prodId;
+
+      pushEvt('remove_from_cart', {
+        eventModel: {
+          send_to: 'G-N784J48P1E,AW-626908167/Ajc-CMaVlIobEIe496oC',
+          developer_id: { dNzYwYj: true },
+          ecomm_prodid: idString ? [idString] : [],
+          ecomm_totalvalue: value || undefined,
+          ecomm_pagetype: 'cart',
+          value: value || undefined,
+          currency: (Shopify && Shopify.currency && Shopify.currency.active) || 'EUR',
+          items: [
+            {
+              id: idString || undefined,
+              quantity: qty || 1,
+              price: value || undefined,
+              variant: variantId || null,
+              product_id: prodId || undefined,
+            },
+          ],
+        },
+      });
+    });
+  })();
+</script>

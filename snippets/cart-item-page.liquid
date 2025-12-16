@@ -16,9 +16,14 @@
     if item_variant.quantity_rule.max
       assign max_qty = max_qty | at_most: item_variant.quantity_rule.max
     endif
+    if item.selling_plan_allocation
+      assign selling_plan_id = item.selling_plan_allocation.selling_plan.id
+    else
+      assign selling_plan_id = ''
+    endif
 -%}  
   
-<tr data-cart-item class="t4s-page_cart__item {% if gift_pr_id == item.product_id %} is--gift{% endif %} [@media(max-width:1024px)]:!flex [@media(max-width:1024px)]:!flex-col [@media(max-width:1024px)]:!text-left">
+<tr data-cart-item data-key="{{ item_key }}" data-pid="{{ item_key }}" data-product-id="{{ item.product_id }}" data-variant-id="{{ item.variant_id }}" data-selling-plan="{{ selling_plan_id }}" class="t4s-page_cart__item {% if gift_pr_id == item.product_id %} is--gift{% endif %} [@media(max-width:1024px)]:!flex [@media(max-width:1024px)]:!flex-col [@media(max-width:1024px)]:!text-left">
    <td class="t4s-page_cart__remove [@media(max-width:1024px)]:hidden">
         <!-- <a href="{{ cart_change_url }}?quantity=0&amp;id={{ item_key }}" rel="nofollow" data-no-instant data-cart-remove data-id="{{ item_key }}" data-tooltip="top-start" data-t4s-tooltip='{{ 'cart.general.remove_item' | t | escape }}'><svg viewBox="0 0 24 24"><use href="#icon-cart-remove"/></svg></a> -->
     </td> 
@@ -42,7 +47,31 @@
                 <div class="t4s-page_cart__meta">
                     {%- assign qv_key = item_pr.id -%}
                     {%- unless item_pr.has_only_default_variant or item.variant.title contains 'mczr_price_' -%}{%- assign qv_key = item_id -%}{%- for option in item.options_with_values -%}<p class="t4s-cart_meta_variant">{{ option.name }}: {{ option.value }}</p>{%- endfor -%}{%- endunless -%}                    
-                    {%- if item.selling_plan_allocation != blank %}<p class="t4s-cart_selling_plan">{{ item.selling_plan_allocation.selling_plan.name }}</p>{% endif -%}
+                    <label class="t4s-selling-toggle mt-1 flex items-center gap-2 text-[12px]">
+                      <input
+                        type="checkbox"
+                        data-selling-toggle
+                        class="t4s-checkbox"
+                        {% if item.selling_plan_allocation %}checked{% endif %}
+                      >
+                      <span>Suscripción</span>
+                    </label>
+                    {%- if item.variant.selling_plan_allocations.size > 0 -%}
+                      <label
+                        class="t4s-cart_selling_plan t4s-db mt-1 text-[12px]{% if item.selling_plan_allocation == blank %} t4s-dn{% endif %}"
+                        data-selling-select-wrap
+                      >
+                        <span class="sr-only">Frecuencia de suscripción</span>
+                        <select data-selling-select class="t4s-select text-[12px] border border-[#d9d9c8] rounded px-1 py-[2px]">
+                          <option value="" disabled {% if item.selling_plan_allocation == blank %}selected{% endif %}>Elige la frecuencia</option>
+                          {%- for spa in item.variant.selling_plan_allocations -%}
+                            <option value="{{ spa.selling_plan.id }}" {% if item.selling_plan_allocation and spa.selling_plan.id == item.selling_plan_allocation.selling_plan.id %}selected{% endif %}>
+                              {{ spa.selling_plan.name }}
+                            </option>
+                          {%- endfor -%}
+                        </select>
+                      </label>
+                    {%- endif -%}
                     {%- assign property_size = item.properties | size -%}
                     {%- if property_size > 0 -%}
                     <ul class="t4s-cart_meta_propertyList">

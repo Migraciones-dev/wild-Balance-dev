@@ -497,6 +497,7 @@
             <!-- Botón Ver la cesta -->
             <a
               href="{{ cart_url }}"
+              data-view-cart
               class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow px-4 w-full bg-[#ffcd00] hover:bg-[#ffcd00]/90 text-[#004623] rounded-[50px] py-[13px] h-auto"
             >
               <span class="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-[14.6px] leading-4">
@@ -700,23 +701,59 @@
 
 <script>
   // Manejo robusto de cantidades en mini cart (compras únicas y suscripciones)
-  (function() {
-    const miniCart = document.getElementById('t4s-mini_cart');
-    if (!miniCart) return;
+	  (function() {
+	    const miniCart = document.getElementById('t4s-mini_cart');
+	    if (!miniCart) return;
 
-    let isUpdating = false;
+	    let isUpdating = false;
+	    const viewCartBtn = miniCart.querySelector('[data-view-cart]');
 
-    const setQuantityDisabled = (disabled) => {
-      isUpdating = disabled;
-      miniCart.querySelectorAll('[data-quantity-selector], [data-quantity-value]').forEach(el => {
-        el.disabled = disabled;
+	    const setViewCartDisabled = (disabled) => {
+	      if (!viewCartBtn) return;
+	      if (disabled) {
+	        viewCartBtn.setAttribute('aria-disabled', 'true');
+	        viewCartBtn.setAttribute('tabindex', '-1');
+	        viewCartBtn.classList.add('t4s-pe-none', 't4s-op-50');
+	      } else {
+	        viewCartBtn.removeAttribute('aria-disabled');
+	        viewCartBtn.removeAttribute('tabindex');
+	        viewCartBtn.classList.remove('t4s-pe-none', 't4s-op-50');
+	      }
+	    };
+
+	    if (viewCartBtn) {
+	      viewCartBtn.addEventListener('click', (e) => {
+	        if (viewCartBtn.getAttribute('aria-disabled') === 'true') {
+	          e.preventDefault();
+	          e.stopPropagation();
+	          if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+	        }
+	      });
+	    }
+
+	    const syncViewCartState = () => {
+	      const needsPlan = Array.from(miniCart.querySelectorAll('[data-cart-item]')).some((itemEl) => {
+	        const toggle = itemEl.querySelector('[data-selling-toggle]');
+	        if (!toggle || !toggle.checked) return false;
+	        const select = itemEl.querySelector('[data-selling-select]');
+	        if (!select) return false;
+	        return !select.value;
+	      });
+	      setViewCartDisabled(needsPlan || isUpdating);
+	    };
+
+	    const setQuantityDisabled = (disabled) => {
+	      isUpdating = disabled;
+	      miniCart.querySelectorAll('[data-quantity-selector], [data-quantity-value], [data-selling-toggle], [data-selling-select]').forEach(el => {
+	        el.disabled = disabled;
         if (disabled) {
           el.classList.add('t4s-pe-none', 't4s-op-50');
         } else {
-          el.classList.remove('t4s-pe-none', 't4s-op-50');
-        }
-      });
-    };
+	          el.classList.remove('t4s-pe-none', 't4s-op-50');
+	        }
+	      });
+	      syncViewCartState();
+	    };
 
     const moneyFormat = {{ shop.money_format | json }};
     const formatMoney = (cents) => {
@@ -741,6 +778,20 @@
         minusBtn.innerHTML = qty > 1 ? svgMinus : svgTrash;
       });
     };
+
+	    const syncPlanControls = (itemEl, sellingPlanId) => {
+	      const toggle = itemEl.querySelector('[data-selling-toggle]');
+	      const select = itemEl.querySelector('[data-selling-select]');
+	      const wrap = itemEl.querySelector('[data-selling-select-wrap]');
+	      const hasPlan = sellingPlanId && sellingPlanId !== '';
+	      const isPending = itemEl.dataset.pendingSellingPlan === '1';
+	      if (toggle) toggle.checked = hasPlan || isPending;
+	      if (select) select.value = hasPlan ? String(sellingPlanId) : '';
+	      if (wrap) {
+	        if (hasPlan || (toggle && toggle.checked)) wrap.classList.remove('t4s-dn');
+	        else wrap.classList.add('t4s-dn');
+	      }
+	    };
 
     const updateCartCount = (cart) => {
       if (!cart || typeof cart.item_count === 'undefined') return;
@@ -773,6 +824,13 @@
       });
     };
 
+    const parsePriceValue = (text) => {
+      if (!text) return 0;
+      const cleaned = text.replace(/[^\d,.-]/g, '').replace(/\./g, '').replace(',', '.');
+      const value = parseFloat(cleaned);
+      return Number.isNaN(value) ? 0 : value;
+    };
+
     const triggerThemeCartRefresh = () => {
       try {
         if (window.T4SThemeSP && T4SThemeSP.Cart) {
@@ -791,6 +849,46 @@
         /* noop */
       }
     };
+    
+	    const syncLineDom = (itemEl, line) => {
+	      if (!itemEl || !line) return;
+	      const newKey = line.key;
+	      const newKeySlug = newKey.replace(/:/g, '-');
+      itemEl.dataset.key = newKey;
+      itemEl.dataset.pid = newKey;
+      itemEl.dataset.sellingPlan = line.selling_plan_allocation ? line.selling_plan_allocation.selling_plan.id : '';
+      const currentPlan = itemEl.dataset.sellingPlan;
+      // update helper class
+      itemEl.classList.forEach(c => {
+        if (c.startsWith('cart_item_key_')) itemEl.classList.remove(c);
+      });
+      itemEl.classList.add('cart_item_key_' + newKeySlug);
+
+      const qtyInput = itemEl.querySelector('[data-quantity-value]');
+      if (qtyInput) {
+        qtyInput.value = line.quantity;
+        qtyInput.dataset.id = newKey;
+        qtyInput.id = 'miniupdates_' + newKey;
+      }
+
+      const priceEl = itemEl.querySelector('[data-line-price]');
+      if (priceEl) {
+        priceEl.dataset.lineKey = newKey;
+        priceEl.textContent = formatMoney(line.final_line_price);
+      }
+
+      const removeLink = itemEl.querySelector('[data-cart-remove]');
+	      if (removeLink) {
+	        removeLink.dataset.id = newKey;
+	        if (removeLink.href) {
+	          removeLink.href = removeLink.href.replace(/id=[^&]+/, 'id=' + encodeURIComponent(newKey));
+	        }
+	      }
+
+	      delete itemEl.dataset.pendingSellingPlan;
+	      syncPlanControls(itemEl, currentPlan);
+	      syncViewCartState();
+	    };
 
     miniCart.addEventListener('click', function (event) {
       const btn = event.target.closest('[data-quantity-selector]');
@@ -841,6 +939,23 @@
         .then(res => res.json())
         .then(cart => {
           if (next === 0 && itemEl.parentNode) {
+            const title = itemEl.querySelector('.t4s-mini_cart__title')?.textContent?.trim();
+            const priceText =
+              itemEl.querySelector('[data-line-price]')?.textContent ||
+              itemEl.querySelector('.t4s-cart_price-total .t4s-cart_price')?.textContent ||
+              '';
+            const price = parsePriceValue(priceText);
+            const removalId = itemEl.dataset.key || key;
+            const vendor = itemEl.dataset.productVendor;
+            const category = itemEl.dataset.productCollections || itemEl.dataset.productType;
+            window.pushRemoveFromCartAnalytics?.({
+              id: removalId,
+              name: title,
+              brand: vendor,
+              category,
+              price,
+              quantity: current,
+            });
             itemEl.parentNode.removeChild(itemEl);
           }
           updateCartCount(cart);
@@ -855,13 +970,142 @@
         });
     });
 
-    // Sincroniza iconos al iniciar y en cambios manuales
-    syncMinusIcons();
-    miniCart.addEventListener('input', function(event) {
-      if (event.target && event.target.matches('[data-quantity-value]')) {
-        syncMinusIcons();
-      }
-    });
+	    // Toggle suscripción / compra única
+	    miniCart.addEventListener('change', function(event) {
+	      const toggle = event.target.closest('[data-selling-toggle]');
+	      const select = event.target.closest('[data-selling-select]');
+	      if (!toggle && !select) return;
+
+      const itemEl = (toggle || select).closest('[data-cart-item]');
+      if (!itemEl) return;
+	      if (isUpdating) {
+	        event.preventDefault();
+	        if (toggle) toggle.checked = !toggle.checked;
+	        if (select) select.value = itemEl.dataset.sellingPlan || '';
+	        return;
+	      }
+
+	      const key = itemEl.dataset.key;
+	      const variantId = itemEl.dataset.variantId;
+	      const qtyInput = itemEl.querySelector('[data-quantity-value]');
+	      const qty = parseInt(qtyInput?.value || '1', 10);
+	      const currentPlan = itemEl.dataset.sellingPlan || '';
+	      const wrap = itemEl.querySelector('[data-selling-select-wrap]');
+	      const selectEl = itemEl.querySelector('[data-selling-select]');
+
+	      // 1) Checkbox: si marca, solo muestra el select (sin seleccionar nada) y bloquea "Ver la cesta"
+	      if (toggle) {
+	        if (toggle.checked) {
+	          itemEl.dataset.pendingSellingPlan = '1';
+	          if (wrap) wrap.classList.remove('t4s-dn');
+	          if (selectEl) selectEl.value = '';
+	          syncViewCartState();
+	          return;
+	        }
+
+	        // Si desmarca: ocultamos el select y, si era suscripción real, la convertimos a compra única
+	        delete itemEl.dataset.pendingSellingPlan;
+	        if (wrap) wrap.classList.add('t4s-dn');
+	        if (selectEl) selectEl.value = '';
+	        syncViewCartState();
+
+	        if (!currentPlan) return; // ya era compra única, no hacemos nada en backend
+	        // Si tenía selling plan, pasar a compra única (remove + add sin plan)
+	        setQuantityDisabled(true);
+	        fetch('/cart/change.js', {
+	          method: 'POST',
+	          headers: { 'Content-Type': 'application/json' },
+	          body: JSON.stringify({ id: key, quantity: 0 })
+	        })
+	          .then(() => fetch('/cart/add.js', {
+	            method: 'POST',
+	            headers: { 'Content-Type': 'application/json' },
+	            body: JSON.stringify({ items: [{ id: variantId, quantity: qty }] })
+	          }))
+	          .then(() => fetch('/cart.js'))
+	          .then(res => res.json())
+	          .then(cart => {
+	            const match = cart.items.find((line) => {
+	              const linePlan = line.selling_plan_allocation ? String(line.selling_plan_allocation.selling_plan.id) : '';
+	              return Number(line.variant_id) === Number(variantId) && linePlan === '';
+	            });
+	            if (match) syncLineDom(itemEl, match);
+	            updateCartCount(cart);
+	            updateCartPrices(cart);
+	            updateLinePrices(cart);
+	            triggerThemeCartRefresh();
+	            syncMinusIcons();
+	            setQuantityDisabled(false);
+	          })
+	          .catch(() => {
+	            setQuantityDisabled(false);
+	            syncPlanControls(itemEl, itemEl.dataset.sellingPlan || '');
+	          });
+	        return;
+	      }
+
+	      // 2) Select: si elige una frecuencia, aplicamos el selling plan (remove + add con plan)
+	      if (!select) return;
+	      const sellingPlanId = select.value;
+	      if (!sellingPlanId) {
+	        syncViewCartState();
+	        return;
+	      }
+
+	      // Marcamos el toggle como suscripción y limpiamos estado pendiente
+	      const toggleEl = itemEl.querySelector('[data-selling-toggle]');
+	      if (toggleEl) toggleEl.checked = true;
+	      delete itemEl.dataset.pendingSellingPlan;
+	      if (wrap) wrap.classList.remove('t4s-dn');
+
+	      if (String(currentPlan) === String(sellingPlanId)) {
+	        syncViewCartState();
+	        return;
+	      }
+
+	      setQuantityDisabled(true);
+
+	      fetch('/cart/change.js', {
+	        method: 'POST',
+	        headers: { 'Content-Type': 'application/json' },
+	        body: JSON.stringify({ id: key, quantity: 0 })
+	      })
+	        .then(() => fetch('/cart/add.js', {
+	          method: 'POST',
+	          headers: { 'Content-Type': 'application/json' },
+	          body: JSON.stringify({ items: [{ id: variantId, quantity: qty, selling_plan: sellingPlanId }] })
+	        }))
+	        .then(() => fetch('/cart.js'))
+	        .then(res => res.json())
+	        .then(cart => {
+	          const match = cart.items.find((line) => {
+	            const linePlan = line.selling_plan_allocation ? String(line.selling_plan_allocation.selling_plan.id) : '';
+	            return Number(line.variant_id) === Number(variantId) && linePlan === String(sellingPlanId);
+	          });
+	          if (match) {
+	            syncLineDom(itemEl, match);
+	          }
+	          updateCartCount(cart);
+	          updateCartPrices(cart);
+	          updateLinePrices(cart);
+	          triggerThemeCartRefresh();
+	          syncMinusIcons();
+	          setQuantityDisabled(false);
+	        })
+	        .catch(() => {
+	          setQuantityDisabled(false);
+	          syncPlanControls(itemEl, itemEl.dataset.sellingPlan || '');
+	        });
+	    });
+
+	    // Sincroniza iconos al iniciar y en cambios manuales
+	    syncMinusIcons();
+	    syncViewCartState();
+	    miniCart.addEventListener('input', function(event) {
+	      if (event.target && event.target.matches('[data-quantity-value]')) {
+	        syncMinusIcons();
+	      }
+	    });
   })();
 </script>
 

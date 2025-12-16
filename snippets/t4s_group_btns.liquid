@@ -9,13 +9,18 @@
       margin-left: 6px;
       margin-right: 4px;
     }
-    .t4s-site-nav__icon.t4s-site-nav__search {
+    .t4s-site-nav__icon.t4s-site-nav__account {
       width: auto !important;
       min-width: 0;
       flex: 0 0 auto !important;
       padding-left: 0 !important;
       padding-right: 0 !important;
     }
+  }
+  @media (max-width: 1024px) {
+    .t4s-site-nav__icon.t4s-site-nav__account { order: 10; }
+    .t4s-site-nav__icon.t4s-site-nav__search { order: 20; }
+    .t4s-site-nav__icon.t4s-site-nav__cart { order: 30; }
   }
   @media (min-width: 1025px) {
     .cta-menu-mobile {
@@ -41,9 +46,9 @@
 
 <a
   href="/pages/crea-su-menu"
-  class=" h-9 flex items-center justify-center gap-2.5 bg-[#ffcd00] rounded-[50px] hover:bg-[#ffcd00]/90 py-10 px-14 [@media(max-width:1024px)]:!hidden"
+  class=" h-9 flex items-center justify-center gap-2.5  bg-[#6ac989] rounded-[50px] hover: bg-[#6ac989]/90 py-10 px-14 [@media(max-width:1024px)]:!hidden"
 >
-  <span class="font-[600] text-[#004623] tracking-[0] leading-[26px] text-[14px] text-nowrap">Crea su menú</span>
+  <span class="font-[600] text-white tracking-[0] leading-[26px] text-[14px] text-nowrap">Crea su menú</span>
 </a>
 {%- case se_stts.h_icon -%}
   {%- when 'pe' -%}
@@ -204,7 +209,16 @@
   {%- if shop.customer_accounts_enabled and se_stts.account_des == '2' -%}
     <div class="t4s-site-nav__icon t4s-site-nav__account t4s-pr t4s-d-md-inline-block">
       <a
-        class="t4s-pr t4s-acc-txt"
+        class="cta-menu-mobile t4s-pr t4s-d-lg-none inline-flex shrink-0 items-center gap-1.5 rounded-full bg-[#6ac989] px-3.5 py-1.5 text-[13px] font-semibold text-white shadow-sm whitespace-nowrap"
+        href="/pages/crea-su-menu"
+      >
+        <span class="leading-none">Crea su menú</span>
+        <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="presentation">
+          <path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a
+        class="t4s-pr t4s-acc-txt t4s-d-none t4s-d-lg-inline-block"
         href="{{ routes.account_url }}"
         {% unless customer or settings.login_side == false or request.page_type contains 'customers' %}
           data-drawer-delay- data-drawer-options='{ "id": "#t4s-login-sidebar" }'
@@ -526,38 +540,18 @@
           </div>
         </div>
         <a
-          class="cta-menu-mobile t4s-pr t4s-d-lg-none inline-flex shrink-0 items-center gap-1.5 rounded-full bg-[#6ac989] px-3.5 py-1.5 text-[13px] font-semibold text-white shadow-sm whitespace-nowrap"
-          href="/pages/crea-su-menu"
+          class="t4s-pr t4s-d-lg-none"
+          href="{{ routes.search_url }}"
+          data-drawer-delay-
+          data-drawer-options='{ "id": "#t4s-search-hidden" }'
         >
-          <span class="leading-none">Crea su menú</span>
-          <svg
-            class="h-3.5 w-3.5"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            focusable="false"
-            role="presentation"
-          >
-            <path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg class="t4s-icon t4s-icon--search" aria-hidden="true" focusable="false" role="presentation">
+            <use href="#icon-h-search"></use>
           </svg>
         </a>
       {%- else -%}
         <a
-          class="cta-menu-mobile t4s-pr t4s-d-lg-none inline-flex shrink-0 items-center gap-1.5 rounded-full bg-[#6ac989] px-3.5 py-1.5 text-[13px] font-semibold text-white shadow-sm whitespace-nowrap"
-          href="/pages/crea-su-menu"
-        >
-          <span class="leading-none">Crea su menú</span>
-          <svg
-            class="h-3.5 w-3.5"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            focusable="false"
-            role="presentation"
-          >
-            <path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-        <a
-          class="t4s-pr t4s-d-none t4s-d-lg-inline-block"
+          class="t4s-pr"
           href="{{ routes.search_url }}"
           data-drawer-delay-
           data-drawer-options='{ "id": "#t4s-search-hidden" }'
@@ -573,7 +567,16 @@
   {%- if shop.customer_accounts_enabled and se_stts.account_des == '1' -%}
     <div class="t4s-site-nav__icon t4s-site-nav__account t4s-pr t4s-d-md-inline-block">
       <a
-        class="t4s-pr"
+        class="cta-menu-mobile t4s-pr t4s-d-lg-none inline-flex shrink-0 items-center gap-1.5 rounded-full bg-[#6ac989] px-3.5 py-1.5 text-[13px] font-semibold text-white shadow-sm whitespace-nowrap"
+        href="/pages/crea-su-menu"
+      >
+        <span class="leading-none">Crea su menú</span>
+        <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="presentation">
+          <path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a
+        class="t4s-pr t4s-d-none t4s-d-lg-inline-block"
         href="{{ routes.account_url }}"
         {% unless customer or settings.login_side == false or request.page_type contains 'customers' %}
           data-drawer-delay- data-drawer-options='{ "id": "#t4s-login-sidebar" }'

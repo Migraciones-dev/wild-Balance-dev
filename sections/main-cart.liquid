@@ -744,10 +744,28 @@ max-sm:w-full md:w-auto text-[18px] font-bold hover:text-[#004623]">
   let checkoutHTML = '';
 
   async function updateSubscriptionCheckout() {
-    const resp = await fetch('/cart.js');
-    const { items } = await resp.json();
     const btn = document.querySelector('button[name="checkout"]');
     if (!btn) return;
+
+    const hasPendingSellingPlan = () => {
+      const cartItems = document.querySelectorAll('[data-cart-items] [data-cart-item]');
+      return Array.from(cartItems).some((itemEl) => {
+        const toggle = itemEl.querySelector('[data-selling-toggle]');
+        if (!toggle || !toggle.checked) return false;
+        const select = itemEl.querySelector('[data-selling-select]');
+        if (!select) return false;
+        return !select.value;
+      });
+    };
+
+    if (hasPendingSellingPlan()) {
+      btn.setAttribute('disabled', 'disabled');
+      btn.textContent = 'Elige la frecuencia de suscripción para continuar';
+      return;
+    }
+
+    const resp = await fetch('/cart.js');
+    const { items } = await resp.json();
 
     const subs = items.filter((i) => i.selling_plan_allocation);
     if (subs.length === 0) {
@@ -800,7 +818,169 @@ max-sm:w-full md:w-auto text-[18px] font-bold hover:text-[#004623]">
 </script>
 
 <script>
+  // Toggle compra única / suscripción en carrito principal
+	  (function() {
+	    const cartContainer = document.querySelector('[data-cart-items]');
+	    if (!cartContainer) return;
+
+	    const setDisabled = (disabled) => {
+	      cartContainer.querySelectorAll('[data-selling-toggle], [data-selling-select], [data-quantity-value], [data-quantity-selector]').forEach(el => {
+        el.disabled = disabled;
+        if (disabled) {
+          el.classList.add('t4s-pe-none', 't4s-op-50');
+        } else {
+          el.classList.remove('t4s-pe-none', 't4s-op-50');
+	        }
+	      });
+	    };
+
+	    const handleChange = (target) => {
+	      const toggle = target.closest('[data-selling-toggle]');
+	      const select = target.closest('[data-selling-select]');
+	      const itemEl = (toggle || select)?.closest('[data-cart-item]');
+	      if (!itemEl) return;
+
+	      const key = itemEl.dataset.key;
+	      const variantId = itemEl.dataset.variantId;
+	      const qtyInput = itemEl.querySelector('[data-quantity-value]');
+	      const qty = parseInt(qtyInput?.value || '1', 10);
+	      const currentPlan = itemEl.dataset.sellingPlan || '';
+	      const wrap = itemEl.querySelector('[data-selling-select-wrap]');
+	      const selectEl = itemEl.querySelector('[data-selling-select]');
+
+	      // 1) Checkbox: si marca, solo muestra el select (sin seleccionar nada) y bloquea checkout
+	      if (toggle) {
+	        if (toggle.checked) {
+	          itemEl.dataset.pendingSellingPlan = '1';
+	          if (wrap) wrap.classList.remove('t4s-dn');
+	          if (selectEl) selectEl.value = '';
+	          if (typeof updateSubscriptionCheckout === 'function') updateSubscriptionCheckout();
+	          return;
+	        }
+
+	        // Desmarcar: ocultar select y si era suscripción real, convertir a compra única
+	        delete itemEl.dataset.pendingSellingPlan;
+	        if (wrap) wrap.classList.add('t4s-dn');
+	        if (selectEl) selectEl.value = '';
+	        if (typeof updateSubscriptionCheckout === 'function') updateSubscriptionCheckout();
+
+	        if (!currentPlan) return;
+
+	        setDisabled(true);
+	        fetch('/cart/change.js', {
+	          method: 'POST',
+	          headers: { 'Content-Type': 'application/json' },
+	          body: JSON.stringify({ id: key, quantity: 0 })
+	        })
+	          .then(() => fetch('/cart/add.js', {
+	            method: 'POST',
+	            headers: { 'Content-Type': 'application/json' },
+	            body: JSON.stringify({ items: [{ id: variantId, quantity: qty }] })
+	          }))
+	          .then(() => window.location.reload())
+	          .catch(() => {
+	            setDisabled(false);
+	            toggle.checked = true;
+	            if (wrap) wrap.classList.remove('t4s-dn');
+	            if (selectEl) selectEl.value = currentPlan;
+	            if (typeof updateSubscriptionCheckout === 'function') updateSubscriptionCheckout();
+	          });
+	        return;
+	      }
+
+	      // 2) Select: aplicar selling plan seleccionado
+	      if (!select) return;
+	      const sellingPlanId = select.value;
+	      if (!sellingPlanId) {
+	        if (typeof updateSubscriptionCheckout === 'function') updateSubscriptionCheckout();
+	        return;
+	      }
+
+	      const toggleEl = itemEl.querySelector('[data-selling-toggle]');
+	      if (toggleEl) toggleEl.checked = true;
+	      delete itemEl.dataset.pendingSellingPlan;
+	      if (wrap) wrap.classList.remove('t4s-dn');
+
+	      if (String(currentPlan) === String(sellingPlanId)) {
+	        if (typeof updateSubscriptionCheckout === 'function') updateSubscriptionCheckout();
+	        return;
+	      }
+
+	      setDisabled(true);
+
+	      fetch('/cart/change.js', {
+	        method: 'POST',
+	        headers: { 'Content-Type': 'application/json' },
+	        body: JSON.stringify({ id: key, quantity: 0 })
+	      })
+	        .then(() => fetch('/cart/add.js', {
+	          method: 'POST',
+	          headers: { 'Content-Type': 'application/json' },
+	          body: JSON.stringify({ items: [{ id: variantId, quantity: qty, selling_plan: sellingPlanId }] })
+	        }))
+	        .then(() => window.location.reload())
+	        .catch(() => {
+	          setDisabled(false);
+	          if (toggleEl) toggleEl.checked = !!currentPlan;
+	          if (wrap) {
+	            if (currentPlan) wrap.classList.remove('t4s-dn');
+	            else wrap.classList.add('t4s-dn');
+	          }
+	          if (selectEl) selectEl.value = currentPlan || '';
+	          if (typeof updateSubscriptionCheckout === 'function') updateSubscriptionCheckout();
+	        });
+	    };
+
+	    cartContainer.addEventListener('change', (event) => {
+	      if (event.target.closest('[data-selling-toggle]') || event.target.closest('[data-selling-select]')) {
+        event.preventDefault();
+        handleChange(event.target);
+      }
+    });
+  })();
+</script>
+
+<script>
   window.cartT4SectionID = {{ section.id | json }};
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const table = document.querySelector('[data-cart-items]');
+    if (!table || !window.pushRemoveFromCartAnalytics) return;
+
+    const parsePrice = (text) => {
+      if (!text) return 0;
+      const cleaned = text.replace(/[^\d,.-]/g, '').replace(/\./g, '').replace(',', '.');
+      const value = parseFloat(cleaned);
+      return Number.isNaN(value) ? 0 : value;
+    };
+
+    table.addEventListener('click', (event) => {
+      const btn = event.target.closest('[data-cart-remove]');
+      if (!btn) return;
+      const row = btn.closest('[data-cart-item]');
+      if (!row) return;
+      const title = row.querySelector('.t4s-page_cart__title')?.textContent?.trim();
+      const priceText =
+        row.querySelector('[data-line-price]')?.textContent ||
+        row.querySelector('.t4s-page_cart__total_price')?.textContent ||
+        '';
+      const price = parsePrice(priceText);
+      const quantity = parseInt(row.querySelector('[data-quantity-value]')?.value || '1', 10);
+      const id = row.dataset.key || row.dataset.productId || '';
+      const vendor = row.dataset.productVendor || 'Wild Balance';
+      const category = row.dataset.productCollections || row.dataset.productType || '';
+
+      window.pushRemoveFromCartAnalytics({
+        id,
+        name: title,
+        brand: vendor,
+        category,
+        price,
+        quantity,
+      });
+    });
+  });
 </script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {

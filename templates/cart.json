@@ -93,9 +93,10 @@
       "blocks": {
         "1_eeeKQd": {
           "type": "1",
+          "disabled": true,
           "settings": {
-            "content": "<h6>🎁Hoy tu compra de +69€ incluye <strong>REGALO</strong>: Sticks, Premios, Yaky o Boquerones</h6>",
-            "countdown": "2025/12/17",
+            "content": "<h4><a href=\"https://wildbalance.es/collections/premios-naturales-wild-snacks\" title=\"https://wildbalance.es/collections/premios-naturales-wild-snacks\">Haz feliz a tu peludo ¡2x1 en premios Wild Snacks!</a></h4>",
+            "countdown": "2025/07/03",
             "cus_cd": "%-D day%!D %H:%M:%S",
             "dayx": 0,
             "cl_text": "#ffffff",
@@ -116,6 +117,7 @@
       "block_order": [
         "1_eeeKQd"
       ],
+      "disabled": true,
       "name": "Promo text",
       "settings": {
         "effect": "slider",
