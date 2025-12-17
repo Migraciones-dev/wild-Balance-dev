@@ -7,7 +7,7 @@
 
 {%- liquid
   assign sid = section.id
-  assign cols_mb = section.settings.cols_mobile | default: 1
+  assign cols_mb = section.settings.cols_mobile | default: '1' | plus: 0
   assign cols_md = section.settings.cols_tablet | default: 2
   assign cols_lg = section.settings.cols_desktop | default: 2
 -%}
@@ -26,6 +26,12 @@
       #mig-prod-dest-{{ sid }} {
         padding-top: {{ section.settings.pt_desktop }}px !important;
         padding-bottom: {{ section.settings.pb_desktop }}px !important;
+      }
+    }
+    @media (min-width: 1000px) {
+      #mig-prod-dest-{{ sid }} .mig-container {
+        width: 80%;
+        max-width: 1400px;
       }
     }
 
@@ -47,7 +53,7 @@
     }
   </style>
 
-  <div class="max-w-[1600px] mx-auto px-6 lg:px-10">
+  <div class="mig-container w-full max-w-[1400px] mx-auto px-6 lg:px-10">
     {%- if section.settings.title != blank -%}
       <div class="flex flex-col items-center gap-4 text-center">
         <h2 class="[font-family:'Barlow',Helvetica] font-extrabold text-[#004623] text-[30px] lg:text-[64px] leading-[1]">
@@ -76,7 +82,7 @@
           endif
         -%}
 
-        <div class="w-full" {{ block.shopify_attributes }}>
+        <div class="w-full pb-10" {{ block.shopify_attributes }}>
           <div class="relative">
             {%- if image != blank -%}
               {%- if b.link_image_to_product and product != blank -%}
@@ -99,29 +105,29 @@
 
             {%- assign btn_label = b.button_label | default: section.settings.button_label -%}
             {%- if btn_label != blank and product != blank and variant != blank -%}
-              <div class="absolute left-1/2 -translate-x-1/2 -bottom-6">
-                <a
-                  href="{{ product.url }}"
-                  rel="nofollow"
-                  data-action-atc
-                  data-variant-id="{{ variant.id }}"
-                  class="shadow h-9 inline-flex items-center justify-center gap-2.5 px-10 py-8 bg-[#ffcd00] rounded-[50px] text-[#004623] hover:no-underline hover:bg-[#ffcd00]/90"
-                  {% unless variant.available %}aria-disabled="true"{% endunless %}
-                >
-                  <span class="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[16px] lg:text-[18px]">
-                    {%- if variant.available -%}
-                      {{ btn_label }}
-                    {%- else -%}
-                      {{ 'products.product.sold_out' | t }}
-                    {%- endif -%}
-                  </span>
-                </a>
-              </div>
+	              <div class="absolute left-1/2 -translate-x-1/2 -bottom-5">
+	                <a
+	                  href="{{ product.url }}"
+	                  rel="nofollow"
+	                  data-action-atc
+	                  data-variant-id="{{ variant.id }}"
+	                  class="shadow inline-flex items-center justify-center gap-2.5 rounded-[50px] bg-[#ffcd00] text-[#004623] hover:no-underline hover:bg-[#ffcd00]/90 whitespace-nowrap px-5 py-3 text-[12px] lg:h-9 lg:px-12 lg:py-8 lg:text-[18px]"
+	                  {% unless variant.available %}aria-disabled="true"{% endunless %}
+	                >
+	                  <span class="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold leading-none whitespace-nowrap">
+	                    {%- if variant.available -%}
+	                      {{ btn_label }}
+	                    {%- else -%}
+	                      {{ 'products.product.sold_out' | t }}
+	                    {%- endif -%}
+	                  </span>
+	                </a>
+	              </div>
             {%- endif -%}
           </div>
 
           {%- if b.show_product_title and product != blank -%}
-            <div class="mt-10 text-center">
+            <div class="mt-2 text-center">
               <p class="[font-family:'Barlow',Helvetica] font-bold text-[#004623] text-[16px] lg:text-[20px] leading-[1.2]">
                 {{ product.title }}
               </p>
@@ -135,7 +141,7 @@
 
 {% schema %}
 {
-  "name": "Migraciones prod banners",
+  "name": "Migraciones destacados",
   "tag": "section",
   "class": "t4s-section t4s-section-all t4s-custom-liquid",
   "settings": [
@@ -147,7 +153,16 @@
     { "type": "header", "content": "Layout" },
     { "type": "range", "id": "cols_desktop", "label": "Columnas desktop (≥1024px)", "min": 1, "max": 4, "step": 1, "default": 2 },
     { "type": "range", "id": "cols_tablet", "label": "Columnas tablet (≥768px)", "min": 1, "max": 3, "step": 1, "default": 2 },
-    { "type": "range", "id": "cols_mobile", "label": "Columnas móvil (<768px)", "min": 1, "max": 3, "step": 1, "default": 1 },
+    {
+      "type": "select",
+      "id": "cols_mobile",
+      "label": "Columnas móvil (<768px)",
+      "default": "1",
+      "options": [
+        { "value": "1", "label": "1 columna" },
+        { "value": "2", "label": "2 columnas" }
+      ]
+    },
     { "type": "range", "id": "gap_desktop", "label": "Separación (tablet/desktop)", "min": 8, "max": 64, "step": 2, "unit": "px", "default": 24 },
     { "type": "range", "id": "gap_mobile", "label": "Separación (móvil)", "min": 8, "max": 48, "step": 2, "unit": "px", "default": 16 },
 
@@ -176,7 +191,7 @@
   ],
   "presets": [
     {
-      "name": "Migraciones prod destacados",
+      "name": "Migraciones destacados",
       "blocks": [
         { "type": "banner" },
         { "type": "banner" }
@@ -185,4 +200,3 @@
   ]
 }
 {% endschema %}
-
