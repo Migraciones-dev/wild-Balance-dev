@@ -1,54 +1,8 @@
 <script>
   (function () {
-	    const dataLayer = (window.dataLayer = window.dataLayer || []);
-	    const contentGroup = {{ request.page_type | default: template.name | json }};
-	    const normalizeText = (s) =>
-	      String(s || '')
-	        // Remove zero-width chars that can create "huge spaces" in GTM preview
-	        .replace(/[\u200B-\u200D\uFEFF]/g, '')
-	        .replace(/\s+/g, ' ')
-	        .trim();
-	    const getText = (el) => normalizeText(el && el.textContent ? el.textContent : '');
-	    const getFirstLineText = (el) => {
-	      const txt = el && el.textContent ? String(el.textContent) : '';
-	      // Si hay saltos de línea, nos quedamos con la primera "línea" con contenido.
-	      const parts = txt
-	        .split(/\r?\n+/)
-	        .map((p) => normalizeText(p))
-	        .filter(Boolean);
-	      return parts[0] || normalizeText(txt);
-	    };
-	    const getMenuLabel = (linkEl) => {
-	      if (!linkEl) return '';
-	      // Prefer explicit label if present
-	      const attr =
-	        (linkEl.getAttribute && (linkEl.getAttribute('data-menu-label') || linkEl.getAttribute('aria-label'))) ||
-	        '';
-	      if (attr) return getFirstLineText({ textContent: attr });
-
-	      // Para cards del mega menú: buscamos primero un <p> "bold" (título) para evitar coger el subtítulo.
-	      const titleP =
-	        (linkEl.querySelector &&
-	          (linkEl.querySelector('p.font-bold, p.font-semibold, p[class*="font-bold"], p[class*="font-semibold"]') ||
-	            linkEl.querySelector('p'))) ||
-	        null;
-	      if (titleP) return getFirstLineText(titleP);
-
-	      return getFirstLineText(linkEl);
-	    };
-	    const getSectionContext = (el) => {
-	      if (!el) return '';
-	      const section =
-	        el.closest('[id^="shopify-section-"]') ||
-	        el.closest('[data-section-id]') ||
-	        null;
-	      if (!section) return '';
-	      const sid =
-	        section.getAttribute('data-section-id') ||
-	        section.id ||
-	        '';
-	      return normalizeText(sid);
-	    };
+    const dataLayer = (window.dataLayer = window.dataLayer || []);
+    const contentGroup = {{ request.page_type | default: template.name | json }};
+    const getText = (el) => (el && el.textContent ? el.textContent.trim() : '');
     const analyticsCustomer = {{ customer | default: null | json }};
     window.pushRemoveFromCartAnalytics = function (opts = {}) {
       const {
@@ -124,9 +78,9 @@
 
     // MENU (click + hover)
     let lastMenu = { key: '', t: 0 };
-	    const menuHandler = (event, type) => {
-	      const link = event.target.closest('.t4s-site-nav__link, [data-nav-link], nav a');
-	      if (!link) return;
+    const menuHandler = (event, type) => {
+      const link = event.target.closest('.t4s-site-nav__link, [data-nav-link], nav a');
+      if (!link) return;
       const now = Date.now();
       const key = link.href + type;
       if (lastMenu.key === key && now - lastMenu.t < 500) return;
@@ -134,12 +88,12 @@
 
       const menuLi = link.closest('li.t4s-menu-item');
       const parentLink = menuLi?.querySelector(':scope > a') || link;
-	      const parameter1 = getMenuLabel(parentLink) || getMenuLabel(link) || 'unknown';
-	      // Si no es subcategoría, parameter2 vacío
-	      const parameter2 = link === parentLink ? '' : getMenuLabel(link) || '';
+      const parameter1 = getText(parentLink) || getText(link) || 'unknown';
+      const parameter2 =
+        link === parentLink ? '' : getText(link) || 'unknown';
 
-	      pushEvt('menu', { parameter1, parameter2 });
-	    };
+      pushEvt('menu', { parameter1, parameter2 });
+    };
     document.addEventListener(
       'mouseover',
       (e) => {
@@ -187,33 +141,15 @@
       setTimeout(detectBurgerState, 50);
     });
 
-	    // CTA TO QUIZ (crea-su-menu)
-	    document.addEventListener('click', (e) => {
-	      const link = e.target.closest('a[href*="/pages/crea-su-menu"], a[href*="crea-su-menu"]');
-	      if (!link) return;
-	      let parameter1 =
-	        getText(link) ||
-	        link.getAttribute('data-cta-label') ||
-	        link.getAttribute('aria-label') ||
-	        link.getAttribute('title') ||
-	        '';
-	      if (!parameter1) {
-	        // Fallback seguro: el CTA a esta URL siempre es el mismo, aunque sea un icono sin texto
-	        parameter1 = 'Crea su menú';
-	      }
-
-	      const inMobileMenu = !!link.closest('#mig-menu');
-	      const inHeader = !!link.closest('header, .t4s-header, .t4s-site-nav, .t4s-navigation, [data-header-height]');
-	      const parameter2 = inHeader ? 'header' : 'section';
-	      // Nuevo (no rompe GTM actual): diferencia origen dentro de header / sección
-	      const parameter3 = inHeader
-	        ? inMobileMenu
-	          ? 'mobile_menu'
-	          : 'mega_menu'
-	        : getSectionContext(link) || 'section';
-
-	      pushEvt('cta_to_quiz', { parameter1, parameter2, parameter3 });
-	    });
+    // CTA TO QUIZ (crea-su-menu)
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[href*="/pages/crea-su-menu"], a[href*="crea-su-menu"]');
+      if (!link) return;
+      const parameter1 = getText(link) || link.getAttribute('aria-label') || link.getAttribute('title') || 'cta';
+      const isHeader = !!link.closest('header, .t4s-header, .t4s-site-nav, .t4s-navigation, #mig-menu, [data-header-height]');
+      const parameter2 = isHeader ? 'header' : 'section';
+      pushEvt('cta_to_quiz', { parameter1, parameter2 });
+    });
 
     // SECONDARY CTA (perros/gatos / escribenos / prueba Wild Balance)
     const secondaryCtas = [
@@ -236,21 +172,14 @@
       },
     ];
 
-	    document.addEventListener('click', (e) => {
-	      const match =
-	        secondaryCtas.find((item) => e.target.closest(item.selector)) || null;
-	      if (!match) return;
-	      const el = e.target.closest(match.selector);
-	      const parameter1 = getText(el) || el.getAttribute('aria-label') || 'cta';
-	      const parameter2 = match.parameter2;
-	      // Nuevo: sección/origen del click (no rompe GTM actual)
-	      const parameter3 =
-	        (el && el.closest && el.closest('header, .t4s-header, .t4s-site-nav, .t4s-navigation, #mig-menu, [data-header-height]'))
-	          ? 'header'
-	          : getSectionContext(el) || 'section';
-
-	      pushEvt('secondary_cta', { parameter1, parameter2, parameter3 });
-	    });
+    document.addEventListener('click', (e) => {
+      const match =
+        secondaryCtas.find((item) => e.target.closest(item.selector)) || null;
+      if (!match) return;
+      const el = e.target.closest(match.selector);
+      const parameter1 = getText(el) || el.getAttribute('aria-label') || 'cta';
+      pushEvt('secondary_cta', { parameter1, parameter2: match.parameter2 });
+    });
 
     // LOGIN
     document.addEventListener('click', (e) => {
