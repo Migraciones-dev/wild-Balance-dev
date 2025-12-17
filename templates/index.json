@@ -282,6 +282,52 @@
         "boxed": false
       }
     },
+    "migraciones_productos_destacados_jePxVi": {
+      "type": "migraciones-productos-destacados",
+      "blocks": {
+        "banner_wYDriF": {
+          "type": "banner",
+          "settings": {
+            "product": "caja-regalo-navidad-para-perros",
+            "border_radius": 0,
+            "link_image_to_product": true,
+            "button_label": "",
+            "show_product_title": false
+          }
+        },
+        "banner_Yh9xf7": {
+          "type": "banner",
+          "settings": {
+            "product": "cesta-regalo-de-navidad-para-gatos-cesta-solidaria",
+            "border_radius": 0,
+            "link_image_to_product": true,
+            "button_label": "",
+            "show_product_title": false
+          }
+        }
+      },
+      "block_order": [
+        "banner_wYDriF",
+        "banner_Yh9xf7"
+      ],
+      "disabled": true,
+      "name": "Migraciones destacados",
+      "settings": {
+        "title": "Especial Navidad",
+        "subtitle": "",
+        "button_label": "Añadir al carrito",
+        "cols_desktop": 2,
+        "cols_tablet": 2,
+        "cols_mobile": "2",
+        "gap_desktop": 24,
+        "gap_mobile": 16,
+        "pt_desktop": 80,
+        "pb_desktop": 80,
+        "pt_mobile": 40,
+        "pb_mobile": 0,
+        "bg_color": "#ffffff"
+      }
+    },
     "banner_home_tHiHUK": {
       "type": "banner-home",
       "disabled": true,
@@ -892,6 +938,7 @@
   "order": [
     "slideshow3_ArqNAC",
     "migraciones_image_LxHCKY",
+    "migraciones_productos_destacados_jePxVi",
     "banner_home_tHiHUK",
     "migraciones_tabs_collections_BaRKMi",
     "migraciones_feafured_collection_eMTCmk",
