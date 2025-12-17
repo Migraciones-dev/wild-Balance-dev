@@ -251,12 +251,13 @@
 	      pushEvt('secondary_cta', { parameter1, parameter2, parameter3 });
 	    });
 
-    // LOGIN (solo icono de cuenta del header; evita "Mi cuenta" del menú móvil)
+    // LOGIN (icono de cuenta en header + enlace "Mi cuenta" en menú móvil)
     document.addEventListener('click', (e) => {
       const link = e.target.closest('a[href^="/account"]');
       if (!link) return;
       const inHeaderAccountIcon = !!link.closest('.t4s-site-nav__icon.t4s-site-nav__account');
-      if (!inHeaderAccountIcon) return;
+      const inMobileMenuAccount = !!link.closest('#mig-menu');
+      if (!inHeaderAccountIcon && !inMobileMenuAccount) return;
       pushEvt('login', {});
     });
 
