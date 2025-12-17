@@ -358,15 +358,14 @@
           "settings": {
             "day_number": "",
             "unlock_date": "2025-12-19 00:01",
-            "expire_date": "2025-12-20 00:01",
-            "cover_image": "shopify://shop_images/17.jpg",
+            "expire_date": "2025-12-24 00:01",
+            "cover_image": "shopify://shop_images/CALENDARIO_ADVIENTO_NAVIDAD_6_69c8c576-4d2b-4109-afe5-0b1e8f98fd72.png",
             "bg_color_block": "#faf5e7",
-            "downloadable_title": "Descarga tu regalo",
-            "downloadable_image": "shopify://shop_images/PORTADAS_BLOG_13.webp",
+            "downloadable_title": "🎄 ¡Ya está aquí la postal navideña más adorable!",
             "downloadable_image_width": 100,
-            "downloadable_text": "",
+            "downloadable_text": "<p>Elige la que más se parezca a tu peludo y podrás:</p><ul><li>Colgarla en el árbol 🎁<br/></li><li>Enviar una felicitación única a familiares y amigos 💌<br/></li><li>¡O presumir de tu peludo en todas partes estas fiestas! 😻<br/></li></ul><p>📥 <strong>Descarga tu postal y celebra unas fiestas muy peludas</strong></p>",
             "downloadable_cta_text": "Descargar ahora",
-            "downloadable_cta_link": "shopify://collections/best-sellers-comida-natural-gato"
+            "downloadable_cta_link": "https://cdn.shopify.com/s/files/1/0713/9898/1933/files/postal_navidena_descargable.pdf?v=1765978806"
           }
         },
         "recipe_xaxEhn": {
@@ -403,7 +402,7 @@
             "day_number": "",
             "unlock_date": "2025-12-22 00:01",
             "expire_date": "2025-12-23 00:01",
-            "cover_image": "shopify://shop_images/20.jpg",
+            "cover_image": "shopify://shop_images/CALENDARIO_ADVIENTO_NAVIDAD_1_ba396cda-5c79-45c9-b094-b013d0a7098a.jpg",
             "bg_color_block": "#faf5e7",
             "discount_title": "¡Oferta Flash! ⚡",
             "discount_text": "",
