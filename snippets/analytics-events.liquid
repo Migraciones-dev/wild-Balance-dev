@@ -1,8 +1,28 @@
 <script>
   (function () {
-    const dataLayer = (window.dataLayer = window.dataLayer || []);
-    const contentGroup = {{ request.page_type | default: template.name | json }};
-    const getText = (el) => (el && el.textContent ? el.textContent.trim() : '');
+	    const dataLayer = (window.dataLayer = window.dataLayer || []);
+	    const contentGroup = {{ request.page_type | default: template.name | json }};
+	    const normalizeText = (s) =>
+	      String(s || '')
+	        .replace(/\s+/g, ' ')
+	        .trim();
+	    const getText = (el) => normalizeText(el && el.textContent ? el.textContent : '');
+	    const getFirstLineText = (el) => {
+	      const txt = el && el.textContent ? String(el.textContent) : '';
+	      // Si hay saltos de línea, nos quedamos con la primera "línea" con contenido.
+	      const parts = txt
+	        .split(/\r?\n+/)
+	        .map((p) => normalizeText(p))
+	        .filter(Boolean);
+	      return parts[0] || normalizeText(txt);
+	    };
+	    const getMenuLabel = (linkEl) => {
+	      if (!linkEl) return '';
+	      // Para cards del mega menú: el primer <p> suele ser el título ("Dieta Barf") y el segundo el subtítulo ("Lo más natural")
+	      const firstP = linkEl.querySelector && linkEl.querySelector('p');
+	      if (firstP) return getFirstLineText(firstP);
+	      return getFirstLineText(linkEl);
+	    };
     const analyticsCustomer = {{ customer | default: null | json }};
     window.pushRemoveFromCartAnalytics = function (opts = {}) {
       const {
@@ -78,9 +98,9 @@
 
     // MENU (click + hover)
     let lastMenu = { key: '', t: 0 };
-    const menuHandler = (event, type) => {
-      const link = event.target.closest('.t4s-site-nav__link, [data-nav-link], nav a');
-      if (!link) return;
+	    const menuHandler = (event, type) => {
+	      const link = event.target.closest('.t4s-site-nav__link, [data-nav-link], nav a');
+	      if (!link) return;
       const now = Date.now();
       const key = link.href + type;
       if (lastMenu.key === key && now - lastMenu.t < 500) return;
@@ -88,12 +108,12 @@
 
       const menuLi = link.closest('li.t4s-menu-item');
       const parentLink = menuLi?.querySelector(':scope > a') || link;
-      const parameter1 = getText(parentLink) || getText(link) || 'unknown';
-      const parameter2 =
-        link === parentLink ? '' : getText(link) || 'unknown';
+	      const parameter1 = getMenuLabel(parentLink) || getMenuLabel(link) || 'unknown';
+	      // Si no es subcategoría, parameter2 vacío
+	      const parameter2 = link === parentLink ? '' : getMenuLabel(link) || '';
 
-      pushEvt('menu', { parameter1, parameter2 });
-    };
+	      pushEvt('menu', { parameter1, parameter2 });
+	    };
     document.addEventListener(
       'mouseover',
       (e) => {
