@@ -202,14 +202,13 @@
 	        parameter1 = 'Crea su menú';
 	      }
 
-	      const inMobileMenu = !!link.closest('#mig-menu');
 	      const inHeader = !!link.closest('header, .t4s-header, .t4s-site-nav, .t4s-navigation, [data-header-height]');
 	      const parameter2 = inHeader ? 'header' : 'section';
-	      // Nuevo (no rompe GTM actual): diferencia origen dentro de header / sección
+	      // Parameter3: device breakpoint requested (<1000 => mobile, >=1000 => desktop)
 	      const parameter3 = inHeader
-	        ? inMobileMenu
-	          ? 'mobile_menu'
-	          : 'mega_menu'
+	        ? window.innerWidth < 1000
+	          ? 'mobile'
+	          : 'desktop'
 	        : getSectionContext(link) || 'section';
 
 	      pushEvt('cta_to_quiz', { parameter1, parameter2, parameter3 });
@@ -252,10 +251,12 @@
 	      pushEvt('secondary_cta', { parameter1, parameter2, parameter3 });
 	    });
 
-    // LOGIN
+    // LOGIN (solo icono de cuenta del header; evita "Mi cuenta" del menú móvil)
     document.addEventListener('click', (e) => {
-      const el = e.target.closest('.t4s-site-nav__account, .t4s-header__account, [data-open-auth]');
-      if (!el) return;
+      const link = e.target.closest('a[href^="/account"]');
+      if (!link) return;
+      const inHeaderAccountIcon = !!link.closest('.t4s-site-nav__icon.t4s-site-nav__account');
+      if (!inHeaderAccountIcon) return;
       pushEvt('login', {});
     });
 
