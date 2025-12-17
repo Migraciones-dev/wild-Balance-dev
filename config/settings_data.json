@@ -214,7 +214,7 @@
           "html_VkEmKE": {
             "type": "html",
             "settings": {
-              "html": "",
+              "html": "<div class=\"aviso-navidad\">\n  <span>\n    FECHA LÍMITE PARA PEDIDOS DE NAVIDAD: 18 DE DICIEMBRE\n  </span>\n</div>\n\n<style>\n/* Estilos generales */\n.aviso-navidad {\n  padding: 10px 15px;\n  text-align: center;\n  width: 100%;\n  display: block;\n  /* Opcional: Color de fondo para destacar (ej: rojo suave) */\n  /* background-color: #f8d7da; */\n}\n\n.aviso-navidad span {\n  font-size: 14px;\n  font-weight: bold;\n  line-height: 1.4;\n  /* Opcional: Color del texto (ej: rojo oscuro) */\n  /* color: #721c24; */\n}\n\n/* Ajustes para Móvil */\n@media (max-width: 768px) {\n  .aviso-navidad span {\n    font-size: 12px; /* Un pelín más pequeño en móvil para que quepa en una línea si es posible */\n  }\n}\n</style>",
               "hide": false,
               "text_align": "center",
               "col": "12"
