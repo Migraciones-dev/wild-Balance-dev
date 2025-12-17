@@ -400,13 +400,13 @@
           "settings": {
             "day_number": "",
             "unlock_date": "2025-12-22 00:01",
-            "expire_date": "2025-12-23 00:01",
+            "expire_date": "2025-12-24 00:01",
             "cover_image": "shopify://shop_images/CALENDARIO_ADVIENTO_NAVIDAD_1_ba396cda-5c79-45c9-b094-b013d0a7098a.jpg",
             "bg_color_block": "#faf5e7",
-            "discount_title": "¡Oferta Flash! ⚡",
-            "discount_text": "",
+            "discount_title": "¡Oferta Flash Navideña! ⚡",
+            "discount_text": "<p>Estas fiestas también son momento de darles algo especial a nuestros peluditos 🐶🐱 pero de forma <strong>saludable y nutritiva</strong>. Por eso, os traemos un <strong>-10% de descuento</strong> en nuestros menús BARF de Navidad.</p><p><strong> ¿Por qué estas recetas son tan especiales?</strong></p><ul><li>✨ <strong>Ingredientes festivos</strong> como mango y arándanos dan un extra de sabor natural y nutrientes beneficiosos (antioxidantes, vitaminas y fitonutrientes). </li><li>🍗 <strong>Pavo magro:</strong> excelente proteína que apoya masa muscular y energía. </li><li>🥦 <strong>Verduras frescas</strong> que favorecen buena digestión y salud general.</li><li>💚 <strong>100% natural: </strong> sin aditivos, conservantes o ingredientes artificiales.</li></ul><p>Aprovecha <strong>el -10% de descuento</strong> y haz de estas fechas un momento inolvidable también para ellos.<br/></p><h4><br/><a href=\"/collections/regalos-navidad-perros-gatos\" target=\"_blank\" title=\"Navidad 2025\"><strong>👉🏻 Ver menús de Navidad</strong></a></h4>",
             "image_width": 100,
-            "discount_code": ""
+            "discount_code": "BARFNAVIDAD10"
           }
         },
         "trivia_xjciDx": {
