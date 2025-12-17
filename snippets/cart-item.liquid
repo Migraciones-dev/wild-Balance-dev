@@ -110,15 +110,21 @@
           </ul>
         {%- endif -%}
       </div>
-      <label class="t4s-selling-toggle mt-1 flex items-center gap-2 text-[11px]">
-        <input
-          type="checkbox"
-          data-selling-toggle
-          class="t4s-checkbox"
-          {% if item.selling_plan_allocation %}checked{% endif %}
-        >
-        <span>Suscríbete y ahorra</span>
-      </label>
+      {%- assign has_selling_plans = false -%}
+      {%- if item.selling_plan_allocation or item.variant.selling_plan_allocations.size > 0 -%}
+        {%- assign has_selling_plans = true -%}
+      {%- endif -%}
+      {%- if has_selling_plans -%}
+        <label class="t4s-selling-toggle mt-1 flex items-center gap-2 text-[11px]">
+          <input
+            type="checkbox"
+            data-selling-toggle
+            class="t4s-checkbox"
+            {% if item.selling_plan_allocation %}checked{% endif %}
+          >
+          <span>Suscríbete y ahorra</span>
+        </label>
+      {%- endif -%}
       {%- assign qv_key = item_pr.id -%}
 
       {%- if item.variant.selling_plan_allocations.size > 0 -%}
