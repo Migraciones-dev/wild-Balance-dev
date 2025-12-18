@@ -213,7 +213,7 @@
           "html_VkEmKE": {
             "type": "html",
             "settings": {
-              "html": "<div class=\"aviso-navidad\">\n  HOY ÚLTIMO DÍA PARA PEDIDOS DE NAVIDAD🎄\n</div>\n\n<style>\n/* Oculto en desktop */\n.aviso-navidad {\n  display: none;\n}\n\n/* Solo visible en móvil */\n@media (max-width: 768px) {\n  .aviso-navidad {\n    display: block;\n    margin: 8px auto;\n    text-align: center;\n    font-size: 12px;\n    font-weight: 700; /* negrita */\n    line-height: 1.3;\n    background: none; /* sin fondo */\n    padding: 0;\n    border-radius: 0;\n  }\n}\n</style>",
+              "html": "<div class=\"aviso-navidad\">\n  🎄HOY ÚLTIMO DÍA PARA ENTREGA ANTES DE NAVIDAD\n</div>\n\n<style>\n/* Oculto en desktop */\n.aviso-navidad {\n  display: none;\n}\n\n/* Solo visible en móvil */\n@media (max-width: 768px) {\n  .aviso-navidad {\n    display: block;\n    margin: 8px auto;\n    text-align: center;\n    font-size: 12px;\n    font-weight: 700; /* negrita */\n    line-height: 1.3;\n    background: none; /* sin fondo */\n    padding: 0;\n    border-radius: 0;\n  }\n}\n</style>",
               "hide": false,
               "text_align": "center",
               "col": "12"
