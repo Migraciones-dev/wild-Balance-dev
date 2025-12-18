@@ -94,7 +94,7 @@
         "1_eeeKQd": {
           "type": "1",
           "settings": {
-            "content": "<h4><strong>⚡¡SOLO HOY! ENVIO GRATIS +79€⚡</strong></h4><h4>Consigue el cupón en el calendario de adviento.</h4>",
+            "content": "<h4><strong>⚡¡SOLO HOY! ENVIO GRATIS +79€⚡</strong></h4><h4><a href=\"https://wildbalance.es/pages/calendario-de-adviento-1\" target=\"_blank\" title=\"https://wildbalance.es/pages/calendario-de-adviento-1\">Consigue el cupón en el calendario de adviento.</a></h4>",
             "countdown": "2025/07/03",
             "cus_cd": "%-D day%!D %H:%M:%S",
             "dayx": 0,
