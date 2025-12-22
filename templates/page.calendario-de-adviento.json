@@ -417,7 +417,7 @@
             "expire_date": "2025-12-24 00:01",
             "cover_image": "shopify://shop_images/21.jpg",
             "bg_color_block": "#faf5e7",
-            "trivia_title": "¿Cuanto sabes de Wild Balance? 💚Demuéstralo y llévate un premio.",
+            "trivia_title": "¿Cuánto sabes de Wild Balance? 💚Responde correctamente todas las preguntas, añade la TOTABAG a tu carrito y usa el cupón para conseguirla GRATIS si aciertas todas.",
             "trivia_question_1": "¿Quién ha probado más recetas de Wild?",
             "trivia_options_1": "Kike, Mia (La Jefa), Cheeto",
             "trivia_answer_1": "Kike",
@@ -433,7 +433,7 @@
             "trivia_question_5": "",
             "trivia_options_5": "",
             "trivia_answer_5": "",
-            "trivia_reward_code": "REGALOTRIVIAL",
+            "trivia_reward_code": "TOTEBAGFREE",
             "trivia_success_text": "¡Enhorabuena! Has acertado todas las preguntas 🎉",
             "trivia_failure_title": "Lo sentimos, has fallado alguna pregunta 😔",
             "trivia_failure_text": ""
