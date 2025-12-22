@@ -386,13 +386,13 @@
           "type": "video",
           "settings": {
             "day_number": "",
-            "unlock_date": "2025-12-22 00:01",
-            "expire_date": "2025-12-22 00:01",
+            "unlock_date": "2025-12-21 00:01",
+            "expire_date": "2025-12-31 00:01",
             "cover_image": "shopify://shop_images/19.jpg",
             "bg_color_block": "#faf5e7",
-            "video_title": "Video especial",
-            "video_text": "<p>Texto sobre el video</p>",
-            "video_embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/mfmrNsm15I0?si=c1v0_JwlZRvzBYgc\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen=\"\"></iframe>"
+            "video_title": "La huella de nuestro año 🐾",
+            "video_text": "<p>Un recorrido por todo lo que nos ha marcado este año</p>",
+            "video_embed": "<iframe width=\"315\" height=\"560\" src=\"https://www.youtube.com/embed/uosGXFO-fHE\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen=\"\">\n</iframe>"
           }
         },
         "discount_LiieUL": {
