@@ -102,7 +102,7 @@
           "settings": {
             "day_number": "",
             "unlock_date": "2025-12-02 09:00",
-            "expire_date": "2025-12-24 00:01",
+            "expire_date": "2025-12-31 00:01",
             "cover_image": "shopify://shop_images/CALENDARIO_ADVIENTO_NAVIDAD_1.png",
             "bg_color_block": "#faf5e7",
             "video_title": "Empieza la mejor época del año 💫Navidad",
@@ -130,7 +130,7 @@
           "settings": {
             "day_number": "",
             "unlock_date": "2025-12-03 09:00",
-            "expire_date": "",
+            "expire_date": "2025-12-31 09:00",
             "cover_image": "shopify://shop_images/2_57abba4e-d1a9-4524-a2f2-6aec27d1e720.jpg",
             "bg_color_block": "#ffcd00",
             "video_title": "La historia de Mia",
@@ -143,7 +143,7 @@
           "settings": {
             "day_number": "",
             "unlock_date": "2025-12-05 00:01",
-            "expire_date": "2025-12-24 00:01",
+            "expire_date": "2025-12-31 00:01",
             "cover_image": "shopify://shop_images/3_29e50b2a-b71c-4a02-9962-4805c6206c46.jpg",
             "bg_color_block": "#faf5e7",
             "survey_title": "¡Ayúdanos a elegir el próximo lanzamiento Wild Balance!",
@@ -246,7 +246,7 @@
           "settings": {
             "day_number": "",
             "unlock_date": "2025-12-11 00:01",
-            "expire_date": "2025-12-12 00:01",
+            "expire_date": "2025-12-31 00:01",
             "cover_image": "shopify://shop_images/CALENDARIO_ADVIENTO_NAVIDAD_3.png",
             "bg_color_block": "#ffffff",
             "downloadable_title": "Descarga tu regalo 📲",
@@ -261,7 +261,7 @@
           "settings": {
             "day_number": "",
             "unlock_date": "2025-12-12 00:01",
-            "expire_date": "2025-12-24 00:01",
+            "expire_date": "2025-12-31 00:01",
             "cover_image": "shopify://shop_images/10_3d0091c8-b2eb-42fc-8891-0f90dde63978.jpg",
             "bg_color_block": "#ffcd00",
             "video_title": "Detrás de nuestras recetas 👨🏻‍🍳",
@@ -274,7 +274,7 @@
           "settings": {
             "day_number": "",
             "unlock_date": "2025-12-13 00:01",
-            "expire_date": "2025-12-24 00:01",
+            "expire_date": "2025-12-31 00:01",
             "cover_image": "shopify://shop_images/11_af5a9ac7-387d-49b6-8004-651e83af417f.jpg",
             "bg_color_block": "#ffcd00",
             "raffle_title": "¡Hazle sonreír! 📸😁",
@@ -287,7 +287,7 @@
           "settings": {
             "day_number": "",
             "unlock_date": "2025-12-14 00:01",
-            "expire_date": "2025-12-24 00:01",
+            "expire_date": "2025-12-31 00:01",
             "cover_image": "shopify://shop_images/12_4e59e5c5-9b59-491f-a55e-28ee9d368d39.jpg",
             "bg_color_block": "#ffcd00",
             "recipe_title": "📝Wild Consejo: Fiestas sin estrés",
@@ -301,7 +301,7 @@
           "settings": {
             "day_number": "",
             "unlock_date": "2025-12-15 00:01",
-            "expire_date": "2025-12-24 00:01",
+            "expire_date": "2025-12-31 00:01",
             "cover_image": "shopify://shop_images/CALENDARIO_ADVIENTO_NAVIDAD_6.png",
             "bg_color_block": "#faf5e7",
             "recipe_title": "La Historia de Chico y Aylin",
@@ -330,7 +330,7 @@
           "settings": {
             "day_number": "",
             "unlock_date": "2025-12-17 00:01",
-            "expire_date": "2025-12-24 00:01",
+            "expire_date": "2025-12-31 00:01",
             "cover_image": "shopify://shop_images/15.jpg",
             "bg_color_block": "#ffcd00",
             "recipe_title": "Wild Consejo: Cuida su digestión estas fiestas",
@@ -358,7 +358,7 @@
           "settings": {
             "day_number": "",
             "unlock_date": "2025-12-19 00:01",
-            "expire_date": "2025-12-24 00:01",
+            "expire_date": "2025-12-31 00:01",
             "cover_image": "shopify://shop_images/CALENDARIO_ADVIENTO_NAVIDAD_6_69c8c576-4d2b-4109-afe5-0b1e8f98fd72.png",
             "bg_color_block": "#faf5e7",
             "downloadable_title": "🎄 ¡Ya está aquí la postal navideña más adorable!",
@@ -373,7 +373,7 @@
           "settings": {
             "day_number": "",
             "unlock_date": "2025-12-20 00:01",
-            "expire_date": "2025-12-24 00:01",
+            "expire_date": "2025-12-31 00:01",
             "cover_image": "shopify://shop_images/18.jpg",
             "bg_color_block": "#faf5e7",
             "recipe_title": "🎄 Menú de Nochebuena Saludable para tu Peludo 🐾",
