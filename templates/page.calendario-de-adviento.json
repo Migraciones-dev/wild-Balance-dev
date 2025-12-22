@@ -444,12 +444,12 @@
           "settings": {
             "day_number": "",
             "unlock_date": "2025-12-24 00:01",
-            "expire_date": "2025-12-25 00:01",
+            "expire_date": "2025-12-31 00:01",
             "cover_image": "shopify://shop_images/24_745eac35-30c1-4247-b008-566f1be94b85.jpg",
             "bg_color_block": "#faf5e7",
-            "video_title": "Video especial",
-            "video_text": "<p>Texto sobre el video</p>",
-            "video_embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/mfmrNsm15I0?si=c1v0_JwlZRvzBYgc\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen=\"\"></iframe>"
+            "video_title": "Gracias por hacer esto posible💫",
+            "video_text": "<p>Este año no habría sido posible sin vosotros.<br/><br/>Gracias a cada familia que confía en nosotros día a día.<br/><br/>Cerramos el año brindando con ellos y celebrando lo que de verdad importa 💚</p><p>🎁 <strong>10% de descuento en kéfir</strong> para compartir estas fiestas con quienes siempre están a nuestro lado<br/><br/><a href=\"https://wildbalance.es/discount/KEFIR10?redirect=%2Fproducts%2Fkefir-de-vaca-para-perros-y-gatos\" title=\"https://wildbalance.es/discount/KEFIR10?redirect=%2Fproducts%2Fkefir-de-vaca-para-perros-y-gatos\">CUPÓN: KEFIR10</a></p>",
+            "video_embed": "<iframe width=\"315\" height=\"560\" src=\"https://www.youtube.com/embed/L02k1Gpm6WM\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen=\"\">\n</iframe>"
           }
         }
       },
