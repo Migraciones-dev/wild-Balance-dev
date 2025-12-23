@@ -1146,7 +1146,7 @@
         ],
         "custom_css": [],
         "settings": {
-          "announcement_rich_text": "<p><a href=\"https://wildbalance.es/pages/calendario-de-adviento-1\" target=\"_blank\" title=\"https://wildbalance.es/pages/calendario-de-adviento-1\"><strong>⚡¡SOLO HOY! ENVIO GRATIS +79€⚡</strong></a></p><p><a href=\"https://wildbalance.es/pages/calendario-de-adviento-1\" target=\"_blank\" title=\"https://wildbalance.es/pages/calendario-de-adviento-1\">Consigue el cupón en el calendario de adviento.</a></p>",
+          "announcement_rich_text": "",
           "announcement_bg_color": "#004622",
           "announcement_text_color": "#ffffff",
           "announcement_padding_top_mobile": 8,
