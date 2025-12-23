@@ -116,6 +116,7 @@
       "block_order": [
         "1_eeeKQd"
       ],
+      "disabled": true,
       "name": "Promo text",
       "settings": {
         "effect": "slider",
