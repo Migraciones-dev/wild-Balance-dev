@@ -16,7 +16,7 @@
           "type": "image_parent",
           "settings": {
             "image": "shopify://shop_images/banner-home-navidad-reyes-desk.jpg",
-            "image_mb": "shopify://shop_images/banner-home-navidad-reyes-mobile.png",
+            "image_mb": "shopify://shop_images/banner-home-navidad-reyes-mobile.jpg",
             "image_position": "8",
             "cl_img": "",
             "link_img1": "shopify://collections/regalos-navidad-perros-gatos",
