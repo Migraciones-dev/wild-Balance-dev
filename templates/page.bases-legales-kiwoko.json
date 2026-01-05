@@ -18,7 +18,7 @@
             "image": "shopify://shop_images/Frame_777.png",
             "image_position": "8",
             "cl_img": "",
-            "link_img1": "",
+            "link_img1": "shopify://collections/comida",
             "open_link": "_blank",
             "animate_slide": "none",
             "text_align": "center",
