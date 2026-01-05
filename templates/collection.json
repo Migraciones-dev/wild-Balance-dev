@@ -11,6 +11,7 @@
   "sections": {
     "popover_DGAhw3": {
       "type": "popover",
+      "disabled": true,
       "name": "Teaser Popup",
       "settings": {
         "text": "🎁 DESCUBRE LA SORPRESA DE HOY",
