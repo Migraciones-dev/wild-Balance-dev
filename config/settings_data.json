@@ -335,6 +335,7 @@
           },
           "base_fnQh3D": {
             "type": "base",
+            "disabled": true,
             "settings": {
               "title": "🎄 Navidad",
               "url": "shopify://collections/navidad",
