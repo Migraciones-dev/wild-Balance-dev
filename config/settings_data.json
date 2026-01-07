@@ -203,7 +203,7 @@
           "html_D94WcX": {
             "type": "html",
             "settings": {
-              "html": "<!-- Suscripción mobile -->\n<div class=\"suscripcion-mobile\">\n  <span>🔥Entérate de todo el primero → </span>\n  <a href=\"https://chat.whatsapp.com/KggSebElcla8IyIae6G0JN?mode=wwt&amp;utm_source=Klaviyo&amp;utm_medium=campaign&amp;utm_campaign=B2C%20%C3%9ALTIMAS%20HORAS%20-%20No%20Compradores&amp;utm_id=01K8NWFRGXBH7N6Y9M2J0PQR7S&amp;_kx=NA7iRrCxS5NS5o6lXTA8PkCg1X4wTdmvz3A495tUNgZPw5okmAEcKifBcOzNO9fN.YsKiw5\" style=\"color:#ffce00; text-decoration:underline; font-weight:bold; margin-left:5px;\" target=\"_blank\" rel=\"noopener noreferrer\">\n    ÚNETE AL GRUPO  </a>\n</div>\n\n<style>\n.suscripcion-mobile {\n  padding-top: 0px;\n  padding-bottom: 0px;\n}\n\n.suscripcion-mobile span {\n  font-size: 15px;\n}\n</style>",
+              "html": "<!-- Suscripción mobile -->\n<div class=\"suscripcion-mobile\">\n  <span>🔥Entérate de todo el primero →</span>\n  <a href=\"https://chat.whatsapp.com/KggSebElcla8IyIae6G0JN?mode=wwt&amp;utm_source=Klaviyo&amp;utm_medium=campaign&amp;utm_campaign=B2C%20%C3%9ALTIMAS%20HORAS%20-%20No%20Compradores&amp;utm_id=01K8NWFRGXBH7N6Y9M2J0PQR7S&amp;_kx=NA7iRrCxS5NS5o6lXTA8PkCg1X4wTdmvz3A495tUNgZPw5okmAEcKifBcOzNO9fN.YsKiw5\" target=\"_blank\" rel=\"noopener noreferrer\">\n    ÚNETE AL GRUPO\n  </a>\n</div>\n\n<style>\n/* Forzar fondo del header/padre para que no quede granate */\nheader, .announcement-bar, .site-header {\n  background-color: #005139 !important;\n}\n\n/* Banner Mobile */\n.suscripcion-mobile {\n  width: 100%;                  /* ancho completo */\n  box-sizing: border-box;\n\n  display: flex;\n  flex-wrap: wrap;               /* permite que el texto pase a otra línea si es necesario */\n  justify-content: center;\n  align-items: center;\n\n  background-color: #005139 !important; /* verde */\n  color: #ffffff !important;\n\n  padding: 6px 10px;             /* alto controlado */\n  margin: 0;                     /* elimina márgenes externos */\n  line-height: 1.3;              /* centrado vertical */\n  font-weight: 700;\n  font-size: 15px;\n}\n\n/* Enlaces */\n.suscripcion-mobile a {\n  text-decoration: underline;\n  font-weight: bold;\n  color: #ffce00;\n  margin-left: 5px;\n}\n\n/* Solo visible en móvil */\n@media (min-width: 769px) {\n  .suscripcion-mobile {\n    display: none;\n  }\n}\n</style>",
               "hide": false,
               "text_align": "center",
               "col": "12"
@@ -238,7 +238,7 @@
           "fontsize": 14,
           "cl": "#ffffff",
           "cl_a_hover": "#dddddd",
-          "bg": "#850b0c",
+          "bg": "#004623",
           "bg_op": 100,
           "show_border": false,
           "bd_cl": "#000000",
