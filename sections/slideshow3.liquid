@@ -35,16 +35,55 @@
     assign use_button = false
     assign use_animation = false
     assign no_image_parent = true
+    assign skip_slide_children = false
     assign html_nav_carousel = ''
+    assign now_timestamp = 'now' | date: '%s' | times: 1
  -%}
 {%- capture append_style -%}
     --aspect-ratio-cus : {{ se_stts.height_dk }}px;--aspect-ratio-custb : {{ se_stts.height_tb }}px;--aspect-ratio-cusmb : {{ se_stts.height_mb }}px;
 {%- endcapture -%}
 {%- capture slideshow_html -%}
 {%- if se_blocks.size > 0 -%}
-    {%- for block in se_blocks %}{% assign block_type = block.type -%}
+        {%- for block in se_blocks %}{% assign block_type = block.type -%}
+        {%- if skip_slide_children and block_type != 'image_parent' -%}{% continue -%}
+        {%- endif -%}
         {%- if block_type != 'image_parent' and no_image_parent %}{% continue -%}
-        {%- elsif block_type == 'image_parent' -%} 
+        {%- elsif block_type == 'image_parent' -%}
+            {%- assign skip_slide_children = false -%}
+            {%- assign bk_stts = block.settings -%}
+            {%- assign timer_skip = false -%}
+            {%- if bk_stts.timer_enable -%}
+                {%- assign start_ts = '' -%}
+                {%- assign start_value = bk_stts.timer_start | strip -%}
+                {%- if start_value != blank -%}
+                    {%- assign start_ts_raw = start_value | date: '%s' -%}
+                    {%- assign start_ts = start_ts_raw | times: 1 -%}
+                    {%- assign start_ts_check = start_ts | append: '' -%}
+                    {%- if start_ts_check != start_ts_raw -%}
+                        {%- assign start_ts = '' -%}
+                    {%- endif -%}
+                {%- endif -%}
+                {%- assign end_ts = '' -%}
+                {%- assign end_value = bk_stts.timer_end | strip -%}
+                {%- if end_value != blank -%}
+                    {%- assign end_ts_raw = end_value | date: '%s' -%}
+                    {%- assign end_ts = end_ts_raw | times: 1 -%}
+                    {%- assign end_ts_check = end_ts | append: '' -%}
+                    {%- if end_ts_check != end_ts_raw -%}
+                        {%- assign end_ts = '' -%}
+                    {%- endif -%}
+                {%- endif -%}
+                {%- if start_ts != blank and start_ts > now_timestamp -%}
+                    {%- assign timer_skip = true -%}
+                {%- endif -%}
+                {%- if end_ts != blank and now_timestamp > end_ts -%}
+                    {%- assign timer_skip = true -%}
+                {%- endif -%}
+            {%- endif -%}
+            {%- if timer_skip -%}
+                {%- assign skip_slide_children = true -%}
+                {% continue -%}
+            {%- endif -%}
             {%- liquid
                 assign index_dots = index_dots | plus: 1
                 if is_prev_block_image
@@ -52,7 +91,6 @@
                 endif
                 assign no_image_parent = false
                 assign is_prev_block_image = true           
-                assign bk_stts = block.settings
                 assign image_mb = bk_stts.image_mb
                 assign image = bk_stts.image | default: image_mb
                 assign mb_image = image_mb | default: image 
@@ -534,7 +572,32 @@
             "limit": 5,
             "settings": [
                 {
-                    "type": "image_picker","id": "image",
+                    "type": "header",
+                    "content": "Timer scheduling"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "timer_enable",
+                    "label": "Enable timer for this slide",
+                    "default": false
+                },
+                {
+                    "type": "text",
+                    "id": "timer_start",
+                    "label": "Start date/time",
+                    "info": "Format: YYYY-MM-DD HH:MM (leave blank to show immediately)",
+                    "placeholder": "2025-01-31 09:00"
+                },
+                {
+                    "type": "text",
+                    "id": "timer_end",
+                    "label": "End date/time",
+                    "info": "Format: YYYY-MM-DD HH:MM (leave blank to keep visible)",
+                    "placeholder": "2025-02-05 23:59"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
                     "label": "Image",
                     "info": "1800 x 600px .jpg recommended"
                 },

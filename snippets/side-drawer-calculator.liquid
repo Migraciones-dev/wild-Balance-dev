@@ -963,224 +963,298 @@
   .no-arrows[type=number] { -moz-appearance: textfield; }
 </style>
 <script>
-  // ===== TABLAS NUEVAS (solo BURGERS). COCINADA = mismo cálculo +10% gramos =====
-  const FACTORS_BURGERS = {
-    perro: {
-      baby0: {
-        base: {
-          min_posible_value: 50,
-          max_posible_value: 900,
-          values: [
-            { min: 10, max: 500, value: 0.1 },
-            { min: 500, max: 4000, value: 0.1 },
-            { min: 4000, max: 7000, value: 0.09 },
-            { min: 7000, max: 10000, value: 0.08 },
-            { min: 10000, max: 12000, value: 0.07 },
-            { min: 12000, max: 15000, value: 0.06 },
-            { min: 15000, max: 60000, value: 0.05 },
-          ],
-        },
-      },
-      baby4: {
-        base: {
-          min_posible_value: 60,
-          max_posible_value: 1125,
-          values: [
-            { min: 10, max: 1000, value: 0.07 },
-            { min: 1000, max: 11000, value: 0.06 },
-            { min: 11000, max: 16000, value: 0.06 },
-            { min: 16000, max: 21000, value: 0.05 },
-            { min: 21000, max: 30000, value: 0.05 },
-            { min: 30000, max: 300000, value: 0.035 },
-          ],
-        },
-      },
-      baby6: {
-        base: {
-          min_posible_value: 50,
-          max_posible_value: 1237.5,
-          values: [
-            { min: 10, max: 1000, value: 0.06 },
-            { min: 1000, max: 4000, value: 0.05 },
-            { min: 4000, max: 5000, value: 0.04 },
-            { min: 5000, max: 18000, value: 0.04 },
-            { min: 18000, max: 26000, value: 0.04 },
-            { min: 26000, max: 36000, value: 0.04 },
-            { min: 36000, max: 45000, value: 0.04 },
-            { min: 45000, max: 450000, value: 0.03 },
-          ],
-        },
-      },
-      baby10: {
-        base: {
-          min_posible_value: 50,
-          max_posible_value: 1200,
-          values: [
-            { min: 10, max: 1000, value: 0.06 },
-            { min: 1000, max: 4000, value: 0.04 },
-            { min: 4000, max: 7000, value: 0.03 },
-            { min: 7000, max: 9000, value: 0.03 },
-            { min: 9000, max: 26000, value: 0.025 },
-            { min: 26000, max: 50000, value: 0.025 },
-            { min: 50000, max: 60000, value: 0.0225 },
-            { min: 60000, max: 600000, value: 0.02 },
-          ],
-        },
-      },
-      adult: {
-        senior: {
-          min_posible_value: 50,
-          max_posible_value: 1200,
-          values: [
-            { min: 10, max: 999, value: 0.03 },
-            { min: 1000, max: 1999, value: 0.03 },
-            { min: 2000, max: 2999, value: 0.03 },
-            { min: 3000, max: 3999, value: 0.03 },
-            { min: 4000, max: 5999, value: 0.03 },
-            { min: 6000, max: 6999, value: 0.0275 },
-            { min: 7000, max: 9999, value: 0.025 },
-            { min: 10000, max: 21000, value: 0.02 },
-            { min: 21000, max: 31000, value: 0.02 },
-            { min: 31000, max: 80000, value: 0.015 },
-            { min: 80000, max: 800000, value: 0.012 },
-          ],
-        },
-        normal: {
-          min_posible_value: 50,
-          max_posible_value: 1400,
-          values: [
-            { min: 10, max: 1000, value: 0.035 },
-            { min: 1000, max: 2999, value: 0.035 },
-            { min: 2000, max: 3999, value: 0.035 },
-            { min: 3000, max: 4999, value: 0.035 },
-            { min: 5000, max: 8999, value: 0.03 },
-            { min: 9000, max: 12999, value: 0.025 },
-            { min: 13000, max: 45999, value: 0.02 },
-            { min: 46000, max: 80000, value: 0.0175 },
-            { min: 80000, max: 800000, value: 0.016 },
-          ],
-        },
-        high: {
-          min_posible_value: 60,
-          max_posible_value: 1600,
-          values: [
-            { min: 10, max: 1000, value: 0.035 },
-            { min: 1000, max: 3000, value: 0.035 },
-            { min: 3000, max: 4000, value: 0.035 },
-            { min: 4000, max: 5000, value: 0.035 },
-            { min: 5000, max: 9000, value: 0.035 },
-            { min: 9000, max: 21000, value: 0.03 },
-            { min: 21000, max: 31000, value: 0.025 },
-            { min: 31000, max: 80000, value: 0.025 },
-            { min: 80000, max: 800000, value: 0.02 },
-          ],
-        },
-      },
+  // ===== FACTORES DE CÁLCULO (alineados con index.js) =====
+  const DOG_FACTORS_BURGERS = {
+    baby0: {
+      base: {
+        min_posible_value: 50,
+        max_posible_value: 900,
+        values: [
+          { min: 10, max: 500, value: 0.1 },
+          { min: 500, max: 4000, value: 0.1 },
+          { min: 4000, max: 7000, value: 0.09 },
+          { min: 7000, max: 10000, value: 0.08 },
+          { min: 10000, max: 12000, value: 0.07 },
+          { min: 12000, max: 15000, value: 0.06 },
+          { min: 15000, max: 60000, value: 0.05 }
+        ]
+      }
     },
-    gato: {
-      baby0: {
-        base: {
-          min_posible_value: 50,
-          max_posible_value: 400,
-          values: [
-            { min: 50, max: 499, value: 0.11 },
-            { min: 500, max: 4000, value: 0.1 },
-            { min: 4001, max: 40000, value: 0.1 },
-          ],
-        },
-      },
-      baby3: {
-        base: {
-          min_posible_value: 40,
-          max_posible_value: 3200,
-          values: [
-            { min: 50, max: 499, value: 0.09 },
-            { min: 500, max: 4000, value: 0.08 },
-            { min: 4001, max: 40000, value: 0.08 },
-          ],
-        },
-      },
-      baby5: {
-        base: {
-          min_posible_value: 30,
-          max_posible_value: 240,
-          values: [
-            { min: 50, max: 499, value: 0.07 },
-            { min: 500, max: 4000, value: 0.06 },
-            { min: 4001, max: 40000, value: 0.06 },
-          ],
-        },
-      },
-      adult: {
-        senior: {
-          min_posible_value: 30,
-          max_posible_value: 300,
-          values: [
-            { min: 30, max: 999, value: 0.035 },
-            { min: 1000, max: 10000, value: 0.03 },
-            { min: 10001, max: 100000, value: 0.025 },
-          ],
-        },
-        normal: {
-          min_posible_value: 35,
-          max_posible_value: 350,
-          values: [
-            { min: 30, max: 999, value: 0.04 },
-            { min: 1000, max: 10000, value: 0.035 },
-            { min: 10001, max: 100000, value: 0.025 },
-          ],
-        },
-        high: {
-          min_posible_value: 50,
-          max_posible_value: 500,
-          values: [
-            { min: 30, max: 999, value: 0.05 },
-            { min: 1000, max: 10000, value: 0.05 },
-            { min: 10001, max: 100000, value: 0.04 },
-          ],
-        },
-      },
+    baby4: {
+      base: {
+        min_posible_value: 200,
+        max_posible_value: 900,
+        values: [
+          { min: 10, max: 1000, value: 0.08 },
+          { min: 1000, max: 4000, value: 0.08 },
+          { min: 4000, max: 7000, value: 0.07 },
+          { min: 7000, max: 10000, value: 0.06 },
+          { min: 10000, max: 15000, value: 0.055 },
+          { min: 15000, max: 60000, value: 0.05 }
+        ]
+      }
     },
+    baby8: {
+      base: {
+        min_posible_value: 200,
+        max_posible_value: 900,
+        values: [
+          { min: 10, max: 1000, value: 0.06 },
+          { min: 1000, max: 4000, value: 0.06 },
+          { min: 4000, max: 7000, value: 0.055 },
+          { min: 7000, max: 10000, value: 0.05 },
+          { min: 10000, max: 15000, value: 0.045 },
+          { min: 15000, max: 60000, value: 0.04 }
+        ]
+      }
+    },
+    baby12: {
+      base: {
+        min_posible_value: 200,
+        max_posible_value: 900,
+        values: [
+          { min: 10, max: 1000, value: 0.04 },
+          { min: 1000, max: 4000, value: 0.04 },
+          { min: 4000, max: 7000, value: 0.035 },
+          { min: 7000, max: 10000, value: 0.03 },
+          { min: 10000, max: 60000, value: 0.025 }
+        ]
+      }
+    },
+    adult_senior: {
+      base: {
+        min_posible_value: 100,
+        max_posible_value: 1200,
+        values: [
+          { min: 10, max: 1000, value: 0.055 },
+          { min: 1000, max: 2000, value: 0.05 },
+          { min: 2000, max: 3000, value: 0.045 },
+          { min: 3000, max: 4000, value: 0.04 },
+          { min: 4000, max: 6000, value: 0.03 },
+          { min: 6000, max: 8000, value: 0.028 },
+          { min: 8000, max: 10000, value: 0.027 },
+          { min: 10000, max: 15000, value: 0.025 },
+          { min: 15000, max: 20000, value: 0.023 },
+          { min: 20000, max: 30000, value: 0.021 },
+          { min: 30000, max: 60000, value: 0.02 }
+        ]
+      }
+    }
   };
 
-  // === Helpers de mapeo (tu UI → claves de la tabla) ===
-  function mapActivityKey(act) {
-    // tu UI: bajo / moderado / alto
-    if (act === 'bajo') return 'senior';
-    if (act === 'moderado') return 'normal';
-    if (act === 'alto') return 'high';
-    return 'normal';
+  const CAT_FACTORS_BURGERS = {
+    baby0: {
+      base: {
+        min_posible_value: 50,
+        max_posible_value: 200,
+        values: [
+          { min: 10, max: 4000, value: 0.1 },
+          { min: 4000, max: 7000, value: 0.09 },
+          { min: 7000, max: 10000, value: 0.08 }
+        ]
+      }
+    },
+    baby4: {
+      base: {
+        min_posible_value: 100,
+        max_posible_value: 200,
+        values: [
+          { min: 10, max: 4000, value: 0.08 },
+          { min: 4000, max: 7000, value: 0.07 },
+          { min: 7000, max: 10000, value: 0.06 }
+        ]
+      }
+    },
+    baby8: {
+      base: {
+        min_posible_value: 100,
+        max_posible_value: 300,
+        values: [
+          { min: 10, max: 4000, value: 0.06 },
+          { min: 4000, max: 7000, value: 0.055 },
+          { min: 7000, max: 10000, value: 0.05 }
+        ]
+      }
+    },
+    adult_senior: {
+      base: {
+        min_posible_value: 100,
+        max_posible_value: 300,
+        values: [
+          { min: 10, max: 3000, value: 0.04 },
+          { min: 3000, max: 4000, value: 0.035 },
+          { min: 4000, max: 5000, value: 0.03 },
+          { min: 5000, max: 10000, value: 0.025 }
+        ]
+      }
+    }
+  };
+
+  const DOG_FACTORS_COOKED_FOOD = {
+    baby0: {
+      base: {
+        min_posible_value: 50,
+        max_posible_value: 900,
+        values: [
+          { min: 10, max: 500, value: 0.1 },
+          { min: 500, max: 4000, value: 0.1 },
+          { min: 4000, max: 7000, value: 0.09 },
+          { min: 7000, max: 10000, value: 0.08 },
+          { min: 10000, max: 12000, value: 0.07 },
+          { min: 12000, max: 15000, value: 0.06 },
+          { min: 15000, max: 60000, value: 0.05 }
+        ]
+      }
+    },
+    baby4: {
+      base: {
+        min_posible_value: 200,
+        max_posible_value: 900,
+        values: [
+          { min: 10, max: 1000, value: 0.08 },
+          { min: 1000, max: 4000, value: 0.08 },
+          { min: 4000, max: 7000, value: 0.07 },
+          { min: 7000, max: 10000, value: 0.06 },
+          { min: 10000, max: 15000, value: 0.055 },
+          { min: 15000, max: 60000, value: 0.05 }
+        ]
+      }
+    },
+    baby8: {
+      base: {
+        min_posible_value: 200,
+        max_posible_value: 900,
+        values: [
+          { min: 10, max: 1000, value: 0.06 },
+          { min: 1000, max: 4000, value: 0.06 },
+          { min: 4000, max: 7000, value: 0.055 },
+          { min: 7000, max: 10000, value: 0.05 },
+          { min: 10000, max: 15000, value: 0.045 },
+          { min: 15000, max: 60000, value: 0.04 }
+        ]
+      }
+    },
+    baby12: {
+      base: {
+        min_posible_value: 200,
+        max_posible_value: 900,
+        values: [
+          { min: 10, max: 1000, value: 0.04 },
+          { min: 1000, max: 4000, value: 0.04 },
+          { min: 4000, max: 7000, value: 0.035 },
+          { min: 7000, max: 10000, value: 0.03 },
+          { min: 10000, max: 60000, value: 0.025 }
+        ]
+      }
+    },
+    adult_senior: {
+      base: {
+        min_posible_value: 100,
+        max_posible_value: 1200,
+        values: [
+          { min: 10, max: 1000, value: 0.055 },
+          { min: 1000, max: 2000, value: 0.05 },
+          { min: 2000, max: 3000, value: 0.045 },
+          { min: 3000, max: 4000, value: 0.04 },
+          { min: 4000, max: 6000, value: 0.03 },
+          { min: 6000, max: 8000, value: 0.028 },
+          { min: 8000, max: 10000, value: 0.027 },
+          { min: 10000, max: 15000, value: 0.025 },
+          { min: 15000, max: 20000, value: 0.023 },
+          { min: 20000, max: 30000, value: 0.021 },
+          { min: 30000, max: 60000, value: 0.02 }
+        ]
+      }
+    }
+  };
+
+  const CAT_FACTORS_COOKED_FOOD = {
+    baby0: {
+      base: {
+        min_posible_value: 50,
+        max_posible_value: 200,
+        values: [
+          { min: 10, max: 4000, value: 0.1 },
+          { min: 4000, max: 7000, value: 0.09 },
+          { min: 7000, max: 10000, value: 0.08 }
+        ]
+      }
+    },
+    baby4: {
+      base: {
+        min_posible_value: 100,
+        max_posible_value: 200,
+        values: [
+          { min: 10, max: 4000, value: 0.08 },
+          { min: 4000, max: 7000, value: 0.07 },
+          { min: 7000, max: 10000, value: 0.06 }
+        ]
+      }
+    },
+    baby8: {
+      base: {
+        min_posible_value: 100,
+        max_posible_value: 300,
+        values: [
+          { min: 10, max: 4000, value: 0.06 },
+          { min: 4000, max: 7000, value: 0.055 },
+          { min: 7000, max: 10000, value: 0.05 }
+        ]
+      }
+    },
+    adult_senior: {
+      base: {
+        min_posible_value: 100,
+        max_posible_value: 300,
+        values: [
+          { min: 10, max: 3000, value: 0.04 },
+          { min: 3000, max: 4000, value: 0.035 },
+          { min: 4000, max: 5000, value: 0.03 },
+          { min: 5000, max: 10000, value: 0.025 }
+        ]
+      }
+    }
+  };
+
+  function getAgeCategoryFromUI(especie, edadUI) {
+    if (edadUI === 'cachorro') return 'baby0';
+    if (edadUI === 'adulto' || edadUI === 'senior') return 'adult_senior';
+
+    if (especie === 'perro') {
+      if (edadUI === 'baby0') return 'baby0';
+      if (edadUI === 'baby4') return 'baby4';
+      if (edadUI === 'baby6') return 'baby8';
+      if (edadUI === 'baby10') return 'baby8';
+      return 'adult_senior';
+    }
+
+    if (edadUI === 'baby0') return 'baby0';
+    if (edadUI === 'baby3') return 'baby0';
+    if (edadUI === 'baby5') return 'baby4';
+    return 'adult_senior';
   }
-  // tu UI: cachorro/adulto/senior → tabla: babyX/adult
-  function defaultPuppyBucket(especie) {
-    // si no distingues meses, elegimos bucket por defecto razonable:
-    return especie === 'gato' ? 'baby3' : 'baby6';
-  }
-    function mapAgeKey(especie, edadUI) {
-    // si el select ya trae un bucket babyX, úsalo tal cual
-    if (typeof edadUI === 'string' && edadUI.startsWith('baby')) return edadUI;
-    // adulto/senior usan el nodo "adult" en la tabla
-    if (edadUI === 'adulto' || edadUI === 'senior') return 'adult';
-    // fallback si quedara algún "cachorro" genérico
-    return defaultPuppyBucket(especie);
+
+  function getActivityMultiplier(activityUI) {
+    if (activityUI === 'bajo') return 0.9;
+    if (activityUI === 'alto') return 1.1;
+    return 1;
   }
 
+  function getFactorForWeight(weightGrams, ageCategory, factors) {
+    const categoryFactors = factors[ageCategory];
+    if (!categoryFactors || !categoryFactors.base || !categoryFactors.base.values) {
+      return 0.03;
+    }
 
-  // Selecciona factor por tramo + devuelve min/max posibles del nodo
-  function pickFactorAndClamp(especie, ageKey, activityKey, weightGr) {
-    const tblAge = FACTORS_BURGERS[especie]?.[ageKey];
-    if (!tblAge) return { factor: null, minPossible: null, maxPossible: null };
+    const ranges = categoryFactors.base.values;
 
-    const node = ageKey === 'adult' ? tblAge[activityKey] : tblAge.base;
-    if (!node?.values?.length) return { factor: null, minPossible: null, maxPossible: null };
+    for (const range of ranges) {
+      if (weightGrams >= range.min && weightGrams < range.max) {
+        return range.value;
+      }
+    }
 
-    const match =
-      node.values.find((r) => weightGr >= r.min && weightGr <= r.max) || node.values[node.values.length - 1];
-    return {
-      factor: match?.value ?? null,
-      minPossible: node.min_posible_value ?? null,
-      maxPossible: node.max_posible_value ?? null,
-    };
+    return ranges[ranges.length - 1].value;
   }
 </script>
 
@@ -1236,45 +1310,6 @@
       try {
         localStorage.removeItem(STORAGE_KEY);
       } catch (e) {}
-    };
-
-    /* =========================
-     CONSTANTES / FACTORES
-  ========================== */
-    // Porcentajes (%), NO proporciones decimales
-    const FACTORS = {
-      perro: {
-        burgers: {
-          cachorro: { base: [{ min: 0, max: 100000, value: 6 }] }, // 6%
-          adulto: {
-            bajo: [{ min: 0, max: 100000, value: 3 }], // 3%
-            moderado: [{ min: 0, max: 100000, value: 2.5 }], // 2.5%
-            alto: [{ min: 0, max: 100000, value: 3.5 }], // 3.5% (trabajo/alto)
-          },
-          senior: { base: [{ min: 0, max: 100000, value: 2 }] }, // 2%
-        },
-        cooked: {
-          cachorro: { base: [{ min: 0, max: 100000, value: 6 }] },
-          adulto: {
-            bajo: [{ min: 0, max: 100000, value: 3 }],
-            moderado: [{ min: 0, max: 100000, value: 2.5 }],
-            alto: [{ min: 0, max: 100000, value: 3.5 }],
-          },
-          senior: { base: [{ min: 0, max: 100000, value: 2 }] },
-        },
-      },
-      gato: {
-        burgers: {
-          cachorro: { base: [{ min: 0, max: 50000, value: 7 }] }, // 7%
-          adulto: { base: [{ min: 0, max: 50000, value: 4 }] }, // 4%
-          senior: { base: [{ min: 0, max: 50000, value: 3 }] }, // 3%
-        },
-        cooked: {
-          cachorro: { base: [{ min: 0, max: 50000, value: 7 }] },
-          adulto: { base: [{ min: 0, max: 50000, value: 4 }] },
-          senior: { base: [{ min: 0, max: 50000, value: 3 }] },
-        },
-      },
     };
 
     /* =========================
@@ -1376,40 +1411,21 @@
 
       const weightGr = weightKg * 1000;
 
-      // Mapear a claves de tabla nueva
-      const ageKey = mapAgeKey(especie, ageUI); // babyX | adult
-      const activityKey = ageKey === 'adult' ? mapActivityKey(activityUI) : 'base';
+      const ageCategory = getAgeCategoryFromUI(especie, ageUI);
+      const factors = especie === 'gato'
+        ? (foodType === 'cooked' ? CAT_FACTORS_COOKED_FOOD : CAT_FACTORS_BURGERS)
+        : (foodType === 'cooked' ? DOG_FACTORS_COOKED_FOOD : DOG_FACTORS_BURGERS);
 
-      // 1) Elegir factor con la tabla BURGERS por tramos
-      const { factor, minPossible, maxPossible } = pickFactorAndClamp(especie, ageKey, activityKey, weightGr);
+      const baseFactor = getFactorForWeight(weightGr, ageCategory, factors);
+      const activityMultiplier = getActivityMultiplier(activityUI);
 
-      // Si por algún motivo no hay factor (no debería), caemos a tu lógica antigua como seguro:
-      let f = factor;
-      if (!f) {
-        const ranges =
-          (((FACTORS?.[especie] || {})[foodType] || {})[ageUI] || {})[ageUI === 'adulto' ? activityUI : 'base'] || [];
-        const match = ranges.find((r) => weightGr >= r.min && weightGr <= r.max);
-        f = match ? match.value : ranges[0]?.value || 0.025;
-      }
+      let grams = Math.round(weightGr * baseFactor * activityMultiplier);
 
-      // 2) Gramos base (BURGER)
-      let grams = Math.round(weightGr * f);
-
-      // 3) Clamp a min/max posibles si estaban definidos
-      if (typeof minPossible === 'number') grams = Math.max(grams, minPossible);
-      if (typeof maxPossible === 'number') grams = Math.min(grams, maxPossible);
-
-      // 4) Si es COCINADA, sumar +10% a los gramos (después del clamp)
-      if (foodType === 'cooked') {
-        grams = Math.round(grams * 1.1);
-      }
-
-      // === Lo demás igual que ya tienes ===
-      const gramsPerUnit = (GRAMS_PER_UNIT[especie] || {})[foodType] || 50;
-      const units = Math.max(1, Math.round(grams / gramsPerUnit));
-      const euroPerUnit = (EURO_PER_UNIT[especie] || {})[foodType] || 0.33;
-      const dailyEuros = +(units * euroPerUnit).toFixed(2);
-      const monthEuros = +(dailyEuros * 31).toFixed(2);
+      const gramsPerUnit = (GRAMS_PER_UNIT[especie] || {})[foodType] || 325;
+      const units = Math.max(1, Math.ceil(grams / gramsPerUnit));
+      const euroPerUnit = (EURO_PER_UNIT[especie] || {})[foodType] || 2.75;
+      const dailyEuros = +((grams / gramsPerUnit) * euroPerUnit).toFixed(2);
+      const monthEuros = +(dailyEuros * 30).toFixed(2);
 
       const result = { grams, units, dailyEuros, monthEuros, foodType };
 
@@ -1809,13 +1825,13 @@
   // === Deben existir ANTES de computeResultFromInputs ===
   // Usa || para no machacar si ya estaban definidas en otro script
   window.GRAMS_PER_UNIT = window.GRAMS_PER_UNIT || {
-    perro: { burgers: 50, cooked: 325 },
-    gato: { burgers: 50, cooked: 120 },
+    perro: { burgers: 325, cooked: 325 },
+    gato: { burgers: 110, cooked: 110 },
   };
 
   window.EURO_PER_UNIT = window.EURO_PER_UNIT || {
-    perro: { burgers: 0.33, cooked: 1.8 },
-    gato: { burgers: 0.42, cooked: 0.95 },
+    perro: { burgers: 2.75, cooked: 2.75 },
+    gato: { burgers: 1.1, cooked: 1.1 },
   };
 </script>
 <script>
@@ -1916,7 +1932,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     const edadSel = document.querySelector('select[name="edad"]');
 
-    // Opciones de edad por especie (value debe coincidir con tus tablas FACTORS_BURGERS)
+    // Opciones de edad por especie (value debe coincidir con las tablas de factores)
     const AGE_OPTIONS = {
       perro: [
         { value: 'baby0',  label: 'Cachorro 0–3 meses' },
