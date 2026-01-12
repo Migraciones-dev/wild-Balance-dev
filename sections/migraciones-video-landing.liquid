@@ -100,25 +100,43 @@
           <video
             class="absolute inset-0 hidden h-full w-full object-cover"
             data-mig-video
-            src="{{ section.settings.video_url }}"
+            src="{{ section.settings.video_url_desktop }}"
             preload="metadata"
             playsinline
             controls
-            {% if section.settings.poster_image != blank %}
-              poster="{{ section.settings.poster_image | image_url: width: 2000 }}"
-            {% endif %}
+          ></video>
+          <video
+            class="absolute inset-0 hidden h-full w-full object-cover lg:hidden"
+            data-mig-video-mobile
+            src="{{ section.settings.video_url_mobile }}"
+            preload="metadata"
+            playsinline
+            controls
           ></video>
 
           <div class="absolute inset-0" data-mig-cover>
-            {% if section.settings.poster_image != blank %}
+            {% if section.settings.poster_image_mobile != blank %}
               <img
-                src="{{ section.settings.poster_image | image_url: width: 2000 }}"
-                alt="{{ section.settings.poster_alt | escape }}"
-                class="h-full w-full object-cover"
+                src="{{ section.settings.poster_image_mobile | image_url: width: 2000 }}"
+                alt="{{ section.settings.poster_alt_mobile | escape }}"
+                class="block lg:hidden h-full w-full object-cover"
                 loading="lazy"
               >
-            {% else %}
-              <div class="h-full w-full" style="background-color: rgba(0,0,0,0.1);"></div>
+            {% endif %}
+            {% if section.settings.poster_image_desktop != blank %}
+              <img
+                src="{{ section.settings.poster_image_desktop | image_url: width: 2000 }}"
+                alt="{{ section.settings.poster_alt_desktop | escape }}"
+                class="{% if section.settings.poster_image_mobile != blank %}hidden lg:block{% else %}block{% endif %} h-full w-full object-cover"
+                loading="lazy"
+              >
+            {% elsif section.settings.poster_image_mobile != blank %}
+              <img
+                src="{{ section.settings.poster_image_mobile | image_url: width: 2000 }}"
+                alt="{{ section.settings.poster_alt_mobile | escape }}"
+                class="hidden lg:block h-full w-full object-cover"
+                loading="lazy"
+              >
             {% endif %}
 
             <button
@@ -160,32 +178,50 @@
     const section = document.getElementById('mig-video-landing-{{ section.id }}');
     if (!section) return;
     const video = section.querySelector('[data-mig-video]');
+    const videoMobile = section.querySelector('[data-mig-video-mobile]');
     const cover = section.querySelector('[data-mig-cover]');
     const playBtn = section.querySelector('[data-mig-play]');
     if (!video || !cover || !playBtn) return;
 
     const showVideo = () => {
       cover.classList.add('hidden');
-      video.classList.remove('hidden');
+      if (window.matchMedia('(max-width: 1023px)').matches && videoMobile) {
+        videoMobile.classList.remove('hidden');
+      } else {
+        video.classList.remove('hidden');
+      }
     };
 
     const showCover = () => {
-      video.pause();
-      video.classList.add('hidden');
+      if (video) {
+        video.pause();
+        video.classList.add('hidden');
+      }
+      if (videoMobile) {
+        videoMobile.pause();
+        videoMobile.classList.add('hidden');
+      }
       cover.classList.remove('hidden');
     };
 
     playBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       showVideo();
-      video.muted = false;
-      video.play();
+      const target = window.matchMedia('(max-width: 1023px)').matches && videoMobile ? videoMobile : video;
+      target.muted = false;
+      target.play();
     });
 
     video.addEventListener('pause', () => {
       if (!video.ended) showCover();
     });
     video.addEventListener('ended', showCover);
+    if (videoMobile) {
+      videoMobile.addEventListener('pause', () => {
+        if (!videoMobile.ended) showCover();
+      });
+      videoMobile.addEventListener('ended', showCover);
+    }
   })();
 </script>
 
@@ -203,9 +239,12 @@
     { "type": "text", "id": "decor_image_alt", "label": "Alt imagen decorativa", "default": "Decorativo" },
 
     { "type": "header", "content": "Video" },
-    { "type": "url", "id": "video_url", "label": "URL del video (.mp4)" },
-    { "type": "image_picker", "id": "poster_image", "label": "Imagen de portada" },
-    { "type": "text", "id": "poster_alt", "label": "Alt portada", "default": "Portada del video" },
+    { "type": "url", "id": "video_url_desktop", "label": "URL video desktop (.mp4)" },
+    { "type": "url", "id": "video_url_mobile", "label": "URL video movil (.mp4)" },
+    { "type": "image_picker", "id": "poster_image_desktop", "label": "Imagen de portada desktop" },
+    { "type": "image_picker", "id": "poster_image_mobile", "label": "Imagen de portada movil" },
+    { "type": "text", "id": "poster_alt_desktop", "label": "Alt portada desktop", "default": "Portada del video" },
+    { "type": "text", "id": "poster_alt_mobile", "label": "Alt portada movil", "default": "Portada del video" },
     {
       "type": "select",
       "id": "video_ratio",
