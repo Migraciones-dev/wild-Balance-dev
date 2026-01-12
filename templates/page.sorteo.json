@@ -452,7 +452,7 @@
       ],
       "custom_css": [
         ".t4s-section-all {background: #f7f2e6;}",
-        ".mx-auto {max-width: unset!important;}"
+        ".mx-auto {max-width: unset !important;}"
       ],
       "name": "Migraciones reviews",
       "settings": {
@@ -479,9 +479,10 @@
         "subtitle": "<p>Descubre nuestra historia en este video.</p>",
         "decor_image": "shopify://shop_images/Group_1561.png",
         "decor_image_alt": "Decorativo",
-        "video_url": "",
-        "poster_image": "shopify://shop_images/freepik__incorpora-en-la-img1-una-chica-con-un-perro-la-chi__80622_5_1.png",
-        "poster_alt": "Portada del video",
+        "video_url_desktop": "https://cdn.shopify.com/videos/c/o/v/115478cac7844243bef95bb55531cbd5.mp4",
+        "video_url_mobile": "https://cdn.shopify.com/videos/c/o/v/01a19b6099664e5fae7b682ca10bd585.mp4",
+        "poster_alt_desktop": "Portada del video",
+        "poster_alt_mobile": "Portada del video",
         "video_ratio": "16-9",
         "video_max_width": 900,
         "video_radius_desktop": 16,
