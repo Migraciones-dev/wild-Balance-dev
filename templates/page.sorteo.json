@@ -245,8 +245,8 @@
           "settings": {
             "content": "<p>Participa con tus pedidos hasta el día 31 de enero 2026.</p>",
             "font_family": "ginger_bold",
-            "content_size_mobile": 14,
-            "content_size_tablet": 15,
+            "content_size_mobile": 17,
+            "content_size_tablet": 25,
             "content_size_desktop": 37,
             "content_lh_mobile": 150,
             "content_lh_tablet": 150,
@@ -263,9 +263,9 @@
           "settings": {
             "content": "<p>Anunciaremos el ganador el 2 de febrero 2026 personalmente y a través de nuestro instagram @wildbalancemascotas.</p><p>Consulta bases legales aquí.</p>",
             "font_family": "ginger",
-            "content_size_mobile": 14,
-            "content_size_tablet": 15,
-            "content_size_desktop": 16,
+            "content_size_mobile": 13,
+            "content_size_tablet": 19,
+            "content_size_desktop": 27,
             "content_lh_mobile": 150,
             "content_lh_tablet": 150,
             "content_lh_desktop": 150,
