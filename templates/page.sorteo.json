@@ -450,6 +450,9 @@
         "review_LNi4Q7",
         "review_YKbpr8"
       ],
+      "custom_css": [
+        ".t4s-section-all {background:#F7F2E6;}"
+      ],
       "name": "Migraciones reviews",
       "settings": {
         "title_prefix": "Cómo funciona",
