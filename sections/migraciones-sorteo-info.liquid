@@ -79,7 +79,7 @@
       left: 0;
       width: 100%;
       padding-top: 12px;
-      font-size: clamp(15px, 3vw, 40px);
+      font-size: var(--fs-topline-mobile);
       letter-spacing: 0.08em;
       z-index: 1;
     }
@@ -123,16 +123,26 @@
       #mig-sorteo-info-{{ section.id }} .mig-title-size { font-size: var(--fs-title-desktop); }
       #mig-sorteo-info-{{ section.id }} .mig-text-size { font-size: var(--fs-text-desktop); }
       #mig-sorteo-info-{{ section.id }} .mig-rich-size { font-size: var(--fs-rich-desktop); }
+      #mig-sorteo-info-{{ section.id }} .mig-topline { font-size: var(--fs-topline-desktop); }
     }
     @media (min-width: 768px) and (max-width: 1023px) {
       #mig-sorteo-info-{{ section.id }} .mig-title-size { font-size: var(--fs-title-tablet); }
       #mig-sorteo-info-{{ section.id }} .mig-text-size { font-size: var(--fs-text-tablet); }
       #mig-sorteo-info-{{ section.id }} .mig-rich-size { font-size: var(--fs-rich-tablet); }
+      #mig-sorteo-info-{{ section.id }} .mig-topline { font-size: var(--fs-topline-tablet); }
     }
   </style>
 
   {% if topline_mobile != blank or topline_desktop_left != blank or topline_desktop_right != blank %}
-    <div class="mig-topline {{ topline_font_class }}" style="color: {{ section.settings.topline_color }};">
+    <div
+      class="mig-topline {{ topline_font_class }}"
+      style="
+        color: {{ section.settings.topline_color }};
+        --fs-topline-mobile: {{ section.settings.topline_size_mobile }}px;
+        --fs-topline-tablet: {{ section.settings.topline_size_tablet }}px;
+        --fs-topline-desktop: {{ section.settings.topline_size_desktop }}px;
+      "
+    >
       <div class="w-full px-6 lg:px-10">
         <div class="lg:hidden text-center">{{ topline_mobile }}</div>
         <div class="hidden lg:flex w-full items-center justify-between max-w-[95%] mx-auto">
@@ -314,6 +324,10 @@
       "label": "Texto topline movil",
       "default": "Descubre todo sobre nuestro sorteo →"
     },
+    { "type": "header", "content": "Tamano topline" },
+    { "type": "range", "id": "topline_size_mobile", "label": "Topline movil", "min": 10, "max": 40, "step": 1, "unit": "px", "default": 15 },
+    { "type": "range", "id": "topline_size_tablet", "label": "Topline tablet", "min": 10, "max": 48, "step": 1, "unit": "px", "default": 24 },
+    { "type": "range", "id": "topline_size_desktop", "label": "Topline desktop", "min": 10, "max": 60, "step": 1, "unit": "px", "default": 40 },
     {
       "type": "select",
       "id": "topline_font_family",
