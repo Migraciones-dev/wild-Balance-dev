@@ -9,6 +9,16 @@
   assign topline_desktop_left = section.settings.topline_text_desktop_left | default: 'Descubre todo sobre nuestro sorteo'
   assign topline_desktop_right = section.settings.topline_text_desktop_right | default: '→'
   assign topline_mobile = section.settings.topline_text_mobile | default: topline_desktop_left | append: ' ' | append: topline_desktop_right
+  assign topline_font_class = ''
+  if section.settings.topline_font_family == 'bobby'
+    assign topline_font_class = 'mig-font-bobby'
+  elsif section.settings.topline_font_family == 'ginger'
+    assign topline_font_class = 'mig-font-ginger'
+  elsif section.settings.topline_font_family == 'ginger_bold'
+    assign topline_font_class = 'mig-font-ginger-bold'
+  elsif section.settings.topline_font_family == 'judge'
+    assign topline_font_class = 'mig-font-judge'
+  endif
 -%}
 
 <section
@@ -47,6 +57,13 @@
       font-family: "F37 Ginger", sans-serif;
       font-weight: 700;
     }
+    #mig-sorteo-info-{{ section.id }} .mig-font-judge {
+      font-family: "F37 Judge Condensed", sans-serif;
+      font-weight: 500;
+    }
+    #mig-sorteo-info-{{ section.id }} .mig-title-size { font-size: var(--fs-title-mobile); }
+    #mig-sorteo-info-{{ section.id }} .mig-text-size { font-size: var(--fs-text-mobile); }
+    #mig-sorteo-info-{{ section.id }} .mig-rich-size { font-size: var(--fs-rich-mobile); }
     #mig-sorteo-info-{{ section.id }} .mig-cta {
       font-size: clamp(16px, 2.3vw, 54px);
       font-weight: 700;
@@ -62,7 +79,7 @@
       left: 0;
       width: 100%;
       padding-top: 12px;
-      font-size: 14px;
+      font-size: clamp(15px, 3vw, 40px);
       letter-spacing: 0.08em;
       z-index: 1;
     }
@@ -103,11 +120,19 @@
       #mig-sorteo-info-{{ section.id }} .mig-image {
         width: var(--w-desktop);
       }
+      #mig-sorteo-info-{{ section.id }} .mig-title-size { font-size: var(--fs-title-desktop); }
+      #mig-sorteo-info-{{ section.id }} .mig-text-size { font-size: var(--fs-text-desktop); }
+      #mig-sorteo-info-{{ section.id }} .mig-rich-size { font-size: var(--fs-rich-desktop); }
+    }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      #mig-sorteo-info-{{ section.id }} .mig-title-size { font-size: var(--fs-title-tablet); }
+      #mig-sorteo-info-{{ section.id }} .mig-text-size { font-size: var(--fs-text-tablet); }
+      #mig-sorteo-info-{{ section.id }} .mig-rich-size { font-size: var(--fs-rich-tablet); }
     }
   </style>
 
   {% if topline_mobile != blank or topline_desktop_left != blank or topline_desktop_right != blank %}
-    <div class="mig-topline" style="color: {{ section.settings.topline_color }};">
+    <div class="mig-topline {{ topline_font_class }}" style="color: {{ section.settings.topline_color }};">
       <div class="w-full px-6 lg:px-10">
         <div class="lg:hidden text-center">{{ topline_mobile }}</div>
         <div class="hidden lg:flex w-full items-center justify-between max-w-[95%] mx-auto">
@@ -143,16 +168,26 @@
               {% endif %}
               {% if block.settings.heading != blank %}
                 <h2
-                  class="mig-font-bobby text-[26px] sm:text-[32px] lg:text-[40px] leading-tight"
-                  style="color: {{ block.settings.heading_color }}"
+                  class="mig-font-bobby mig-title-size leading-tight"
+                  style="
+                    color: {{ block.settings.heading_color }};
+                    --fs-title-mobile: {{ block.settings.heading_size_mobile }}px;
+                    --fs-title-tablet: {{ block.settings.heading_size_tablet }}px;
+                    --fs-title-desktop: {{ block.settings.heading_size_desktop }}px;
+                  "
                 >
                   {{ block.settings.heading }}
                 </h2>
               {% endif %}
               {% if block.settings.text != blank %}
                 <div
-                  class="mig-rich mig-font-bobby text-[15px] sm:text-[16px] lg:text-[18px] leading-relaxed"
-                  style="color: {{ block.settings.text_color }}"
+                  class="mig-rich mig-font-bobby mig-text-size leading-relaxed"
+                  style="
+                    color: {{ block.settings.text_color }};
+                    --fs-text-mobile: {{ block.settings.text_size_mobile }}px;
+                    --fs-text-tablet: {{ block.settings.text_size_tablet }}px;
+                    --fs-text-desktop: {{ block.settings.text_size_desktop }}px;
+                  "
                 >
                   {{ block.settings.text }}
                 </div>
@@ -160,13 +195,7 @@
             </div>
 
           {% when 'rich_text' %}
-            {%- assign size_class = 'text-[14px] sm:text-[15px] lg:text-[16px]' -%}
             {%- assign font_class = 'mig-font-bobby' -%}
-            {%- if block.settings.text_size == 'base' -%}
-              {%- assign size_class = 'text-[15px] sm:text-[16px] lg:text-[18px]' -%}
-            {%- elsif block.settings.text_size == 'lg' -%}
-              {%- assign size_class = 'text-[18px] sm:text-[20px] lg:text-[22px]' -%}
-            {%- endif -%}
             {%- if block.settings.font_family == 'ginger' -%}
               {%- assign font_class = 'mig-font-ginger' -%}
             {%- elsif block.settings.font_family == 'ginger_bold' -%}
@@ -179,11 +208,14 @@
                 --mb-mobile: {{ block.settings.mb_mobile }}px;
                 --mt-desktop: {{ block.settings.mt_desktop }}px;
                 --mb-desktop: {{ block.settings.mb_desktop }}px;
+                --fs-rich-mobile: {{ block.settings.content_size_mobile }}px;
+                --fs-rich-tablet: {{ block.settings.content_size_tablet }}px;
+                --fs-rich-desktop: {{ block.settings.content_size_desktop }}px;
               "
               {{ block.shopify_attributes }}
             >
               <div
-                class="mig-rich {{ font_class }} {{ size_class }} leading-relaxed text-center"
+                class="mig-rich {{ font_class }} mig-rich-size leading-relaxed text-center"
                 style="color: {{ block.settings.text_color }}"
               >
                 {{ block.settings.content }}
@@ -282,6 +314,19 @@
       "label": "Texto topline movil",
       "default": "Descubre todo sobre nuestro sorteo →"
     },
+    {
+      "type": "select",
+      "id": "topline_font_family",
+      "label": "Tipografia topline",
+      "default": "original",
+      "options": [
+        { "value": "original", "label": "Original del tema" },
+        { "value": "bobby", "label": "F37 Bobby Regular" },
+        { "value": "ginger", "label": "F37 Ginger Regular" },
+        { "value": "ginger_bold", "label": "F37 Ginger Bold" },
+        { "value": "judge", "label": "F37 Judge Condensed" }
+      ]
+    },
     { "type": "color", "id": "topline_color", "label": "Color topline", "default": "#F7F2E6" },
 
     { "type": "range", "id": "pt_desktop", "label": "Padding superior desktop", "min": 0, "max": 200, "step": 4, "unit": "px", "default": 40 },
@@ -304,8 +349,16 @@
         { "type": "color", "id": "eyebrow_color", "label": "Color eyebrow", "default": "#F7F2E6" },
         { "type": "text", "id": "heading", "label": "Titulo", "default": "Tu peludo vera el mundo que tu le ensenes" },
         { "type": "color", "id": "heading_color", "label": "Color titulo", "default": "#F7F2E6" },
+        { "type": "header", "content": "Tamano titulo" },
+        { "type": "range", "id": "heading_size_mobile", "label": "Titulo movil", "min": 16, "max": 64, "step": 1, "unit": "px", "default": 26 },
+        { "type": "range", "id": "heading_size_tablet", "label": "Titulo tablet", "min": 16, "max": 72, "step": 1, "unit": "px", "default": 32 },
+        { "type": "range", "id": "heading_size_desktop", "label": "Titulo desktop", "min": 16, "max": 80, "step": 1, "unit": "px", "default": 40 },
         { "type": "richtext", "id": "text", "label": "Texto", "default": "<p>y Wild Balance os prepara una escapada increible</p>" },
         { "type": "color", "id": "text_color", "label": "Color texto", "default": "#F7F2E6" },
+        { "type": "header", "content": "Tamano texto" },
+        { "type": "range", "id": "text_size_mobile", "label": "Texto movil", "min": 10, "max": 32, "step": 1, "unit": "px", "default": 15 },
+        { "type": "range", "id": "text_size_tablet", "label": "Texto tablet", "min": 10, "max": 36, "step": 1, "unit": "px", "default": 16 },
+        { "type": "range", "id": "text_size_desktop", "label": "Texto desktop", "min": 10, "max": 40, "step": 1, "unit": "px", "default": 18 },
         { "type": "header", "content": "Margenes" },
         { "type": "range", "id": "mt_desktop", "label": "Margen superior desktop", "min": 0, "max": 200, "step": 4, "unit": "px", "default": 0 },
         { "type": "range", "id": "mb_desktop", "label": "Margen inferior desktop", "min": 0, "max": 200, "step": 4, "unit": "px", "default": 0 },
@@ -363,17 +416,10 @@
             { "value": "ginger_bold", "label": "F37 Ginger Bold" }
           ]
         },
-        {
-          "type": "select",
-          "id": "text_size",
-          "label": "Tamano de texto",
-          "default": "sm",
-          "options": [
-            { "value": "sm", "label": "Pequeno" },
-            { "value": "base", "label": "Base" },
-            { "value": "lg", "label": "Grande" }
-          ]
-        },
+        { "type": "header", "content": "Tamano texto" },
+        { "type": "range", "id": "content_size_mobile", "label": "Texto movil", "min": 10, "max": 32, "step": 1, "unit": "px", "default": 14 },
+        { "type": "range", "id": "content_size_tablet", "label": "Texto tablet", "min": 10, "max": 36, "step": 1, "unit": "px", "default": 15 },
+        { "type": "range", "id": "content_size_desktop", "label": "Texto desktop", "min": 10, "max": 40, "step": 1, "unit": "px", "default": 16 },
         { "type": "color", "id": "text_color", "label": "Color texto", "default": "#F7F2E6" },
         { "type": "header", "content": "Margenes" },
         { "type": "range", "id": "mt_desktop", "label": "Margen superior desktop", "min": 0, "max": 200, "step": 4, "unit": "px", "default": 0 },
