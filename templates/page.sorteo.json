@@ -451,7 +451,8 @@
         "review_YKbpr8"
       ],
       "custom_css": [
-        ".t4s-section-all {background:#F7F2E6;}"
+        ".t4s-section-all {background: #f7f2e6;}",
+        ".mx-auto {max-width: unset;}"
       ],
       "name": "Migraciones reviews",
       "settings": {
