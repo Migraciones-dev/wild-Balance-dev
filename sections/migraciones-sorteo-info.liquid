@@ -35,6 +35,18 @@
     #mig-sorteo-info-{{ section.id }} .mig-rich a {
       text-decoration: underline;
     }
+    #mig-sorteo-info-{{ section.id }} .mig-font-bobby {
+      font-family: "F37 Bobby", sans-serif;
+      font-weight: 400;
+    }
+    #mig-sorteo-info-{{ section.id }} .mig-font-ginger {
+      font-family: "F37 Ginger", sans-serif;
+      font-weight: 400;
+    }
+    #mig-sorteo-info-{{ section.id }} .mig-font-ginger-bold {
+      font-family: "F37 Ginger", sans-serif;
+      font-weight: 700;
+    }
     #mig-sorteo-info-{{ section.id }} .mig-cta {
       font-size: clamp(16px, 2.3vw, 54px);
       font-weight: 700;
@@ -131,7 +143,7 @@
               {% endif %}
               {% if block.settings.heading != blank %}
                 <h2
-                  class="[font-family:'Barlow',Helvetica] font-extrabold text-[26px] sm:text-[32px] lg:text-[40px] leading-tight"
+                  class="mig-font-bobby text-[26px] sm:text-[32px] lg:text-[40px] leading-tight"
                   style="color: {{ block.settings.heading_color }}"
                 >
                   {{ block.settings.heading }}
@@ -139,7 +151,7 @@
               {% endif %}
               {% if block.settings.text != blank %}
                 <div
-                  class="mig-rich text-[15px] sm:text-[16px] lg:text-[18px] leading-relaxed"
+                  class="mig-rich mig-font-bobby text-[15px] sm:text-[16px] lg:text-[18px] leading-relaxed"
                   style="color: {{ block.settings.text_color }}"
                 >
                   {{ block.settings.text }}
@@ -149,10 +161,16 @@
 
           {% when 'rich_text' %}
             {%- assign size_class = 'text-[14px] sm:text-[15px] lg:text-[16px]' -%}
+            {%- assign font_class = 'mig-font-bobby' -%}
             {%- if block.settings.text_size == 'base' -%}
               {%- assign size_class = 'text-[15px] sm:text-[16px] lg:text-[18px]' -%}
             {%- elsif block.settings.text_size == 'lg' -%}
               {%- assign size_class = 'text-[18px] sm:text-[20px] lg:text-[22px]' -%}
+            {%- endif -%}
+            {%- if block.settings.font_family == 'ginger' -%}
+              {%- assign font_class = 'mig-font-ginger' -%}
+            {%- elsif block.settings.font_family == 'ginger_bold' -%}
+              {%- assign font_class = 'mig-font-ginger-bold' -%}
             {%- endif -%}
             <div
               class="mig-block"
@@ -165,7 +183,7 @@
               {{ block.shopify_attributes }}
             >
               <div
-                class="mig-rich {{ size_class }} leading-relaxed text-center"
+                class="mig-rich {{ font_class }} {{ size_class }} leading-relaxed text-center"
                 style="color: {{ block.settings.text_color }}"
               >
                 {{ block.settings.content }}
@@ -334,6 +352,17 @@
       "name": "Texto libre",
       "settings": [
         { "type": "richtext", "id": "content", "label": "Contenido", "default": "<p><a href=\"#\">Consulta bases legales aqui</a>.</p>" },
+        {
+          "type": "select",
+          "id": "font_family",
+          "label": "Tipografia",
+          "default": "bobby",
+          "options": [
+            { "value": "bobby", "label": "F37 Bobby Regular" },
+            { "value": "ginger", "label": "F37 Ginger Regular" },
+            { "value": "ginger_bold", "label": "F37 Ginger Bold" }
+          ]
+        },
         {
           "type": "select",
           "id": "text_size",
