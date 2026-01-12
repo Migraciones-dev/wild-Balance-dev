@@ -271,9 +271,9 @@
             "content_lh_desktop": 150,
             "text_color": "#f7f2e6",
             "mt_desktop": 0,
-            "mb_desktop": 36,
+            "mb_desktop": 60,
             "mt_mobile": 0,
-            "mb_mobile": 32
+            "mb_mobile": 40
           }
         }
       },
@@ -292,7 +292,7 @@
         "rich_text_77xaYW"
       ],
       "custom_css": [
-        ".t4s-section {background: #F7F2E6;}"
+        ".t4s-section {background: #f7f2e6;}"
       ],
       "name": "Sorteo info (verde)",
       "settings": {
