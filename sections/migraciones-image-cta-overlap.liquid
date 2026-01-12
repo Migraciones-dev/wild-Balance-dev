@@ -40,7 +40,7 @@
       padding-bottom: var(--pb-mobile);
     }
     #mig-image-cta-overlap-{{ section.id }} .mig-cta {
-      font-size: clamp(16px, 2.3vw, 54px);
+      font-size: var(--cta-font-mobile);
       font-family: "F37 Ginger", sans-serif;
       font-weight: 800;
       line-height: 1.05;
@@ -76,11 +76,17 @@
         padding-bottom: var(--pb-desktop);
       }
       #mig-image-cta-overlap-{{ section.id }} .mig-cta {
+        font-size: var(--cta-font-desktop);
         width: auto;
         padding: 0.55em 1.2em;
       }
       #mig-image-cta-overlap-{{ section.id }} .mig-cta-pos.is-top { top: var(--cta-top-desktop); }
       #mig-image-cta-overlap-{{ section.id }} .mig-cta-pos.is-bottom { bottom: var(--cta-bottom-desktop); }
+    }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      #mig-image-cta-overlap-{{ section.id }} .mig-cta {
+        font-size: var(--cta-font-tablet);
+      }
     }
   </style>
 
@@ -118,6 +124,9 @@
           style="
             background-color: {{ section.settings.button_bg }};
             color: {{ section.settings.button_color }};
+            --cta-font-mobile: {{ section.settings.button_font_mobile }}px;
+            --cta-font-tablet: {{ section.settings.button_font_tablet }}px;
+            --cta-font-desktop: {{ section.settings.button_font_desktop }}px;
             --cta-top: {{ section.settings.cta_top_mobile }}px;
             --cta-bottom: {{ section.settings.cta_bottom_mobile }}px;
             --cta-top-desktop: {{ section.settings.cta_top_desktop }}px;
@@ -158,6 +167,10 @@
     },
     { "type": "color", "id": "button_bg", "label": "Fondo boton", "default": "#F5C400" },
     { "type": "color", "id": "button_color", "label": "Color texto boton", "default": "#0B4D2A" },
+    { "type": "header", "content": "Tamano texto boton" },
+    { "type": "range", "id": "button_font_mobile", "label": "Boton movil", "min": 10, "max": 40, "step": 1, "unit": "px", "default": 16 },
+    { "type": "range", "id": "button_font_tablet", "label": "Boton tablet", "min": 10, "max": 56, "step": 1, "unit": "px", "default": 24 },
+    { "type": "range", "id": "button_font_desktop", "label": "Boton desktop", "min": 10, "max": 64, "step": 1, "unit": "px", "default": 54 },
     { "type": "header", "content": "Posicion boton" },
     { "type": "range", "id": "cta_top_desktop", "label": "Separacion superior desktop", "min": 0, "max": 200, "step": 2, "unit": "px", "default": 40 },
     { "type": "range", "id": "cta_bottom_desktop", "label": "Separacion inferior desktop", "min": 0, "max": 200, "step": 2, "unit": "px", "default": 40 },
