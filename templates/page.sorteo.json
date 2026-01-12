@@ -291,6 +291,9 @@
         "rich_text_DbUrwb",
         "rich_text_77xaYW"
       ],
+      "custom_css": [
+        ".t4s-section {background: #F7F2E6;}"
+      ],
       "name": "Sorteo info (verde)",
       "settings": {
         "bg_color": "#0b4d2a",
