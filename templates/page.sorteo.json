@@ -452,16 +452,16 @@
       ],
       "custom_css": [
         ".t4s-section-all {background: #f7f2e6;}",
-        ".mx-auto {max-width: unset;}"
+        ".max-w-[1600px] {max-width: unset;}"
       ],
       "name": "Migraciones reviews",
       "settings": {
-        "title_prefix": "Cómo funciona",
-        "title_highlight": "nuestra suscripción",
+        "title_prefix": "Qué dicen nuestros clientes",
+        "title_highlight": "",
         "decor_image": "shopify://shop_images/Capa_1.png",
         "decor_image_alt": "Decorativo",
         "cards_link": "",
-        "btn_label": "Empezar mi plan con un -10%",
+        "btn_label": "Qué dicen nuestros clientes",
         "btn_link": "",
         "bg_color": "#f7f2e6",
         "title_color": "#004623",
