@@ -103,7 +103,7 @@
           "settings": {
             "eyebrow": "",
             "eyebrow_color": "#f7f2e6",
-            "heading": "<p>1 pedido = </p><p>1 participación</p>",
+            "heading": "<p><em>1 pedido = </em></p><p><em>1 participación</em></p>",
             "heading_color": "#f7f2e6",
             "heading_size_mobile": 27,
             "heading_size_tablet": 41,
