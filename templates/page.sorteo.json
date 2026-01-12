@@ -193,8 +193,8 @@
             "text_size_mobile": 15,
             "text_size_tablet": 16,
             "text_size_desktop": 18,
-            "mt_desktop": 0,
-            "mb_desktop": 0,
+            "mt_desktop": 16,
+            "mb_desktop": 28,
             "mt_mobile": 0,
             "mb_mobile": 0
           }
