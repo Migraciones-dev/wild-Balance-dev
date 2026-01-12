@@ -1147,7 +1147,7 @@
         ],
         "custom_css": [],
         "settings": {
-          "announcement_rich_text": "",
+          "announcement_rich_text": "<p><strong>🚚PROMO FLASH:</strong> Envío gratis en tu 1ª suscripción</p><p>Código: <strong>ENVIO_SUB1</strong></p>",
           "announcement_bg_color": "#004622",
           "announcement_text_color": "#ffffff",
           "announcement_padding_top_mobile": 8,
