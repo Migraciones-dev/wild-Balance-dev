@@ -63,6 +63,13 @@
     #mig-video-landing-{{ section.id }} .mig-video-hidden {
       display: none !important;
     }
+    #mig-video-landing-{{ section.id }} [data-mig-play],
+    #mig-video-landing-{{ section.id }} [data-mig-play]:hover,
+    #mig-video-landing-{{ section.id }} [data-mig-play]:focus,
+    #mig-video-landing-{{ section.id }} [data-mig-play]:active {
+      background: transparent !important;
+      box-shadow: none !important;
+    }
     @media (min-width: 1024px) {
       #mig-video-landing-{{ section.id }} {
         padding-top: var(--pt-desktop);
