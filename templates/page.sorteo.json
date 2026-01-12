@@ -17,9 +17,9 @@
         "image_mobile": "shopify://shop_images/Group_1559.png",
         "image_alt": "Imagen hero sorteo",
         "z_index": 1,
-        "br_top_desktop": 16,
+        "br_top_desktop": 0,
         "br_bottom_desktop": 16,
-        "br_top_mobile": 12,
+        "br_top_mobile": 0,
         "br_bottom_mobile": 12
       }
     },
@@ -306,8 +306,8 @@
         "pb_desktop": 40,
         "pt_mobile": 28,
         "pb_mobile": 28,
-        "radius_top_desktop": 16,
-        "radius_bottom_desktop": 16,
+        "radius_top_desktop": 48,
+        "radius_bottom_desktop": 48,
         "radius_top_mobile": 10,
         "radius_bottom_mobile": 12
       }
