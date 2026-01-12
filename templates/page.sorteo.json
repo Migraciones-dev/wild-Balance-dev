@@ -121,7 +121,7 @@
             "text_lh_desktop": 150,
             "mt_desktop": 28,
             "mb_desktop": 0,
-            "mt_mobile": 0,
+            "mt_mobile": 20,
             "mb_mobile": 0
           }
         },
@@ -138,7 +138,7 @@
             "mt_desktop": 12,
             "mb_desktop": 32,
             "mt_mobile": 0,
-            "mb_mobile": 0
+            "mb_mobile": 12
           }
         },
         "image_VihBXU": {
@@ -222,8 +222,8 @@
             "text_lh_desktop": 150,
             "mt_desktop": 16,
             "mb_desktop": 28,
-            "mt_mobile": 0,
-            "mb_mobile": 0
+            "mt_mobile": 12,
+            "mb_mobile": 12
           }
         },
         "image_JJxPPi": {
@@ -237,7 +237,7 @@
             "mt_desktop": 0,
             "mb_desktop": 0,
             "mt_mobile": 0,
-            "mb_mobile": 0
+            "mb_mobile": 28
           }
         },
         "rich_text_DbUrwb": {
