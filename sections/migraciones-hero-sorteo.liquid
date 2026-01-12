@@ -1,0 +1,78 @@
+{% comment %}
+  Hero sorteo (responsive, Tailwind)
+  - Texto + CTA + imagen principal
+  - Border radius editable por separado (top/bottom) en desktop y movil
+{% endcomment %}
+
+<section
+  id="mig-hero-sorteo-{{ section.id }}"
+  class="w-full hero-sorteo"
+  style="
+    position: relative;
+    z-index: {{ section.settings.z_index }};
+  "
+>
+  <style>
+    #mig-hero-sorteo-{{ section.id }} {
+      border-radius: {{ section.settings.br_top_mobile }}px {{ section.settings.br_top_mobile }}px {{ section.settings.br_bottom_mobile }}px {{ section.settings.br_bottom_mobile }}px;
+      overflow: hidden;
+    }
+
+    @media (min-width: 1024px) {
+      #mig-hero-sorteo-{{ section.id }} {
+        border-radius: {{ section.settings.br_top_desktop }}px {{ section.settings.br_top_desktop }}px {{ section.settings.br_bottom_desktop }}px {{ section.settings.br_bottom_desktop }}px;
+      }
+    }
+  </style>
+
+  <div class="w-full">
+    {% if section.settings.image_mobile != blank %}
+      <img
+        src="{{ section.settings.image_mobile | image_url: width: 1600 }}"
+        alt="{{ section.settings.image_alt | escape }}"
+        class="block lg:hidden w-full h-auto object-cover"
+        loading="lazy"
+      >
+    {% endif %}
+
+    {% if section.settings.image_desktop != blank %}
+      <img
+        src="{{ section.settings.image_desktop | image_url: width: 2400 }}"
+        alt="{{ section.settings.image_alt | escape }}"
+        class="{% if section.settings.image_mobile != blank %}hidden lg:block{% else %}block{% endif %} w-full h-auto object-cover"
+        loading="lazy"
+      >
+    {% elsif section.settings.image_mobile != blank %}
+      <img
+        src="{{ section.settings.image_mobile | image_url: width: 2400 }}"
+        alt="{{ section.settings.image_alt | escape }}"
+        class="hidden lg:block w-full h-auto object-cover"
+        loading="lazy"
+      >
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero sorteo (WB)",
+  "tag": "section",
+  "class": "t4s-section t4s-section-all",
+  "settings": [
+    { "type": "header", "content": "Imagenes" },
+    { "type": "image_picker", "id": "image_desktop", "label": "Imagen desktop" },
+    { "type": "image_picker", "id": "image_mobile", "label": "Imagen movil" },
+    { "type": "text", "id": "image_alt", "label": "Alt imagen", "default": "Imagen hero sorteo" },
+    { "type": "range", "id": "z_index", "label": "Z-index", "min": -5, "max": 5, "step": 1, "default": 0 },
+
+    { "type": "header", "content": "Border radius - Desktop" },
+    { "type": "range", "id": "br_top_desktop", "label": "Radio superior", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 16 },
+    { "type": "range", "id": "br_bottom_desktop", "label": "Radio inferior", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 16 },
+
+    { "type": "header", "content": "Border radius - Movil" },
+    { "type": "range", "id": "br_top_mobile", "label": "Radio superior", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 12 },
+    { "type": "range", "id": "br_bottom_mobile", "label": "Radio inferior", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 12 }
+  ],
+  "presets": [{ "name": "Hero sorteo (WB)", "category": "Migraciones.io" }]
+}
+{% endschema %}

@@ -1,0 +1,186 @@
+{% comment %}
+  Seccion: Imagen full con CTA (superposicion)
+  - Boton posicionado arriba/centro/abajo
+  - Margenes negativos configurables para efecto de solape
+  - Z-index configurable para controlar el stacking
+{% endcomment %}
+
+{%- liquid
+  assign btn_pos = section.settings.button_position
+  assign btn_pos_class = 'is-top'
+  if btn_pos == 'center'
+    assign btn_pos_class = 'is-center'
+  elsif btn_pos == 'bottom'
+    assign btn_pos_class = 'is-bottom'
+  endif
+-%}
+
+<section
+  id="mig-image-cta-overlap-{{ section.id }}"
+  class="w-full"
+  style="
+    background-color: {{ section.settings.section_bg }};
+    --overlap-top: {{ section.settings.overlap_top_mobile }}px;
+    --overlap-bottom: {{ section.settings.overlap_bottom_mobile }}px;
+    --overlap-top-desktop: {{ section.settings.overlap_top_desktop }}px;
+    --overlap-bottom-desktop: {{ section.settings.overlap_bottom_desktop }}px;
+    --pt-mobile: {{ section.settings.pt_mobile }}px;
+    --pb-mobile: {{ section.settings.pb_mobile }}px;
+    --pt-desktop: {{ section.settings.pt_desktop }}px;
+    --pb-desktop: {{ section.settings.pb_desktop }}px;
+  "
+>
+  <style>
+    #mig-image-cta-overlap-{{ section.id }} {
+      position: relative;
+      z-index: {{ section.settings.z_index }};
+      margin-top: calc(var(--overlap-top) * -1);
+      margin-bottom: calc(var(--overlap-bottom) * -1);
+      padding-top: var(--pt-mobile);
+      padding-bottom: var(--pb-mobile);
+    }
+    #mig-image-cta-overlap-{{ section.id }} .mig-cta {
+      font-size: clamp(16px, 2.3vw, 54px);
+      font-weight: 700;
+      line-height: 1.05;
+      padding: 0.7em 1.2em;
+      white-space: nowrap;
+      width: min(92vw, 620px);
+      text-align: center;
+    }
+    #mig-image-cta-overlap-{{ section.id }} .mig-cta-pos {
+      left: 50%;
+      transform: translate(-50%, var(--cta-translate-y));
+    }
+    #mig-image-cta-overlap-{{ section.id }} .mig-cta-pos.is-top {
+      top: var(--cta-top);
+      bottom: auto;
+      --cta-translate-y: 0;
+    }
+    #mig-image-cta-overlap-{{ section.id }} .mig-cta-pos.is-bottom {
+      top: auto;
+      bottom: var(--cta-bottom);
+      --cta-translate-y: 0;
+    }
+    #mig-image-cta-overlap-{{ section.id }} .mig-cta-pos.is-center {
+      top: 50%;
+      bottom: auto;
+      --cta-translate-y: -50%;
+    }
+    @media (min-width: 1024px) {
+      #mig-image-cta-overlap-{{ section.id }} {
+        margin-top: calc(var(--overlap-top-desktop) * -1);
+        margin-bottom: calc(var(--overlap-bottom-desktop) * -1);
+        padding-top: var(--pt-desktop);
+        padding-bottom: var(--pb-desktop);
+      }
+      #mig-image-cta-overlap-{{ section.id }} .mig-cta {
+        font-weight: 800;
+        width: auto;
+        padding: 0.55em 1.2em;
+      }
+      #mig-image-cta-overlap-{{ section.id }} .mig-cta-pos.is-top { top: var(--cta-top-desktop); }
+      #mig-image-cta-overlap-{{ section.id }} .mig-cta-pos.is-bottom { bottom: var(--cta-bottom-desktop); }
+    }
+  </style>
+
+  <div class="w-full">
+    <div class="relative w-full">
+      {% if section.settings.image_mobile != blank %}
+        <img
+          src="{{ section.settings.image_mobile | image_url: width: 1400 }}"
+          alt="{{ section.settings.image_alt | escape }}"
+          class="block lg:hidden w-full h-auto object-cover"
+          loading="lazy"
+        >
+      {% endif %}
+
+      {% if section.settings.image_desktop != blank %}
+        <img
+          src="{{ section.settings.image_desktop | image_url: width: 2200 }}"
+          alt="{{ section.settings.image_alt | escape }}"
+          class="hidden lg:block w-full h-auto object-cover"
+          loading="lazy"
+        >
+      {% elsif section.settings.image_mobile != blank %}
+        <img
+          src="{{ section.settings.image_mobile | image_url: width: 2200 }}"
+          alt="{{ section.settings.image_alt | escape }}"
+          class="hidden lg:block w-full h-auto object-cover"
+          loading="lazy"
+        >
+      {% endif %}
+
+      {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+        <a
+          href="{{ section.settings.button_link }}"
+          class="mig-cta mig-cta-pos absolute {{ btn_pos_class }} inline-flex items-center justify-center rounded-full uppercase tracking-wide shadow-md"
+          style="
+            background-color: {{ section.settings.button_bg }};
+            color: {{ section.settings.button_color }};
+            --cta-top: {{ section.settings.cta_top_mobile }}px;
+            --cta-bottom: {{ section.settings.cta_bottom_mobile }}px;
+            --cta-top-desktop: {{ section.settings.cta_top_desktop }}px;
+            --cta-bottom-desktop: {{ section.settings.cta_bottom_desktop }}px;
+          "
+        >
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Imagen full + CTA",
+  "tag": "section",
+  "class": "t4s-section t4s-section-all",
+  "settings": [
+    { "type": "header", "content": "Contenido" },
+    { "type": "image_picker", "id": "image_desktop", "label": "Imagen desktop" },
+    { "type": "image_picker", "id": "image_mobile", "label": "Imagen movil" },
+    { "type": "text", "id": "image_alt", "label": "Alt imagen", "default": "Imagen principal" },
+
+    { "type": "header", "content": "Boton" },
+    { "type": "text", "id": "button_label", "label": "Texto del boton", "default": "Participa con cualquier pedido" },
+    { "type": "url", "id": "button_link", "label": "Link del boton" },
+    {
+      "type": "select",
+      "id": "button_position",
+      "label": "Posicion del boton",
+      "default": "top",
+      "options": [
+        { "value": "top", "label": "Arriba" },
+        { "value": "center", "label": "Centro" },
+        { "value": "bottom", "label": "Abajo" }
+      ]
+    },
+    { "type": "color", "id": "button_bg", "label": "Fondo boton", "default": "#F5C400" },
+    { "type": "color", "id": "button_color", "label": "Color texto boton", "default": "#0B4D2A" },
+    { "type": "header", "content": "Posicion boton" },
+    { "type": "range", "id": "cta_top_desktop", "label": "Separacion superior desktop", "min": 0, "max": 200, "step": 2, "unit": "px", "default": 40 },
+    { "type": "range", "id": "cta_bottom_desktop", "label": "Separacion inferior desktop", "min": 0, "max": 200, "step": 2, "unit": "px", "default": 40 },
+    { "type": "range", "id": "cta_top_mobile", "label": "Separacion superior movil", "min": 0, "max": 200, "step": 2, "unit": "px", "default": 24 },
+    { "type": "range", "id": "cta_bottom_mobile", "label": "Separacion inferior movil", "min": 0, "max": 200, "step": 2, "unit": "px", "default": 24 },
+
+    { "type": "header", "content": "Solape (margenes negativos)" },
+    { "type": "paragraph", "content": "Usa valores positivos; se aplican como margen negativo." },
+    { "type": "range", "id": "overlap_top_desktop", "label": "Solape superior desktop", "min": 0, "max": 300, "step": 4, "unit": "px", "default": 0 },
+    { "type": "range", "id": "overlap_bottom_desktop", "label": "Solape inferior desktop", "min": 0, "max": 300, "step": 4, "unit": "px", "default": 0 },
+    { "type": "range", "id": "overlap_top_mobile", "label": "Solape superior movil", "min": 0, "max": 300, "step": 4, "unit": "px", "default": 0 },
+    { "type": "range", "id": "overlap_bottom_mobile", "label": "Solape inferior movil", "min": 0, "max": 300, "step": 4, "unit": "px", "default": 0 },
+
+    { "type": "header", "content": "Separacion (padding)" },
+    { "type": "range", "id": "pt_desktop", "label": "Padding superior desktop", "min": 0, "max": 200, "step": 4, "unit": "px", "default": 0 },
+    { "type": "range", "id": "pb_desktop", "label": "Padding inferior desktop", "min": 0, "max": 200, "step": 4, "unit": "px", "default": 0 },
+    { "type": "range", "id": "pt_mobile", "label": "Padding superior movil", "min": 0, "max": 200, "step": 4, "unit": "px", "default": 0 },
+    { "type": "range", "id": "pb_mobile", "label": "Padding inferior movil", "min": 0, "max": 200, "step": 4, "unit": "px", "default": 0 },
+
+    { "type": "header", "content": "Ajustes visuales" },
+    { "type": "color", "id": "section_bg", "label": "Fondo seccion", "default": "transparent" },
+    { "type": "range", "id": "z_index", "label": "Z-index", "min": -5, "max": 5, "step": 1, "default": 0 }
+  ],
+  "presets": [{ "name": "Imagen full + CTA", "category": "Migraciones.io" }]
+}
+{% endschema %}
