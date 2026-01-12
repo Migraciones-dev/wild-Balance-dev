@@ -328,7 +328,7 @@
         "video_max_width": 900,
         "video_radius_desktop": 16,
         "video_radius_mobile": 12,
-        "button_label": "Conseguir experiencia",
+        "button_label": "Conseguir experiencia →",
         "button_link": "/",
         "bg_color": "#f7f2e6",
         "title_color": "#0b4d2a",
