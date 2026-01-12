@@ -476,7 +476,7 @@
       "settings": {
         "title_prefix": "Tu peludo, tu compañero de",
         "title_highlight": "aventuras",
-        "subtitle": "<p>Descubre nuestra historia en este video.</p>",
+        "subtitle": "",
         "decor_image": "shopify://shop_images/Group_1561.png",
         "decor_image_alt": "Decorativo",
         "video_url_desktop": "https://cdn.shopify.com/videos/c/o/v/115478cac7844243bef95bb55531cbd5.mp4",
