@@ -67,6 +67,9 @@
     #mig-sorteo-info-{{ section.id }} .mig-title-size { font-size: var(--fs-title-mobile); }
     #mig-sorteo-info-{{ section.id }} .mig-text-size { font-size: var(--fs-text-mobile); }
     #mig-sorteo-info-{{ section.id }} .mig-rich-size { font-size: var(--fs-rich-mobile); }
+    #mig-sorteo-info-{{ section.id }} .mig-title-lh { line-height: var(--lh-title-mobile); }
+    #mig-sorteo-info-{{ section.id }} .mig-text-lh { line-height: var(--lh-text-mobile); }
+    #mig-sorteo-info-{{ section.id }} .mig-rich-lh { line-height: var(--lh-rich-mobile); }
     #mig-sorteo-info-{{ section.id }} .mig-cta {
       font-size: clamp(16px, 2.3vw, 54px);
       font-weight: 700;
@@ -83,7 +86,7 @@
       width: 100%;
       padding-top: 12px;
       font-size: var(--fs-topline-mobile);
-      letter-spacing: 0.08em;
+      letter-spacing: 0;
       z-index: 1;
     }
     #mig-sorteo-info-{{ section.id }} .mig-block {
@@ -126,12 +129,18 @@
       #mig-sorteo-info-{{ section.id }} .mig-title-size { font-size: var(--fs-title-desktop); }
       #mig-sorteo-info-{{ section.id }} .mig-text-size { font-size: var(--fs-text-desktop); }
       #mig-sorteo-info-{{ section.id }} .mig-rich-size { font-size: var(--fs-rich-desktop); }
+      #mig-sorteo-info-{{ section.id }} .mig-title-lh { line-height: var(--lh-title-desktop); }
+      #mig-sorteo-info-{{ section.id }} .mig-text-lh { line-height: var(--lh-text-desktop); }
+      #mig-sorteo-info-{{ section.id }} .mig-rich-lh { line-height: var(--lh-rich-desktop); }
       #mig-sorteo-info-{{ section.id }} .mig-topline { font-size: var(--fs-topline-desktop); }
     }
     @media (min-width: 768px) and (max-width: 1023px) {
       #mig-sorteo-info-{{ section.id }} .mig-title-size { font-size: var(--fs-title-tablet); }
       #mig-sorteo-info-{{ section.id }} .mig-text-size { font-size: var(--fs-text-tablet); }
       #mig-sorteo-info-{{ section.id }} .mig-rich-size { font-size: var(--fs-rich-tablet); }
+      #mig-sorteo-info-{{ section.id }} .mig-title-lh { line-height: var(--lh-title-tablet); }
+      #mig-sorteo-info-{{ section.id }} .mig-text-lh { line-height: var(--lh-text-tablet); }
+      #mig-sorteo-info-{{ section.id }} .mig-rich-lh { line-height: var(--lh-rich-tablet); }
       #mig-sorteo-info-{{ section.id }} .mig-topline { font-size: var(--fs-topline-tablet); }
     }
   </style>
@@ -181,12 +190,15 @@
               {% endif %}
               {% if block.settings.heading != blank %}
                 <div
-                  class="mig-title mig-font-bobby mig-title-size leading-tight"
+                  class="mig-title mig-font-bobby mig-title-size mig-title-lh"
                   style="
                     color: {{ block.settings.heading_color }};
                     --fs-title-mobile: {{ block.settings.heading_size_mobile }}px;
                     --fs-title-tablet: {{ block.settings.heading_size_tablet }}px;
                     --fs-title-desktop: {{ block.settings.heading_size_desktop }}px;
+                    --lh-title-mobile: {{ block.settings.heading_lh_mobile | default: 110 }}%;
+                    --lh-title-tablet: {{ block.settings.heading_lh_tablet | default: 110 }}%;
+                    --lh-title-desktop: {{ block.settings.heading_lh_desktop | default: 110 }}%;
                   "
                 >
                   {{ block.settings.heading }}
@@ -194,12 +206,15 @@
               {% endif %}
               {% if block.settings.text != blank %}
                 <div
-                  class="mig-rich mig-font-bobby mig-text-size leading-relaxed"
+                  class="mig-rich mig-font-bobby mig-text-size mig-text-lh"
                   style="
                     color: {{ block.settings.text_color }};
                     --fs-text-mobile: {{ block.settings.text_size_mobile }}px;
                     --fs-text-tablet: {{ block.settings.text_size_tablet }}px;
                     --fs-text-desktop: {{ block.settings.text_size_desktop }}px;
+                    --lh-text-mobile: {{ block.settings.text_lh_mobile | default: 150 }}%;
+                    --lh-text-tablet: {{ block.settings.text_lh_tablet | default: 150 }}%;
+                    --lh-text-desktop: {{ block.settings.text_lh_desktop | default: 150 }}%;
                   "
                 >
                   {{ block.settings.text }}
@@ -224,11 +239,14 @@
                 --fs-rich-mobile: {{ block.settings.content_size_mobile }}px;
                 --fs-rich-tablet: {{ block.settings.content_size_tablet }}px;
                 --fs-rich-desktop: {{ block.settings.content_size_desktop }}px;
+                --lh-rich-mobile: {{ block.settings.content_lh_mobile | default: 150 }}%;
+                --lh-rich-tablet: {{ block.settings.content_lh_tablet | default: 150 }}%;
+                --lh-rich-desktop: {{ block.settings.content_lh_desktop | default: 150 }}%;
               "
               {{ block.shopify_attributes }}
             >
               <div
-                class="mig-rich {{ font_class }} mig-rich-size leading-relaxed text-center"
+                class="mig-rich {{ font_class }} mig-rich-size mig-rich-lh text-center"
                 style="color: {{ block.settings.text_color }}"
               >
                 {{ block.settings.content }}
@@ -370,12 +388,20 @@
         { "type": "range", "id": "heading_size_mobile", "label": "Titulo movil", "min": 16, "max": 64, "step": 1, "unit": "px", "default": 26 },
         { "type": "range", "id": "heading_size_tablet", "label": "Titulo tablet", "min": 16, "max": 72, "step": 1, "unit": "px", "default": 32 },
         { "type": "range", "id": "heading_size_desktop", "label": "Titulo desktop", "min": 16, "max": 80, "step": 1, "unit": "px", "default": 40 },
+        { "type": "header", "content": "Altura de linea titulo (%)" },
+        { "type": "range", "id": "heading_lh_mobile", "label": "Titulo movil", "min": 80, "max": 200, "step": 5, "unit": "%", "default": 110 },
+        { "type": "range", "id": "heading_lh_tablet", "label": "Titulo tablet", "min": 80, "max": 200, "step": 5, "unit": "%", "default": 110 },
+        { "type": "range", "id": "heading_lh_desktop", "label": "Titulo desktop", "min": 80, "max": 200, "step": 5, "unit": "%", "default": 110 },
         { "type": "richtext", "id": "text", "label": "Texto", "default": "<p>y Wild Balance os prepara una escapada increible</p>" },
         { "type": "color", "id": "text_color", "label": "Color texto", "default": "#F7F2E6" },
         { "type": "header", "content": "Tamano texto" },
         { "type": "range", "id": "text_size_mobile", "label": "Texto movil", "min": 10, "max": 32, "step": 1, "unit": "px", "default": 15 },
         { "type": "range", "id": "text_size_tablet", "label": "Texto tablet", "min": 10, "max": 36, "step": 1, "unit": "px", "default": 16 },
         { "type": "range", "id": "text_size_desktop", "label": "Texto desktop", "min": 10, "max": 40, "step": 1, "unit": "px", "default": 18 },
+        { "type": "header", "content": "Altura de linea texto (%)" },
+        { "type": "range", "id": "text_lh_mobile", "label": "Texto movil", "min": 80, "max": 220, "step": 5, "unit": "%", "default": 150 },
+        { "type": "range", "id": "text_lh_tablet", "label": "Texto tablet", "min": 80, "max": 220, "step": 5, "unit": "%", "default": 150 },
+        { "type": "range", "id": "text_lh_desktop", "label": "Texto desktop", "min": 80, "max": 220, "step": 5, "unit": "%", "default": 150 },
         { "type": "header", "content": "Margenes" },
         { "type": "range", "id": "mt_desktop", "label": "Margen superior desktop", "min": 0, "max": 200, "step": 4, "unit": "px", "default": 0 },
         { "type": "range", "id": "mb_desktop", "label": "Margen inferior desktop", "min": 0, "max": 200, "step": 4, "unit": "px", "default": 0 },
@@ -437,6 +463,10 @@
         { "type": "range", "id": "content_size_mobile", "label": "Texto movil", "min": 10, "max": 32, "step": 1, "unit": "px", "default": 14 },
         { "type": "range", "id": "content_size_tablet", "label": "Texto tablet", "min": 10, "max": 36, "step": 1, "unit": "px", "default": 15 },
         { "type": "range", "id": "content_size_desktop", "label": "Texto desktop", "min": 10, "max": 40, "step": 1, "unit": "px", "default": 16 },
+        { "type": "header", "content": "Altura de linea texto (%)" },
+        { "type": "range", "id": "content_lh_mobile", "label": "Texto movil", "min": 80, "max": 220, "step": 5, "unit": "%", "default": 150 },
+        { "type": "range", "id": "content_lh_tablet", "label": "Texto tablet", "min": 80, "max": 220, "step": 5, "unit": "%", "default": 150 },
+        { "type": "range", "id": "content_lh_desktop", "label": "Texto desktop", "min": 80, "max": 220, "step": 5, "unit": "%", "default": 150 },
         { "type": "color", "id": "text_color", "label": "Color texto", "default": "#F7F2E6" },
         { "type": "header", "content": "Margenes" },
         { "type": "range", "id": "mt_desktop", "label": "Margen superior desktop", "min": 0, "max": 200, "step": 4, "unit": "px", "default": 0 },
