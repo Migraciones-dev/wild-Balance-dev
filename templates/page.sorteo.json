@@ -228,9 +228,9 @@
             "text_size_mobile": 15,
             "text_size_tablet": 16,
             "text_size_desktop": 18,
-            "mt_desktop": 0,
+            "mt_desktop": 28,
             "mb_desktop": 0,
-            "mt_mobile": 0,
+            "mt_mobile": 24,
             "mb_mobile": 0
           }
         },
@@ -244,9 +244,9 @@
             "content_size_desktop": 16,
             "text_color": "#f7f2e6",
             "mt_desktop": 0,
-            "mb_desktop": 0,
+            "mb_desktop": 36,
             "mt_mobile": 0,
-            "mb_mobile": 0
+            "mb_mobile": 32
           }
         }
       },
