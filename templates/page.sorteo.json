@@ -80,8 +80,8 @@
             "text_lh_desktop": 150,
             "mt_desktop": 100,
             "mb_desktop": 36,
-            "mt_mobile": 44,
-            "mb_mobile": 0
+            "mt_mobile": 40,
+            "mb_mobile": 20
           }
         },
         "image_9UrmfN": {
@@ -103,7 +103,7 @@
           "settings": {
             "eyebrow": "",
             "eyebrow_color": "#f7f2e6",
-            "heading": "<p>1 pedido = 1 participación</p>",
+            "heading": "<p>1 pedido = </p><p>1 participación</p>",
             "heading_color": "#f7f2e6",
             "heading_size_mobile": 27,
             "heading_size_tablet": 41,
