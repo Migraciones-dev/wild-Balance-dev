@@ -114,7 +114,6 @@
             src="{{ section.settings.video_url_desktop }}"
             preload="metadata"
             playsinline
-            controls
           ></video>
           <video
             class="absolute inset-0 h-full w-full object-cover block lg:hidden mig-video-mobile{% if has_poster_mobile %} mig-video-hidden{% endif %}"
@@ -122,7 +121,6 @@
             src="{{ section.settings.video_url_mobile }}"
             preload="metadata"
             playsinline
-            controls
           ></video>
 
           <div class="absolute inset-0" data-mig-cover>
@@ -192,8 +190,10 @@
     const showVideo = () => {
       cover.classList.add('hidden');
       if (window.matchMedia('(max-width: 1023px)').matches && videoMobile) {
+        videoMobile.controls = true;
         videoMobile.classList.remove('mig-video-hidden');
       } else {
+        video.controls = true;
         video.classList.remove('mig-video-hidden');
       }
     };
@@ -201,12 +201,14 @@
     const showCover = () => {
       if (video) {
         video.pause();
+        video.controls = false;
         if (hasPosterDesktop) {
           video.classList.add('mig-video-hidden');
         }
       }
       if (videoMobile) {
         videoMobile.pause();
+        videoMobile.controls = false;
         if (hasPosterMobile) {
           videoMobile.classList.add('mig-video-hidden');
         }
