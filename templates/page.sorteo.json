@@ -59,7 +59,7 @@
           "settings": {
             "eyebrow": "",
             "eyebrow_color": "#f7f2e6",
-            "heading": "Tu peludo vera el mundo que tu le ensenes",
+            "heading": "<p>Tu peludo vera el mundo que tu le ensenes</p>",
             "heading_color": "#f7f2e6",
             "heading_size_mobile": 26,
             "heading_size_tablet": 32,
@@ -94,7 +94,7 @@
           "settings": {
             "eyebrow": "",
             "eyebrow_color": "#f7f2e6",
-            "heading": "1 pedido = 1 participación",
+            "heading": "<p>1 pedido = 1 participación</p>",
             "heading_color": "#f7f2e6",
             "heading_size_mobile": 26,
             "heading_size_tablet": 32,
@@ -183,7 +183,7 @@
           "settings": {
             "eyebrow": "",
             "eyebrow_color": "#f7f2e6",
-            "heading": "Elige entre distintas ubicaciones por España",
+            "heading": "<p>Elige entre distintas ubicaciones por España</p>",
             "heading_color": "#f7f2e6",
             "heading_size_mobile": 26,
             "heading_size_tablet": 32,
@@ -218,7 +218,7 @@
           "settings": {
             "eyebrow": "",
             "eyebrow_color": "#f7f2e6",
-            "heading": "Participa con tus pedidos hasta el día 31 de enero 2026.",
+            "heading": "<p>Participa con tus pedidos hasta el día 31 de enero 2026.</p>",
             "heading_color": "#f7f2e6",
             "heading_size_mobile": 26,
             "heading_size_tablet": 32,
