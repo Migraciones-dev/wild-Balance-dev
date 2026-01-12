@@ -452,7 +452,7 @@
       ],
       "custom_css": [
         ".t4s-section-all {background: #f7f2e6;}",
-        ".max-w-[1600px] {max-width: unset;}"
+        ".mx-auto {max-width: unset!important;}"
       ],
       "name": "Migraciones reviews",
       "settings": {
@@ -467,7 +467,7 @@
         "title_color": "#004623",
         "highlight_color": "#004623",
         "text_color": "#004623",
-        "accent_color": "#FFCD00"
+        "accent_color": "#ffcd00"
       }
     },
     "migraciones_video_landing_8mtF7T": {
