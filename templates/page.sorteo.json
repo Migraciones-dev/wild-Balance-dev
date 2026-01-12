@@ -318,7 +318,7 @@
     "migraciones_feafured_collection_kbUyGC": {
       "type": "migraciones-feafured-collection",
       "custom_css": [
-        ".feat-col-section {background:#F7F2E6;}"
+        ".feat-col-section {background: #f7f2e6;}"
       ],
       "name": "Migraciones collection",
       "settings": {
@@ -402,6 +402,68 @@
         "pd_tb": "",
         "mg_mb": ",,30px,",
         "pd_mb": ""
+      }
+    },
+    "google_reviews_LYYQJq": {
+      "type": "google-reviews",
+      "blocks": {
+        "review_BENWk3": {
+          "type": "review",
+          "settings": {
+            "avatar_alt": "Avatar",
+            "name": "María",
+            "rating": 5,
+            "text": "Servicio impecable."
+          }
+        },
+        "review_xqx3XN": {
+          "type": "review",
+          "settings": {
+            "avatar_alt": "Avatar",
+            "name": "Javi",
+            "rating": 5,
+            "text": "Rápidos y efectivos."
+          }
+        },
+        "review_LNi4Q7": {
+          "type": "review",
+          "settings": {
+            "avatar_alt": "Avatar",
+            "name": "Laura",
+            "rating": 4,
+            "text": "Muy buena experiencia."
+          }
+        },
+        "review_YKbpr8": {
+          "type": "review",
+          "settings": {
+            "avatar_alt": "Avatar",
+            "name": "Cliente satisfecho",
+            "rating": 5,
+            "text": "Comentario del cliente."
+          }
+        }
+      },
+      "block_order": [
+        "review_BENWk3",
+        "review_xqx3XN",
+        "review_LNi4Q7",
+        "review_YKbpr8"
+      ],
+      "name": "Migraciones reviews",
+      "settings": {
+        "title_prefix": "Cómo funciona",
+        "title_highlight": "nuestra suscripción",
+        "decor_image": "shopify://shop_images/Capa_1.png",
+        "decor_image_alt": "Decorativo",
+        "cards_link": "",
+        "btn_label": "Empezar mi plan con un -10%",
+        "btn_link": "",
+        "bg_color": "#f7f2e6",
+        "title_color": "#004623",
+        "highlight_color": "#004623",
+        "text_color": "#004623",
+        "accent_color": "#FFCD00"
       }
     },
     "migraciones_video_landing_8mtF7T": {
@@ -523,6 +585,7 @@
     "migraciones_image_cta_overlap_TcgzJR",
     "migraciones_sorteo_info_zx66f4",
     "migraciones_feafured_collection_kbUyGC",
+    "google_reviews_LYYQJq",
     "migraciones_video_landing_8mtF7T",
     "heading",
     "main",
