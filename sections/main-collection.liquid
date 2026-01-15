@@ -249,8 +249,28 @@
 </div>
 {% endif %}
 
-
-<div class="t4s-btn-filter-wrapper ml-auto lg:hidden pt-6">
+    <div class="flex flex-col gap-4 w-full lg:flex-row lg:items-center lg:justify-between lg:gap-6 mt-1 lg:mt-2 mb-0 lg:mb-1">
+      {% if se_stts.show_menu_ideal_button %}
+        <div class="w-full lg:w-auto flex justify-center lg:justify-start">
+          {% if se_stts.menu_ideal_link != blank %}
+            <a
+              href="{{ se_stts.menu_ideal_link }}"
+              class="inline-flex items-center gap-2 bg-[#5ccc84] text-[#004623] font-semibold text-[13px] lg:text-[14px] px-4 py-2 rounded-full"
+            >
+              {{ se_stts.menu_ideal_label }}
+            </a>
+          {% else %}
+            <span class="inline-flex items-center gap-2 bg-[#5ccc84] text-[#004623] font-semibold text-[13px] lg:text-[14px] px-4 py-2 rounded-full">
+              {{ se_stts.menu_ideal_label }}
+            </span>
+          {% endif %}
+        </div>
+      {% endif %}
+      <div class="flex items-center justify-between w-full lg:w-auto lg:gap-6">
+        {% if se_stts.show_results_count %}
+          <p class="text-[#004623] text-[13px] lg:text-[15px] font-medium">{{ results_count }} Resultados</p>
+        {% endif %}
+        <div class="t4s-btn-filter-wrapper lg:hidden">
   {%- liquid
     assign style_filters = block.settings.style_filters
     if collection.filters.size > 0 and type_filters == 'facets'
@@ -287,7 +307,12 @@
     </button> {% endcomment %}
     
 
-    <button data-sidebar-id="template--25740160631168__sidebar" data-sidebar-false="" data-drawer-options="{ &quot;id&quot;: &quot;#drawer-template--25740160631168__sidebar&quot; }" class="my-nohover-btn hover:!bg-transparent 
+    <button
+      data-btn-as-a
+      data-drawer-delay
+      data-drawer-options='{ "id": "{{ id_se }}#t4s-filter-hidden" }'
+      aria-label="Show filters"
+      class="my-nohover-btn hover:!bg-transparent 
          hover:!border-transparent 
          hover:!text-current 
          hover:cursor-default">
@@ -303,13 +328,17 @@
 </button>
   {%- endif -%}
 </div>
+      </div>
+    </div>
 
     </div>
     
     
     {%- assign total_active_values = 0 -%}
      {%- capture filters__active -%}
-          <div id="plp-total-count" class="t4s-active-filters__count t4s-d-inline-block">{{ 'products.facets.results_with_count_html' | t: count: collection.products_count }}</div>
+          {% unless se_stts.show_results_count %}
+            <div id="plp-total-count" class="t4s-active-filters__count t4s-d-inline-block">{{ 'products.facets.results_with_count_html' | t: count: collection.products_count }}</div>
+          {% endunless %}
           {%- for filter in collection.filters -%}
             {%- if filter.type == "price_range" -%}
               {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
@@ -515,6 +544,29 @@
         "id": "show_desc",
         "label": "Show description collection",
         "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_menu_ideal_button",
+        "label": "Mostrar boton 'Te ayudamos a diseñar su menú ideal'",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "menu_ideal_label",
+        "label": "Texto boton 'Te ayudamos a diseñar su menú ideal'",
+        "default": "Te ayudamos a diseñar su menú ideal →"
+      },
+      {
+        "type": "url",
+        "id": "menu_ideal_link",
+        "label": "Link boton 'Te ayudamos a diseñar su menú ideal'"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_results_count",
+        "label": "Mostrar numero de resultados",
+        "default": true
       },
       {
         "type": "select",

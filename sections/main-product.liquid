@@ -711,6 +711,50 @@ if product_list == blank
                         {%- endif -%}
                         {{- html_trust -}}
                         </div>
+                    {%- when 'migraciones_image' -%}
+                        <div
+                          id="mig-image-{{ block.id }}"
+                          class="w-full"
+                          style="
+                            background-color: {{ bk_stts.bg_color }};
+                            padding-top: {{ bk_stts.pt_mobile }}px;
+                            padding-bottom: {{ bk_stts.pb_mobile }}px;
+                          "
+                          {{ block.shopify_attributes }}
+                        >
+                          <style>
+                            @media (min-width: 768px) {
+                              #mig-image-{{ block.id }} {
+                                padding-top: {{ bk_stts.pt_desktop }}px !important;
+                                padding-bottom: {{ bk_stts.pb_desktop }}px !important;
+                              }
+                            }
+                          </style>
+
+                          {%- if bk_stts.desktop_image or bk_stts.mobile_image -%}
+                            {%- if bk_stts.desktop_image -%}
+                              {%- if bk_stts.image_link != blank -%}<a href="{{ bk_stts.image_link }}">{%- endif -%}
+                              <img
+                                src="{{ bk_stts.desktop_image | img_url: '2048x' }}"
+                                class="hidden md:block w-full h-auto object-cover"
+                                alt="{{ bk_stts.desktop_image.alt | escape }}"
+                                style="border-radius: {{ bk_stts.image_radius }}px;"
+                              >
+                              {%- if bk_stts.image_link != blank -%}</a>{%- endif -%}
+                            {%- endif -%}
+
+                            {%- if bk_stts.mobile_image -%}
+                              {%- if bk_stts.image_link != blank -%}<a href="{{ bk_stts.image_link }}">{%- endif -%}
+                              <img
+                                src="{{ bk_stts.mobile_image | img_url: '768x' }}"
+                                class="block md:hidden w-full h-auto object-cover"
+                                alt="{{ bk_stts.mobile_image.alt | escape }}"
+                                style="border-radius: {{ bk_stts.image_radius }}px;"
+                              >
+                              {%- if bk_stts.image_link != blank -%}</a>{%- endif -%}
+                            {%- endif -%}
+                          {%- endif -%}
+                        </div>
                     {%- when 'live_view' %}{% if bk_stts.text == blank %}{% continue %}{% endif -%}
                         <div id="t4s-counter{{ bk_id }}" class="t4s-pr_live_view t4s-dn t4s-ch t4s-fwm" data-live-view='{ "min": {{ bk_stts.min }}, "max": {{ bk_stts.max }}, "interval": {{ bk_stts.time }}000 }' {{ block.shopify_attributes }}>
                             {%- if bk_stts.icon != '1' -%}{%- assign image = bk_stts.img -%}
@@ -3973,6 +4017,83 @@ if product_list == blank
       ]
     },
     {
+      "type": "migraciones_image",
+      "name": "Migraciones imagen banner",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "Imagen escritorio"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Imagen movil"
+        },
+        {
+          "type": "url",
+          "id": "image_link",
+          "label": "Enlace de la imagen"
+        },
+        {
+          "type": "range",
+          "id": "pt_mobile",
+          "label": "Padding superior (movil)",
+          "min": 0,
+          "max": 200,
+          "step": 2,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "pb_mobile",
+          "label": "Padding inferior (movil)",
+          "min": 0,
+          "max": 200,
+          "step": 2,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "pt_desktop",
+          "label": "Padding superior (desktop)",
+          "min": 0,
+          "max": 200,
+          "step": 2,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "pb_desktop",
+          "label": "Padding inferior (desktop)",
+          "min": 0,
+          "max": 200,
+          "step": 2,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "image_radius",
+          "label": "Radio de borde de la imagen",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Color de fondo del bloque",
+          "default": "#ffffff"
+        }
+      ]
+    },
+    {
       "type": "store_pickup",
       "name": "Pickup availability",
       "limit": 1,
@@ -4911,4 +5032,3 @@ if product_list == blank
     display: none !important;
   }
 </style>
-

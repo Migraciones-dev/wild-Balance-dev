@@ -114,6 +114,20 @@
             "advance_pr_list": []
           }
         },
+        "migraciones_image_block": {
+          "type": "migraciones_image",
+          "settings": {
+            "desktop_image": "",
+            "mobile_image": "",
+            "image_link": "",
+            "pt_mobile": 0,
+            "pb_mobile": 0,
+            "pt_desktop": 0,
+            "pb_desktop": 0,
+            "image_radius": 0,
+            "bg_color": "#ffffff"
+          }
+        },
         "custom_liquid_ywgBhH": {
           "type": "custom_liquid",
           "settings": {
@@ -157,6 +171,7 @@
         "custom_liquid_HeetbV",
         "description_PqQjKj",
         "8f619784-04a8-4c20-b813-6902f9e3e922",
+        "migraciones_image_block",
         "custom_liquid_ywgBhH",
         "tab_liquid_KiC6hD",
         "tab_liquid_Lqc4J4",

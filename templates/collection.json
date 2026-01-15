@@ -102,6 +102,16 @@
     "sidebar": {
       "type": "sidebar-collection",
       "blocks": {
+        "quiz_cta_8f7d3b": {
+          "type": "quiz_cta",
+          "settings": {
+            "title": "Encuentra las recetas adecuadas para tu perro",
+            "link_label": "Haz el test",
+            "link_url": "/pages/crea-su-menu",
+            "image": "",
+            "image_alt": "Perro y comida"
+          }
+        },
         "7ac6f497-c7ca-4dac-8f59-0084f052835e": {
           "type": "filter",
           "settings": {}
@@ -118,6 +128,7 @@
         }
       },
       "block_order": [
+        "quiz_cta_8f7d3b",
         "7ac6f497-c7ca-4dac-8f59-0084f052835e",
         "cd6064d5-464c-431c-b47b-e363158ab8bd"
       ],
@@ -153,6 +164,10 @@
       ],
       "settings": {
         "show_desc": true,
+        "show_menu_ideal_button": true,
+        "menu_ideal_label": "Te ayudamos a diseñar su menú ideal →",
+        "menu_ideal_link": "shopify://pages/crea-su-menu",
+        "show_results_count": true,
         "position_desc": "2",
         "product_des": "1",
         "rating_pos": "1",
