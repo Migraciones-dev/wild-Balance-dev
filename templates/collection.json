@@ -105,10 +105,12 @@
         "quiz_cta_8f7d3b": {
           "type": "quiz_cta",
           "settings": {
+            "bg_color": "#79ce95",
+            "text_color": "#ffffff",
             "title": "Encuentra las recetas adecuadas para tu perro",
             "link_label": "Haz el test",
             "link_url": "/pages/crea-su-menu",
-            "image": "",
+            "image": "shopify://shop_images/b96b258174c1ba65e256b9a58e10dc8b0f461875.jpg",
             "image_alt": "Perro y comida"
           }
         },
