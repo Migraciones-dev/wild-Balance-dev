@@ -118,7 +118,7 @@
     "custom_liquid_HBy9ba": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<style>\n.rh-widget {    height: calc(100vh - 125px)!important;}\n.t4s-main-page {display:none;}\n\n/* Solución simple - solo CSS */\n@media (max-width: 768px) {\n  /* Usar viewport height dinámica */\n  .publicquiz #quiz {\n    height: 100dvh !important;\n    padding-bottom: 90px !important;\n  }\n\n  .lq-quiz .lq-footer {\n    position: fixed !important;\n    bottom: 0 !important;\n    left: 0 !important;\n    right: 0 !important;\n    width: 100% !important;\n    z-index: 99999 !important;\n    background: white !important;\n    border-top: 1px solid #eee !important;\n  }\n\n  /* Forzar visibilidad siempre */\n  .lq-quiz .lq-footer,\n  .lq-quiz .lq-wrapper-footer,\n  .lq-quiz .lq-nav-button {\n    transform: translateZ(0) !important;\n    will-change: transform !important;\n  }\n}\n\n</style>"
+        "custom_liquid": "<style>\n.rh-widget {    height: calc(100dvh - 125px)!important;}\n.t4s-main-page {display:none;}\n</style>"
       }
     }
   },
