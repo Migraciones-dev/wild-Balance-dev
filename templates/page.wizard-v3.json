@@ -118,7 +118,7 @@
     "custom_liquid_HBy9ba": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<style>\n.rh-widget {    height: calc(100vh - 125px)!important;}\n.t4s-main-page {display:none;}\n\n@media (max-width: 768px) {\n.rh-widget {    height: calc(100dvh - 125px)!important;}\n  }\n</style>"
+        "custom_liquid": "<style>\n.rh-widget {    height: calc(100vh - 125px)!important;}\n.t4s-main-page {display:none;}\n\n@media (max-width: 768px) {\n.rh-widget {    height: calc(100dvh - 80px)!important;}\n  }\n</style>"
       }
     }
   },
