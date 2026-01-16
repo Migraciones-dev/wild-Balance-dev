@@ -74,7 +74,7 @@
     "2fa35883-7762-4b11-9a64-3e08390ea41e": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<div class=\"\">\n<section class=\"!h-[120px]\">\n<div\nclass=\"text-center bg-[#5BC180] h-[45px] flex items-center justify-center text-[#FFFFFF] text-[15px] lg:text-[16px] font-bold\"\n>¡10% DE DESCUENTO PARA SIEMPRE!</div>\n<a href=\"https://wildbalance.es/\">\n<img \nclass=\"mx-auto w-[200px] mt-4 mb-4 mx-auto\"\nsrc=\"https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_28.png?v=1753620078\"/>\n</a>\n</section>"
+        "custom_liquid": "<div class=\"\">\n<section class=\"!h-[75px]\">\n<div\nclass=\"text-center bg-[#5BC180] h-[25px] flex items-center justify-center text-[#FFFFFF] text-[13px] lg:text-[16px] font-bold\"\n>¡10% DE DESCUENTO PARA SIEMPRE!</div>\n<a href=\"https://wildbalance.es/\">\n<img \nclass=\"mx-auto w-[130px] mt-4 mb-4 mx-auto\"\nsrc=\"https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Group_28.png?v=1753620078\"/>\n</a>\n</section>"
       }
     },
     "custom_liquid_ibzxRE": {
