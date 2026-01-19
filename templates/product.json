@@ -132,7 +132,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/pdp-banner-empezar-test-desk.png",
             "mobile_image": "shopify://shop_images/pdp-banner-empezar-test-mobile.png",
-            "image_link": "",
+            "image_link": "https://wildbalance.es/pages/crea-su-menu",
             "pt_mobile": 0,
             "pb_mobile": 0,
             "pt_desktop": 0,
