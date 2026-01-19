@@ -105,13 +105,12 @@
         },
         "image_parent_Cq79Fr": {
           "type": "image_parent",
-          "disabled": true,
           "settings": {
             "timer_enable": false,
-            "timer_start": "",
-            "timer_end": "",
-            "image": "shopify://shop_images/Home_HeroBanner_LanzamientoBarfGrande_General_20251021_2.png",
-            "image_mb": "shopify://shop_images/Home_HeroBanner_LanzamientoBarfGrande_General_20251021_1.png",
+            "timer_start": "2026-01-20 00:01",
+            "timer_end": "2026-01-22 23:59",
+            "image": "shopify://shop_images/banner-home-liquidacion-navidad-enero-desk.jpg",
+            "image_mb": "shopify://shop_images/banner-home-liquidacion-navidad-enero-mobile.jpg",
             "image_position": "8",
             "cl_img": "",
             "link_img1": "shopify://collections/barf-grande-perros",
