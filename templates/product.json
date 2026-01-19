@@ -130,8 +130,8 @@
         "migraciones_image_block": {
           "type": "migraciones_image",
           "settings": {
-            "desktop_image": "",
-            "mobile_image": "",
+            "desktop_image": "shopify://shop_images/pdp-banner-empezar-test-desk.png",
+            "mobile_image": "shopify://shop_images/pdp-banner-empezar-test-mobile.png",
             "image_link": "",
             "pt_mobile": 0,
             "pb_mobile": 0,
