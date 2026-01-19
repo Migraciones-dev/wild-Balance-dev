@@ -106,8 +106,8 @@
           "type": "quiz_cta",
           "settings": {
             "bg_color": "#79ce95",
-            "text_color": "#ffffff",
-            "title": "Encuentra las recetas adecuadas para tu perro",
+            "text_color": "#004623",
+            "title": "Encuentra la alimentación ideal según sus necesidades",
             "link_label": "Haz el test",
             "link_url": "/pages/crea-su-menu",
             "image": "shopify://shop_images/b96b258174c1ba65e256b9a58e10dc8b0f461875.jpg",
