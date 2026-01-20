@@ -110,8 +110,6 @@
             "timer_enable": false,
             "timer_start": "",
             "timer_end": "",
-            "image": "shopify://shop_images/banner-home-liquidacion-navidad-enero-desk.jpg",
-            "image_mb": "shopify://shop_images/banner-home-liquidacion-navidad-enero-mobile.jpg",
             "image_position": "8",
             "cl_img": "",
             "link_img1": "shopify://collections/regalos-navidad-perros-gatos",
@@ -283,7 +281,6 @@
     },
     "migraciones_image_LxHCKY": {
       "type": "migraciones-image",
-      "disabled": true,
       "name": "Migraciones imagen",
       "settings": {
         "desktop_image": "shopify://shop_images/banner-home-liquidacion-navidad-enero-desk.png",
