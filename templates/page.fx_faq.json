@@ -349,7 +349,7 @@
         "custom_text_bTL7RJ": {
           "type": "custom_text",
           "settings": {
-            "text": "¿Tienes dudas con tu suscripción?",
+            "text": "Suscripción mensual",
             "remove_br_tag": false,
             "tag": "h2",
             "fontf": "2",
