@@ -107,8 +107,16 @@
           "type": "accor_item",
           "settings": {
             "icon": "none",
-            "title": "¿Quédiferencia hay entre comida cocinada y lata?",
+            "title": "¿Qué diferencia hay entre comida cocinada y lata?",
             "content": "<p>En cuanto a calidad nutricional y de ingredientes no hay diferencias.<br/><br/>La diferencia es que las latas están cocinadas en condiciones de esterilización y la cocinada lleva un proceso diferente, más casero, que hace necesario que se congele para mantener intactas sus propiedades y estado.</p><p>La cocinada está un poquito más triturada que las latas y es un poquito más barato también y las latitas tiene un pelín más de variedad. </p><p>Pero a nivel nutricional son prácticamente iguales por lo que, lo ideal, es combinar las dos cosas.</p>"
+          }
+        },
+        "accor_item_iCqK6r": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "¿Se pueden cocinar las hamburguesas?",
+            "content": "<p>Lo ideal es no hacerlo. Primero porque le bajarías su calidad nutricional pero, sobre todo, porque uno de los ingredientes principales del BARF es el hueso carnoso que ha de darse en crudo  o cocinado en condiciones muy concretas que no tenemos en las cocinas normales de casa</p>"
           }
         }
       },
@@ -118,7 +126,8 @@
         "165968704979c10341-2",
         "f82fd793-df1a-4dab-aad5-2463249f7e98",
         "70d6022c-5db8-4346-baf9-fc888e4c11a7",
-        "67156ce9-d675-4e4f-824a-0ff6ee0d87aa"
+        "67156ce9-d675-4e4f-824a-0ff6ee0d87aa",
+        "accor_item_iCqK6r"
       ],
       "settings": {
         "design_heading": "1",
@@ -297,7 +306,7 @@
         "bg_title_cl": "#faf5e7",
         "title_active_cl": "#004623",
         "bg_title_active_cl": "#faf5e7",
-        "content_align": "default",
+        "content_align": "center",
         "auto_active": true,
         "layout": "t4s-cus-width",
         "custom_width": 930,
@@ -420,6 +429,411 @@
         "accor_item_Yerr9P",
         "accor_item_jbhW3D",
         "accor_item_GichXW"
+      ],
+      "custom_css": [
+        "ol li {list-style: auto;}",
+        "ul li {list-style: disc;}"
+      ],
+      "settings": {
+        "design_heading": "1",
+        "heading_center": true,
+        "top_heading": "",
+        "top_subheading": "",
+        "tophead_mb": 30,
+        "tophead_mb_tb": 30,
+        "tophead_mb_mb": 25,
+        "accor_des": "1",
+        "title_cl": "#004623",
+        "bg_title_cl": "#faf5e7",
+        "title_active_cl": "#004623",
+        "bg_title_active_cl": "#faf5e7",
+        "content_align": "default",
+        "auto_active": true,
+        "layout": "t4s-cus-width",
+        "custom_width": 930,
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,55px,",
+        "pd": "",
+        "mg_tb": ",,50px,",
+        "pd_tb": "",
+        "mg_mb": ",,35px,",
+        "pd_mb": ""
+      }
+    },
+    "custom_section_7PV673": {
+      "type": "custom-section",
+      "blocks": {
+        "bl_col_QR4jEw": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "12",
+            "col_dk_w": "33.33333",
+            "col_tb": "12",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": false,
+            "content_align": "start",
+            "content_align_tablet": "start",
+            "content_align_mobile": "start",
+            "padding_inner": "30px,,30px",
+            "padding_inner_tb": "15px,,15px,",
+            "padding_inner_mb": "15px,,15px,",
+            "round_inner": "",
+            "round_tb_inner": "",
+            "round_mb_inner": "",
+            "bg_cl": "rgba(0,0,0,0)",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_h8yU3T": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Dieta natural para gatos",
+            "remove_br_tag": false,
+            "tag": "h2",
+            "fontf": "2",
+            "text_cl": "#004623",
+            "text_fs": 30,
+            "text_lh": 0,
+            "text_fw": 900,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 5,
+            "text_fs_tb": 20,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 20,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        }
+      },
+      "block_order": [
+        "bl_col_QR4jEw",
+        "custom_text_h8yU3T"
+      ],
+      "settings": {
+        "block_custom_class": "",
+        "space_h_item": "30",
+        "space_v_item": "30",
+        "space_h_item_tb": "10",
+        "space_v_item_tb": "10",
+        "space_h_item_mb": "10",
+        "space_v_item_mb": "10",
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,0px,",
+        "pd": "",
+        "mg_tb": ",,0px,",
+        "pd_tb": "",
+        "mg_mb": ",,0px,",
+        "pd_mb": ""
+      }
+    },
+    "accordion_bRNTwT": {
+      "type": "accordion",
+      "blocks": {
+        "accor_item_nw73QX": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "¿Cómo se adapta un gato a una dieta natural si solo ha comido pienso?",
+            "content": "<p>Los gatos son muy de rutinas (y un poco tiquismiquis 😹), así que si siempre han comido pienso, ¡no te preocupes si al principio miran raro la comida natural!</p><p><br/>Lo mejor es empezar con latitas naturales o húmedas de buena calidad. Una vez las acepte bien, puedes ir introduciendo poquito a poco la comida BARF o cocinada, siempre de forma gradual.</p><p><br/>Tips que ayudan un montón:</p><p><br/>• Dásela templadita (nunca recién sacada de la nevera). Unos segunditos en microondas o vuelta y vuelta en la sartén ayuda a que huela más y les llame la atención.<br/>• Puedes mezclar con algo que le encante: un premio, un poco de levadura de cerveza, caldo casero (sin sal) o lo que sepas que le chifla.<br/>• Si un día no le apetece, ¡no pasa nada! Cada gato lleva su ritmo <br/>Y si necesitas ideas más específicas, te ayudamos encantados a preparar una transición a medida <br/><br/></p>"
+          }
+        },
+        "accor_item_tJLqVY": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "¿Cubrís las necesidades especiales del gato (taurina, proteína, humedad…)?",
+            "content": "<p>Sí, nuestras recetas están formuladas específicamente para cubrir las necesidades nutricionales de los gatos.</p><p><br/>Contienen un alto porcentaje de proteína animal de calidad, el nivel adecuado de humedad para ayudar a mantener una buena hidratación, especialmente importante en gatos que beben poco, y, por supuesto, taurina, un aminoácido esencial para su salud.</p><p><br/>No añadimos cereales, subproductos ni ingredientes innecesarios. Solo lo que tu gato necesita, de forma natural y equilibrada.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "accor_item_nw73QX",
+        "accor_item_tJLqVY"
+      ],
+      "custom_css": [
+        "ol li {list-style: auto;}",
+        "ul li {list-style: disc;}"
+      ],
+      "settings": {
+        "design_heading": "1",
+        "heading_center": true,
+        "top_heading": "",
+        "top_subheading": "",
+        "tophead_mb": 30,
+        "tophead_mb_tb": 30,
+        "tophead_mb_mb": 25,
+        "accor_des": "1",
+        "title_cl": "#004623",
+        "bg_title_cl": "#faf5e7",
+        "title_active_cl": "#004623",
+        "bg_title_active_cl": "#faf5e7",
+        "content_align": "default",
+        "auto_active": true,
+        "layout": "t4s-cus-width",
+        "custom_width": 930,
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,55px,",
+        "pd": "",
+        "mg_tb": ",,50px,",
+        "pd_tb": "",
+        "mg_mb": ",,35px,",
+        "pd_mb": ""
+      }
+    },
+    "custom_section_9kA8YK": {
+      "type": "custom-section",
+      "blocks": {
+        "bl_col_EcY4ih": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "12",
+            "col_dk_w": "33.33333",
+            "col_tb": "12",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": false,
+            "content_align": "start",
+            "content_align_tablet": "start",
+            "content_align_mobile": "start",
+            "padding_inner": "30px,,30px",
+            "padding_inner_tb": "15px,,15px,",
+            "padding_inner_mb": "15px,,15px,",
+            "round_inner": "",
+            "round_tb_inner": "",
+            "round_mb_inner": "",
+            "bg_cl": "rgba(0,0,0,0)",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_PCbMJF": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Casos especiales",
+            "remove_br_tag": false,
+            "tag": "h2",
+            "fontf": "2",
+            "text_cl": "#004623",
+            "text_fs": 30,
+            "text_lh": 0,
+            "text_fw": 900,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 5,
+            "text_fs_tb": 20,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 20,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        }
+      },
+      "block_order": [
+        "bl_col_EcY4ih",
+        "custom_text_PCbMJF"
+      ],
+      "settings": {
+        "block_custom_class": "",
+        "space_h_item": "30",
+        "space_v_item": "30",
+        "space_h_item_tb": "10",
+        "space_v_item_tb": "10",
+        "space_h_item_mb": "10",
+        "space_v_item_mb": "10",
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,0px,",
+        "pd": "",
+        "mg_tb": ",,0px,",
+        "pd_tb": "",
+        "mg_mb": ",,0px,",
+        "pd_mb": ""
+      }
+    },
+    "accordion_CBkBC7": {
+      "type": "accordion",
+      "blocks": {
+        "accor_item_VCLY78": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "¿Qué recomendáis para perros muy activos o de trabajo?",
+            "content": "<p>Para peludos con mucha energía (deporte, trabajo, agility…) recomendamos nuestros menús ricos en proteínas y grasas saludables, como los de ternera, cordero o pato.</p><p><br/>Son recetas más densas nutricionalmente, que les ayudan a mantener su masa muscular, resistencia y vitalidad sin quedarse cortos de energía.<br/></p>"
+          }
+        },
+        "accor_item_4QQPgF": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "¿Tenéis menús específicos para perros con sobrepeso, esterilizados o de baja actividad?",
+            "content": "<p>¡Sí! Tenemos menús ideales para peluditos que necesitan controlar su peso o tienen un ritmo más tranquilo.</p><p><br/>Recetas como las de pollo, conejo o pavo son más ligeras, con menos grasa pero igual de nutritivas, perfectas para perros esterilizados, senior o con sobrepeso. </p><p>Además, al ser comida natural, sacia más y les ayuda a mantener el peso sin pasar hambre.<br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "accor_item_VCLY78",
+        "accor_item_4QQPgF"
+      ],
+      "custom_css": [
+        "ol li {list-style: auto;}",
+        "ul li {list-style: disc;}"
+      ],
+      "settings": {
+        "design_heading": "1",
+        "heading_center": true,
+        "top_heading": "",
+        "top_subheading": "",
+        "tophead_mb": 30,
+        "tophead_mb_tb": 30,
+        "tophead_mb_mb": 25,
+        "accor_des": "1",
+        "title_cl": "#004623",
+        "bg_title_cl": "#faf5e7",
+        "title_active_cl": "#004623",
+        "bg_title_active_cl": "#faf5e7",
+        "content_align": "default",
+        "auto_active": true,
+        "layout": "t4s-cus-width",
+        "custom_width": 930,
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,55px,",
+        "pd": "",
+        "mg_tb": ",,50px,",
+        "pd_tb": "",
+        "mg_mb": ",,35px,",
+        "pd_mb": ""
+      }
+    },
+    "custom_section_ryaFPQ": {
+      "type": "custom-section",
+      "blocks": {
+        "bl_col_yTUVhr": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "12",
+            "col_dk_w": "33.33333",
+            "col_tb": "12",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": false,
+            "content_align": "start",
+            "content_align_tablet": "start",
+            "content_align_mobile": "start",
+            "padding_inner": "30px,,30px",
+            "padding_inner_tb": "15px,,15px,",
+            "padding_inner_mb": "15px,,15px,",
+            "round_inner": "",
+            "round_tb_inner": "",
+            "round_mb_inner": "",
+            "bg_cl": "rgba(0,0,0,0)",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_RgQVe7": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Transición y adaptación",
+            "remove_br_tag": false,
+            "tag": "h2",
+            "fontf": "2",
+            "text_cl": "#004623",
+            "text_fs": 30,
+            "text_lh": 0,
+            "text_fw": 900,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 5,
+            "text_fs_tb": 20,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 20,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        }
+      },
+      "block_order": [
+        "bl_col_yTUVhr",
+        "custom_text_RgQVe7"
+      ],
+      "settings": {
+        "block_custom_class": "",
+        "space_h_item": "30",
+        "space_v_item": "30",
+        "space_h_item_tb": "10",
+        "space_v_item_tb": "10",
+        "space_h_item_mb": "10",
+        "space_v_item_mb": "10",
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,0px,",
+        "pd": "",
+        "mg_tb": ",,0px,",
+        "pd_tb": "",
+        "mg_mb": ",,0px,",
+        "pd_mb": ""
+      }
+    },
+    "accordion_DeaKg3": {
+      "type": "accordion",
+      "blocks": {
+        "accor_item_azk33w": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "¿Cómo hacer la transición desde pienso o húmeda acomida natural?",
+            "content": "<p>Si es para BARF tienes dos opciones:<br/>Puedes empezar con nuestro pack de iniciación sin problemas. Puedes quitarle la comida actual directamente y empezar a darle el Menú de iniciación que viene en el pack durante unos 5-6 días y, si le gusta y le sienta bien (que seguro que si 😊) ya pasar a los menús completos de pollo o pavo.<br/>Si tu peludo es muy cachorro, muy abuelito, de digestivo sensible o simplemente aun te queda comida y no quieres tirarla, puedes hacerle el cambio poco a poco, cambiando una toma por BARF retirando la otra comida progresivamente.<br/><br/>Si cambias a COCINADA Lo ideal es que empieces poquito a poco con el pollo (siempre que no haya alergias). Si tiene pienso a disposición tendrías que ir acostumbrándole a hacer tomas separadas, 2 o 3 al día. Empieza quitandole el pienso a medio día y por la noche le pones la toma de cocinada y a ver que tal le sienta. A los dos o tres días le cambias la toma del medio dia y a los días ya la de la mañana.<br/></p>"
+          }
+        },
+        "accor_item_iE6hyE": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "¿Ofrecéis guía o soporte personalizado durante la transición?",
+            "content": "<p>Por supuesto! Puedes llamarnos o escribirnos siempre que quieras con todas las dudas que tengas o podemos agendar llamadas periódicas si tu peludo necesita un seguimiento más exhaustivo. <br/></p><p>Teléfono: 670 319 204<br/>Mail: hola@wildbalance.es</p>"
+          }
+        },
+        "accor_item_YJVPRh": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "¿Qué hago si mi mascota no se adapta o rechaza la comida?",
+            "content": "<p>Sobre todo, no pierdas la paciencia. No todos los peludos aceptan los cambios en su dieta a la primera, sobre todo los gatitos pueden ser más complicados. </p><p><br/>Si tu mascota no acepta la nueva comida puede que haya que ir más despacito con tomas más pequeñas o mezclándolo con su comida actual, añadiendo aceites que le den un sabor diferente o premios que le llamen la atención y le animen a comer. </p><p>Puedes probar con la <a href=\"https://wildbalance.es/products/levadura-de-cerveza\" target=\"_blank\" title=\"levadura de cerveza Wild Balance\">Levadura de Cerveza</a> que suele funcionar muy bien, Y si esto no funciona escríbenos, estudiaremos tu caso en concreto y buscaremos soluciones.<br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "accor_item_azk33w",
+        "accor_item_iE6hyE",
+        "accor_item_YJVPRh"
       ],
       "custom_css": [
         "ol li {list-style: auto;}",
@@ -582,6 +996,12 @@
     "46c39b13-a947-44c4-aed4-2c9ce750f8a4",
     "custom_section_BVYtHL",
     "accordion_hXFU6k",
+    "custom_section_7PV673",
+    "accordion_bRNTwT",
+    "custom_section_9kA8YK",
+    "accordion_CBkBC7",
+    "custom_section_ryaFPQ",
+    "accordion_DeaKg3",
     "48a809fd-337e-498b-823e-9a792c513ac6",
     "custom_liquid_i8UF8N"
   ]
