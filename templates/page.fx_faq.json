@@ -79,14 +79,6 @@
             "content": "<p>Nuestros menús están formulados para ser completos y equilibrados, así que puedes empezar a ofrecer alimentación natural a partir de los 2 meses de vida, cuando ya han dejado la lactancia y empiezan con la<br/>alimentación sólida.</p><p>En el caso de cachorros, es importante ajustar las raciones y elegir el menú más adecuado según su edad, peso y ritmo de crecimiento. </p><p>Pero no te preocupes, que si nos das esos datos, te ayudamos encantados a preparar<br/>su plan ideal 💚</p>"
           }
         },
-        "165968704979c10341-2": {
-          "type": "accor_item",
-          "settings": {
-            "icon": "none",
-            "title": "¿Puedo darle esta alimentación a perros o gatos mayores o con patologías?",
-            "content": "<p>¡Sí, claro que sí! Nuestra comida natural es apta para peluditos senior y también para aquellos con problemas digestivos, alergias, sobrepeso, leishmania, etc.</p><p>Solo hay que elegir el menú más adecuado para su situación, y si hace falta, adaptar las raciones o ingredientes 💚</p><p>Además, al ser una alimentación natural y de calidad, suele ayudarles a tener mejor digestión, más energía y menos inflamación. </p><p>Y si tienes dudas, ¡nuestro equipo está aquí para ayudarte!</p>"
-          }
-        },
         "f82fd793-df1a-4dab-aad5-2463249f7e98": {
           "type": "accor_item",
           "settings": {
@@ -123,7 +115,6 @@
       "block_order": [
         "165968704979c10341-0",
         "165968704979c10341-1",
-        "165968704979c10341-2",
         "f82fd793-df1a-4dab-aad5-2463249f7e98",
         "70d6022c-5db8-4346-baf9-fc888e4c11a7",
         "67156ce9-d675-4e4f-824a-0ff6ee0d87aa",
@@ -233,6 +224,84 @@
         "pd_mb": ""
       }
     },
+    "accordion_4YqTNF": {
+      "type": "accordion",
+      "blocks": {
+        "accor_item_xfaRD8": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "¿Cómo enviáis los productos? ¿Se mantiene la cadena del frío?",
+            "content": "<p>Enviamos nuestros pedidos en cajas EPS (aislantes térmicas) junto con hielo seco para mantener la temperatura ideal durante todo el trayecto. Así garantizamos que la comida llegue en perfecto estado, sin romper la cadena del frío en ningún momento. La entrega se realiza en horario de mañana, para que lo recibas en casa bien fresquito y puedas guardarlo enseguida en tu congelador.</p>"
+          }
+        },
+        "accor_item_JnKqn7": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "¿Cómo debo descongelar y guardar la comida?",
+            "content": "<p>Lo ideal es sacar la comida del congelador y dejar que se descongele en la nevera, siempre dentro de un recipiente cerrado. El proceso puede tardar entre 12 y 24 horas, según el tamaño de la porción.</p><p>Una vez descongelada, conserva la comida en el frigorífico y úsala en un máximo de 48-72horas para que esté bien fresquita y segura. </p><p>Evita volver a congelar la comida ya descongelada para mantener su calidad y seguridad.</p><p>Si necesitas acelerar el proceso, puedes darle un golpe corto de calor en el microondas, pero mejor hacerlo con cuidado para no afectar nutrientes ni textura.</p>"
+          }
+        },
+        "accor_item_yWEBUz": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "¿Qué pasa si la comida llega parcialmente descongelada?",
+            "content": "<p>Puede ser que las hamburguesitas lleguen un poco blanditas, ¡no pasa nada! 💚<br/>Lo realmente importante es que:<br/>•\tLas bolsas no contengan sangre<br/>•\tLas hamburguesas no estén apelotonadas en bloque<br/>Si ves algo fuera de lo normal, contacta con nuestros agentes y revisaremos qué ha pasado para darte una solución rápida.<br/>.</p>"
+          }
+        },
+        "accor_item_8mz7mw": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "¿Cómo funcionan los envíos a Baleares?",
+            "content": "<p>¡Te contamos cómo llegan los pedidos a las Islas Baleares para que todo llegue fresquito y sin líos! <br/>•\tEn Ibiza y Mallorca trabajamos con Guillen, que solo reparte en la capital. Si vives en otra zona, tendrás que pasar a recoger tu pedido en la delegación <br/>•\tEn Menorca enviamos con Mascaró Morera, que realiza entregas en toda la isla, donde tú prefieras.</p>"
+          }
+        },
+        "accor_item_npedbT": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "¿Hacéis envíos a Canarias?",
+            "content": "<p>Por ahora no hacemos envíos directos a Canarias, pero no te preocupes contamos con varios puntos de venta en la isla donde puedes encontrar nuestros productos.<br/>Puedes ver todos los puntos y buscar el que te quede más cerca según tu código postal en el apartado de <a href=\"https://wildbalance.es/pages/store-locator\" title=\"tiendas Wild Balance\">Tiendas </a>de nuestra web.<br/>Si necesitas ayuda para localizar tu tienda más cercana, ¡escríbenos y te echamos una mano!<br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "accor_item_xfaRD8",
+        "accor_item_JnKqn7",
+        "accor_item_yWEBUz",
+        "accor_item_8mz7mw",
+        "accor_item_npedbT"
+      ],
+      "settings": {
+        "design_heading": "1",
+        "heading_center": true,
+        "top_heading": "",
+        "top_subheading": "",
+        "tophead_mb": 5,
+        "tophead_mb_tb": 30,
+        "tophead_mb_mb": 25,
+        "accor_des": "1",
+        "title_cl": "#004623",
+        "bg_title_cl": "#faf5e7",
+        "title_active_cl": "#004623",
+        "bg_title_active_cl": "#faf5e7",
+        "content_align": "default",
+        "auto_active": true,
+        "layout": "t4s-cus-width",
+        "custom_width": 930,
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,55px,",
+        "pd": "",
+        "mg_tb": ",,50px,",
+        "pd_tb": "",
+        "mg_mb": ",,35px,",
+        "pd_mb": ""
+      }
+    },
     "46c39b13-a947-44c4-aed4-2c9ce750f8a4": {
       "type": "accordion",
       "blocks": {
@@ -243,55 +312,10 @@
             "title": "Accordion item",
             "content": ""
           }
-        },
-        "5f3541b6-c9f9-4b03-b03e-3e5ad35849b9": {
-          "type": "accor_item",
-          "settings": {
-            "icon": "none",
-            "title": "¿Cómo enviáis los productos? ¿Se mantiene la cadena del frío?",
-            "content": "<p>Enviamos nuestros pedidos en cajas EPS (aislantes térmicas) junto con hielo seco para mantener la temperatura ideal durante todo el trayecto. Así garantizamos que la comida llegue en perfecto estado, sin romper la cadena del frío en ningún momento.<br/>La entrega se realiza en horario de mañana, para que lo recibas en casa bien fresquito y puedas guardarlo enseguida en tu congelador.<br/></p>"
-          }
-        },
-        "de5cf6a7-e3c4-48a8-adf3-3c59d90fe1d4": {
-          "type": "accor_item",
-          "settings": {
-            "icon": "none",
-            "title": "¿Cómo debo descongelar y guardar la comida?",
-            "content": "<p>Lo ideal es sacar la comida del congelador y dejar que se descongele en la nevera, siempre dentro de un recipiente cerrado. El proceso puede tardar entre 12 y 24 horas, según el tamaño de la porción.<br/>Una vez descongelada, conserva la comida en el frigorífico y úsala en un máximo de 48-72horas para que esté bien fresquita y segura.<br/>Evita volver a congelar la comida ya descongelada para mantener su calidad y seguridad.<br/>Si necesitas acelerar el proceso, puedes darle un golpe corto de calor en el microondas, pero mejor hacerlo con cuidado para no afectar nutrientes ni textura.<br/></p>"
-          }
-        },
-        "d76a11fd-55b1-475c-ab73-a88898986fea": {
-          "type": "accor_item",
-          "settings": {
-            "icon": "none",
-            "title": "¿Qué pasa si la comida llega parcialmente descongelada?",
-            "content": "<p>Puede ser que las hamburguesitas lleguen un poco blanditas, ¡no pasa nada! 💚<br/>Lo realmente importante es que:<br/>•\tLas bolsas no contengan sangre<br/>•\tLas hamburguesas no estén apelotonadas en bloque<br/>Si ves algo fuera de lo normal, contacta con nuestros agentes y revisaremos qué ha pasado para darte una solución rápida.<br/></p>"
-          }
-        },
-        "6d60b2c2-97fc-4a6f-b955-9889570f3231": {
-          "type": "accor_item",
-          "settings": {
-            "icon": "none",
-            "title": "¿Cómo funcionan los envíos a Baleares?",
-            "content": "<p>¡Te contamos cómo llegan los pedidos a las Islas Baleares para que todo llegue fresquito y sin líos! <br/>•\tEn Ibiza y Mallorca trabajamos con Guillen, que solo reparte en la capital. Si vives en otra zona, tendrás que pasar a recoger tu pedido en la delegación <br/>•\tEn Menorca enviamos con Mascaró Morera, que realiza entregas en toda la isla, donde tú prefieras.<br/></p>"
-          }
-        },
-        "accor_item_fiwcr3": {
-          "type": "accor_item",
-          "settings": {
-            "icon": "none",
-            "title": "¿Hacéis envíos a Canarias?",
-            "content": "<p>Por ahora no hacemos envíos directos a Canarias, pero no te preocupes contamos con varios puntos de venta en la isla donde puedes encontrar nuestros productos.<br/>Puedes ver todos los puntos y buscar el que te quede más cerca según tu código postal en el apartado de <a href=\"https://wildbalance.es/pages/store-locator\" title=\"tiendas Wild Balance\">Tiendas </a>de nuestra web.<br/>Si necesitas ayuda para localizar tu tienda más cercana, ¡escríbenos y te echamos una mano!<br/></p>"
-          }
         }
       },
       "block_order": [
-        "accor_item_yTmhw6",
-        "5f3541b6-c9f9-4b03-b03e-3e5ad35849b9",
-        "de5cf6a7-e3c4-48a8-adf3-3c59d90fe1d4",
-        "d76a11fd-55b1-475c-ab73-a88898986fea",
-        "6d60b2c2-97fc-4a6f-b955-9889570f3231",
-        "accor_item_fiwcr3"
+        "accor_item_yTmhw6"
       ],
       "settings": {
         "design_heading": "1",
@@ -681,6 +705,14 @@
             "content": "<p>Para peludos con mucha energía (deporte, trabajo, agility…) recomendamos nuestros menús ricos en proteínas y grasas saludables, como los de ternera, cordero o pato.</p><p><br/>Son recetas más densas nutricionalmente, que les ayudan a mantener su masa muscular, resistencia y vitalidad sin quedarse cortos de energía.<br/></p>"
           }
         },
+        "accor_item_8adGw3": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "¿Puedo darle esta alimentación a perros o gatos mayores o con patologías?",
+            "content": "<p>¡Sí, claro que sí! Nuestra comida natural es apta para peluditos senior y también para aquellos con problemas digestivos, alergias, sobrepeso, leishmania, etc.</p><p>Solo hay que elegir el menú más adecuado para su situación, y si hace falta, adaptar las raciones o ingredientes 💚</p><p>Además, al ser una alimentación natural y de calidad, suele ayudarles a tener mejor digestión, más energía y menos inflamación. </p><p>Y si tienes dudas, ¡nuestro equipo está aquí para ayudarte!</p>"
+          }
+        },
         "accor_item_4QQPgF": {
           "type": "accor_item",
           "settings": {
@@ -692,6 +724,7 @@
       },
       "block_order": [
         "accor_item_VCLY78",
+        "accor_item_8adGw3",
         "accor_item_4QQPgF"
       ],
       "custom_css": [
@@ -1134,6 +1167,7 @@
     "heading",
     "1659687049574d39ec",
     "9aa5ded7-a158-47ae-bd2b-f926a82ba753",
+    "accordion_4YqTNF",
     "46c39b13-a947-44c4-aed4-2c9ce750f8a4",
     "custom_section_BVYtHL",
     "accordion_hXFU6k",
