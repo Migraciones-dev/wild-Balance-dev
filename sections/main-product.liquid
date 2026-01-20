@@ -712,6 +712,25 @@ if product_list == blank
                         {{- html_trust -}}
                         </div>
                     {%- when 'migraciones_image' -%}
+                        {%- assign banner_override = blank -%}
+                        {%- assign banner_override_alt = blank -%}
+                        {%- for pr_collection in product.collections -%}
+                          {%- if pr_collection.metafields.custom.banner_de_la_pdp != blank -%}
+                            {%- assign banner_override = pr_collection.metafields.custom.banner_de_la_pdp -%}
+                            {%- assign banner_override_alt = pr_collection.title -%}
+                            {%- break -%}
+                          {%- endif -%}
+                        {%- endfor -%}
+
+                        {%- assign desktop_image = bk_stts.desktop_image -%}
+                        {%- assign mobile_image = bk_stts.mobile_image -%}
+                        {%- assign image_alt = '' -%}
+                        {%- if banner_override != blank -%}
+                          {%- assign desktop_image = banner_override -%}
+                          {%- assign mobile_image = banner_override -%}
+                          {%- assign image_alt = banner_override_alt -%}
+                        {%- endif -%}
+
                         <div
                           id="mig-image-{{ block.id }}"
                           class="w-full"
@@ -731,24 +750,24 @@ if product_list == blank
                             }
                           </style>
 
-                          {%- if bk_stts.desktop_image or bk_stts.mobile_image -%}
-                            {%- if bk_stts.desktop_image -%}
+                          {%- if desktop_image or mobile_image -%}
+                            {%- if desktop_image -%}
                               {%- if bk_stts.image_link != blank -%}<a href="{{ bk_stts.image_link }}">{%- endif -%}
                               <img
-                                src="{{ bk_stts.desktop_image | img_url: '2048x' }}"
+                                src="{{ desktop_image | image_url: width: 2048 }}"
                                 class="hidden md:block w-full h-auto object-cover"
-                                alt="{{ bk_stts.desktop_image.alt | escape }}"
+                                alt="{{ image_alt | default: desktop_image.alt | escape }}"
                                 style="border-radius: {{ bk_stts.image_radius }}px;"
                               >
                               {%- if bk_stts.image_link != blank -%}</a>{%- endif -%}
                             {%- endif -%}
 
-                            {%- if bk_stts.mobile_image -%}
+                            {%- if mobile_image -%}
                               {%- if bk_stts.image_link != blank -%}<a href="{{ bk_stts.image_link }}">{%- endif -%}
                               <img
-                                src="{{ bk_stts.mobile_image | img_url: '768x' }}"
+                                src="{{ mobile_image | image_url: width: 768 }}"
                                 class="block md:hidden w-full h-auto object-cover"
-                                alt="{{ bk_stts.mobile_image.alt | escape }}"
+                                alt="{{ image_alt | default: mobile_image.alt | escape }}"
                                 style="border-radius: {{ bk_stts.image_radius }}px;"
                               >
                               {%- if bk_stts.image_link != blank -%}</a>{%- endif -%}
@@ -4020,6 +4039,10 @@ if product_list == blank
       "type": "migraciones_image",
       "name": "Migraciones imagen banner",
       "settings": [
+        {
+          "type": "paragraph",
+          "content": "Nota: si el metacampo de colección 'Banner de la PDP' esta relleno, esa imagen se mostrará primero y tendrá prioridad sobre las imágenes asignadas aquí."
+        },
         {
           "type": "image_picker",
           "id": "desktop_image",
