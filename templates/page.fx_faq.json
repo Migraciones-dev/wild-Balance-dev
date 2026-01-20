@@ -344,70 +344,6 @@
         "pd_mb": ""
       }
     },
-    "accordion_hXFU6k": {
-      "type": "accordion",
-      "blocks": {
-        "accor_item_Yerr9P": {
-          "type": "accor_item",
-          "settings": {
-            "icon": "none",
-            "title": "¿Hay descuento por suscripción?",
-            "content": "<p>¡Sí! 💚 Suscribirte a Wild Balance tiene ventajas exclusivas:<br/>•\t10 % de descuento en todos tus pedidos<br/>•\tEnvíos más económicos<br/>•\tSorpresas especiales para tu peludo<br/>La suscripción es flexible y sin complicaciones: puedes elegir la frecuencia de entrega, modificarla o cancelarla en cualquier momento.<br/></p>"
-          }
-        },
-        "accor_item_jbhW3D": {
-          "type": "accor_item",
-          "settings": {
-            "icon": "none",
-            "title": "¿Puedo personalizar el plan y pedir solo lo que le gusta a mi mascota?",
-            "content": "<p>¡Sí! Con tu suscripción a Wild Balance puedes personalizar el plan a tu gusto:<br/>•\tAñadir o eliminar productos según lo que tu peludo prefiera<br/>•\tElegir la fecha de entrega que mejor te convenga<br/>•\tModificar la frecuencia o cantidad de cada pedido<br/>Así te aseguras de que tu mascota reciba siempre lo que más le gusta, y tú disfrutes de la comodidad de un plan totalmente flexible y sin complicaciones.<br/></p>"
-          }
-        },
-        "accor_item_GichXW": {
-          "type": "accor_item",
-          "settings": {
-            "icon": "none",
-            "title": "¿Puedo pausar, modificar o cancelar la suscripción fácilmente?",
-            "content": "<p>Tu suscripción es flexible: pausa, modifica o cancela cuando quieras 💚🐶</p>"
-          }
-        }
-      },
-      "block_order": [
-        "accor_item_Yerr9P",
-        "accor_item_jbhW3D",
-        "accor_item_GichXW"
-      ],
-      "custom_css": [
-        "ol li {list-style: auto;}",
-        "ul li {list-style: disc;}"
-      ],
-      "settings": {
-        "design_heading": "1",
-        "heading_center": true,
-        "top_heading": "",
-        "top_subheading": "",
-        "tophead_mb": 30,
-        "tophead_mb_tb": 30,
-        "tophead_mb_mb": 25,
-        "accor_des": "1",
-        "title_cl": "#004623",
-        "bg_title_cl": "#faf5e7",
-        "title_active_cl": "#004623",
-        "bg_title_active_cl": "#faf5e7",
-        "content_align": "default",
-        "auto_active": true,
-        "layout": "t4s-cus-width",
-        "custom_width": 930,
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,55px,",
-        "pd": "",
-        "mg_tb": ",,50px,",
-        "pd_tb": "",
-        "mg_mb": ",,35px,",
-        "pd_mb": ""
-      }
-    },
     "custom_section_7PV673": {
       "type": "custom-section",
       "blocks": {
@@ -1040,6 +976,70 @@
         "pd_mb": ""
       }
     },
+    "accordion_hXFU6k": {
+      "type": "accordion",
+      "blocks": {
+        "accor_item_Yerr9P": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "¿Hay descuento por suscripción?",
+            "content": "<p>¡Sí! 💚 Suscribirte a Wild Balance tiene ventajas exclusivas:<br/>•\t10 % de descuento en todos tus pedidos<br/>•\tEnvíos más económicos<br/>•\tSorpresas especiales para tu peludo<br/>La suscripción es flexible y sin complicaciones: puedes elegir la frecuencia de entrega, modificarla o cancelarla en cualquier momento.<br/></p>"
+          }
+        },
+        "accor_item_jbhW3D": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "¿Puedo personalizar el plan y pedir solo lo que le gusta a mi mascota?",
+            "content": "<p>¡Sí! Con tu suscripción a Wild Balance puedes personalizar el plan a tu gusto:<br/>•\tAñadir o eliminar productos según lo que tu peludo prefiera<br/>•\tElegir la fecha de entrega que mejor te convenga<br/>•\tModificar la frecuencia o cantidad de cada pedido<br/>Así te aseguras de que tu mascota reciba siempre lo que más le gusta, y tú disfrutes de la comodidad de un plan totalmente flexible y sin complicaciones.<br/></p>"
+          }
+        },
+        "accor_item_GichXW": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "¿Puedo pausar, modificar o cancelar la suscripción fácilmente?",
+            "content": "<p>Tu suscripción es flexible: pausa, modifica o cancela cuando quieras 💚🐶</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accor_item_Yerr9P",
+        "accor_item_jbhW3D",
+        "accor_item_GichXW"
+      ],
+      "custom_css": [
+        "ol li {list-style: auto;}",
+        "ul li {list-style: disc;}"
+      ],
+      "settings": {
+        "design_heading": "1",
+        "heading_center": true,
+        "top_heading": "",
+        "top_subheading": "",
+        "tophead_mb": 30,
+        "tophead_mb_tb": 30,
+        "tophead_mb_mb": 25,
+        "accor_des": "1",
+        "title_cl": "#004623",
+        "bg_title_cl": "#faf5e7",
+        "title_active_cl": "#004623",
+        "bg_title_active_cl": "#faf5e7",
+        "content_align": "default",
+        "auto_active": true,
+        "layout": "t4s-cus-width",
+        "custom_width": 930,
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,55px,",
+        "pd": "",
+        "mg_tb": ",,50px,",
+        "pd_tb": "",
+        "mg_mb": ",,35px,",
+        "pd_mb": ""
+      }
+    },
     "48a809fd-337e-498b-823e-9a792c513ac6": {
       "type": "custom-section",
       "blocks": {
@@ -1169,7 +1169,6 @@
     "9aa5ded7-a158-47ae-bd2b-f926a82ba753",
     "accordion_4YqTNF",
     "46c39b13-a947-44c4-aed4-2c9ce750f8a4",
-    "accordion_hXFU6k",
     "custom_section_7PV673",
     "accordion_bRNTwT",
     "custom_section_9kA8YK",
@@ -1179,6 +1178,7 @@
     "custom_section_pBaiYC",
     "accordion_hxC3Ah",
     "custom_section_BVYtHL",
+    "accordion_hXFU6k",
     "48a809fd-337e-498b-823e-9a792c513ac6",
     "custom_liquid_i8UF8N"
   ]
