@@ -344,83 +344,6 @@
         "pd_mb": ""
       }
     },
-    "custom_section_BVYtHL": {
-      "type": "custom-section",
-      "blocks": {
-        "bl_col_QD76H8": {
-          "type": "bl_col",
-          "settings": {
-            "col_dk": "12",
-            "col_dk_w": "33.33333",
-            "col_tb": "12",
-            "col_dk_w_tb": "33.33333",
-            "col_mb": "12",
-            "align_vertical": false,
-            "content_align": "start",
-            "content_align_tablet": "start",
-            "content_align_mobile": "start",
-            "padding_inner": "30px,,30px",
-            "padding_inner_tb": "15px,,15px,",
-            "padding_inner_mb": "15px,,15px,",
-            "round_inner": "",
-            "round_tb_inner": "",
-            "round_mb_inner": "",
-            "bg_cl": "rgba(0,0,0,0)",
-            "time_animation": 1,
-            "animation_delay": 40
-          }
-        },
-        "custom_text_bTL7RJ": {
-          "type": "custom_text",
-          "settings": {
-            "text": "Suscripción mensual",
-            "remove_br_tag": false,
-            "tag": "h2",
-            "fontf": "2",
-            "text_cl": "#004623",
-            "text_fs": 30,
-            "text_lh": 0,
-            "text_fw": 900,
-            "text_ls": 0,
-            "font_italic": false,
-            "text_shadow": false,
-            "mgb": 5,
-            "text_fs_tb": 20,
-            "text_lh_tb": 0,
-            "text_ls_tb": 0,
-            "mgb_tb": 10,
-            "hidden_mobile": false,
-            "text_fs_mb": 20,
-            "text_lh_mb": 0,
-            "text_ls_mb": 0,
-            "mgb_mb": 10,
-            "animation": "none"
-          }
-        }
-      },
-      "block_order": [
-        "bl_col_QD76H8",
-        "custom_text_bTL7RJ"
-      ],
-      "settings": {
-        "block_custom_class": "",
-        "space_h_item": "30",
-        "space_v_item": "30",
-        "space_h_item_tb": "10",
-        "space_v_item_tb": "10",
-        "space_h_item_mb": "10",
-        "space_v_item_mb": "10",
-        "layout": "t4s-container-wrap",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,0px,",
-        "pd": "",
-        "mg_tb": ",,0px,",
-        "pd_tb": "",
-        "mg_mb": ",,0px,",
-        "pd_mb": ""
-      }
-    },
     "accordion_hXFU6k": {
       "type": "accordion",
       "blocks": {
@@ -1040,6 +963,83 @@
         "pd_mb": ""
       }
     },
+    "custom_section_BVYtHL": {
+      "type": "custom-section",
+      "blocks": {
+        "bl_col_QD76H8": {
+          "type": "bl_col",
+          "settings": {
+            "col_dk": "12",
+            "col_dk_w": "33.33333",
+            "col_tb": "12",
+            "col_dk_w_tb": "33.33333",
+            "col_mb": "12",
+            "align_vertical": false,
+            "content_align": "start",
+            "content_align_tablet": "start",
+            "content_align_mobile": "start",
+            "padding_inner": "30px,,30px",
+            "padding_inner_tb": "15px,,15px,",
+            "padding_inner_mb": "15px,,15px,",
+            "round_inner": "",
+            "round_tb_inner": "",
+            "round_mb_inner": "",
+            "bg_cl": "rgba(0,0,0,0)",
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_bTL7RJ": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Suscripción mensual",
+            "remove_br_tag": false,
+            "tag": "h2",
+            "fontf": "2",
+            "text_cl": "#004623",
+            "text_fs": 30,
+            "text_lh": 0,
+            "text_fw": 900,
+            "text_ls": 0,
+            "font_italic": false,
+            "text_shadow": false,
+            "mgb": 5,
+            "text_fs_tb": 20,
+            "text_lh_tb": 0,
+            "text_ls_tb": 0,
+            "mgb_tb": 10,
+            "hidden_mobile": false,
+            "text_fs_mb": 20,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "mgb_mb": 10,
+            "animation": "none"
+          }
+        }
+      },
+      "block_order": [
+        "bl_col_QD76H8",
+        "custom_text_bTL7RJ"
+      ],
+      "settings": {
+        "block_custom_class": "",
+        "space_h_item": "30",
+        "space_v_item": "30",
+        "space_h_item_tb": "10",
+        "space_v_item_tb": "10",
+        "space_h_item_mb": "10",
+        "space_v_item_mb": "10",
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,0px,",
+        "pd": "",
+        "mg_tb": ",,0px,",
+        "pd_tb": "",
+        "mg_mb": ",,0px,",
+        "pd_mb": ""
+      }
+    },
     "48a809fd-337e-498b-823e-9a792c513ac6": {
       "type": "custom-section",
       "blocks": {
@@ -1169,7 +1169,6 @@
     "9aa5ded7-a158-47ae-bd2b-f926a82ba753",
     "accordion_4YqTNF",
     "46c39b13-a947-44c4-aed4-2c9ce750f8a4",
-    "custom_section_BVYtHL",
     "accordion_hXFU6k",
     "custom_section_7PV673",
     "accordion_bRNTwT",
@@ -1179,6 +1178,7 @@
     "accordion_DeaKg3",
     "custom_section_pBaiYC",
     "accordion_hxC3Ah",
+    "custom_section_BVYtHL",
     "48a809fd-337e-498b-823e-9a792c513ac6",
     "custom_liquid_i8UF8N"
   ]
