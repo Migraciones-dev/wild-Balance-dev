@@ -450,6 +450,7 @@
         "review_LNi4Q7",
         "review_YKbpr8"
       ],
+      "disabled": true,
       "custom_css": [
         ".t4s-section-all {background: #f7f2e6;}",
         ".mx-auto {max-width: unset !important;}"
@@ -462,6 +463,149 @@
         "decor_image_alt": "Decorativo",
         "cards_link": "",
         "btn_label": "Qué dicen nuestros clientes",
+        "btn_link": "",
+        "bg_color": "#f7f2e6",
+        "title_color": "#004623",
+        "highlight_color": "#004623",
+        "text_color": "#004623",
+        "accent_color": "#ffcd00"
+      }
+    },
+    "google_reviews_DtCgcg": {
+      "type": "google-reviews",
+      "blocks": {
+        "review_xMtCca": {
+          "type": "review",
+          "settings": {
+            "avatar": "shopify://shop_images/pexels-yaroslav-shuraev-9632107.jpg",
+            "avatar_alt": "Avatar",
+            "name": "Regina",
+            "rating": 5,
+            "text": "Llevamos casi 2 años con la suscripción de comida para nuestra perrita y gatito y todo genial. Han mejorado un montón el tema de los envíos y llegan siempre en tiempo y forma. Lorena, de atención al cliente, siempre nos atiende muy bien y resuelve cualquier incidencia o petición"
+          }
+        },
+        "review_Qegpxz": {
+          "type": "review",
+          "settings": {
+            "avatar": "shopify://shop_images/pexels-karolina-grabowska-5426874.jpg",
+            "avatar_alt": "Avatar",
+            "name": "Natividad",
+            "rating": 5,
+            "text": "Agradecer la atención recibida por parte de Almudena en su asesoramiento nutricional, con una información muy clara, precisa, ágil y dándonos respuesta a todo lo que hemos necesitado. Gracias!.\nLos productos son de muy buena calidad, la atención al cliente inmejorable."
+          }
+        },
+        "review_x8VXUN": {
+          "type": "review",
+          "settings": {
+            "avatar": "shopify://shop_images/pexels-samson-katt-5257628.jpg",
+            "avatar_alt": "Avatar",
+            "name": "César Nistal",
+            "rating": 5,
+            "text": "Desde que decidí pasar a dieta BARF les compro a ellos. El formato y la variedad son inmejorables. A Tristán le encanta y siempre que vamos a comprar nos atienden fenomenal. Estamos encantados."
+          }
+        },
+        "review_DfecRM": {
+          "type": "review",
+          "settings": {
+            "avatar": "shopify://shop_images/pexels-goodcitizen-1612846.jpg",
+            "avatar_alt": "Avatar",
+            "name": "Lydia",
+            "rating": 5,
+            "text": "Servicio fantastico, y calidad excepcional. Desde que hemos dejado los piensos industriales, nuestra perrita no ha tenido mas diarreas ni infecciones de orina. Pensamos mucho en nuestra salud pero no lo suficiente en la de nuestras mascotas. Todo un acierto y totalmente recomendado!"
+          }
+        },
+        "review_8TFidi": {
+          "type": "review",
+          "settings": {
+            "avatar": "shopify://shop_images/pexels-annakester-10376429.jpg",
+            "avatar_alt": "Avatar",
+            "name": "Ana Garrido",
+            "rating": 5,
+            "text": "A Yara le encanta la comida cocinada de Wild Balance.\nAcabamos de probar las nuevas recetas de Comida Cocinada, concretamente la de Pollo y la de Salmón. Ambas le han encantado!!!\nVienen ya preparadas y congeladas para ir sacando a diario y me parece súper práctico."
+          }
+        },
+        "review_8xMyt9": {
+          "type": "review",
+          "settings": {
+            "avatar": "shopify://shop_images/jay-wennington-CdK2eYhWfQ0-unsplash.jpg",
+            "avatar_alt": "Avatar",
+            "name": "Ichi",
+            "rating": 5,
+            "text": "Mi opinión es sobre la comida enlatada: Composición perfecta, ingredientes de calidad, huele de maravilla, mi perro la devora, entregas rápidas y sin problemas,...¿Qué más se puede pedir?"
+          }
+        },
+        "review_XQqKg3": {
+          "type": "review",
+          "settings": {
+            "avatar": "shopify://shop_images/pexels-david-kanigan-239927285-28182823.jpg",
+            "avatar_alt": "Avatar",
+            "name": "Marta Calce",
+            "rating": 5,
+            "text": "Me encantó la dieta cocinada, desde la presentación súper cómoda, pasando por la palatabilidad, que a mis perros les encantó (incluso uno de mis gatos robó un trocito de comida y lo disfrutó un montón), hasta cómo les sentó. Cacas perfectas y muy buenas digestiones! Súper súper recomendable"
+          }
+        },
+        "review_NctUVz": {
+          "type": "review",
+          "settings": {
+            "avatar": "shopify://shop_images/pexels-tony-jimenez-238544431-12244300.jpg",
+            "avatar_alt": "Avatar",
+            "name": "Lorena",
+            "rating": 5,
+            "text": "Tenía muchísimas dudas antes de hacer el pedido y me las resolvieron todas con muchísima paciencia y amabilidad. Así da gusto!\nEl pedido me llegó a las 10:30h de la mañana súper fresquito. Todo de 10. Sin duda volveré a comprar"
+          }
+        },
+        "review_fbGQBz": {
+          "type": "review",
+          "settings": {
+            "avatar": "shopify://shop_images/pexels-helenalopes-7932711_2e3b5308-98cb-4b04-8e3e-73e7e3a17373.jpg",
+            "avatar_alt": "Avatar",
+            "name": "Beatriz González",
+            "rating": 5,
+            "text": "Hemos probado la comida cocinada natural y está de 10. El formato es ideal, el producto viene congelado y perfectamente empaquetado y aislado. A mi perrete le encanta y le sienta genial. No se puede pedir más. Estamos encantados."
+          }
+        },
+        "review_9AeR6F": {
+          "type": "review",
+          "settings": {
+            "avatar": "shopify://shop_images/pexels-thirdman-9313625.jpg",
+            "avatar_alt": "Avatar",
+            "name": "Teddi",
+            "rating": 5,
+            "text": "Confío 100% en la calidad de la comida barf de Wild Balance. Hemos probado unas cuantas marcas de comida barf y este es el preferido de mis perros y el mío por sus ingredientes y por la porciones pequeños que son fáciles de administrar."
+          }
+        },
+        "review_zVzytb": {
+          "type": "review",
+          "settings": {
+            "avatar": "shopify://shop_images/pexels-polina-tankilevitch-5540165_3d032efe-4808-473a-b2f4-83abac53ad8d.jpg",
+            "avatar_alt": "Avatar",
+            "name": "Alicia CB",
+            "rating": 5,
+            "text": "Excelente comida natural. Estamos encantados con lo bien que le sienta. Hemos probado ya la de pollo, pavo, conejo y salmón. Siempre hay comida natural en su dieta ya que es epiléptico. Gracias por hacer una comida competente. ❤️"
+          }
+        }
+      },
+      "block_order": [
+        "review_xMtCca",
+        "review_Qegpxz",
+        "review_x8VXUN",
+        "review_DfecRM",
+        "review_8TFidi",
+        "review_8xMyt9",
+        "review_XQqKg3",
+        "review_NctUVz",
+        "review_fbGQBz",
+        "review_9AeR6F",
+        "review_zVzytb"
+      ],
+      "name": "Migraciones reviews",
+      "settings": {
+        "title_prefix": "Qué dicen",
+        "title_highlight": "nuestros clientes",
+        "decor_image": "shopify://shop_images/Capa_1_24.png",
+        "decor_image_alt": "Decorativo",
+        "cards_link": "",
+        "btn_label": "",
         "btn_link": "",
         "bg_color": "#f7f2e6",
         "title_color": "#004623",
@@ -591,6 +735,7 @@
     "migraciones_sorteo_info_zx66f4",
     "migraciones_feafured_collection_kbUyGC",
     "google_reviews_LYYQJq",
+    "google_reviews_DtCgcg",
     "migraciones_video_landing_8mtF7T",
     "heading",
     "main",
