@@ -14,9 +14,8 @@
       "blocks": {
         "image_parent_7HhBqi": {
           "type": "image_parent",
-          "disabled": true,
           "settings": {
-            "timer_enable": false,
+            "timer_enable": true,
             "timer_start": "2026-01-31 23:59",
             "timer_end": "",
             "image": "shopify://shop_images/BANNER_SUSCRIPCION_1.png",
