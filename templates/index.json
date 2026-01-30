@@ -60,7 +60,7 @@
         "image_parent_DrfWkp": {
           "type": "image_parent",
           "settings": {
-            "timer_enable": false,
+            "timer_enable": true,
             "timer_start": "",
             "timer_end": "2026-01-31 23:59",
             "image": "shopify://shop_images/banner-home-sorteo-v2-desk.png",
