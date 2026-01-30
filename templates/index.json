@@ -63,7 +63,7 @@
           "settings": {
             "timer_enable": false,
             "timer_start": "",
-            "timer_end": "",
+            "timer_end": "2026-01-31 23:59",
             "image": "shopify://shop_images/banner-home-sorteo-v2-desk.png",
             "image_mb": "shopify://shop_images/banner-home-sorteo-v2-mobile.png",
             "image_position": "8",
@@ -935,7 +935,7 @@
           "settings": {
             "max_width": 1200,
             "review_source": "all",
-            "show_tabs": false,
+            "show_all_reviews_in_same_tab": false,
             "show_first": "product",
             "empty_state": "empty_widget"
           }
