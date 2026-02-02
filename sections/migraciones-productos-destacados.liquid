@@ -10,6 +10,7 @@
   assign cols_mb = section.settings.cols_mobile | default: '1' | plus: 0
   assign cols_md = section.settings.cols_tablet | default: 2
   assign cols_lg = section.settings.cols_desktop | default: 2
+  assign blocks_count = section.blocks | size
 -%}
 
 <section
@@ -40,6 +41,16 @@
       grid-template-columns: repeat({{ cols_mb }}, minmax(0, 1fr));
       gap: {{ section.settings.gap_mobile }}px;
     }
+    {%- if blocks_count == 1 -%}
+      #mig-prod-dest-{{ sid }} .mig-grid {
+        grid-template-columns: minmax(0, 1fr);
+        justify-items: center;
+      }
+      #mig-prod-dest-{{ sid }} .mig-item {
+        width: 100%;
+        max-width: 700px;
+      }
+    {%- endif -%}
     @media (min-width: 768px) {
       #mig-prod-dest-{{ sid }} .mig-grid {
         grid-template-columns: repeat({{ cols_md }}, minmax(0, 1fr));
@@ -82,7 +93,7 @@
           endif
         -%}
 
-        <div class="w-full pb-10" {{ block.shopify_attributes }}>
+        <div class="mig-item w-full pb-10" {{ block.shopify_attributes }}>
           <div class="relative">
             {%- if image != blank -%}
               {%- if b.link_image_to_product and product != blank -%}
