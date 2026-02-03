@@ -135,7 +135,7 @@ t4sp-theme no-js t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swat
 
       <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
       <script src="{{ 'global.min.js' | asset_url }}" defer="defer"></script>
-      {{ content_for_header }}
+      {%- if tinyscript -%}{{ content_for_header }}{%- else -%}{% render 'tiny-script-control' %}{%- endif -%}
       {% render 'cookie-consent' %}
       {%- render 'head_assets', t_name: t_name, isRTL: isRTL -%}
 
