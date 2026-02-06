@@ -300,8 +300,7 @@
         "banner_wYDriF": {
           "type": "banner",
           "settings": {
-            "product": "comida-cocinada-salmon-y-ternera-con-verduras-para-gatos",
-            "image": "shopify://shop_images/Home_Banner_Descuento_Cocinada_Gato_a88ee2b1-de38-4b3e-a859-89f9653a34e3.jpg",
+            "product": "caja-san-valentin-perro",
             "border_radius": 0,
             "link_image_to_product": true,
             "button_label": "",
@@ -310,9 +309,8 @@
         },
         "banner_Yh9xf7": {
           "type": "banner",
-          "disabled": true,
           "settings": {
-            "product": "cesta-regalo-de-navidad-para-gatos-cesta-solidaria",
+            "product": "caja-de-san-valentin-para-gatos",
             "border_radius": 0,
             "link_image_to_product": true,
             "button_label": "",
@@ -326,11 +324,11 @@
       ],
       "name": "Migraciones destacados",
       "settings": {
-        "title": "¡Oferta limitada!",
+        "title": "El mes del amor✨",
         "subtitle": "",
         "button_label": "Añadir al carrito",
-        "cols_desktop": 1,
-        "cols_tablet": 1,
+        "cols_desktop": 2,
+        "cols_tablet": 2,
         "cols_mobile": "2",
         "gap_desktop": 24,
         "gap_mobile": 16,
