@@ -141,13 +141,6 @@
 	      pushEvt('menu', { parameter1, parameter2 });
 	    };
     document.addEventListener(
-      'mouseover',
-      (e) => {
-        menuHandler(e, 'hover');
-      },
-      true
-    );
-    document.addEventListener(
       'click',
       (e) => {
         menuHandler(e, 'click');
@@ -235,21 +228,18 @@
       },
     ];
 
-	    document.addEventListener('click', (e) => {
-	      const match =
-	        secondaryCtas.find((item) => e.target.closest(item.selector)) || null;
-	      if (!match) return;
-	      const el = e.target.closest(match.selector);
-	      const parameter1 = getText(el) || el.getAttribute('aria-label') || 'cta';
-	      const parameter2 = match.parameter2;
-	      // Nuevo: sección/origen del click (no rompe GTM actual)
-	      const parameter3 =
-	        (el && el.closest && el.closest('header, .t4s-header, .t4s-site-nav, .t4s-navigation, #mig-menu, [data-header-height]'))
-	          ? 'header'
-	          : getSectionContext(el) || 'section';
+		    document.addEventListener('click', (e) => {
+		      const match =
+		        secondaryCtas.find((item) => e.target.closest(item.selector)) || null;
+		      if (!match) return;
+		      const el = e.target.closest(match.selector);
+		      const parameter1 = getText(el) || el.getAttribute('aria-label') || 'cta';
+		      const parameter2 = match.parameter2;
+		      // Contexto analitico legible: <page_type>_<cta_id> (ej: collection_carrusel_gatos)
+		      const parameter3 = `${String(contentGroup || 'unknown')}_${parameter2}`;
 
-	      pushEvt('secondary_cta', { parameter1, parameter2, parameter3 });
-	    });
+		      pushEvt('secondary_cta', { parameter1, parameter2, parameter3 });
+		    });
 
     // LOGIN (icono de cuenta en header + enlace "Mi cuenta" en menú móvil)
     document.addEventListener('click', (e) => {
