@@ -122,183 +122,251 @@
         </div>
       </div>
     {% endcomment %}
+    {% assign perros_custom_count = 0 %}
+    {% assign gatos_custom_count = 0 %}
+    {% for block in section.blocks %}
+      {% if block.type == 'card_item' %}
+        {% if block.settings.tab_target == 'perros' %}
+          {% assign perros_custom_count = perros_custom_count | plus: 1 %}
+        {% elsif block.settings.tab_target == 'gatos' %}
+          {% assign gatos_custom_count = gatos_custom_count | plus: 1 %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
     <!-- Perros -->
     <div id="perros" class="tab-panel">
       <div class="cards-container flex space-x-4 overflow-x-auto pb-4">
-        <a
-          href="https://wildbalance.es/collections/barf-perros"
-          class="w-1/2 p-2 min-w-[75%] sm:min-w-[50%] md:min-w-[33.333%] lg:min-w-[25%]  rounded-lg "
-        >
-          <img
-            src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/6.jpg?v=1754314107"
-            alt="Imagen de colección"
-            class="w-full  object-cover rounded-[8px]"
-            draggable="false"
+        {% if perros_custom_count > 0 %}
+          {% for block in section.blocks %}
+            {% if block.type == 'card_item' and block.settings.tab_target == 'perros' %}
+              <a
+                href="{{ block.settings.link | default: '#' }}"
+                class="w-1/2 p-2 min-w-[75%] sm:min-w-[50%] md:min-w-[33.333%] lg:min-w-[25%] rounded-lg"
+                {% if block.settings.open_new_tab %}
+                  target="_blank" rel="noopener noreferrer"
+                {% endif %}
+                {{ block.shopify_attributes }}
+              >
+                {% if block.settings.image != blank %}
+                  <img
+                    src="{{ block.settings.image | image_url: width: 1200 }}"
+                    alt="{{ block.settings.image_alt | default: block.settings.title | escape }}"
+                    class="w-full object-cover rounded-[8px]"
+                    draggable="false"
+                    loading="lazy"
+                  >
+                {% endif %}
+                <div class="p-4">
+                  <p class="text-sm font-semibold">{{ block.settings.title }}</p>
+                </div>
+              </a>
+            {% endif %}
+          {% endfor %}
+        {% else %}
+          <a
+            href="https://wildbalance.es/collections/barf-perros"
+            class="w-1/2 p-2 min-w-[75%] sm:min-w-[50%] md:min-w-[33.333%] lg:min-w-[25%]  rounded-lg "
           >
-          <div class="p-4">
-            <p class="text-sm font-semibold">Dieta BARF</p>
-          </div>
-        </a>
+            <img
+              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/6.jpg?v=1754314107"
+              alt="Imagen de colección"
+              class="w-full  object-cover rounded-[8px]"
+              draggable="false"
+            >
+            <div class="p-4">
+              <p class="text-sm font-semibold">Dieta BARF</p>
+            </div>
+          </a>
 
-        <a
-          href="https://wildbalance.es/collections/comida-cocinada-para-perros"
-          class="w-1/2 p-2 min-w-[75%] sm:min-w-[50%] md:min-w-[33.333%] lg:min-w-[25%]  rounded-lg "
-        >
-          <img
-            src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/8.jpg?v=1754314107"
-            alt="Imagen de colección"
-            class="w-full  object-cover rounded-[8px]"
-            draggable="false"
+          <a
+            href="https://wildbalance.es/collections/comida-cocinada-para-perros"
+            class="w-1/2 p-2 min-w-[75%] sm:min-w-[50%] md:min-w-[33.333%] lg:min-w-[25%]  rounded-lg "
           >
-          <div class="p-4">
-            <p class="text-sm font-semibold">Comida cocinada</p>
-          </div>
-        </a>
-        <a
-          href="https://wildbalance.es/collections/latas-perros"
-          class="w-1/2 p-2 min-w-[75%] sm:min-w-[50%] md:min-w-[33.333%] lg:min-w-[25%]  rounded-lg"
-        >
-          <img
-            src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/7.jpg?v=1754314107"
-            alt="Imagen de colección"
-            class="w-full  object-cover rounded-[8px]"
-            draggable="false"
+            <img
+              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/8.jpg?v=1754314107"
+              alt="Imagen de colección"
+              class="w-full  object-cover rounded-[8px]"
+              draggable="false"
+            >
+            <div class="p-4">
+              <p class="text-sm font-semibold">Comida cocinada</p>
+            </div>
+          </a>
+          <a
+            href="https://wildbalance.es/collections/latas-perros"
+            class="w-1/2 p-2 min-w-[75%] sm:min-w-[50%] md:min-w-[33.333%] lg:min-w-[25%]  rounded-lg"
           >
-          <div class="p-4">
-            <p class="text-sm font-semibold">Comida húmeda</p>
-          </div>
-        </a>
-        <a
-          href="https://wildbalance.es/collections/snacks-y-mordedores-perros"
-          class="w-1/2 p-2 min-w-[75%] sm:min-w-[50%] md:min-w-[33.333%] lg:min-w-[25%]  rounded-lg"
-        >
-          <img
-            src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/5.jpg?v=1754314108"
-            alt="Imagen de colección"
-            class="w-full  object-cover rounded-[8px]"
-            draggable="false"
+            <img
+              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/7.jpg?v=1754314107"
+              alt="Imagen de colección"
+              class="w-full  object-cover rounded-[8px]"
+              draggable="false"
+            >
+            <div class="p-4">
+              <p class="text-sm font-semibold">Comida húmeda</p>
+            </div>
+          </a>
+          <a
+            href="https://wildbalance.es/collections/snacks-y-mordedores-perros"
+            class="w-1/2 p-2 min-w-[75%] sm:min-w-[50%] md:min-w-[33.333%] lg:min-w-[25%]  rounded-lg"
           >
-          <div class="p-4">
-            <p class="text-sm font-semibold">Snacks, premios y mordedores</p>
-          </div>
-        </a>
-        <a
-          href="https://wildbalance.es/collections/suplementos-y-aceites-perros"
-          class="w-1/2 p-2 min-w-[75%] sm:min-w-[50%] md:min-w-[33.333%] lg:min-w-[25%]  rounded-lg "
-        >
-          <img
-            src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/2.jpg?v=1754314108"
-            alt="Imagen de colección"
-            class="w-full  object-cover rounded-[8px]"
-            draggable="false"
+            <img
+              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/5.jpg?v=1754314108"
+              alt="Imagen de colección"
+              class="w-full  object-cover rounded-[8px]"
+              draggable="false"
+            >
+            <div class="p-4">
+              <p class="text-sm font-semibold">Snacks, premios y mordedores</p>
+            </div>
+          </a>
+          <a
+            href="https://wildbalance.es/collections/suplementos-y-aceites-perros"
+            class="w-1/2 p-2 min-w-[75%] sm:min-w-[50%] md:min-w-[33.333%] lg:min-w-[25%]  rounded-lg "
           >
-          <div class="p-4">
-            <p class="text-sm font-semibold">Suplementos y aceites</p>
-          </div>
-        </a>
-        <a
-          href="https://wildbalance.es/collections/accesorios-perros"
-          class="w-1/2 p-2 min-w-[75%] sm:min-w-[50%] md:min-w-[33.333%] lg:min-w-[25%]  rounded-lg "
-        >
-          <img
-            src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/9.jpg?v=1754314107"
-            alt="Imagen de colección"
-            class="w-full  object-cover rounded-[8px]"
-            draggable="false"
+            <img
+              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/2.jpg?v=1754314108"
+              alt="Imagen de colección"
+              class="w-full  object-cover rounded-[8px]"
+              draggable="false"
+            >
+            <div class="p-4">
+              <p class="text-sm font-semibold">Suplementos y aceites</p>
+            </div>
+          </a>
+          <a
+            href="https://wildbalance.es/collections/accesorios-perros"
+            class="w-1/2 p-2 min-w-[75%] sm:min-w-[50%] md:min-w-[33.333%] lg:min-w-[25%]  rounded-lg "
           >
-          <div class="p-4">
-            <p class="text-sm font-semibold">Accesorios</p>
-          </div>
-        </a>
+            <img
+              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/9.jpg?v=1754314107"
+              alt="Imagen de colección"
+              class="w-full  object-cover rounded-[8px]"
+              draggable="false"
+            >
+            <div class="p-4">
+              <p class="text-sm font-semibold">Accesorios</p>
+            </div>
+          </a>
+        {% endif %}
       </div>
     </div>
     <!-- Gatos -->
     <div id="gatos" class="tab-panel hidden">
       <div class="cards-container flex space-x-4 overflow-x-auto pb-4">
-        <a
-          href="https://wildbalance.es/collections/barf-gatos"
-          class="w-1/2 p-2 min-w-[75%] sm:min-w-[50%] md:min-w-[33.333%] lg:min-w-[25%]  rounded-lg "
-        >
-          <img
-            src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/4.jpg?v=1754314108"
-            alt="Imagen de colección"
-            class="w-full  object-cover rounded-[8px]"
-            draggable="false"
+        {% if gatos_custom_count > 0 %}
+          {% for block in section.blocks %}
+            {% if block.type == 'card_item' and block.settings.tab_target == 'gatos' %}
+              <a
+                href="{{ block.settings.link | default: '#' }}"
+                class="w-1/2 p-2 min-w-[75%] sm:min-w-[50%] md:min-w-[33.333%] lg:min-w-[25%] rounded-lg"
+                {% if block.settings.open_new_tab %}
+                  target="_blank" rel="noopener noreferrer"
+                {% endif %}
+                {{ block.shopify_attributes }}
+              >
+                {% if block.settings.image != blank %}
+                  <img
+                    src="{{ block.settings.image | image_url: width: 1200 }}"
+                    alt="{{ block.settings.image_alt | default: block.settings.title | escape }}"
+                    class="w-full object-cover rounded-[8px]"
+                    draggable="false"
+                    loading="lazy"
+                  >
+                {% endif %}
+                <div class="p-4">
+                  <p class="text-sm font-semibold">{{ block.settings.title }}</p>
+                </div>
+              </a>
+            {% endif %}
+          {% endfor %}
+        {% else %}
+          <a
+            href="https://wildbalance.es/collections/barf-gatos"
+            class="w-1/2 p-2 min-w-[75%] sm:min-w-[50%] md:min-w-[33.333%] lg:min-w-[25%]  rounded-lg "
           >
-          <div class="p-4">
-            <p class="text-sm font-semibold">Dieta BARF</p>
-          </div>
-        </a>
-        <a
-          href="https://wildbalance.es/collections/comida-cocinada-para-gatos"
-          class="w-1/2 p-2 min-w-[75%] sm:min-w-[50%] md:min-w-[33.333%] lg:min-w-[25%]  rounded-lg "
-        >
-          <img
-            src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/3.jpg?v=1754314108"
-            alt="Imagen de colección"
-            class="w-full  object-cover rounded-[8px]"
-            draggable="false"
+            <img
+              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/4.jpg?v=1754314108"
+              alt="Imagen de colección"
+              class="w-full  object-cover rounded-[8px]"
+              draggable="false"
+            >
+            <div class="p-4">
+              <p class="text-sm font-semibold">Dieta BARF</p>
+            </div>
+          </a>
+          <a
+            href="https://wildbalance.es/collections/comida-cocinada-para-gatos"
+            class="w-1/2 p-2 min-w-[75%] sm:min-w-[50%] md:min-w-[33.333%] lg:min-w-[25%]  rounded-lg "
           >
-          <div class="p-4">
-            <p class="text-sm font-semibold">Comida cocinada</p>
-          </div>
-        </a>
-        <a
-          href="https://wildbalance.es/collections/latas-gatos"
-          class="w-1/2 p-2 min-w-[75%] sm:min-w-[50%] md:min-w-[33.333%] lg:min-w-[25%]  rounded-lg"
-        >
-          <img
-            src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/1_5cdc766c-ac7b-4529-92f0-ff8488920373.jpg?v=1754314106"
-            alt="Imagen de colección"
-            class="w-full  object-cover rounded-[8px]"
-            draggable="false"
+            <img
+              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/3.jpg?v=1754314108"
+              alt="Imagen de colección"
+              class="w-full  object-cover rounded-[8px]"
+              draggable="false"
+            >
+            <div class="p-4">
+              <p class="text-sm font-semibold">Comida cocinada</p>
+            </div>
+          </a>
+          <a
+            href="https://wildbalance.es/collections/latas-gatos"
+            class="w-1/2 p-2 min-w-[75%] sm:min-w-[50%] md:min-w-[33.333%] lg:min-w-[25%]  rounded-lg"
           >
-          <div class="p-4">
-            <p class="text-sm font-semibold">Comida húmeda</p>
-          </div>
-        </a>
-        <a
-          href="https://wildbalance.es/collections/snacks-y-mordedores-gatos"
-          class="w-1/2 p-2 min-w-[75%] sm:min-w-[50%] md:min-w-[33.333%] lg:min-w-[25%]  rounded-lg"
-        >
-          <img
-            src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Diseno_sin_titulo_-_2025-10-02T103256.486.jpg?v=1759394018"
-            alt="Imagen de colección"
-            class="w-full  object-cover rounded-[8px]"
-            draggable="false"
+            <img
+              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/1_5cdc766c-ac7b-4529-92f0-ff8488920373.jpg?v=1754314106"
+              alt="Imagen de colección"
+              class="w-full  object-cover rounded-[8px]"
+              draggable="false"
+            >
+            <div class="p-4">
+              <p class="text-sm font-semibold">Comida húmeda</p>
+            </div>
+          </a>
+          <a
+            href="https://wildbalance.es/collections/snacks-y-mordedores-gatos"
+            class="w-1/2 p-2 min-w-[75%] sm:min-w-[50%] md:min-w-[33.333%] lg:min-w-[25%]  rounded-lg"
           >
-          <div class="p-4">
-            <p class="text-sm font-semibold">Snacks, premios y mordedores</p>
-          </div>
-        </a>
-        <a
-          href="https://wildbalance.es/collections/suplementos-y-aceites-gatos"
-          class="w-1/2 p-2 min-w-[75%] sm:min-w-[50%] md:min-w-[33.333%] lg:min-w-[25%]  rounded-lg "
-        >
-          <img
-            src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/2.jpg?v=1754314108"
-            alt="Imagen de colección"
-            class="w-full  object-cover rounded-[8px]"
-            draggable="false"
+            <img
+              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Diseno_sin_titulo_-_2025-10-02T103256.486.jpg?v=1759394018"
+              alt="Imagen de colección"
+              class="w-full  object-cover rounded-[8px]"
+              draggable="false"
+            >
+            <div class="p-4">
+              <p class="text-sm font-semibold">Snacks, premios y mordedores</p>
+            </div>
+          </a>
+          <a
+            href="https://wildbalance.es/collections/suplementos-y-aceites-gatos"
+            class="w-1/2 p-2 min-w-[75%] sm:min-w-[50%] md:min-w-[33.333%] lg:min-w-[25%]  rounded-lg "
           >
-          <div class="p-4">
-            <p class="text-sm font-semibold">Suplementos y aceites</p>
-          </div>
-        </a>
-        <a
-          href="https://wildbalance.es/collections/accesorios-gatos"
-          class="w-1/2 p-2 min-w-[75%] sm:min-w-[50%] md:min-w-[33.333%] lg:min-w-[25%]  rounded-lg "
-        >
-          <img
-            src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Diseno_sin_titulo_-_2025-08-04T191310.067.jpg?v=1754327616"
-            alt="Imagen de colección"
-            class="w-full  object-cover rounded-[8px]"
-            draggable="false"
+            <img
+              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/2.jpg?v=1754314108"
+              alt="Imagen de colección"
+              class="w-full  object-cover rounded-[8px]"
+              draggable="false"
+            >
+            <div class="p-4">
+              <p class="text-sm font-semibold">Suplementos y aceites</p>
+            </div>
+          </a>
+          <a
+            href="https://wildbalance.es/collections/accesorios-gatos"
+            class="w-1/2 p-2 min-w-[75%] sm:min-w-[50%] md:min-w-[33.333%] lg:min-w-[25%]  rounded-lg "
           >
-          <div class="p-4">
-            <p class="text-sm font-semibold">Accesorios</p>
-          </div>
-        </a>
+            <img
+              src="https://cdn.shopify.com/s/files/1/0713/9898/1933/files/Diseno_sin_titulo_-_2025-08-04T191310.067.jpg?v=1754327616"
+              alt="Imagen de colección"
+              class="w-full  object-cover rounded-[8px]"
+              draggable="false"
+            >
+            <div class="p-4">
+              <p class="text-sm font-semibold">Accesorios</p>
+            </div>
+          </a>
+        {% endif %}
       </div>
     </div>
   </div>
@@ -2192,6 +2260,56 @@
               "label": "Right"
             }
           ]
+        }
+      ]
+    },
+    {
+      "type": "card_item",
+      "name": "Card item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "tab_target",
+          "label": "Mostrar en tab",
+          "default": "perros",
+          "options": [
+            {
+              "value": "perros",
+              "label": "Perros"
+            },
+            {
+              "value": "gatos",
+              "label": "Gatos"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título",
+          "default": "Título de card"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Enlace"
+        },
+        {
+          "type": "checkbox",
+          "id": "open_new_tab",
+          "label": "Abrir en nueva pestaña",
+          "default": false
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Imagen"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Alt de imagen",
+          "default": "Imagen de card"
         }
       ]
     }
