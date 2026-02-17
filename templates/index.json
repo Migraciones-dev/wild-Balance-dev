@@ -350,71 +350,152 @@
     "migraciones_tabs_collections_BaRKMi": {
       "type": "migraciones-tabs-collections",
       "blocks": {
-        "tab_item_reC7wk": {
-          "type": "tab_item",
+        "card_item_zNVcPw": {
+          "type": "card_item",
           "settings": {
-            "title": "Tab title",
-            "icon_title": "",
-            "collection": "",
-            "multi_collections": [],
-            "product_des": "1",
-            "rating_pos": "1",
-            "list_color_pos": "1",
-            "list_size_pos": "1",
-            "show_vendor": false,
-            "use_cdt": false,
-            "featured_items": false,
-            "image_ratio": "rationt",
-            "image_size": "cover",
-            "image_position": "8",
-            "content_align": "start",
-            "limit": 8,
-            "col_dk": "4",
-            "col_tb": "3",
-            "col_mb": "2",
-            "space_h_item": "30",
-            "space_v_item": "30",
-            "space_h_item_tb": "30",
-            "space_v_item_tb": "30",
-            "space_h_item_mb": "10",
-            "space_v_item_mb": "10",
-            "layout_des": "2",
-            "border_pr": false,
-            "loop": true,
-            "au_time": 0,
-            "au_hover": true,
-            "nav_btn": false,
-            "btn_pos": "in",
-            "btn_distance": 15,
-            "btn_vi": "hover",
-            "btn_owl": "default",
-            "btn_shape": "none",
-            "btn_cl": "dark",
-            "btn_size": "small",
-            "btn_hidden_mobile": false,
-            "nav_dot": false,
-            "dot_owl": "default",
-            "dots_cl": "dark",
-            "dots_round": true,
-            "dots_space": 10,
-            "dots_bottom_pos": 20,
-            "dots_hidden_mobile": false,
-            "border_pr_img": false,
-            "use_pagination": "none",
-            "enable_bar_lm": true,
-            "text_view_all": "",
-            "btn_icon": false,
-            "btn_rounded": false,
-            "button_style": "default",
-            "btns_size": "default",
-            "btns_cl": "dark",
-            "button_effect": "default",
-            "btns_pos": "t4s-text-center"
+            "tab_target": "perros",
+            "title": "Dieta BARF",
+            "link": "shopify://collections/barf-perros",
+            "open_new_tab": false,
+            "image": "shopify://shop_images/6_c327fc6f-9ec8-4568-b097-40a258fe5943.webp",
+            "image_alt": "Imagen de card"
+          }
+        },
+        "card_item_XcrnyX": {
+          "type": "card_item",
+          "settings": {
+            "tab_target": "perros",
+            "title": "Comida cocinada",
+            "link": "shopify://collections/comida-cocinada-para-perros",
+            "open_new_tab": false,
+            "image": "shopify://shop_images/8_71c7f7d3-8ffe-4039-b355-0507b68ddfc2.webp",
+            "image_alt": "Imagen de card"
+          }
+        },
+        "card_item_6GYpqz": {
+          "type": "card_item",
+          "settings": {
+            "tab_target": "perros",
+            "title": "Comida húmeda",
+            "link": "shopify://collections/latas-perros",
+            "open_new_tab": false,
+            "image": "shopify://shop_images/7_69223e07-33c4-460b-96f4-633304017888.webp",
+            "image_alt": "Imagen de card"
+          }
+        },
+        "card_item_ciy8PL": {
+          "type": "card_item",
+          "settings": {
+            "tab_target": "perros",
+            "title": "Snacks, premios y mordedores",
+            "link": "shopify://collections/snacks-y-mordedores-perros",
+            "open_new_tab": false,
+            "image": "shopify://shop_images/5_f6973ebf-3800-4479-8c21-24488a6c5dd0.webp",
+            "image_alt": "Imagen de card"
+          }
+        },
+        "card_item_tM9njT": {
+          "type": "card_item",
+          "settings": {
+            "tab_target": "perros",
+            "title": "Suplementos y aceites",
+            "link": "shopify://collections/suplementos-y-aceites-perros",
+            "open_new_tab": false,
+            "image": "shopify://shop_images/2_0749f41c-1d98-4a5b-8a8f-f3934c43ea42.webp",
+            "image_alt": "Imagen de card"
+          }
+        },
+        "card_item_D8M6iq": {
+          "type": "card_item",
+          "settings": {
+            "tab_target": "perros",
+            "title": "Accesorios",
+            "link": "shopify://collections/accesorios-perros",
+            "open_new_tab": false,
+            "image": "shopify://shop_images/9_c750b5df-16cd-42a4-9feb-b35fc761a181.webp",
+            "image_alt": "Imagen de card"
+          }
+        },
+        "card_item_kTYBWr": {
+          "type": "card_item",
+          "settings": {
+            "tab_target": "gatos",
+            "title": "Dieta BARF",
+            "link": "shopify://collections/barf-gatos",
+            "open_new_tab": false,
+            "image": "shopify://shop_images/4_006896fc-21ef-4dd2-81fc-cecf1d762bb6.webp",
+            "image_alt": "Imagen de card"
+          }
+        },
+        "card_item_nfV7DT": {
+          "type": "card_item",
+          "settings": {
+            "tab_target": "gatos",
+            "title": "Comida cocinada",
+            "link": "shopify://collections/comida-cocinada-para-gatos",
+            "open_new_tab": false,
+            "image": "shopify://shop_images/3_afce947f-8092-4cf9-97bd-a44ffef283cb.webp",
+            "image_alt": "Imagen de card"
+          }
+        },
+        "card_item_ckhV4K": {
+          "type": "card_item",
+          "settings": {
+            "tab_target": "gatos",
+            "title": "Comida húmeda",
+            "link": "shopify://collections/latas-gatos",
+            "open_new_tab": false,
+            "image": "shopify://shop_images/1_5cdc766c-ac7b-4529-92f0-ff8488920373.webp",
+            "image_alt": "Imagen de card"
+          }
+        },
+        "card_item_9EkzGR": {
+          "type": "card_item",
+          "settings": {
+            "tab_target": "gatos",
+            "title": "Snacks, premios y mordedores",
+            "link": "shopify://collections/snacks-y-mordedores-gatos",
+            "open_new_tab": false,
+            "image": "shopify://shop_images/Diseno_sin_titulo_-_2025-10-02T103256.486.webp",
+            "image_alt": "Imagen de card"
+          }
+        },
+        "card_item_MLMzjn": {
+          "type": "card_item",
+          "settings": {
+            "tab_target": "gatos",
+            "title": "Suplementos y aceites",
+            "link": "shopify://collections/suplementos-y-aceites-perros",
+            "open_new_tab": false,
+            "image": "shopify://shop_images/2_1.webp",
+            "image_alt": "Imagen de card"
+          }
+        },
+        "card_item_CyePJA": {
+          "type": "card_item",
+          "settings": {
+            "tab_target": "gatos",
+            "title": "Accesorios",
+            "link": "shopify://collections/accesorios-gatos",
+            "open_new_tab": false,
+            "image": "shopify://shop_images/Diseno_sin_titulo_-_2025-08-04T191310.067.webp",
+            "image_alt": "Imagen de card"
           }
         }
       },
       "block_order": [
-        "tab_item_reC7wk"
+        "card_item_zNVcPw",
+        "card_item_XcrnyX",
+        "card_item_6GYpqz",
+        "card_item_ciy8PL",
+        "card_item_tM9njT",
+        "card_item_D8M6iq",
+        "card_item_kTYBWr",
+        "card_item_nfV7DT",
+        "card_item_ckhV4K",
+        "card_item_9EkzGR",
+        "card_item_MLMzjn",
+        "card_item_CyePJA"
       ],
       "name": "Migraciones col tabs",
       "settings": {
