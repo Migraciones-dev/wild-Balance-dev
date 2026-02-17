@@ -465,7 +465,7 @@
           "settings": {
             "tab_target": "gatos",
             "title": "Suplementos y aceites",
-            "link": "shopify://collections/suplementos-y-aceites-perros",
+            "link": "shopify://collections/suplementos-y-aceites-gatos",
             "open_new_tab": false,
             "image": "shopify://shop_images/2_1.webp",
             "image_alt": "Imagen de card"
