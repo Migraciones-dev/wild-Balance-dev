@@ -17,7 +17,7 @@
           "settings": {
             "timer_enable": true,
             "timer_start": "2026-01-31 23:59",
-            "timer_end": "",
+            "timer_end": "2026-02-18 08:06",
             "image": "shopify://shop_images/BANNER_SUSCRIPCION_1.png",
             "image_mb": "shopify://shop_images/BANNER_MOBILE_SEMANA_DEL_PERRO_2025_1_79e17b8e-77e3-4ee5-80ad-c9e05ccbb68e.png",
             "image_position": "8",
@@ -383,6 +383,17 @@
             "image_alt": "Imagen de card"
           }
         },
+        "card_item_paaQmd": {
+          "type": "card_item",
+          "settings": {
+            "tab_target": "perros",
+            "title": "Cazuelas Caseras",
+            "link": "shopify://collections/cazuelas-caseras",
+            "open_new_tab": false,
+            "image": "shopify://shop_images/Megamenu_cazuelas.jpg",
+            "image_alt": "Home_ComidaMedida_CazuelasCaseras"
+          }
+        },
         "card_item_ciy8PL": {
           "type": "card_item",
           "settings": {
@@ -487,6 +498,7 @@
         "card_item_zNVcPw",
         "card_item_XcrnyX",
         "card_item_6GYpqz",
+        "card_item_paaQmd",
         "card_item_ciy8PL",
         "card_item_tM9njT",
         "card_item_D8M6iq",
