@@ -358,29 +358,29 @@
             "link": "shopify://collections/barf-perros",
             "open_new_tab": false,
             "image": "shopify://shop_images/6_c327fc6f-9ec8-4568-b097-40a258fe5943.webp",
-            "image_alt": "Imagen de card"
+            "image_alt": "Home_ComidaMedida_Perro_DietaBarf"
           }
         },
         "card_item_XcrnyX": {
           "type": "card_item",
           "settings": {
             "tab_target": "perros",
-            "title": "Comida cocinada",
+            "title": "Comida Cocinada",
             "link": "shopify://collections/comida-cocinada-para-perros",
             "open_new_tab": false,
             "image": "shopify://shop_images/8_71c7f7d3-8ffe-4039-b355-0507b68ddfc2.webp",
-            "image_alt": "Imagen de card"
+            "image_alt": "Home_ComidaMedida_Perro_ComidaCocinada"
           }
         },
         "card_item_6GYpqz": {
           "type": "card_item",
           "settings": {
             "tab_target": "perros",
-            "title": "Comida húmeda",
+            "title": "Latas de Comida Húmeda",
             "link": "shopify://collections/latas-perros",
             "open_new_tab": false,
             "image": "shopify://shop_images/7_69223e07-33c4-460b-96f4-633304017888.webp",
-            "image_alt": "Imagen de card"
+            "image_alt": "Home_ComidaMedida_Perro_Latas"
           }
         },
         "card_item_paaQmd": {
@@ -391,7 +391,7 @@
             "link": "shopify://collections/cazuelas-caseras",
             "open_new_tab": false,
             "image": "shopify://shop_images/Megamenu_cazuelas.jpg",
-            "image_alt": "Home_ComidaMedida_CazuelasCaseras"
+            "image_alt": "Home_ComidaMedida_Perro_CazuelasCaseras"
           }
         },
         "card_item_ciy8PL": {
@@ -402,7 +402,7 @@
             "link": "shopify://collections/snacks-y-mordedores-perros",
             "open_new_tab": false,
             "image": "shopify://shop_images/5_f6973ebf-3800-4479-8c21-24488a6c5dd0.webp",
-            "image_alt": "Imagen de card"
+            "image_alt": "Home_ComidaMedida_Perro_Snacks"
           }
         },
         "card_item_tM9njT": {
